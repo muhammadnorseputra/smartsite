@@ -1,0 +1,19 @@
+// Ruabah style bawaan boostrap
+$theme-colors: (
+	"primary": lightseagreen ,
+	"primary-old": #1192c5,
+	"white": #fff,
+	"light": #eee);
+$sizes: () !default;
+$sizes: map-merge((5: 5%,
+		8: 8%,
+		10: 10%,
+		15: 15%,
+		20: 20%,
+		25: 25%,
+		50: 50%,
+		75: 75%,
+		100: 100%,
+		auto: auto),
+	$sizes);
+$modal-fade-transform: scale(.9);

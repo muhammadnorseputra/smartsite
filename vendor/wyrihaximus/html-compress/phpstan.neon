@@ -1,0 +1,9 @@
+parameters:
+	ignoreErrors:
+		- '#use function Safe#'
+	classesAllowedToBeExtended:
+		- WyriHaximus\HtmlCompress\Compressor\Compressor
+		- WyriHaximus\HtmlCompress\Tests\Compressor\AbstractVendorCompressorTest
+
+includes:
+	- vendor/wyrihaximus/test-utilities/rules.neon

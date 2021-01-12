@@ -1,0 +1,9 @@
+{
+	"require": {
+		"fzaninotto/faker": "^1.9",
+		"tecnickcom/tcpdf": "^6.3",
+		"wyrihaximus/html-compress": "^3.0",
+		"twbs/bootstrap": "4.5.*",
+		"fortawesome/font-awesome": "^5.13"
+	}
+}
