@@ -120,4 +120,3 @@
     });
   }
 </script>
-<script src="<?php echo base_url('bower_components/jquery-form-validator/form-validator/jquery.form-validator.min.js'); ?>"></script>

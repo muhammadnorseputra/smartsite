@@ -29,7 +29,7 @@
                                 <div class="typeahead__field">
                                     
                                     <div class="typeahead__query">
-                                        <input class="js-nipnama" id="js-nipnama" name="filter[query]" placeholder="Ketik NIP" autocomplete="off">
+                                        <input class="js-nipnama" id="js-nipnama" name="filter[query]" placeholder="Ketik NIP" maxlength="18" autocomplete="off">
                                     </div>
                                     <div class="typeahead__button">
                                         <button type="submit">
@@ -184,7 +184,7 @@
                             </li>
                         </div>
                     </div> -->
-                    <div class="card gradient-primary">
+                    <!-- <div class="card gradient-primary">
                         <div class="card-body text-light py-5">
                             <h2 class="text-center text-light"><i class="fab fa-instagram"></i></h2>
                             <p class="text-center">
@@ -201,7 +201,7 @@
                                 <i class="fas fa-users ml-4"></i> <span class="count_ig_follow"></span>
                             </p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             

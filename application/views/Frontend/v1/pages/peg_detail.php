@@ -9,7 +9,7 @@
 	</div>
 </section>
 <?php 
-	$response = api_curl('http://192.168.1.4/api/detail_pns', ['nip' => $data['nip']]);
+	$response = api_curl('http://silka.bkppd-balangankab.info/api/detail_pns', ['nip' => $data['nip']]);
 	$r = json_decode($response);
 	if(empty($data['nip'])) redirect('errors/html/error_404','refresh');
 ?>

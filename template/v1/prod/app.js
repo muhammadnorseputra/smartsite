@@ -1,8 +1,7 @@
+// $(document).ready(function() {
+// 	AOS.init();
+// });
 "use strict";
-
-$(document).ready(function () {
-  AOS.init();
-});
 "use strict";
 
 $(document).ready(function () {
@@ -21,42 +20,42 @@ $(document).ready(function () {
     }, 1000);
   });
 });
+// $(document).ready(function () {
+//   $(document).on("click", ".btn-login", function () {
+//     $(this).popModal({
+//       html: {
+//         url: $(this).attr('data-location'),
+//         method: "POST",
+//         dataType: "html",
+//         loadingText: `<img src="${_uri}/bower_components/SVG-Loaders/svg-loaders/oval.svg" width="20" class="d-block mx-auto my-5">`,
+//         errorText: "An error has occurred",
+//       },
+//       showCloseBut: false,
+//       onDocumentClickClose: true,
+//       overflowContent: false,
+//       inline: true,
+//       asMenu: false,
+//     });
+//   });
+// });
 "use strict";
-
-$(document).ready(function () {
-  $(document).on("click", ".btn-login", function () {
-    $(this).popModal({
-      html: {
-        url: $(this).attr('data-location'),
-        method: "POST",
-        dataType: "html",
-        loadingText: "<img src=\"".concat(_uri, "/bower_components/SVG-Loaders/svg-loaders/oval.svg\" width=\"20\" class=\"d-block mx-auto my-5\">"),
-        errorText: "An error has occurred"
-      },
-      showCloseBut: false,
-      onDocumentClickClose: true,
-      overflowContent: false,
-      inline: true,
-      asMenu: false
-    });
-  });
-});
+// $(document).ready(function () {
+//   $('.btn-menus').click(function () {
+//     $(this).popModal({
+//       html: {
+//         url: $(this).attr('data-menus'),
+//         method: "POST",
+//         dataType: "html",
+//         loadingText: `<div class="d-block mx-auto text-center my-auto">
+// 					<img src="${_uri}/bower_components/SVG-Loaders/svg-loaders/oval.svg" width="20" class="d-block mx-auto my-5">
+// 					</div>`,
+//       },
+//       placement: 'bottomLeft',
+//       asMenu: true
+//     });
+//   });
+// });
 "use strict";
-
-$(document).ready(function () {
-  $('.btn-menus').click(function () {
-    $(this).popModal({
-      html: {
-        url: $(this).attr('data-menus'),
-        method: "POST",
-        dataType: "html",
-        loadingText: "<div class=\"d-block mx-auto text-center my-auto\">\n\t\t\t\t\t<img src=\"".concat(_uri, "/bower_components/SVG-Loaders/svg-loaders/oval.svg\" width=\"20\" class=\"d-block mx-auto my-5\">\n\t\t\t\t\t</div>")
-      },
-      placement: 'bottomLeft',
-      asMenu: true
-    });
-  });
-});
 "use strict";
 
 $(document).ready(function () {
@@ -207,21 +206,19 @@ function modeBaca(x) {
     Focusable.hide();
   }
 }
+// $(document).ready(function() {
+// 	$('#camera_wrap').camera({ //here I declared some settings, the height and the presence of the thumbnails 
+// 		height: '40%',
+// 		pagination: false,
+// 		thumbnails: false,
+// 		loader: 'pie',
+// 		autoAdvance: true,
+// 		barPosition: 'bottom', 
+// 		loaderColor: '#fff',
+// 		loaderBgColor: 'lightseagreen'
+// 	});
+// });
 "use strict";
-
-$(document).ready(function () {
-  $('#camera_wrap').camera({
-    //here I declared some settings, the height and the presence of the thumbnails 
-    height: '40%',
-    pagination: false,
-    thumbnails: false,
-    loader: 'pie',
-    autoAdvance: true,
-    barPosition: 'bottom',
-    loaderColor: '#fff',
-    loaderBgColor: 'lightseagreen'
-  });
-});
 "use strict";
 
 $(document).ready(function () {
@@ -291,91 +288,155 @@ $(document).ready(function () {
     }
   });
 });
+// $(document).ready(function () {
+// 	$.validate({
+// 		form: '#form_daftar',
+// 		lang: 'en',
+// 		modules: 'toggleDisabled, date, security, html5, file, sanitize',
+// 		disabledFormFilter: 'form.toggle-disabled',
+// 		showErrorDialogs: true,
+// 		onError: function ($form) {
+// 			alert('Validation of form ' + $form.attr('id') + ' failed!');
+// 		},
+// 		onSuccess: function ($form) {
+// 			var _action = $form.attr('action');
+// 			var _method = $form.attr('method');
+// 			//   var _data   = $form.serialize();
+// 			$.ajax({
+// 				url: _action,
+// 				method: _method,
+// 				data: new FormData($form),
+// 				processData: false,
+// 				cache: false,
+// 				beforeSend: function () {
+// 					$('button[type=submit]').text('Proccessing ...');
+// 				},
+// 				dataType: 'json',
+// 				success: function (response) {
+// 					if (response.valid == true) {
+// 						// window.location.replace("<?= base_url('frontend/v1/daftar/') ?>");
+// 						alert(response.msg);
+// 						$form.get(0).reset();
+// 						$('button[type=submit]').text('Submit');
+// 					}
+// 				},
+// 				error: function (_error) {
+// 					$('button[type=submit]').text('Submit');
+// 					alert('error');
+// 				}
+// 			});
+// 			return false; // Will stop the submission of the form
+// 		},
+// 		onModulesLoaded: function () {
+// 			$('#alamat').restrictLength($('#maxlength'));
+// 		}
+// 	});
+// 	// Callendar Event
+// 	// $('#tl-container input#tl').datepicker({
+// 	// 	clearBtn: true,
+// 	// 	forceParse: false,
+// 	// 	calendarWeeks: true,
+// 	// 	autoclose: true,
+// 	// 	format: 'dd/mm/yyyy',
+// 	// 	todayHighlight: true,
+// 	// 	toggleActive: true,
+// 	// });
+// 	// API 
+// 	$('#nohp').mask('0000-0000-0000', {
+// 		placeholder: "____   -   ____   -  ____",
+// 		selectOnFocus: true
+// 	});
+// 	$('#tl').mask('00/00/0000', {
+// 		placeholder: "__/__/____"
+// 	});
+// 	// Image Preview
+// 	function readURL(input, $element) {
+// 		if (input.files && input.files[0]) {
+// 			var reader = new FileReader();
+// 			reader.onload = function (e) {
+// 				$($element).attr('src', e.target.result);
+// 			}
+// 			reader.readAsDataURL(input.files[0]); // convert to base64 string
+// 		}
+// 	}
+// 	$("input[name='photo_pic']").change(function () {
+// 		readURL(this, $('img.photo_pic'));
+// 	});
+// 	$("input[name='photo_ktp']").change(function () {
+// 		readURL(this, $('img.photo_ktp'));
+// 	});
+// });
 "use strict";
-
-$(document).ready(function () {
-  $.validate({
-    form: '#form_daftar',
-    lang: 'en',
-    modules: 'toggleDisabled, date, security, html5, file, sanitize',
-    disabledFormFilter: 'form.toggle-disabled',
-    showErrorDialogs: true,
-    onError: function onError($form) {
-      alert('Validation of form ' + $form.attr('id') + ' failed!');
-    },
-    onSuccess: function onSuccess($form) {
-      var _action = $form.attr('action');
-
-      var _method = $form.attr('method'); //   var _data   = $form.serialize();
-
-
-      $.ajax({
-        url: _action,
-        method: _method,
-        data: new FormData($form),
-        processData: false,
-        cache: false,
-        beforeSend: function beforeSend() {
-          $('button[type=submit]').text('Proccessing ...');
-        },
-        dataType: 'json',
-        success: function success(response) {
-          if (response.valid == true) {
-            // window.location.replace("<?= base_url('frontend/v1/daftar/') ?>");
-            alert(response.msg);
-            $form.get(0).reset();
-            $('button[type=submit]').text('Submit');
-          }
-        },
-        error: function error(_error) {
-          $('button[type=submit]').text('Submit');
-          alert('error');
-        }
-      });
-      return false; // Will stop the submission of the form
-    },
-    onModulesLoaded: function onModulesLoaded() {
-      $('#alamat').restrictLength($('#maxlength'));
-    }
-  }); // Callendar Event
-
-  $('#tl-container input#tl').datepicker({
-    clearBtn: true,
-    forceParse: false,
-    calendarWeeks: true,
-    autoclose: true,
-    format: 'dd/mm/yyyy',
-    todayHighlight: true,
-    toggleActive: true
-  }); // API 
-
-  $('#nohp').mask('0000-0000-0000', {
-    placeholder: "____   -   ____   -  ____",
-    selectOnFocus: true
-  });
-  $('#tl').mask('00/00/0000', {
-    placeholder: "__/__/____"
-  }); // Image Preview
-
-  function readURL(input, $element) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function (e) {
-        $($element).attr('src', e.target.result);
-      };
-
-      reader.readAsDataURL(input.files[0]); // convert to base64 string
-    }
-  }
-
-  $("input[name='photo_pic']").change(function () {
-    readURL(this, $('img.photo_pic'));
-  });
-  $("input[name='photo_ktp']").change(function () {
-    readURL(this, $('img.photo_ktp'));
-  });
-});
+// $(document).ready(function() {
+// function suksesLogin(response) {
+//     $('#content2').notifyModal({
+//         duration : 3500,
+//         placement : 'centerTop',
+//         overlay : true,
+//         type : 'simple',
+//         icon: false,
+//         onLoad : function(el) {
+//             el.find(".content_inner").html(response.pesan);
+//         },
+//         onClose : function(el) {
+//             if(response.valid == true) {
+//                 window.location.href = response.redirect;
+//             } 
+//             $form.get(0).reset();
+//         }
+//     });
+//   }
+// function errorLogin(error) {
+// $('#content2').notifyModal({
+//     duration : 2500,
+//     placement : 'center',
+//     overlay : true,
+//     type : 'dark',
+//     icon: false,
+//     onLoad : function(el) {
+//         el.find(".content_inner").html("Oppss! sepertinya ada kesalaah nih, coba reload browser kamu");
+//     },
+//     onClose : function(el) {}
+// });
+// }
+// $.validate({
+//     form: '#form_login',
+//     lang : 'en',
+//     showErrorDialogs : true,
+//     modules : 'security, html5, sanitize',
+//     onError : function($form) {
+//         $('#content2').notifyModal({
+//             duration : 2500,
+//             placement : 'center',
+//             overlay : true,
+//             type : 'danger', //simple, dark
+//             icon: false,
+//             onLoad : function(el) {
+//                 el.find(".content_inner").html('Validation of form failed!');
+//             },
+//             onClose : function(el) {
+//                 $form.get(0).reset();
+//             }
+//         });
+//     },
+//     onSuccess : function($form) {
+//       var _action = $form.attr('action');
+//       var _method = $form.attr('method');
+//       var _data   = $form.serialize();
+//       $.ajax({
+//         url: _action,
+//         method: _method,
+//         data: _data,
+//         dataType: 'json',
+//         success: suksesLogin,
+//         error: errorLogin,
+//       });
+//       return false; // Will stop the submission of the form
+//       $form.removeClass('toggle-disabled');
+//     }
+//   });
+// });
+"use strict";
 "use strict";
 
 var h = new Date().getHours();
@@ -397,7 +458,7 @@ function explore() {
 
 $(document).ready(function () {
   // get all berita
-  var limit = 8;
+  var limit = 7;
   var start = 0;
   var action = "inactive";
 
@@ -405,7 +466,7 @@ $(document).ready(function () {
     var output = "";
 
     for (var count = 0; count < 1; count++) {
-      output += "\n                <div class=\"card border-0 shadow-sm\">\n                    <div class=\"card-header border-0 bg-white\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style = \"width:100%; height: 300px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 30px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 50px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer text-muted p-3 bg-transparent\" >\n                     <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
+      output += "\n                <div class=\"card border border-light shadow-sm\">\n                    <div class=\"card-header border-0 bg-white\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style = \"width:100%; height: 300px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 30px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 50px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer text-muted p-3 bg-transparent\" >\n                     <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
     }
 
     $("#load_data_message").html(output);
@@ -472,44 +533,40 @@ $(document).ready(function () {
     }
   });
 });
+// $(document).ready(function () {
+// // Instagram
+// function nFormatter(num) {
+// 	if (num >= 1000000000) {
+// 		return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "G";
+// 	}
+// 	if (num >= 1000000) {
+// 		return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+// 	}
+// 	if (num >= 1000) {
+// 		return (num / 1000).toFixed(1).replace(/\.0$/, "") + "K";
+// 	}
+// 	return num;
+// }
+// var instagram_user = $("a.btn-instagram").attr("data-username");
+// $.ajax({
+// 	url: "https://www.instagram.com/" + instagram_user + "/?__a=1",
+// 	type: "get",
+// 	success: function (response) {
+// 		console.log(response);
+// 		// var username = response.graphql.user.username;
+// 		// var profile_pic = response.graphql.user.profile_pic_url;
+// 		// var followers = response.graphql.user.edge_followed_by.count;
+// 		// var follow = response.graphql.user.edge_follow.count;
+// 		// $("p.instagram-biograpy").html(response.graphql.user.biography);
+// 		// $("a.btn-follow").attr("href", `https://www.instagram.com/${username}/`);
+// 		// $("p.instagram-user").html(`<b>@${username}</b>`);
+// 		// $("img.profile-pic").attr("data-src", profile_pic);
+// 		// $("span.count_ig").html(followers);
+// 		// $("span.count_ig_follow").html(follow);
+// 	},
+// });
+// });
 "use strict";
-
-$(document).ready(function () {
-  // Instagram
-  function nFormatter(num) {
-    if (num >= 1000000000) {
-      return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "G";
-    }
-
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
-    }
-
-    if (num >= 1000) {
-      return (num / 1000).toFixed(1).replace(/\.0$/, "") + "K";
-    }
-
-    return num;
-  }
-
-  var instagram_user = $("a.btn-instagram").attr("data-username");
-  $.ajax({
-    url: "https://www.instagram.com/" + instagram_user + "?__a=1",
-    type: "get",
-    success: function success(response) {
-      var username = response.graphql.user.username;
-      var profile_pic = response.graphql.user.profile_pic_url;
-      var followers = response.graphql.user.edge_followed_by.count;
-      var follow = response.graphql.user.edge_follow.count;
-      $("p.instagram-biograpy").html(response.graphql.user.biography);
-      $("a.btn-follow").attr("href", "https://www.instagram.com/".concat(username, "/"));
-      $("p.instagram-user").html("<b>@".concat(username, "</b>"));
-      $("img.profile-pic").attr("data-src", profile_pic);
-      $("span.count_ig").html(followers);
-      $("span.count_ig_follow").html(follow);
-    }
-  });
-});
 "use strict";
 
 $(document).ready(function () {
@@ -623,18 +680,17 @@ $(function () {
     elements: false
   };
 });
+// $(document).ready(function () {
+// 	var rellax = new Rellax(".rellax", {
+// 		speed: -3,
+// 		center: false,
+// 		wrapper: null,
+// 		round: true,
+// 		vertical: true,
+// 		horizontal: false,
+// 	});
+// });
 "use strict";
-
-$(document).ready(function () {
-  var rellax = new Rellax(".rellax", {
-    speed: -3,
-    center: false,
-    wrapper: null,
-    round: true,
-    vertical: true,
-    horizontal: false
-  });
-});
 "use strict";
 
 $(document).ready(function () {
@@ -653,36 +709,27 @@ $(document).ready(function () {
 var _uri = window.location.origin + "/smartsite";
 
 var _uriSegment = window.location.pathname.split('/');
+// $(document).ready(function () {	
+//   	$('#sidebar, .post-list-view, .banner-list, .public_profile_menus, .ig-profile').sticky({
+//   		topSpacing: 60, //80
+//   		bottomSpacing: 60
+//   	});
+// 	// var prevScrollpos = window.pageYOffset;
+// 	// window.onscroll = function () {
+// 	// 	var currentScrollPos = window.pageYOffset;
+// 	// 	if (prevScrollpos > currentScrollPos) {
+// 	// 		document.getElementById("navbar").style.top = "0";
+// 	// 	} else {
+// 	// 		document.getElementById("navbar").style.top = "-65px";
+// 	// 	}
+// 	// 	prevScrollpos = currentScrollPos;
+// 	// }
+// });
 "use strict";
-
-$(document).ready(function () {
-  var stickySidebar = $.fn.stickySidebar.noConflict(); // Returns $.fn.stickySidebar assigned value.
-
-  $.fn.stickySidebar = stickySidebar; // Give $().stickySidebar functionality.
-
-  $('#sidebar, .post-list-view, .banner-list, .public_profile_menus, .ig-profile').stickySidebar({
-    topSpacing: 80,
-    //80
-    bottomSpacing: 30,
-    resizeSensor: true,
-    stickyClass: 'is-affixed',
-    minWidth: 0
-  }); // var prevScrollpos = window.pageYOffset;
-  // window.onscroll = function () {
-  // 	var currentScrollPos = window.pageYOffset;
-  // 	if (prevScrollpos > currentScrollPos) {
-  // 		document.getElementById("navbar").style.top = "0";
-  // 	} else {
-  // 		document.getElementById("navbar").style.top = "-65px";
-  // 	}
-  // 	prevScrollpos = currentScrollPos;
-  // }
-});
+// $(document).ready(function () {
+//   $(".titleModal").titleModal({});
+// });
 "use strict";
-
-$(document).ready(function () {
-  $(".titleModal").titleModal({});
-});
 "use strict";
 
 $(document).ready(function () {
@@ -727,12 +774,15 @@ function listdetail() {
 "use strict";
 
 $(document).ready(function () {
+  // $(".js-nipnama").mask('00000000 000000 0 000');
+  // 19610202 199003 1 014
   $.typeahead({
     input: '.js-nipnama',
     minLength: 12,
+    maxLength: false,
     order: "asc",
     maxItem: 1,
-    cache: true,
+    cache: false,
     offset: false,
     hint: true,
     searchOnFocus: true,

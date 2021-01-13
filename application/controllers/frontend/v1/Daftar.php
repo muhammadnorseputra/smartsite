@@ -20,12 +20,9 @@ class Daftar extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Formulir Pendaftaran.',
-            'isi' => 'Frontend/v1/pages/f_daftar',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
-            'mf_menu' => $this->mf_beranda->get_menu(),
         ];
-        $this->load->view('Frontend/v1/layout/wrapper', $data, false);
+        $this->load->view('Frontend/v1/pages/f_daftar', $data, false);
     }
 
     public function check_email()

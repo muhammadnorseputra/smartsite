@@ -17,10 +17,7 @@ class Users extends CI_Controller {
             redirect(base_url('theme/maintenance_site'),'refresh');
         }
 	}
-	public function index()
-	{
-		
-	}
+	
 	
 	public function verify($nohp) {
 		if(isset($nohp)) {
@@ -46,25 +43,18 @@ class Users extends CI_Controller {
         ];
         $this->load->view('Frontend/v1/layout/wrapper', $data);
     }
-
-    public function login($validate='') {
-			
-    	if(empty($validate)) {
-			$status = $_GET['msg'];
-	    	$data = [
-	            'title' => 'Login',
-	            'isi' => 'Frontend/v1/pages/f_login',
-	            'mf_beranda' => $this->mf_beranda->get_identitas(),
-	            'mf_menu' => $this->mf_beranda->get_menu(),
-	        ];
-	        if(($this->session->userdata('online') == 'OFF') || isset($status) == 'logindulu') {
-	        	$this->load->view('Frontend/v1/layout/wrapper', $data);
-	        } else {
-	    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('nama_panggilan').'/'.encrypt_url($this->session->userdata('nohp'))),'refresh');
-	    	}
-    	} 
-
-    	if($validate == 'checkAkun') {
+	public function login()
+	{
+		$data = [
+            'mf_beranda' => $this->mf_beranda->get_identitas()
+		];
+        if($this->session->userdata('online') == 'OFF' || empty($this->session->userdata('online'))) {
+        	$this->load->view('Frontend/v1/pages/f_login', $data);
+        } else {
+    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('nama_panggilan').'/'.encrypt_url($this->session->userdata('nohp'))),'refresh');
+    	}
+	}
+    public function cek_akun() {
     		$captcha = $this->input->post('captcha');
 	        $sess_captcha = $this->session->userdata('captcha');
 	        $sess_login = $this->input->post('session_login');
@@ -99,11 +89,10 @@ class Users extends CI_Controller {
 					'pesan' => "<div class='d-block mx-auto text-center'>Login berhasil, akun ditemukan ...</div>", 
 					'redirect' => base_url("frontend/v1/users/akun/".decrypt_url($q->nama_panggilan)).'/'.$q->nohp);
 			}else{
-				$msg = array('valid' => false, 'pesan' => "Username dan password salah atau tidak terdaftar !");
+				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar");
 			}
 			echo json_encode($msg);
 			}
-    	}
     }
 
     public function akun($nama_panggilan, $nohp) 

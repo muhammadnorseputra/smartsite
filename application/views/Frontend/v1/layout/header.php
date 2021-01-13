@@ -52,7 +52,7 @@
 			<i class="fas fa-angle-down mx-2"></i>
 			</button>
 			<?php } else { ?>
-			<button type="button" class="btn shadow-sm btn-primary my-2 my-sm-0 mr-2 px-4 btn-login animated fadeIn" data-location="<?= base_url('frontend/v1/beranda/f_login'); ?>">
+			<a  class="btn shadow btn-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/users/login'); ?>">
 			<i class="far fa-user mr-2"></i> Login
 			</button>
 			<?php } ?>

@@ -4,10 +4,11 @@ function explore() {
 		block: "start"
 	})
 }
+
 $(document).ready(function () {
 	
 	// get all berita
-	var limit = 8;
+	var limit = 7;
 	var start = 0;
 	var action = "inactive";
 
@@ -15,7 +16,7 @@ $(document).ready(function () {
 		var output = "";
 		for (var count = 0; count < 1; count++) {
 			output += `
-                <div class="card border-0 shadow-sm">
+                <div class="card border border-light shadow-sm">
                     <div class="card-header border-0 bg-white">
                     <p>
                     <span class="content-placeholder rounded-circle float-left mr-3" style="width:50px; height: 50px;">&nbsp;</span>

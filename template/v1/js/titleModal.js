@@ -1,3 +1,3 @@
-$(document).ready(function () {
-  $(".titleModal").titleModal({});
-});
+// $(document).ready(function () {
+//   $(".titleModal").titleModal({});
+// });
