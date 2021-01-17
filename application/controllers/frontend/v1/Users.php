@@ -117,6 +117,20 @@ class Users extends CI_Controller {
 			return $this->load->view('Frontend/v1/pages/u_akun_user');
 		}
 
+		public function postDisukai($iduserportal) 
+		{
+			$id 	= decrypt_url($iduserportal);
+			$data 	= $this->posts->disukai($id)->result();
+			return $this->load->view('Frontend/v1/pages/u_akun_postingan_disukai', ['id' => $id, 'datas' => $data]);
+		}
+
+		public function postDisimpan($iduserportal) 
+		{
+			$id 	= decrypt_url($iduserportal);
+			$data 	= $this->posts->disimpan($id)->result();
+			return $this->load->view('Frontend/v1/pages/u_akun_postingan_disimpan', ['id' => $id, 'datas' => $data]);
+		}
+
 		public function halamanstatis($id)
 		{
 			$data = [
@@ -126,6 +140,19 @@ class Users extends CI_Controller {
 			return $this->load->view('Frontend/v1/pages/u_akun_halaman', $data);
 		}
 
+		public function halamanlink() {
+			$data = [
+				'data_submenu' => $this->users->getsubmenu()->result()
+			];
+
+			return $this->load->view('Frontend/v1/pages/u_akun_halaman_link', $data);
+		}
+
+		public function getsubmenubyid() {
+			$id = $this->input->get('id');
+			$q = $this->db->get_where('t_submenu', ['idsub' => $id])->row();
+			echo json_encode($q);
+		}
 		public function get_all_halamanstatis()
 		{
 		// parameter
@@ -140,8 +167,8 @@ class Users extends CI_Controller {
 								    <i class="material-icons m-0 py-1">more_vert</i>
 								  </button>
 								  <div class="dropdown-menu" aria-labelledby="dLabel">
-								    <a class="dropdown-item text-muted" href="'.base_url('frontend/v1/halaman/halamanstatis/edit?token='.$h->token_halaman).'"><i class="fas fa-edit mr-2"></i> Edit</a>
-									<a id="btn-hapus" data-id="' . $h->token_halaman . '" class="dropdown-item text-muted" href="#"><i class="fas fa-trash mr-2 text-danger"></i> Hapus</a>
+								    <a class="dropdown-item rounded-pill text-primary" href="'.base_url('frontend/v1/halaman/halamanstatis/edit?token='.$h->token_halaman).'"><i class="fas fa-edit mr-2"></i> Edit</a>
+									<a id="btn-hapus-halaman" data-id="' . $h->token_halaman . '" class="dropdown-item  rounded-pill text-danger" href="#"><i class="fas fa-trash mr-2 text-danger"></i> Hapus</a>
 								  </div>
 								</div>';
 
@@ -150,6 +177,7 @@ class Users extends CI_Controller {
 			$row[] = $no;
 			$row[] = $btnAksi;
 			$row[] = $h->title;
+			$row[] = $h->token_halaman;
 
 			$data[] = $row;
 		}
@@ -188,8 +216,8 @@ class Users extends CI_Controller {
 								    <i class="material-icons m-0 py-1">more_vert</i>
 								  </button>
 								  <div class="dropdown-menu" aria-labelledby="dLabel">
-								    <a class="dropdown-item text-muted" href="'.base_url('frontend/v1/post/postDetail/'.encrypt_url($p->id_berita)).'"><i class="fas fa-edit mr-2"></i> Edit</a>
-									<a id="btn-hapus" data-id="' . $p->id_berita . '" class="dropdown-item text-muted" href="#"><i class="fas fa-trash mr-2 text-danger"></i> Hapus</a>
+								    <a class="dropdown-item text-muted rounded-pill" href="'.base_url('frontend/v1/post/postDetail/'.encrypt_url($p->id_berita)).'"><i class="fas fa-edit mr-2"></i> Edit</a>
+									<a id="btn-hapus" data-id="' . $p->id_berita . '" class="dropdown-item text-muted rounded-pill" href="#"><i class="fas fa-trash mr-2 text-danger"></i> Hapus</a>
 								  </div>
 								</div>' : '<button title="Draf" class="btn btn-dark p-1 text-warning" disabled>D</button>';
 

@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 		function preloadModule()
 		{
-			$container.html(`<p class="d-block my-5"><img class="d-block mx-auto my-md-5 py-md-5" width="40" src="${_uri}/bower_components/SVG-Loaders/svg-loaders/vtree.svg"></p>`);
+			$container.html(`<div id="loader" class="m-2"></div> `);
 		}
 	})
 });

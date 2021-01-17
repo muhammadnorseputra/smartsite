@@ -3,7 +3,6 @@
 [data-theme="dark"] .modal-content {
   background: #222 !important;
   color: #eee;
-  box-shadow: 0 0 1em #000;
 }
 [data-theme="dark"] .dropdown-menu {
   background-color: #222;
@@ -19,7 +18,9 @@
 	color: #666;
 }
 
-[data-theme="dark"] .bg-white {
+[data-theme="dark"] .card-footer,
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .loader-center {
   background-color: #333 !important;
 }
 
@@ -34,7 +35,7 @@
   border-color:  #333 !important;
   color:  #eee;
 }
-[data-theme="dark"] .card-footer,
+
 [data-theme="dark"] section.h-statis-detail {
 	background-color: #222 !important;
 }
@@ -42,7 +43,7 @@
   background-color: #eee !important;
 }
 [data-theme="dark"] .navbar-light .navbar-nav .nav-link {
-	color: #666 !important;
+	color: #bbe1fa !important;
 }
 
 [data-theme="dark"] .border,
@@ -50,7 +51,13 @@
 [data-theme="dark"] .border-top,
 [data-theme="dark"] .border-left,
 [data-theme="dark"] .border-right,
-[data-theme="dark"] .border-bottom
+[data-theme="dark"] .border-bottom,
+[data-theme="dark"] .dropdown-divider
  {
  	border-color: #444 !important;
+ }
+ @media (max-width: 620px) {
+  [data-theme="dark"] ul.navbar-nav  {
+    background-color: #222 !important;
+  }
  }

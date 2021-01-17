@@ -39,31 +39,44 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
               </div>
               <div class="w-100 my-4"></div>
               <div class="row">
-                <div class="col-md-4 border-top">
+                <div class="col-md-4">
                   <div id="sidebar" class="sidebar">
-                    <!-- <h5 class="my-3 font-weight-bold title-sidebar">Menu</h5> -->
-                    <div class="list-group">
-                      <li class="list-group-item disabled px-2 rounded bg-transparent border-0 border-light" aria-disabled="true">Menu</li>
-                      <a href="<?= $profileLink ?>" class="list-group-item list-group-item-action px-2 rounded border-0 border-light bg-secondary text-white rippler rippler-default"><i class="fas fa-user float-right" aria-hidden="true"></i> Profile</a>
-                      <a href="<?= $sukaLink ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default"><i class="fas fa-thumbs-up float-right" aria-hidden="true"></i> Disukai</a>
-                      <a href="<?= $halamanLink ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default"><i class="fas fa-newspaper float-right" aria-hidden="true"></i> Halaman</a>
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="list-group">
-                      <li class="list-group-item disabled px-2 rounded bg-transparent border-0 border-light" aria-disabled="true">Kategori Populer</li>
-                                <?php
-                                foreach ($mf_kategori as $k) :
-                                $post_list_url = base_url('frontend/v1/post_list/views/' . encrypt_url($k->id_kategori) . '/' . url_title($k->nama_kategori) . '?order=desc');
-                                ?>
-                                <a href="<?php echo $post_list_url ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default">#<?= $k->nama_kategori; ?> <span class="badge badge-dark float-right"><?= $this->mf_beranda->count_kategori_berita($k->id_kategori); ?></span> </a>
-                                <?php endforeach; ?>
-                                <li class="list-group-item text-center list-group-item list-group-item-action px-2 rounded border-0 border-light bg-transparent rippler rippler-default">
-                                    <a href="#"><i class="fas fa-plus mr-2"></i> Lebih banyak</a>
-                                </li>
+                    <h5 class="my-3 font-weight-bold text-dark title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-heart text-danger mr-2"></i>Paling Disukai</span></h5>
+                  <div class="list-group border shadow-sm">
+                        <?php
+                        $nolist = 1;
+                        foreach ($mf_berita_populer as $b) :
+                        $id = encrypt_url($b->id_berita);
+                        $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($b->created_by))));
+                        $judul = strtolower($b->judul);
+                        $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
+                        if(empty($b->img)):
+                        $img = '<img class="rounded lazy pull-left w-50" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
+                        else:
+                        $img = '<img class="rounded align-self-center lazy pull-left w-50 mr-2 shadow-sm border-light" data-src="'.$b->path.'" alt="'.$b->judul.'">';
+                        endif;
+                        ?>
+                        <a  href="<?= $posturl; ?>" class="list-group-item list-group-item-action border-bottom-0 py-1">
+                            <div class="media m-0">
+                                <?= $img ?>
+                                <div class="media-body">
+                                    <small class="font-weight-bold"><?= character_limiter($b->judul, 25); ?></small>
+                                    <small class="d-block align-middle text-left">
+                                    <i class="fa fa-like"></i> <?= $b->like_count ?> Likes </small>
+                                    </small>
+                                </div>
                             </div>
+                            
+                            <br>
+                            
+                        </a>
+                        <?php $nolist++; endforeach; ?>
+                    </div>
+
                   </div>
                 </div>
                 <div class="col-md-8">
+                  <h5 class="my-3 font-weight-bold text-dark title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-quote-left text-danger mr-2"></i>Postingan Terbaru</span></h5>
                   <div id="load_data_profile"></div>
                   <div id="load_data_message_profile"></div>
                 </div>
@@ -72,43 +85,24 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
             <div class="col-md-3">
               <div id="sidebar" class="sidebar">
                 <div class="my-auto mx-auto">
-                  <div class="card mb-3 gradient-primary shadow-md">
-                    <div class="card-body text-light py-5">
-                      <!-- <h2 class="text-center text-light"><i class="fab fa-instagram"></i></h2> -->
-                      <p class="text-center">
-                        <img data-src="" width="80" height="80" class="rounded-circle profile-pic mx-auto lazy">
-                      </p>
-                      <p class="text-center instagram-user"></p>
-                      <p class="font-weight-light text-center">Anda dapat juga mengikuti kami, melalui instagram</p>
-                      <p class="text-center mt-2 text-light">
-                        <a href="#" target="_blank" class="btn btn-outline-light px-5 btn-follow"><i class="fab fa-instagram"></i> Follow</a>
-                      </p>
-                      <p class="text-center">
-                        <i class="fas fa-user-circle mr-1"></i> <span class="count_ig mr-4"></span>
-                        &#124;
-                        <i class="fas fa-users ml-4"></i> <span class="count_ig_follow"></span>
-                      </p>
+                  
+                    <!-- <h5 class="my-3 font-weight-bold title-sidebar">Menu</h5> -->
+                    <div class="list-group">
+                      <h6 class="my-3 font-weight-bold text-dark title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-user text-danger mr-2"></i>Menus</span></h6>
+                      <a href="<?= $profileLink ?>" class="list-group-item list-group-item-action px-2 rounded border-0 border-light bg-secondary text-white rippler rippler-default"><i class="fas fa-user float-right" aria-hidden="true"></i> Profile</a>
+                      <a href="<?= $sukaLink ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default my-2"><i class="fas fa-thumbs-up float-right" aria-hidden="true"></i> Disukai</a>
+                      <a href="<?= $halamanLink ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default"><i class="fas fa-newspaper float-right" aria-hidden="true"></i> Halaman</a>
                     </div>
-                  </div>
-                  <h5 class="font-weight-bold title-sidebar"><i class="fas fa-heart text-danger mr-2"></i> Paling banyak disukai</h5>
-                  <div class="list-group border-0">
-                    <?php
-                    $nolist = 1;
-                    foreach ($mf_berita_populer as $b) :
-                    $id = encrypt_url($b->id_berita);
-                    $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($b->created_by))));
-                    $judul = strtolower($b->judul);
-                    $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
-                    ?>
-                    <a id="item-populer-post" idp="<?= $id ?>" urlpost="<?= base_url('frontend/v1/post/listdetail') ?>" href="<?= $posturl; ?>" class="list-group-item bg-white list-group-item-action border-light py-3 border-bottom-0">
-                      <span class=" text-primary"><?= character_limiter($b->judul, 25); ?></span> <br>
-                      <span class="d-block align-middle badge badge-default text-left px-0">
-                        <?= $b->views ?> views,  <?= $this->komentar->jml_komentarbyidberita($id) ?> comments
-                        <span class="float-right d-inline-block"><?= $b->share_count ?> Share</span>
-                      </span>
-                    </a>
-                    <?php $nolist++; endforeach; ?>
-                  </div>
+                    <div class="w-100"></div>
+                    <div class="list-group">
+                      <h6 class="my-3 font-weight-bold text-dark title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-list text-danger mr-2"></i>Kategori</span></h6>
+                                <?php
+                                foreach ($mf_kategori as $k) :
+                                $post_list_url = base_url('frontend/v1/post_list/views/' . encrypt_url($k->id_kategori) . '/' . url_title($k->nama_kategori) . '?order=desc');
+                                ?>
+                                <a href="<?php echo $post_list_url ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default my-1">#<?= $k->nama_kategori; ?> <span class="badge badge-dark float-right"><?= $this->mf_beranda->count_kategori_berita($k->id_kategori); ?></span> </a>
+                                <?php endforeach; ?>
+                            </div>
                 </div>
               </div>
             </div>
@@ -119,9 +113,6 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
     </div>
   </section>
 
-<div class="text-center mx-auto fixed-bottom">
-    <button type="button" title="Back to top" class="btn shadow btn-primary-old my-3 text-center rounded-circle btn-backtop rippler rippler-inverse"><i class="fas fa-arrow-up"></i></button>
-</div>
 <script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
   <style>
   .grid-item {
@@ -138,7 +129,7 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
   var output = "";
   for (var count = 0; count < 1; count++) {
   output += `
-  <img class="mx-auto d-block" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/tail-spin.svg'); ?>">
+      <div id="loader" class="my-5 mx-auto"></div> 
   `;
   }
   $("#load_data_message_profile").html(output);
@@ -207,5 +198,3 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
   });
   });
   </script>
-  <script src="<?= base_url('bower_components/masonry-layout/dist/masonry.pkgd.min.js'); ?>"></script>
-  <script src="<?= base_url('bower_components/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>

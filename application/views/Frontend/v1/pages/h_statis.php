@@ -26,13 +26,14 @@
         if ($detail->num_rows() > 0) :
           $h = $detail->row();
         ?>
-            <?= $h->content ?>
+        <object data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:350px; width: 100%;"></object>
+        <?= $h->content ?>
         <?php else : ?>
           <img class="d-block mx-auto mb-2 mt-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/page-not-found.svg') ?>">
           <p>
-            <h4 class="text-center">Halaman Kosong!</h4>
+            <h4 class="text-center">Halaman tidak ditemukan!</h4>
             <p class="text-center font-weight-light">
-              Ops, halaman yang kamu cari tidak ditemukan, <br> mungkin ini salah kami yang masih kekurangan halaman.
+              Ops, halaman yang kamu cari tidak ditemukan.
             </p>
           </p>
         <?php endif; ?>

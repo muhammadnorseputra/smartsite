@@ -117,7 +117,7 @@ class Daftar extends CI_Controller
                 
                 //Send mail 
                 if($this->email->send()){
-                $this->session->set_flashdata("notif","Email verifikasi berhasil dikirim."); 
+                    $this->session->set_flashdata("notif","Email verifikasi berhasil dikirim."); 
                     // daftarkan akun ke database
                     $this->daftar->send_akun('t_users_portal', $data);
                     // Simpan gambar di website
@@ -128,7 +128,7 @@ class Daftar extends CI_Controller
                     // }
                     // $this->session->set_flashdata('photo_msg', $msg);
                 }else {
-                $this->session->set_flashdata("notif","Email verifikasi gagal dikirim.");  
+                    $this->session->set_flashdata("notif","Email verifikasi gagal dikirim.");  
                 } 
                 // Message success regitered
                 $msg = array('valid' => true, 'msg' => 'Register Berhasil', 'data' => $data);
@@ -144,12 +144,10 @@ class Daftar extends CI_Controller
     public function register_status()
     {
         $data = [
-            'title' => 'Register Status.',
-            'isi' => 'Frontend/v1/pages/f_daftar_status',
+            'title' => 'Portal | Status Registered',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
-            'mf_menu' => $this->mf_beranda->get_menu(),
         ];
-        $this->load->view('Frontend/v1/layout/wrapper', $data, false);
+        $this->load->view('Frontend/v1/pages/reg_status', $data, false);
     }
 }
 

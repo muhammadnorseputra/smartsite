@@ -2,13 +2,13 @@
 <nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light">
 	<div class="container">
 		<a class="navbar-brand" href="#">
-			<?php echo '<img class="lazy animated fadeIn" data-src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="25"/>'; ?>
+			<?php echo '<img class="lazy" data-src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="25"/>'; ?>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto animated fadeIn">
+			<ul class="navbar-nav mr-auto p-md-0 p-2">
 				<?php
 				$menu = $mf_menu;
 				foreach ($menu as $m) :
@@ -47,10 +47,13 @@
 			$getImg = $this->mf_users->get_userportal_byid($idSes)->photo_pic;
 			$img = '<img class="rounded mr-1 shadow-sm" width="23" src="data:image/jpeg;base64,'.base64_encode( $getImg ).'"/>';
 			?>
-			<button type="button" data-menus="<?= base_url('frontend/v1/beranda/f_menus'); ?>" class="btn btn-outline-light text-muted my-2 my-sm-0 mr-2 btn-menus animated fadeIn">
-			<?= $img ?> <?= ucfirst($this->session->userdata('nama_panggilan')) ?>
-			<i class="fas fa-angle-down mx-2"></i>
-			</button>
+			<div class="dropdown">
+				<button type="button" class="btn btn-outline-dark text-muted my-2 my-sm-0 mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<?= $img ?> <?= ucfirst($this->session->userdata('nama_panggilan')) ?>
+				<i class="fas fa-angle-down mx-2"></i>
+				</button>
+				 <?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
+			</div>
 			<?php } else { ?>
 			<a  class="btn shadow btn-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/users/login'); ?>">
 			<i class="far fa-user mr-2"></i> Login
@@ -75,14 +78,42 @@
 	</div>
 </nav>
 
+<!-- Modal -->
+<div class="modal" id="mpostseacrh" tabindex="-1" role="dialog" aria-labelledby="mpostseacrhLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mpostseacrhLabel">Cari Postingan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?= form_open(base_url('frontend/v1/post/search'), ['id' => 'form_post_search','class' => 'form-inline']); ?>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-search"></i></div>
+                </div>
+                <input type="text" name="q" class="form-control form-control-lg" id="search" placeholder="Masukan kata kunci...">
+				<button type="submit" class="btn btn-outline-info ml-2">Cari</button>
+                  
+              </div>
+        <?= form_close() ?>
+        <hr>
+        <div id="search-result"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Navbar For Mobile -->
 <!-- modal notice sigin-->
-<div class="modal fade" id="noticeSigin" tabindex="-1" role="dialog" aria-labelledby="noticeSiginTitle" aria-hidden="true" data-backdrop="static">
+<div class="modal" id="noticeSigin" tabindex="-1" role="dialog" aria-labelledby="noticeSiginTitle" aria-hidden="true" data-backdrop="static">
 	<div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
-		<div class="modal-content border-0 shadow p-0">
+		<div class="modal-content border-0 shadow-lg p-0">
 			<div class="modal-header border-light">
-				<h6 class="modal-title" id="exampleModalLongTitle">Authentication</h6>
+				<h6 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-lock"></i> Authentication</h6>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 				</button>
@@ -94,9 +125,9 @@
 							<img src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/undraw_access_account_99n5.svg') ?>" alt="" class="d-block align-middle img-fluid mx-auto my-auto">
 						</div>
 						<div class="col-md-6">
-							<h3>Login dulu ya!</h3>
+							<h3>Login dulu ya</h3>
 							<p class="text-muted">
-								Halo, selamat datang di websites kami. Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kab. Balangan. Kamu harus login dahulu sebelum menggunakan fitur :
+								Kamu harus login dahulu sebelum menggunakan fitur :
 							</p>
 							<ul class="list-unstyled">
 								<li>
@@ -115,7 +146,7 @@
 									<i class="far fa-check-circle text-primary mb-2 mr-2"></i> Ikut diskusi publik
 								</li>
 							</ul>
-							<button type="button" class="btn btn-primary rounded-0 btn-block" data-dismiss="modal">OKE</button>
+							<button type="button" class="btn btn-primary btn-block" data-dismiss="modal">OKE</button>
 							<p class="d-block mx-auto text-center my-3">
 								Belum punya akun? <a href="<?= base_url('frontend/v1/daftar') ?>">daftar disini.</a>
 							</p>

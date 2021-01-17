@@ -69,7 +69,7 @@ $(document).ready(function () {
 			success: function (data) {
 				if (data.html == "") {
 					$("#load_data_message").html(
-						`<div class="card border-0 shadow-sm mb-5">
+						`<div class="card border-0 bg-white shadow-sm mb-5">
                             <div class="card-body text-danger text-center">
                             <img src="${_uri}/template/v1/img/humaaans-3.png" alt="croods" class="img-fluid rounded">
                                 <h5 class="card-title">Yahhh! abis</h5>  
@@ -102,7 +102,7 @@ $(document).ready(function () {
 				}
 			},
 			error: function (xhr) {
-				alert("Mohon tunggu...");
+				alert("Error dalam meload berita, created_by tidak ditemukan.");
 			},
 		});
 	}
@@ -124,5 +124,46 @@ $(document).ready(function () {
 				load_data(limit, start);
 			}, 300);
 		}
+	});
+
+	$("button#caripost").on("click", function() {
+		$("#mpostseacrh").modal('show');
+		$("input[name='q']").focus();
+	});
+
+	$("#form_post_search").on("submit", function(e) {
+		e.preventDefault();
+		let _this = $(this);
+		let _input = _this[0].q;
+		let _container = $("#search-result");
+
+		if(_input.value == '') {
+			_container.html('<h3 class="mx-auto text-center text-secondary">Data Not Found</h3>');
+		} 
+
+		function lazzy() {
+			_container.html('<div id="loader" class="mx-auto my-5"></div>');
+		}
+
+		if(_input.value.length > 3) {
+			$.ajax({
+				url: _this[0].action,
+				method: "POST",
+				data: {
+					q: _input.value
+				},
+				cache: false,
+				dataType: "html",
+				beforeSend: lazzy,
+				timeout: 1000,
+				success: function (data) {
+					_container.html(data);
+				},
+				error: function (xhr) {
+					alert('error function');
+				},
+			});
+		}
+		// console.log(_this[0].action);
 	});
 });

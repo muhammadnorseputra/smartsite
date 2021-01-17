@@ -32,14 +32,13 @@ class M_f_beranda extends CI_Model
         $this->db->where(['t_banner.publish' => 'Y',
                           'ref_jns_banner.jenis' => $jns_banner,
                           'ref_jns_banner.posisi' => $posisi, ]);
-        $this->db->order_by('t_banner.id_banner', 'RANDOM');
+        $this->db->order_by('t_banner.id_banner');
         $this->db->limit(1, 0);
         $this->db->group_by('t_banner.id_banner');
         $q = $this->db->get();
         if ($q->num_rows() > 0) {
             $b = $q->row();
             $data = [$b->path, $b->judul, $b->url, $b->upload_by];
-
             return $data;
         }
     }
@@ -132,7 +131,7 @@ class M_f_beranda extends CI_Model
     {
         $this->db->where('like_count !=', '0');
         $this->db->order_by('like_count', 'desc');
-        $q = $this->db->get('t_berita', 12, 0);
+        $q = $this->db->get('t_berita', 6, 0);
 
         return $q->result();
     }

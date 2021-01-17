@@ -64,7 +64,7 @@ gulp.task("vendor-js", function () {
 			// "bower_components/jquery-mask-plugin/dist/jquery.mask.min.js",
 			"bower_components/jquery-form-validator/form-validator/jquery.form-validator.min.js",
 			// "bower_components/aos/dist/aos.js",
-			"assets/plugins/pace/pace.min.js",
+			// "assets/plugins/pace/pace.min.js",
 			// "assets/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js",
 			// "assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
 		])

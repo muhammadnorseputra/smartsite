@@ -16,13 +16,13 @@
 		<section class="login">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-4 offset-1" id="sidebar">
-						<div class="px-5 pt-4">
-							<div class="logo">
+					<div class="col-xs-12 col-md-4 offset-md-1" id="sidebar">
+						<div class="px-2 px-md-5 pt-4">
+							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="45"/>'; ?>
 							</div>
-							<h3 class="font-weight-bold mb-5 mt-5">Log In</h3> <?= $this->session->userdata('nama_panggilan') ?>
-							<?= form_open(base_url('frontend/v1/users/cek_akun'), ['autocomplete' => 'off', 'id' => 'f_login'], ['session_login' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
+							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Log In</h3> <?= $this->session->userdata('nama_panggilan') ?>
+							<?= form_open(base_url('frontend/v1/users/cek_akun'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="email">Email</label>
 								<input type="email" data-sanitize="trim,lower" class="form-control mb-2" name="email" id="email" placeholder="mail@website.com" required="required">
@@ -62,7 +62,7 @@
 							
 						</div>
 					</div>
-					<div class="col-7" id="content"></div>
+					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content"></div>
 				</div>
 			</div>
 		</section>

@@ -184,6 +184,38 @@ class M_f_post extends CI_Model {
         return $this->db->delete($tbl);
     }
 
+    public function disukai($id) 
+    {
+        $this->db->select('b.img_blob, b.img, b.path, b.judul, b.id_berita, b.created_by');
+        $this->db->from('t_berita_like AS a');
+        $this->db->join('t_berita AS b', 'a.fid_berita = b.id_berita');
+        $this->db->join('t_users_portal AS c', 'b.created_by = c.id_user_portal');
+        $this->db->where('a.fid_users_portal', $id);
+        $q = $this->db->get();
+        return $q;
+    }
+
+    public function disimpan($id) 
+    {
+        $this->db->select('b.judul, b.id_berita, b.created_by');
+        $this->db->from('t_berita_save AS a');
+        $this->db->join('t_berita AS b', 'a.fid_berita = b.id_berita');
+        $this->db->join('t_users_portal AS c', 'b.created_by = c.id_user_portal');
+        $this->db->where('a.fid_users_portal', $id);
+        $q = $this->db->get();
+        return $q;
+    }
+
+    public function fetch_data_search($query) {
+          $this->db->select("*");
+          $this->db->from("t_berita");
+          if($query != '')
+          {
+           $this->db->like('judul', $query);
+          }
+          $this->db->order_by('id_berita', 'DESC');
+          return $this->db->get();
+    }
 }
 
 /* End of file M_f_post.php */

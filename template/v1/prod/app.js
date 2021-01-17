@@ -486,7 +486,7 @@ $(document).ready(function () {
       dataType: "json",
       success: function success(data) {
         if (data.html == "") {
-          $("#load_data_message").html("<div class=\"card border-0 shadow-sm mb-5\">\n                            <div class=\"card-body text-danger text-center\">\n                            <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                                <h5 class=\"card-title\">Yahhh! abis</h5>  \n                                <p class=\"font-weight-light text-secondary\"> Berita yang anda load mungkin telah berada di penghujung data.</p>\n                            </div>\n                        </div>"));
+          $("#load_data_message").html("<div class=\"card border-0 bg-white shadow-sm mb-5\">\n                            <div class=\"card-body text-danger text-center\">\n                            <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                                <h5 class=\"card-title\">Yahhh! abis</h5>  \n                                <p class=\"font-weight-light text-secondary\"> Berita yang anda load mungkin telah berada di penghujung data.</p>\n                            </div>\n                        </div>"));
           action = "active";
         } else {
           $("#load_data").append(data.html);
@@ -512,7 +512,7 @@ $(document).ready(function () {
         }
       },
       error: function error(xhr) {
-        alert("Mohon tunggu...");
+        alert("Error dalam meload berita, created_by tidak ditemukan.");
       }
     });
   }
@@ -531,6 +531,48 @@ $(document).ready(function () {
         load_data(limit, start);
       }, 300);
     }
+  });
+  $("button#caripost").on("click", function () {
+    $("#mpostseacrh").modal('show');
+    $("input[name='q']").focus();
+  });
+  $("#form_post_search").on("submit", function (e) {
+    e.preventDefault();
+
+    var _this = $(this);
+
+    var _input = _this[0].q;
+
+    var _container = $("#search-result");
+
+    if (_input.value == '') {
+      _container.html('<h3 class="mx-auto text-center text-secondary">Data Not Found</h3>');
+    }
+
+    function lazzy() {
+      _container.html('<div id="loader" class="mx-auto my-5"></div>');
+    }
+
+    if (_input.value.length > 3) {
+      $.ajax({
+        url: _this[0].action,
+        method: "POST",
+        data: {
+          q: _input.value
+        },
+        cache: false,
+        dataType: "html",
+        beforeSend: lazzy,
+        timeout: 1000,
+        success: function success(data) {
+          _container.html(data);
+        },
+        error: function error(xhr) {
+          alert('error function');
+        }
+      });
+    } // console.log(_this[0].action);
+
   });
 });
 // $(document).ready(function () {
@@ -590,6 +632,17 @@ lightbox.option({
   'fadeDuration': 0,
   'disableScrolling': true
 });
+"use strict";
+
+document.onreadystatechange = function () {
+  if (document.readyState !== "complete") {
+    document.querySelector("html").style.visibility = "hidden";
+    document.querySelector("#loader").style.visibility = "visible";
+  } else {
+    document.querySelector("#loader").style.display = "none";
+    document.querySelector("html").style.visibility = "visible";
+  }
+};
 "use strict";
 
 $(function () {
@@ -661,25 +714,21 @@ $(document).ready(function () {
   });
   $(document).scroll(function () {
     if ($(document).scrollTop() > 10) {
-      $("nav#navbar").css("transition", ".3s ease-in").addClass("shadow-sm bg-white");
+      $("nav#navbar").css("transition", ".1s ease-in").addClass("shadow bg-white");
     } else {
-      $("nav#navbar").removeClass("shadow-sm bg-white");
+      $("nav#navbar").removeClass("shadow bg-white");
     }
   });
 });
+// $(function() {
+// 	window.paceOptions = {
+// 	  ajax: false, // disabled
+// 	  document: false, // disabled
+// 	  eventLag: false, // disabled
+// 	  elements: false
+// 	};
+// });
 "use strict";
-
-$(function () {
-  window.paceOptions = {
-    ajax: false,
-    // disabled
-    document: false,
-    // disabled
-    eventLag: false,
-    // disabled
-    elements: false
-  };
-});
 // $(document).ready(function () {
 // 	var rellax = new Rellax(".rellax", {
 // 		speed: -3,
@@ -802,7 +851,7 @@ $(document).ready(function () {
         ajax: function ajax(query) {
           return {
             type: "POST",
-            url: "http://192.168.1.4/api/filternipnama",
+            url: "http://silka.bkppd-balangankab.info/api/filternipnama",
             dataType: "json",
             data: {
               q: "{{query}}"
@@ -832,7 +881,7 @@ $(document).ready(function () {
     });
 
     function preloadModule() {
-      $container.html("<p class=\"d-block my-5\"><img class=\"d-block mx-auto my-md-5 py-md-5\" width=\"40\" src=\"".concat(_uri, "/bower_components/SVG-Loaders/svg-loaders/vtree.svg\"></p>"));
+      $container.html("<div id=\"loader\" class=\"m-2\"></div> ");
     }
   });
 });

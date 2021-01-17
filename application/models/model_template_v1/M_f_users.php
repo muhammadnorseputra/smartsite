@@ -194,6 +194,16 @@ class M_f_users extends CI_Model
     {
         return $this->db->get_where('t_halaman', ['fid_users_portal' => $id]);
     }
+
+    public function getsubmenu() {
+        $this->db->select('a.idsub, a.nama_sub, a.link_sub');
+        $this->db->from('t_submenu AS a');
+        $this->db->join('t_menu AS b', 'a.idmain = b.id_menu');
+        $this->db->where('b.sts', 'FRONTEND');
+        // $this->db->where('a.aktif', 'Y');
+        $q = $this->db->get();
+        return $q;
+    }
 }
 
 /* End of file M_f_users.php */

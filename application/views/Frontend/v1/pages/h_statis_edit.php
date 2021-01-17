@@ -3,23 +3,40 @@
 			<?php $token = $_GET['token']; ?>
 			<?= form_open_multipart(base_url('frontend/v1/halaman/update/'.$token), ['id'=>'f_edit_halaman']) ?>
 			<div class="row">
-				<div class="col-md-8 mt-md-5 mb-md-3">
+				<div class="col-md-12 mt-md-5 mb-md-3">
 					<!-- form title halaman -->
-				<div class="card mb-3 rounded-0">
+				<div class="card mb-3 rounded bg-white">
 					<div class="card-header pb-0 bg-white border-bottom-0">
 						<h5 class="card-title">Judul Halaman <span title="Dilihat" data-toggle="tooltip" data-placement="bottom" class="float-right py-1 px-3 border rounded"><i class="fas fa-eye text-muted mr-2"></i> <small><?= $h->views ?></small></span> </h5>
 					</div>
 					<div class="card-body">
 						<div class="form-group">
-						    <input type="title" name="title" value="<?= $h->title ?>" class="form-control form-control-lg"aria-describedby="titleHelp">
-						    <small id="titleHelp" class="form-text text-muted">Buat title halaman kamu, yang lebih menarik bosqu.</small>
+						    <input type="title" name="title" value="<?= $h->title ?>" class="form-control form-control-lg" aria-describedby="titleHelp" placeholder="Masukan judul halaman kamu disini...">
+						    <small id="titleHelp" class="form-text text-muted small font-italic">Usahakan judul halaman menggunakan huruf kecil semua dan hanya menggukana spasi tanpa karakter lain</small>
 						  </div>
 					</div>
 				</div>
 				</div>
-				<div class="col-md-4 mt-md-5">
-					<?php if(!empty($h->filename)): ?>
-					<!-- <object data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:250px; width: 100%;"></object> -->
+			</div>
+		<div class="row">
+			<div class="col-md-8">
+				<!-- form cotent halaman -->
+				<div class="card border-0 rounded">
+					<div class="card-header bg-white border">
+						<h5 class="card-title">Isi halaman statis </h5>
+					</div>
+					<div class="card-body py-2 px-0 bg-white border-0">
+						<div class="form-group">
+						    <textarea class="form-control" name="content" id="content" rows="3">
+						    	<?= $h->content ?>
+						    </textarea>
+						  </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<?php if(!empty($h->filename)): ?>
+					 <object data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:250px; width: 100%;"></object>
 							<span class="badge badge-light">filename:</span>
 							<span class="label">
 								<?= $h->filename ?>
@@ -36,22 +53,8 @@
 								  <label class="custom-control-label" for="updateToken">update token</label>	
 								</div>
 							<hr>
-				<button type="submit" id="saveHalaman" class="btn rounded-pill btn-primary mr-3"><i class="fas fa-save mr-2"></i> Update</button>
-						<button type="button" onclick="window.history.back(-1)" class="btn btn-danger rounded-pill"><i class="fas fa-arrow-right mr-2"></i> Batal</button>
-				</div>
-			</div>
-		<div class="row">
-			<div class="col-md-12">
-				<!-- form cotent halaman -->
-				<div class="card border-0 bg-transparent">
-					<div class="card-body py-2 px-0 bg-transparent border-0">
-						<div class="form-group">
-						    <textarea class="form-control" name="content" id="content" rows="3">
-						    	<?= $h->content ?>
-						    </textarea>
-						  </div>
-					</div>
-				</div>
+						<button type="button" onclick="window.history.back(-1)" class="btn btn-outline-danger rounded-pill"><i class="fas fa-arrow-left mr-2"></i> Kembali</button>
+				<button type="submit" id="saveHalaman" class="btn rounded-pill btn-primary ml-3"><i class="fas fa-save mr-2"></i> Update</button>
 			</div>
 		</div>
 			<?= form_close(); ?>
@@ -64,7 +67,7 @@
 	$(document).ready(function() {
 		var tiny = tinymce.init({
 			selector: "#content",
-			height: 600,
+			height: 400,
 			themes: "modern",
 			mobile: {
 			    theme: 'mobile',
@@ -124,22 +127,26 @@
 			$("button[type='submit']#saveHalaman").html(`<img class='mx-auto d-block py-1 px-4' src='${_uri}/bower_components/SVG-Loaders/svg-loaders/oval-white.svg'>`).prop("disabled", true);
 		}
 
-		function suksesEdit(response)
+		function suksesEdit(result)
 		{
-			if(response.valid == true) {
 			notif({
 				msg: "<i class='fas fa-check-circle'></i> Halaman Updated",
 				bgcolor: "#000",
 				color: "#fff",
 				position: "bottom",
 				timeout: 2500,
-				width: 'all'
-			});
-			} else {
-				alert('Terjadi kesalahan sistem');
-			}	 
-			
-			$("button[type='submit']#saveHalaman").html(`<i class="fas fa-save mr-2"></i> Update`).prop("disabled", false);	
+				callback: callback_success(result)
+			});	
+		}
+		function callback_success(result) {
+			if(result != '') {
+				var str = result;
+				window.history.pushState({},"",`?token=${Number(str)}`);
+				// $("input[name='etoken']").prop('checked', false);
+				window.location.reload();
+			}
+			// console.log(str);
+			$("button[type='submit']#saveHalaman").html(`<i class="fas fa-save mr-2"></i> Update`).prop("disabled", false);
 		}
 	});
 </script>

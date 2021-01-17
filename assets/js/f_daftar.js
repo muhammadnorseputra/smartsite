@@ -19,7 +19,19 @@ $(document).ready(function () {
 		disabledFormFilter: 'form.toggle-disabled',
 		showErrorDialogs: true,
 		onError: function ($form) {
-			alert('Validation of form ' + $form.attr('id') + ' failed!');
+			$('#content2').notifyModal({
+	          duration: 2500,
+	          placement: 'center',
+	          overlay: true,
+	          type: 'danger', //simple, dark
+	          icon: false,
+	          onLoad: function(el) {
+	            el.find(".content_inner").html('Validation of form ' + $form.attr('id') + ' failed!');
+	          },
+	          onClose: function(el) {
+	            $form.get(0).reset();
+	          }
+	        });
 		},
 		onSuccess: function ($form) {
 			var _action = $form.attr('action');
@@ -38,14 +50,32 @@ $(document).ready(function () {
 				success: function (response) {
 					if (response.valid == true) {
 						// window.location.replace("<?= base_url('frontend/v1/daftar/') ?>");
-						alert(response.msg);
 						$form.get(0).reset();
 						$('button[type=submit]').html(`<i class="fas fa-check mr-2"></i> Daftar`);
+						$('#content2').notifyModal({
+				          duration: 2500,
+				          placement: 'center',
+				          overlay: true,
+				          type: 'simple', //simple, dark
+				          icon: false,
+				          onLoad: function(el) {
+				            el.find(".content_inner").html(response.msg);
+				          }
+				        });
 					}
 				},
 				error: function (_error) {
 					$('button[type=submit]').html(`<i class="fas fa-check mr-2"></i> Daftar`);
-					alert('error');
+					$('#content2').notifyModal({
+			          duration: 2500,
+			          placement: 'center',
+			          overlay: true,
+			          type: 'danger', //simple, dark
+			          icon: false,
+			          onLoad: function(el) {
+			            el.find(".content_inner").html('Terjadi kesalahan dalam pengiriman data');
+			          }
+			        });
 				}
 			});
 			return false; // Will stop the submission of the form
@@ -55,15 +85,15 @@ $(document).ready(function () {
 		}
 	});
 	// Callendar Event
-	// $('#tl-container input#tl').datepicker({
-	// 	clearBtn: true,
-	// 	forceParse: false,
-	// 	calendarWeeks: true,
-	// 	autoclose: true,
-	// 	format: 'dd/mm/yyyy',
-	// 	todayHighlight: true,
-	// 	toggleActive: true,
-	// });
+	$('#tl-container input#tl').datepicker({
+		clearBtn: true,
+		forceParse: false,
+		calendarWeeks: true,
+		autoclose: true,
+		format: 'dd/mm/yyyy',
+		todayHighlight: true,
+		toggleActive: true,
+	});
 	// API 
 	$('#nohp').mask('0000-0000-0000', {
 		placeholder: "____   -   ____   -  ____",

@@ -61,7 +61,7 @@ class Halaman extends CI_Controller
     $title = $this->input->post('title');
     $filename  = $_FILES['lampiran']['name'];
     $isi   = $this->input->post('content');
-    $token    = generateRandomString(30);
+    $token    = mt_rand(100000000,999999999);
 
     if(!empty($filename)) 
     {
@@ -104,37 +104,60 @@ class Halaman extends CI_Controller
     $filename  = $_FILES['lampiran']['name'];
     $isi   = $this->input->post('content');
     $etoken    = $this->input->post('etoken');
-    $token    = generateRandomString(30);
-
+    $newtoken    = mt_rand(100000000,999999999);
+    
     if($etoken == 'on')
     {
-      $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
-      $data = [
-        'token_halaman' => $token,
-        'title' => $title,
-        'content' => $isi,
-        'filename' => $filename,
-        'file' => $file,
-        'publish' => 'Y' 
-      ];
+      $token_halaman = $newtoken;
+      if(!empty($_FILES['lampiran']['tmp_name']) 
+       && file_exists($_FILES['lampiran']['tmp_name'])) {
+        $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
+        $data = [
+          'token_halaman' => $newtoken,
+          'title' => $title,
+          'content' => $isi,
+          'filename' => $filename,
+          'file' => $file,
+          'publish' => 'Y' 
+        ];
+      } else {
+        $data = [
+          'token_halaman' => $newtoken,
+          'title' => $title,
+          'content' => $isi,
+          'publish' => 'Y' 
+        ];
+      }
+      
     } else {
-      $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
-      $data = [
-        'title' => $title,
-        'content' => $isi,
-        'filename' => $filename,
-        'file' => $file,
-        'publish' => 'Y' 
-      ];
+      $token_halaman = intval($token);
+      if(!empty($_FILES['lampiran']['tmp_name']) 
+       && file_exists($_FILES['lampiran']['tmp_name'])) {
+        $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
+        $data = [
+          'title' => $title,
+          'content' => $isi,
+          'filename' => $filename,
+          'file' => $file,
+          'publish' => 'Y' 
+        ];
+      } else {
+        $data = [
+          'title' => $title,
+          'content' => $isi,
+          'publish' => 'Y' 
+        ];
+      }
+      
     }
 
     $db = $this->halaman->doUpdate('t_halaman', $data, $token);
 
-    if($db == true)
+    if($db)
     {
-      $msg = ['valid' => true];
+      $msg = $token_halaman;
     } else {
-      $msg = ['valid' => false];
+      $msg = false;
     }
     echo json_encode($msg);
   }
@@ -143,7 +166,7 @@ class Halaman extends CI_Controller
   {
     $table = 't_halaman';
     $id = $this->input->post('id');
-    $delete = $this->post->doDeleteHalaman($table, $id);
+    $delete = $this->halaman->doDeleteHalaman($table, $id);
 
     if ($delete == true) {
       $msg = ['valid' => true];

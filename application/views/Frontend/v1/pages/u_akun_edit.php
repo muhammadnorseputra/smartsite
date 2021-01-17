@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 offset-md-1">
-				<div class="card border-0 shadow-sm mt-5">
+				<div class="card border-0 shadow-sm mt-5 bg-white">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Identitas</h5>
 					</div>
@@ -29,7 +29,7 @@
 				</div>
 				<?= form_open_multipart(base_url('frontend/v1/users/update/'), ['id' => 'form_edit']); ?>
 				<input type="hidden" name="id" value="<?= encrypt_url($profile->id_user_portal) ?>">
-				<div class="card border-0 shadow-sm mt-3">
+				<div class="card border-0 shadow-sm mt-3 bg-white">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Edit Profile</h5>
 					</div>
@@ -98,7 +98,7 @@
 					</div>
 				</div>
 
-				<div class="card my-3 border-0 shadow-sm">
+				<div class="card my-3 border-0 shadow-sm bg-white">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Deskripsi</h5>
 					</div>
@@ -110,7 +110,7 @@
 					</div>
 				</div>
 
-				<div class="card mb-3 border-0 shadow-sm">
+				<div class="card mb-3 border-0 shadow-sm bg-white">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Informasi masuk</h5>
 					</div>

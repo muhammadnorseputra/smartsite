@@ -1,27 +1,29 @@
 <?php 
 if($this->session->flashdata('msg')['valid'] == true) {
-    $jhon = "Josss, selamat bergabung <b>".decrypt_url( $this->session->flashdata('msg')['data']['nama_lengkap'])."</b>"; 
+    $jhon = "Woihh, tinggal sedikit lagi nih <b>".decrypt_url( $this->session->flashdata('msg')['data']['nama_lengkap'])."</b>"; 
     $msg = $this->session->flashdata('msg')['msg'];
     $bg_status = 'bg-primary';
 } else {
-    $jhon = "Oops, Sepertinya ada kesalaan broo, check email kamu yaaa.";
+    $jhon = "Link verifikasi sudah kami kirim, check email kamu ya.";
     $msg = 'Oops!';
     $bg_status = 'bg-danger';
 }
 $img_user = $this->session->flashdata('msg')['data']['photo_pic'];
 ?>
-<section class="<?= $bg_status ?> mt-5 rellax">
+<section class="<?= $bg_status ?>">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 py-5 text-white text-center">
 				<h1>#<?= $msg ?></h1>
 				<p class="font-weight-light"><?= $jhon ?> </p>
+                <a href="<?= base_url('frontend/v1/users/login') ?>" class="btn btn-outline-dark"><i class="fas fa-arrow-left mr-2"></i> Login</a>
+                <a href="https://www.gmail.com" target="_blank" class="btn btn-outline-warning"><i class="fas fa-mail-bulk"></i> Lakukan verifikasi</a>
 			</div>
 		</div>
 	</div>
 </section>
 <?php if($this->session->flashdata('msg')['valid'] == true): ?>
-<section class="mt--5 mb-5">
+<section class="mt-5 mb-5">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 offset-md-3">

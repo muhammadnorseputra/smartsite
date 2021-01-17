@@ -17,6 +17,31 @@
 .fill-gelombang {
 	fill: #e9ecef;
 }
+// Loading Screen
+#loader { 
+    border: 5px solid #EEE; 
+    border-radius: 50%; 
+    border-top: 5px solid #0754B9; 
+    width: 50px; 
+    height: 50px; 
+    animation: spin 0.5s linear infinite; 
+    z-index: 5555;
+} 
+@keyframes spin { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
+} 
+.loader-center { 
+    position: fixed; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    margin: auto; 
+    background-color: #fff;
+} 
+
 // Placeholders
 @-webkit-keyframes placeHolderShimmer {
 	0% {
@@ -98,7 +123,7 @@ a {
 }
 
 a:hover {
-	color: teal;
+	color: #3282b8;
 	text-decoration: none;
 }
 
@@ -115,8 +140,8 @@ nav.navbar li a {
 
 nav.navbar li a:hover, 
 nav.navbar li a.active {
-	color: #000;
-	background-color: #efefef;
+	color: #bbe1fa !important;
+	background-color: #0f4c75;
 	cursor: pointer;
 }
 .dropdown-menu {
@@ -228,9 +253,9 @@ nav.navbar li a.active {
 
 .navbar .dropdown-item:focus,
 .navbar .dropdown-item:hover {
-	color: #16181b;
+	color: #bbe1fa;
 	text-decoration: none;
-	background-color: #f8f9fa;
+	background-color: #3282b8;
 }
 
 @media (min-width: 767px) {
@@ -665,4 +690,24 @@ i.likes:hover {
   padding:0;
   background-color:transparent
  }
+}
+
+@media (max-width: 620px) {
+	.big-card {
+		transform: scale(1) !important;	
+	}
+	.intro-website {
+		color: yellow !important;
+	}
+	#halojs {
+		color: #fff !important;
+		font-size: 1em !important;
+	}
+	ul.navbar-nav {
+		background-color: #fff !important;
+		border-radius: 25px;
+	}
+	.navbar-light .navbar-toggler {
+		border-color: rgba(255, 252, 30, 0.9) !important;
+	}
 }

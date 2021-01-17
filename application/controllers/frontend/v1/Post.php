@@ -35,6 +35,41 @@ class Post extends CI_Controller
     	$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
     }
 
+    public function search() {
+          $output = '';
+          $query = $this->input->post('q');
+          $data = $this->post->fetch_data_search($query);
+          $output .= '<div class="list-group list-group-flush">';
+          if($data->num_rows() > 0 && !empty($query))
+          {
+           foreach($data->result() as $row)
+           {
+            $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
+            $isi = substr($isi_berita, 0, 80); // ambil sebanyak 80 karakter
+            $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
+
+            $id = encrypt_url($row->id_berita);
+            $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($row->created_by))));
+            $judul = strtolower($row->judul);
+            $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
+            $output .= '<a href="'.$posturl.'" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">'.character_limiter($row->judul, 25).'</h5>
+                          <span class="small">'.mediumdate_indo($row->tgl_posting).'</span>
+                        </div>
+                        <p class="mb-1 small">'.$isi.'...</p>
+                        <small>Posted by '.decrypt_url($this->mf_users->get_userportal_namalengkap($row->created_by)).'</small>
+                      </a>';
+           }
+          }
+          else
+          {
+           $output .= '<h3 class="mx-auto text-center text-secondary">Data Not Found</h3>';
+          }
+          $output .= '</div>';
+          echo $output;
+         }
+
     public function listdetail()
     {
         $id = decrypt_url($this->input->post('id'));
@@ -89,7 +124,7 @@ class Post extends CI_Controller
 
                 $output .= '
                     <div class="grid-item w-100">
-                        <div class="card border-light">
+                        <div class="card border shadow-sm bg-white">
                             <div class="card-header bg-white border-bottom border-light">
                                 <img src="'.$gravatar. '" width="50" height="50" class="float-left mt-1 mr-4 d-inline-block rounded">
                                 <h5 class="card-title d-block">' . $namalengkap . '</h5>
@@ -156,7 +191,7 @@ class Post extends CI_Controller
             if(empty($judul)):
                 $msg = ['valid' => false, 'pesan' => 'Judul wajid dibuat untuk postingan!'];
             elseif(empty($kategori)):
-                $msg = ['valid' => false, 'pesan' => 'Kategori belum dipilih bosqu!'];
+                $msg = ['valid' => false, 'pesan' => 'Kategori belum dipilih'];
             else:
                 $this->post->doInsertJudulBaru('t_berita', $data);
                 $getId = $this->post->getIdByJudul($judul);

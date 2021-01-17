@@ -13,7 +13,7 @@ $desc = ($check_verify->email_verifikasi == 'Y') ? 'Email '.decrypt_url($check_v
                         <h1>#<?php echo $status ?></h1>
                         <p class="font-weight-light"><?php echo $desc ?></p>
                     </div>
-                    <div class="card-body text-center">
+                    <div class="card-body text-center bg-white">
                         <div class="text-success mb-5">
                             <i class="far fa-7x fa-check-circle"></i>
                         </div>

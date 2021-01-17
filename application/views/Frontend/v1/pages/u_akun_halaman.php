@@ -1,4 +1,4 @@
-<h5 class="px-3 py-4 text-muted border-bottom border-light">
+<h5 class="px-3 py-4 border-bottom border-light">
 	<a href="<?= base_url('frontend/v1/halaman/halamanstatis/add') ?>" title="Buat Halaman Statis" data-toggle="tooltip" class="btn btn-sm btn-primary rounded-circle float-right"><i class="fas fa-plus"></i></a>
 Tabel Halaman 
 </h5>
@@ -10,6 +10,7 @@ Tabel Halaman
 				<th class="text-center">No</th>
 				<th class="text-center"></th>
 				<th>Judul Halaman</th>
+				<th>Token</th>
 			</tr>
 		</thead>
 	</table>
@@ -51,6 +52,9 @@ Tabel Halaman
 		}, {
 			"targets": [2],
 			"orderable": true,
+		}, {
+			"targets": [3],
+			"orderable": false,
 		}],
 		"language": {
 			"lengthMenu": "_MENU_ Data per halaman",
@@ -63,9 +67,10 @@ Tabel Halaman
 		}
 	});
 
+
 	$(document).on("click", "a#btn-hapus-halaman", function(e) {
 		e.preventDefault();
-		var id = $(this).attr('data-id');
+		let id = $(this).attr('data-id');
 		notif_confirm({
 			'position': "bottom",
 			'offset': 30,
