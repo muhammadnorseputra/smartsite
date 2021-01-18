@@ -204,6 +204,42 @@ class M_f_users extends CI_Model
         $q = $this->db->get();
         return $q;
     }
+
+    public function getlinkbyid($id) {
+        $this->db->select('link_sub');
+        $this->db->from('t_submenu');
+        $this->db->where('idsub', $id);
+        $q = $this->db->get();
+        return $q;
+    }
+
+    public function getjudulhalamanbytoken($token) {
+        $this->db->select('title');
+        $this->db->from('t_halaman');
+        $this->db->where('token_halaman', $token);
+        $q = $this->db->get();
+        return $q;
+    }
+
+    public function updatelinkhalaman($tbl, $post, $whr) {
+        $this->db->where($whr);
+        $this->db->update($tbl, $post);
+        return true;
+    }
+
+    public function getuserportalbyemail($mail) {
+        $this->db->select('email, nama_lengkap, nohp');
+        $this->db->from('t_users_portal');
+        $this->db->where('email', $mail);
+        $q = $this->db->get();
+        return $q;
+    }
+
+    public function do_reset_password($tbl, $data, $whr) {
+        $this->db->where($whr);
+        $this->db->update($tbl, $data);
+        return true;
+    }
 }
 
 /* End of file M_f_users.php */

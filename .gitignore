@@ -1,6 +1,7 @@
 node_modules/
 .sass-cache/
 .vscode/
+vendor/
 workspace.code-workspace
 referensicss.txt
 old-index.php

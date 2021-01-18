@@ -16,6 +16,10 @@ class Beranda extends CI_Controller
         } else {
             redirect(base_url('theme/maintenance_site'),'refresh');
         }
+        // Cek session
+        // if(!$this->session->userdata('email')) {
+        //     redirect(base_url('frontend/v1/users/login'),'refresh');
+        // }
     }
 
     public function index()

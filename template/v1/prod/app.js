@@ -536,6 +536,10 @@ $(document).ready(function () {
     $("#mpostseacrh").modal('show');
     $("input[name='q']").focus();
   });
+  $('#mpostseacrh').on('hidden.bs.modal', function (e) {
+    $("input[name='q']").val('');
+    $("#form_post_search").submit();
+  });
   $("#form_post_search").on("submit", function (e) {
     e.preventDefault();
 
@@ -546,7 +550,7 @@ $(document).ready(function () {
     var _container = $("#search-result");
 
     if (_input.value == '') {
-      _container.html('<h3 class="mx-auto text-center text-secondary">Data Not Found</h3>');
+      _container.html('<h5 class="mx-auto text-center text-secondary">Kata kunci belum kamu masukan?</h5>');
     }
 
     function lazzy() {
@@ -574,6 +578,17 @@ $(document).ready(function () {
     } // console.log(_this[0].action);
 
   });
+});
+"use strict";
+
+$(function () {
+  if (!$.cookie("notice-accepted")) {
+    $("a#banner").click();
+    $.cookie("notice-accepted", 1, {
+      expires: 60 / 1440,
+      path: '/'
+    });
+  }
 });
 // $(document).ready(function () {
 // // Instagram
@@ -823,8 +838,6 @@ function listdetail() {
 "use strict";
 
 $(document).ready(function () {
-  // $(".js-nipnama").mask('00000000 000000 0 000');
-  // 19610202 199003 1 014
   $.typeahead({
     input: '.js-nipnama',
     minLength: 12,

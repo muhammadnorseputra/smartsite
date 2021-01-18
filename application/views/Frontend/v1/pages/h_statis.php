@@ -26,7 +26,9 @@
         if ($detail->num_rows() > 0) :
           $h = $detail->row();
         ?>
+        <?php if(!empty($h->file)): ?>
         <object data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:350px; width: 100%;"></object>
+        <?php endif; ?>
         <?= $h->content ?>
         <?php else : ?>
           <img class="d-block mx-auto mb-2 mt-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/page-not-found.svg') ?>">

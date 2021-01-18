@@ -21,14 +21,21 @@
 							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="45"/>'; ?>
 							</div>
-							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Log In</h3> <?= $this->session->userdata('nama_panggilan') ?>
+							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Log In</h3> 
+							<?php if($this->session->flashdata('notif') <> ''): ?>
+								<div class="alert border alert-light" role="alert">
+								 <?= $this->session->flashdata('notif') ?>
+								</div>
+							<?php endif; ?>
 							<?= form_open(base_url('frontend/v1/users/cek_akun'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="email">Email</label>
 								<input type="email" data-sanitize="trim,lower" class="form-control mb-2" name="email" id="email" placeholder="mail@website.com" required="required">
 							</div>
 							<div class="form-group">
-								<label class="mb-2" for="password">Password</label>
+								<label class="mb-2 d-block" for="password">
+									Password  <a href="<?= base_url('frontend/v1/users/lupa_password') ?>" class="small float-right">(Lupa sandi?)</a>
+								</label>
 								<input type="password" class="form-control mb-2" name="password" id="pwd" placeholder="Password"  required="required">
 							</div>
 							
@@ -55,6 +62,7 @@
 								</div>
 							<button type="submit" class="btn btn-primary btn-block small"><i class="fas fa-lock mr-2"></i> Log In</button>
 							<?= form_close(); ?>
+							
 							<div class="d-flex justify-content-between">
 								<div><a href="<?= base_url() ?>" class="btn btn-link my-3"><i class="fas fa-arrow-left mr-2"></i> Beranda</a></div>
 								<div><a href="<?= base_url('frontend/v1/daftar'); ?>" class="btn btn-link my-3">Kontribusi <i class="fas fa-arrow-right ml-2"></i></a></div>

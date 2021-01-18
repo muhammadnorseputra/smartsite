@@ -26,7 +26,6 @@ export type IconName = '500px' |
   'accusoft' | 
   'acquisitions-incorporated' | 
   'adn' | 
-  'adobe' | 
   'adversal' | 
   'affiliatetheme' | 
   'airbnb' | 
@@ -87,6 +86,7 @@ export type IconName = '500px' |
   'centos' | 
   'chrome' | 
   'chromecast' | 
+  'cloudflare' | 
   'cloudscale' | 
   'cloudsmith' | 
   'cloudversify' | 
@@ -119,6 +119,7 @@ export type IconName = '500px' |
   'd-and-d-beyond' | 
   'dailymotion' | 
   'dashcube' | 
+  'deezer' | 
   'delicious' | 
   'deploydog' | 
   'deskpro' | 
@@ -141,6 +142,7 @@ export type IconName = '500px' |
   'earlybirds' | 
   'ebay' | 
   'edge' | 
+  'edge-legacy' | 
   'elementor' | 
   'ello' | 
   'ember' | 
@@ -201,6 +203,7 @@ export type IconName = '500px' |
   'goodreads-g' | 
   'google' | 
   'google-drive' | 
+  'google-pay' | 
   'google-play' | 
   'google-plus' | 
   'google-plus-g' | 
@@ -210,12 +213,14 @@ export type IconName = '500px' |
   'grav' | 
   'gripfire' | 
   'grunt' | 
+  'guilded' | 
   'gulp' | 
   'hacker-news' | 
   'hacker-news-square' | 
   'hackerrank' | 
   'hips' | 
   'hire-a-helper' | 
+  'hive' | 
   'hooli' | 
   'hornbill' | 
   'hotjar' | 
@@ -224,8 +229,10 @@ export type IconName = '500px' |
   'hubspot' | 
   'ideal' | 
   'imdb' | 
+  'innosoft' | 
   'instagram' | 
   'instagram-square' | 
+  'instalod' | 
   'intercom' | 
   'internet-explorer' | 
   'invision' | 
@@ -289,6 +296,7 @@ export type IconName = '500px' |
   'npm' | 
   'ns8' | 
   'nutritionix' | 
+  'octopus-deploy' | 
   'odnoklassniki' | 
   'odnoklassniki-square' | 
   'old-republic' | 
@@ -304,6 +312,7 @@ export type IconName = '500px' |
   'patreon' | 
   'paypal' | 
   'penny-arcade' | 
+  'perbyte' | 
   'periscope' | 
   'phabricator' | 
   'phoenix-framework' | 
@@ -343,6 +352,7 @@ export type IconName = '500px' |
   'rev' | 
   'rocketchat' | 
   'rockrms' | 
+  'rust' | 
   'safari' | 
   'salesforce' | 
   'sass' | 
@@ -400,6 +410,7 @@ export type IconName = '500px' |
   'themeco' | 
   'themeisle' | 
   'think-peaks' | 
+  'tiktok' | 
   'trade-federation' | 
   'trello' | 
   'tripadvisor' | 
@@ -413,8 +424,10 @@ export type IconName = '500px' |
   'ubuntu' | 
   'uikit' | 
   'umbraco' | 
+  'uncharted' | 
   'uniregistry' | 
   'unity' | 
+  'unsplash' | 
   'untappd' | 
   'ups' | 
   'usb' | 
@@ -432,6 +445,7 @@ export type IconName = '500px' |
   'vk' | 
   'vnv' | 
   'vuejs' | 
+  'watchman-monitoring' | 
   'waze' | 
   'weebly' | 
   'weibo' | 
@@ -443,6 +457,7 @@ export type IconName = '500px' |
   'windows' | 
   'wix' | 
   'wizards-of-the-coast' | 
+  'wodu' | 
   'wolf-pack-battalion' | 
   'wordpress' | 
   'wordpress-simple' | 
@@ -669,6 +684,8 @@ export type IconName = '500px' |
   'backspace' | 
   'backward' | 
   'bacon' | 
+  'bacteria' | 
+  'bacterium' | 
   'bahai' | 
   'balance-scale' | 
   'balance-scale-left' | 
@@ -1376,6 +1393,7 @@ export type IconName = '500px' |
   'signal' | 
   'signature' | 
   'sim-card' | 
+  'sink' | 
   'sitemap' | 
   'skating' | 
   'skiing' | 
@@ -1568,12 +1586,15 @@ export type IconName = '500px' |
   'user-times' | 
   'users' | 
   'users-cog' | 
+  'users-slash' | 
   'utensil-spoon' | 
   'utensils' | 
   'vector-square' | 
   'venus' | 
   'venus-double' | 
   'venus-mars' | 
+  'vest' | 
+  'vest-patches' | 
   'vial' | 
   'vials' | 
   'video' | 

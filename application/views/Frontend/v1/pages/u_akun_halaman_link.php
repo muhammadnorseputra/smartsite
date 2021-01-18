@@ -45,7 +45,7 @@
 	$("select[name='submenu']").on("change", function() {
 		if($(this).val() != '') {
 			$.getJSON(_uri+'/frontend/v1/users/getsubmenubyid', {id: $(this).val()}, function(res) {
-				console.log(res);
+				// console.log(res);
 				let link = res.link_sub;
 				let slice = link.split("/");
 				if(typeof slice[2] == 'undefined') {
@@ -65,6 +65,25 @@
 	});
 
 	$("button#save-token").unbind().bind("click", function() {
-		alert($("input[name='f_token']").val());
+		let val = $("input[name='f_token']").val();
+		let id  = $("select[name='submenu']").val();
+		// alert(id);
+		$.post(`${_uri}/frontend/v1/users/updatelinkhalaman/${id}`, {txt: val}, function(res) {
+			if(res != false){
+				notif({
+					msg: `Updated Sukses Token (</b>${res.newtoken}<b>)`,
+					type: "success",
+					position: "bottom"
+				});
+				$("table tr td.token").html(`${res.newtoken}`);
+				$("table tr td.link").html(`${_uri}/${res.newlink}`);
+				return true;
+			}
+			return notif({
+					msg: "<b>Error</b> Token Kosong",
+					type: "error",
+					position: "bottom"
+				});
+		}, 'json');
 	})
 </script>

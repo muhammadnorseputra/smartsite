@@ -15,9 +15,8 @@ return array(
     'WyriHaximus\\Compress\\' => array($vendorDir . '/wyrihaximus/compress/src'),
     'WebSharks\\CssMinifier\\' => array($vendorDir . '/websharks/css-minifier/src/includes/classes'),
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
-    'Safe\\' => array($vendorDir . '/thecodingmachine/safe/lib', $vendorDir . '/thecodingmachine/safe/generated'),
+    'Safe\\' => array($vendorDir . '/thecodingmachine/safe/lib', $vendorDir . '/thecodingmachine/safe/deprecated', $vendorDir . '/thecodingmachine/safe/generated'),
     'Patchwork\\' => array($vendorDir . '/patchwork/jsqueeze/src'),
     'MatthiasMullie\\PathConverter\\' => array($vendorDir . '/matthiasmullie/path-converter/src'),
     'MatthiasMullie\\Minify\\' => array($vendorDir . '/matthiasmullie/minify/src'),
-    'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );

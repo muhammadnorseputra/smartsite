@@ -54,6 +54,84 @@ class Users extends CI_Controller {
     		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('nama_panggilan').'/'.encrypt_url($this->session->userdata('nohp'))),'refresh');
     	}
 	}
+	public function lupa_password() {
+		$data = [
+            'mf_beranda' => $this->mf_beranda->get_identitas()
+		];
+		if($this->session->userdata('online') == 'OFF' || empty($this->session->userdata('online'))) {
+        	$this->load->view('Frontend/v1/pages/f_lupa_password', $data);
+        } else {
+    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('nama_panggilan').'/'.encrypt_url($this->session->userdata('nohp'))),'refresh');
+    	}
+	}
+	public function reset_password() {
+		$email = encrypt_url($this->input->post('email'));
+		$data  = $this->users->getuserportalbyemail($email)->row_array();
+		// var_dump($data);
+		// Configurasi Email
+        $from_email = 'muhammadnorseputra@gmail.com';
+        $to_email = decrypt_url($email);
+
+        $config = array(
+                'protocol' => 'smtp',
+                'smtp_host' => 'ssl://smtp.googlemail.com',
+                'smtp_port' => 465,
+                'smtp_user' => $from_email,
+                'smtp_pass' => '@putrabungsu6',
+                'mailtype' => 'html',
+                'charset' => 'iso-8859-1',
+        );
+
+        $this->load->library('email', $config);
+        $this->email->set_newline("\r\n");
+
+        $this->email->from($from_email, 'BKPPD Kab. Balangan'); 
+        $this->email->to($to_email);
+        $this->email->subject('Reset Password!');
+
+        $url = base_url().'frontend/v1/users/reset_pass/'.$data['nohp'].'/'.encrypt_url(date('Ymd'));
+        $message .= '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
+        $message .= '<p> Untuk melakukan reset password, silahkan anda klik pada link berikut <br>.  
+        	<a target="_blank" href="' .$url.'">'.$url.'</a></p>';
+        $message .= '<p> Terimakasih. </p>';
+        
+        $this->email->message($message); 
+        if($this->email->send()){
+        	$this->session->set_flashdata("notif","Link reset password telah dikirm ke email anda.");
+        }else {
+            $this->session->set_flashdata("notif","Link reset password gagal dikirim.");  
+        } 
+        redirect(base_url('frontend/v1/users/lupa_password'));
+	}
+
+	public function reset_password_now() {
+		$id = $this->input->post('id');
+		$new_password = $this->input->post('password');
+		if(!empty($new_password)) {
+			$whr = ['nohp' => $id];
+			$data = ['password' => "$".sha1('bkppd_balangan')."$".encrypt_url($new_password)];
+			$db = $this->users->do_reset_password('t_users_portal', $data, $whr);
+			if($db) {
+				$this->session->set_flashdata("notif","Password telah berhasil diganti");
+			} else {
+				$this->session->set_flashdata("notif","Gagal mengganti password");
+			}
+			redirect(base_url('frontend/v1/users/login'),'refresh');
+		}
+	}
+
+	public function reset_pass($nohp, $tglnow) {
+		$data = [
+            'mf_beranda' => $this->mf_beranda->get_identitas(),
+            'data' => ['nohp' => $nohp, 'token' => decrypt_url($tglnow)]
+		];
+		if($this->session->userdata('online') == 'OFF' || empty($this->session->userdata('online'))) {
+        	$this->load->view('Frontend/v1/pages/f_reset_password', $data);
+        } else {
+    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('nama_panggilan').'/'.encrypt_url($this->session->userdata('nohp'))),'refresh');
+    	}
+	}
+
     public function cek_akun() {
     		$captcha = $this->input->post('captcha');
 	        $sess_captcha = $this->session->userdata('captcha');
@@ -79,6 +157,7 @@ class Users extends CI_Controller {
 					'email' => decrypt_url($q->email),
 					'nohp' => decrypt_url($q->nohp),
 					'online' => 'ON',
+					'time' => $this->config->item('sess_expiration'),
 					'id' => $q->id_user_portal
 					);
 				$this->session->set_userdata($data_session);
@@ -146,6 +225,24 @@ class Users extends CI_Controller {
 			];
 
 			return $this->load->view('Frontend/v1/pages/u_akun_halaman_link', $data);
+		}
+
+		public function updatelinkhalaman($id) {
+			$token = $this->input->post('txt');
+			
+			if(!empty($token)) {
+				$getjudulhalamanbytoken = $this->users->getjudulhalamanbytoken($token)->row();
+				$title = url_title($getjudulhalamanbytoken->title,'-', TRUE);
+				$getlinkbyid = $this->users->getlinkbyid($id)->row();
+				$pecah = explode("/", $getlinkbyid->link_sub);
+				// $getTokenLink = $pecah[2];
+				$newLink = $pecah[0].'/'.$pecah[1].'/'.$token.'/'.$title;
+				$msg = ['newtoken' => $token, 'newlink' => $newLink];
+				$this->users->updatelinkhalaman('t_submenu', ['link_sub' => $newLink], ['idsub' => $id]);
+			} else {
+				$msg = false;
+			}
+			echo json_encode($msg);
 		}
 
 		public function getsubmenubyid() {

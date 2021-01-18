@@ -1,6 +1,5 @@
 $(document).ready(function() {
-// $(".js-nipnama").mask('00000000 000000 0 000');
-                       // 19610202 199003 1 014
+
 $.typeahead({
     input: '.js-nipnama',
     minLength: 12,

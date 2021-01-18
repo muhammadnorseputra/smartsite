@@ -51,7 +51,7 @@
             <?php
             $local = 'http://192.168.1.4';
             $online = 'http://silka.bkppd-balangankab.info';
-            $host = $online;
+            $host = $local;
             ?>
             <div class="col-xs-12 col-sm-12 col-md-4">
                 <div class="card bg-success border-0 rounded shadow">
@@ -175,7 +175,7 @@
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 d-none d-sm-block order-first">
                 <div class="mx-auto">
-                    <a data-lightbox="BannerAside" data-title="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?>" href="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>">
+                    <a id="banner" data-lightbox="BannerAside" data-title="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?>" href="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>">
                         <img src="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>" class="rounded img-fluid mx-auto d-block mb-3 shadow">
                     <h6 class="font-weight-bold"><?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?></h6></a>
                     <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?> 

@@ -64,7 +64,7 @@ class Post extends CI_Controller
           }
           else
           {
-           $output .= '<h3 class="mx-auto text-center text-secondary">Data Not Found</h3>';
+           $output .= '<h4 class="mx-auto text-center text-secondary"><img src="'.base_url('assets/images/bg/undraw_empty_xct9.svg').'" class="img-fluid w-50"/> <br>Keyword Search Not Found</h4>';
           }
           $output .= '</div>';
           echo $output;

@@ -131,6 +131,11 @@ $(document).ready(function () {
 		$("input[name='q']").focus();
 	});
 
+	$('#mpostseacrh').on('hidden.bs.modal', function (e) {
+	 	$("input[name='q']").val('');
+	 	$("#form_post_search").submit();
+	});
+
 	$("#form_post_search").on("submit", function(e) {
 		e.preventDefault();
 		let _this = $(this);
@@ -138,7 +143,7 @@ $(document).ready(function () {
 		let _container = $("#search-result");
 
 		if(_input.value == '') {
-			_container.html('<h3 class="mx-auto text-center text-secondary">Data Not Found</h3>');
+			_container.html('<h5 class="mx-auto text-center text-secondary">Kata kunci belum kamu masukan?</h5>');
 		} 
 
 		function lazzy() {

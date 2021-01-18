@@ -59,6 +59,7 @@ gulp.task("vendor-js", function () {
 			// "template/v1/plugin/camera/scripts/jquery.easing.1.3.js",
 			// "template/v1/plugin/camera/scripts/camera.min.js",
 			"template/v1/plugin/dark-mode/dark-mode-switch.js",
+			"assets/plugins/jquery-cookie/jquery.cookie.js",
 			"assets/plugins/jquery-confirm/jquery-confirm.min.js",
 			"vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js",
 			// "bower_components/jquery-mask-plugin/dist/jquery.mask.min.js",
