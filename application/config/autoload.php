@@ -93,7 +93,7 @@ $autoload['helper'] = array('url','form','number','security','string',
                             'text','typography','date','download',
                             'file','html','inflector','tgl_indo',
                             'rand_helper','script_tag','blob', 
-                            'directory','time_ago', 'login', 'apiclient');
+                            'directory', 'login', 'apiclient');
 
 /*
 | -------------------------------------------------------------------
