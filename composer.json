@@ -1,7 +1,10 @@
 {
-	"require": {
-		"wyrihaximus/html-compress": "^3.0",
-		"twbs/bootstrap": "4.5.*",
-		"fortawesome/font-awesome": "^5.13"
-	}
+    "name": "putra/smartsite",
+    "authors": [
+        {
+            "name": "muhammadnorseputra",
+            "email": "muhammadnorseputra@gmail.com"
+        }
+    ],
+    "require": {}
 }
