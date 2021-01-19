@@ -30,7 +30,8 @@
 							<?= form_open(base_url('frontend/v1/users/resetpasswordnow'), '', ['id' => encrypt_url($data['nohp'])]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="password">Password Baru</label>
-								<input type="password"  class="form-control mb-2" name="password" id="password" placeholder="Password Baru" required="required">
+								<input type="password"  class="form-control mb-2" name="password" id="password-field" placeholder="Password Baru" required="required">
+								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 							<button type="submit" class="btn btn-primary btn-block small">Simpan</button>
 							<?= form_close(); ?>
@@ -49,5 +50,16 @@
 		</section>
 		<script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
 		<script src="<?= base_url('assets/plugins/bootstrap-4/js/bootstrap.min.js') ?>"></script>
+		<script>
+			  $(".toggle-password").click(function() {
+			      $(this).toggleClass("fa-eye fa-eye-slash");
+			      var input = $($(this).attr("toggle"));
+			      if (input.attr("type") == "password") {
+			          input.attr("type", "text");
+			      } else {
+			          input.attr("type", "password");
+			      }
+			  });
+		</script>	
 	</body>
 </html>

@@ -36,7 +36,8 @@
 								<label class="mb-2 d-block" for="password">
 									Password  <a href="<?= base_url('frontend/v1/users/lupa_password') ?>" class="small float-right">(Lupa sandi?)</a>
 								</label>
-								<input type="password" class="form-control mb-2" name="password" id="pwd" placeholder="Password"  required="required">
+								<input type="password" class="form-control mb-2" name="password" id="password-field" placeholder="Password"  required="required">
+								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 							
 								<?php

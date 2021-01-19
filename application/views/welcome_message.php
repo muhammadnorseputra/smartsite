@@ -29,7 +29,7 @@
 		<!-- Main -->
 		<div id="main">
 				<div class="logo">
-					<?php echo '<img class="animated fadeIn" src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="45"/>'; ?>	
+					<?php echo '<img class="animated fadeIn" src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="145"/>'; ?>	
 				</div>
 			<!-- Intro -->
 			<section id="top">
