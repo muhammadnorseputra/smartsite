@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '21d6eb5271d15ce5200f37e537f51a85b83058f4',
+    'reference' => 'd73fa512e7f585dcf1c49e1da63aea2059ebd578',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '21d6eb5271d15ce5200f37e537f51a85b83058f4',
+      'reference' => 'd73fa512e7f585dcf1c49e1da63aea2059ebd578',
     ),
     'fortawesome/font-awesome' => 
     array (
@@ -100,15 +100,6 @@
       array (
       ),
       'reference' => 'f789e7ead4c79e04ca9a6d6162fc629c89bd8054',
-    ),
-    'tecnickcom/tcpdf' => 
-    array (
-      'pretty_version' => '6.3.5',
-      'version' => '6.3.5.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '19a535eaa7fb1c1cac499109deeb1a7a201b4549',
     ),
     'tedivm/jshrink' => 
     array (
