@@ -104,7 +104,7 @@ class Users extends CI_Controller {
         redirect(base_url('frontend/v1/users/lupa_password'));
 	}
 
-	public function reset_password_now() {
+	public function resetpasswordnow() {
 		$id = $this->input->post('id');
 		$new_password = $this->input->post('password');
 		if(!empty($new_password)) {
@@ -150,6 +150,8 @@ class Users extends CI_Controller {
 			);
 			$cek = $this->users->cek_login("t_users_portal", $where);
 			if($cek->num_rows() > 0){
+				
+				if($this->users->getuserportalbyemail($where['email'])->row()->online == 'OFF') {
 				$q = $cek->row();
 				$data_session = array(
 					'nama_lengkap' => decrypt_url($q->nama_lengkap),
@@ -164,9 +166,14 @@ class Users extends CI_Controller {
 				$this->users->status_online('t_users_portal', 
 											['email' => encrypt_url($email)],
 											['online' => 'ON']);
-				$msg = array('valid' => true, 
+					$msg = array('valid' => true, 
 					'pesan' => "<div class='d-block mx-auto text-center'>Login berhasil, akun ditemukan ...</div>", 
 					'redirect' => base_url("frontend/v1/users/akun/".decrypt_url($q->nama_panggilan)).'/'.$q->nohp);
+				} else {
+					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'redirect' => base_url("frontend/v1/users/login"), 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
+					$this->session->sess_destroy();
+
+				}
 			}else{
 				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar");
 			}

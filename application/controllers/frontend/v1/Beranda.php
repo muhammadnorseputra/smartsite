@@ -70,7 +70,7 @@ class Beranda extends CI_Controller
                 if (count($pecah) > 0) {
                     $tag = '';
                     for ($i = 0; $i < count($pecah); ++$i) {
-                        $tag .= '<a href="'.base_url('frontend/v1/post_list/tags?q='.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-secondary mr-2 mb-1">#'.$pecah[$i].'</a>';
+                        $tag .= '<a href="'.base_url('frontend/v1/post_list/tags?q='.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-secondary mr-2 mb-2">#'.$pecah[$i].'</a>';
                     }
                 }
                 $pilihan = $row->pilihan == 'Y' ? '<span class="text-primary-old"><i class="far fa-check-circle"></i></span>' : '';
@@ -102,44 +102,50 @@ class Beranda extends CI_Controller
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('id'), $row->id_berita) == true ? 'fas text-danger' : 'far';
 
                 if(empty($row->img)):
-                    $img = '<img class="card-img-top rounded-0 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img class="card-img-top rounded-lg lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 else:
-                    $img = '<img class="card-img-top rounded-0 lazy" data-src="'.$row->path.'" alt="'.$row->img.'">';
+                    $img = '<img class="card-img-top rounded-lg lazy" data-src="'.$row->path.'" alt="'.$row->img.'">';
                 endif;
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('frontend/v1/post_list/views/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
 // <a href="'.$post_list_url.'" class="btn btn-primary-old rounded float-right btn-sm px-3">'.$namakategori.'</a>
                 $output .= '
                 <div>
-					<div class="card mb-4 border-light shadow-sm bg-white">
-					<div class="card-body p-4">
+					<div class="card mb-4 border-light rounded-lg shadow-sm bg-white">
+					<div class="card-body p-3">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('id') . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded lazy">
 						<h5 class="card-title"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
                         <p class="card-text">
-                            <span class="badge badge-default px-0 text-muted">@<b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
+                            <span class="badge badge-default px-0 font-weight-normal text-muted">Posted by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
                         </p>
 					</div>
-                        <div class="canvas">
+                        <div class="canvas p-3 position-relative">
                         <span ondblclick="like_toggle(this)" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('id') . '" class="rippler rippler-img rippler-bs-info" title="Double click to like article">
+                        
 						  '.$img.'
                         </span>
                         </div>
 					
-					<div class="card-body p-4">
-						<h4 class="card-title font-weight-bold text-dark"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h4>
-                        <p class="card-text font-weight-normal">'.character_limiter($isi, 150).'</p>
-                        <p>'.$tag. '</p>
+					<div class="card-body py-0 px-4">
+						<h3 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h3>
+                        <p class="card-text font-weight-normal text-secondary">'.character_limiter($isi, 150).'</p>
+                        <p><a href="#" class="btn btn-sm btn-outline-warning mr-2 mb-2">'.$namakategori.'</a>'.$tag. '</p>
 					</div>
-					<div class="card-footer bg-white py-0 px-0 border-light">
+					<div class="card-footer bg-white p-2 border-light d-flex justify-content-around">
 					
-					<button type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-right border-light rounded-0 p-3 float-left"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
-
-					<button type="button" data-toggle="tooltip" title="Komentar" class="btn btn-transparent border-right  border-light rounded-0 p-3 float-left"><i class="far fa-comment-alt mr-2"></i> '.$this->komentar->jml_komentarbyidberita($row->id_berita). '</button>
-
-                    <button type="button" data-toggle="tooltip" title="Bagikan juga postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent border-right border-light rounded-0 p-3 float-left"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
-                    
-                    <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-secondary rounded-0 p-3 '.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('id') . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
+                    <div class="w-100">
+					<button type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
+                    </div>
+                    <div class="w-100">
+					<button type="button" data-toggle="tooltip" title="Komentar" class="btn btn-transparent border-0 rounded p-2 w-100 text-info"><i class="far fa-comment-alt mr-2"></i> '.$this->komentar->jml_komentarbyidberita($row->id_berita). '</button>
+                    </div>
+                    <div class="w-100">
+                    <button type="button" data-toggle="tooltip" title="Bagikan juga postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent  border-0 rounded p-2 w-100 text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
+                    </div>
+                    <div class="w-100">
+                    <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded p-2 w-100 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('id') . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
+                    </div>
 					</div>
                     </div>
 				</div>

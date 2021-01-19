@@ -8,8 +8,12 @@ $(document).ready(function() {
 			filtersPosition: "top",
 			recentEmojis: false,
 		});
-		displayComments();
 
+		if(!$.cookie('ci_session') && _uriSegment[4] == 'post' && _uriSegment[5] == 'detail') {
+			displayComments();
+		} else {
+			console.log('Komentar tidak ditampilkan dikarnakan anda belum login atau bukan halaman detail berita');
+		}
 		function displayComments() {
 			$.getJSON(`${_uri}/frontend/v1/post/displayKomentar/${_uriSegment[7]}`, function(response) {
 				$(".tracking-list").html(response);

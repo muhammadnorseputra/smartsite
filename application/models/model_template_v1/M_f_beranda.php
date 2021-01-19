@@ -152,7 +152,7 @@ class M_f_beranda extends CI_Model
     {
         $this->db->order_by('id_album_foto', 'desc');
 
-        return $this->db->get('t_album_foto', 4, 0)->result();
+        return $this->db->get('t_album_foto', 6, 0)->result();
     }
 
     public function get_photo_by_album($id_album_foto, $limit, $batas)

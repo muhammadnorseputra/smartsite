@@ -21,13 +21,13 @@
 <section class="h-statis-detail">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 offset-md-1 mb-md-5 shadow-sm mt--5 bg-white p-5 rounded">
+      <div class="col-md-10 offset-md-1 mb-md-5 shadow-sm mt--5 bg-white p-3 p-md-5 rounded-lg">
         <?php
         if ($detail->num_rows() > 0) :
           $h = $detail->row();
         ?>
         <?php if(!empty($h->file)): ?>
-        <object data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:350px; width: 100%;"></object>
+        <object class="rounded-lg border mb-3" data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:350px; width: 100%;"></object>
         <?php endif; ?>
         <?= $h->content ?>
         <?php else : ?>

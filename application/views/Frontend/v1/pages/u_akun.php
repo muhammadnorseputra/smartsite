@@ -5,7 +5,7 @@ $desc = $d->deskripsi == '' ? '<button class="btn btn-default text-left text-sec
 $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($d->id_user_portal)->photo_pic) . '';
 ?>
 <section class="my-5 pt-md-5">
-  <div class="container bg-white border border-light shadow-sm rounded">
+  <div class="container bg-white border border-light shadow-sm rounded-lg">
     <div class="row">
       <div class="col-md-3 no-gutters px-0 py-1">
         <div class="list-group bg-white border-0 rounded-0 py-2">

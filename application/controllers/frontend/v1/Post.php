@@ -365,7 +365,7 @@ class Post extends CI_Controller
                  ';
             endforeach;
         } else {
-            $output = '<img src="'.base_url('bower_components/SVG-Loaders/svg-loaders/empty-diskusi.svg').'" class="d-block my-auto mx-auto w-50"><p class="text-center text-muted">
+            $output = '<img src="'.base_url('bower_components/SVG-Loaders/svg-loaders/empty-diskusi.svg').'" class="d-block my-auto mx-auto w-25"><p class="text-center text-muted">
                     <b class="my-2 d-block">Diskusi Kosong<br></b><small>Belum ada diskusi nih, yok mulai percakapan.</small></p>';
         }
 

@@ -228,7 +228,7 @@ class M_f_users extends CI_Model
     }
 
     public function getuserportalbyemail($mail) {
-        $this->db->select('email, nama_lengkap, nohp');
+        $this->db->select('email, nama_lengkap, nohp, online');
         $this->db->from('t_users_portal');
         $this->db->where('email', $mail);
         $q = $this->db->get();

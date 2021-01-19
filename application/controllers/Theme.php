@@ -20,7 +20,7 @@ class Theme extends CI_Controller {
 
 	public function maintenance_site() {
 		$this->load->view('errors/html/error_maintenance');
-		if($this->mf_beranda->get_identitas()->status_maintenance == '0') {
+		if(($this->mf_beranda->get_identitas()->status_maintenance == '0') || ($this->session->userdata('status') == 'ONLINE')) {
 			redirect(base_url('frontend/v1/beranda'),'refresh');
 		}
 	}

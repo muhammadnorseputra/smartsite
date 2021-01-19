@@ -4,6 +4,9 @@
   background: #222 !important;
   color: #eee;
 }
+[data-theme="dark"] a {
+  color: #bbe1fa;
+}
 [data-theme="dark"] .dropdown-menu {
   background-color: #222;
   box-shadow: 0 4px 2em #111; 

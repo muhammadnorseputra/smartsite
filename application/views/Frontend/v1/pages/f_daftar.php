@@ -19,12 +19,12 @@
 					<div class="col-xs-12 col-md-4 offset-md-1" id="sidebar">
 						<div class="px-2 px-md-5 pt-4">
 							<div class="logo text-center text-md-left">
-								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="45"/>'; ?>
+								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="140"/>'; ?>
 							</div>
 							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Registered</h3> <?= $this->session->userdata('nama_panggilan') ?>
 							<?= form_open_multipart(base_url('frontend/v1/daftar/send'), ['id' => 'form_daftar', 'class' => 'toggle-disabled'], ['session_register' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
-							<div class="form-group my-5">
-								<img src="<?= base_url('assets/images/no-profile-picture.jpg'); ?>" alt="pic" width="110" height="110" class="rounded-circle d-block border border-info p-1 mb-3 photo_pic">
+							<div class="form-group my-5 text-center">
+								<img src="<?= base_url('assets/images/no-profile-picture.jpg'); ?>" alt="pic" width="160" height="160" class="rounded-circle d-block border border-info p-1 mb-3 photo_pic mx-auto">
 												<input name="photo_pic" 
 													type="file"
 													data-validation="mime size"
@@ -167,7 +167,7 @@
 							<div class="form-group">
 									<div class="row">
 										<div class="col">
-											<label class="font-weight-bold pb-3 pt-3 border-top">Upload photo KTP
+											<label class="font-weight-bold pb-3 pt-3 border-top">Upload KTP
 											<br> <span class="small text-warning">dengan menupload file KTP, menyatakan bahwah anda bersetuju berkontribusi dengan kami serta tunduk dengan aturan yang telah ditetapkan.</span>
 											</label>
 											<img src="<?= base_url('assets/images/noimage.gif'); ?>" alt="pic" width="100%" class="photo_ktp d-block mx-auto border border-info p-1 mb-3">

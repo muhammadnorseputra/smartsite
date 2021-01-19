@@ -85,7 +85,7 @@
 	position: relative;
 }
 body {
-	background: rgb(255,255,255);
+	background: #efefef;
 	font-family: 'Poppins', sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -116,7 +116,6 @@ section.h-statis-detail {
 .modal-backdrop.in {
   opacity:.9;
 }
-
 a {
 	text-decoration: none;
 	font-family: 'Poppins', sans-serif;
@@ -377,19 +376,19 @@ nav.navbar li a.active {
 // }
 
 /* Lazyload */
-img.beforeLoaded {
-
-	filter: blur(5px);
-	transition: all .4s linear;
-	height: inherit;
-	-webkit-transition: all .4s linear;
-	-moz-transition: all .4s linear;
-	-ms-transition: all .4s linear;
-	-o-transition: all .4s linear;
-}
+// img.beforeLoaded {
+// 	filter: blur(5px);
+// 	transition: all .4s linear;
+// 	height: inherit;
+// 	-webkit-transition: all .4s linear;
+// 	-moz-transition: all .4s linear;
+// 	-ms-transition: all .4s linear;
+// 	-o-transition: all .4s linear;
+// }
 
 img.lazy {
 	display: block;
+	background-color: #a2d0c1;
 	/* optional way, set loading as background */
 	// background-image: url("../../../assets/images/loader/rolling-2.gif");
 	background-image: url("../../../bower_components/SVG-Loaders/svg-loaders/oval.svg");
@@ -708,6 +707,7 @@ i.likes:hover {
 		border-radius: 25px;
 	}
 	.navbar-light .navbar-toggler {
-		border-color: rgba(255, 252, 30, 0.9) !important;
+		border:0 !important;
+		border-color: transparent !important;
 	}
 }

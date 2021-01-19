@@ -11,7 +11,7 @@ $(document).ready(function () {
 	var limit = 7;
 	var start = 0;
 	var action = "inactive";
-
+	if(_uriSegment[4] == 'beranda'){
 	function lazzy_loader(limit) {
 		var output = "";
 		for (var count = 0; count < 1; count++) {
@@ -125,7 +125,9 @@ $(document).ready(function () {
 			}, 300);
 		}
 	});
-
+} else {
+	console.log('Semua berita tidak ditampilkan, karna bukan halaman beranda');
+}
 	$("button#caripost").on("click", function() {
 		$("#mpostseacrh").modal('show');
 		$("input[name='q']").focus();

@@ -19,7 +19,7 @@
 					<div class="col-xs-12 col-md-4 offset-md-1" id="sidebar">
 						<div class="px-2 px-md-5 pt-4">
 							<div class="logo text-center text-md-left">
-								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="45"/>'; ?>
+								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="140"/>'; ?>
 							</div>
 							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Log In</h3> 
 							<?php if($this->session->flashdata('notif') <> ''): ?>

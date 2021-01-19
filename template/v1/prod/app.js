@@ -230,7 +230,12 @@ $(document).ready(function () {
     filtersPosition: "top",
     recentEmojis: false
   });
-  displayComments();
+
+  if (!$.cookie('ci_session') && _uriSegment[4] == 'post' && _uriSegment[5] == 'detail') {
+    displayComments();
+  } else {
+    console.log('Komentar tidak ditampilkan dikarnakan anda belum login atau bukan halaman detail berita');
+  }
 
   function displayComments() {
     $.getJSON("".concat(_uri, "/frontend/v1/post/displayKomentar/").concat(_uriSegment[7]), function (response) {
@@ -439,14 +444,16 @@ $(document).ready(function () {
 "use strict";
 "use strict";
 
-var h = new Date().getHours();
-var m = new Date().getMinutes();
-var s = new Date().getSeconds();
-if (h > 3 && h < 12) $("span#halojs").text("Selamat Pagi,");
-if (h > 11 && h < 16) $("span#halojs").text("Selamat Siang,");
-if (h > 15 && h < 18) $("span#halojs").text("Selamat Sore,");
-if (h > 17 && h < 24) $("span#halojs").text("Selamat Malam,");
-if (h > 23 || h < 4) $("span#halojs").text('Sekarang Jam  ' + h + ':' + m);
+$(function () {
+  var h = new Date().getHours();
+  var m = new Date().getMinutes();
+  var s = new Date().getSeconds();
+  if (h > 3 && h < 12) $("span#halojs").text("Selamat Pagi,");
+  if (h > 11 && h < 16) $("span#halojs").text("Selamat Siang,");
+  if (h > 15 && h < 18) $("span#halojs").text("Selamat Sore,");
+  if (h > 17 && h < 24) $("span#halojs").text("Selamat Malam,");
+  if (h > 23 || h < 4) $("span#halojs").text('Sekarang Jam  ' + h + ':' + m);
+});
 "use strict";
 
 function explore() {
@@ -462,76 +469,81 @@ $(document).ready(function () {
   var start = 0;
   var action = "inactive";
 
-  function lazzy_loader(limit) {
-    var output = "";
+  if (_uriSegment[4] == 'beranda') {
+    var lazzy_loader = function lazzy_loader(limit) {
+      var output = "";
 
-    for (var count = 0; count < 1; count++) {
-      output += "\n                <div class=\"card border border-light shadow-sm\">\n                    <div class=\"card-header border-0 bg-white\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style = \"width:100%; height: 300px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 30px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 50px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer text-muted p-3 bg-transparent\" >\n                     <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
+      for (var count = 0; count < 1; count++) {
+        output += "\n                <div class=\"card border border-light shadow-sm\">\n                    <div class=\"card-header border-0 bg-white\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style = \"width:100%; height: 300px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 30px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 50px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer text-muted p-3 bg-transparent\" >\n                     <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
+      }
+
+      $("#load_data_message").html(output);
+    };
+
+    var load_data = function load_data(limit, start) {
+      $.ajax({
+        url: _uri + '/frontend/v1/beranda/get_all_berita',
+        method: "POST",
+        data: {
+          limit: limit,
+          start: start
+        },
+        cache: false,
+        dataType: "json",
+        success: function success(data) {
+          if (data.html == "") {
+            $("#load_data_message").html("<div class=\"card border-0 bg-white shadow-sm mb-5\">\n                            <div class=\"card-body text-danger text-center\">\n                            <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                                <h5 class=\"card-title\">Yahhh! abis</h5>  \n                                <p class=\"font-weight-light text-secondary\"> Berita yang anda load mungkin telah berada di penghujung data.</p>\n                            </div>\n                        </div>"));
+            action = "active";
+          } else {
+            $("#load_data").append(data.html);
+            $("#load_data_message").html("");
+            action = "inactive";
+            $(".lazy").lazy({
+              beforeLoad: function beforeLoad(element) {
+                element.addClass('beforeLoaded');
+              },
+              afterLoad: function afterLoad(element) {
+                element.addClass('isLoaded').removeClass('lazy beforeLoaded');
+              }
+            });
+            $(".rippler").rippler({
+              effectClass: 'rippler-effect'
+            }); // Tooltips
+
+            $('[data-toggle="tooltip"]').tooltip({
+              delay: 400,
+              offset: '0,10px',
+              padding: 8
+            });
+          }
+        },
+        error: function error(xhr) {
+          alert("Error dalam meload berita, created_by tidak ditemukan.");
+        }
+      });
+    };
+
+    lazzy_loader(limit);
+
+    if (action == "inactive") {
+      action = "active";
+      load_data(limit, start);
     }
 
-    $("#load_data_message").html(output);
-  }
-
-  lazzy_loader(limit);
-
-  function load_data(limit, start) {
-    $.ajax({
-      url: _uri + '/frontend/v1/beranda/get_all_berita',
-      method: "POST",
-      data: {
-        limit: limit,
-        start: start
-      },
-      cache: false,
-      dataType: "json",
-      success: function success(data) {
-        if (data.html == "") {
-          $("#load_data_message").html("<div class=\"card border-0 bg-white shadow-sm mb-5\">\n                            <div class=\"card-body text-danger text-center\">\n                            <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                                <h5 class=\"card-title\">Yahhh! abis</h5>  \n                                <p class=\"font-weight-light text-secondary\"> Berita yang anda load mungkin telah berada di penghujung data.</p>\n                            </div>\n                        </div>"));
-          action = "active";
-        } else {
-          $("#load_data").append(data.html);
-          $("#load_data_message").html("");
-          action = "inactive";
-          $(".lazy").lazy({
-            beforeLoad: function beforeLoad(element) {
-              element.addClass('beforeLoaded');
-            },
-            afterLoad: function afterLoad(element) {
-              element.addClass('isLoaded').removeClass('lazy beforeLoaded');
-            }
-          });
-          $(".rippler").rippler({
-            effectClass: 'rippler-effect'
-          }); // Tooltips
-
-          $('[data-toggle="tooltip"]').tooltip({
-            delay: 400,
-            offset: '0,10px',
-            padding: 8
-          });
-        }
-      },
-      error: function error(xhr) {
-        alert("Error dalam meload berita, created_by tidak ditemukan.");
+    $(window).scroll(function () {
+      if ($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == "inactive") {
+        lazzy_loader(limit);
+        action = "active";
+        start = start + limit;
+        setTimeout(function () {
+          load_data(limit, start);
+        }, 300);
       }
     });
+  } else {
+    console.log('Semua berita tidak ditampilkan, karna bukan halaman beranda');
   }
 
-  if (action == "inactive") {
-    action = "active";
-    load_data(limit, start);
-  }
-
-  $(window).scroll(function () {
-    if ($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == "inactive") {
-      lazzy_loader(limit);
-      action = "active";
-      start = start + limit;
-      setTimeout(function () {
-        load_data(limit, start);
-      }, 300);
-    }
-  });
   $("button#caripost").on("click", function () {
     $("#mpostseacrh").modal('show');
     $("input[name='q']").focus();
@@ -590,6 +602,11 @@ $(function () {
     });
   }
 });
+"use strict";
+
+$(function () {
+  $('h3#count_jml').countTo();
+});
 // $(document).ready(function () {
 // // Instagram
 // function nFormatter(num) {
@@ -631,11 +648,11 @@ $(document).ready(function () {
     threshold: 0,
     beforeLoad: function beforeLoad(element) {
       // var imageSrc = element.data('src');
-      element.addClass('beforeLoaded');
+      element.addClass('lazy');
     },
     afterLoad: function afterLoad(element) {
       // var imageSrc = element.data('src');
-      element.addClass('isLoaded').removeClass('lazy beforeLoaded');
+      element.addClass('isLoaded').removeClass('lazy');
     }
   });
 });
@@ -729,9 +746,9 @@ $(document).ready(function () {
   });
   $(document).scroll(function () {
     if ($(document).scrollTop() > 10) {
-      $("nav#navbar").css("transition", ".1s ease-in").addClass("shadow bg-white");
+      $("nav#navbar").css("transition", ".1s ease-in").addClass("shadow-sm bg-white");
     } else {
-      $("nav#navbar").removeClass("shadow bg-white");
+      $("nav#navbar").removeClass("shadow-sm bg-white");
     }
   });
 });

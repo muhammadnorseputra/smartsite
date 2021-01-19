@@ -50,13 +50,17 @@
       type: 'success',
       icon: false,
       onLoad: function(el) {
-        el.find(".content_inner").html(response.pesan);
+        if(response.valid == true) {
+          el.find(".content_inner").html(response.pesan);
+        } else {
+          error_msg(response);
+        }
         $('button[type="submit"]').html(`<i class="fas fa-lock mr-2"></i> Log In`);
       },
       onClose: function(el) {
         if (response.valid == true) {
           window.location.href = response.redirect;
-        }
+        } 
         $form.get(0).reset();
       }
     });
@@ -74,6 +78,23 @@
       },
       onClose: function(el) {
         $('button[type="submit"]').html(`<i class="fas fa-lock mr-2"></i> Log In`);
+      }
+    });
+  }
+
+  function error_msg(msg) {
+    $('#content2').notifyModal({
+      duration: 3500,
+      placement: 'center',
+      overlay: true,
+      type: 'danger',
+      icon: false,
+      onLoad: function(el) {
+        el.find(".content_inner").html(msg.pesan);
+      },
+      onClose: function(el) {
+        $('button[type="submit"]').html(`<i class="fas fa-lock mr-2"></i> Log In`);
+        window.location.href = msg.redirect;
       }
     });
   }

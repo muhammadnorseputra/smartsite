@@ -19,7 +19,7 @@
 					<div class="col-xs-12 col-md-4 offset-md-1" id="sidebar">
 						<div class="px-2 px-md-5 pt-4">
 							<div class="logo text-center text-md-left">
-								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="45"/>'; ?>
+								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="140"/>'; ?>
 							</div>
 							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Reset Password</h3> 
 							<?php if($data['token'] != date('Ymd')): ?>
@@ -27,7 +27,7 @@
 							  Link ini telah kadaluarsa <a href="#" class="alert-link">:)</a>. <br>silahkan kembali ke halaman reset password.
 							</div>
 							<?php else: ?>
-							<?= form_open(base_url('frontend/v1/users/reset_password_now'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['id' => encrypt_url($data['nohp'])]); ?>
+							<?= form_open(base_url('frontend/v1/users/resetpasswordnow'), '', ['id' => encrypt_url($data['nohp'])]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="password">Password Baru</label>
 								<input type="password"  class="form-control mb-2" name="password" id="password" placeholder="Password Baru" required="required">

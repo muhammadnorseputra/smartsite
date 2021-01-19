@@ -9,23 +9,28 @@
 <section style="background-image: url(<?= base_url('assets/images/bg/bgheader.svg') ?>); background-size: cover; background-repeat: no-repeat; background-position: top right; background-clip: cover;">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 mt-5 pt-5 my-md-5 py-md-5">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 mt-5 pb-5 my-md-5 py-md-5">
                 <h1 class="display-3"><span id="halojs"></span></h1>
-                <p class="lead text-secondary intro-website">Websites resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</p>
-                <p>
+                <!-- Static halo -->
+                <p class="lead text-secondary intro-website"><span class="text-success">Websites Resmi</span> Badan Kepegawaian Pendidikan dan Pelatihan Daerah <span class="text-info">Kabupaten Balangan.</span></p>
+                <!-- Dinamic mengunakan typed.js -->
+<!--                 <p class="halo_bkppd"><span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> <span>Update informasi resmi seputar layanan kepegawaian serta artikel terkait lainya langsung dari website kami.</span> <span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> </p>
+                <span id="typed" class="lead text-secondary intro-website"></span>
+ -->
+                <p class="my-3">
                     <button type="button" onclick="explore()" class="btn shadow-sm btn-white rounded py-3 px-3">
-                    Explore <i class="fas fa-arrow-down ml-2"></i>
+                    Update Informasi <i class="fas fa-arrow-down ml-2"></i>
                     </button>
                 </p>
                 
             </div>
-            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 offset-md-1 my-3 pb-5 my-md-5 py-md-5">
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 offset-md-1 my-3 pt-5 my-md-5 py-md-5 order-first order-md-last">
                 <div class="card border-0 shadow-lg bg-white">
                     <div class="card-body">
-                        <b>Profile PNS Balangan</b>
+                        <b>Profile PNS</b>
                         <form class="form-horizontal" id="caripegawai"  method="POST" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
                             <div class="typeahead__container form-group">
-                                <label for="js-nipnama">Cari Pegawai</label>
+                                <label for="js-nipnama">Masukan NIP, kemudian pilih detail untuk melihat profile pegawai</label>
                                 <div class="typeahead__field">
                                     
                                     <div class="typeahead__query">
@@ -51,13 +56,21 @@
             <?php
             $local = 'http://192.168.1.4';
             $online = 'http://silka.bkppd-balangankab.info';
-            $host = $local;
+            $host = $online;
+            ?>
+            <?php 
+                $arr = [
+                        'jml_asn' => api_curl_get($host.'/api/get_grap/asn'),
+                        'jml_pns' => api_curl_get($host.'/api/get_grap/pns'),
+                        'jml_ptt' => api_curl_get($host.'/api/get_grap/nonpns')
+                    ]  
             ?>
             <div class="col-xs-12 col-sm-12 col-md-4">
-                <div class="card bg-success border-0 rounded shadow">
+                <div class="card bg-info border-0 rounded shadow">
                     <div class="card-body">
                         <i class="fas fa-users float-right fa-3x d-inline-block mt-1 text-white"></i>
-                        <h3 class="display-4 text-white"><?= api_curl_get($host.'/api/get_grap/asn')  ?></h3>
+                        <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_asn'] ?>"
+      data-speed="5000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_asn'] ?></h3>
                         <b class="text-white">Jumlah ASN Kab. Balangan</b>
                     </div>
                 </div>
@@ -66,9 +79,9 @@
                 <div class="card bg-white shadow-lg rounded border-0 my-md-0 my-4 big-card" style="transform: scale(1.2); z-index: 1;">
                     <div class="card-body align-middle">
                         <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-primary-old"></i>
-                        <h3 class="display-4"><?= api_curl_get($host.'/api/get_grap/pns') ?></h3>
+                        <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
+      data-speed="5000" data-refresh-interval="50" class="display-4"><?= $arr['jml_pns'] ?></h3>
                         <b class="text-primary-old">Jumlah PNS + CPNS</b>
-                        <span class="small"><small class="py-1 px-3 bg-secondary rounded-pill text-white"><i>resource: SILKa Online</i></small></span>
                     </div>
                 </div>
             </div>
@@ -76,7 +89,8 @@
                 <div class="card bg-warning rounded shadow border-0">
                     <div class="card-body">
                         <i class="far fa-user-circle float-right fa-3x d-inline-block mt-1"></i>
-                        <h3 class="display-4"><?= api_curl_get($host.'/api/get_grap/nonpns') ?></h3>
+                        <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_ptt'] ?>"
+      data-speed="5000" data-refresh-interval="50" class="display-4"><?= $arr['jml_ptt'] ?></h3>
                         <b>Jumlah NON PNS</b>
                     </div>
                 </div>
@@ -123,8 +137,18 @@
                     <span class="text-secondary">Oleh</span> <?= ucwords($namapanggilan); ?>
                 </div> -->
                 <div class="mx-auto">
+                    
+                    <div class="d-flex">
+                    <a  class="btn shadow btn-dark my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/beranda/saran'); ?>">
+                    <i class="fas fa-box mr-2"></i> <br> Kotak Saran
+                    </a>
+                    <a  class="btn shadow btn-success my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/beranda/survey'); ?>">
+                    <i class="fas fa-check mr-2"></i> <br> Survey Kepuasan
+                    </a>
+                    </div>
+                    <hr>
                     <h5 class="my-3 font-weight-bold text-dark title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-heart text-danger mr-2"></i>Paling Disukai</span></h5>
-                    <div class="list-group border shadow-sm">
+                    <div class="list-group border-0 shadow-none p-0">
                         <?php
                         $nolist = 1;
                         foreach ($mf_berita_populer as $b) :
@@ -133,12 +157,12 @@
                         $judul = strtolower($b->judul);
                         $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
                         if(empty($b->img)):
-                        $img = '<img class="rounded lazy pull-left w-50" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
+                        $img = '<img class="rounded align-self-center lazy pull-left mr-2 w-25 shadow" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
                         else:
-                        $img = '<img class="rounded align-self-center lazy pull-left w-50 mr-2 shadow-sm border-light" data-src="'.$b->path.'" alt="'.$b->judul.'">';
+                        $img = '<img class="rounded align-self-center lazy pull-left mr-2 w-25 shadow" data-src="'.$b->path.'" alt="'.$b->judul.'">';
                         endif;
                         ?>
-                        <a  href="<?= $posturl; ?>" class="list-group-item list-group-item-action border-bottom-0 py-1">
+                        <a  href="<?= $posturl; ?>" class="list-group-item list-group-item-action border-0 p-0 bg-transparent m-0">
                             <div class="media m-0">
                                 <?= $img ?>
                                 <div class="media-body">
@@ -161,11 +185,11 @@
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-8 col-md-6">
                         <h5 class="my-3 text-dark title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fa fa-quote-left fa-pull-left text-info mr-2"></i>Postingan Terbaru</span></h5>
                     </div>
-                    <div class="col-6">
-                        <div class="float-right mt-2"><button id="caripost" class="btn btn-outline-info"> <i class="fas fa-search mr-2"></i>cari postingan </button></div>
+                    <div class="col-4 col-md-6">
+                        <div class="float-right mt-2"><button id="caripost" class="btn btn-outline-info"> <i class="fas fa-search mr-0 mr-lg-2"></i> <span class="d-none d-lg-inline-block">cari postingan</span></button></div>
                     </div>
                 </div>
                 
@@ -173,12 +197,36 @@
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
             </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 d-none d-sm-block order-first">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 order-first">
                 <div class="mx-auto">
+                    
                     <a id="banner" data-lightbox="BannerAside" data-title="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?>" href="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>">
                         <img src="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>" class="rounded img-fluid mx-auto d-block mb-3 shadow">
                     <h6 class="font-weight-bold"><?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?></h6></a>
                     <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?> 
+                    <hr>
+                    <h5 class="font-weight-bold text-dark title-sidebar mb-3"><span class="font-weight-bold"><i class="far fa-image text-danger mr-2"></i>album photo</span></h5>
+                    <div class="overflow-hidden rounded-lg mt-4">
+                        
+                            <?php  
+                            $kolom = 2;
+                            $i = 1;
+                                foreach ($mf_album as $album):
+                                if(($i) % $kolom==1) {
+                                    echo '<div class="d-flex">';
+                                }
+                            ?>
+                            <div style="width: 100%;">
+                                <a href="#">
+                                <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy w-100" alt="<?= url_title($album->judul, '-', true) ?>">
+                                </a>
+                            </div>
+                            <?php if(($i) % $kolom==0) {
+                                echo '</div>';
+                            } ?>
+                            <?php $i++; endforeach; ?>
+                        
+                    </div>
                     <!-- <div style="max-height: 600px; overflow-y: auto;">
                         <div class="list-group">
                             <li class="list-group-item disabled px-2 border-0 rounded border-light font-weight-bold text-dark title-sidebar" aria-disabled="true">Kategori Populer</li>

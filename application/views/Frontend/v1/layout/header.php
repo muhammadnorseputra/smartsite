@@ -2,7 +2,7 @@
 <nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light">
 	<div class="container">
 		<a class="navbar-brand" href="#">
-			<?php echo '<img class="lazy" data-src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="25"/>'; ?>
+			<?php echo '<img class="lazy" data-src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="110"/>'; ?>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@
 			<?php } else { ?>
 			<a  class="btn shadow btn-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/users/login'); ?>">
 			<i class="far fa-user mr-2"></i> Login
-			</button>
+			</a>
 			<?php } ?>
 			
 
@@ -79,9 +79,9 @@
 </nav>
 
 <!-- Modal -->
-<div class="modal" id="mpostseacrh" tabindex="-1" role="dialog" aria-labelledby="mpostseacrhLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+<div class="modal bd-example-modal-lg" id="mpostseacrh" tabindex="-1" role="dialog" aria-labelledby="mpostseacrhLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content border-0 shadow-lg">
       <div class="modal-header">
         <h5 class="modal-title" id="mpostseacrhLabel">Cari Postingan</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -90,7 +90,7 @@
       </div>
       <div class="modal-body">
         <?= form_open(base_url('frontend/v1/post/search'), ['id' => 'form_post_search','class' => 'form-inline']); ?>
-            <div class="input-group">
+            <div class="input-group mx-auto">
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fas fa-search"></i></div>
                 </div>
