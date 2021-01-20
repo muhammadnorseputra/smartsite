@@ -53,7 +53,7 @@
 <section class="mb-5 mt--7 statistik">
     <div class="container">
         <div class="row">
-            <?php
+            <!-- <?php
             $local = 'http://192.168.1.4';
             $online = 'http://silka.bkppd-balangankab.info';
             $host = $online;
@@ -64,13 +64,13 @@
                         'jml_pns' => api_curl_get($host.'/api/get_grap/pns'),
                         'jml_ptt' => api_curl_get($host.'/api/get_grap/nonpns')
                     ]  
-            ?>
+            ?> -->
             <div class="col-xs-12 col-sm-12 col-md-4">
                 <div class="card bg-info border-0 rounded shadow">
                     <div class="card-body">
                         <i class="fas fa-users float-right fa-3x d-inline-block mt-1 text-white"></i>
-                        <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_asn'] ?>"
-      data-speed="5000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_asn'] ?></h3>
+                        <h3 id="count_jml" data-from="0" data-to="250"
+      data-speed="5000" data-refresh-interval="50" class="display-4 text-white">250</h3>
                         <b class="text-white">Jumlah ASN Kab. Balangan</b>
                     </div>
                 </div>
@@ -79,8 +79,8 @@
                 <div class="card bg-white shadow-lg rounded border-0 my-md-0 my-4 big-card" style="transform: scale(1.2); z-index: 1;">
                     <div class="card-body align-middle">
                         <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-primary-old"></i>
-                        <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
-      data-speed="5000" data-refresh-interval="50" class="display-4"><?= $arr['jml_pns'] ?></h3>
+                        <h3 id="count_jml" data-from="0" data-to="150"
+      data-speed="5000" data-refresh-interval="50" class="display-4">150</h3>
                         <b class="text-primary-old">Jumlah PNS + CPNS</b>
                     </div>
                 </div>
@@ -89,8 +89,8 @@
                 <div class="card bg-warning rounded shadow border-0">
                     <div class="card-body">
                         <i class="far fa-user-circle float-right fa-3x d-inline-block mt-1"></i>
-                        <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_ptt'] ?>"
-      data-speed="5000" data-refresh-interval="50" class="display-4"><?= $arr['jml_ptt'] ?></h3>
+                        <h3 id="count_jml" data-from="0" data-to="100"
+      data-speed="5000" data-refresh-interval="50" class="display-4">100</h3>
                         <b>Jumlah NON PNS</b>
                     </div>
                 </div>
