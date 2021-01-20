@@ -1,6 +1,4 @@
-<!-- Developer Balangan  Maju -- file :: C_pengaturan - author :: mnorseputra -->
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 class C_pengaturan extends CI_Controller
 {
