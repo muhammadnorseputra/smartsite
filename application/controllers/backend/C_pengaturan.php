@@ -19,7 +19,7 @@ class C_pengaturan extends CI_Controller
     {
         $data = [
             'content' => 'Backend/__Pengaturan/'.$params,
-            'scriptjs' => 'Backend/__ServerSideJs/pengaturan/'.substr($params, 2, 100), //v_backup to backup
+            'scriptjs' => 'Backend/__ServerSideJs/Pengaturan/'.substr($params, 2, 100), //v_backup to backup
             'pageinfo' => '<li> Dasboard</li> <li> Pengaturan</li> <li class="active">'.ucwords(substr($params, 2, 100)).'</li>',
             'css' => [
                 'assets/plugins/ios-confirm/modal.css',
@@ -326,7 +326,7 @@ class C_pengaturan extends CI_Controller
     {
         $data = [
             'content' => 'Backend/__Pengaturan/v_akses_login',
-            'scriptjs' => 'Backend/__ServerSideJs/pengaturan/akses_login', //v_backup to backup
+            'scriptjs' => 'Backend/__ServerSideJs/Pengaturan/akses_login', //v_backup to backup
             'pageinfo' => '<li> Dasboard</li> <li> Pengaturan</li> <li class="active">Akses Login</li>',
         ];
 
