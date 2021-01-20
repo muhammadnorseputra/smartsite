@@ -787,7 +787,7 @@ $(document).ready(function () {
 "use strict";
 
 // Uri Segement
-var _uri = window.location.origin + "/smartsite";
+var _uri = window.location.origin;
 
 var _uriSegment = window.location.pathname.split('/');
 // $(document).ready(function () {	
