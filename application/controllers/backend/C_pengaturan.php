@@ -17,16 +17,15 @@ class C_pengaturan extends CI_Controller
     /* -------------------------------------------------------------------------- */
     public function referensi($params)
     {
-        $parser = \WyriHaximus\HtmlCompress\Factory::construct();
         $data = [
-            'content' => $parser->compress('Backend/__Pengaturan/'.$params),
-            'scriptjs' => $parser->compress('Backend/__ServerSideJs/pengaturan/'.substr($params, 2, 100)), //v_backup to backup
+            'content' => 'Backend/__Pengaturan/'.$params,
+            'scriptjs' => 'Backend/__ServerSideJs/pengaturan/'.substr($params, 2, 100), //v_backup to backup
             'pageinfo' => '<li> Dasboard</li> <li> Pengaturan</li> <li class="active">'.ucwords(substr($params, 2, 100)).'</li>',
             'css' => [
-                $parser->compress('assets/plugins/ios-confirm/modal.css'),
+                'assets/plugins/ios-confirm/modal.css',
             ],
             'js' => [
-                $parser->compress('assets/plugins/ios-confirm/modal.js'),
+                'assets/plugins/ios-confirm/modal.js',
             ],
         ];
         $this->load->view('Backend/v_home', $data);
