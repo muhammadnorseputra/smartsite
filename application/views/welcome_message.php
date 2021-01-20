@@ -57,7 +57,7 @@
 			<div id="footer">
 				<!-- Copyright -->
 				<ul class="copyright">
-					<li>&copy; <?= date('Y') ?> - Badan Bkppd Kabupaten Balangan. All rights reserved.</li>
+					<li>&copy; <?= date('Y') ?>, Bkppd Kabupaten Balangan. All rights reserved.</li>
 					<li class="ip">IP. <?= $ip ?></li>
 				</ul>
 			</div>
