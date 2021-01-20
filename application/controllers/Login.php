@@ -36,7 +36,7 @@ class Login extends CI_Controller
             redirect(base_url('login/v2/'.sha1($ip).'/'.$ip.'/'.$os.'?message=sign-in'));
         } else {
             $this->session->set_flashdata('error', 'access denied for user');
-            redirect(base_url('/welcome'));
+            redirect(base_url('adminpanel'));
         }
     }
 
