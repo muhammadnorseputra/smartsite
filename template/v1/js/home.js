@@ -11,7 +11,7 @@ $(document).ready(function() {
     var limit = 7;
     var start = 0;
     var action = "inactive";
-    alert(_uriSegment);
+    console.log(_uriSegment);
     if (_uriSegment[2] == 'beranda') {
         function lazzy_loader(limit) {
             var output = "";
