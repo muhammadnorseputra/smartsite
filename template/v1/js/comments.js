@@ -9,7 +9,7 @@ $(document).ready(function() {
         recentEmojis: false,
     });
 
-    if (!$.cookie('ci_session') && _uriSegment[3] == 'post' && _uriSegment[4] == 'detail') {
+    if (!$.cookie('ci_session') && _uriSegment[2] == 'post' && _uriSegment[3] == 'detail') {
         displayComments();
     } else {
         console.log('Komentar tidak ditampilkan dikarnakan anda belum login atau bukan halaman detail berita');
