@@ -15,7 +15,7 @@ class C_users extends CI_Controller {
 	{
 
 		$data = [
-				'content' => 'Backend/__module/___Users/v_users',
+				'content' => 'Backend/__Module/___Users/v_users',
 				'scriptjs' => 'Backend/__ServerSideJs/Users/s_users',
         'pageinfo' => '<li>
                          Dasboard
