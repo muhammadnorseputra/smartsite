@@ -1,6 +1,4 @@
-<!-- Developer Balangan  Maju -- file :: C_admin - author :: mnorseputra -->
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 class C_admin extends CI_Controller
 {
