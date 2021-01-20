@@ -402,7 +402,7 @@ label {
 	padding: 13px 15px 12px 15px;
 	white-space: nowrap;
 	position: relative;
-	background: url("http://localhost/smartsite/assets/images/bg/user-img-background-old.jpg")
+	background: url("assets/images/bg/user-img-background-old.jpg")
 		no-repeat no-repeat;
 	height: 135px;
 }

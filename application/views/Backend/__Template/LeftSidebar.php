@@ -4,7 +4,7 @@
 		<!-- User Info -->
 		<div class="user-info">
 			<div class="image">
-				<img src="<?= site_url('assets/images/users/') ?><?= $this->session->userdata('gravatar') ?>" width="50" height="50" alt="User" />
+				<img src="<?= base_url('assets/images/users/') ?><?= $this->session->userdata('gravatar') ?>" width="50" height="50" alt="User" />
 			</div>
 			<div class="info-container">
 				<div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -14,7 +14,7 @@
 				<!-- <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);" onclick="menu_link('<?= site_url('backend/admin/profile'); ?>')"><i class="material-icons">person</i>Profile</a></li>
+                            <li><a href="javascript:void(0);" onclick="menu_link('<?= base_url('backend/admin/profile'); ?>')"><i class="material-icons">person</i>Profile</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="javascript:void(0);" onclick="logout('<?= base_url('login/logout') ?>')"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
@@ -76,7 +76,7 @@
 									if (($key->link == '#')) {
 										$link = 'javascript:void(0);';
 									} else {
-										$link = site_url($key->link) . "?module=" . $key->token . "&user=" . $access[0]->user_access;
+										$link = base_url($key->link) . "?module=" . $key->token . "&user=" . $access[0]->user_access;
 									}
 
 									$linkMenu = $link;
@@ -84,7 +84,7 @@
 									if (($key->link == '#')) {
 										$out = 'javascript:void(0);';
 									} else {
-										$out = site_url('backend/c_admin/module_not_found');
+										$out = base_url('backend/c_admin/module_not_found');
 									}
 									$linkMenu = $out;
 								}
@@ -118,7 +118,7 @@
 										}
 									?>
 										<li class="<?= $ac ?>">
-											<a type="button" href="<?= site_url($s->link_sub . "?module=" . $s->token . "&user=" . $access[0]->user_access) ?>">
+											<a type="button" href="<?= base_url($s->link_sub . "?module=" . $s->token . "&user=" . $access[0]->user_access) ?>">
 												<?= $i ?> <span class="m-t-1"><?= $s->nama_sub ?> </span>
 											</a>
 										</li>
