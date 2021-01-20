@@ -157,7 +157,7 @@
                         // }, 3000);
                         $.unblockUI({
                             onUnblock: function() {
-                                window.location.replace($origin + '/smartsite/backend/c_admin?module=' + response.home + '&?user=' + response.user_access[0].user_access);
+                                window.location.replace($origin + '/backend/c_admin?module=' + response.home + '&?user=' + response.user_access[0].user_access);
                                 // showNotification('bg-greadient-greenlightgreen', 'Login berhasil !!! Pengalihan halaman mohon tunggu.', 'top', 'center', 'none', 'animated bounceOutUp');
                             }
                         });

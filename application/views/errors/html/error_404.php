@@ -11,13 +11,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="<?= 'http://localhost/smartsite/assets/plugins/bootstrap/css/bootstrap.css'; ?>" rel="stylesheet">
+    <link href="<?= $_SERVER['HTTP_HOST'].'assets/plugins/bootstrap/css/bootstrap.css'; ?>" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="<?= 'http://localhost/smartsite/assets/plugins/node-waves/waves.css'; ?>" rel="stylesheet" />
+    <link href="<?= $_SERVER['HTTP_HOST'].'assets/plugins/node-waves/waves.css'; ?>" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="<?= 'http://localhost/smartsite/assets/css/style.css'; ?>" rel="stylesheet">
+    <link href="<?= $_SERVER['HTTP_HOST'].'assets/css/style.css'; ?>" rel="stylesheet">
 </head>
 
 <body class="four-zero-four">
@@ -31,13 +31,13 @@
     </div>
 
     <!-- Jquery Core Js -->
-    <script src="http://localhost/smartsite/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="<?= $_SERVER['HTTP_HOST'].'assets/plugins/jquery/jquery.min.js'; ?>"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="http://localhost/smartsite/assets/plugins/bootstrap/js/bootstrap.js"></script>
+    <script src="<?= $_SERVER['HTTP_HOST'].'assets/plugins/bootstrap/js/bootstrap.js'; ?>"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="http://localhost/smartsite/assets/plugins/node-waves/waves.js"></script>
+    <script src="<?= $_SERVER['HTTP_HOST'].'assets/plugins/node-waves/waves.js'; ?>"></script>
 </body>
 
 </html>
