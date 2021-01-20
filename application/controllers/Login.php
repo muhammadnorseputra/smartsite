@@ -82,7 +82,7 @@ class Login extends CI_Controller
             ),
         );
 
-        $data['sidejs'] = 'Backend/__ServerSideJs/Login/s_login';
+        $data['sidejs'] = 'Backend/__ServerSideJs/Login/S_login';
 
         //CEK USER AKSES
         if ($this->agent->is_browser()) {
