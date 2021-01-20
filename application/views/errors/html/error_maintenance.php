@@ -27,7 +27,7 @@
     <!-- <a class="btn" href="<?= base_url() ?>">#Reload-page</a> -->
     <h1>Kami akan kembali.</h1>
     <div>
-        <p>Maaf atas ketidaknyamanan ini, tetapi kami sedang melakukan pemeliharaan saat ini. Jika perlu, anda selalu dapat <a href="mailto:muhammadnorseputra@gmail.com">menghubungi kami</a>, jika tidak, kami akan segera kembali online!</p>
+        <p>Maaf atas ketidaknyamanan ini, tetapi kami sedang melakukan pemeliharaan saat ini. Jika perlu, anda selalu dapat <a href="mailto:bkppdbalangan@gmail.com">menghubungi kami</a>, jika tidak, kami akan segera kembali online!</p>
         <p>&mdash; Bkppd Team </p>
     </div>
 </article>

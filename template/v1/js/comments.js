@@ -9,7 +9,6 @@ $(document).ready(function() {
         recentEmojis: false,
     });
 
-    console.log(_uriSegment);
     if (!$.cookie('ci_session') && _uriSegment[3] == 'post' && _uriSegment[4] == 'detail') {
         displayComments();
     } else {
