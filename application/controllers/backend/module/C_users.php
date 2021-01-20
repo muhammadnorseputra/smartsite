@@ -43,7 +43,8 @@ class C_users extends CI_Controller {
   //==========================================//
   ## VIEW TABLE
 	public function users_table() {
-		$resouce = 'Backend/__module/___Users/v_table';
+    
+		$resouce = 'Backend/__Module/___Users/v_table';
 		$this->load->view($resouce);
 	}
   //==========================================//
@@ -51,7 +52,7 @@ class C_users extends CI_Controller {
   //==========================================//
   ## VIEW ADD
 	public function users_add() {
-    $resouce = 'Backend/__module/___Users/v_add';
+    $resouce = 'Backend/__Module/___Users/v_add';
     $data['module'] = $this->musers->getmodule('t_module');
 		$this->load->view($resouce, $data);
 	}
@@ -60,7 +61,7 @@ class C_users extends CI_Controller {
   //==========================================//
   ## EDIT USER MODULE
 	public function edit_user_module($id) {
-    $resouce = 'Backend/__module/___Users/v_module_user';
+    $resouce = 'Backend/__Module/___Users/v_module_user';
     $data['module'] = $this->musers->getmodule('t_module');
     $data['users']  = $this->musers->getusers('t_users', $id);
     $data['token']  =  $this->madmin->getmodule('MANAJEMEN USER');
