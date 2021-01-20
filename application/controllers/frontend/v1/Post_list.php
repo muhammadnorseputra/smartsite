@@ -1,5 +1,4 @@
 <?php
-
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Post_list extends CI_Controller
