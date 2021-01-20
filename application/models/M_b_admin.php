@@ -1,5 +1,4 @@
-
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
 class M_b_admin extends CI_Model {
 
