@@ -53,18 +53,6 @@
 <section class="mb-5 mt--7 statistik">
     <div class="container">
         <div class="row">
-            <!-- <?php
-            $local = 'http://192.168.1.4';
-            $online = 'http://silka.bkppd-balangankab.info';
-            $host = $online;
-            ?>
-            <?php 
-                $arr = [
-                        'jml_asn' => api_curl_get($host.'/api/get_grap/asn'),
-                        'jml_pns' => api_curl_get($host.'/api/get_grap/pns'),
-                        'jml_ptt' => api_curl_get($host.'/api/get_grap/nonpns')
-                    ]  
-            ?> -->
             <div class="col-xs-12 col-sm-12 col-md-4">
                 <div class="card bg-info border-0 rounded shadow">
                     <div class="card-body">
