@@ -126,13 +126,13 @@
                 </div> -->
                 <div class="mx-auto">
                     
-                    <div class="d-flex">
-                    <a  class="btn shadow btn-dark my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/beranda/saran'); ?>">
-                    <i class="fas fa-box mr-2"></i> <br> Kotak Saran
-                    </a>
-                    <a  class="btn shadow btn-success my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/beranda/survey'); ?>">
-                    <i class="fas fa-check mr-2"></i> <br> Survey Kepuasan
-                    </a>
+                    <div class="d-flex flex-no-wrap">
+                        <a class="btn shadow btn-dark my-2 my-sm-0 mr-2 px-4 align-middle" href="<?= base_url('frontend/v1/beranda/saran'); ?>">
+                        <i class="fas fa-box mr-2"></i> <br> Kotak <br> Saran
+                        </a>
+                        <a class="btn shadow btn-success my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/beranda/survey'); ?>">
+                        <i class="fas fa-check mr-2"></i> <br> Survey <br> Kepuasan
+                        </a>
                     </div>
                     <hr>
                     <h5 class="my-3 font-weight-bold text-dark title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-heart text-danger mr-2"></i>Paling Disukai</span></h5>
