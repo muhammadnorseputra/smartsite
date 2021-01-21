@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php $ci = get_instance(); ?>
+<?php $ci = get_instance(); var_dump($ci); die; ?>
 <html>
 
 <head>
