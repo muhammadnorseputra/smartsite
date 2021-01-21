@@ -20,7 +20,7 @@ $sizes: map-merge((5: 5%,
 $modal-fade-transform: scale(.9);
 
 .rounded-pill {
-	border-radius: 50%;
-	-webkit-border-radius:50%;
-	-o-border-radius: 50%;
+	border-radius: 50px;
+	-webkit-border-radius:50px;
+	-o-border-radius: 50px;
 }
