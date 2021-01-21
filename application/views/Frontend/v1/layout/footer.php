@@ -6,7 +6,7 @@
 					<div class="container text-center">
 						<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="140"/>'; ?>
 						<br>
-						<div class="text-muted mt-3">&copy; <?php echo date('Y') ?> Bkppd kab. Balangan</div>
+						<div class="text-muted mt-4 small">Hak Cipta &copy; 2019 - <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan. Semua Hak Dilindungi. <br> Alamat: Desa Batu Piring, Kecamatan Paringin Selatan, Kabupaten Balangan, Kalimantan Selatan. Kodepos 71662</div>
 					</div>
 				</div>
 			</div>

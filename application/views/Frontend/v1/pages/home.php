@@ -50,23 +50,24 @@
         </div>
     </div>
 </section>
-<section class="mb-5 mt--7 statistik">
+<section class="mb-5 mt--7 statistik py-5 bg-white">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4">
-                <div class="card bg-info border-0 rounded shadow">
+
+                <div class="card bg-white border-0 rounded shadow">
                     <div class="card-body">
-                        <i class="fas fa-users float-right fa-3x d-inline-block mt-1 text-white"></i>
+                        <i class="fas fa-users float-right fa-3x d-inline-block mt-1 text-secondary"></i>
                         <h3 id="count_jml" data-from="0" data-to="250"
-      data-speed="5000" data-refresh-interval="50" class="display-4 text-white">250</h3>
-                        <b class="text-white">Jumlah ASN Kab. Balangan</b>
+      data-speed="5000" data-refresh-interval="50" class="display-4">250</h3>
+                        <b class="text-secondary">Jumlah ASN Kab. Balangan</b>
                     </div>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-4">
-                <div class="card bg-white shadow-lg rounded border-0 my-md-0 my-4 big-card" style="transform: scale(1.2); z-index: 1;">
+                <div class="card bg-white shadow-lg rounded  border-top-0 border-bottom-0 my-md-0 my-4 big-card" style="transform: scale(1.2); z-index: 1;">
                     <div class="card-body align-middle">
-                        <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-primary-old"></i>
+                        <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-secondary"></i>
                         <h3 id="count_jml" data-from="0" data-to="150"
       data-speed="5000" data-refresh-interval="50" class="display-4">150</h3>
                         <b class="text-primary-old">Jumlah PNS + CPNS</b>
@@ -74,12 +75,12 @@
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-4">
-                <div class="card bg-warning rounded shadow border-0">
+                <div class="card bg-white rounded shadow border-0">
                     <div class="card-body">
-                        <i class="far fa-user-circle float-right fa-3x d-inline-block mt-1"></i>
+                        <i class="far fa-user-circle float-right fa-3x d-inline-block mt-1 text-secondary"></i>
                         <h3 id="count_jml" data-from="0" data-to="100"
       data-speed="5000" data-refresh-interval="50" class="display-4">100</h3>
-                        <b>Jumlah NON PNS</b>
+                        <b class="text-warning">Jumlah NON PNS</b>
                     </div>
                 </div>
             </div>
