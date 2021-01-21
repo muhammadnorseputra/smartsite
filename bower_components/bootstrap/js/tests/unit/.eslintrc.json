@@ -1,15 +1,11 @@
 {
   "env": {
     "es6": false,
-    "jquery": true,
-    "qunit": true
+    "qunit": true,
+    "jquery": true
   },
   "globals": {
-    "bootstrap": false,
-    "sinon": false,
-    "Util": false,
-    "Alert": false,
-    "Button": false
+    "Util": false
   },
   "parserOptions": {
     "ecmaVersion": 5,
