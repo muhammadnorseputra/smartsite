@@ -26,7 +26,7 @@
         <div class="error-message"><?php echo $message; ?></div>
         <p>link yang kamu akses tidak dapat ditemukan, coba refresh browsermu dan jalankan kembali.</p>
         <div class="button-place">
-            <a href="http://localhost/smartsite/" style="border-radius: 25px; padding: 15px 40px;" class="btn btn-info btn-lg waves-effect"> Go to homepage</a>
+            <a href="<?= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'] ?>" style="border-radius: 25px; padding: 15px 40px;" class="btn btn-info btn-lg waves-effect"> Go to homepage</a>
         </div>
     </div>
 
