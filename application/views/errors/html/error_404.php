@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php $ci = get_instance(); var_dump($ci); die; ?>
 <html>
 
 <head>
@@ -12,13 +11,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="<?= $ci->config->item('base_url').'/assets/plugins/bootstrap/css/bootstrap.css'; ?>" rel="stylesheet">
+    <link href="<?= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'/assets/plugins/bootstrap/css/bootstrap.css'; ?>" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="<?= $ci->config->item('base_url').'/assets/plugins/node-waves/waves.css'; ?>" rel="stylesheet" />
+    <link href="<?= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'/assets/plugins/node-waves/waves.css'; ?>" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="<?= $ci->config->item('base_url').'/assets/css/style.css'; ?>" rel="stylesheet">
+    <link href="<?= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'/assets/css/style.css'; ?>" rel="stylesheet">
 </head>
 
 <body class="four-zero-four">
@@ -32,13 +31,13 @@
     </div>
 
     <!-- Jquery Core Js -->
-    <script src="<?= $ci->config->item('base_url').'/assets/plugins/jquery/jquery.min.js'; ?>"></script>
+    <script src="<?= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'/assets/plugins/jquery/jquery.min.js'; ?>"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="<?= $ci->config->item('base_url').'/assets/plugins/bootstrap/js/bootstrap.js'; ?>"></script>
+    <script src="<?= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'/assets/plugins/bootstrap/js/bootstrap.js'; ?>"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="<?= $ci->config->item('base_url').'/assets/plugins/node-waves/waves.js'; ?>"></script>
+    <script src="<?= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'/assets/plugins/node-waves/waves.js'; ?>"></script>
 </body>
 
 </html>
