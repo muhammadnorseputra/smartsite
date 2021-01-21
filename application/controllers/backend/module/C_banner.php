@@ -23,7 +23,7 @@ class C_banner extends CI_Controller {
 	{
     $data = [
 				'content' => 'Backend/__Module/___Banner/v_table',
-				'scriptjs' => 'Backend/__ServerSideJs/Banner/s_banner',
+				'scriptjs' => 'Backend/__ServerSideJs/Banner/S_banner',
 				'pageinfo' => '<li><a href="'.site_url("backend/c_admin").'"><i class="material-icons">dashboard</i> Dasboard</a></li>
 							<li class="active">Banner</li>',
 				'css' => [
