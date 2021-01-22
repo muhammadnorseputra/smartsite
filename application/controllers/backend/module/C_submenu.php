@@ -27,7 +27,7 @@ class C_submenu extends CI_Controller {
 					'assets/js/pages/ui/tooltips-popovers.js'
 				]
 		];
-		$this->load->view('Backend/V_home', $data);
+		$this->load->view('Backend/v_home', $data);
 	}
 
 	public function caridata()
