@@ -470,7 +470,7 @@ $(document).ready(function () {
   var action = "inactive";
   console.log(_uriSegment);
 
-  if (_uriSegment[4] == 'beranda') {
+  if (_uriSegment[3] == 'beranda') {
     var lazzy_loader = function lazzy_loader(limit) {
       var output = "";
 
@@ -804,7 +804,7 @@ $(document).ready(function () {
 "use strict";
 
 // Uri Segement
-var _uri = "".concat(window.location.origin, "/smartsite");
+var _uri = "".concat(window.location.origin);
 
 var _uriSegment = window.location.pathname.split('/');
 // $(document).ready(function () {	
