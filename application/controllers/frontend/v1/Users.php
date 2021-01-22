@@ -268,7 +268,7 @@ class Users extends CI_Controller {
 
 			$btnAksi = '<div class="dropdown dropright">
 								  <button id="dLabel" class="btn btn-sm border-0 btn-light bg-white p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								    <i class="fas fa-ellipsis-h"></i>
+								    <i class="fas fa-ellipsis-h p-1"></i>
 								  </button>
 								  <div class="dropdown-menu" aria-labelledby="dLabel">
 								    <a class="dropdown-item rounded-pill text-primary" href="'.base_url('frontend/v1/halaman/halamanstatis/edit?token='.$h->token_halaman).'"><i class="fas fa-edit mr-2"></i> Edit</a>
@@ -317,7 +317,7 @@ class Users extends CI_Controller {
 
 		        	$btnAksi = $p->publish != 0 ? '<div class="dropdown dropright">
 								  <button id="dLabel" class="btn btn-sm border-0 btn-light bg-white p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								    <i class="fas fa-ellipsis-h"></i>
+								    <i class="fas fa-ellipsis-h p-1"></i>
 								  </button>
 								  <div class="dropdown-menu" aria-labelledby="dLabel">
 								    <a class="dropdown-item text-muted rounded-pill" href="'.base_url('frontend/v1/post/postDetail/'.encrypt_url($p->id_berita)).'"><i class="fas fa-edit mr-2"></i> Edit</a>
