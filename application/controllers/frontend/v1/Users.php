@@ -175,7 +175,7 @@ class Users extends CI_Controller {
 					$this->session->unset_userdata('user_portal_log');
 				}
 			}else{
-				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar");
+				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar", 'redirect' => base_url("frontend/v1/users/login"));
 			}
 			echo json_encode($msg);
 			}
