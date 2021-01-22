@@ -1,4 +1,4 @@
-<?php if($this->session->userdata('id') == ''): ?>
+<?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <!-- <section class="my-5">
     <div class="container">
         <div class="lazy my-md-5" data-loader="ajax" data-src="beranda/slider">
@@ -99,7 +99,7 @@
     </div>
 </section>
 <?php endif; ?>
-<?php $my2 = $this->session->userdata('id') != '' ? 'mt-5 pt-md-5' : '' ?>
+<?php $my2 = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-5 pt-md-5' : '' ?>
 <section class="content-home <?= $my2 ?>">
     <div class="container">
         <div class="row">

@@ -118,8 +118,8 @@ class Post extends CI_Controller
                     $isi = $row->content;
                 }
                 
-                $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('id'), $row->id_berita) == true ? 'btn-like' : '';
-                $status_like = $this->mf_beranda->get_status_like($this->session->userdata('id'), $row->id_berita) == true ? 'fas text-danger' : 'far';
+                $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'btn-like' : '';
+                $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
                 $output .= '
                     <div class="grid-item w-100">
@@ -146,7 +146,7 @@ class Post extends CI_Controller
 
                             <button type="button" data-toggle="tooltip" data-placement="bottom" title="Bagikan postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent border-right border-light rounded-0 p-3 float-left"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
                             
-                            <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-secondary rounded-0 p-3 float-left '.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('id') . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
+                            <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-secondary rounded-0 p-3 float-left '.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
 
                             <a href="'.$posturl.'" class="p-3 btn bg-white btn-transparent border-top-0 border-bottom-0 border-right-0 rounded-0 border-light">Baca Selengkapnya <i class="fas fa-arrow-right ml-2"></i></a>
                             </div>
@@ -184,7 +184,7 @@ class Post extends CI_Controller
                 'publish' => '0',
                 'tgl_posting' => date('Y-m-d'),
                 'jam' => date('H:i:s'),
-                'created_by' => $this->session->userdata('id')
+                'created_by' => $this->session->userdata('user_portal_log')['id']
             ];
 
             if(empty($judul)):
@@ -245,7 +245,7 @@ class Post extends CI_Controller
                 'tags' => $tags,
                 'publish' => $publish,
                 'update_at' => date('Y-m-d H:i:s'),
-                'update_by' => $this->session->userdata('id')
+                'update_by' => $this->session->userdata('user_portal_log')['id']
             ];
 
             $update = $this->post->doUpdatePost('t_berita', $id, $data);
@@ -278,7 +278,7 @@ class Post extends CI_Controller
     public function send_komentar()
     {
         
-        $idUser = $this->session->userdata('id');
+        $idUser = $this->session->userdata('user_portal_log')['id'];
 
         $fidIdBerita = $this->input->post('id_b');
         $fidUsersPortal = $idUser;
@@ -312,7 +312,7 @@ class Post extends CI_Controller
             $output = '';
             foreach($comments->result() as $comment):
                 $profileUser = $this->mf_users->get_userportal_byid($comment->fid_users_portal);
-                if($comment->fid_users_portal == $this->session->userdata('id')) {
+                if($comment->fid_users_portal == $this->session->userdata('user_portal_log')['id']) {
                     $button = '<div class="btn-group float-right">
                                     <button type="button" class="btn btn-default text-muted dropdown-toggle dropdown-toggle-split btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="sr-only">Toggle Dropdown</span>
@@ -326,10 +326,10 @@ class Post extends CI_Controller
                     $button = '';
                 } 
 
-                if($this->session->userdata('online') == 'ON') {
+                if($this->session->userdata('user_portal_log')['online'] == 'ON') {
                     $btn_reply = '<button type="button" id="btn-reply-comment" data-id-parent="' . encrypt_url($comment->fid_users_portal) . '"
                                     data-id-berita="' . encrypt_url($comment->fid_berita) . '"
-                                    data-id-user-comment="' . encrypt_url($this->session->userdata('id')) . '"
+                                    data-id-user-comment="' . encrypt_url($this->session->userdata('user_portal_log')['id']) . '"
                                     data-username="' . decrypt_url($profileUser->nama_lengkap) . '" class="btn text-muted font-small btn-link ml-1 p-0"> <small><i class="fas fa-retweet"></i> Reply</small> </button>';
                 } else {
                     $btn_reply = '';

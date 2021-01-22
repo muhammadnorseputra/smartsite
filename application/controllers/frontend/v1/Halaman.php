@@ -67,7 +67,7 @@ class Halaman extends CI_Controller
     {
       $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
       $data = [
-        'fid_users_portal' => $this->session->userdata('id'),
+        'fid_users_portal' => $this->session->userdata('user_portal_log')['id'],
         'token_halaman' => $token,
         'tgl_created' => date('Y-m-d'),
         'title' => $title,
@@ -78,7 +78,7 @@ class Halaman extends CI_Controller
       ];
     } else {
       $data = [
-        'fid_users_portal' => $this->session->userdata('id'),
+        'fid_users_portal' => $this->session->userdata('user_portal_log')['id'],
         'token_halaman' => $token,
         'tgl_created' => date('Y-m-d'),
         'title' => $title,

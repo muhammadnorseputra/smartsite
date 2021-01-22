@@ -21,8 +21,8 @@
               $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($posts->created_by))));
               $judul = strtolower($posts->judul);
               $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
-              $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('id'), $posts->id_berita) == 'on' ? 'btn-bookmark' : '';
-              $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('id'), $posts->id_berita) == 'on' ? 'fas text-primary' : 'far';
+              $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $posts->id_berita) == 'on' ? 'btn-bookmark' : '';
+              $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $posts->id_berita) == 'on' ? 'fas text-primary' : 'far';
               if(!empty($row->img)):
               $img = '<img class="card-img-top img-fluid rounded" src="data:image/jpeg;base64,'.base64_encode( $posts->img_blob ).'"/>';
               else:
@@ -38,7 +38,7 @@
                       </span>
                     </a>
                     <div class="card-body border-bottom">
-                      <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent rounded px-2 py-0 float-right <?= $btn_bookmark ?>" title="Simpan Postingan" data-id-berita="<?= $posts->id_berita ?>" data-id-user="<?= $this->session->userdata('id') ?>"><i class="<?= $status_bookmark ?> fa-bookmark"></i> </button>
+                      <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent rounded px-2 py-0 float-right <?= $btn_bookmark ?>" title="Simpan Postingan" data-id-berita="<?= $posts->id_berita ?>" data-id-user="<?= $this->session->userdata('user_portal_log')['id'] ?>"><i class="<?= $status_bookmark ?> fa-bookmark"></i> </button>
                       <p>
                         <span class="font-weight-bold d-inline-block mt-1"><?php echo $namalengkap; ?></span>
                         <img data-src="<?= $gravatar ?>" width="30" height="30" class="float-left mr-2 rounded-circle align-baseline lazy">

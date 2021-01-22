@@ -21,7 +21,7 @@
 							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="140"/>'; ?>
 							</div>
-							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Registered</h3> <?= $this->session->userdata('nama_panggilan') ?>
+							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Registered</h3> <?= $this->session->userdata('user_portal_log')['nama_panggilan'] ?>
 							<?= form_open_multipart(base_url('frontend/v1/daftar/send'), ['id' => 'form_daftar', 'class' => 'toggle-disabled'], ['session_register' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
 							<div class="form-group my-5 text-center">
 								<img src="<?= base_url('assets/images/no-profile-picture.jpg'); ?>" alt="pic" width="160" height="160" class="rounded-circle d-block border border-info p-1 mb-3 photo_pic mx-auto">

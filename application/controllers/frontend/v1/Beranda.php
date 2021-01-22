@@ -93,11 +93,11 @@ class Beranda extends CI_Controller
                 $judul = strtolower($row->judul);
                 $posturl = "post/detail/{$postby}/{$id}/".url_title($judul).'';
                 
-                $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('id'), $row->id_berita) == 'on' ? 'btn-bookmark' : '';
-                $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('id'), $row->id_berita) == 'on' ? 'fas text-primary' : 'far';
+                $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $row->id_berita) == 'on' ? 'btn-bookmark' : '';
+                $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $row->id_berita) == 'on' ? 'fas text-primary' : 'far';
 
-                $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('id'), $row->id_berita) == true ? 'btn-like' : '';
-                $status_like = $this->mf_beranda->get_status_like($this->session->userdata('id'), $row->id_berita) == true ? 'fas text-danger' : 'far';
+                $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'btn-like' : '';
+                $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
                 if(empty($row->img)):
                     $img = '<img class="card-img-top rounded-lg lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
@@ -111,7 +111,7 @@ class Beranda extends CI_Controller
                 <div>
 					<div class="card mb-4 border-light rounded-lg shadow-sm bg-white">
 					<div class="card-body p-3">
-                        <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('id') . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
+                        <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded lazy">
 						<h5 class="card-title"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
                         <p class="card-text">
@@ -119,7 +119,7 @@ class Beranda extends CI_Controller
                         </p>
 					</div>
                         <div class="canvas p-3 position-relative">
-                        <span ondblclick="like_toggle(this)" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('id') . '" class="rippler rippler-img rippler-bs-info" title="Double click to like article">
+                        <span ondblclick="like_toggle(this)" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '" class="rippler rippler-img rippler-bs-info" title="Double click to like article">
                         
 						  '.$img.'
                         </span>
@@ -142,7 +142,7 @@ class Beranda extends CI_Controller
                     <button type="button" data-toggle="tooltip" title="Bagikan juga postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent  border-0 rounded p-2 w-100 text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
                     </div>
                     <div class="w-100">
-                    <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded p-2 w-100 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('id') . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
+                    <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded p-2 w-100 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
                     </div>
 					</div>
                     </div>

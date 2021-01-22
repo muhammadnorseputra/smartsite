@@ -41,15 +41,15 @@
 				
 			</ul>
 			
-			<?php if ($this->session->userdata('online') == 'ON') { ?>
+			<?php if ($this->session->userdata('user_portal_log')['online'] == 'ON') { ?>
 			<?php
-			$idSes = $this->session->userdata('id');
+			$idSes = $this->session->userdata('user_portal_log')['id'];
 			$getImg = $this->mf_users->get_userportal_byid($idSes)->photo_pic;
 			$img = '<img class="rounded mr-1 shadow-sm" width="23" src="data:image/jpeg;base64,'.base64_encode( $getImg ).'"/>';
 			?>
 			<div class="dropdown">
 				<button type="button" class="btn btn-outline-dark text-muted my-2 my-sm-0 mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<?= $img ?> <?= ucfirst($this->session->userdata('nama_panggilan')) ?>
+				<?= $img ?> <?= ucfirst($this->session->userdata('user_portal_log')['nama_panggilan']) ?>
 				<i class="fas fa-angle-down mx-2"></i>
 				</button>
 				 <?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>

@@ -14,10 +14,10 @@ if ($by == 'admin') {
 	$photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic) . '';
 	$link_profile_public = base_url("frontend/v1/users/profile/@" . decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan) . "/" . encrypt_url($by));
 }
-$btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('id'), $post_detail->id_berita) == 'on' ? 'btn-bookmark' : '';
-$status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('id'), $post_detail->id_berita) == 'on' ? 'fas text-primary' : 'far';
-$btn_like = $this->mf_beranda->get_status_like($this->session->userdata('id'), $post_detail->id_berita) == true ? 'btn-like' : '';
-$status_like = $this->mf_beranda->get_status_like($this->session->userdata('id'), $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
+$btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == 'on' ? 'btn-bookmark' : '';
+$status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == 'on' ? 'fas text-primary' : 'far';
+$btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
+$status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(empty($post_detail->img)):
 $img = '<img class="img-fluid card-img-top shadow rounded-lg" src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
 else:
@@ -61,10 +61,10 @@ if (count($pecah) > 0) {
 							<button type="button" data-toggle="tooltip" data-placement="bottom" title="Share This" id="btn-share" data-row-id="<?= $post_detail->id_berita; ?>" class="btn btn-transparent border-0 rounded p-2 w-100 text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count"><?= $post_detail->share_count; ?></span></button>
 							</div>
 							<div class="w-100">
-							<button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-0 rounded p-2 w-100 text-danger <?= $btn_like ?>" title="Suka / Tidak suka" data-id-berita="<?= $post_detail->id_berita ?>" data-id-user="<?= $this->session->userdata('id') ?>"><i class="<?= $status_like ?> fa-heart mr-2"></i> <span class="count_like"><?= $post_detail->like_count ?></span> </button>
+							<button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-0 rounded p-2 w-100 text-danger <?= $btn_like ?>" title="Suka / Tidak suka" data-id-berita="<?= $post_detail->id_berita ?>" data-id-user="<?= $this->session->userdata('user_portal_log')['id'] ?>"><i class="<?= $status_like ?> fa-heart mr-2"></i> <span class="count_like"><?= $post_detail->like_count ?></span> </button>
 							</div>
 							<div class="w-100">
-							<button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-0 rounded p-2 w-100 text-info <?= $btn_bookmark ?>" title="Simpan Postingan" data-id-berita="<?= $post_detail->id_berita ?>" data-id-user="<?= $this->session->userdata('id') ?>"><i class="<?= $status_bookmark ?> fa-bookmark"></i> </button>
+							<button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-0 rounded p-2 w-100 text-info <?= $btn_bookmark ?>" title="Simpan Postingan" data-id-berita="<?= $post_detail->id_berita ?>" data-id-user="<?= $this->session->userdata('user_portal_log')['id'] ?>"><i class="<?= $status_bookmark ?> fa-bookmark"></i> </button>
 							</div>
 						</div>
 					</div>
@@ -81,7 +81,7 @@ if (count($pecah) > 0) {
 					<div class="card border-light border-top-0 rounded-lg bg-white">
 						<div class="card-body">
 							
-							<?php if ($this->session->userdata('online') == 'ON') { ?>
+							<?php if ($this->session->userdata('user_portal_log')['online'] == 'ON') { ?>
 							<h5 class="card-title"><i class="far fa-comment-alt mr-2"></i> Post Komentar</h5>
 							<?= form_open(base_url('frontend/v1/post/send_komentar'), ['id' => 'f_komentar', 'class' => $post_detail->id_berita]) ?>
 							<div class="form-group">

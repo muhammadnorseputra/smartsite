@@ -48,20 +48,20 @@ class Users extends CI_Controller {
 		$data = [
             'mf_beranda' => $this->mf_beranda->get_identitas()
 		];
-        if($this->session->userdata('online') == 'OFF' || empty($this->session->userdata('online'))) {
+        if($this->session->userdata('user_portal_log')['online'] == 'OFF' || empty($this->session->userdata('user_portal_log')['online'])) {
         	$this->load->view('Frontend/v1/pages/f_login', $data);
         } else {
-    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('nama_panggilan').'/'.encrypt_url($this->session->userdata('nohp'))),'refresh');
+    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('user_portal_log')['nama_panggilan'].'/'.encrypt_url($this->session->userdata('user_portal_log')['nohp'])),'refresh');
     	}
 	}
 	public function lupa_password() {
 		$data = [
             'mf_beranda' => $this->mf_beranda->get_identitas()
 		];
-		if($this->session->userdata('online') == 'OFF' || empty($this->session->userdata('online'))) {
+		if($this->session->userdata('user_portal_log')['online'] == 'OFF' || empty($this->session->userdata('user_portal_log')['online'])) {
         	$this->load->view('Frontend/v1/pages/f_lupa_password', $data);
         } else {
-    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('nama_panggilan').'/'.encrypt_url($this->session->userdata('nohp'))),'refresh');
+    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('user_portal_log')['nama_panggilan'].'/'.encrypt_url($this->session->userdata('user_portal_log')['nohp'])),'refresh');
     	}
 	}
 	public function reset_password() {
@@ -125,10 +125,10 @@ class Users extends CI_Controller {
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'data' => ['nohp' => $nohp, 'token' => decrypt_url($tglnow)]
 		];
-		if($this->session->userdata('online') == 'OFF' || empty($this->session->userdata('online'))) {
+		if($this->session->userdata('user_portal_log')['online'] == 'OFF' || empty($this->session->set_userdata	('user_portal_log')['online'])) {
         	$this->load->view('Frontend/v1/pages/f_reset_password', $data);
         } else {
-    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('nama_panggilan').'/'.encrypt_url($this->session->userdata('nohp'))),'refresh');
+    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('user_portal_log')['nama_panggilan'].'/'.encrypt_url($this->session->userdata('user_portal_log')['nohp'])),'refresh');
     	}
 	}
 
@@ -183,10 +183,10 @@ class Users extends CI_Controller {
 
     public function akun($nama_panggilan, $nohp) 
     {
-    	$ses_nohp = encrypt_url($this->session->userdata('nohp'));
-    	$ses_nama = $this->session->userdata('nama_panggilan');
+    	$ses_nohp = encrypt_url($this->session->userdata('user_portal_log')['nohp']);
+    	$ses_nama = $this->session->userdata('user_portal_log')['nama_panggilan'];
 
-    	if(($nohp == $ses_nohp) && ($nama_panggilan == $ses_nama) && ($this->session->userdata('online') == 'ON')) {
+    	if(($nohp == $ses_nohp) && ($nama_panggilan == $ses_nama) && ($this->session->userdata('user_portal_log')['online'] == 'ON')) {
     		$data = [
 	            'title' => 'Halo, '.ucfirst($ses_nama),
 	            'isi' => 'Frontend/v1/pages/u_akun',
@@ -412,11 +412,11 @@ class Users extends CI_Controller {
 			$judul = strtolower($field->judul);
 			$posturl = "frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '';
 
-			$btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('id'), $field->id_berita) == 'on' ? 'btn-bookmark' : '';
-			$status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('id'), $field->id_berita) == 'on' ? 'fas text-primary' : 'far';
+			$btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $field->id_berita) == 'on' ? 'btn-bookmark' : '';
+			$status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $field->id_berita) == 'on' ? 'fas text-primary' : 'far';
 
-			$btn_like = $this->mf_beranda->get_status_like($this->session->userdata('id'), $field->id_berita) == true ? 'btn-like' : '';
-			$status_like = $this->mf_beranda->get_status_like($this->session->userdata('id'), $field->id_berita) == true ? 'fas text-danger' : 'far';
+			$btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $field->id_berita) == true ? 'btn-like' : '';
+			$status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $field->id_berita) == true ? 'fas text-danger' : 'far';
 
 			$no++;
 			$row = array();
@@ -438,9 +438,9 @@ class Users extends CI_Controller {
 
 							<button type="button" data-toggle="tooltip" data-placement="bottom" title="Bagikan postingan ini" id="btn-share" data-row-id="' . $field->id_berita . '" class="btn btn-transparent border-light rounded-0 pl-3 pr-3 float-left"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">' . $field->share_count . '</span></button>
 							
-							<button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-secondary rounded-0 pl-3 pr-3 ' . $btn_like . '" title="Suka / Tidak suka" data-id-berita="' . $field->id_berita . '" data-id-user="' . $this->session->userdata('id') . '"><i  class="' . $status_like . ' fa-heart mr-2"></i> <span class="count_like">' . $field->like_count . '</span> </button>
+							<button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-secondary rounded-0 pl-3 pr-3 ' . $btn_like . '" title="Suka / Tidak suka" data-id-berita="' . $field->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="' . $status_like . ' fa-heart mr-2"></i> <span class="count_like">' . $field->like_count . '</span> </button>
 
-							<button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-left border-light rounded-0  pt-1 pb-1 pr-4 pl-4 float-right ' . $btn_bookmark . '" title="Simpan Postingan" data-id-berita="' . $field->id_berita . '" data-id-user="' . $this->session->userdata('id') . '"><i  class="' . $status_bookmark . ' fa-bookmark"></i> </button>
+							<button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-left border-light rounded-0  pt-1 pb-1 pr-4 pl-4 float-right ' . $btn_bookmark . '" title="Simpan Postingan" data-id-berita="' . $field->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="' . $status_bookmark . ' fa-bookmark"></i> </button>
 						</div>
 						<div class="col-md-3 p-0">
 							<img class="img-fluid rounded shadow-sm border" src="' . $field->path . '">
@@ -479,7 +479,7 @@ class Users extends CI_Controller {
 	public function edit($id)
 	{
 		$d = $this->users->get_userportal_byid(decrypt_url($id));
-		if($this->session->userdata('online') == 'ON') {
+		if($this->session->userdata('user_portal_log')['online'] == 'ON') {
 		$data = [
             'title' => 'Edit: @'.ucfirst(decrypt_url($d->nama_panggilan)),
             'isi' => 'Frontend/v1/pages/u_akun_edit',
@@ -588,7 +588,7 @@ class Users extends CI_Controller {
     public function logout()
     {
     	$this->users->status_online('t_users_portal', 
-    		['email' => encrypt_url($this->session->userdata('email'))],['online' => 'OFF']);
+    		['email' => encrypt_url($this->session->userdata('user_portal_log')['email'])],['online' => 'OFF']);
     	$this->session->sess_destroy();
 		redirect(base_url('frontend/v1/beranda'));
     }

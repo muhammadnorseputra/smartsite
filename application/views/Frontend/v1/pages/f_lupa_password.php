@@ -21,7 +21,7 @@
 							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="140"/>'; ?>
 							</div>
-							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Lupa Password</h3> <?= $this->session->userdata('nama_panggilan') ?>
+							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Lupa Password</h3>
 							<?php if($this->session->flashdata('notif') <> ''): ?>
 								<div class="alert border alert-light" role="alert">
 								 <?= $this->session->flashdata('notif') ?>
