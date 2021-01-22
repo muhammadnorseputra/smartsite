@@ -171,6 +171,7 @@ class Users extends CI_Controller {
 					'redirect' => base_url("frontend/v1/users/akun/".decrypt_url($q->nama_panggilan)).'/'.$q->nohp);
 				} else {
 					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'redirect' => base_url("frontend/v1/users/login"), 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
+					$this->users->status_online('t_users_portal', ['email' => $where['email'],'online' => 'OFF']);
 					$this->session->unset_userdata('user_portal_log');
 				}
 			}else{
