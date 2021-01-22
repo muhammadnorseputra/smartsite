@@ -8,7 +8,7 @@
     <meta name="description" content="<?= $mf_beranda->meta_desc; ?>">
     <meta name="keywords" content="<?= $mf_beranda->meta_seo; ?>">
     <meta name="author" content="Muhammad Nor Seputra">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     <title><?= $title; ?></title>
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
 
