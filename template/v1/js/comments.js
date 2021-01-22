@@ -16,7 +16,7 @@ $(document).ready(function() {
     }
 
     function displayComments() {
-        $.getJSON(`${_uri}/frontend/v1/post/displayKomentar/${_uriSegment[7]}`, function(response) {
+        $.getJSON(`${_uri}/frontend/v1/post/displayKomentar/${_uriSegment[6]}`, function(response) {
             $(".tracking-list").html(response);
         });
     }
