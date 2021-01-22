@@ -69,7 +69,7 @@ class Users extends CI_Controller {
 		$data  = $this->users->getuserportalbyemail($email)->row_array();
 		// var_dump($data);
 		// Configurasi Email
-        $from_email = 'muhammadnorseputra@gmail.com';
+        $from_email = 'bkppdbalangan@gmail.com';
         $to_email = decrypt_url($email);
 
         $config = array(
@@ -77,7 +77,7 @@ class Users extends CI_Controller {
                 'smtp_host' => 'ssl://smtp.googlemail.com',
                 'smtp_port' => 465,
                 'smtp_user' => $from_email,
-                'smtp_pass' => '@putrabungsu6',
+                'smtp_pass' => 'wulanbungas',
                 'mailtype' => 'html',
                 'charset' => 'iso-8859-1',
         );
@@ -162,7 +162,7 @@ class Users extends CI_Controller {
 					'time' => $this->config->item('sess_expiration'),
 					'id' => $q->id_user_portal
 					);
-				$this->session->set_userdata($data_session);
+				$this->session->set_userdata('user_portal_log', $data_session);
 				$this->users->status_online('t_users_portal', 
 											['email' => encrypt_url($email)],
 											['online' => 'ON']);
@@ -171,8 +171,7 @@ class Users extends CI_Controller {
 					'redirect' => base_url("frontend/v1/users/akun/".decrypt_url($q->nama_panggilan)).'/'.$q->nohp);
 				} else {
 					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'redirect' => base_url("frontend/v1/users/login"), 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
-					$this->session->sess_destroy();
-
+					$this->session->unset_userdata('user_portal_log');
 				}
 			}else{
 				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar");
