@@ -15,7 +15,7 @@ class C_submenu extends CI_Controller {
 	public function index()
 	{
     $data = [
-				'content' => 'Backend/__Module/___Submenu/V_table',
+				'content' => 'Backend/__Module/___Submenu/v_table',
 				'pageinfo' => '<li>Dasboard</li> <li>Manajemen Menu</li>
 							<li class="active">Submenu</li>',
 				'scriptjs' => 'Backend/__ServerSideJs/Submenu/S_submenu',

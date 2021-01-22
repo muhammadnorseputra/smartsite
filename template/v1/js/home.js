@@ -8,16 +8,16 @@ function explore() {
 $(document).ready(function() {
 
     // get all berita
-    var limit = 7;
+    var limit = 3;
     var start = 0;
     var action = "inactive";
     console.log(_uriSegment);
-    if (_uriSegment[3] == 'beranda') {
+    if (_uriSegment[4] == 'beranda') {
         function lazzy_loader(limit) {
             var output = "";
             for (var count = 0; count < 1; count++) {
                 output += `
-                <div class="card border border-light shadow-sm">
+                <div class="card border border-light shadow-sm mb-3">
                     <div class="card-header border-0 bg-white">
                     <p>
                     <span class="content-placeholder rounded-circle float-left mr-3" style="width:50px; height: 50px;">&nbsp;</span>
@@ -78,6 +78,7 @@ $(document).ready(function() {
                             </div>
                         </div>`
                         );
+                        $("button#load_more").hide();
                         action = "active";
                     } else {
                         $("#load_data").append(data.html);
@@ -113,11 +114,22 @@ $(document).ready(function() {
             load_data(limit, start);
         }
 
-        $(window).scroll(function() {
-            if (
-                $(window).scrollTop() + $(window).height() > $("#load_data").height() &&
-                action == "inactive"
-            ) {
+        // $(window).scroll(function() {
+        //     if (
+        //         $(window).scrollTop() + $(window).height() > $("#load_data").height() &&
+        //         action == "inactive"
+        //     ) {
+        //         lazzy_loader(limit);
+        //         action = "active";
+        //         start = start + limit;
+        //         setTimeout(function() {
+        //             load_data(limit, start);
+        //         }, 300);
+        //     }
+        // });
+        $("button#load_more").on("click", function(e) {
+            e.preventDefault();
+            if (action == "inactive") {
                 lazzy_loader(limit);
                 action = "active";
                 start = start + limit;
@@ -125,10 +137,11 @@ $(document).ready(function() {
                     load_data(limit, start);
                 }, 300);
             }
-        });
+        })
     } else {
         console.log('Semua berita tidak ditampilkan, karna bukan halaman beranda');
     }
+
     $("button#caripost").on("click", function() {
         $("#mpostseacrh").modal('show');
         $("input[name='q']").focus();

@@ -6,7 +6,7 @@
         </div>
     </div>
 </section> -->
-<section style="background-image: url(<?= base_url('assets/images/bg/bgheader.svg') ?>); background-size: cover; background-repeat: no-repeat; background-position: top right; background-clip: cover;">
+<section style="background-image: url(<?= base_url('assets/images/bg/bg-home.png') ?>); background-size: cover; background-repeat: no-repeat; background-position: bottom right; background-clip: cover;">
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 mt-5 pb-5 my-md-5 py-md-5">
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-4">
-                <div class="card bg-white shadow-lg rounded  border-top-0 border-bottom-0 my-md-0 my-4 big-card" style="transform: scale(1.2); z-index: 1;">
+                <div class="card bg-white shadow-lg rounded-0 border-top-0 border-bottom-0 my-md-0 my-4 big-card" style="transform: scale(1.2); z-index: 1;">
                     <div class="card-body align-middle">
                         <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-secondary"></i>
                         <h3 id="count_jml" data-from="0" data-to="150"
@@ -185,6 +185,7 @@
                 
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
+                <div class="text-center"><button id="load_more" class="btn btn-danger"><i class="fas fa-newspaper"></i> Load More</button></div>
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 order-first">
                 <div class="mx-auto">

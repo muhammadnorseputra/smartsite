@@ -230,7 +230,6 @@ $(document).ready(function () {
     filtersPosition: "top",
     recentEmojis: false
   });
-  console.log(_uriSegment);
 
   if (!$.cookie('ci_session') && _uriSegment[3] == 'post' && _uriSegment[4] == 'detail') {
     displayComments();
@@ -466,17 +465,17 @@ function explore() {
 
 $(document).ready(function () {
   // get all berita
-  var limit = 7;
+  var limit = 3;
   var start = 0;
   var action = "inactive";
   console.log(_uriSegment);
 
-  if (_uriSegment[3] == 'beranda') {
+  if (_uriSegment[4] == 'beranda') {
     var lazzy_loader = function lazzy_loader(limit) {
       var output = "";
 
       for (var count = 0; count < 1; count++) {
-        output += "\n                <div class=\"card border border-light shadow-sm\">\n                    <div class=\"card-header border-0 bg-white\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style = \"width:100%; height: 300px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 30px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 50px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer text-muted p-3 bg-transparent\" >\n                     <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
+        output += "\n                <div class=\"card border border-light shadow-sm mb-3\">\n                    <div class=\"card-header border-0 bg-white\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style = \"width:100%; height: 300px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 30px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 50px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer text-muted p-3 bg-transparent\" >\n                     <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
       }
 
       $("#load_data_message").html(output);
@@ -495,6 +494,7 @@ $(document).ready(function () {
         success: function success(data) {
           if (data.html == "") {
             $("#load_data_message").html("<div class=\"card border-0 bg-white shadow-sm mb-5\">\n                            <div class=\"card-body text-danger text-center\">\n                            <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                                <h5 class=\"card-title\">Yahhh! abis</h5>  \n                                <p class=\"font-weight-light text-secondary\"> Berita yang anda load mungkin telah berada di penghujung data.</p>\n                            </div>\n                        </div>"));
+            $("button#load_more").hide();
             action = "active";
           } else {
             $("#load_data").append(data.html);
@@ -530,10 +530,25 @@ $(document).ready(function () {
     if (action == "inactive") {
       action = "active";
       load_data(limit, start);
-    }
+    } // $(window).scroll(function() {
+    //     if (
+    //         $(window).scrollTop() + $(window).height() > $("#load_data").height() &&
+    //         action == "inactive"
+    //     ) {
+    //         lazzy_loader(limit);
+    //         action = "active";
+    //         start = start + limit;
+    //         setTimeout(function() {
+    //             load_data(limit, start);
+    //         }, 300);
+    //     }
+    // });
 
-    $(window).scroll(function () {
-      if ($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == "inactive") {
+
+    $("button#load_more").on("click", function (e) {
+      e.preventDefault();
+
+      if (action == "inactive") {
         lazzy_loader(limit);
         action = "active";
         start = start + limit;
@@ -789,7 +804,7 @@ $(document).ready(function () {
 "use strict";
 
 // Uri Segement
-var _uri = window.location.origin;
+var _uri = "".concat(window.location.origin, "/smartsite");
 
 var _uriSegment = window.location.pathname.split('/');
 // $(document).ready(function () {	
