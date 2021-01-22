@@ -19,23 +19,24 @@
 }
 // Loading Screen
 .slider{
-  position:absolute;
+  position:fixed;
   width:100%;
   height:5px;
   overflow-x: hidden;
+  z-index: 9999;
 }
 
 .line{
   position:absolute;
   opacity: 0.4;
-  background:#4a8df8;
+  background:$teal;
   width:150%;
   height:5px;
 }
 
 .subline{
   position:absolute;
-  background:#4a8df8;
+  background:$green;
   height:5px; 
 }
 .inc{
