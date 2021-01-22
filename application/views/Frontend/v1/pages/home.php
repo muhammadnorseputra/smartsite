@@ -50,7 +50,7 @@
         </div>
     </div>
 </section>
-<section class="mb-5 mt--7 statistik py-5 bg-white">
+<section class="mb-5 statistik py-5 bg-white">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4">
