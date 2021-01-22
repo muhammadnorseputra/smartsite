@@ -16,9 +16,11 @@
 </head>
 
 <body>
-<div class="slider">
-  <div class="line"></div>
-  <div class="subline inc"></div>
-  <div class="subline dec"></div>
-  <!-- <div class="logo-loading">Loading...</div> -->
+<div class="page-slider">
+    <div class="logo-loading"><img src="<?= base_url('assets/images/logo.png'); ?>" alt="balangankab" class="w-25"></div>
+  <div class="slider">
+    <div class="line"></div>
+    <div class="subline inc"></div>
+    <div class="subline dec"></div>
+  </div>
 </div>
