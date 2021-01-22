@@ -17,4 +17,9 @@
 </head>
 
 <body>
-<div id="loader" class="loader-center"></div> 
+<div class="slider">
+  <div class="line"></div>
+  <div class="subline inc"></div>
+  <div class="subline dec"></div>
+  <div class="logo-loading">Loading...</div>
+</div>
