@@ -119,10 +119,9 @@ class Beranda extends CI_Controller
                         </p>
 					</div>
                         <div class="canvas p-3 position-relative">
-                        <span ondblclick="like_toggle(this)" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '" class="rippler rippler-img rippler-bs-info" title="Double click to like article">
-                        
+                        <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
 						  '.$img.'
-                        </span>
+                        </a>
                         </div>
 					
 					<div class="card-body py-0 px-4">
