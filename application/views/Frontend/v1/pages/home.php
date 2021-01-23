@@ -6,7 +6,7 @@
         </div>
     </div>
 </section> -->
-<section style="background-image: url(<?= base_url('assets/images/bg/bg-home.png') ?>); background-size: cover; background-repeat: no-repeat; background-position: bottom right; background-clip: cover;">
+<section style="background-image: url(<?= base_url('assets/images/bg/bgheader.svg') ?>); background-size: cover; background-repeat: no-repeat; background-position: top right; background-clip: cover;">
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 mt-5 pb-5 my-md-5 py-md-5">
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-4">
-                <div class="card bg-white rounded-0 border-top-0 border-bottom-0 my-md-0 my-4 big-card" style="transform: scale(1.2); z-index: 1;">
+                <div class="card bg-white rounded-0 border-top-0 border-light border-bottom-0 my-md-0 my-4 big-card" style="transform: scale(1.2); z-index: 1;">
                     <div class="card-body align-middle">
                         <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-secondary"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
@@ -147,7 +147,7 @@
                         </a>
                     </div>
                     <hr>
-                    <h5 class="my-3 font-weight-bold text-dark title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-heart text-danger mr-2"></i>Paling Disukai</span></h5>
+                    <h5 class="my-3 font-weight-bold title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-heart text-danger mr-2"></i>Paling Disukai</span></h5>
                     <div class="list-group border-0 shadow-none p-0">
                         <?php
                         $nolist = 1;
@@ -162,7 +162,7 @@
                         $img = '<img class="rounded align-self-center lazy pull-left mr-2 w-25 shadow" data-src="'.$b->path.'" alt="'.$b->judul.'">';
                         endif;
                         ?>
-                        <a  href="<?= $posturl; ?>" class="list-group-item list-group-item-action border-0 p-0 bg-transparent m-0">
+                        <a  href="<?= $posturl; ?>" class="bg-transparent list-group-item list-group-item-action border-0 px-3  m-0">
                             <div class="media m-0">
                                 <?= $img ?>
                                 <div class="media-body">
@@ -186,7 +186,7 @@
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="row">
                     <div class="col-8 col-md-6">
-                        <h5 class="my-3 text-dark title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fa fa-quote-left fa-pull-left text-info mr-2"></i>Postingan Terbaru</span></h5>
+                        <h5 class="my-3 title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fa fa-quote-left fa-pull-left text-info mr-2"></i>Postingan Terbaru</span></h5>
                     </div>
                     <div class="col-4 col-md-6">
                         <div class="float-right mt-2"><button id="caripost" class="btn btn-outline-info"> <i class="fas fa-search mr-0 mr-lg-2"></i> <span class="d-none d-lg-inline-block">cari postingan</span></button></div>
@@ -206,7 +206,7 @@
                     <h6 class="font-weight-bold"><?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?></h6></a>
                     <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?> 
                     <hr>
-                    <h5 class="font-weight-bold text-dark title-sidebar mb-3"><span class="font-weight-bold"><i class="far fa-image text-danger mr-2"></i>album photo</span></h5>
+                    <h5 class="font-weight-bold title-sidebar mb-3"><span class="font-weight-bold"><i class="far fa-image text-danger mr-2"></i>album photo</span></h5>
                     <div class="overflow-hidden rounded-lg mt-4">
                         
                             <?php  
