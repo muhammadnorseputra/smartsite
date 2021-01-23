@@ -811,7 +811,7 @@ if (window.location.protocol.indexOf('https') == 0) {
 } // Uri Segement
 
 
-var _uri = "".concat(window.location.origin);
+var _uri = "".concat(window.location.origin, "/smartsite");
 
 var _uriSegment = window.location.pathname.split('/');
 // $(document).ready(function () {	
