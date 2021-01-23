@@ -12,7 +12,7 @@ $(document).ready(function() {
     var start = 0;
     var action = "inactive";
     console.log(_uriSegment);
-    if (_uriSegment[3] == 'beranda') {
+    if (_uriSegment[4] == 'beranda') {
         function lazzy_loader(limit) {
             var output = "";
             for (var count = 0; count < 1; count++) {
