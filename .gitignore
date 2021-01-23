@@ -1,8 +1,7 @@
-node_modules/
-.sass-cache/
-.vscode/
-vendor/
+node_modules/*
+.sass-cache/*
+.vscode/*
 workspace.code-workspace
-referensicss.txt
+*.txt
 old-index.php
 .editorconfig
