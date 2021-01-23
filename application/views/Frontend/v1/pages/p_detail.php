@@ -37,7 +37,7 @@ if (count($pecah) > 0) {
 <section>
 	<div class="container">
 		<div class="row mt-4">
-			<div class="col-md-8 mt-5 mb-md-5">
+			<div class="col-md-8 mt-5 mb-md-5 offset-md-1">
 				<div class="card border-0 rounded-lg shadow-none bg-transparent">
 					<div class="card-body">
 						<img data-src="<?= $photo; ?>" width="60" height="60" class="float-left mr-3 lazy rounded shadow-sm">
