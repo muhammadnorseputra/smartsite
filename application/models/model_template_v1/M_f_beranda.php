@@ -109,7 +109,7 @@ class M_f_beranda extends CI_Model
 
     public function berita_selanjutnya($id)
     {
-        return $this->db->order_by('id_berita', 'RANDOM')->get_where('t_berita', ['id_berita !=' => $id ], 2, 0);
+        return $this->db->order_by('id_berita')->get_where('t_berita', ['id_berita !=' => $id ], 2, 0);
     }
 
     public function berita_by_kategori($limit, $offset)

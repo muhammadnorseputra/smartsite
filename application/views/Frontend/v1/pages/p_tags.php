@@ -1,7 +1,25 @@
-<section class="post-list mt-5 mb-4">
+<section class="mt-5 pt-3">
+  <div class="container border-top border-light pt-3">
+    <div class="d-flex justify-content-start align-items-center">
+      <div class="font-weight-bold display-4 mr-md-3 pr-md-3 border-right border-light">Post by tags</div>
+      <div>
+      	<div class="d-flex flex-nowrap justify-content-start align-items-center"  style="overflow-x: auto; overflow-y: hidden; max-width: 720px;">
+	        <?php
+	        foreach ($tags->result() as $tag) :
+	          $active = $tag->nama_tag;
+	          $active_tag = $active == $_GET['q'] ? 'active' : '';
+	        ?>
+	          <a href="<?= base_url('frontend/v1/post_list/tags?q=' . $active); ?>" class="btn rounded-pill my-1 text-nowrap mx-2 p-3 btn-sm btn-outline-secondary ml-auto <?= $active_tag ?>">#<?= $tag->nama_tag; ?></a>
+	        <?php endforeach; ?>
+	        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="post-list mb-5">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 mt-5">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-5">
 				<div class="row grid" data-target=".item">
 					<?php
 					$count = $posts_by_tag->num_rows();
@@ -22,7 +40,7 @@
 					?>
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 						<div class="item" data-aos-duration="<?= $duration ?>00" data-aos-once="true" data-aos="fade-up" data-aos-delay="50">
-							<div class="card mb-3 border-0">
+							<div class="card mb-3 border-0 bg-white">
 								<a href="<?php echo $posturl; ?>">
 									<span class="rippler rippler-img rippler-bs-primary">
 										<?php echo $img ?>
@@ -53,33 +71,6 @@
 					</div>
 					<?php
 					}  ?>
-				</div>
-				<div class="card shadow-none border-0 bg-transparent">
-	              <div class="card-body p-0 overflow-auto">
-	                <div class="d-flex flex-nowrap justify-content-start align-items-center">
-	                <?php
-	                foreach ($tags->result() as $tag) :
-	                  $active = $tag->nama_tag;
-	                ?>
-	                  <a href="<?= base_url('frontend/v1/post_list/tags?q=' . $active); ?>" class="btn rounded-pill my-1 text-nowrap mx-2 px-3 btn-sm btn-outline-secondary ml-auto"><?= $tag->nama_tag; ?></a>
-	                <?php endforeach; ?>
-	                </div>
-	              </div>
-	            </div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-3 mt-5">
-				<div class="post-list-view">
-					<div class="list-group mb-3 shadow-sm" style="overflow-y: auto; overflow-x: hidden; max-height: 645px;">
-						<?php
-						foreach ($kategoris->result() as $kategori) :
-						$post_list_url = base_url('frontend/v1/post_list/views/' . encrypt_url($kategori->id_kategori) . '/' . url_title($kategori->nama_kategori) . '?order=desc');
-						?>
-						<a href="<?php echo $post_list_url; ?>" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
-							#<?php echo trim($kategori->nama_kategori); ?>
-							<span class="badge badge-primary px-3 badge-pill"><?= $this->mf_beranda->count_kategori_berita($kategori->id_kategori); ?></span>
-						</a>
-						<?php endforeach; ?>
-					</div>
 				</div>
 			</div>
 		</div>

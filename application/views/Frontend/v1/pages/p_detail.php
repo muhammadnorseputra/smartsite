@@ -19,9 +19,9 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(empty($post_detail->img)):
-$img = '<img class="img-fluid card-img-top shadow rounded-lg" src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
+$img = '<img class="img-fluid card-img-top shadow-lg rounded-lg" src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
 else:
-$img = '<img class="img-fluid card-img-top shadow rounded-lg" src="'.$post_detail->path.'">';
+$img = '<img class="img-fluid card-img-top shadow-lg rounded-lg" src="'.$post_detail->path.'">';
 endif;
 ?>
 <?php
@@ -36,7 +36,7 @@ if (count($pecah) > 0) {
 ?>
 <section>
 	<div class="container">
-		<div class="row mt-4">
+		<div class="row mt-5">
 			<div class="col-md-8 mt-5 mb-md-5 offset-md-2">
 				<div class="card border-0 rounded-lg shadow-none bg-transparent">
 					<div class="card-body">
@@ -129,24 +129,13 @@ if (count($pecah) > 0) {
 								  <span class="rippler rippler-img rippler-bs-danger mr-3 w-25">
 											<?= $img ?>
 								  </span>	
-								  <div class="media-body p-0">
+								  <div class="media-body px-2">
 								    <h6 class="mt-0 small"><?= $b->judul; ?></h6>
 								  </div>
 								</div>
 							</a>
 							<?php endif; ?>
 							<?php endforeach; ?>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 my-5">
-					<div id="sidebar" class="sidebar">
-						<div class="mx-auto my-auto">
-							
-
-                            
-                                
-                        </div>
 						</div>
 					</div>
 				</div>
