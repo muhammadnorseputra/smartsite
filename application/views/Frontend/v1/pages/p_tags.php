@@ -22,6 +22,7 @@
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-5">
 				<div class="row grid" data-target=".item">
 					<?php
+					// var_dump($posts_by_tag->result()); die;
 					$count = $posts_by_tag->num_rows();
 					if ($count > 0) {
 						$s = 1;
@@ -31,15 +32,15 @@
 							$judul = strtolower($posts->judul);
 							$posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
 							$status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $posts->id_berita) == 'on' ? 'fas' : 'far';
-					if(empty($row->img)):
-                    $img = '<img class="img-card-top img-fluid border-0" src="data:image/jpeg;base64,'.base64_encode( $posts->img_blob ).'"/>';
+					if(!empty($posts->img_blob)):
+                    	$img = '<img class="img-card-top img-fluid border-0" src="data:image/jpeg;base64,'.base64_encode( $posts->img_blob ).'"/>';
 	                else:
 	                    $img = '<img class="img-card-top img-fluid border-0" src="'.$posts->path.'">';
 	                endif;
 	                $duration = ($s == 3 ? 1 : 3);
 					?>
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-						<div class="item" data-aos-duration="<?= $duration ?>00" data-aos-once="true" data-aos="fade-up" data-aos-delay="50">
+						<div class="item" data-aos-duration="<?= $duration ?>0" data-aos-once="true" data-aos="fade-up" data-aos-delay="50">
 							<div class="card mb-3 border-0 bg-white">
 								<a href="<?php echo $posturl; ?>">
 									<span class="rippler rippler-img rippler-bs-primary">

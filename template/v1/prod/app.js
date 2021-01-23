@@ -1,7 +1,8 @@
-// $(document).ready(function() {
-// 	AOS.init();
-// });
 "use strict";
+
+$(document).ready(function () {
+  AOS.init();
+});
 "use strict";
 
 $(document).ready(function () {

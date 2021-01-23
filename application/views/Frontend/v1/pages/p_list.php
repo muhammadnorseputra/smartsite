@@ -59,7 +59,7 @@
               $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
               $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $posts->id_berita) == 'on' ? 'btn-bookmark' : '';
               $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $posts->id_berita) == 'on' ? 'fas text-primary' : 'far';
-              if(!empty($row->img)):
+              if(!empty($posts->img_blob)):
               $img = '<img class="card-img-top rounded-lg" src="data:image/jpeg;base64,'.base64_encode( $posts->img_blob ).'"/>';
               else:
               $img = '<img class="card-img-top rounded-lg" src="'.$posts->path.'">';
