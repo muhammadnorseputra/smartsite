@@ -138,11 +138,11 @@
                 </div> -->
                 <div class="mx-auto">
                     
-                    <div class="d-flex flex-no-wrap">
-                        <a class="btn shadow btn-dark my-2 my-sm-0 mr-2 px-4 align-middle" href="<?= base_url('frontend/v1/beranda/saran'); ?>">
+                    <div class="d-flex flex-no-wrap justify-content-between">
+                        <a class="btn shadow btn-dark my-2 my-sm-0 px-4 align-middle" href="<?= base_url('frontend/v1/beranda/saran'); ?>">
                         <i class="fas fa-box mr-2"></i> <br> Kotak <br> Saran
                         </a>
-                        <a class="btn shadow btn-success my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/beranda/survey'); ?>">
+                        <a class="btn shadow btn-success my-2 my-sm-0 px-4" href="<?= base_url('frontend/v1/beranda/survey'); ?>">
                         <i class="fas fa-check mr-2"></i> <br> Survey <br> Kepuasan
                         </a>
                     </div>
