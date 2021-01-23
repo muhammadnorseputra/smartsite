@@ -30,14 +30,14 @@ $pecah = explode(',', $tags);
 if (count($pecah) > 0) {
 	$tag = '';
 	for ($i = 0; $i < count($pecah); ++$i) {
-		$tag .= '<a href="' . base_url('frontend/v1/post_list/tags?q=' . $pecah[$i]) . '" class="btn btn-sm btn-outline-dark mr-2 mb-2 mt-4">#' . $pecah[$i] . '</a>';
+		$tag .= '<a href="' . base_url('frontend/v1/post_list/tags?q=' . $pecah[$i]) . '" class="btn btn-sm btn-outline-dark ml-2 mb-2 mt-4">#' . $pecah[$i] . '</a>';
 	}
 }
 ?>
 <section>
 	<div class="container">
 		<div class="row mt-4">
-			<div class="col-md-8 mt-5 mb-md-5 offset-md-1">
+			<div class="col-md-8 mt-5 mb-md-5 offset-md-2">
 				<div class="card border-0 rounded-lg shadow-none bg-transparent">
 					<div class="card-body">
 						<img data-src="<?= $photo; ?>" width="60" height="60" class="float-left mr-3 lazy rounded shadow-sm">
@@ -47,13 +47,13 @@ if (count($pecah) > 0) {
 						</div>
 						<div class="p-3">
 						<?= $img ?>
-							<?= $tag; ?>
+						<div class="ml-md-4"><?= $tag; ?></div>
 						</div>
-						<div class="card-body pt-0">
+						<div class="card-body px-md-5">
 							<h2 class="font-weight-bold display-5"><?php echo $post_detail->judul; ?></h2>
 							<p class="card-text font-weight-normal"><?php echo nl2br($post_detail->content); ?></p>
 						</div>
-						<div class="card-footer bg-transparent mt-0 p-2 border rounded-lg d-flex justify-content-around">
+						<div class="card-footer bg-transparent mx-md-5 p-2 border rounded-lg d-flex justify-content-around">
 							<div class="w-100">
 							<button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100"><i class="far fa-eye mr-2"></i> <?= $count; ?> </button>
 							</div>
@@ -69,7 +69,7 @@ if (count($pecah) > 0) {
 						</div>
 					</div>
 					<?php if($post_detail->komentar_status == 0): ?>
-					<div class="card rounded-lg border-light my-3 bg-transparent">
+					<div class="card rounded-lg border-light my-3 mx-md-5 bg-transparent">
 						<div class="card-body p-0" style="max-height: 480px; overflow-y: auto;">
 							<div id="tracking">
 								<div class="tracking-list">
@@ -78,7 +78,7 @@ if (count($pecah) > 0) {
 							
 						</div>
 					</div>
-					<div class="card border-light border-top-0 rounded-lg bg-white">
+					<div class="card border-light border-top-0 mx-md-5 rounded-lg bg-white">
 						<div class="card-body">
 							
 							<?php if ($this->session->userdata('user_portal_log')['online'] == 'ON') { ?>
@@ -101,38 +101,48 @@ if (count($pecah) > 0) {
 						Diskusi publik tidak diinjinkan.
 					</div>
 					<?php endif; ?>
-				</div>
-				<div class="col-md-3 my-5">
-					<div id="sidebar" class="sidebar">
-						<div class="mx-auto my-auto">
-							<h5 class="mb-3 font-weight-bold text-dark title-sidebar"><span class="font-weight-bold"><i class="fas fa-quote-left fa-pull-left text-danger mr-2"></i>Berita Selanjutnya</span></h5>
+					<div class="mx-md-5 mt-5">
+						<h5 class="mb-3 font-weight-bold title-sidebar"><span class="font-weight-bold"><i class="fas fa-quote-left fa-pull-left text-danger mr-2"></i>Berita Selanjutnya</span></h5>
+
+							<div class="d-flex justify-content-between">
 							<?php
-							$by = $berita_selanjutnya->created_by;
-							$id = encrypt_url($berita_selanjutnya->id_berita);
+							foreach ($berita_selanjutnya->result() as $b):
+							$by = $b->created_by;
+							$id = encrypt_url($b->id_berita);
 							$postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($by))));
-							$judul = strtolower($berita_selanjutnya->judul);
+							$judul = strtolower($b->judul);
 							$posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
 							if ($by == 'admin') {
 							$namapanggilan = $by;
 							} else {
 							$namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
 							}
-							if(empty($berita_selanjutnya->img)):
-							$img = '<img class="figure-img img-fluid rounded lazy mx-auto text-center d-block border-light" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="data:image/jpeg;base64,'.base64_encode( $berita_selanjutnya->img_blob ).'"/>';
+							if(empty($b->img)):
+							$img = '<img class="img-fluid rounded lazy p-0 m-0" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
 							else:
-							$img = '<img class="figure-img img-fluid rounded lazy mx-auto text-center d-block border-light" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="'.$berita_selanjutnya->path.'">';
+							$img = '<img class="img-fluid rounded lazy p-0 m-0" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="'.$b->path.'">';
 							endif;
 							?>
-							<figure class="figure d-block mt-3 mt-md-0">
-								<a href="<?= $posturl ?>" class="text-link">
-									<span class="rippler rippler-img rippler-bs-danger">
-										<?= $img ?>
-									</span>
-									<figcaption class="figure-caption">
-									<?= $berita_selanjutnya->judul; ?>
-								</a>
-								</figcaption>
-							</figure>
+							<?php if($berita_selanjutnya->num_rows() > 0): ?>
+							<a href="<?= $posturl ?>" class="text-link">
+								<div class="media">
+								  <span class="rippler rippler-img rippler-bs-danger mr-3 w-25">
+											<?= $img ?>
+								  </span>	
+								  <div class="media-body p-0">
+								    <h6 class="mt-0 small"><?= $b->judul; ?></h6>
+								  </div>
+								</div>
+							</a>
+							<?php endif; ?>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 my-5">
+					<div id="sidebar" class="sidebar">
+						<div class="mx-auto my-auto">
+							
 
                             
                                 
