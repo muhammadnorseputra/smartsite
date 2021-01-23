@@ -231,14 +231,14 @@ $(document).ready(function () {
     recentEmojis: false
   });
 
-  if (_uriSegment[3] == 'post' && _uriSegment[4] == 'detail') {
+  if (_uriSegment[4] == 'post' && _uriSegment[5] == 'detail') {
     displayComments();
   } else {
     console.log('Komentar tidak ditampilkan dikarnakan anda belum login atau bukan halaman detail berita');
   }
 
   function displayComments() {
-    $.getJSON("".concat(_uri, "/frontend/v1/post/displayKomentar/").concat(_uriSegment[6]), function (response) {
+    $.getJSON("".concat(_uri, "/frontend/v1/post/displayKomentar/").concat(_uriSegment[7]), function (response) {
       $(".tracking-list").html(response);
     });
   } // Reply komentar
@@ -470,7 +470,7 @@ $(document).ready(function () {
   var action = "inactive";
   console.log(_uriSegment);
 
-  if (_uriSegment[3] == 'beranda') {
+  if (_uriSegment[4] == 'beranda') {
     var lazzy_loader = function lazzy_loader(limit) {
       var output = "";
 
