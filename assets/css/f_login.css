@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-@import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('../../assets/plugins/bootstrap-4/css/bootstrap.min.css');
 @import url('../../template/v1/plugin/popmodal/popModal.css');
 
@@ -26,7 +27,6 @@ footer, header, hgroup, menu, nav, section {
 	display: block;}
 
 body, * {
-	line-height: 1;
 	font-family: "Poppins", sans-serif;
 	font-weight: 300;
 }

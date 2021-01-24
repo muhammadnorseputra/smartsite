@@ -175,7 +175,76 @@ class Halaman extends CI_Controller
     }
     echo json_encode($msg);
   }
+  
+  public function survey() {
+    $data = [
+      'title' => 'BKPPD | Kotak Survey Kepuasan',
+      'mf_beranda' => $this->mf_beranda->get_identitas()
+    ];
+
+    $this->load->view('Frontend/v1/pages/h_survey', $data);
+  }
+
+  public function saran() {
+    $data = [
+      'title' => 'BKPPD | Kotak Saran',
+      'isi'  => 'Frontend/v1/pages/h_saran',
+      'mf_beranda' => $this->mf_beranda->get_identitas(),
+      'mf_menu' => $this->mf_beranda->get_menu()
+    ];
+
+    $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+  }
+
+  public function saran_status() {
+    $data = [
+      'title' => 'BKPPD | Kotak Saran',
+      'isi'  => 'Frontend/v1/pages/h_saran_status',
+      'mf_beranda' => $this->mf_beranda->get_identitas(),
+      'mf_menu' => $this->mf_beranda->get_menu()
+    ];
+
+    $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+  }
+
+  public function simpan_saran() {
+    $captcha = $this->input->post('captcha');
+    $sess_captcha = $this->session->userdata('captcha');  
+    $sess_validity = $this->session->userdata('captcha')[0] + $this->session->userdata('captcha')[1];
+
+    if (isset($captcha) && isset($sess_captcha)):
+      
+      $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap', 'required|min_length[3]', ['required' => '{field} wajib diisi', 'min_length' => '{field} minimal 3 karakter']);
+      $this->form_validation->set_rules('isi_saran', 'Isi Saran', 'required', ['required' => '{field} wajib diisi']);
+      $this->form_validation->set_rules('captcha', 'Pertanyaan Keamanan', 'required', ['required' => '{field} dijawab']);
+
+      if($this->form_validation->run() == FALSE):
+        $this->form_validation->set_error_delimiters('<div class="text-danger my-1 py-1">', '</div>');
+        return $this->saran();
+      else:
+        if($captcha == $sess_validity):
+          $data = [
+            'nama_lengkap' => $this->input->post('nama_lengkap'),
+            'email' => $this->input->post('email'),
+            'isi_saran' => $this->input->post('isi_saran'),
+            'tgl_kirim' => date('Y-m-d h:i:s')
+          ];
+          // var_dump($data);
+          $db = $this->halaman->simpan_saran('public_saran', $data);
+          if($db) {
+            $this->session->set_flashdata('msg', true);
+          } else {
+            $this->session->set_flashdata('msg', false);
+          }
+          redirect(base_url('frontend/v1/halaman/saran_status'));
+        else:
+          $this->session->set_flashdata('captcha_salah', '<b>Error</b>, jawaban keamanan salah, coba ulangi lagi.');
+          redirect(base_url('frontend/v1/halaman/saran'));
+        endif;
+      endif;
+    endif;
+  }
 }
 
-/* End of file Banner.php */
-/* Location: ./application/controllers/frontend/v1/Banner.php */
+/* End of file Halaman.php */
+/* Location: ./application/controllers/frontend/v1/Halaman.php */

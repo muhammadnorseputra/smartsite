@@ -110,6 +110,11 @@ class M_f_halaman extends CI_Model
     $this->db->delete($tbl);
     return true;
   }
+
+  public function simpan_saran($tbl, $data) 
+  {
+    return $this->db->insert($tbl, $data);
+  }
 }
 
 /* End of file M_f_halaman.php */
