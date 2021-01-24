@@ -168,7 +168,7 @@
 									<div class="row">
 										<div class="col">
 											<label class="font-weight-bold pb-3 pt-3 border-top">Upload KTP
-											<br> <span class="small text-warning">dengan menupload file KTP, menyatakan bahwah anda bersetuju berkontribusi dengan kami serta tunduk dengan aturan yang telah ditetapkan.</span>
+											<br> <span class="small text-danger">dengan menupload file KTP, menyatakan bahwah anda bersetuju berkontribusi dengan kami serta tunduk dengan aturan yang telah ditetapkan.</span>
 											</label>
 											<img src="<?= base_url('assets/images/noimage.gif'); ?>" alt="pic" width="100%" class="photo_ktp d-block mx-auto border border-info p-1 mb-3">
 												<input name="photo_ktp" 

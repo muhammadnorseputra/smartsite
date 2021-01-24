@@ -215,7 +215,7 @@
                                 }
                             ?>
                             <div style="width: 100%;">
-                                <a href="#">
+                                <a href="<?= base_url('frontend/v1/album/detail/'.encrypt_url($album->id_album_foto)) ?>">
                                 <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy w-100" alt="<?= url_title($album->judul, '-', true) ?>">
                                 </a>
                             </div>

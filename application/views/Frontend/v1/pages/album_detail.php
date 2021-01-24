@@ -1,0 +1,1 @@
+ini album detail

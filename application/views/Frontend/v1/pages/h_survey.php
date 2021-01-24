@@ -10,7 +10,7 @@
 
     <title><?= $title ?></title>
   </head>
-  <body>
+  <body style="background-color: #efefef;">
     <div class="container my-5">
     	<div class="row">
     		<div class="col-12 col-md-8 offset-md-2">
