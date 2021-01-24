@@ -30,6 +30,8 @@ $(document).ready(function() {
                         type: "POST",
                         url: "http://silka.bkppd-balangankab.info/api/filternipnama",
                         dataType: "json",
+                        crossDomain: true,
+                        async: true,
                         data: {
                             q: "{{query}}",
                         }
