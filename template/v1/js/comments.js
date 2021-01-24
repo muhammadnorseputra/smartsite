@@ -8,15 +8,18 @@ $(document).ready(function() {
         filtersPosition: "top",
         recentEmojis: false,
     });
+    let $online = _uriSegment[3] == 'post' && _uriSegment[4] == 'detail';
+    let $local = _uriSegment[4] == 'post' && _uriSegment[5] == 'detail';
+    let $url = $host ? $local : $online;
 
-    if (_uriSegment[3] == 'post' && _uriSegment[4] == 'detail') {
+    if ($url) {
         displayComments();
     } else {
         console.log('Komentar tidak ditampilkan dikarnakan anda belum login atau bukan halaman detail berita');
     }
 
     function displayComments() {
-        $.getJSON(`${_uri}/frontend/v1/post/displayKomentar/${_uriSegment[6]}`, function(response) {
+        $.getJSON(`${_uri}/frontend/v1/post/displayKomentar/${$host ? _uriSegment[7] : _uriSegment[6]}`, function(response) {
             $(".tracking-list").html(response);
         });
     }

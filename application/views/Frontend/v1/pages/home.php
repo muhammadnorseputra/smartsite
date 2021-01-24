@@ -28,7 +28,7 @@
                 <div class="card border-0 shadow-lg bg-white">
                     <div class="card-body">
                         <b>Profile PNS</b>
-                        <form class="form-horizontal" id="caripegawai"  method="POST" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
+                        <form class="form-horizontal" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
                             <div class="typeahead__container form-group">
                                 <label for="js-nipnama">Masukan NIP, kemudian pilih detail untuk melihat profile pegawai</label>
                                 <div class="typeahead__field">

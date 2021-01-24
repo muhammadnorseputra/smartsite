@@ -21,6 +21,7 @@ $(document).ready(function() {
             return `<span class='mr-3 pull-left'><img class='img-rounded' src='{{photo}}' width='30' alt='{{nama}}'></span> {{nama}} - {{nip}}`;
             // return `{{nip}} - {{nama}}`;
         },
+        href: `${_uri}/frontend/v1/pegawai/detail?filter[query]={{nip}}`,
         source: {
             pegawai: {
                 display: ["nip"],
@@ -35,6 +36,12 @@ $(document).ready(function() {
                     }
                 }
             }
+        },
+        callback: {
+            onClickAfter: function(node, a, item, event) {
+                event.preventDefault();
+                window.open(item.href, '_self');
+            },
         }
     });
 })

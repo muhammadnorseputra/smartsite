@@ -39,7 +39,7 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
               </div>
               <div class="w-100 my-4"></div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 order-2 order-md-first">
                   <div id="sidebar" class="sidebar">
                     <h5 class="my-3 font-weight-bold title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-heart text-danger mr-2"></i>Paling Disukai</span></h5>
                     <div class="list-group border-0 shadow-none p-0">
@@ -75,14 +75,14 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
 
                   </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 order-3 order-md-2">
                   <h5 class="my-3 font-weight-bold title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-quote-left text-danger mr-2"></i>Postingan Terbaru</span></h5>
                   <div id="load_data_profile"></div>
                   <div id="load_data_message_profile"></div>
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 order-md-last order-first">
               <div id="sidebar" class="sidebar">
                 <div class="my-auto mx-auto">
                   

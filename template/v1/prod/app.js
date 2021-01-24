@@ -231,15 +231,18 @@ $(document).ready(function () {
     filtersPosition: "top",
     recentEmojis: false
   });
+  var $online = _uriSegment[3] == 'post' && _uriSegment[4] == 'detail';
+  var $local = _uriSegment[4] == 'post' && _uriSegment[5] == 'detail';
+  var $url = $host ? $local : $online;
 
-  if (_uriSegment[3] == 'post' && _uriSegment[4] == 'detail') {
+  if ($url) {
     displayComments();
   } else {
     console.log('Komentar tidak ditampilkan dikarnakan anda belum login atau bukan halaman detail berita');
   }
 
   function displayComments() {
-    $.getJSON("".concat(_uri, "/frontend/v1/post/displayKomentar/").concat(_uriSegment[6]), function (response) {
+    $.getJSON("".concat(_uri, "/frontend/v1/post/displayKomentar/").concat($host ? _uriSegment[7] : _uriSegment[6]), function (response) {
       $(".tracking-list").html(response);
     });
   } // Reply komentar
@@ -470,8 +473,9 @@ $(document).ready(function () {
   var start = 0;
   var action = "inactive";
   console.log(_uriSegment);
+  var $url = $host ? _uriSegment[4] : _uriSegment[3];
 
-  if (_uriSegment[3] == 'beranda') {
+  if ($url == 'beranda') {
     var lazzy_loader = function lazzy_loader(limit) {
       var output = "";
 
@@ -812,9 +816,17 @@ if (window.location.protocol.indexOf('https') == 0) {
 } // Uri Segement
 
 
-var _uri = "".concat(window.location.origin);
+var $host = window.location.origin == 'http://localhost';
+
+if ($host) {
+  var _uri = "".concat(window.location.origin, "/smartsite");
+} else {
+  var _uri = "".concat(window.location.origin);
+}
 
 var _uriSegment = window.location.pathname.split('/');
+
+console.log(_uri);
 // $(document).ready(function () {	
 //   	$('#sidebar, .post-list-view, .banner-list, .public_profile_menus, .ig-profile').sticky({
 //   		topSpacing: 60, //80
@@ -900,6 +912,7 @@ $(document).ready(function () {
     template: function template(item) {
       return "<span class='mr-3 pull-left'><img class='img-rounded' src='{{photo}}' width='30' alt='{{nama}}'></span> {{nama}} - {{nip}}"; // return `{{nip}} - {{nama}}`;
     },
+    href: "".concat(_uri, "/frontend/v1/pegawai/detail?filter[query]={{nip}}"),
     source: {
       pegawai: {
         display: ["nip"],
@@ -913,6 +926,12 @@ $(document).ready(function () {
             }
           };
         }
+      }
+    },
+    callback: {
+      onClickAfter: function onClickAfter(node, a, item, event) {
+        event.preventDefault();
+        window.open(item.href, '_self');
       }
     }
   });

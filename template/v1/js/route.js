@@ -5,7 +5,12 @@ if (window.location.protocol.indexOf('https') == 0) {
     el.setAttribute('content', 'upgrade-insecure-requests')
     document.head.append(el)
 }
-
 // Uri Segement
-var _uri = `${window.location.origin}`;
+var $host = window.location.origin == 'http://localhost';
+if ($host) {
+    var _uri = `${window.location.origin}/smartsite`;
+} else {
+    var _uri = `${window.location.origin}`;
+}
 var _uriSegment = window.location.pathname.split('/');
+console.log(_uri);

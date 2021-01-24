@@ -15,9 +15,9 @@ class Pegawai extends CI_Controller {
 	public function detail()
 	{
 		$data = [
-			'title' => 'NIP: '.$this->input->post('filter[query]').' - '.base_url(),
+			'title' => 'NIP: '.$this->input->get('filter[query]').' - '.base_url(),
 			'data' => [
-				'nip' => $this->input->post('filter[query]') 
+				'nip' => $this->input->get('filter[query]') 
 			],
 			'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
