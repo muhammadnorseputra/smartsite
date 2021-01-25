@@ -26,7 +26,7 @@
 							
 							<tr>
 								<td width="140" rowspan="13">
-					<img class="img-thumbnail img-fluid" src="http://192.168.1.4/photo/<?= $r[0]->nip ?>.jpg" alt="">									
+					<img class="img-thumbnail img-fluid" src="<?= $r[0]->photo ?>" alt="<?= $r[0]->nip ?>">									
 								</td>
 							</tr>
 							<tr class="font-weight-bold">
