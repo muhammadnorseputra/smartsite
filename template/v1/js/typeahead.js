@@ -28,7 +28,7 @@ $(document).ready(function() {
                 ajax: function(query) {
                     return {
                         type: "POST",
-                        url: "https://silka.bkppd-balangankab.info/api/filternipnama",
+                        url: "http://silka.bkppd-balangankab.info/api/filternipnama",
                         dataType: "json",
                         crossDomain: true,
                         async: true,
