@@ -1,6 +1,6 @@
 <section class="bg-white mt-4">
 	<div class="container-fluid">
-		<div class="row border-top">
+		<div class="row">
 			<div class="col-md-12">
 				<div class="d-block p-4">
 					<div class="container text-center">

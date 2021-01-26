@@ -11,6 +11,6 @@ class M_f_album extends CI_Model
 		return $q->judul;
 	}
 	public function photos($id) {
-		return $this->db->get_where('t_foto', ['fid_album_foto' => $id]);
+		return $this->db->order_by('id_foto', 'desc')->get_where('t_foto', ['fid_album_foto' => $id, 'publish ' => 'Y']);
 	}
 }

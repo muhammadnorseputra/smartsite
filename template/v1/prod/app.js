@@ -484,6 +484,7 @@ $(document).ready(function () {
       }
 
       $("#load_data_message").html(output);
+      $("button#load_more").text('Loading...').prop('disabled', true);
     };
 
     var load_data = function load_data(limit, start) {
@@ -504,6 +505,7 @@ $(document).ready(function () {
           } else {
             $("#load_data").append(data.html);
             $("#load_data_message").html("");
+            $("button#load_more").html("<i class=\"fas fa-newspaper\"></i> Load More").prop('disabled', false);
             action = "inactive";
             $(".lazy").lazy({
               beforeLoad: function beforeLoad(element) {
@@ -674,25 +676,32 @@ $(document).ready(function () {
     },
     afterLoad: function afterLoad(element) {
       // var imageSrc = element.data('src');
-      element.addClass('isLoaded').removeClass('lazy');
+      element.addClass('isLoaded').css({
+        trasition: '0.8s'
+      }).removeClass('lazy');
     }
   });
 });
 "use strict";
 
 lightbox.option({
-  'resizeDuration': 200,
-  'wrapAround': true,
-  'fadeDuration': 0,
-  'disableScrolling': true
+  'resizeDuration': 300,
+  'wrapAround': false,
+  'fadeDuration': 400,
+  'imageFadeDuration': 400,
+  'disableScrolling': true,
+  'albumLabel': "Gambar %1 dari %2"
 });
 "use strict";
 
 document.onreadystatechange = function () {
   if (document.readyState !== "complete") {
     // document.querySelector("html").style.visibility = "hidden";
-    document.querySelector(".page-slider").style.visibility = "visible";
+    document.querySelector(".page-slider").style.transition = "0";
+    document.querySelector(".page-slider").style.opacity = 1;
   } else {
+    document.querySelector(".page-slider").style.transition = "0.5s";
+    document.querySelector(".page-slider").style.opacity = 0;
     document.querySelector(".page-slider").style.visibility = "hidden"; // document.querySelector("html").style.visibility = "visible";
   }
 };

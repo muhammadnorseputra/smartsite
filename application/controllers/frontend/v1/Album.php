@@ -7,11 +7,16 @@ class Album extends CI_Controller {
 		parent::__construct();
 		$this->load->model('model_template_v1/M_f_album', 'album');
 	}
+	public function index($id) 
+	{
+		
+	}
+	
 	public function detail($id)
 	{
 		$id_album = decrypt_url($id);
 		$data = [
-			'title' => 'album | '.url_title($this->album->judul_album_by_id($id_album), '-', true),
+			'title' => 'BKPPD Album | '.url_title($this->album->judul_album_by_id($id_album), '-', true),
 			'photos' => $this->album->photos($id_album),
 			'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),

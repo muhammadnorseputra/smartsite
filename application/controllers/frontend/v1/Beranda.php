@@ -71,7 +71,7 @@ class Beranda extends CI_Controller
                         $tag .= '<a href="'.base_url('frontend/v1/post_list/tags?q='.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-secondary mr-2 mb-2">#'.$pecah[$i].'</a>';
                     }
                 }
-                $pilihan = $row->pilihan == 'Y' ? '<span class="text-primary-old"><i class="far fa-check-circle"></i></span>' : '';
+                $pilihan = $row->pilihan == 'Y' ? '<span class="text-success small float-right" data-toggle="tooltip" title="Pilihan Editor"><i class="fas fa-check-circle"></i></span>' : '';
 
                 $by = $row->created_by;
                 if($by == 'admin') {
@@ -100,18 +100,18 @@ class Beranda extends CI_Controller
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
                 if(empty($row->img)):
-                    $img = '<img class="card-img-top rounded-lg lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img class="card-img-top lazy" style="border-radius:15px;" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 else:
-                    $img = '<img class="card-img-top rounded-lg lazy" data-src="'.$row->path.'" alt="'.$row->img.'">';
+                    $img = '<img class="card-img-top lazy" style="border-radius:15px;" data-src="'.$row->path.'" alt="'.$row->img.'">';
                 endif;
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('frontend/v1/post_list/views/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
 // <a href="'.$post_list_url.'" class="btn btn-primary-old rounded float-right btn-sm px-3">'.$namakategori.'</a>
                 $output .= '
                 <div>
-					<div class="card mb-5 border-light rounded-lg shadow-sm bg-white">
+					<div class="card mb-5 border-light shadow-sm bg-white" style="border-radius:12px;">
 					<div class="card-body p-3">
-                        <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
+                        <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded lazy">
 						<h5 class="card-title"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
                         <p class="card-text">
@@ -127,9 +127,9 @@ class Beranda extends CI_Controller
 					<div class="card-body py-0 px-4">
 						<h3 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h3>
                         <p class="card-text font-weight-normal text-secondary">'.character_limiter($isi, 150).'</p>
-                        <p><a href="#" class="btn btn-sm btn-warning mr-2 mb-2 text-white">'.$namakategori.'</a>'.$tag. '</p>
+                        <p><a href="#" class="btn btn-sm btn-warning mr-2 mb-2 text-white shadow">'.$namakategori.'</a>'.$tag. '</p>
 					</div>
-					<div class="card-footer bg-white p-2 border-light d-flex justify-content-around">
+					<div class="card-footer bg-white p-2 border-light d-flex justify-content-around"  style="border-bottom-left-radius:12px;border-bottom-right-radius:12px;">
 					
                     <div class="w-100">
 					<button type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>

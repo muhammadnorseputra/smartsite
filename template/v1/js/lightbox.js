@@ -1,6 +1,8 @@
 lightbox.option({
-  'resizeDuration': 200,
-  'wrapAround': true,
-  'fadeDuration': 0,
-  'disableScrolling': true
+    'resizeDuration': 300,
+    'wrapAround': false,
+    'fadeDuration': 400,
+    'imageFadeDuration': 400,
+    'disableScrolling': true,
+    'albumLabel': "Gambar %1 dari %2"
 });

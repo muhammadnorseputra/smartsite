@@ -55,6 +55,7 @@ $(document).ready(function() {
             `;
             }
             $("#load_data_message").html(output);
+            $("button#load_more").text('Loading...').prop('disabled', true);
         }
 
         lazzy_loader(limit);
@@ -85,6 +86,7 @@ $(document).ready(function() {
                     } else {
                         $("#load_data").append(data.html);
                         $("#load_data_message").html("");
+                        $("button#load_more").html(`<i class="fas fa-newspaper"></i> Load More`).prop('disabled', false);
                         action = "inactive";
                         $(".lazy").lazy({
                             beforeLoad: function(element) {
