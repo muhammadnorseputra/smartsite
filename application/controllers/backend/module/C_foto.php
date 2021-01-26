@@ -16,8 +16,8 @@ class C_foto extends CI_Controller {
 	public function index()
 	{
     $data = [
-				'content' => 'Backend/__module/___Foto/v_table',
-				'scriptjs' => 'Backend/__ServerSideJs/Foto/s_foto',
+				'content' => 'Backend/__Module/___Foto/v_table',
+				'scriptjs' => 'Backend/__ServerSideJs/Foto/S_foto',
 				'pageinfo' => '<li>Dasboard</li><li class="active">Galeri Foto</li>',
 				'css' => [
 					'assets/plugins/waitme/waitMe.css',
@@ -43,8 +43,8 @@ class C_foto extends CI_Controller {
 	public function add()
 	{
     $data = [
-				'content' => 'Backend/__module/___Foto/v_tambah',
-				'scriptjs' => 'Backend/__ServerSideJs/Foto/s_foto',
+				'content' => 'Backend/__Module/___Foto/v_tambah',
+				'scriptjs' => 'Backend/__ServerSideJs/Foto/S_foto',
 				'pageinfo' => '<li> Dasboard</li><li> Galeri</li><li class="active">Add Album Foto</li>',
 				'css' => [
 					'assets/plugins/waitme/waitMe.css',
