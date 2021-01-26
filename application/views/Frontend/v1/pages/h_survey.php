@@ -24,7 +24,7 @@
     			  </div>
     			  <div id="share" class="small"></div>
     			</div>
-    			<footer class="blockquote-footer my-4"><?php echo longdate_indo(date('Y-m-d')) ?> <cite title="Source Title">, Bkppd Team</cite></footer>
+    			<footer class="blockquote-footer my-4"><?php echo longdate_indo(date('Y-m-d')) ?> <cite title="Source Title">, Tim BinaInfo Bkppd</cite></footer>
     			</blockquote>
     		</div>
     	</div>
