@@ -106,7 +106,7 @@ class C_foto extends CI_Controller {
 		$files = "bkppdbalangan_".str_replace(" ","",$jdl)."_".$acak27;
 		//init library upload
 		$config['upload_path']      = './files/file_album/';
-		$path_now 								  = site_url('./files/file_album/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
+		$path_now 								  = base_url('./files/file_album/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
 		$config['allowed_types']    = 'jpg|jpeg|png';
 		$config['max_size'] 				= '5120'; //maksimum besar file 5M
 		$config['max_width'] 				= '1366';
@@ -164,7 +164,7 @@ class C_foto extends CI_Controller {
 			$files = "bkppdbalangan_".str_replace(" ","",$judul)."_".$acak27;	
 			//init library upload
 			$config['upload_path']      = './files/file_album/';
-			$path_now 								  = site_url('/files/file_album/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
+			$path_now 								  = base_url('/files/file_album/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
 			$config['allowed_types']    = 'jpg|jpeg|png';
 			$config['max_size'] 				= '5120'; //maksimum besar file 5M
 			$config['max_width'] 				= '1366';
@@ -214,7 +214,7 @@ class C_foto extends CI_Controller {
 			$msg['pesan'] = array(
 					'stsText' => true, 
 					'stsCode' => 200, 
-					'file' => site_url('files/file_album/'.$gambarlama),
+					'file' => base_url('files/file_album/'.$gambarlama),
 					'content' => 'Album <b>'.$judul.'</b> Updated'
 			);
 		}
@@ -241,7 +241,7 @@ class C_foto extends CI_Controller {
 			$files = "bkppdbalangan_".str_replace(" ","",$judul)."_".$acak27;	
 			//init library upload
 			$config['upload_path']      = './files/file_album/';
-			$path_now 								  = site_url('/files/file_album/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
+			$path_now 								  = base_url('/files/file_album/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
 			$config['allowed_types']    = 'jpg|jpeg|png';
 			$config['max_size'] 				= '5120'; //maksimum besar file 5M
 			$config['max_width'] 				= '1366';
@@ -293,7 +293,7 @@ class C_foto extends CI_Controller {
 			$msg['pesan'] = array(
 					'bg' => 'bg-teal',
 					'sts' => true,  
-					'file' => site_url('files/file_album/'.$gambarlama),
+					'file' => base_url('files/file_album/'.$gambarlama),
 					'content' => 'Album <b>'.$judul.'</b> Updated',
 					'judul' => $judul
 			);
@@ -339,7 +339,7 @@ class C_foto extends CI_Controller {
 		$files = "bkppdbalangan_".str_replace(" ","",$judul)."_".$acak27;	
 		//init library upload
 		$config['upload_path']      = './files/file_galeri/';
-		$path_now 								  = site_url('/files/file_galeri/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
+		$path_now 								  = base_url('/files/file_galeri/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
 		$config['allowed_types']    = 'jpg|jpeg|png';
 		$config['max_size'] 				= '5120'; //maksimum besar file 5M
 		$config['max_width'] 				= '1366';
@@ -404,7 +404,7 @@ class C_foto extends CI_Controller {
 		$files = "bkppdbalangan_".str_replace(" ","",$judul)."_".$acak27;	
 		//init library upload
 		$config['upload_path']      = './files/file_galeri/';
-		$path_now 								  = site_url('/files/file_galeri/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
+		$path_now 								  = base_url('/files/file_galeri/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
 		$config['allowed_types']    = 'jpg|jpeg|png|JPG|PNG|JPEG';
 		$config['max_size'] 				= '5120'; //maksimum besar file 5M
 		// $config['max_width'] 				= '1366';
@@ -578,7 +578,7 @@ class C_foto extends CI_Controller {
 
 				$row .= '<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 									<a href="javascript:void(0)" onclick="list_galeri_depan('.$v->id_album_foto.',\''.$v->judul.'\')">
-										<img class="img-responsive thumbnail '.$border.'" src="'.site_url("files/file_album/".$v->gambar).'" width="100%" style="max-height:310px;">
+										<img class="img-responsive thumbnail '.$border.'" src="'.base_url("files/file_album/".$v->gambar).'" width="100%" style="max-height:310px;">
 									</a>
 									<em class="material-icons font-18 pull-left m-r-5 col-grey">style</em> <span class="col-grey font-12"><b>'.$jml.'</b> Foto</span> <span class="pull-right ">'.$title.'</span> <div class="clearfix"></div>
 									<b class="col-black">'.ucwords($v->judul).'</b> 
@@ -709,7 +709,7 @@ class C_foto extends CI_Controller {
 		$files = "bkppdbalangan_".str_replace(" ","",$judul)."_".$acak27;	
 		//init library upload
 		$config['upload_path']      = './files/file_galeri/';
-		$path_now 								  = site_url('/files/file_galeri/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
+		$path_now 								  = base_url('/files/file_galeri/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
 		$config['allowed_types']    = 'jpg|jpeg|png';
 		$config['max_size'] 				= '5120'; //maksimum besar file 5M
 		$config['max_width'] 				= '1366';
