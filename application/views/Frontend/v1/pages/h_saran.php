@@ -1,4 +1,4 @@
-<section class="mt-5 pt-3">
+<section class="mt-5 py-3">
 	<div class="container border-top border-light pt-3">
 		<div class="d-flex justify-content-start align-items-center">
 			<div class="mr-md-3 pr-md-3"><span class="font-weight-bold display-4">Kotak Saran</span> <br>
@@ -63,6 +63,9 @@
 					<?= form_close(); ?>
 				</div>
 			</div>
+		</div>
+		<div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+			<img src="<?= base_url('assets/images/bg/Gak Pusying.235aa0ce.png') ?>" alt="saran-buat-website-bkppd-nih-bagai-mana-ya" class="img-fluid">
 		</div>
 	</div>
 </div>

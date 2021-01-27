@@ -6,7 +6,7 @@
         </div>
     </div>
 </section> -->
-<section style="background-image: url(<?= base_url('assets/images/bg/jumbotron.868ed484.webp') ?>); background-size: cover; background-repeat: no-repeat; background-position: bottom right; background-clip: cover;" id="cover">
+<section style="background-image: url(<?= base_url('assets/images/bg/jumbotron.868ed484.webp') ?>); background-size: cover; background-repeat: no-repeat; background-position: bottom right; background-clip: cover;">
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pb-5 my-md-5 py-md-5">
