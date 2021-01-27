@@ -195,7 +195,7 @@ nav.navbar li a {
 nav.navbar li a:hover, 
 nav.navbar li a.active {
 	color: #bbe1fa !important;
-	background-color: #0f4c75;
+	background-color: #09A79E;
 	cursor: pointer;
 }
 .dropdown-menu {
@@ -309,7 +309,7 @@ nav.navbar li a.active {
 .navbar .dropdown-item:hover {
 	color: #bbe1fa;
 	text-decoration: none;
-	background-color: #3282b8;
+	background-color: #09A79E;
 }
 
 @media (min-width: 767px) {
@@ -747,14 +747,17 @@ i.likes:hover {
 }
 
 @media (max-width: 620px) {
+	#cover {
+		background-position: left bottom !important;
+	}
 	.big-card {
 		transform: scale(1) !important;	
 	}
 	.intro-website {
-		color: yellow !important;
+		color: #333 !important;
 	}
 	#halojs {
-		color: #fff !important;
+		color: #000 !important;
 		font-size: 1em !important;
 	}
 	ul.navbar-nav {

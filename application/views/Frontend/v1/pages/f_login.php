@@ -30,13 +30,13 @@
 							<?= form_open(base_url('frontend/v1/users/cek_akun'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="email">Email</label>
-								<input type="email" data-sanitize="trim,lower" class="form-control mb-2" name="email" id="email" placeholder="mail@website.com" required="required">
+								<input type="email" data-sanitize="trim,lower" class="form-control form-control-lg mb-2" name="email" id="email" placeholder="mail@website.com" required="required">
 							</div>
 							<div class="form-group">
 								<label class="mb-2 d-block" for="password">
 									Password  <a href="<?= base_url('frontend/v1/users/lupa_password') ?>" class="small float-right">(Lupa sandi?)</a>
 								</label>
-								<input type="password" class="form-control mb-2" name="password" id="password-field" placeholder="Password"  required="required">
+								<input type="password" class="form-control form-control-lg mb-2" name="password" id="password-field" placeholder="Password"  required="required">
 								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 							
@@ -71,7 +71,8 @@
 							
 						</div>
 					</div>
-					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content"></div>
+					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content">
+					</div>
 				</div>
 			</div>
 		</section>
