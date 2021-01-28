@@ -1,22 +1,22 @@
 $(function() {
     skinChanger();
 
-    // function toogleScrollbars(hide) {
-    //     var theRules = new Array();
+    function toogleScrollbars(hide) {
+        var theRules = new Array();
 
-    //     if (document.styleSheets[0].cssRules)
-    //         theRules = document.styleSheets[0].cssRules;
-    //     else if (document.styleSheets[0].rules)
-    //         theRules = document.styleSheets[0].rules;
+        if (document.styleSheets[0].cssRules)
+            theRules = document.styleSheets[0].cssRules;
+        else if (document.styleSheets[0].rules)
+            theRules = document.styleSheets[0].rules;
 
-    //     if (hide) {
-    //         theRules[4].style.overflow = "hidden";
-    //         theRules[4].style.overflowX = "hidden";
-    //     } else {
-    //         theRules[4].style.overflow = "scroll";
-    //         theRules[4].style.overflowX = "hidden";
-    //     }
-    // }
+        if (hide) {
+            theRules[4].style.overflow = "hidden";
+            theRules[4].style.overflowX = "hidden";
+        } else {
+            theRules[4].style.overflow = "scroll";
+            theRules[4].style.overflowX = "hidden";
+        }
+    }
 
     $("section.content").scroll(function() {
         if ($("section.content").scrollTop() > 10) {
@@ -55,6 +55,7 @@ function skinChanger() {
         jQuerybody.addClass("theme-" + jQuerythis.data("theme"));
     });
 }
+
 // ---------------------------------------------------------------------- //
 
 //------------------------SCRIPT OTOMATIS LOGOUT--------------------------//

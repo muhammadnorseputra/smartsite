@@ -38,14 +38,14 @@
 </audio>
         <div class="card loginBoxes">
             <div class="header text-center">
-            <img src="<?php echo site_url('assets/images/logo.png'); ?>" alt="logo" class="img-rounded" width="100">
+            <img src="<?php echo site_url('assets/images/logo.png'); ?>" alt="logo" class="img-rounded" width="70">
             <!-- <div class="logo" id="title-app"> 
                 <a href="javascript:void(location.reload());" class="col-green">
                     <?= $title; ?>
                 </a>  
             </div> -->
 
-            <h4>Sign In</h4>
+            <h3>BKPPD KAB. BALANGAN</h3>
             <span>Masuk sebagai, <b><?= $this->madmin->getNamaAkses($this->uri->segment(3)); ?></b> (<?= $os; ?>)</span>
             
             <!-- <div id="tagline">
@@ -106,7 +106,7 @@
                             <input type="hidden" name="validasi_hidden">
                         </div>
                         <div class="pull-right">
-                        <ul class="list-unstyled p-r-10" id="user_sesi">
+                        <ul class="list-unstyled" id="user_sesi">
                         <?php foreach ($lastlogon as $v): ?>
                             <li class="pull-right" data-toggle="tooltip" title="<?= strtoupper($v->nama_lengkap).', '.date_indo(substr($v->sesi_logout, 0, 10)); ?> : <?= substr($v->sesi_logout, 10, 6); ?>" data-placement="right"> 
                                  
@@ -122,13 +122,11 @@
                         
                     </div>                    
                     <div class="row">
-                        <div class="col-xs-6 col-md-6">
-                        <div class="col-xs-12">
-                            <a href="<?php echo base_url(); ?>" style="padding:8px 15px" class="btn btn-block btn-rounded btn-link m-l--20 m-t--10 waves-effect">&larr; Front Pages</a>
-                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a href="<?php echo base_url(); ?>" class="btn p-8 btn-block btn-rounded btn-link waves-effect">&larr; Beranda</a>
                         </div>
                         <div class="col-xs-6 col-md-6">
-                           <button type="submit" style="padding:10px 15px" class="btn btn-block btn-rounded m-t--10 waves-effect waves-light pull-right btn-success  waves-float" id="login" type="button"><em class="glyphicon glyphicon-send m-r-10"></em> MASUK</button> 
+                           <button type="submit" style="padding:10px 15px" class="btn btn-block btn-rounded waves-effect waves-light pull-right btn-success  waves-float" id="login" type="button"><em class="glyphicon glyphicon-send m-r-10"></em> MASUK</button> 
                         </div>
                     </div>
                 <?= form_close(); ?>
@@ -160,7 +158,7 @@
         </div>
         
     </div>
-    <div class="text-center login-footer">&copy; Badan Kepegawai, Pendidikan dan Pelatihan Daerah, 2020</div>
+    <div class="text-center login-footer help-block">&copy; <?php echo date('Y') ?> BKPPD BALANGAN </div>
     <!-- <img src="<?= base_url('assets/images/bg/example-1.svg'); ?>" id="bgImgLogin" style="position:absolute; bottom:0; z-index:-1; margin:0 auto; width: 70%; left:15%; filter: blur(5px);"> -->
     <?php
     foreach ($autoload_javascript as $script):

@@ -349,9 +349,9 @@ label {
 	width: 300px;
 	overflow: hidden;
 	display: inline-block;
-	height: calc(100vh - 63px);
+	height: calc(100vh - 65px);
 	position: fixed;
-	top: 63px;
+	top: 65px;
 	left: 0;
 	/*-webkit-box-shadow: 2px 2px 1em rgba(172, 172, 172, 0.2);
 	-moz-box-shadow: 2px 2px 1em rgba(172, 172, 172, 0.2);

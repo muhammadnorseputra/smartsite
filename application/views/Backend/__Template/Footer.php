@@ -7,16 +7,16 @@
 <script src="<?= site_url('assets/plugins/bootstrap-notify/bootstrap-notify.js'); ?>"></script>
 <script src="<?= site_url('assets/plugins/sweetalert/sweetalert.min.js'); ?>"></script>
 <script src="<?= site_url('assets/plugins/jquery-confirm/jquery-confirm.min.js'); ?>"></script>
-<script src="<?= site_url('assets/plugins/jquery-slimscrollbar/jquery.slimscroll.min.js'); ?>"></script>
+<script src="<?= site_url('assets/plugins/jquery-slimscrollbar/jquery.slimscroll.js'); ?>"></script>
 
 <script src="<?= base_url('assets/js/mproggressbar.js'); ?>"></script>
-<script src="<?= base_url('assets/js/session_out.js'); ?>"></script>
+<!-- <script src="<?= base_url('assets/js/session_out.js'); ?>"></script> -->
 <script src="<?= base_url('assets/js/theme.js'); ?>" ></script>
-<script src="<?= base_url('assets/js/menu.js'); ?>"></script>
+<!-- <script src="<?= base_url('assets/js/menu.js'); ?>"></script> -->
 
 <!-- Global All Assets -->
 <script src="<?= site_url('assets/js/admin.js'); ?>"></script>
-<script src="<?= site_url('assets/js/pages/index.js'); ?>"></script>
+<!-- <script src="<?= site_url('assets/js/pages/index.js'); ?>"></script> -->
 <script src="<?= site_url('assets/js/pages/ui/notifications.js'); ?>"></script>
 <script src="<?= site_url('assets/js/demo.js'); ?>"></script>
 
