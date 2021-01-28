@@ -572,16 +572,17 @@ class C_foto extends CI_Controller {
 			$row = '';
 			foreach($album as $v) {
 				
-				$border = $v->publish == 'N' ? 'bg-red' : 'bg-grey';
+				$border = $v->publish == 'N' ? 'bg-red' : '';
 				$title = $v->publish == 'N' ? '<em class="material-icons font-16 m-t-5 col-red">visibility_off</em>' : '';
 				$jml 		= $v->jml_galeri_in_album > 0 ? $j = $v->jml_galeri_in_album : $j = 0; 
 
 				$row .= '<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 									<a href="javascript:void(0)" onclick="list_galeri_depan('.$v->id_album_foto.',\''.$v->judul.'\')">
-										<img class="img-responsive thumbnail '.$border.'" src="'.base_url("files/file_album/".$v->gambar).'" width="100%" style="max-height:310px;">
+										<img class="img-responsive thumbnail '.$border.'" src="'.base_url("files/file_album/".$v->gambar).'" width="100%" style="min-height:160px;">
 									</a>
-									<em class="material-icons font-18 pull-left m-r-5 col-grey">style</em> <span class="col-grey font-12"><b>'.$jml.'</b> Foto</span> <span class="pull-right ">'.$title.'</span> <div class="clearfix"></div>
-									<b class="col-black">'.ucwords($v->judul).'</b> 
+									<b class="col-black">'.ucwords($v->judul).'</b> <div class="clearfix"></div>
+									 <span class="pull-right">'.$title.'</span> <em class="material-icons font-18 pull-left m-r-5 col-grey">style</em> <span class="col-grey font-12"><b>'.$jml.'</b> Foto</span>
+									
 								</div>';
 			}
 		} else {

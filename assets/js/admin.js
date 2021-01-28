@@ -29,11 +29,11 @@ $.AdminBSB.options = {
     },
     leftSideBar: {
         scrollColor: "rgba(0,0,0,1)",
-        scrollWidth: "8px",
+        scrollWidth: "12px",
         scrollAlwaysVisible: false,
         scrollBorderRadius: "0px",
-        scrollRailBorderRadius: "10",
-        scrollActiveItemWhenPageLoad: true,
+        scrollRailBorderRadius: "0px",
+        scrollActiveItemWhenPageLoad: false,
         breakpointWidth: 1366
     },
     dropdownMenu: {

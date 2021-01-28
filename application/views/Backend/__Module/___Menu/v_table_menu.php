@@ -1,5 +1,5 @@
 <div class="clearfix">
-	<div class="card card-shadow">
+	<div class="card card-shadow card-border">
 		<div class="body">
 			<table class="table table-responsive table-codensed table-hover" id="tbl-menu">
 				<thead>
