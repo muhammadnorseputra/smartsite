@@ -1,11 +1,9 @@
-
-
-	<?php
-        echo $this->session->flashdata('welcome_message');
-    ?>
+<?php
+    echo $this->session->flashdata('welcome_message');
+?>
 
 <!-- Widgets 1 -->
-<div class="row clearfix m-t-25">
+<div class="m-t-25">
 	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 		<div class="info-box hover-expand-effect hover-zoom-effect bg-red">
 			<div class="icon bg-red">
@@ -56,7 +54,7 @@
 
 
 <!-- Widgets 2 -->
-<div class="row clearfix">
+<div>
 	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 		<div class="info-box hover-expand-effect hover-zoom-effect  bg-pink">
 			<div class="icon bg-pink">
@@ -104,111 +102,4 @@
 			</div>
 		</div>
 	</div>
-</div>
-
-<!-- #END# Widgets -->
-
-<div class="row clearfix">
-
-	<!-- Latest Social Trends -->
-	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-		<div class="card card-border">
-			<div class="header">
-				<b>POLING WEBSITE</b>
-			</div>
-			<div class="body">
-				<ul class="dashboard-stat-list">
-					<li>
-						#socialtrends
-						<span class="pull-right">
-							<i class="material-icons">trending_up</i>
-						</span>
-					</li>
-					<li>
-						#materialdesign
-						<span class="pull-right">
-							<i class="material-icons">trending_up</i>
-						</span>
-					</li>
-					<li>#adminbsb</li>
-					<li>#freeadmintemplate</li>
-					<li>#bootstraptemplate</li>
-					<li>
-						#freehtmltemplate
-						<span class="pull-right">
-							<i class="material-icons">trending_up</i>
-						</span>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- #END# Latest Social Trends -->
-	<!-- Latest Social Trends -->
-	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-		<div class="card card-border">
-			<div class="body">
-				<div class="m-b--35 font-bold">LATEST SOCIAL TRENDS</div>
-				<ul class="dashboard-stat-list">
-					<li>
-						#socialtrends
-						<span class="pull-right">
-							<i class="material-icons">trending_up</i>
-						</span>
-					</li>
-					<li>
-						#materialdesign
-						<span class="pull-right">
-							<i class="material-icons">trending_up</i>
-						</span>
-					</li>
-					<li>#adminbsb</li>
-					<li>#freeadmintemplate</li>
-					<li>#bootstraptemplate</li>
-					<li>
-						#freehtmltemplate
-						<span class="pull-right">
-							<i class="material-icons">trending_up</i>
-						</span>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- #END# Latest Social Trends -->
-	<!-- Answered Tickets -->
-	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-		<div class="card card-border">
-			<div class="body">
-				<div class="font-bold m-b--35">ANSWERED TICKETS</div>
-				<ul class="dashboard-stat-list">
-					<li>
-						TODAY
-						<span class="pull-right"><b>12</b> <small>TICKETS</small></span>
-					</li>
-					<li>
-						YESTERDAY
-						<span class="pull-right"><b>15</b> <small>TICKETS</small></span>
-					</li>
-					<li>
-						LAST WEEK
-						<span class="pull-right"><b>90</b> <small>TICKETS</small></span>
-					</li>
-					<li>
-						LAST MONTH
-						<span class="pull-right"><b>342</b> <small>TICKETS</small></span>
-					</li>
-					<li>
-						LAST YEAR
-						<span class="pull-right"><b>4 225</b> <small>TICKETS</small></span>
-					</li>
-					<li>
-						ALL
-						<span class="pull-right"><b>8 752</b> <small>TICKETS</small></span>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- #END# Answered Tickets -->
 </div>

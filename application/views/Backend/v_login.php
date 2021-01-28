@@ -60,7 +60,7 @@
             <div class="body">
                  
                 <!-- <form id="sign_in" method="POST"> -->
-                <?= form_open('login/cek', array('id' => 'sign_in')); ?>
+                <?= form_open('login/cek', array('id' => 'sign_in', 'autocomplete' => 'off')); ?>
                     <div id="msg"></div>
                     <div class="row clearfix">
                         <div class="col-md-12">

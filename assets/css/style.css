@@ -349,7 +349,7 @@ label {
 	width: 300px;
 	overflow: hidden;
 	display: inline-block;
-	height: calc(100vh - 55px);
+	height: calc(100vh - 63px);
 	position: fixed;
 	top: 63px;
 	left: 0;
@@ -369,7 +369,7 @@ label {
 
 .sidebar .legal {
 	position: absolute;
-	bottom: 12px;
+	bottom: 0;
 	width: 100%;
 	padding: 18px 15px;
 	overflow: hidden;
@@ -458,7 +458,7 @@ label {
 .sidebar .menu {
 	position: relative;
 	overflow-y: auto;
-	height: calc(70vh - 14vh);
+	height: 90vh;
 }
 
 .sidebar .menu .list {

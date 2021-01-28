@@ -19,9 +19,9 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(empty($post_detail->img)):
-$img = '<img class="img-fluid card-img-top shadow-lg rounded-lg" src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
+$img = '<img class="img-fluid card-img-top shadow-lg" style="border-radius:15px;" src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
 else:
-$img = '<img class="img-fluid card-img-top shadow-lg rounded-lg" src="'.$post_detail->path.'">';
+$img = '<img class="img-fluid card-img-top shadow-lg" style="border-radius:15px;" src="'.$post_detail->path.'">';
 endif;
 ?>
 <?php

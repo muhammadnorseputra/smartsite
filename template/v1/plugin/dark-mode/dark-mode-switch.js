@@ -1,23 +1,23 @@
 const darkSwitch = document.getElementById('darkSwitch');
 window.addEventListener('load', () => {
-  var h=(new Date()).getHours();
-  if (h > 3 && h <  12) {
-    // pagi
-    document.body.removeAttribute('data-theme');
-    localStorage.removeItem('darkSwitch');
-  };
-  if (h > 17 && h <  24) {
-    // malam
-    document.body.setAttribute('data-theme', 'dark');
-    localStorage.setItem('darkSwitch', 'dark');
-  };
+    var h = (new Date()).getHours();
+    if (h > 3 && h < 12) {
+        // pagi
+        document.body.removeAttribute('data-theme');
+        localStorage.removeItem('darkSwitch');
+    };
+    if (h > 17 && h < 24) {
+        // malam
+        document.body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('darkSwitch', 'dark');
+    };
 
-  if (darkSwitch) {
-    initTheme();
-    darkSwitch.addEventListener('change', () => {
-      resetTheme();
-    });
-  }
+    if (darkSwitch) {
+        initTheme();
+        darkSwitch.addEventListener('change', () => {
+            resetTheme();
+        });
+    }
 });
 
 
@@ -33,12 +33,12 @@ window.addEventListener('load', () => {
  * @return {void}
  */
 function initTheme() {
-  const darkThemeSelected =
-    localStorage.getItem('darkSwitch') !== null &&
-    localStorage.getItem('darkSwitch') === 'dark';
-  darkSwitch.checked = darkThemeSelected;
-  darkThemeSelected ? document.body.setAttribute('data-theme', 'dark') :
-    document.body.removeAttribute('data-theme');
+    const darkThemeSelected =
+        localStorage.getItem('darkSwitch') !== null &&
+        localStorage.getItem('darkSwitch') === 'dark';
+    darkSwitch.checked = darkThemeSelected;
+    darkThemeSelected ? document.body.setAttribute('data-theme', 'dark') :
+        document.body.removeAttribute('data-theme');
 }
 
 
@@ -49,11 +49,11 @@ function initTheme() {
  * @return {void}
  */
 function resetTheme() {
-  if (darkSwitch.checked) {
-    document.body.setAttribute('data-theme', 'dark');
-    localStorage.setItem('darkSwitch', 'dark');
-  } else {
-    document.body.removeAttribute('data-theme');
-    localStorage.removeItem('darkSwitch');
-  }
+    if (darkSwitch.checked) {
+        document.body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('darkSwitch', 'dark');
+    } else {
+        document.body.removeAttribute('data-theme');
+        localStorage.removeItem('darkSwitch');
+    }
 }

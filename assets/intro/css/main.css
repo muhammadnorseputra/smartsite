@@ -112,7 +112,7 @@ body::before {
 #main {
 	z-index: 2;
 	position: relative;
-	width: 850px;
+	width: 450px;
 	min-height: 100vh;
 	background-image: url('../../images/bg/ilus.jpg');
 	background-size: cover;
@@ -133,7 +133,7 @@ body::before {
 	padding: 20px 20px;
 	text-align: left;
 	color: #888;
-	background-color: #E9EDFB;
+	background-color: #333;
 	font-family: "Poppins", sans-serif;
 	font-weight: 300;
 	font-size: 12px;
@@ -142,7 +142,7 @@ body::before {
 	content: "";
 	height:0px;
 	width:0px;
-	border-bottom:solid 15px #E9EDFB;
+	border-bottom:solid 15px #333;
 	border-left:solid 11px transparent;
 	border-right:solid 11px transparent;
 	position: absolute;
@@ -156,11 +156,11 @@ body::before {
 	float: right;
 	margin-right: 30px;
 	font-weight: 400;
-	letter-spacing: 0.5em;
+	letter-spacing: 0.1em;
 }
 #main > #top {
 	font-family: "Poppins", sans-serif;
-	margin-top: 15%;
+	margin-top: 30%;
 }
 #main .container {
 	margin: 0 auto;

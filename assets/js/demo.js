@@ -1,59 +1,59 @@
 $(function() {
-	skinChanger();
+    skinChanger();
 
-	function toogleScrollbars(hide) {
-		var theRules = new Array();
+    // function toogleScrollbars(hide) {
+    //     var theRules = new Array();
 
-		if (document.styleSheets[0].cssRules)
-			theRules = document.styleSheets[0].cssRules;
-		else if (document.styleSheets[0].rules)
-			theRules = document.styleSheets[0].rules;
+    //     if (document.styleSheets[0].cssRules)
+    //         theRules = document.styleSheets[0].cssRules;
+    //     else if (document.styleSheets[0].rules)
+    //         theRules = document.styleSheets[0].rules;
 
-		if (hide) {
-			theRules[4].style.overflow = "hidden";
-			theRules[4].style.overflowX = "hidden";
-		} else {
-			theRules[4].style.overflow = "scroll";
-			theRules[4].style.overflowX = "hidden";
-		}
-	}
+    //     if (hide) {
+    //         theRules[4].style.overflow = "hidden";
+    //         theRules[4].style.overflowX = "hidden";
+    //     } else {
+    //         theRules[4].style.overflow = "scroll";
+    //         theRules[4].style.overflowX = "hidden";
+    //     }
+    // }
 
-	$("section.content").scroll(function() {
-		if ($("section.content").scrollTop() > 10) {
-			// $(".breadcrumb").addClass("actives");
-			$(".navbar").addClass("activefixed");
-		} else {
-			// $(".breadcrumb").removeClass("actives");
-			$(".navbar").removeClass("activefixed");
-		}
-	});
+    $("section.content").scroll(function() {
+        if ($("section.content").scrollTop() > 10) {
+            // $(".breadcrumb").addClass("actives");
+            $(".navbar").addClass("activefixed");
+        } else {
+            // $(".breadcrumb").removeClass("actives");
+            $(".navbar").removeClass("activefixed");
+        }
+    });
 
-	$(".modal.modal-fixed-footer .modal-content .modal-body").scroll(function() {
-		if (
-			$(".modal.modal-fixed-footer .modal-content .modal-body").scrollTop() > 0
-		) {
-			$(".modal-header").addClass("is-shadow");
-		} else {
-			$(".modal-header").removeClass("is-shadow");
-		}
-	});
+    $(".modal.modal-fixed-footer .modal-content .modal-body").scroll(function() {
+        if (
+            $(".modal.modal-fixed-footer .modal-content .modal-body").scrollTop() > 0
+        ) {
+            $(".modal-header").addClass("is-shadow");
+        } else {
+            $(".modal-header").removeClass("is-shadow");
+        }
+    });
 });
 
 //------------------------Skin changer--------------------------//
 function skinChanger() {
-	jQuery(".right-sidebar .demo-choose-skin li").on("click", function() {
-		var jQuerybody = jQuery("body");
-		var jQuerythis = jQuery(this);
+    jQuery(".right-sidebar .demo-choose-skin li").on("click", function() {
+        var jQuerybody = jQuery("body");
+        var jQuerythis = jQuery(this);
 
-		var existTheme = jQuery(".right-sidebar .demo-choose-skin li.active").data(
-			"theme"
-		);
-		jQuery(".right-sidebar .demo-choose-skin li").removeClass("active");
-		jQuerybody.removeClass("theme-" + existTheme);
-		jQuerythis.addClass("active");
+        var existTheme = jQuery(".right-sidebar .demo-choose-skin li.active").data(
+            "theme"
+        );
+        jQuery(".right-sidebar .demo-choose-skin li").removeClass("active");
+        jQuerybody.removeClass("theme-" + existTheme);
+        jQuerythis.addClass("active");
 
-		jQuerybody.addClass("theme-" + jQuerythis.data("theme"));
-	});
+        jQuerybody.addClass("theme-" + jQuerythis.data("theme"));
+    });
 }
 // ---------------------------------------------------------------------- //
 

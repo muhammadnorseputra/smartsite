@@ -7,6 +7,7 @@
 <script src="<?= site_url('assets/plugins/bootstrap-notify/bootstrap-notify.js'); ?>"></script>
 <script src="<?= site_url('assets/plugins/sweetalert/sweetalert.min.js'); ?>"></script>
 <script src="<?= site_url('assets/plugins/jquery-confirm/jquery-confirm.min.js'); ?>"></script>
+<script src="<?= site_url('assets/plugins/jquery-slimscrollbar/jquery.slimscroll.min.js'); ?>"></script>
 
 <script src="<?= base_url('assets/js/mproggressbar.js'); ?>"></script>
 <script src="<?= base_url('assets/js/session_out.js'); ?>"></script>

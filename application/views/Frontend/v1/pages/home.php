@@ -71,7 +71,7 @@
                     <div class="card-body">
                         <i class="fas fa-users float-right fa-3x text-primary-old d-inline-block mt-1"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_asn'] ?>"
-      data-speed="5000" data-refresh-interval="50" class="display-4"><?= $arr['jml_asn'] ?></h3>
+      data-speed="5000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_asn'] ?></h3>
                         <b class="text-white">Jumlah ASN Kab. Balangan</b>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                     <div class="card-body align-middle">
                         <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-success"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
-      data-speed="5000" data-refresh-interval="50" class="display-4"><?= $arr['jml_pns'] ?></h3>
+      data-speed="5000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_pns'] ?></h3>
                         <b class="text-white">Jumlah PNS + CPNS</b>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                     <div class="card-body">
                         <i class="far fa-user-circle float-right fa-3x d-inline-block mt-1 text-warning"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_ptt'] ?>"
-      data-speed="5000" data-refresh-interval="50" class="display-4"><?= $arr['jml_ptt'] ?></h3>
+      data-speed="5000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_ptt'] ?></h3>
                         <b class="text-white">Jumlah NON PNS</b>
                     </div>
                 </div>

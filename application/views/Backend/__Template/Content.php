@@ -16,12 +16,12 @@ if (empty($module_val)) {
     // if($modules2 != $url_module ) {
     //     $this->load->view('Backend/v_module_404');
     // } else { ?>
-<section class="row content" id="load-content">
-    <div class="container-fluid">
-        <div class="content-inner out fadeIn">
-            <?php $this->load->view($content); ?>
-        </div>
-    </div>   
+<section class="content" id="load-content">
+	<div class="container">
+	    <div class="content-inner out fadeIn">
+	        <?php $this->load->view($content); ?>
+	    </div>
+	</div>
 </section>
 <?php $this->load->view($scriptjs); ?>
 <?php

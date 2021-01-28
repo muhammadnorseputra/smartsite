@@ -1,7 +1,7 @@
 <section class="py-5" style="background-image: url(<?= base_url('assets/images/bg/svg_.svg') ?>); background-size: cover; background-repeat: no-repeat; background-position: top left; background-clip: cover;">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 my-5 pt-4 text-left">
+      <div class="col-md-12 my-5 pt-4 text-left ml-md-5 pl-md-5">
         <?php
         if ($detail->num_rows() > 0) :
           $h = $detail->row();

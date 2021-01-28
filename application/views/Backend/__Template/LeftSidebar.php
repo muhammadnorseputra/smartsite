@@ -24,6 +24,7 @@
 		<!-- #User Info -->
 		<!-- Menu -->
 		<div class="menu">
+			<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 0px;">
 			<ul class="list">
 				<?php foreach ($label as $m) { ?>
 
@@ -134,6 +135,7 @@
 
 				<?php } ?>
 			</ul>
+			</div>
 		</div>
 		<!-- #Menu -->
 		<!-- Footer -->

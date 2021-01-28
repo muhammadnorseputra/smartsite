@@ -9,8 +9,8 @@ $(document).ready(function () {
   var $backToTop = $(".btn-backtop");
   $backToTop.hide();
   $(window).on('scroll loaded', function () {
-    if ($(this).scrollTop() > 100) {
-      $backToTop.slideDown();
+    if ($(this).scrollTop() > 120) {
+      $backToTop.fadeIn();
     } else {
       $backToTop.fadeOut();
     }
@@ -18,7 +18,7 @@ $(document).ready(function () {
   $backToTop.on('click', function (e) {
     $("html, body").animate({
       scrollTop: 0
-    }, 1000);
+    }, 800);
   });
 });
 // $(document).ready(function () {
@@ -776,9 +776,9 @@ $(document).ready(function () {
   });
   $(document).scroll(function () {
     if ($(document).scrollTop() > 10) {
-      $("nav#navbar").css("transition", ".1s ease-in").addClass("shadow-sm bg-white");
+      $("nav#navbar").css("transition", ".1s ease-in").addClass("shadow");
     } else {
-      $("nav#navbar").removeClass("shadow-sm bg-white");
+      $("nav#navbar").removeClass("shadow");
     }
   });
 });
