@@ -10,7 +10,7 @@
 <script src="<?= site_url('assets/plugins/jquery-slimscrollbar/jquery.slimscroll.js'); ?>"></script>
 
 <script src="<?= base_url('assets/js/mproggressbar.js'); ?>"></script>
-<!-- <script src="<?= base_url('assets/js/session_out.js'); ?>"></script> -->
+<script src="<?= base_url('assets/js/session_out.js'); ?>"></script>
 <script src="<?= base_url('assets/js/theme.js'); ?>" ></script>
 <!-- <script src="<?= base_url('assets/js/menu.js'); ?>"></script> -->
 

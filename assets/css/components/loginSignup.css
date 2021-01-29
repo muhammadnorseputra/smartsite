@@ -22,11 +22,11 @@
 #plus,
 #samadengan {
 	font-family: "Roboto", sans-serif;
-}/* 
+}
 .login-page .loginBoxes {
 	background: linear-gradient(to left, #743ad5, #d53a9d);
   	padding: 3px;
-} */
+}
 .login-page .card {
 	width: 100%;
 	/* box-shadow: 0px 0px 1em 3px rgba(146, 145, 145, 0.4);
@@ -44,10 +44,9 @@
 
 .login-page .card .body {
 	padding: 20px 50px;
-	background: linear-gradient(to bottom, #ccc, transparent);
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	color: #333;
+	background-color: #fff;
 }
 
 .login-page .card input {

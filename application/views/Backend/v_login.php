@@ -36,7 +36,25 @@
 <audio src="<?= site_url('assets/audio/ukulele-BGM.mp3'); ?>" autoplay="true" hidden="true" loop="true" id="BgmLogin">
 <p>If you are reading this, it is because your browser does not support the audio element.</p>
 </audio>
+<?php
+                $gtmsg = $_GET['message'];
+                if ($gtmsg == 'unset') {
+                    ?>
+            <div class="alert bg-greadient-redpurple alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                Session anda habis. Silahkan login kembali !!!
+            </div>
+            <?php
+                } elseif ($gtmsg == 'sign-out') {
+                    ?>    
+            <div class="alert bg-greadient-greywhite alert-dismissible" role="alert">
+                <button type="button" class="close col-black" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <span class="col-blue">Anda telah keluar dari sistem, terimakasih.</span>
+            </div>
+            <?php
+                } ?>
         <div class="card loginBoxes">
+
             <div class="header text-center">
             <img src="<?php echo site_url('assets/images/logo.png'); ?>" alt="logo" class="img-rounded" width="70">
             <!-- <div class="logo" id="title-app"> 
@@ -122,7 +140,7 @@
                         
                     </div>                    
                     <div class="row">
-                        <div class="col-xs-12 col-md-6">
+                        <div class="col-xs-6 col-md-6">
                             <a href="<?php echo base_url(); ?>" class="btn p-8 btn-block btn-rounded btn-link waves-effect">&larr; Beranda</a>
                         </div>
                         <div class="col-xs-6 col-md-6">
@@ -138,23 +156,7 @@
             </div> -->
 
 
-            <?php
-                $gtmsg = $_GET['message'];
-                if ($gtmsg == 'unset') {
-                    ?>
-            <div class="alert bg-greadient-redpurple alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                Session anda habis. Silahkan login kembali !!!
-            </div>
-            <?php
-                } elseif ($gtmsg == 'sign-out') {
-                    ?>    
-            <div class="alert bg-greadient-greywhite alert-dismissible" role="alert">
-                <button type="button" class="close col-black" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <span class="col-blue">Anda telah keluar dari sistem, terimakasih.</span>
-            </div>
-            <?php
-                } ?>
+            
         </div>
         
     </div>
