@@ -719,30 +719,7 @@ $(function () {
 "use strict";
 
 $(document).ready(function () {
-  // Navbar Hover
-  var $dropdown = $(".dropdown");
-  var $dropdownToggle = $(".dropdown-toggle");
-  var $dropdownMenu = $(".dropdown-menu");
-  var showClass = "show";
-  var animated = "animated none";
-  $(window).on("load resize", function () {
-    if (this.matchMedia("(min-width: 768px)").matches) {
-      $dropdown.hover(function () {
-        var $this = $(this);
-        $this.addClass(showClass);
-        $this.find($dropdownToggle).attr("aria-expanded", "true");
-        $this.find($dropdownMenu).addClass(showClass).addClass(animated);
-      }, function () {
-        var $this = $(this);
-        $this.removeClass(showClass);
-        $this.find($dropdownToggle).attr("aria-expanded", "false");
-        $this.find($dropdownMenu).removeClass(showClass).removeClass(animated);
-      });
-    } else {
-      $dropdown.off("mouseenter mouseleave");
-    }
-  }); // Navigasi Multilevel
-
+  // Navigasi Multilevel
   $(".navbar .dropdown-item").on("hover", function (e) {
     var $el = $(this).children(".dropdown-toggle");
     var $parent = $el.offsetParent(".dropdown-menu");

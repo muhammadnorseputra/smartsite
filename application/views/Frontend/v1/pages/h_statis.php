@@ -18,10 +18,10 @@
     </div>
   </div>
 </section>
-<section class="h-statis-detail">
+<section class="h-statis-detail bg-white">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 offset-md-1 mb-md-5 shadow-sm mt--7 bg-white p-3 p-md-5" style="border-radius: 12px;">
+      <div class="col-md-12 mb-md-5 shadow-sm mt--7 bg-white p-3 p-md-5" style="border-radius: 12px;">
         <?php
         if ($detail->num_rows() > 0) :
           $h = $detail->row();

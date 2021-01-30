@@ -8,7 +8,7 @@
 		<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto p-md-0 p-2">
+			<ul class="navbar-nav ml-auto p-md-0 p-2 mr-md-3">
 				<?php
 				$menu = $mf_menu;
 				foreach ($menu as $m) :
@@ -17,26 +17,19 @@
 					if ($submenu_jml > 0) {
 				?>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle rounded-pill px-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle rounded py-md-3 px-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
 						<?= $m->nama_menu; ?>
 					</a>
 					<div class="dropdown-menu border-light" aria-labelledby="navbarDropdown">
 						<?php foreach ($submenu as $s) : ?>
-						<a class="dropdown-item rounded-pill py-2" href="<?= base_url("frontend/v1/" . $s->link_sub); ?>"><?= $s->nama_sub; ?></a>
+						<a class="dropdown-item rounded py-md-3 px-3" href="<?= base_url("frontend/v1/" . $s->link_sub); ?>"><?= $s->nama_sub; ?></a>
 						<?php endforeach; ?>
 					</div>
 				</li>
 				<?php
-				} else {
+				}
 				?>
-				<li class="nav-item">
-					<a class="nav-link rounded-pill px-3 active" href="<?= base_url($m->link); ?>">
-						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i> -->
-					<?= $m->nama_menu; ?></a>
-				</li>
-				<?php
-				} ?>
 				<?php endforeach; ?>
 				
 			</ul>
@@ -55,7 +48,7 @@
 				 <?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a  class="btn shadow btn-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/users/login'); ?>">
+			<a  class="btn shadow-sm btn-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/users/login'); ?>">
 			<i class="far fa-user mr-2"></i> Login
 			</a>
 			<?php } ?>

@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pb-5 my-md-5 py-md-5">
-                <div class="display-3 text-primary text-center text-md-left pt-md-5"><span id="halojs"></span></div>
+                <div class="display-3 text-dark text-center text-md-left pt-md-5"><span id="halojs"></span></div>
                 <!-- Static halo -->
                 <p class="lead text-secondary intro-website text-center text-md-left">Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</p>
                 <!-- Dinamic mengunakan typed.js -->
@@ -18,7 +18,7 @@
                 <span id="typed" class="lead text-secondary intro-website"></span>
  -->
                 <p class="my-4 text-center text-md-left">
-                    <button type="button" onclick="explore()" class="btn shadow-sm btn-white rounded py-3 px-3">
+                    <button type="button" onclick="explore()" class="btn shadow btn-primary rounded py-3 px-3">
                     Update Informasi <i class="fas fa-chevron-down ml-2"></i>
                     </button>
                 </p>

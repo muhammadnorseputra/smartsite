@@ -1,32 +1,4 @@
 $(document).ready(function() {
-    // Navbar Hover
-    const $dropdown = $(".dropdown");
-    const $dropdownToggle = $(".dropdown-toggle");
-    const $dropdownMenu = $(".dropdown-menu");
-    const showClass = "show";
-    const animated = "animated none";
-
-    $(window).on("load resize", function() {
-        if (this.matchMedia("(min-width: 768px)").matches) {
-            $dropdown.hover(
-                function() {
-                    const $this = $(this);
-                    $this.addClass(showClass);
-                    $this.find($dropdownToggle).attr("aria-expanded", "true");
-                    $this.find($dropdownMenu).addClass(showClass).addClass(animated);
-                },
-                function() {
-                    const $this = $(this);
-                    $this.removeClass(showClass);
-                    $this.find($dropdownToggle).attr("aria-expanded", "false");
-                    $this.find($dropdownMenu).removeClass(showClass).removeClass(animated);
-                }
-            );
-        } else {
-            $dropdown.off("mouseenter mouseleave");
-        }
-    });
-
     // Navigasi Multilevel
     $(".navbar .dropdown-item").on("hover", function(e) {
         var $el = $(this).children(".dropdown-toggle");
