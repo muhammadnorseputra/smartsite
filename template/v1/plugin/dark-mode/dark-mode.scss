@@ -23,7 +23,8 @@
 
 [data-theme="dark"] .card-footer,
 [data-theme="dark"] .bg-white,
-[data-theme="dark"] .loader-center {
+[data-theme="dark"] .loader-center,
+[data-theme="dark"] .page-slider {
   background-color: #333 !important;
 }
 
@@ -45,7 +46,7 @@
   background-color: #eee !important;
 }
 [data-theme="dark"] .navbar-light .navbar-nav .nav-link {
-	color: #666 !important;
+	color: #333 !important;
 }
 [data-theme="dark"] .border,
 [data-theme="dark"] .border-light,

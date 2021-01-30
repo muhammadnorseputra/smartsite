@@ -23,7 +23,7 @@ class Beranda extends CI_Controller
     public function index()
     {
         $data = [
-                    'title' => 'Home',
+                    'title' => "Beranda | Website resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan Tahun ".date('Y'),
                     'isi' => 'Frontend/v1/pages/home',
                     'mf_beranda' => $this->mf_beranda->get_identitas(),
                     'mf_menu' => $this->mf_beranda->get_menu(),

@@ -53,9 +53,8 @@
 <section class="statistik mb-5 bg-primary">
     <div class="container p-5">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-4">
-                <?php
-                $local = 'http://192.168.1.4';
+              <?php
+                $local = 'http://silka.bkppd-balangankab.info';
                 $online = 'http://silka.bkppd-balangankab.info';
                 $status = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? $online : $local;
                 $host = $status;
@@ -67,11 +66,12 @@
                             'jml_ptt' => api_curl_get($host.'/api/get_grap/nonpns')
                         ]  
                 ?>
+            <div class="col-xs-12 col-sm-12 col-md-4">
                 <div class="card bg-transparent border-0 rounded">
                     <div class="card-body">
                         <i class="fas fa-users float-right fa-3x text-primary-old d-inline-block mt-1"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_asn'] ?>"
-      data-speed="5000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_asn'] ?></h3>
+      data-speed="3000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_asn'] ?></h3>
                         <b class="text-white">Jumlah ASN Kab. Balangan</b>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                     <div class="card-body align-middle">
                         <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-success"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
-      data-speed="5000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_pns'] ?></h3>
+      data-speed="3000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_pns'] ?></h3>
                         <b class="text-white">Jumlah PNS + CPNS</b>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                     <div class="card-body">
                         <i class="far fa-user-circle float-right fa-3x d-inline-block mt-1 text-warning"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_ptt'] ?>"
-      data-speed="5000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_ptt'] ?></h3>
+      data-speed="3000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_ptt'] ?></h3>
                         <b class="text-white">Jumlah NON PNS</b>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                         <a class="btn shadow btn-dark my-2 my-sm-0 px-4 align-middle" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
                         <i class="fas fa-box mr-2"></i> <br> Kotak <br> Saran
                         </a>
-                        <a target="_blank" class="btn shadow btn-success my-2 my-sm-0 px-4" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
+                        <a class="btn shadow btn-success my-2 my-sm-0 px-4" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
                         <i class="fas fa-check mr-2"></i> <br> Survey <br> Kepuasan
                         </a>
                     </div>

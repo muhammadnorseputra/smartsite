@@ -1,6 +1,6 @@
 <?php $id = decrypt_url($this->uri->segment(5)) ?>
 <section class="mt-5 pt-3">
-	<div class="container border-top border-light pt-3">
+	<div class="container pt-3">
 		<div class="d-flex justify-content-start align-items-center">
 			<div class="mr-md-3 pr-md-3"><span class="font-weight-bold display-4">Album</span> <br>
 			<p class="font-weight-bold text-secondary">Photo <i class="fas fa-chevron-right mx-2"></i>

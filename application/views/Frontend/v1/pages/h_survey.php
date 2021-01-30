@@ -14,8 +14,8 @@
     <div class="container my-5">
     	<div class="row">
     		<div class="col-12 col-md-8 offset-md-2">
-    			<blockquote class="blockquote text-left border-left pl-4 pl-md-5">
-    			<p><i class="fas fa-info-circle fa-3x"></i></p>
+    			<blockquote class="blockquote text-left  border-left border-danger pl-4 pl-md-5">
+    			<p><i class="fas fa-info-circle fa-3x text-danger"></i></p>
     			  <p class="my-3 font-weight-bold" style="line-height: 1.5em;">Mohon maaf untuk saat ini suvey kami tutup sementara, <br> tunggu informasi selanjutnya dari kami.</p>
     			  
     			<div class="d-flex justify-content-start align-items-center">
