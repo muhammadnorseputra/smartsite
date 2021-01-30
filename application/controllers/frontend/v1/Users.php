@@ -590,7 +590,7 @@ class Users extends CI_Controller {
     	$this->users->status_online('t_users_portal', 
     		['email' => encrypt_url($this->session->userdata('user_portal_log')['email'])],['online' => 'OFF']);
 		$this->session->unset_userdata('user_portal_log');
-    	$this->session->sess_destroy('user_portal_log');
+    	// $this->session->sess_destroy('user_portal_log');
 		redirect(base_url('frontend/v1/beranda'));
     }
 }
