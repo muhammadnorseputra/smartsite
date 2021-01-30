@@ -1,13 +1,11 @@
 <section class="my-5">
-	<div class="container bg-white">
+	<div class="container">
 		<?= form_open_multipart(base_url('frontend/v1/post/update_post/1'), ['id' => 'f_post', 'data-id' => $post->id_berita]) ?>
 		<div class="row">
 			<div class="col-md-8 mt-5">
 				<div class="d-flex mb-3">
-					<div class="align-middle">
-						<h4><small>Judul</small> / </h4>
-					</div>
-					<div class="w-75 ml-2">
+					<div class="w-100">
+						<label for="judul">Judul</label>
 						<input type="text" id="judul" name="judul" value="<?= $post->judul ?>" class="form-control form-control-lg">
 					</div>
 				</div>

@@ -8,8 +8,9 @@
   color: #bbe1fa;
 }
 [data-theme="dark"] .dropdown-menu {
-  background-color: #222;
-  box-shadow: 0 4px 2em #111; 
+  background-color: #333;
+  box-shadow: 0 4px 2em #000; 
+  border: 1px solid #666;
 }
 [data-theme="dark"] .bg-light,
 [data-theme="dark"] .list-group .list-group-item  {
@@ -46,7 +47,7 @@
   background-color: #eee !important;
 }
 [data-theme="dark"] .navbar-light .navbar-nav .nav-link {
-	color: #333 !important;
+	color: #bbe1fa !important;
 }
 [data-theme="dark"] .border,
 [data-theme="dark"] .border-light,

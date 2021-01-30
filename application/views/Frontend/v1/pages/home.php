@@ -25,27 +25,7 @@
                 
             </div>
             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 offset-md-1 my-3 pt-5 my-md-5 py-md-5 order-first order-md-last">
-                <!-- <div class="card border-0 shadow-lg bg-white">
-                    <div class="card-body">
-                        <b>Profile PNS</b>
-                        <form class="form-horizontal" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
-                            <div class="typeahead__container form-group">
-                                <label for="js-nipnama">Masukan NIP, kemudian pilih detail untuk melihat profile pegawai</label>
-                                <div class="typeahead__field">
-                                    
-                                    <div class="typeahead__query">
-                                        <input class="js-nipnama" id="js-nipnama" name="filter[query]" placeholder="Ketik NIP" maxlength="18" autocomplete="off">
-                                    </div>
-                                    <div class="typeahead__button">
-                                        <button type="submit">
-                                        <i class="typeahead__search-icon"></i> Detail
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div> -->
+                
             </div>
         </div>
     </div>
@@ -104,7 +84,7 @@
 <section class="content-home <?= $my2 ?>">
     <div class="container">
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 d-none d-sm-block order-last">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 order-first order-md-last">
                 
                 <!-- <h5 class="font-weight-bold text-primary title-sidebar">Pilihan Redaksi</h5> -->
                 <!-- <?php
@@ -138,71 +118,36 @@
                     <span class="text-secondary">Oleh</span> <?= ucwords($namapanggilan); ?>
                 </div> -->
                 <div class="mx-auto">
-                    
-                    <div class="d-flex flex-no-wrap justify-content-between">
-                        <a class="btn shadow btn-dark my-2 my-sm-0 px-4 align-middle" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
+                <div class="card border-light shadow-none bg-white mb-4">
+                    <div class="card-body">
+                        <b>Profile PNS</b>
+                        <form class="form-horizontal" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
+                            <div class="typeahead__container form-group">
+                                <label for="js-nipnama" class="text-secondary small">Masukan NIP, kemudian pilih detail untuk melihat profile pegawai</label>
+                                <div class="typeahead__field">
+                                    
+                                    <div class="typeahead__query">
+                                        <input class="js-nipnama" id="js-nipnama" name="filter[query]" placeholder="Ketik NIP" maxlength="18" autocomplete="off">
+                                    </div>
+                                    <div class="typeahead__button">
+                                        <button type="submit">
+                                        <i class="typeahead__search-icon"></i> Detail
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> 
+
+                    <div class="d-flex flex-no-wrap justify-content-start">
+                        <a class="btn shadow btn-dark my-2 my-sm-0 px-4 align-middle mr-3" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
                         <i class="fas fa-box mr-2"></i> <br> Kotak <br> Saran
                         </a>
                         <a class="btn shadow btn-success my-2 my-sm-0 px-4" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
                         <i class="fas fa-check mr-2"></i> <br> Survey <br> Kepuasan
                         </a>
                     </div>
-                    <hr>
-                    <h5 class="my-3 font-weight-bold title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-heart text-danger mr-2"></i>Paling Disukai</span></h5>
-                    <div class="list-group border-0 shadow-none p-0">
-                        <?php
-                        $nolist = 1;
-                        foreach ($mf_berita_populer as $b) :
-                        $id = encrypt_url($b->id_berita);
-                        $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($b->created_by))));
-                        $judul = strtolower($b->judul);
-                        $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
-                        if(empty($b->img)):
-                        $img = '<img class="rounded align-self-center lazy pull-left mr-2 w-25 shadow" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
-                        else:
-                        $img = '<img class="rounded align-self-center lazy pull-left mr-2 w-25 shadow" data-src="'.$b->path.'" alt="'.$b->judul.'">';
-                        endif;
-                        ?>
-                        <a  href="<?= $posturl; ?>" class="bg-transparent list-group-item list-group-item-action border-0 px-3  m-0">
-                            <div class="media m-0">
-                                <?= $img ?>
-                                <div class="media-body">
-                                    <small class="font-weight-bold"><?= character_limiter($b->judul, 25); ?></small>
-                                    <small class="d-block align-middle text-left">
-                                    <i class="far fa-thumbs-up"></i> <?= $b->like_count ?> Likes </small>
-                                    </small>
-                                </div>
-                            </div>
-                            
-                            <br>
-                            
-                        </a>
-                        <?php $nolist++; endforeach; ?>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <div class="row">
-                    <div class="col-8 col-md-6">
-                        <h5 class="my-3 title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fa fa-quote-left fa-pull-left text-info mr-2"></i>Postingan Terbaru</span></h5>
-                    </div>
-                    <div class="col-4 col-md-6">
-                        <div class="float-right mt-2"><button id="caripost" class="btn btn-outline-info"> <i class="fas fa-search mr-0 mr-lg-2"></i> <span class="d-none d-lg-inline-block">cari postingan</span></button></div>
-                    </div>
-                </div>
-                
-                
-                <div id="load_data"></div>
-                <div id="load_data_message"></div>
-                <div class="text-center"><button id="load_more" class="rounded-pill btn btn-block btn-primary"><i class="fas fa-newspaper"></i> Load More</button></div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 order-first">
-                <div class="mx-auto">
-                    
-                    <a id="banner" data-lightbox="BannerAside" data-title="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?>" href="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>">
-                        <img src="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>" class="rounded img-fluid mx-auto d-block mb-3 shadow">
-                    <h6 class="font-weight-bold"><?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?></h6></a>
-                    <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?> 
                     <hr>
                     <h5 class="font-weight-bold title-sidebar mb-3"><span class="font-weight-bold"><i class="far fa-image text-danger mr-2"></i>album photo</span></h5>
                     <div class="overflow-hidden rounded-lg mt-4">
@@ -226,6 +171,63 @@
                             <?php $i++; endforeach; ?>
                         
                     </div>
+                    <hr>
+                    <a id="banner" data-lightbox="BannerAside" data-title="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?>" href="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>">
+                        <img src="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>" class="rounded img-fluid mx-auto d-block mb-3 shadow">
+                    <h6 class="font-weight-bold"><?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?></h6></a>
+                    <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?> 
+                    <hr>
+                    <h5 class="my-3 font-weight-bold title-sidebar mt-md-3  d-none d-md-block"><span class="font-weight-bold"><i class="fas fa-heart text-danger mr-2"></i>Paling Disukai</span></h5>
+                    <div class="list-group border-0 shadow-none p-0 d-none d-md-block">
+                        <?php
+                        $nolist = 1;
+                        foreach ($mf_berita_populer as $b) :
+                        $id = encrypt_url($b->id_berita);
+                        $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($b->created_by))));
+                        $judul = strtolower($b->judul);
+                        $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
+                        if(empty($b->img)):
+                        $img = '<img class="rounded align-self-center lazy pull-left mr-2 w-25 shadow" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
+                        else:
+                        $img = '<img class="rounded align-self-center lazy pull-left mr-2 w-25 shadow" data-src="'.$b->path.'" alt="'.$b->judul.'">';
+                        endif;
+                        ?>
+                        <a  href="<?= $posturl; ?>" class="bg-transparent list-group-item list-group-item-action border-0 px-3  m-0">
+                            <div class="media m-0">
+                                <?= $img ?>
+                                <div class="media-body">
+                                    <small class="font-weight-bold"><?= character_limiter($b->judul, 30); ?></small>
+                                    <small class="d-block align-middle text-left">
+                                    <i class="far fa-thumbs-up"></i> <?= $b->like_count ?> Likes </small>
+                                    </small>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            
+                        </a>
+                        <?php $nolist++; endforeach; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-md-1 mr-md-4">
+                <div class="row">
+                    <div class="col-8 col-md-6">
+                        <h5 class="my-3 title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fa fa-quote-left fa-pull-left text-info mr-2"></i>Postingan Terbaru</span></h5>
+                    </div>
+                    <div class="col-4 col-md-6">
+                        <div class="float-right mt-2"><button id="caripost" class="btn btn-outline-info"> <i class="fas fa-search mr-0 mr-lg-2"></i> <span class="d-none d-lg-inline-block">cari postingan</span></button></div>
+                    </div>
+                </div>
+                
+                
+                <div id="load_data"></div>
+                <div id="load_data_message"></div>
+                <div class="text-center"><button id="load_more" class="rounded-pill btn btn-primary rounded-pill"><i class="fas fa-newspaper mr-2"></i> Load more berita</button></div>
+            </div>
+            <!-- <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 order-first">
+                <div class="mx-auto"> -->
+                    
                     <!-- <div style="max-height: 600px; overflow-y: auto;">
                         <div class="list-group">
                             <li class="list-group-item disabled px-2 border-0 rounded border-light font-weight-bold text-dark title-sidebar" aria-disabled="true">Kategori Populer</li>
@@ -258,8 +260,8 @@
                             </p>
                         </div>
                     </div> -->
-                </div>
-            </div>
+               <!--  </div>
+            </div> -->
             
         </div>
     </div>
