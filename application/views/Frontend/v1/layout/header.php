@@ -40,7 +40,7 @@
 			$getImg = $this->mf_users->get_userportal_byid($idSes)->photo_pic;
 			$img = '<img class="rounded mr-1 shadow-sm" width="23" src="data:image/jpeg;base64,'.base64_encode( $getImg ).'"/>';
 			?>
-			<div class="dropdown mt--5">
+			<div class="dropdown">
 				<button type="button" class="btn btn-outline-dark text-muted my-2 my-sm-0 mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<?= $img ?> <?= ucfirst($this->session->userdata('user_portal_log')['nama_panggilan']) ?>
 				<i class="fas fa-angle-down mx-2"></i>
