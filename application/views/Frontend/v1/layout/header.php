@@ -1,5 +1,5 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light bg-white border-bottom">
+<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light bg-white py-1 border-bottom">
 	<div class="container">
 		<a class="navbar-brand" href="<?= base_url() ?>">
 			<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="110"/>'; ?>

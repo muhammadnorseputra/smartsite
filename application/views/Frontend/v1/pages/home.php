@@ -30,7 +30,7 @@
         </div>
     </div>
 </section>
-<section class="statistik mb-5 bg-primary">
+<section class="statistik mb-5 bg-gradient-primary">
     <div class="container py-5">
         <div class="row">
               <?php
@@ -59,7 +59,7 @@
             <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="card bg-transparent my-md-0 my-4 border-0 rounded-0 big-card">
                     <div class="card-body align-middle">
-                        <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-success"></i>
+                        <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-dark"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
       data-speed="3000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_pns'] ?></h3>
                         <b class="text-white">Jumlah PNS + CPNS</b>
@@ -211,7 +211,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-md-1 mr-md-5 bg-gradient-light">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-md-1 mr-md-4">
                 <div class="row">
                     <div class="col-8 col-md-6">
                         <h5 class="my-3 title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fa fa-quote-left fa-pull-left text-info mr-2"></i>Postingan Terbaru</span></h5>
