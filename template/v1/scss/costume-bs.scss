@@ -1,8 +1,10 @@
 $theme-colors: (
 	"primary": #09A79E, 
+	  "secondary":  #6b705c,
+	  "dark":       #264653,
 	"primary-old": #0f4c75,
-	"white": #fff,
-	"light": #eee);
+	"white": #ffffff,
+	"light": #d8e2dc);
 $sizes: () !default;
 $sizes: map-merge((5: 5%,
 		8: 8%,
@@ -15,8 +17,10 @@ $sizes: map-merge((5: 5%,
 		100: 100%,
 		auto: auto),
 	$sizes);
-$modal-fade-transform: scale(.9);
-
+$modal-fade-transform: scale(1);
+$enable-rounded: true;
+$enable-shadows: true;
+$spacer: 1.05rem;
 .rounded-pill {
 	border-radius: 50px;
 	-webkit-border-radius:50px;

@@ -31,7 +31,7 @@
     </div>
 </section>
 <section class="statistik mb-5 bg-primary">
-    <div class="container p-5">
+    <div class="container py-5">
         <div class="row">
               <?php
                 $local = 'http://silka.bkppd-balangankab.info';

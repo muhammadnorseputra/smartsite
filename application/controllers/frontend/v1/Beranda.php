@@ -100,9 +100,9 @@ class Beranda extends CI_Controller
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
                 if(empty($row->img)):
-                    $img = '<img class="card-img-top lazy" style="border-radius:15px;" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img class="card-img-top lazy border-light" style="border-radius:15px;" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 else:
-                    $img = '<img class="card-img-top lazy" style="border-radius:15px;" data-src="'.$row->path.'" alt="'.$row->img.'">';
+                    $img = '<img class="card-img-top lazy border-light" style="border-radius:15px;" data-src="'.$row->path.'" alt="'.$row->img.'">';
                 endif;
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('frontend/v1/post_list/views/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
