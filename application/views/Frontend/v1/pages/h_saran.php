@@ -1,23 +1,18 @@
-<section class="mt-5 py-3">
-	<div class="container pt-3">
-		<div class="d-flex justify-content-start align-items-center">
-			<div class="mr-md-3 pr-md-3"><span class="font-weight-bold display-4">Kotak Saran</span> <br>
-			<p class="font-weight-bold">Silahkan masukan saran anda terkait layanan yang kami berikan diwebsite ini maupun ditempat kerja.</p>
-		</div>
-	</div>
-</div>
-</section>
-<section class="my-md-3">
+<section class="my-5">
 <div class="container">
 	<div class="row">
-		<div class="col-md-6 mt-4">
+		<div class="col-md-6 mt-5">
+			<div class="mr-md-3 pr-md-3">
+					<span class="font-weight-bold display-4">Kotak Saran</span> <br>
+					<p class="font-weight-bold text-secondary">Silahkan masukan saran anda terkait layanan yang kami berikan diwebsite ini maupun ditempat kerja.</p>
+				</div>
 			<?php if($this->session->flashdata('captcha_salah') <> ''): ?>
 			<div class="alert alert-danger" role="alert">
-			  <p class="mb-0"><?= $this->session->flashdata('captcha_salah') ?></p>
+				<p class="mb-0"><?= $this->session->flashdata('captcha_salah') ?></p>
 			</div>
 			<?php endif; ?>
-			<div class="card bg-white border-light">
-				<div class="card-body">
+			<div class="card bg-transparent border-0">
+				<div class="card-body pl-md-0">
 					<?= form_open(base_url('frontend/v1/halaman/simpan_saran')); ?>
 					<div class="form-group">
 						<label for="nama_lengkap">Nama <span class="text-danger">*</span></label>
@@ -60,7 +55,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6 d-none d-md-block d-lg-block d-xl-block">
+		<div class="col-md-6 d-none d-md-block d-lg-block d-xl-block mt-5">
 			<img src="<?= base_url('assets/images/bg/Gak Pusying.235aa0ce.png') ?>" alt="saran-buat-website-bkppd-nih-bagai-mana-ya" class="img-fluid">
 		</div>
 	</div>

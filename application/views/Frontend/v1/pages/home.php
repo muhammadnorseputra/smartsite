@@ -118,7 +118,16 @@
                     <span class="text-secondary">Oleh</span> <?= ucwords($namapanggilan); ?>
                 </div> -->
                 <div class="mx-auto">
-                <div class="card border-light shadow-none bg-white mb-4">
+
+                    <div class="d-flex flex-no-wrap justify-content-start">
+                        <a class="btn btn-outline-secondary my-2 my-sm-0 px-4 align-middle mr-3" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
+                        <i class="fas fa-box mr-2"></i> <br> Kotak <br> Saran
+                        </a>
+                        <a class="btn btn-success my-2 my-sm-0 px-4" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
+                        <i class="fas fa-check mr-2"></i> <br> Survey <br> Kepuasan
+                        </a>
+                    </div>
+                <div class="card border-light shadow-sm bg-white my-4">
                     <div class="card-body">
                         <b>Profile PNS</b>
                         <form class="form-horizontal" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
@@ -140,14 +149,6 @@
                     </div>
                 </div> 
 
-                    <div class="d-flex flex-no-wrap justify-content-start">
-                        <a class="btn shadow btn-dark my-2 my-sm-0 px-4 align-middle mr-3" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
-                        <i class="fas fa-box mr-2"></i> <br> Kotak <br> Saran
-                        </a>
-                        <a class="btn shadow btn-success my-2 my-sm-0 px-4" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
-                        <i class="fas fa-check mr-2"></i> <br> Survey <br> Kepuasan
-                        </a>
-                    </div>
                     <hr>
                     <h5 class="font-weight-bold title-sidebar mb-3"><span class="font-weight-bold"><i class="far fa-image text-danger mr-2"></i>album photo</span></h5>
                     <div class="overflow-hidden rounded-lg mt-4">
