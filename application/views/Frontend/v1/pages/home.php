@@ -211,7 +211,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-md-1 mr-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-md-1 mr-md-5 bg-gradient-light">
                 <div class="row">
                     <div class="col-8 col-md-6">
                         <h5 class="my-3 title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fa fa-quote-left fa-pull-left text-info mr-2"></i>Postingan Terbaru</span></h5>
