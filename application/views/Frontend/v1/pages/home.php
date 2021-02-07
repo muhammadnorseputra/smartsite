@@ -151,7 +151,7 @@
 
                     <hr>
                     <h5 class="font-weight-bold title-sidebar mb-3"><span class="font-weight-bold"><i class="far fa-image text-danger mr-2"></i>album photo</span></h5>
-                    <div class="overflow-hidden rounded-lg mt-4">
+                    <div class="overflow-hidden rounded-lg mt-4 bg-gradient-dark p-4">
                         
                             <?php  
                             $kolom = 2;
@@ -170,7 +170,7 @@
                                 echo '</div>';
                             } ?>
                             <?php $i++; endforeach; ?>
-                        
+                            <div class="small text-info position-absolute mx-auto mt-1">Directed by BinaInfo</div>
                     </div>
                     <hr>
                     <a id="banner" data-lightbox="BannerAside" data-title="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?>" href="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>">
