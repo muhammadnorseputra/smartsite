@@ -120,7 +120,7 @@
                 <div class="mx-auto">
 
                     <div class="d-flex flex-no-wrap justify-content-start">
-                        <a class="btn btn-outline-secondary my-2 my-sm-0 px-4 align-middle mr-3" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
+                        <a class="btn btn-info my-2 my-sm-0 px-4 align-middle mr-3" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
                         <i class="fas fa-box mr-2"></i> <br> Kotak <br> Saran
                         </a>
                         <a class="btn btn-success my-2 my-sm-0 px-4" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
