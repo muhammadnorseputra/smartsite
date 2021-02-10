@@ -89,7 +89,7 @@ class Users extends CI_Controller {
         $this->email->subject('Reset Password!');
 
         $url = base_url().'frontend/v1/users/reset_pass/'.$data['nohp'].'/'.encrypt_url(date('Ymd'));
-        $message .= '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
+        $message = '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
         $message .= '<p> Untuk melakukan reset password, silahkan anda klik pada link berikut <br>.  
         	<a target="_blank" href="' .$url.'">'.$url.'</a></p>';
         $message .= '<p> Terimakasih. </p>';
