@@ -121,16 +121,22 @@ class Post extends CI_Controller
                 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'btn-like' : '';
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
+                if(empty($row->img)):
+                    $img = '<img class="img-fluid w-100" style="border-radius:15px;" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                else:
+                    $img = '<img class="img-fluid w-100" style="border-radius:15px;" src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
+                endif;
+
                 $output .= '
                     <div class="grid-item w-100">
                         <div class="card border shadow-sm bg-white">
-                            <div class="card-header bg-white border-bottom border-light">
+                            <div class="card-header bg-white border-0">
                                 <img src="'.$gravatar. '" width="50" height="50" class="float-left mt-1 mr-4 d-inline-block rounded">
                                 <h5 class="card-title d-block">' . $namalengkap . '</h5>
                                 <small>'.longdate_indo($row->tgl_posting).'</small>
                             </div>
-                            <a href="'.$posturl.'">
-                                <img src="'.$row->path.'" class="img-fluid w-100 border-0">
+                            <a href="'.$posturl.'" class="p-3">
+                                '.$img.'
                             </a>
                             <div class="card-body">
                                 <a href="'.$posturl.'"><span class="font-weight-bold">'.character_limiter($row->judul, 40).'</span></a>

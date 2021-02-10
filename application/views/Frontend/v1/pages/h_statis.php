@@ -18,7 +18,7 @@
     </div>
   </div>
 </section>
-<section class="h-statis-detail bg-white">
+<section class="h-statis-detail">
   <div class="container">
     <div class="row">
       <div class="col-md-12 mb-md-5 shadow-sm mt--7 bg-white p-3 p-md-5" style="border-radius: 12px;">

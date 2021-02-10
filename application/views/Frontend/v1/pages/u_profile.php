@@ -25,7 +25,6 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
         <div>
           <div class="row">
             <div class="col-xs-9 col-sm-9 col-md-9">
-              <!-- <img src="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[0]; ?>" class="rounded-lg img-fluid mx-auto d-block mb-4"> -->
               <div class="row">
                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 py-3">
                   <img class="img-fluid rounded-circle" src="<?= $photo ?>">
@@ -76,6 +75,8 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
                   </div>
                 </div>
                 <div class="col-md-8 order-3 order-md-2">
+
+              <img src="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[0]; ?>" class="img-fluid d-block mb-4"> 
                   <h5 class="my-3 font-weight-bold title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-quote-left text-danger mr-2"></i>Postingan Terbaru</span></h5>
                   <div id="load_data_profile"></div>
                   <div id="load_data_message_profile"></div>
@@ -149,7 +150,7 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
   success: function(data) {
   if (data.html == "") {
   $("#load_data_message_profile").html(
-  `<div class="card border-light bg-transparent">
+  `<div class="card border-0 bg-transparent">
     <div class="card-body text-black text-center">
       <img src="data:image/png;base64,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"/>
       <h5 class="card-title">Postingan Habis!</h5>
