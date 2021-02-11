@@ -753,9 +753,9 @@ $(document).ready(function () {
   });
   $(document).scroll(function () {
     if ($(document).scrollTop() > 10) {
-      $("nav#navbar").css("transition", ".1s ease-in").addClass("shadow");
+      $("nav#navbar").css("transition", ".1s ease-in").addClass("shadow bg-white");
     } else {
-      $("nav#navbar").removeClass("shadow");
+      $("nav#navbar").removeClass("shadow bg-white");
     }
   });
 });

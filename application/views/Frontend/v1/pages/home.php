@@ -14,9 +14,9 @@
                 <!-- Static halo -->
                 <p class="lead text-secondary intro-website text-center text-md-left">Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</p>
                 <!-- Dinamic mengunakan typed.js -->
-<!--                 <p class="halo_bkppd"><span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> <span>Update informasi resmi seputar layanan kepegawaian serta artikel terkait lainya langsung dari website kami.</span> <span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> </p>
+                <!--                 <p class="halo_bkppd"><span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> <span>Update informasi resmi seputar layanan kepegawaian serta artikel terkait lainya langsung dari website kami.</span> <span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> </p>
                 <span id="typed" class="lead text-secondary intro-website"></span>
- -->
+                -->
                 <p class="my-4 text-center text-md-left">
                     <button type="button" onclick="explore()" class="btn shadow btn-primary rounded py-3 px-3">
                     Update Informasi <i class="fas fa-chevron-down ml-2"></i>
@@ -33,25 +33,25 @@
 <section class="statistik mb-5 bg-gradient-primary">
     <div class="container py-5">
         <div class="row">
-              <?php
-                $local = 'http://silka.bkppd-balangankab.info';
-                $online = 'http://silka.bkppd-balangankab.info';
-                $status = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? $online : $local;
-                $host = $status;
-                ?>
-                <?php 
-                    $arr = [
-                            'jml_asn' => api_curl_get($host.'/api/get_grap/asn'),
-                            'jml_pns' => api_curl_get($host.'/api/get_grap/pns'),
-                            'jml_ptt' => api_curl_get($host.'/api/get_grap/nonpns')
-                        ]  
-                ?>
+            <?php
+            $local = 'http://silka.bkppd-balangankab.info';
+            $online = 'http://silka.bkppd-balangankab.info';
+            $status = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? $online : $local;
+            $host = $status;
+            ?>
+            <?php
+            $arr = [
+            'jml_asn' => api_curl_get($host.'/api/get_grap/asn'),
+            'jml_pns' => api_curl_get($host.'/api/get_grap/pns'),
+            'jml_ptt' => api_curl_get($host.'/api/get_grap/nonpns')
+            ]
+            ?>
             <div class="col-xs-12 col-sm-12 col-md-4">
                 <div class="card bg-transparent border-0 rounded">
                     <div class="card-body">
                         <i class="fas fa-users float-right fa-3x text-primary-old d-inline-block mt-1"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_asn'] ?>"
-      data-speed="3000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_asn'] ?></h3>
+                        data-speed="3000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_asn'] ?></h3>
                         <b class="text-white">Jumlah ASN Kab. Balangan</b>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     <div class="card-body align-middle">
                         <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-dark"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
-      data-speed="3000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_pns'] ?></h3>
+                        data-speed="3000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_pns'] ?></h3>
                         <b class="text-white">Jumlah PNS + CPNS</b>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <div class="card-body">
                         <i class="far fa-user-circle float-right fa-3x d-inline-block mt-1 text-warning"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_ptt'] ?>"
-      data-speed="3000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_ptt'] ?></h3>
+                        data-speed="3000" data-refresh-interval="50" class="display-4 text-white"><?= $arr['jml_ptt'] ?></h3>
                         <b class="text-white">Jumlah NON PNS</b>
                     </div>
                 </div>
@@ -118,67 +118,72 @@
                     <span class="text-secondary">Oleh</span> <?= ucwords($namapanggilan); ?>
                 </div> -->
                 <div class="mx-auto">
-
                     <div class="d-flex flex-no-wrap justify-content-start">
                         <a class="btn btn-info my-2 my-sm-0 px-4 align-middle mr-3" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
-                        <i class="fas fa-box mr-2"></i> <br> Kotak <br> Saran
+                            <i class="fas fa-box mr-2"></i> <br> Kotak <br> Saran
                         </a>
                         <a class="btn btn-success my-2 my-sm-0 px-4" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
-                        <i class="fas fa-check mr-2"></i> <br> Survey <br> Kepuasan
+                            <i class="fas fa-check mr-2"></i> <br> Survey <br> Kepuasan
                         </a>
                     </div>
-                <div class="card border-light shadow-sm bg-white my-4">
-                    <div class="card-body">
-                        <b>Profile PNS</b>
-                        <form class="form-horizontal" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
-                            <div class="typeahead__container form-group">
-                                <label for="js-nipnama" class="text-secondary small">Masukan NIP, kemudian pilih detail untuk melihat profile pegawai</label>
-                                <div class="typeahead__field">
-                                    
-                                    <div class="typeahead__query">
-                                        <input class="js-nipnama" id="js-nipnama" name="filter[query]" placeholder="Ketik NIP" maxlength="18" autocomplete="off">
-                                    </div>
-                                    <div class="typeahead__button">
-                                        <button type="submit">
-                                        <i class="typeahead__search-icon"></i> Detail
-                                        </button>
+                    <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-user-tie text-secondary mr-2"></i>Profile PNS</span>
+                    </div>
+                    <div class="card border-light shadow-none bg-white my-4">
+                        <div class="card-body">
+                            <form class="form-horizontal" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
+                                <div class="typeahead__container form-group">
+                                    <label for="js-nipnama" class="text-secondary small">Masukan NIP, kemudian pilih detail untuk melihat profile pegawai</label>
+                                    <div class="typeahead__field">
+                                        
+                                        <div class="typeahead__query">
+                                            <input class="js-nipnama" id="js-nipnama" name="filter[query]" placeholder="Ketik NIP" maxlength="18" autocomplete="off">
+                                        </div>
+                                        <div class="typeahead__button">
+                                            <button type="submit">
+                                            <i class="typeahead__search-icon"></i> Detail
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-                </div> 
-
-                    <hr>
-                    <h5 class="font-weight-bold title-sidebar mb-3"><span class="font-weight-bold"><i class="far fa-image text-danger mr-2"></i>album photo</span></h5>
-                    <div class="overflow-hidden rounded-lg mt-4 bg-gradient-light p-4">
+                    <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-images text-secondary mr-2"></i> album photo</span>
+                    </div>
+                    <div class="overflow-hidden rounded-lg my-4 bg-white border p-2">
                         
-                            <?php  
-                            $kolom = 2;
-                            $i = 1;
-                                foreach ($mf_album as $album):
-                                if(($i) % $kolom==1) {
-                                    echo '<div class="d-flex">';
-                                }
+                        <?php
+                        $kolom = 2;
+                        $i = 1;
+                        foreach ($mf_album as $album):
+                        if(($i) % $kolom==1) {
+                        echo '<div class="d-flex">';
+                            }
                             ?>
                             <div style="width: 100%;">
                                 <a href="<?= base_url('frontend/v1/album/detail/'.encrypt_url($album->id_album_foto)) ?>">
-                                <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy w-100" alt="<?= url_title($album->judul, '-', true) ?>">
+                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy w-100" alt="<?= url_title($album->judul, '-', true) ?>">
                                 </a>
                             </div>
                             <?php if(($i) % $kolom==0) {
-                                echo '</div>';
-                            } ?>
-                            <?php $i++; endforeach; ?>
-                            <div class="small text-info position-absolute mx-auto mt-1">Directed by BinaInfo</div>
+                        echo '</div>';
+                        } ?>
+                        <?php $i++; endforeach; ?>
+                        <!-- <div class="small text-info position-absolute mx-auto mt-1">Directed by BinaInfo</div> -->
                     </div>
-                    <hr>
+                    <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-bullhorn text-secondary mr-2"></i> Poster</span>
+                    </div>
                     <a id="banner" data-lightbox="BannerAside" data-title="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?>" href="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>">
                         <img src="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>" class="rounded img-fluid mx-auto d-block mb-3 shadow">
                     <h6 class="font-weight-bold"><?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?></h6></a>
-                    <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?> 
-                    <hr>
-                    <h5 class="my-3 font-weight-bold title-sidebar mt-md-3  d-none d-md-block"><span class="font-weight-bold"><i class="fas fa-heart text-danger mr-2"></i>Paling Disukai</span></h5>
+                    <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?>
+                    
+                    <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-heart text-secondary mr-2"></i> Paling Disukai</span>
+                    </div>
                     <div class="list-group border-0 shadow-none p-0 d-none d-md-block">
                         <?php
                         $nolist = 1;
@@ -209,6 +214,27 @@
                         </a>
                         <?php $nolist++; endforeach; ?>
                     </div>
+                    <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-leaf text-secondary mr-2"></i> Digital Goverment</span>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-between justify-content-md-start align-items-center mt-4">
+                    
+                    <div>
+                        <a target="_blank" data-toggle="tooltip" href="http://silka.bkppd-balangankab.info/" title="aplikasi sistem informasi layanan kepegawaian balangan">
+                            <?php echo '<img src="'.base_url('assets/images/logo-silka.png').'" width="140"/>'; ?>
+                        </a>
+                    </div>
+                    <div class="mx-md-5">
+                        <a target="_blank" data-toggle="tooltip" href="https://eprilaku.bkppd-balangankab.info/" title="aplikasi e-prilaku balangan">
+                            <?php echo '<img src="'.base_url('assets/images/logo-eprilaku.png').'" width="80"/>'; ?>
+                        </a>
+                    </div>
+                    <div>
+                        <a target="_blank" data-toggle="tooltip" href="https://ekinerja.bkppd-balangankab.info/" title="aplikasi e-kinerja balangan">
+                            <?php echo '<img src="'.base_url('assets/images/logo-ekinerja.png').'" width="160"/>'; ?>
+                        </a>
+                    </div>
+                </div>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-md-1 mr-md-4">
@@ -224,7 +250,9 @@
                 
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
-                <div class="text-center"><button id="load_more" class="rounded-pill btn btn-primary rounded-pill"><i class="fas fa-newspaper mr-2"></i> Load more berita</button></div>
+                     <div class="text-center"> 
+                        <button id="load_more" class="rounded-pill btn btn-primary rounded-pill px-4"><i class="fas fa-newspaper mr-2"></i> Load more berita</button>
+                     </div>
             </div>
             <!-- <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 order-first">
                 <div class="mx-auto"> -->
@@ -261,7 +289,7 @@
                             </p>
                         </div>
                     </div> -->
-               <!--  </div>
+                <!--  </div>
             </div> -->
             
         </div>

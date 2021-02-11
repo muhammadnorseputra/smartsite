@@ -102,7 +102,9 @@ if (count($pecah) > 0) {
 					</div>
 					<?php endif; ?>
 					<div class="mx-md-5 mt-5">
-						<h5 class="mb-3 font-weight-bold title-sidebar"><span class="font-weight-bold"><i class="fas fa-quote-left fa-pull-left text-danger mr-2"></i>Berita Selanjutnya</span></h5>
+						<div class="separator">
+		                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-quote-left fa-pull-left text-danger mr-2"></i>Berita Selanjutnya</span>
+		                </div>
 
 							<div class="d-flex justify-content-between">
 							<?php
