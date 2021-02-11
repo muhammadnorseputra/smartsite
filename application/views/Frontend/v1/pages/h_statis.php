@@ -1,4 +1,4 @@
-<section class="py-5" style="background-image: url(<?= base_url('assets/images/bg/svg_.svg') ?>); background-size: cover; background-repeat: no-repeat; background-position: top left; background-clip: cover;">
+<section class="py-5" style="background-image: url(<?= base_url('assets/images/bg/bg.png') ?>); background-repeat: repeat; background-position: bottom left;">
   <div class="container">
     <div class="row">
       <div class="col-md-12 my-5 pt-4 text-left">
@@ -6,9 +6,9 @@
         if ($detail->num_rows() > 0) :
           $h = $detail->row();
         ?>
-          <span class="font-weight-light d-block text-warning my-3">Posted by <b><?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b></span>
+          <span class="font-weight-light small d-block text-primary my-3">Posted by <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b></span>
           <h2 class="font-weight-bold mb-0 pb-0">
-            <span class="d-block text-white font-weight-bold"><?= $h->title; ?></span>    
+            <span class="d-block font-weight-bold"><?= $h->title; ?></span>    
             </h2>
         <?php else : ?>
           <h3 class="font-weight-bold text-primary">not found</h3>
