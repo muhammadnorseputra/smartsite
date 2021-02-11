@@ -4,6 +4,15 @@
   background: #222 !important;
   color: #eee;
 }
+
+[data-theme="dark"] .separator {
+    border-top: 1px solid #666;
+}
+
+[data-theme="dark"] .separator .separator-text {
+    background: #222;
+}
+
 [data-theme="dark"] a {
   color: #bbe1fa;
 }

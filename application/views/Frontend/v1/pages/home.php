@@ -6,26 +6,31 @@
         </div>
     </div>
 </section> -->
-<section style="background-image: url(<?= base_url('assets/images/bg/jumbotron.868ed484.webp') ?>); background-size: cover; background-repeat: no-repeat; background-position: bottom right; background-clip: cover;">
+<section style="background-color: #EDF8F8;">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pb-5 my-md-5 py-md-5">
-                <div class="display-3 text-dark text-center text-md-left pt-md-5"><span id="halojs"></span></div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pb-5 py-md-5">
+                <div class="display-3 text-dark font-weight-bold text-center text-md-left pt-md-5"><span id="halojs"></span></div>
                 <!-- Static halo -->
-                <p class="lead text-secondary intro-website text-center text-md-left">Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</p>
+                <p class="lead text-primary text-center text-md-left">Layanan Pemerintahan</p>
+                <p class="lead text-secondary intro-website text-center text-md-left">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</p>
                 <!-- Dinamic mengunakan typed.js -->
                 <!--                 <p class="halo_bkppd"><span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> <span>Update informasi resmi seputar layanan kepegawaian serta artikel terkait lainya langsung dari website kami.</span> <span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> </p>
                 <span id="typed" class="lead text-secondary intro-website"></span>
                 -->
                 <p class="my-4 text-center text-md-left">
-                    <button type="button" onclick="explore()" class="btn shadow btn-primary rounded py-3 px-3">
+                    <button type="button" onclick="explore()" class="btn shadow btn-primary rounded py-3 px-4">
                     Update Informasi <i class="fas fa-chevron-down ml-2"></i>
                     </button>
                 </p>
                 
             </div>
             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 offset-md-1 my-3 pt-5 my-md-5 py-md-5 order-first order-md-last">
-                
+                <div class="d-flex align-items-center">
+                    <div>
+                    <img class="img-fluid" src="<?= base_url('assets/images/bg/Study Kasus.66698fed.png') ?>">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -121,7 +126,7 @@
                     <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-user-tie text-secondary mr-2"></i>Profile PNS</span>
                     </div>
-                    <div class="card border-light shadow-none bg-white my-4">
+                    <div class="card border-0 shadow-sm bg-white my-4">
                         <div class="card-body">
                             <form class="form-horizontal" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
                                 <div class="typeahead__container form-group">
@@ -144,7 +149,7 @@
                     <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-images text-secondary mr-2"></i> album photo</span>
                     </div>
-                    <div class="overflow-hidden rounded-lg my-4 bg-white border p-2">
+                    <div class="overflow-hidden rounded-lg my-4 bg-white border-0 shadow-sm p-2">
                         
                         <?php
                         $kolom = 2;
@@ -174,7 +179,7 @@
                     <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?>
                     
                     <div class="separator">
-                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-heart text-secondary mr-2"></i> Paling Disukai</span>
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-heart text-secondary mr-2"></i> Populer Post</span>
                     </div>
                     <div class="list-group border-0 shadow-none p-0 d-none d-md-block">
                         <?php
