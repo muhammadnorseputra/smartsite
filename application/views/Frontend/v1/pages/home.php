@@ -6,11 +6,11 @@
         </div>
     </div>
 </section> -->
-<section style="background-color: #EDF8F8;">
+<section style="background-image: url('../../assets/images/bg/bg.png');">
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pb-5 py-md-5">
-                <div class="display-3 text-dark font-weight-bold text-center text-md-left pt-md-5"><span id="halojs"></span></div>
+                <div class="display-3 font-weight-bold text-center text-md-left pt-md-5"><span id="halojs"></span></div>
                 <!-- Static halo -->
                 <p class="lead text-primary text-center text-md-left">Layanan Pemerintahan</p>
                 <p class="lead text-secondary intro-website text-center text-md-left">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</p>
@@ -25,10 +25,10 @@
                 </p>
                 
             </div>
-            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 offset-md-1 my-3 pt-5 my-md-5 py-md-5 order-first order-md-last">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 my-3 pt-5 my-md-5 py-md-5 order-first order-md-last">
                 <div class="d-flex align-items-center">
                     <div>
-                    <img class="img-fluid" src="<?= base_url('assets/images/bg/Study Kasus.66698fed.png') ?>">
+                    <img class="img-fluid shadow-lg rounded" src="<?= base_url('assets/images/bg/Forum.5645b25b.jpg') ?>">
                     </div>
                 </div>
             </div>
@@ -253,6 +253,8 @@
             </div>
             <div class="col-md-2 order-last">
                 <div class="d-flex flex-column justify-content-center">
+                        <div class="w-100 my-2 my-md-0"></div>
+
                         <a class="btn btn-info my-sm-0 d-block mb-auto" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
                             <i class="fas fa-box mr-2 fa-2x"></i> <br> Kotak <br> Saran
                         </a>
