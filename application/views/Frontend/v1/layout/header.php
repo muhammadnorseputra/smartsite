@@ -1,7 +1,7 @@
 <!-- Navbar For Desktop -->
 <nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light">
 	<div class="container">
-		<a class="navbar-brand" href="<?= base_url() ?>">
+		<a class="navbar-brand" href="<?= base_url('frontend/v1/beranda') ?>">
 			<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="110"/>'; ?>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

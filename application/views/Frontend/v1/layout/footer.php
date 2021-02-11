@@ -1,7 +1,7 @@
-<section class="bg-white mt-4">
+<section class="mt-4 bg-white">
 	<div class="container">
 		<div class="row text-center py-3">
-			<div class="col-md-8 d-flex align-items-center">
+			<div class="col-md-8 d-flex align-items-center justify-content-start">
 				<div class="text-center">
 					<div class="text-muted small">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</div>
 				</div>

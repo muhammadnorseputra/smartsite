@@ -118,14 +118,6 @@
                     <span class="text-secondary">Oleh</span> <?= ucwords($namapanggilan); ?>
                 </div> -->
                 <div class="mx-auto">
-                    <div class="d-flex flex-no-wrap justify-content-start">
-                        <a class="btn btn-info my-2 my-sm-0 px-4 align-middle mr-3" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
-                            <i class="fas fa-box mr-2"></i> <br> Kotak <br> Saran
-                        </a>
-                        <a class="btn btn-success my-2 my-sm-0 px-4" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
-                            <i class="fas fa-check mr-2"></i> <br> Survey <br> Kepuasan
-                        </a>
-                    </div>
                     <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-user-tie text-secondary mr-2"></i>Profile PNS</span>
                     </div>
@@ -202,8 +194,8 @@
                             <div class="media m-0">
                                 <?= $img ?>
                                 <div class="media-body">
-                                    <small class="font-weight-bold"><?= character_limiter($b->judul, 30); ?></small>
-                                    <small class="d-block align-middle text-left">
+                                    <span class="font-weight-normal"><?= character_limiter($b->judul, 30); ?></span>
+                                    <small class="d-block mt-2 align-middle text-left font-weight-bold">
                                     <i class="far fa-thumbs-up"></i> <?= $b->like_count ?> Likes </small>
                                     </small>
                                 </div>
@@ -215,7 +207,7 @@
                         <?php $nolist++; endforeach; ?>
                     </div>
                     <div class="separator">
-                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-leaf text-secondary mr-2"></i> Digital Goverment</span>
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-shapes text-secondary mr-2"></i> Digital Goverment</span>
                     </div>
                     <div class="d-flex flex-wrap justify-content-between justify-content-md-start align-items-center mt-4">
                     
@@ -237,13 +229,13 @@
                 </div>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-md-1 mr-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="row">
                     <div class="col-8 col-md-6">
                         <h5 class="my-3 title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fa fa-quote-left fa-pull-left text-info mr-2"></i>Postingan Terbaru</span></h5>
                     </div>
                     <div class="col-4 col-md-6">
-                        <div class="float-right mt-2"><button id="caripost" class="btn btn-outline-info"> <i class="fas fa-search mr-0 mr-lg-2"></i> <span class="d-none d-lg-inline-block">cari postingan</span></button></div>
+                        <div class="float-right mt-2"><button data-toggle="tooltip" title="Search Post" id="caripost" class="btn btn-outline-info"> <i class="fas fa-search"></i></button></div>
                     </div>
                 </div>
                 
@@ -253,6 +245,17 @@
                      <div class="text-center"> 
                         <button id="load_more" class="rounded-pill btn btn-primary rounded-pill px-4"><i class="fas fa-newspaper mr-2"></i> Load more berita</button>
                      </div>
+            </div>
+            <div class="col-md-2 order-last">
+                <div class="d-flex flex-column justify-content-center">
+                        <a class="btn btn-info my-sm-0 d-block mb-auto" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
+                            <i class="fas fa-box mr-2 fa-2x"></i> <br> Kotak <br> Saran
+                        </a>
+                        <div class="w-100 my-2"></div>
+                        <a class="btn btn-success my-sm-0 d-block" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
+                            <i class="fas fa-check mr-2 fa-2x"></i> <br> Survey <br> Kepuasan
+                        </a>
+                    </div>
             </div>
             <!-- <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 order-first">
                 <div class="mx-auto"> -->
