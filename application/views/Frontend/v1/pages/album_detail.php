@@ -1,9 +1,9 @@
 <?php $id = decrypt_url($this->uri->segment(5)) ?>
 <div class="w-100">&nbsp;</div>
 <section class="mt-5 bg-light">
-	<div class="container pt-3">
-		<div class="d-flex justify-content-start align-items-center">
-			<div class="mr-md-3 pr-md-3"><span class="font-weight-bold text-secondary display-4">Album</span> <br>
+	<div class="container py-3">
+		<div class="d-flex justify-content-center justify-content-md-start align-items-center">
+			<div class="mr-md-3 pr-md-3"><span class="font-weight-bold text-secondary display-4">Photos</span> <br>
 			<p class="font-weight-bold text-secondary">Photo <i class="fas fa-chevron-right mx-2"></i>
 				<span class="text-success"><?= $this->album->judul_album_by_id($id) ?></span>
 			</p>
@@ -45,7 +45,7 @@
 				<h1 class="display-4 text-danger">Opps!</h1>
 				<p class="text-secondary">Album <b><?= $this->album->judul_album_by_id($id) ?></b> belum memiliki photo, album masih kosong.</p>
 				<p class="lead">
-					<a class="btn btn-primary btn-sm" href="#" role="button"><i class="fas fa-arrow-left mr-2"></i>List album</a>
+					<a class="btn btn-primary btn-sm" href="<?= base_url('frontend/v1/album') ?>" role="button"><i class="fas fa-arrow-left mr-2"></i>List album</a>
 				</p>
 			</div>
 			<?php endif; ?>

@@ -4,6 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<!-- Custome -->
 	<link rel="stylesheet" href="<?= base_url('assets/css/f_login.css') ?>">
 	<link rel="stylesheet" href="<?= base_url('bower_components/jssocials/dist/jssocials.css') ?>">

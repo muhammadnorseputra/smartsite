@@ -199,7 +199,7 @@
                             <div class="media m-0">
                                 <?= $img ?>
                                 <div class="media-body">
-                                    <span class="font-weight-normal"><?= character_limiter($b->judul, 30); ?></span>
+                                    <span class="font-weight-lighter text-primary"><?= character_limiter($b->judul, 30); ?></span>
                                     <small class="d-block mt-2 align-middle text-left font-weight-bold">
                                     <i class="far fa-thumbs-up"></i> <?= $b->like_count ?> Likes </small>
                                     </small>
@@ -212,7 +212,7 @@
                         <?php $nolist++; endforeach; ?>
                     </div>
                     <div class="separator">
-                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-shapes text-secondary mr-2"></i> Digital Goverment</span>
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-leaf text-secondary mr-2"></i> Digital Goverment</span>
                     </div>
                     <div class="d-flex flex-wrap justify-content-between justify-content-md-start align-items-center mt-4">
                     
@@ -236,11 +236,13 @@
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="row">
-                    <div class="col-8 col-md-6">
-                        <h5 class="my-3 title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fa fa-quote-left fa-pull-left text-info mr-2"></i>Postingan Terbaru</span></h5>
+                    <div class="col-8 col-md-11">
+                        <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-info mr-2"></i>Postingan Terbaru</span></span>
+                        </div>
                     </div>
-                    <div class="col-4 col-md-6">
-                        <div class="float-right mt-2"><button data-toggle="tooltip" title="Search Post" id="caripost" class="btn btn-outline-info"> <i class="fas fa-search"></i></button></div>
+                    <div class="col-4 col-md-1">
+                        <div class="float-right mt-2"><button data-toggle="tooltip" title="Search Post" id="caripost" class="btn btn-outline-info border-0"> <i class="fas fa-search"></i></button></div>
                     </div>
                 </div>
                 
@@ -254,13 +256,12 @@
             <div class="col-md-2 order-last">
                 <div class="d-flex flex-column justify-content-center">
                         <div class="w-100 my-2 my-md-0"></div>
-
-                        <a class="btn btn-info my-sm-0 d-block mb-auto" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
-                            <i class="fas fa-box mr-2 fa-2x"></i> <br> Kotak <br> Saran
+                        <a class="btn btn-info my-sm-0 d-block py-3" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
+                            <i class="fas fa-box mr-2 fa-2x"></i> <br> Kotak Saran
                         </a>
                         <div class="w-100 my-2"></div>
-                        <a class="btn btn-success my-sm-0 d-block" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
-                            <i class="fas fa-check mr-2 fa-2x"></i> <br> Survey <br> Kepuasan
+                        <a class="btn btn-success my-sm-0 d-block py-3" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
+                            <i class="fas fa-check-circle mr-2 fa-2x"></i> <br> Survey IKM
                         </a>
                     </div>
             </div>

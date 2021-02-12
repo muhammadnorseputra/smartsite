@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<?= $mf_beranda->meta_desc; ?>">
-    <meta name="keywords" content="<?= $mf_beranda->meta_seo; ?>">
-    <meta name="author" content="Muhammad Nor Seputra">
+    <meta name="description" content="<?= $mf_beranda->meta_desc; ?>"/>
+    <meta name="keywords" content="<?= $mf_beranda->meta_seo; ?>"/>
+    <meta name="subject" content="<?= $mf_beranda->meta_desc; ?>"/>
+    <meta name="abstract" content="<?= $mf_beranda->meta_desc; ?>"/>
+    <meta name="author" content="Muhammad Nor Saputra"/>
+    <meta name="robots" content="noindex,nofollow"/>
+
+    <meta name="google" content="translate" />
+    <meta name="geo.country" content="id" />
+    <meta name="geo.placename" content="Indonesia"/>
+    <meta name="WEBCRAWLERS" content="ALL"/>
+    <meta name="SPIDERS" content="ALL"/>
+    <meta name="audience" content="all" />
+    <meta name="Distribution" content="Global" />
+    <meta  name="Rating" content="General"/>
     <title><?= $title; ?></title>
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
 

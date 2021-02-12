@@ -115,6 +115,13 @@ class M_f_halaman extends CI_Model
   {
     return $this->db->insert($tbl, $data);
   }
+
+  public function hapus_lampiran($tbl, $whr, $data)
+  {
+    $this->db->where($whr);
+    $this->db->update($tbl, $data);
+    return true;
+  }
 }
 
 /* End of file M_f_halaman.php */

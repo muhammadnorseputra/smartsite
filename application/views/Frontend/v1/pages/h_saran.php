@@ -3,7 +3,9 @@
 	<div class="row">
 		<div class="col-md-6 mt-5">
 			<div class="mr-md-3 pr-md-3">
-					<span class="font-weight-bold display-4">Kotak Saran</span> <br>
+				<div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-box text-secondary mr-2"></i>Kotak Saran</span>
+                </div>
 					<p class="font-weight-bold text-secondary">Silahkan masukan saran anda terkait layanan yang kami berikan diwebsite ini maupun ditempat kerja.</p>
 				</div>
 			<?php if($this->session->flashdata('captcha_salah') <> ''): ?>

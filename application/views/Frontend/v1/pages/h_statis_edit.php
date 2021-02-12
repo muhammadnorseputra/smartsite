@@ -35,13 +35,22 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<?php if(!empty($h->filename)): ?>
+				<?php 
+				if(!empty($h->filename)): 
+					$path = $h->filename;
+					$ext = pathinfo($path, PATHINFO_EXTENSION);
+					?>
+					<?php if($ext === 'pdf'): ?>
 					 <object data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:250px; width: 100%;"></object>
+					<?php else: ?>
+					 <img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto d-block w-100 mb-2">
+					<?php endif; ?>
 							<span class="badge badge-light">filename:</span>
 							<span class="label">
 								<?= $h->filename ?>
 								</span> 
-							<button  id="btn-upload-lampiran" type="button" class="btn btn-block btn-primary-old rounded-pill mt-2"><i class="fas fa-upload mr-2"></i> ganti-lampiran</button>
+							<button id="btn-hapus-lampiran" type="button" class="btn btn-default rounded-circle btn-sm float-right text-danger" data-toggle="tooltip" title="Hapus lampiran"><i class="fas fa-trash"></i></button>
+							<button id="btn-upload-lampiran" type="button" class="btn btn-block btn-primary-old rounded-pill mt-2"><i class="fas fa-upload mr-2"></i> ganti-lampiran</button>
 							<?php else: ?>
 							<button id="btn-upload-lampiran" type="button" class="btn btn-block btn-primary-old rounded-pill"><i class="fas fa-upload mr-2"></i> upload-lampiran</button> 
 							<?php endif; ?>
@@ -79,7 +88,7 @@
 				"table contextmenu directionality emoticons paste textcolor code fullscreen"
 			],
 			content_css: [
-				'<?= base_url("vendor/twbs/bootstrap/dist/css/bootstrap.min.css") ?>',
+				'<?= base_url("bower_components/bootstrap/dist/css/bootstrap.min.css") ?>',
 			],
 			content_style: "body{padding: 10px}",
 			relative_urls : false,
@@ -94,6 +103,19 @@
 		});
 
 		let fileupload = $("input[name='lampiran']");
+    	let btnHapus = $("button#btn-hapus-lampiran");
+    	btnHapus.click(function() {
+    		let c = confirm('Apakah ada akan menghapus lampiran tersebut?');
+    		if(c) {
+    			let token = <?= $token ?>;
+    			$.getJSON(`${_uri}/frontend/v1/halaman/hapus_lampiran`, {id: token}, function(res) {
+    				if(res) {
+    					window.location.reload();
+    				}
+    			})
+    		} 
+    	
+    	})
     	let btnUpload = $("button#btn-upload-lampiran");
 		btnUpload.click(function () {
             fileupload.click();

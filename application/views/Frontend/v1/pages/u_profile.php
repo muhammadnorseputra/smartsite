@@ -40,7 +40,9 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
               <div class="row">
                 <div class="col-md-4 order-2 order-md-first">
                   <div id="sidebar" class="sidebar">
-                    <h5 class="my-3 font-weight-bold title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-heart text-danger mr-2"></i>Paling Disukai</span></h5>
+                    <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-heart text-secondary mr-2"></i>Populer Post</span></span>
+                        </div>
                     <div class="list-group border-0 shadow-none p-0">
                         <?php
                         $nolist = 1;
@@ -59,8 +61,8 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
                             <div class="media m-0">
                                 <?= $img ?>
                                 <div class="media-body">
-                                    <small class="font-weight-bold"><?= character_limiter($b->judul, 25); ?></small>
-                                    <small class="d-block align-middle text-left">
+                                    <span class="font-weight-lighter text-primary"><?= character_limiter($b->judul, 25); ?></span>
+                                    <small class="d-block mt-2 align-middle text-left">
                                     <i class="far fa-thumbs-up"></i> <?= $b->like_count ?> Likes </small>
                                     </small>
                                 </div>
@@ -76,8 +78,10 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
                 </div>
                 <div class="col-md-8 order-3 order-md-2">
 
-              <img src="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[0]; ?>" class="img-fluid d-block mb-4"> 
-                  <h5 class="my-3 font-weight-bold title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-quote-left text-danger mr-2"></i>Postingan Terbaru</span></h5>
+              <!-- <img src="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[0]; ?>" class="img-fluid d-block mb-4">  -->
+                  <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-secondary mr-2"></i>Postingan Terbaru</span></span>
+                        </div>
                   <div id="load_data_profile"></div>
                   <div id="load_data_message_profile"></div>
                 </div>
@@ -89,14 +93,18 @@ $halamanLink = base_url("frontend/v1/users/halaman/@" . decrypt_url($this->mf_us
                   
                     <!-- <h5 class="my-3 font-weight-bold title-sidebar">Menu</h5> -->
                     <div class="list-group">
-                      <h6 class="my-3 font-weight-bold  title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-user text-danger mr-2"></i>Menus</span></h6>
+                      <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-user text-secondary mr-2"></i>Menus</span></span>
+                        </div>
                       <a href="<?= $profileLink ?>" class="list-group-item list-group-item-action px-2 rounded border-0 border-light bg-secondary text-white rippler rippler-default"><i class="fas fa-user float-right" aria-hidden="true"></i> Profile</a>
                       <a href="<?= $sukaLink ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default my-2"><i class="fas fa-thumbs-up float-right" aria-hidden="true"></i> Disukai</a>
                       <a href="<?= $halamanLink ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default"><i class="fas fa-newspaper float-right" aria-hidden="true"></i> Halaman</a>
                     </div>
                     <div class="w-100"></div>
                     <div class="list-group">
-                      <h6 class="my-3 font-weight-bold title-sidebar mt-md-3"><span class="font-weight-bold"><i class="fas fa-list text-danger mr-2"></i>Kategori</span></h6>
+                      <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-shapes text-secondary mr-2"></i>Kategori Terbaru</span></span>
+                        </div>
                                 <?php
                                 foreach ($mf_kategori as $k) :
                                 $post_list_url = base_url('frontend/v1/post_list/views/' . encrypt_url($k->id_kategori) . '/' . url_title($k->nama_kategori) . '?order=desc');

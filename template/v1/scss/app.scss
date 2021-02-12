@@ -194,21 +194,22 @@ nav.navbar li a {
 	font-family: 'Space Grotesk', sans-serif;
 	font-size: 16px;
 	font-weight: 500;
+	&li a:hover, 
+	&li a.active {
+		color: #000 !important;
+		background-color: #efefef;
+		cursor: pointer;
+	}
 }
 
-nav.navbar li a:hover, 
-nav.navbar li a.active {
-	color: #000 !important;
-	background-color: #efefef;
-	cursor: pointer;
-}
+
 .dropdown-menu {
-	top: 150px;
+	top: 45px;
 	padding: 8px;
 	border: 0px;
 	box-shadow: 0 8px 3em #ccc;	
-	border-radius: 5px;
-	opacity: 0;
+	border-radius: 8px;
+	opacity: 1;
 	transition: all .2s ease-in;
 }
 
@@ -329,9 +330,9 @@ nav.navbar li a.active {
 
 .navbar .dropdown-item:focus,
 .navbar .dropdown-item:hover {
-	color: #bbe1fa;
+	color: #000;
 	text-decoration: none;
-	background-color: #efefef;
+	background-color: #fefefe;
 }
 
 @media (min-width: 767px) {
@@ -538,11 +539,6 @@ i.likes:hover {
 	-o-transform: translateY(0px);
 }
 
-.dropdown-menu {
-	margin-top: 0px !important;
-	opacity: 1;
-    top: 58px;
-}
 .dropdown:hover > .dropdown-menu {
     display: block;
 

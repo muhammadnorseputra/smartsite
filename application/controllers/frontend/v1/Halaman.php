@@ -245,6 +245,19 @@ class Halaman extends CI_Controller
       endif;
     endif;
   }
+
+  public function hapus_lampiran() {
+    $id = $this->input->get('id');
+    $data = ['filename' => NULL, 'file' => NULL];
+    $whr = ['token_halaman' => $id];
+    $db = $this->halaman->hapus_lampiran('t_halaman', $whr, $data);
+    if($db) {
+      $msg = true;
+    } else {
+      $msg = false;
+    }
+    echo json_encode($msg);
+  }
 }
 
 /* End of file Halaman.php */
