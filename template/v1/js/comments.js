@@ -30,8 +30,11 @@ $(document).ready(function() {
         var id_berita = $(this).attr('data-id-berita');
         var id_user_comment = $(this).attr('data-id-user-comment');
         var id_user_username = $(this).attr('data-username');
-
-        $(".emojionearea-editor").html(`<span class="text-info">@${id_user_username.trim().toLowerCase()} </span>`).focus();
+        var id_comment = $(this).attr('data-id-comment');
+        $(".reply_username").attr('id', `${
+            id_comment
+        }`).attr('username', `@${id_user_username.trim().toLowerCase()}`).html(`Reply <span class="text-info">@${id_user_username.trim().toLowerCase()}</span>`);
+        $(".emojionearea-editor").focus();
     });
 
     // Button hapus komentar
@@ -58,11 +61,14 @@ $(document).ready(function() {
         let method = form.attr('method');
         let action = form.attr('action');
         let id_berita = form.attr('class');
+        let id_user_comment = $(".reply_username").attr('id');
+        let id_user_username = $(".reply_username").attr('username');
         // let isi_komentar = $("textarea").val();
-        var isi_komentar = $el[0].emojioneArea.getText();
+        let isi_komentar = $el[0].emojioneArea.getText();
         if (isi_komentar != '') {
             $.post(action, {
                 id_b: id_berita,
+                id_c: id_user_comment,
                 isi: isi_komentar
             }, function(response) {
                 if (response == true) {

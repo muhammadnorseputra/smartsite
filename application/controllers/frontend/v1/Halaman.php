@@ -22,14 +22,14 @@ class Halaman extends CI_Controller
   public function statis($token_halaman, $judul)
   {
     $data = [
-      'title' => 'BKPPD Kab. Balangan, ' . $this->halaman->get_namahalaman($token_halaman),
+      'title' => $this->halaman->get_namahalaman($token_halaman).' &bull; BKPPD Kab. Balangan',
       'isi'  => 'Frontend/v1/pages/h_statis',
       'uri_token_halaman' => $token_halaman,
       'mf_beranda' => $this->mf_beranda->get_identitas(),
       'mf_menu' => $this->mf_beranda->get_menu(),
       'detail' => $this->halaman->get_detail_halaman($token_halaman)
     ];
-
+    $this->halaman->diakses('t_halaman',$token_halaman, $this->halaman->get_viewshalaman($token_halaman));
     $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
   }
 

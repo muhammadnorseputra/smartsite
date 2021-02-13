@@ -24,8 +24,9 @@
 			<div class="card border-0 w-100 p-2 rounded-0 mx-auto bg-transparent">
 				<img class="rounded-lg shadow lazy img-fluid" data-src="data:image/jpeg;base64,<?= base64_encode($a->gambar_blob) ?>" alt="Card image">
 				<div class="card-body bg-transparent px-0">
-					<h5 class="card-title"><?= $a->judul ?></h5> 
-					<?php if($a->tgl_publish === date('Y-m-d')): ?><span class="badge badge-pill badge-warning">New!</span> <?php endif; ?>
+					<?php if($a->tgl_publish === date('Y-m-d')): ?><span class="badge badge-pill badge-warning float-right">New!</span> <?php endif; ?>
+					<h5 class="card-title"><?= $a->judul ?></h5>
+					<span class="text-secondary label"><?= $this->album->jml_photo_in_album($a->id_album_foto) ?> Photo</span> 
 				</div>
 			</div>
 		</a>

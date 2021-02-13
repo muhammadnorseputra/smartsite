@@ -253,7 +253,9 @@ $(document).ready(function () {
     var id_berita = $(this).attr('data-id-berita');
     var id_user_comment = $(this).attr('data-id-user-comment');
     var id_user_username = $(this).attr('data-username');
-    $(".emojionearea-editor").html("<span class=\"text-info\">@".concat(id_user_username.trim().toLowerCase(), " </span>")).focus();
+    var id_comment = $(this).attr('data-id-comment');
+    $(".reply_username").attr('id', "".concat(id_comment)).attr('username', "@".concat(id_user_username.trim().toLowerCase())).html("Reply <span class=\"text-info\">@".concat(id_user_username.trim().toLowerCase(), "</span>"));
+    $(".emojionearea-editor").focus();
   }); // Button hapus komentar
 
   $(document).on('click', '#btn-delete-comment', function () {
@@ -277,13 +279,16 @@ $(document).ready(function () {
     var form = $(this);
     var method = form.attr('method');
     var action = form.attr('action');
-    var id_berita = form.attr('class'); // let isi_komentar = $("textarea").val();
+    var id_berita = form.attr('class');
+    var id_user_comment = $(".reply_username").attr('id');
+    var id_user_username = $(".reply_username").attr('username'); // let isi_komentar = $("textarea").val();
 
     var isi_komentar = $el[0].emojioneArea.getText();
 
     if (isi_komentar != '') {
       $.post(action, {
         id_b: id_berita,
+        id_c: id_user_comment,
         isi: isi_komentar
       }, function (response) {
         if (response == true) {
@@ -719,6 +724,21 @@ $(function () {
 "use strict";
 
 $(document).ready(function () {
+  // make it as accordion for smaller screens
+  if ($(window).width() < 992) {
+    $('.dropdown-menu a').click(function (e) {
+      e.preventDefault();
+
+      if ($(this).next('.submenu').length) {
+        $(this).next('.submenu').toggle();
+      }
+
+      $('.dropdown').on('hide.bs.dropdown', function () {
+        $(this).find('.submenu').hide();
+      });
+    });
+  }
+
   $(document).scroll(function () {
     if ($(document).scrollTop() > 10) {
       $("nav#navbar").css("transition", ".1s ease-in").addClass("shadow-sm bg-white");

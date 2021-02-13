@@ -6,7 +6,7 @@
         if ($detail->num_rows() > 0) :
           $h = $detail->row();
         ?>
-          <span class="font-weight-light small d-block text-primary my-3">Posted by <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b></span>
+          <span class="font-weight-light small d-block text-primary my-3">Posted by <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= $h->views ?>x Diakses</span>
           <h2 class="font-weight-bold mb-0 pb-0">
             <span class="d-block font-weight-bold"><?= $h->title; ?></span>    
             </h2>

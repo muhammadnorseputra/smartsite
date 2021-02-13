@@ -172,6 +172,27 @@ class M_f_post extends CI_Model {
         return $q;
     }
 
+    public function jml_replay_komentar($parentId) 
+    {
+        $this->db->select('id_komentar, parent_id');
+        $this->db->from('t_komentar');
+        $this->db->where('parent_id !=', NULL);
+        $this->db->like('parent_id', $parentId);
+        $q = $this->db->get();
+        return $q->num_rows();
+    }
+
+    public function user_replay_komentar($parentId) 
+    {
+        $this->db->select('k.*, u.nama_lengkap, u.photo_pic');
+        $this->db->from('t_komentar AS k');
+        $this->db->join('t_users_portal AS u', 'k.fid_users_portal = u.id_user_portal', 'left');
+        $this->db->where('k.parent_id', $parentId);
+        $this->db->order_by('k.tanggal', 'asc');
+        $q = $this->db->get();
+        return $q->result();
+    }
+
     public function kategori_byid($id) 
     {
         $q = $this->db->get_where('t_kategori', ['id_kategori' => $id])->row();

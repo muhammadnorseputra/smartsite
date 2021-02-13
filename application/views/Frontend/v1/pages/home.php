@@ -238,11 +238,11 @@
                 <div class="row">
                     <div class="col-8 col-md-11">
                         <div class="separator">
-                        <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-info mr-2"></i>Postingan Terbaru</span></span>
+                        <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-primary mr-2"></i>Postingan Terbaru</span></span>
                         </div>
                     </div>
                     <div class="col-4 col-md-1">
-                        <div class="float-right mt-2"><button data-toggle="tooltip" title="Search Post" id="caripost" class="btn btn-outline-info border-0"> <i class="fas fa-search"></i></button></div>
+                        <div class="float-right mt-2"><button data-toggle="tooltip" title="Search Post" id="caripost" class="btn btn-outline-primary border-0"> <i class="fas fa-search"></i></button></div>
                     </div>
                 </div>
                 

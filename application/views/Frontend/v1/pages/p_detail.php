@@ -36,7 +36,7 @@ if (count($pecah) > 0) {
 ?>
 <section>
 	<div class="container">
-		<div class="row mt-5">
+		<div class="row mt-4">
 			<div class="col-md-8 mt-5 mb-md-5 offset-md-2">
 				<div class="card border-0 rounded-lg shadow-none bg-transparent">
 					<div class="card-body">
@@ -82,7 +82,8 @@ if (count($pecah) > 0) {
 						<div class="card-body">
 							
 							<?php if ($this->session->userdata('user_portal_log')['online'] == 'ON') { ?>
-							<h5 class="card-title"><i class="far fa-comment-alt mr-2"></i> Post Komentar</h5>
+							<b class="reply_username float-right"></b>
+							<h5 class="card-title"><i class="far fa-comment-alt mr-2"></i> Post Komentar</h5> 
 							<?= form_open(base_url('frontend/v1/post/send_komentar'), ['id' => 'f_komentar', 'class' => $post_detail->id_berita]) ?>
 							<div class="form-group">
 								<textarea class="form-control" name="isi_komentar" id="exampleFormControlTextarea1"></textarea>

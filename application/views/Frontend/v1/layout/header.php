@@ -5,7 +5,7 @@
 			<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="110"/>'; ?>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+		<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto p-md-0 p-2 mr-md-3">
@@ -21,11 +21,44 @@
 						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
 						<?= $m->nama_menu; ?>
 					</a>
-					<div class="dropdown-menu border-light" aria-labelledby="navbarDropdown">
+					<ul class="dropdown-menu border-light" aria-labelledby="navbarDropdown">
 						<?php foreach ($submenu as $s) : ?>
-						<a class="dropdown-item rounded py-md-3 px-3" href="<?= base_url("frontend/v1/" . $s->link_sub); ?>"><?= $s->nama_sub; ?></a>
+						<!-- Level 1 -->
+						<li>
+							<a class="dropdown-item py-md-2 rounded px-2" href="<?= base_url("frontend/v1/" . $s->link_sub); ?>"><?= $s->nama_sub; ?>
+							<?php 
+								if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0): 
+							?>
+								<i class="float-right text-light font-weight-bold animated fadeIn fas fa-caret-right mt-1"></i>
+							<?php endif; ?>
+							</a>
+							<?php if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0): ?>
+							<!-- Level 2 -->
+							<ul class="submenu dropdown-menu ml-1">
+								<?php foreach ($this->mf_beranda->sub_submenu($s->idsub) as $key):?>
+									<li>
+										<a class="dropdown-item py-md-2 rounded px-2 rounded-lg" href="<?= base_url("frontend/v1/" . $key->link_sub); ?>"> <?= $key->nama_sub ?>
+										<?php 
+											if($this->mf_beranda->parent_submenu($key->idsub)->num_rows() > 0): 
+										?>
+											<i class="float-right text-light font-weight-bold animated fadeIn fas fa-caret-right mt-1"></i>
+										<?php endif; ?>
+										</a>
+										<?php if($this->mf_beranda->parent_submenu($key->idsub)->num_rows() > 0): ?>
+										<!-- Level 3 -->
+										<ul class="submenu dropdown-menu ml-1">
+											<?php foreach ($this->mf_beranda->sub_submenu($key->idsub) as $key_sub):?>
+												<li><a class="dropdown-item py-md-2 rounded px-2" href="<?= base_url("frontend/v1/" . $key_sub->link_sub); ?>"> <?= $key_sub->nama_sub ?></a></li>
+											<?php endforeach; ?>
+										</ul>
+										<?php endif; ?>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+							<?php endif; ?>
+						</li>
 						<?php endforeach; ?>
-					</div>
+					</ul>
 				</li>
 				<?php
 				}
@@ -45,53 +78,49 @@
 				<?= $img ?> <?= ucfirst($this->session->userdata('user_portal_log')['nama_panggilan']) ?>
 				<i class="fas fa-angle-down mx-2"></i>
 				</button>
-				 <?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
+				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
 			<a  class="btn shadow-none btn-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/users/login'); ?>">
-			<i class="far fa-user mr-2"></i> Login
+				<i class="far fa-user mr-2"></i> Login
 			</a>
 			<?php } ?>
-
-            <label class="switch mt-2">
-			    <input type="checkbox" id="darkSwitch">
-			    <div>
-			        <span></span>
-			    </div>
+			<label class="switch mt-2">
+				<input type="checkbox" id="darkSwitch">
+				<div>
+					<span></span>
+				</div>
 			</label>
 		</div>
 	</div>
 </nav>
-
 <!-- Modal -->
 <div class="modal bd-example-modal-lg" id="mpostseacrh" tabindex="-1" role="dialog" aria-labelledby="mpostseacrhLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content border-0 shadow-lg">
-      <div class="modal-header">
-        <h5 class="modal-title" id="mpostseacrhLabel">Cari Postingan</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <?= form_open(base_url('frontend/v1/post/search'), ['id' => 'form_post_search','class' => 'form-inline']); ?>
-            <div class="input-group mx-auto">
-                <div class="input-group-prepend">
-                  <div class="input-group-text"><i class="fas fa-search"></i></div>
-                </div>
-                <input type="text" name="q" class="form-control form-control-lg" id="search" placeholder="Masukan kata kunci...">
-				<button type="submit" class="btn btn-outline-info ml-2">Cari</button>
-                  
-              </div>
-        <?= form_close() ?>
-        <hr>
-        <div id="search-result"></div>
-
-      </div>
-    </div>
-  </div>
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content border-0 shadow-lg">
+			<div class="modal-header">
+				<h5 class="modal-title" id="mpostseacrhLabel">Cari Postingan</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<?= form_open(base_url('frontend/v1/post/search'), ['id' => 'form_post_search','class' => 'form-inline']); ?>
+				<div class="input-group mx-auto">
+					<div class="input-group-prepend">
+						<div class="input-group-text"><i class="fas fa-search"></i></div>
+					</div>
+					<input type="text" name="q" class="form-control form-control-lg" id="search" placeholder="Masukan kata kunci...">
+					<button type="submit" class="btn btn-outline-info ml-2">Cari</button>
+					
+				</div>
+				<?= form_close() ?>
+				<hr>
+				<div id="search-result"></div>
+			</div>
+		</div>
+	</div>
 </div>
-
 <!-- Navbar For Mobile -->
 <!-- modal notice sigin-->
 <div class="modal" id="noticeSigin" tabindex="-1" role="dialog" aria-labelledby="noticeSiginTitle" aria-hidden="true" data-backdrop="static">

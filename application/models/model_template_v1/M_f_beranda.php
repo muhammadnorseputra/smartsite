@@ -67,6 +67,25 @@ class M_f_beranda extends CI_Model
         return $q->result();
     }
 
+    public function parent_submenu($idsub) {
+        $this->db->select('idsub, fid_idsub');
+        $this->db->from('t_submenu');
+        $this->db->where('fid_idsub !=', NULL);
+        $this->db->like('fid_idsub', $idsub);
+        $q = $this->db->get();
+        return $q;
+    }
+
+    public function sub_submenu($idsub) {
+        $this->db->select('nama_sub, link_sub, idsub');
+        $this->db->from('t_submenu');
+        $this->db->where('fid_idsub', $idsub);
+        $this->db->where('aktif', 'Y');
+        $this->db->order_by('order', 'asc');
+        $q = $this->db->get();
+        return $q->result();
+    }
+
     public function get_submenu_jml($id_menu)
     {
         return $this->db->get_where('t_submenu', ['idmain' => $id_menu])->num_rows();

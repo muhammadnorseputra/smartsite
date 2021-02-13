@@ -122,6 +122,21 @@ class M_f_halaman extends CI_Model
     $this->db->update($tbl, $data);
     return true;
   }
+  public function get_viewshalaman($id) {
+    $this->db->select('views');
+    $this->db->from('t_halaman');
+    $this->db->where('token_halaman', $id);
+    $q = $this->db->get();
+    if($q->num_rows() > 0) {
+      $r = $q->row();
+      return $r->views;
+    }
+  }
+  public function diakses($tbl, $id, $views) {
+    $this->db->where('token_halaman', $id);
+    $this->db->update($tbl, ['views' => $views+1]);
+    return true; 
+  } 
 }
 
 /* End of file M_f_halaman.php */
