@@ -61,6 +61,8 @@
                     $difftext = $seconds . " detik yang lalu";
                 elseif ($seconds == 1)
                     $difftext = $seconds . " detik yang lalu";
+                else
+                    $difftext = "Baru saja";
             }
             return $difftext;
         }

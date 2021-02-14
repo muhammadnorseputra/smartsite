@@ -11,6 +11,7 @@ class Post extends CI_Controller
         $this->load->model('model_template_v1/M_f_post_list', 'postlist');
         $this->load->model('model_template_v1/M_f_users', 'mf_users'); 
         $this->load->model('M_b_komentar', 'komentar');
+        $this->load->helper('time_ago');
         //Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
             // redirect(base_url('frontend/v1/beranda'),'refresh');
@@ -293,11 +294,12 @@ class Post extends CI_Controller
         $akf = 'Y';
 
         $data = [
-            'parent_id' => $parentId,
+            'parent_id' => $parentId === NULL ? 0 : $parentId,
             'fid_berita' => $fidIdBerita,
             'fid_users_portal' => $fidUsersPortal,
             'isi' => $isi,
             'tanggal' => $tgl,
+            'waktu' => date('H:i:s'),
             'aktif' => $akf
         ];
         $db = $this->post->send_komentar('t_komentar', $data);
@@ -310,9 +312,53 @@ class Post extends CI_Controller
         echo json_encode($valid);
     }
 
+    public function reply($id_komentar) {
+        // Replay Komentar
+        $output = '';
+         // if($this->post->jml_replay_komentar($id_komentar) > 0):
+           foreach ($this->post->user_replay_komentar($id_komentar) as $reply) {
+            if($reply->fid_users_portal == $this->session->userdata('user_portal_log')['id']) {
+                if($reply->tanggal === date('Y-m-d')):
+                $button = '<div class="btn-group float-right">
+                                <button type="button" class="btn btn-default text-muted dropdown-toggle dropdown-toggle-split btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <button type="button" id="btn-delete-comment" data-id="'.encrypt_url($reply->id_komentar).'" class="dropdown-item btn-sm" href="#">
+                                        <i class="fas fa-trash"></i> Hapus</button>
+                                </div>
+                            </div>';
+                else:
+                $button = '';
+                endif;
+            }
+        if($this->session->userdata('user_portal_log')['online'] == 'ON') {
+            $btn_reply = '<button type="button" id="btn-reply-comment" data-id-parent="' . encrypt_url($reply->fid_users_portal) . '"
+                            data-id-comment="'.$reply->id_komentar.'"
+                            data-id-berita="' . encrypt_url($reply->fid_berita) . '"
+                            data-id-user-comment="' . encrypt_url($this->session->userdata('user_portal_log')['id']) . '"
+                            data-username="' . decrypt_url($reply->nama_lengkap) . '" class="btn text-muted font-small btn-link ml-1 p-0"> <small><i class="fas fa-retweet"></i> Reply</small> </button>';
+        }
+               $output .= ' 
+                    <div class="tracking-item reply" id="'.$reply->id_komentar.'">
+                        <div class="tracking-icon status-intransit ml-5">
+                            <img src="data:image/jpeg;base64,'.base64_encode($reply->photo_pic).'" class="mr-3 rounded-circle" width="40" height="40">
+                        </div>
+                        <div class="tracking-date small">'.mediumdate_indo($reply->tanggal).'</div>
+                        <div class="tracking-content ml-5">
+                        '.$button.'
+                        '.decrypt_url($reply->nama_lengkap). ' &bull; <i class="small">'.time_ago($reply->waktu).'</i><span>'.$reply->isi. '</span> <div id="displayReplyId'. encrypt_url($reply->fid_users_portal).'"></div> '. $btn_reply.'
+                        </div>
+                    </div>
+         ';  
+         $output .= $this->reply($reply->id_komentar);                  
+           }
+        // endif;
+        return $output;
+    }
 
     public function displayKomentar($id_berita) {
-        $comments = $this->post->displayKomentar('t_komentar', ['parent_id' => NULL,'fid_berita' => decrypt_url($id_berita)]);
+        $comments = $this->post->displayKomentar('t_komentar', ['parent_id' => 0,'fid_berita' => decrypt_url($id_berita)]);
 
         if($comments->num_rows() > 0)
         {   
@@ -320,6 +366,7 @@ class Post extends CI_Controller
             foreach($comments->result() as $comment):
                 $profileUser = $this->mf_users->get_userportal_byid($comment->fid_users_portal);
                 if($comment->fid_users_portal == $this->session->userdata('user_portal_log')['id']) {
+                    if($comment->tanggal === date('Y-m-d')):
                     $button = '<div class="btn-group float-right">
                                     <button type="button" class="btn btn-default text-muted dropdown-toggle dropdown-toggle-split btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="sr-only">Toggle Dropdown</span>
@@ -329,9 +376,12 @@ class Post extends CI_Controller
                                             <i class="fas fa-trash"></i> Hapus</button>
                                     </div>
                                 </div>';
+                    else:
+                    $button = '';
+                    endif;
                 } else {
                     $button = '';
-                } 
+                }
 
                 if($this->session->userdata('user_portal_log')['online'] == 'ON') {
                     $btn_reply = '<button type="button" id="btn-reply-comment" data-id-parent="' . encrypt_url($comment->fid_users_portal) . '"
@@ -339,38 +389,22 @@ class Post extends CI_Controller
                                     data-id-berita="' . encrypt_url($comment->fid_berita) . '"
                                     data-id-user-comment="' . encrypt_url($this->session->userdata('user_portal_log')['id']) . '"
                                     data-username="' . decrypt_url($profileUser->nama_lengkap) . '" class="btn text-muted font-small btn-link ml-1 p-0"> <small><i class="fas fa-retweet"></i> Reply</small> </button>';
-                } else {
-                    $btn_reply = '';
                 }
                 
                 $output .= ' 
-                            <div class="tracking-item">
+                            <div class="tracking-item" id="'.$comment->id_komentar.'">
                                 <div class="tracking-icon status-intransit">
                                     <img src="data:image/jpeg;base64,'.base64_encode($profileUser->photo_pic).'" class="mr-3 rounded-circle" width="40" height="40">
                                 </div>
                                 <div class="tracking-date">'.mediumdate_indo($comment->tanggal).'</div>
                                 <div class="tracking-content">
                                 '.$button.'
-                                '.decrypt_url($profileUser->nama_lengkap). '<span>'.$comment->isi. '</span> <div id="displayReplyId'. encrypt_url($comment->fid_users_portal).'"></div> '. $btn_reply.' 
+                                '.decrypt_url($profileUser->nama_lengkap). ' &bull; <i class="small">'.time_ago($comment->waktu, true).'</i><span>'.$comment->isi. '</span> <div id="displayReplyId'. encrypt_url($comment->fid_users_portal).'"></div> '. $btn_reply.' 
                                 </div>
                             </div>
                  ';
-                 if($this->post->jml_replay_komentar($comment->id_komentar) > 0):
-                   foreach ($this->post->user_replay_komentar($comment->id_komentar) as $reply) {
-                       $output .= ' 
-                            <div class="tracking-item reply">
-                                <div class="tracking-icon status-intransit ml-5">
-                                    <img src="data:image/jpeg;base64,'.base64_encode($reply->photo_pic).'" class="mr-3 rounded-circle" width="40" height="40">
-                                </div>
-                                <div class="tracking-date small">'.mediumdate_indo($reply->tanggal).'</div>
-                                <div class="tracking-content ml-5">
-                                '.$button.'
-                                '.decrypt_url($reply->nama_lengkap). '<span>'.$reply->isi. '</span> <div id="displayReplyId'. encrypt_url($reply->fid_users_portal).'"></div> '. $btn_reply.' 
-                                </div>
-                            </div>
-                 ';                    
-                   }
-                endif;
+
+                 $output .= $this->reply($comment->id_komentar);
             endforeach;
         } else {
             $output = '<img src="'.base_url('bower_components/SVG-Loaders/svg-loaders/empty-diskusi.svg').'" class="d-block my-auto mx-auto w-25"><p class="text-center text-muted">

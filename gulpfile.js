@@ -79,3 +79,9 @@ gulp.task("vendor-js", function() {
         .pipe(minify())
         .pipe(gulp.dest("template/v1/prod/"));
 });
+
+gulp.task('watch', function() {
+    gulp.watch('template/v1/scss/*.scss', gulp.series(['sass']));
+    gulp.watch('template/v1/js/*.js', gulp.series(['app-js']));
+    // Other watchers
+})

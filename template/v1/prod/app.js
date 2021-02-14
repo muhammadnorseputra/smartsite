@@ -254,8 +254,8 @@ $(document).ready(function () {
     var id_user_comment = $(this).attr('data-id-user-comment');
     var id_user_username = $(this).attr('data-username');
     var id_comment = $(this).attr('data-id-comment');
-    $(".reply_username").attr('id', "".concat(id_comment)).attr('username', "@".concat(id_user_username.trim().toLowerCase())).html("Reply <span class=\"text-info\">@".concat(id_user_username.trim().toLowerCase(), "</span>"));
-    $(".emojionearea-editor").focus();
+    $(".reply_username").attr('id', "".concat(id_comment)).attr('username', "@".concat(id_user_username.trim().toLowerCase())).html("Reply <span class=\"text-info\">@".concat(id_user_username.trim().toLowerCase(), "</span> <button onclick=\"batal()\" class=\"btn btn-sm text-danger btn-default\">x</button>"));
+    $(".emojionearea-editor").html("@".concat(id_user_username.trim().toLowerCase())).focus();
   }); // Button hapus komentar
 
   $(document).on('click', '#btn-delete-comment', function () {
@@ -292,8 +292,7 @@ $(document).ready(function () {
         isi: isi_komentar
       }, function (response) {
         if (response == true) {
-          $(".emojionearea-editor").html('');
-          $(".emojionearea-editor").removeClass('is-invalid').addClass('is-valid');
+          batal();
           displayComments();
         }
       }, 'json');
@@ -302,6 +301,12 @@ $(document).ready(function () {
     }
   });
 });
+
+function batal() {
+  $(".emojionearea-editor").html('');
+  $(".emojionearea-editor").removeClass('is-invalid').addClass('is-valid');
+  $(".reply_username").attr('id', '').html('');
+}
 // $(document).ready(function () {
 // 	$.validate({
 // 		form: '#form_daftar',

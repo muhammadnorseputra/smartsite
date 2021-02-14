@@ -67,7 +67,7 @@
 							<?php else: ?>
 								<p class="d-block text-center my-5 text-secondary">
 									Belum ada photo terkait <br>
-								<button type="button" id="upload" class="btn btn-sm btn-outline-primary mt-2"><i class="fas fa-plus mr-2"></i> Add photo</button>
+								<button type="button" data-toggle="modal" data-target="#uploadPhoto" id="upload" class="btn btn-sm btn-outline-primary mt-2"><i class="fas fa-plus mr-2"></i> Add photo</button>
 								</p>
 
 							<?php endif; ?>
@@ -106,6 +106,42 @@
 		<?= form_close(); ?>
 	</div>
 </section>
+<!-- Modal -->
+<div class="modal" id="uploadPhoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <?= form_open_multipart(base_url('frontend/v1/upload_photo')) ?>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Single Upload</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+          	<div class="custom-file">
+			  <input type="file" class="custom-file-input" id="customFile">
+			  <label class="custom-file-label" name="photo" for="customFile">Pilih file</label>
+			</div>
+          </div>	
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Judul:</label>
+            <input type="text" class="form-control" name="judul" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Keterangan:</label>
+            <textarea class="form-control" name="keterangan" id="message-text"></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </div>
+      <?= form_close(); ?>
+    </div>
+  </div>
+</div>
+
 <link rel="stylesheet" href="<?= base_url('assets/plugins/select2/css/select2-materialize.css') ?>">
 <script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
 <script src="<?= base_url('assets/plugins/select2/js/select2.full.min.js'); ?>"></script>
@@ -120,6 +156,9 @@
 	});
 
 	$(document).ready(function() {
+		function upload_photo() {
+
+		}
 		// Image Preview
 		function readURL(input, $element) {
 			if (input.files && input.files[0]) {

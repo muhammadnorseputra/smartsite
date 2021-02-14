@@ -41,7 +41,12 @@
 		</div>
 	</div>
 </section>
+<link rel="stylesheet" href="<?= base_url('assets/plugins/select2/css/select2-materialize.css') ?>">
+<script src="<?= base_url('assets/plugins/select2/js/select2.full.min.js') ?>"></script>
 <script>
+	$(document).ready(function() {
+	    $("select[name='submenu']").select2();
+	});
 	$("select[name='submenu']").on("change", function() {
 		if($(this).val() != '') {
 			$.getJSON(_uri+'/frontend/v1/users/getsubmenubyid', {id: $(this).val()}, function(res) {

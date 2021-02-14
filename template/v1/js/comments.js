@@ -24,6 +24,8 @@ $(document).ready(function() {
         });
     }
 
+
+
     // Reply komentar
     $(document).on('click', '#btn-reply-comment', function() {
         var id_parent = $(this).attr('data-id-parent');
@@ -33,8 +35,8 @@ $(document).ready(function() {
         var id_comment = $(this).attr('data-id-comment');
         $(".reply_username").attr('id', `${
             id_comment
-        }`).attr('username', `@${id_user_username.trim().toLowerCase()}`).html(`Reply <span class="text-info">@${id_user_username.trim().toLowerCase()}</span>`);
-        $(".emojionearea-editor").focus();
+        }`).attr('username', `@${id_user_username.trim().toLowerCase()}`).html(`Reply <span class="text-info">@${id_user_username.trim().toLowerCase()}</span> <button onclick="batal()" class="btn btn-sm text-danger btn-default">x</button>`);
+        $(".emojionearea-editor").html(`@${id_user_username.trim().toLowerCase()}`).focus();
     });
 
     // Button hapus komentar
@@ -72,8 +74,7 @@ $(document).ready(function() {
                 isi: isi_komentar
             }, function(response) {
                 if (response == true) {
-                    $(".emojionearea-editor").html('');
-                    $(".emojionearea-editor").removeClass('is-invalid').addClass('is-valid');
+                    batal();
                     displayComments();
                 }
             }, 'json');
@@ -84,3 +85,9 @@ $(document).ready(function() {
     });
 
 });
+
+function batal() {
+    $(".emojionearea-editor").html('');
+    $(".emojionearea-editor").removeClass('is-invalid').addClass('is-valid');
+    $(".reply_username").attr('id', '').html('');
+}

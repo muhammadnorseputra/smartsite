@@ -8,6 +8,7 @@ class Beranda extends CI_Controller
         $this->load->model('model_template_v1/M_f_users', 'mf_users');
         $this->load->model('model_template_v1/M_f_post', 'post');
         $this->load->model('M_b_komentar', 'komentar');
+        
         //Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
             // redirect(base_url('frontend/v1/beranda'),'refresh');
@@ -237,4 +238,5 @@ class Beranda extends CI_Controller
     {
         return $this->load->view('Frontend/v1/function/f_menus');
     }    
+
 }
