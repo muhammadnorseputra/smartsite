@@ -37,7 +37,7 @@ class M_f_beranda extends CI_Model
         $q = $this->db->get();
         if ($q->num_rows() > 0) {
             $b = $q->row();
-            $data = [$b->path, $b->judul, $b->url, $b->upload_by];
+            $data = [$b->path, $b->judul, $b->url, $b->upload_by, $b->gambar];
             return $data;
         }
     }

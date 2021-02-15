@@ -1,7 +1,7 @@
 <?php
 $count_v = $post_detail->views;
 $count = $count_v + 1;
-$this->post->update_count_post(decrypt_url($this->uri->segment(6)), $count);
+$this->post->update_count_post(decrypt_url($this->uri->segment(3)), $count);
 $by = $post_detail->created_by;
 if ($by == 'admin') {
 	$namalengkap = $this->mf_users->get_namalengkap($post_detail->created_by);
@@ -93,7 +93,7 @@ if (count($pecah) > 0) {
 							<?php } else { ?>
 							<p class="text-center"><b>Login Dulu, Ya!</b></p>
 							<p class=" text-center text-muted">Mau ikutan diskusi? Untuk ikutan diskusi kamu harus punya identitas, maka dari itu login dulu.</p>
-							<a href="<?php echo base_url('frontend/v1/users/login?msg=logindulu') ?>" class="btn btn-dark btn-md btn-block"><i class="fas fa-lock mr-3"></i> Login</a>
+							<a href="<?php echo base_url('login') ?>" class="btn btn-dark btn-md btn-block"><i class="fas fa-lock mr-3"></i> Login</a>
 							<?php } ?>
 						</div>
 					</div>
@@ -114,7 +114,7 @@ if (count($pecah) > 0) {
 							$id = encrypt_url($b->id_berita);
 							$postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($by))));
 							$judul = strtolower($b->judul);
-							$posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
+							$posturl = base_url("post/@{$postby}/{$id}/" . url_title($judul) . '');
 							if ($by == 'admin') {
 							$namapanggilan = $by;
 							} else {

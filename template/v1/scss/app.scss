@@ -142,7 +142,7 @@ content: "";
 	position: relative;
 }
 body {
-	background: #F5F5F0;
+	background: #eff8ff;
 	font-family: 'Space Grotesk', sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -223,7 +223,7 @@ nav.navbar li a {
 	    padding: 0px 10px 0px 0px;
 	    font-family: inherit;
 	    font-weight: 600;
-	    background: #F5F5F0;
+	    background: #eff8ff;
 	    color: #8a8a8a;
 	}
 }
@@ -602,6 +602,9 @@ i.likes:hover {
 }
 .mt--7 {
 	margin-top: -49px !important;
+}
+.mt--8 {
+	margin-top: -95px !important;
 }
 // Wave 
 .wave {

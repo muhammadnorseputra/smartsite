@@ -231,8 +231,8 @@ $(document).ready(function () {
     filtersPosition: "top",
     recentEmojis: false
   });
-  var $online = _uriSegment[3] == 'post' && _uriSegment[4] == 'detail';
-  var $local = _uriSegment[4] == 'post' && _uriSegment[5] == 'detail';
+  var $online = _uriSegment[3] == 'post';
+  var $local = _uriSegment[2] == 'post';
   var $url = $host ? $local : $online;
 
   if ($url) {
@@ -483,7 +483,7 @@ $(document).ready(function () {
   var start = 0;
   var action = "inactive";
   console.log(_uriSegment);
-  var $url = $host ? _uriSegment[4] : _uriSegment[3];
+  var $url = $host ? _uriSegment[2] : _uriSegment[3];
 
   if ($url == 'beranda') {
     var lazzy_loader = function lazzy_loader(limit) {

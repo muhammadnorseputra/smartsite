@@ -27,7 +27,7 @@
 								 <?= $this->session->flashdata('notif') ?>
 								</div>
 							<?php endif; ?>
-							<div class="alert alert-warning alert-dismissible fade show" role="alert">
+							<div class="alert alert-warning alert-dismissible border-0 rounded shadow-sm fade show" role="alert">
 							  <strong>Informasi!</strong> <br> Link <u>reset password</u> akan kami kirimkan pada email yang anda daftarkan.
 							  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 							    <span aria-hidden="true">&times;</span>
@@ -36,19 +36,21 @@
 							<?= form_open(base_url('frontend/v1/users/reset_password'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="email">Email</label>
-								<input type="email"  class="form-control mb-2" name="email" id="email" placeholder="mail@website.com" required="required">
+								<input type="email"  class="form-control form-control-lg shadow-sm border-0 mb-2" name="email" id="email" placeholder="mail@website.com" required="required">
 							</div>
-							<button type="submit" class="btn btn-primary btn-block small"><i class="fas fa-share mr-2"></i> Kirim</button>
+							<button type="submit" class="btn btn-primary btn-lg shadow btn-block small"><i class="fas fa-share mr-2"></i> Kirim</button>
 							<?= form_close(); ?>
 							
-							<div class="d-flex justify-content-between">
-								<div><a href="<?= base_url() ?>" class="btn btn-link my-3"><i class="fas fa-arrow-left mr-2"></i> Beranda</a></div>
-								<div><a href="<?= base_url('frontend/v1/users/login'); ?>" class="btn btn-link my-3">Log in <i class="fas fa-arrow-right ml-2"></i></a></div>
-							</div>
 							
 						</div>
 					</div>
-					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content"></div>
+					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content">
+						
+							<div class="d-flex justify-content-end" id="navSimple">
+								<div><a href="<?= base_url('beranda') ?>" class="btn btn-link text-white my-3"><i class="fas fa-home mr-2"></i> Beranda</a></div>
+								<div class="mx-3"><a href="<?= base_url('login'); ?>" class="btn btn-link text-white my-3">Log in <i class="fas fa-lock ml-2"></i></a></div>
+							</div>
+					</div>
 				</div>
 			</div>
 		</section>

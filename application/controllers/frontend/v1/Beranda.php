@@ -92,7 +92,7 @@ class Beranda extends CI_Controller
                 $id = encrypt_url($row->id_berita);
                 $postby = strtolower($namalengkap);
                 $judul = strtolower($row->judul);
-                $posturl = "post/detail/{$postby}/{$id}/".url_title($judul).'';
+                $posturl = "post/@{$postby}/{$id}/".url_title($judul).'';
                 
                 $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $row->id_berita) == 'on' ? 'btn-bookmark' : '';
                 $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $row->id_berita) == 'on' ? 'fas text-primary' : 'far';

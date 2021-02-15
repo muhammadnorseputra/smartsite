@@ -240,7 +240,7 @@ class Halaman extends CI_Controller
           redirect(base_url('frontend/v1/halaman/saran_status'));
         else:
           $this->session->set_flashdata('captcha_salah', '<b>Error</b>, jawaban keamanan salah, coba ulangi lagi.');
-          redirect(base_url('frontend/v1/halaman/saran'));
+          redirect(base_url('kotak_saran'));
         endif;
       endif;
     endif;

@@ -6,10 +6,10 @@
         </div>
     </div>
 </section> -->
-<section style="background-image: url('../../assets/images/bg/bg.png');">
+<section style="background-image: url('<?= base_url('assets/images/bg/bg.png'); ?>'">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pb-5 py-md-5">
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 pb-5 py-md-5">
                 <div class="display-3 font-weight-bold text-center text-md-left pt-md-5"><span id="halojs"></span></div>
                 <!-- Static halo -->
                 <p class="lead text-primary text-center text-md-left">Layanan Pemerintahan</p>
@@ -25,18 +25,18 @@
                 </p>
                 
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 my-3 pt-5 my-md-5 py-md-5 order-first order-md-last">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 my-3 pt-5 my-md-5 py-md-5 order-first order-md-last">
                 <div class="d-flex align-items-center">
                     <div>
-                    <img class="img-fluid shadow-lg rounded" src="<?= base_url('assets/images/bg/Forum.5645b25b.jpg') ?>">
+                    <img class="img-fluid rounded" src="<?= base_url('assets/images/bg/work.svg') ?>">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="statistik mb-5 bg-gradient-primary">
-    <div class="container py-5">
+<section class="statistik mb-5">
+    <div class="container py-5 bg-gradient-primary mt--8 rounded shadow">
         <div class="row">
             <?php
             $local = 'http://silka.bkppd-balangankab.info';
@@ -160,7 +160,7 @@
                             }
                             ?>
                             <div style="width: 100%;">
-                                <a href="<?= base_url('frontend/v1/album/detail/'.encrypt_url($album->id_album_foto)) ?>">
+                                <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
                                     <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy w-100" alt="<?= url_title($album->judul, '-', true) ?>">
                                 </a>
                             </div>
@@ -188,7 +188,7 @@
                         $id = encrypt_url($b->id_berita);
                         $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($b->created_by))));
                         $judul = strtolower($b->judul);
-                        $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
+                        $posturl = base_url("post/@{$postby}/{$id}/" . url_title($judul) . '');
                         if(empty($b->img)):
                         $img = '<img class="rounded align-self-center lazy pull-left mr-2 w-25 shadow" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
                         else:
@@ -256,12 +256,16 @@
             <div class="col-md-2 order-last">
                 <div class="d-flex flex-column justify-content-center">
                         <div class="w-100 my-2 my-md-0"></div>
-                        <a class="btn btn-info my-sm-0 d-block py-3" href="<?= base_url('frontend/v1/halaman/saran'); ?>">
+                        <a class="btn btn-info my-sm-0 d-block py-3" href="<?= base_url('kotak_saran'); ?>">
                             <i class="fas fa-box mr-2 fa-2x"></i> <br> Kotak Saran
                         </a>
                         <div class="w-100 my-2"></div>
-                        <a class="btn btn-success my-sm-0 d-block py-3" href="<?= base_url('frontend/v1/halaman/survey'); ?>">
+                        <a class="btn btn-success my-sm-0 d-block py-3" href="<?= base_url('survey'); ?>">
                             <i class="fas fa-check-circle mr-2 fa-2x"></i> <br> Survey IKM
+                        </a>
+                        <div class="w-100 my-2"></div>
+                        <a class="btn btn-outline-light disabled my-sm-0 d-block py-3" href="#">
+                            <i class="fas fa-check-circle mr-2 fa-2x"></i> <br> lainya
                         </a>
                     </div>
             </div>

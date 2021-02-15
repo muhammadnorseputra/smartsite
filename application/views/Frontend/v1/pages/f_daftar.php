@@ -205,16 +205,16 @@
 										</div>
 									</div>
 								</div>
-							<button type="submit" class="btn btn-lg btn-success btn-block small"><i class="fas fa-check mr-2"></i> Daftar</button>
+							<button type="submit" class="btn btn-lg btn-success btn-block mb-5"><i class="fas fa-check mr-2"></i> Daftar</button>
 							<?= form_close(); ?>
-							<div class="d-flex justify-content-between">
-								<div><a href="<?= base_url() ?>" class="btn btn-link my-3"><i class="fas fa-arrow-left mr-2"></i> Beranda</a></div>
-								<div><a href="<?= base_url('frontend/v1/users/login'); ?>" class="btn btn-link my-3">Log in <i class="fas fa-arrow-right ml-2"></i></a></div>
-							</div>
-							
 						</div>
 					</div>
-					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content"></div>
+					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content">
+						<div class="d-flex justify-content-end" id="navSimple">
+								<div><a href="<?= base_url('beranda') ?>" class="btn btn-link text-white my-3"><i class="fas fa-home mr-2"></i> Beranda</a></div>
+								<div class="mx-3"><a href="<?= base_url('login'); ?>" class="btn btn-link text-white my-3">Log in <i class="fas fa-lock ml-2"></i></a></div>
+							</div>
+					</div>
 				</div>
 			</div>
 		</section>

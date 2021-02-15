@@ -15,7 +15,7 @@
 			<?php endif; ?>
 			<div class="card bg-transparent border-0">
 				<div class="card-body pl-md-0">
-					<?= form_open(base_url('frontend/v1/halaman/simpan_saran')); ?>
+					<?= form_open(base_url('kirim_saran')); ?>
 					<div class="form-group">
 						<label for="nama_lengkap">Nama <span class="text-danger">*</span></label>
 						<input type="text" name="nama_lengkap" class="form-control <?= !form_error('nama_lengkap') ? 'is-valid' : 'is-invalid'  ?>" id="nama_lengkap" placeholder="Masukan nama kamu" value="<?php echo set_value('nama_lengkap'); ?>">

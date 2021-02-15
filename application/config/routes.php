@@ -74,6 +74,22 @@ $route['module/(:any)/add'] = 'backend/module/$1/add';
 $route['module/(:any)/edit/(:any)'] = 'backend/module/$1/edit/$2';
 $route['module/(:any)/update/(:any)'] = 'backend/module/$1/update/$2';
 
+/*
+* @FRONT END
+*/
+$route['page/(:num)/(:any)'] = 'frontend/v1/halaman/statis/$1/$2';
+$route['beranda'] = 'frontend/v1/beranda';
+$route['login'] = 'frontend/v1/users/login';
+$route['daftar'] = 'frontend/v1/daftar';
+$route['lupa_password'] = 'frontend/v1/users/lupa_password';
+$route['album'] = 'frontend/v1/album';
+$route['kotak_saran'] = 'frontend/v1/halaman/saran';
+$route['kirim_saran'] = 'frontend/v1/halaman/simpan_saran';
+$route['survey'] = 'frontend/v1/halaman/survey';
+$route['album/(:any)'] = 'frontend/v1/album/detail/$1';
+$route['post/(:any)/(:any)/(:any)'] = 'frontend/v1/post/detail/$1/$2/$3';
+// $route['label?q=(:any)'] = 'frontend/v1/post_list/tags/?q=$1';
+
 
 /*
 * @BAWAAN CODEIGNITER

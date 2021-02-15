@@ -20,7 +20,7 @@
 	echo '<div class="d-flex justify-content-between flex-column flex-md-row">';
 		}
 		?>
-		<a href="<?= base_url('frontend/v1/album/detail/'.encrypt_url($a->id_album_foto)) ?>" class="w-100">
+		<a href="<?= base_url('album/'.encrypt_url($a->id_album_foto)) ?>" class="w-100">
 			<div class="card border-0 w-100 p-2 rounded-0 mx-auto bg-transparent">
 				<img class="rounded-lg shadow lazy img-fluid" data-src="data:image/jpeg;base64,<?= base64_encode($a->gambar_blob) ?>" alt="Card image">
 				<div class="card-body bg-transparent px-0">

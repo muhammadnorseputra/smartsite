@@ -1,4 +1,4 @@
-<?php $id = decrypt_url($this->uri->segment(5)) ?>
+<?php $id = decrypt_url($this->uri->segment(2)) ?>
 <div class="w-100">&nbsp;</div>
 <section class="mt-5 bg-light">
 	<div class="container py-3">

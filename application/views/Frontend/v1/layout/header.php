@@ -1,14 +1,14 @@
 <!-- Navbar For Desktop -->
 <nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light">
 	<div class="container">
-		<a class="navbar-brand" href="<?= base_url('frontend/v1/beranda') ?>">
+		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
 			<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="110"/>'; ?>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav ml-auto p-md-0 p-2 mr-md-3">
+			<ul class="navbar-nav ml-auto p-md-0 p-2 mr-md-auto">
 				<?php
 				$menu = $mf_menu;
 				foreach ($menu as $m) :
@@ -25,7 +25,7 @@
 						<?php foreach ($submenu as $s) : ?>
 						<!-- Level 1 -->
 						<li>
-							<a class="dropdown-item py-md-2 rounded px-2" href="<?= base_url("frontend/v1/" . $s->link_sub); ?>"><?= $s->nama_sub; ?>
+							<a class="dropdown-item py-md-2 rounded px-2" href="<?= base_url($s->link_sub); ?>"><?= $s->nama_sub; ?>
 							<?php 
 								if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0): 
 							?>
@@ -37,7 +37,7 @@
 							<ul class="submenu dropdown-menu ml-1 animate slideIn">
 								<?php foreach ($this->mf_beranda->sub_submenu($s->idsub) as $key):?>
 									<li>
-										<a class="dropdown-item py-md-2 rounded px-2 rounded-lg" href="<?= base_url("frontend/v1/" . $key->link_sub); ?>"> <?= $key->nama_sub ?>
+										<a class="dropdown-item py-md-2 rounded px-2 rounded-lg" href="<?= base_url($key->link_sub); ?>"> <?= $key->nama_sub ?>
 										<?php 
 											if($this->mf_beranda->parent_submenu($key->idsub)->num_rows() > 0): 
 										?>
@@ -81,7 +81,7 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a  class="btn shadow-none btn-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('frontend/v1/users/login'); ?>">
+			<a  class="btn shadow-none btn-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('login'); ?>">
 				<i class="far fa-user mr-2"></i> Login
 			</a>
 			<?php } ?>
@@ -162,7 +162,7 @@
 							</ul>
 							<button type="button" class="btn btn-primary btn-block" data-dismiss="modal">OKE</button>
 							<p class="d-block mx-auto text-center my-3">
-								Belum punya akun? <a href="<?= base_url('frontend/v1/daftar') ?>">daftar disini.</a>
+								Belum punya akun? <a href="<?= base_url('daftar') ?>">daftar disini.</a>
 							</p>
 						</div>
 					</div>

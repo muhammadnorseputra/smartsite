@@ -22,7 +22,7 @@
     			  
     			<div class="d-flex justify-content-start align-items-center">
     			  <div class="mr-4 border-right pr-4">
-    			  	<a class="btn btn-outline-primary" href="<?php echo base_url() ?>"><i class="fas fa-home mr-2"></i> Beranda</a> 
+    			  	<a class="btn btn-outline-primary" href="<?php echo base_url('beranda') ?>"><i class="fas fa-home mr-2"></i> Beranda</a> 
     			  </div>
     			  <div id="share" class="small"></div>
     			</div>
