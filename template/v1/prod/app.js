@@ -483,7 +483,7 @@ $(document).ready(function () {
   var start = 0;
   var action = "inactive";
   console.log(_uriSegment);
-  var $url = $host ? _uriSegment[2] : _uriSegment[3];
+  var $url = $host ? _uriSegment[2] : _uriSegment[1];
 
   if ($url == 'beranda') {
     var lazzy_loader = function lazzy_loader(limit) {
