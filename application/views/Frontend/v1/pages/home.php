@@ -39,7 +39,7 @@
     <div class="container py-5 bg-gradient-primary mt--8 rounded shadow">
         <div class="row">
             <?php
-            $local = 'http://silka.bkppd-balangankab.info';
+            $local = '192.168.1.4';
             $online = 'http://silka.bkppd-balangankab.info';
             $status = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? $online : $local;
             $host = $status;

@@ -21,7 +21,7 @@
 							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="140"/>'; ?>
 							</div>
-							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Log In</h3> 
+							<h3 class="font-weight-bold mb-3 mt-5 text-center text-md-left">Log In</h3> 
 							<?php if($this->session->flashdata('notif') <> ''): ?>
 								<div class="alert border alert-light" role="alert">
 								 <?= $this->session->flashdata('notif') ?>
@@ -30,13 +30,13 @@
 							<?= form_open(base_url('frontend/v1/users/cek_akun'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="email">Email</label>
-								<input type="email" data-sanitize="trim,lower" class="form-control form-control-lg mb-2 shadow-sm" name="email" id="email" placeholder="mail@website.com" required="required">
+								<input type="email" data-sanitize="trim,lower" class="form-control form-control-lg mb-2 shadow-sm rounded-0" name="email" id="email" placeholder="mail@website.com" required="required">
 							</div>
-							<div class="form-group">
+							<div class="form-group my-4">
 								<label class="mb-2 d-block" for="password">
 									Password  <a href="<?= base_url('lupa_password') ?>" class="small float-right">(Lupa sandi?)</a>
 								</label>
-								<input type="password" class="form-control form-control-lg mb-2 shadow-sm" name="password" id="password-field" placeholder="Password"  required="required">
+								<input type="password" class="form-control form-control-lg mb-2 shadow-sm  rounded-0" name="password" id="password-field" placeholder="Password"  required="required">
 								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 							
@@ -54,21 +54,21 @@
 									<div class="form-group col-6">
 										<div class="input-group mb-2">
 											<div class="input-group-prepend">
-												<div class="input-group-text"><i class="fas fa-key"></i></div>
+												<div class="input-group-text rounded-0"><i class="fas fa-key"></i></div>
 											</div>
-											<input class="form-control shadow-sm" name="captcha" data-validation="spamcheck"
+											<input class="form-control shadow-sm rounded-0" name="captcha" data-validation="spamcheck"
 											data-validation-captcha="<?= ($val_1 + $val_2) ?>"/>
 										</div>
 									</div>
 								</div>
-							<button type="submit" class="btn btn-success btn-block shadow-lg btn-lg"><i class="fas fa-lock mr-2"></i> Log In</button>
+							<button type="submit" class="btn btn-success btn-block shadow-lg btn-lg rounded-0 mb-4"><i class="fas fa-lock mr-2"></i> Log In</button>
 							<?= form_close(); ?>
 						</div>
 					</div>
 					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content">
 						<div class="d-flex justify-content-end" id="navSimple">
 								<div><a href="<?= base_url('beranda') ?>" class="btn text-white btn-link my-3"><i class="fas fa-home mr-2"></i> Beranda</a></div>
-								<div class="mx-2"><a href="<?= base_url('daftar'); ?>" class="btn text-white btn-link my-3">Kontribusi/Mendaftar<i class="fas fa-user ml-2"></i></a></div>
+								<div class="mx-2"><a href="<?= base_url('daftar'); ?>" class="btn text-white btn-link my-3"><i class="fas fa-user mr-2"></i> Kontribusi/Mendaftar</a></div>
 							</div>
 					</div>
 				</div>

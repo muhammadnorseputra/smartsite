@@ -21,14 +21,14 @@
 							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="140"/>'; ?>
 							</div>
-							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Lupa Password</h3>
+							<h3 class="font-weight-bold mb-3 mt-5 text-center text-md-left">Lupa Password</h3>
 							<?php if($this->session->flashdata('notif') <> ''): ?>
 								<div class="alert border alert-light" role="alert">
 								 <?= $this->session->flashdata('notif') ?>
 								</div>
 							<?php endif; ?>
-							<div class="alert alert-warning alert-dismissible border-0 rounded shadow-sm fade show" role="alert">
-							  <strong>Informasi!</strong> <br> Link <u>reset password</u> akan kami kirimkan pada email yang anda daftarkan.
+							<div class="alert alert-default alert-dismissible border-0 rounded p-0 fade show text-secondary" role="alert">
+							  <strong>Note!</strong> <br> Link <u>reset password</u> akan kami kirimkan pada email yang anda daftarkan.
 							  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 							    <span aria-hidden="true">&times;</span>
 							  </button>
@@ -36,9 +36,9 @@
 							<?= form_open(base_url('frontend/v1/users/reset_password'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="email">Email</label>
-								<input type="email"  class="form-control form-control-lg shadow-sm border-0 mb-2" name="email" id="email" placeholder="mail@website.com" required="required">
+								<input type="email"  class="form-control form-control-lg shadow-sm border-0 mb-2 rounded-0" name="email" id="email" placeholder="mail@website.com" required="required">
 							</div>
-							<button type="submit" class="btn btn-primary btn-lg shadow btn-block small"><i class="fas fa-share mr-2"></i> Kirim</button>
+							<button type="submit" class="btn btn-primary btn-lg shadow btn-block small rounded-0"><i class="fas fa-share mr-2"></i> Kirim</button>
 							<?= form_close(); ?>
 							
 							
@@ -48,7 +48,7 @@
 						
 							<div class="d-flex justify-content-end" id="navSimple">
 								<div><a href="<?= base_url('beranda') ?>" class="btn btn-link text-white my-3"><i class="fas fa-home mr-2"></i> Beranda</a></div>
-								<div class="mx-3"><a href="<?= base_url('login'); ?>" class="btn btn-link text-white my-3">Log in <i class="fas fa-lock ml-2"></i></a></div>
+								<div class="mx-3"><a href="<?= base_url('login'); ?>" class="btn btn-link text-white my-3"><i class="fas fa-lock mr-2"></i>Log in </a></div>
 							</div>
 					</div>
 				</div>
