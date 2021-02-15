@@ -79,7 +79,7 @@ $route['module/(:any)/update/(:any)'] = 'backend/module/$1/update/$2';
 */
 $route['page/(:num)/(:any)'] = 'frontend/v1/halaman/statis/$1/$2';
 $route['beranda'] = 'frontend/v1/beranda';
-$route['login'] = 'frontend/v1/users/login';
+$route['login_web'] = 'frontend/v1/users/login';
 $route['daftar'] = 'frontend/v1/daftar';
 $route['lupa_password'] = 'frontend/v1/users/lupa_password';
 $route['album'] = 'frontend/v1/album';

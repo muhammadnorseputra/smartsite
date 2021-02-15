@@ -81,7 +81,7 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a  class="btn shadow-none btn-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('login'); ?>">
+			<a  class="btn shadow-none btn-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('login_web'); ?>">
 				<i class="far fa-user mr-2"></i> Login
 			</a>
 			<?php } ?>

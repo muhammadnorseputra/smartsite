@@ -50,7 +50,7 @@
 							</svg>
 					<i class="fas fa-lock"></i>	Login adminpanel</a>
 					</footer>
-					<a href="<?= base_url() ?>" class="backToHome"><i class="far fa-arrow-left"></i> Beranda</a>
+					<a href="<?= base_url('beranda') ?>" class="backToHome"><i class="far fa-arrow-left"></i> Beranda</a>
 				</div>
 			</section>
 			<!-- Footer -->

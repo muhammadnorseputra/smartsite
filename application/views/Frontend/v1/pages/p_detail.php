@@ -93,7 +93,7 @@ if (count($pecah) > 0) {
 							<?php } else { ?>
 							<p class="text-center"><b>Login Dulu, Ya!</b></p>
 							<p class=" text-center text-muted">Mau ikutan diskusi? Untuk ikutan diskusi kamu harus punya identitas, maka dari itu login dulu.</p>
-							<a href="<?php echo base_url('login') ?>" class="btn btn-dark btn-md btn-block"><i class="fas fa-lock mr-3"></i> Login</a>
+							<a href="<?php echo base_url('login_web') ?>" class="btn btn-dark btn-md btn-block"><i class="fas fa-lock mr-3"></i> Login</a>
 							<?php } ?>
 						</div>
 					</div>

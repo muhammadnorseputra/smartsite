@@ -212,7 +212,7 @@
 					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content">
 						<div class="d-flex justify-content-end" id="navSimple">
 								<div><a href="<?= base_url('beranda') ?>" class="btn btn-link text-white my-3"><i class="fas fa-home mr-2"></i> Beranda</a></div>
-								<div class="mx-3"><a href="<?= base_url('login'); ?>" class="btn btn-link text-white my-3"><i class="fas fa-lock mr-2"></i>Log in </a></div>
+								<div class="mx-3"><a href="<?= base_url('login_web'); ?>" class="btn btn-link text-white my-3"><i class="fas fa-lock mr-2"></i>Log in </a></div>
 							</div>
 					</div>
 				</div>
