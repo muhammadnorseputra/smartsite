@@ -19,7 +19,7 @@
                 <span id="typed" class="lead text-secondary intro-website"></span>
                 -->
                 <p class="my-4 text-center text-md-left">
-                    <button type="button" onclick="explore()" class="btn shadow btn-primary rounded py-3 px-4">
+                    <button type="button" onclick="explore()" class="btn shadow btn-primary rounded py-3 px-4 text-uppercase">
                     Update Informasi <i class="fas fa-chevron-down ml-2"></i>
                     </button>
                 </p>
@@ -257,15 +257,15 @@
                 <div class="d-flex flex-column justify-content-center">
                         <div class="w-100 my-2 my-md-0"></div>
                         <a class="btn btn-info my-sm-0 d-block py-3" href="<?= base_url('kotak_saran'); ?>">
-                            <i class="fas fa-box mr-2 fa-2x"></i> <br> Kotak Saran
+                            <i class="fas fa-box fa-2x"></i> <br> Kotak Saran
                         </a>
                         <div class="w-100 my-2"></div>
                         <a class="btn btn-success my-sm-0 d-block py-3" href="<?= base_url('survey'); ?>">
-                            <i class="fas fa-check-circle mr-2 fa-2x"></i> <br> Survey IKM
+                            <i class="fas fa-check-circle fa-2x"></i> <br> Survey IKM
                         </a>
                         <div class="w-100 my-2"></div>
                         <a class="btn btn-outline-light disabled my-sm-0 d-block py-3" href="#">
-                            <i class="fas fa-check-circle mr-2 fa-2x"></i> <br> lainya
+                            <i class="fab fa-buromobelexperte fa-2x"></i> <br> lainya
                         </a>
                     </div>
             </div>

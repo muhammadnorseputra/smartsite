@@ -8,7 +8,7 @@ $(document).ready(function() {
         filtersPosition: "top",
         recentEmojis: false,
     });
-    let $online = _uriSegment[3] == 'post';
+    let $online = _uriSegment[1] == 'post';
     let $local = _uriSegment[2] == 'post';
     let $url = $host ? $local : $online;
 

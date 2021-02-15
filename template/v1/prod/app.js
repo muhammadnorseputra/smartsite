@@ -231,7 +231,7 @@ $(document).ready(function () {
     filtersPosition: "top",
     recentEmojis: false
   });
-  var $online = _uriSegment[3] == 'post';
+  var $online = _uriSegment[1] == 'post';
   var $local = _uriSegment[2] == 'post';
   var $url = $host ? $local : $online;
 
