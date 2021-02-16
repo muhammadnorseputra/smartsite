@@ -101,17 +101,17 @@ class Beranda extends CI_Controller
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
                 if(empty($row->img)):
-                    $img = '<img class="card-img-top lazy border-light" style="border-radius:15px;" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img class="card-img-top lazy border-light" style="border-radius:10px;" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 else:
-                    $img = '<img class="card-img-top lazy border-light" style="border-radius:15px;" data-src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
+                    $img = '<img class="card-img-top lazy border-light" style="border-radius:10px;" data-src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
                 endif;
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('frontend/v1/post_list/views/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
 // <a href="'.$post_list_url.'" class="btn btn-primary-old rounded float-right btn-sm px-3">'.$namakategori.'</a>
                 $output .= '
                 <div>
-					<div class="card mb-4 border-0 shadow-sm bg-white">
-					<div class="card-body p-4">
+					<div class="card mb-4 border-0 shadow-sm bg-white" style="border-radius:10px;">
+					<div class="card-body p-4 mt-3">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded lazy">
 						<h5 class="card-title"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
@@ -127,7 +127,7 @@ class Beranda extends CI_Controller
 					
 					<div class="card-body py-0 px-4">
 						<h3 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h3>
-                        <p class="card-text font-weight-normal text-secondary">'.character_limiter($isi, 150).'</p>
+                        <p class="card-text font-weight-normal text-secondary my-4">'.character_limiter($isi, 150).'</p>
                         <p><a href="#" class="btn btn-sm btn-warning mr-2 mb-2 text-white shadow">'.$namakategori.'</a>'.$tag. '</p>
 					</div>
 					<div class="card-footer bg-white p-2 border-0 d-flex justify-content-around"  style="border-bottom-left-radius:12px;border-bottom-right-radius:12px;">

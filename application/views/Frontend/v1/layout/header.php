@@ -25,7 +25,7 @@
 						<?php foreach ($submenu as $s) : ?>
 						<!-- Level 1 -->
 						<li>
-							<a class="dropdown-item py-md-2 rounded px-2" href="<?= base_url($s->link_sub); ?>"><?= $s->nama_sub; ?>
+							<a class="dropdown-item py-md-2 rounded" href="<?= base_url($s->link_sub); ?>"><?= $s->nama_sub; ?>
 							<?php 
 								if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0): 
 							?>

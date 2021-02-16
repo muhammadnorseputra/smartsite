@@ -23,7 +23,7 @@
 							</div>
 							<h3 class="font-weight-bold mb-3 mt-5 text-center text-md-left">Lupa Password</h3>
 							<?php if($this->session->flashdata('notif') <> ''): ?>
-								<div class="alert border alert-light" role="alert">
+								<div class="alert border alert-warning" role="alert">
 								 <?= $this->session->flashdata('notif') ?>
 								</div>
 							<?php endif; ?>

@@ -100,7 +100,7 @@ class Users extends CI_Controller {
         }else {
             $this->session->set_flashdata("notif","Link reset password gagal dikirim.");  
         } 
-        redirect(base_url('frontend/v1/users/lupa_password'));
+        redirect(base_url('lupa_password'));
 	}
 
 	public function resetpasswordnow() {
@@ -115,7 +115,7 @@ class Users extends CI_Controller {
 			} else {
 				$this->session->set_flashdata("notif","Gagal mengganti password");
 			}
-			redirect(base_url('frontend/v1/users/login'),'refresh');
+			redirect(base_url('login_web'),'refresh');
 		}
 	}
 

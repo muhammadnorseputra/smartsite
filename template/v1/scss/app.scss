@@ -151,6 +151,11 @@ body {
 
 // Custome
 
+.intro-website {
+	font-family: "Roboto";
+	font-weight: 400;
+}
+
 #caripegawai .typeahead__list {
     max-height: 300px;
     overflow-y: auto;
@@ -203,11 +208,11 @@ nav.navbar li a {
 }
 
 .dropdown-menu {
-	top: 45px;
-	padding: 8px;
+	top: 50	px;
+	// padding: 8px;
 	border: 0px;
 	box-shadow: 0 8px 3em #ccc;	
-	// border-radius: 8px;
+	border-radius: 10px;
 	transition: all 0.4s ease-in-out;
 }
 
@@ -428,15 +433,10 @@ nav.navbar li a {
 // 	max-height: 550px;
 // }
 
-// .card:hover {
-// 	box-shadow: 0 3px 8px #eeeeee;
-// 	transition: 0.4s ease;
-// 	-webkit-transition: 0.4s ease;
-// 	-moz-transition: 0.4s ease;
-// 	-ms-transition: 0.4s ease;
-// 	-o-transition: 0.4s ease;
-// }
-
+.card-text {
+	font-family: "Roboto" !important;
+	font-weight: 400;
+}
 // .card img.card-img-top {
 // 	transition: all 0.4s ease;
 // 	-webkit-transition: all 0.4s ease;
