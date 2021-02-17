@@ -30,6 +30,16 @@ $(function() {
 		)
 	});
 
+  $('select[name="parentsubmenu"]').on('loaded.bs.select', function (e) {
+    e.preventDefault();
+    $.getJSON(
+    '<?= site_url("backend/module/c_submenu/parent_sub") ?>',
+      function(result)
+      {
+      $('select[name="parentsubmenu"], [name="editparentsubmenu"]').html(result).selectpicker('refresh');
+      }
+    )
+  });
 }); 
   function reset(){ 
     loadData(1);
@@ -113,7 +123,7 @@ $(function() {
         // ControlMsg.fadeIn();
         // setTimeout(function(){ControlMsg.fadeOut('slow')}, 2500);
         
-        showNotification('bg-red', 'Responses Server Gagal', 'bottom', 'center', 'none', 'none');
+        showNotification('bg-red', 'Responses Server Gagal', 'bottom', 'left', 'none', 'none');
 
         }else if(res.msgdata == 0){
         //   ControlMsg.html('<div class="alert bg-green alert-dismissible" role="alert">'+
@@ -122,10 +132,11 @@ $(function() {
         //     '</div>');
         // ControlMsg.fadeIn();
         // setTimeout(function(){ControlMsg.fadeOut('slow')}, 2500);
-        showNotification('bg-black', 'Success Data Telah Ditambahkan', 'bottom', 'center', 'none', 'animated fadeOutDown');        
+        showNotification('bg-black', 'Success Data Telah Ditambahkan', 'bottom', 'left', 'none', 'animated fadeOutDown');        
         me[0].reset();
 		$('[name="submainmenu"]').selectpicker('refresh');
-		$('[name="modulesubmenu"]').selectpicker('refresh');
+    $('[name="modulesubmenu"]').selectpicker('refresh');
+		$('[name="parentsubmenu"]').selectpicker('refresh');
         }
         
       },
@@ -145,7 +156,7 @@ $(function() {
         $("#editsubmenu").val(res.data[0].nama_sub);
         if(res.data[0].fid_module == '27') {
           var url = res.data[0].link_sub.split('/');
-          $("#editlinksub").val(url[2]);
+          $("#editlinksub").val(url[1]);
         } else {
           $("#editlinksub").val(res.data[0].link_sub);
         }
@@ -154,7 +165,8 @@ $(function() {
         //$("#editnamamodule").val(res.data[0].fid_module);
         //$("[name='editidmainmenu']").val(res.data[0].idmain);
 		$('[name="editidmainmenu"]').selectpicker('val', res.data[0].idmain);
-		$('[name="editnamamodule"]').selectpicker('val', res.data[0].fid_module);
+    $('[name="editnamamodule"]').selectpicker('val', res.data[0].fid_module);
+		$('[name="editparentsubmenu"]').selectpicker('val', res.data[0].fid_idsub);
         let ak1 = $("#editaktifsub7");
         let ak2 = $("#editaktifsub8");
         if(res.data[0].aktif == 'Y')
@@ -175,7 +187,7 @@ jQuery("form#FormUpdateSubMenu").on('submit', function(e) {
     var form = jQuery(this);
     jQuery.post(form.attr('action'), form.serialize(), function(responses) {
         //swal(responses.message.type, responses.message.content, responses.message.type);
-        showNotification(responses.message.label, responses.message.content, 'bottom', 'right', 'none', 'animated fadeOutDown');   
+        showNotification(responses.message.label, responses.message.content, 'bottom', 'left', 'none', 'animated fadeOutDown');   
         jQuery("#ModalEdit").modal('hide');
       loadData(1);
     }, 'json').then(() => {

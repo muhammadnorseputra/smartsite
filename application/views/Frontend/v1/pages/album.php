@@ -1,8 +1,8 @@
 <div class="w-100">&nbsp;</div>
-<section class="mt-5 bg-light">
+<section class="mt-5">
 	<div class="container py-3">
 		<div class="d-flex justify-content-center justify-content-md-start align-items-center">
-			<div class="mr-md-3 pr-md-3"><span class="font-weight-bold text-secondary display-4">Album photo</span>
+			<div class="mx-2"><span class="font-weight-bold text-secondary">Album photo</span>
 		</div>
 	</div>
 </div>
@@ -11,7 +11,7 @@
 <div class="container">
 	<?php if($album->num_rows() > 0): ?>
 	<?php
-	$kolom = 3;
+	$kolom = 4;
 	$i = 1;
 	?>
 	<?php foreach($album->result() as $a): ?>
@@ -21,8 +21,8 @@
 		}
 		?>
 		<a href="<?= base_url('album/'.encrypt_url($a->id_album_foto)) ?>" class="w-100">
-			<div class="card border-0 w-100 p-2 rounded-0 mx-auto bg-transparent">
-				<img class="rounded-lg shadow lazy img-fluid" data-src="data:image/jpeg;base64,<?= base64_encode($a->gambar_blob) ?>" alt="Card image">
+			<div class="card border-0 w-100 p-2 mx-auto bg-transparent">
+				<img class="rounded shadow-sm lazy img-fluid" data-src="data:image/jpeg;base64,<?= base64_encode($a->gambar_blob) ?>" alt="Card image">
 				<div class="card-body bg-transparent px-0">
 					<?php if($a->tgl_publish === date('Y-m-d')): ?><span class="badge badge-pill badge-warning float-right">New!</span> <?php endif; ?>
 					<h5 class="card-title"><?= $a->judul ?></h5>

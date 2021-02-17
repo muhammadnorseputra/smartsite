@@ -57,6 +57,16 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="row clearfix m-t-25">
+					<label for="editparentsubmenu" class="col-sm-3 control-label">Parent Sub</label>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<select class="form-control show-tick" id="editparentsubmenu" title="Pilih Parent Sub" name="editparentsubmenu" data-size="5" data-live-search="true">
+							</select>
+						</div>
+					</div>
+				</div>
 				<div class="row clearfix m-t-25">
 					<div class="form-group">
 						<label for="editlinksub" class="col-sm-2 control-label">Link </label>
@@ -114,25 +124,25 @@
 			</div>
 			<?= form_open('backend/module/c_submenu/savesubmenu', array('class' => 'collapse in', 'id' => 'FormSubMenu')) ?>
 			<div class="body body-submenu">
-				<label for="submenu"><span class="col-orange">*</span> Mainmenu </label>
 				<div class="form-group">
-					<select class="form-control show-tick" name="submainmenu" title="Pilih Menuutama" data-size="5" data-live-search="true"></select>
+					<select class="form-control show-tick" name="submainmenu" title="Pilih Main Menu" data-size="5" data-live-search="true"></select>
 				</div>
-				<label for="submenu"><span class="col-orange">*</span> Module </label>
 				<div class="form-group">
 					<select class="form-control show-tick" title="Pilih module" name="modulesubmenu" data-size="5" data-live-search="true">
 					</select>
 				</div>
-				<label for="submenu">Submenu </label>
-				<div class="form-group m-b-10">
+				<div class="form-group">
+					<select class="form-control show-tick" title="Pilih Parent Sub" name="parentsubmenu" data-size="5" data-live-search="true">
+					</select>
+				</div>
+				<div class="form-group m-b-15">
 					<div class="form-line">
-						<input type="text" class="form-control" id="submenu" name="submenu" placeholder="Masukan Judul Submenu">
+						<input type="text" class="form-control" id="submenu" name="submenu" placeholder="Judul Submenu">
 					</div>
 				</div>
-				<label for="linksub">Link </label>
-				<div class="form-group">
+				<div class="form-group m-b-15">
 					<div class="form-line">
-						<input type="text" class="form-control" id="linksub" name="linksub" placeholder="Masukan Link">
+						<input type="text" class="form-control" id="linksub" name="linksub" placeholder=" Link / Page Token">
 					</div>
 				</div>
 				<div class="row clearfix">

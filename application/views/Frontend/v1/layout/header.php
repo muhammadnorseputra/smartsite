@@ -34,7 +34,7 @@
 							</a>
 							<?php if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0): ?>
 							<!-- Level 2 -->
-							<ul class="submenu dropdown-menu ml-1 animate slideIn">
+							<ul class="submenu dropdown-menu animate slideIn">
 								<?php foreach ($this->mf_beranda->sub_submenu($s->idsub) as $key):?>
 									<li>
 										<a class="dropdown-item py-md-2 rounded px-2 rounded-lg" href="<?= base_url($key->link_sub); ?>"> <?= $key->nama_sub ?>
@@ -46,7 +46,7 @@
 										</a>
 										<?php if($this->mf_beranda->parent_submenu($key->idsub)->num_rows() > 0): ?>
 										<!-- Level 3 -->
-										<ul class="submenu dropdown-menu ml-1 animate slideIn">
+										<ul class="submenu dropdown-menu animate slideIn">
 											<?php foreach ($this->mf_beranda->sub_submenu($key->idsub) as $key_sub):?>
 												<li><a class="dropdown-item py-md-2 rounded px-2" href="<?= base_url("frontend/v1/" . $key_sub->link_sub); ?>"> <?= $key_sub->nama_sub ?></a></li>
 											<?php endforeach; ?>
@@ -81,7 +81,7 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a  class="btn shadow-none btn-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('login_web'); ?>">
+			<a  class="btn shadow-none btn-outline-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('login_web'); ?>">
 				<i class="far fa-user mr-2"></i> Login
 			</a>
 			<?php } ?>

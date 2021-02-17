@@ -10,6 +10,13 @@ class M_b_submenu extends CI_Model {
     {
         return $this->db->get('t_submenu')->num_rows();
     } 
+    public function get_submenu_list()
+    {
+        return $this->db->select('idsub, nama_sub')->from('t_submenu')
+        ->order_by('idsub', 'desc')
+        ->where('aktif', 'Y')
+        ->get();
+    }
     public function get_search($kata)
     {
         $this->db->select('s.*, m.nama_menu, md.token')

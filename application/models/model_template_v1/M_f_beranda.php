@@ -61,6 +61,7 @@ class M_f_beranda extends CI_Model
         $this->db->join('t_menu AS menu', 'submenu.idmain = menu.id_menu', 'left');
         $this->db->where('submenu.aktif', 'Y');
         $this->db->where('submenu.idmain', $id_menu);
+        $this->db->where('fid_idsub', NULL);
         $this->db->order_by('submenu.order', 'asc');
         $q = $this->db->get();
 
@@ -71,7 +72,7 @@ class M_f_beranda extends CI_Model
         $this->db->select('idsub, fid_idsub');
         $this->db->from('t_submenu');
         $this->db->where('fid_idsub !=', NULL);
-        $this->db->like('fid_idsub', $idsub);
+        $this->db->where('fid_idsub', $idsub);
         $q = $this->db->get();
         return $q;
     }

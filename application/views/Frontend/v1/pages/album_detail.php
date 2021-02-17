@@ -1,17 +1,16 @@
 <?php $id = decrypt_url($this->uri->segment(2)) ?>
 <div class="w-100">&nbsp;</div>
-<section class="mt-5 bg-light">
+<section class="mt-5">
 	<div class="container py-3">
 		<div class="d-flex justify-content-center justify-content-md-start align-items-center">
-			<div class="mr-md-3 pr-md-3"><span class="font-weight-bold text-secondary display-4">Photos</span> <br>
-			<p class="font-weight-bold text-secondary">Photo <i class="fas fa-chevron-right mx-2"></i>
+			<p class="font-weight-bold text-secondary mx-2">Album <i class="fas fa-chevron-right mx-2"></i>
 				<span class="text-success"><?= $this->album->judul_album_by_id($id) ?></span>
 			</p>
 		</div>
 	</div>
 </div>
 </section>
-<section class="my-md-3">
+<section>
 	<div class="container">
 			<?php if($photos->num_rows() > 0): ?>
 				<?php 

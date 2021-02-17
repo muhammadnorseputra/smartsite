@@ -22,6 +22,12 @@
                     <button type="button" onclick="explore()" class="btn shadow btn-primary rounded py-3 px-4 text-uppercase">
                     Update Informasi <i class="fas fa-chevron-down ml-2"></i>
                     </button>
+                    <a target="_blank" href="<?= $mf_beranda->fb; ?>" class="btn py-3 btn-primary-old my-2 ml-2 my-sm-0 animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Join group facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/<?= $mf_beranda->ig; ?>" class="btn  py-3 btn-danger my-2 my-sm-0 mx-2 btn-instagram animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Follow Our Instagram" data-username="<?= $mf_beranda->ig; ?>">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </p>
                 
             </div>
@@ -54,7 +60,7 @@
             <div class="col-xs-12 col-sm-12 col-md-4">
                 <div class="card bg-transparent border-0 rounded">
                     <div class="card-body">
-                        <i class="fas fa-users float-right fa-3x text-primary-old d-inline-block mt-1"></i>
+                        <i class="fas fa-users float-right fa-3x text-info d-inline-block mt-1"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_asn'] ?>"
                         data-speed="3000" data-refresh-interval="50" class="display-4 "><?= $arr['jml_asn'] ?></h3>
                         <b class="text-secondary">Jumlah ASN Kab. Balangan</b>
@@ -126,7 +132,7 @@
                     <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-user-tie text-secondary mr-2"></i>Profile PNS</span>
                     </div>
-                    <div class="card border-0 shadow-sm bg-white my-4">
+                    <div class="card border-0 rounded shadow-sm bg-white my-4">
                         <div class="card-body">
                             <form class="form-horizontal" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
                                 <div class="typeahead__container form-group">
@@ -149,7 +155,7 @@
                     <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-images text-secondary mr-2"></i> album photo</span>
                     </div>
-                    <div class="overflow-hidden rounded-lg my-4 bg-white border-0 shadow-sm p-2">
+                    <div class="overflow-hidden rounded-lg my-4 border-0 shadow-none">
                         
                         <?php
                         $kolom = 2;
@@ -159,9 +165,9 @@
                         echo '<div class="d-flex">';
                             }
                             ?>
-                            <div style="width: 100%;">
+                            <div class="w-100 rounded m-1">
                                 <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
-                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy w-100" alt="<?= url_title($album->judul, '-', true) ?>">
+                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy rounded" alt="<?= url_title($album->judul, '-', true) ?>">
                                 </a>
                             </div>
                             <?php if(($i) % $kolom==0) {

@@ -19,8 +19,8 @@ $(document).ready(function() {
             var output = "";
             for (var count = 0; count < 1; count++) {
                 output += `
-                <div class="card border border-light shadow-sm mb-3">
-                    <div class="card-header border-0 bg-white">
+                <div class="card border border-light shadow-sm mb-3" style="border-radius:10px;">
+                    <div class="card-header border-0 bg-white" style="border-radius:10px;">
                     <p>
                     <span class="content-placeholder rounded-circle float-left mr-3" style="width:50px; height: 50px;">&nbsp;</span>
 

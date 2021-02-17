@@ -10,7 +10,7 @@
     <meta name="abstract" content="<?= $mf_beranda->meta_desc; ?>"/>
     <meta name="author" content="Muhammad Nor Saputra"/>
     <meta name="robots" content="noindex,nofollow"/>
-
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="google" content="translate" />
     <meta name="geo.country" content="id" />
     <meta name="geo.placename" content="Indonesia"/>
