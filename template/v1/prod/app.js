@@ -898,7 +898,7 @@ $(document).ready(function () {
           return {
             type: "POST",
             url: "http://silka.bkppd-balangankab.info/api/filternipnama",
-            dataType: "jsonp",
+            dataType: "json",
             crossDomain: true,
             async: true,
             data: {
