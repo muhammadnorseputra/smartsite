@@ -34,7 +34,7 @@
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 my-3 pt-5 my-md-5 py-md-5 order-first order-md-last">
                 <div class="d-flex align-items-center">
                     <div>
-                    <img class="img-fluid rounded" src="<?= base_url('assets/images/bg/work.svg') ?>">
+                    <img class="img-fluid rounded" src="<?= base_url('assets/images/bg/bg-home.svg') ?>">
                     </div>
                 </div>
             </div>
