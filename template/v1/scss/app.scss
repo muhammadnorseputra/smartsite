@@ -192,16 +192,15 @@ h5.title-sidebar {
 	font-family: 'Space Grotesk', sans-serif;
 	font-weight: 700;
 }
-
 nav.navbar li a {
-	color: #20c997;
-	// transition: all .1s ease-in;
+	color: #999;
+	transition: all .1s ease-in;
 	font-family: 'Space Grotesk', sans-serif;
 	font-size: 16px;
 	font-weight: 500;
 	&li a:hover, 
 	&li a.active {
-		color: #000 !important;
+		color: #09A79E !important;
 		background-color: #efefef;
 		cursor: pointer;
 	}
@@ -331,12 +330,6 @@ nav.navbar li a {
 	background-color: inherit;
 }
 
-.navbar .dropdown-item:focus,
-.navbar .dropdown-item:hover {
-	color: #000;
-	text-decoration: none;
-	background-color: #fefefe;
-}
 
 @media (min-width: 767px) {
 	.navbar .dropdown-toggle:not(.nav-link)::after {
@@ -513,10 +506,6 @@ i.likes:hover {
 	border-color: #eee !important;
 } */
 /* Custome Navbar hover */
-#navbar {
-	transition: top 0.6s;
-}
-
 .navbar .nav-item:not(:last-child) {
 	margin-right: 0px;
 }
@@ -605,6 +594,9 @@ i.likes:hover {
 }
 .mt--8 {
 	margin-top: -95px !important;
+}
+.mt--9 {
+	margin-top: -120px !important;
 }
 // Wave 
 .wave {
@@ -785,10 +777,10 @@ i.likes:hover {
 		transform: scale(1) !important;	
 	}
 	.intro-website {
-		color: #333 !important;
+		color: #fff !important;
 	}
 	#halojs {
-		color: #000 !important;
+		color: #fff !important;
 		font-size: 1em !important;
 	}
 	ul.navbar-nav {

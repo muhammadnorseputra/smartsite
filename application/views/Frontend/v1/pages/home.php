@@ -6,20 +6,20 @@
         </div>
     </div>
 </section> -->
-<section style="background-image: url('<?= base_url('assets/images/bg/bg.png'); ?>'">
+<section style="background-color: #003ECB; background-size: cover; background-position: right top; background-image: url('<?= base_url('assets/images/bg/bg-light.svg') ?>')">
     <div class="container">
         <div class="row py-md-5">
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 pb-5 py-md-5">
-                <p class="lead text-primary text-center text-md-left pt-md-3 mb-md-5">Hallo <i class="fas fa-grin-hearts"></i> pengunjung</p>
-                <div class="display-3 font-weight-bold text-center text-md-left"><span id="halojs"></span></div>
+                <p class="lead text-warning text-center text-md-left pt-md-3 mb-md-5">Hallo <i class="fas fa-grin-hearts"></i> pengunjung</p>
+                <div class="display-2 text-white font-weight-bold text-center text-md-left"><span id="halojs"></span></div>
                 <!-- Static halo -->
-                <p class="lead text-secondary intro-website text-center text-md-left mt-md-2">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</p>
+                <p class="lead text-white intro-website text-center text-md-left mt-md-2">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</p>
                 <!-- Dinamic mengunakan typed.js -->
                 <!--                 <p class="halo_bkppd"><span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> <span>Update informasi resmi seputar layanan kepegawaian serta artikel terkait lainya langsung dari website kami.</span> <span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> </p>
                 <span id="typed" class="lead text-secondary intro-website"></span>
                 -->
                 <p class="mt-3 text-center text-md-left">
-                    <button type="button" onclick="explore()" class="btn shadow btn-primary rounded py-3 px-4 text-uppercase">
+                    <button type="button" onclick="explore()" class="btn shadow btn-warning rounded py-3 px-4 text-uppercase">
                     Update Informasi <i class="fas fa-chevron-down ml-2"></i>
                     </button>
                     <a target="_blank" href="<?= $mf_beranda->fb; ?>" class="btn py-3 btn-primary-old my-2 ml-2 my-sm-0 animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Join group facebook">
@@ -34,7 +34,7 @@
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 my-3 pt-5 my-md-5 py-md-5 order-first order-md-last">
                 <div class="d-flex align-items-center">
                     <div>
-                    <img class="img-fluid rounded" src="<?= base_url('assets/images/bg/bg-home.svg') ?>">
+                    <img class="img-fluid rounded d-none d-md-block" src="<?= base_url('assets/images/bg/bg-home.svg') ?>">
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
     </div>
 </section>
 <section class="statistik mb-5">
-    <div class="container py-5 bg-white mt--8 shadow-lg" style="border-radius: 10px;">
+    <div class="container py-5 bg-white mt--9 shadow-lg" style="border-radius: 10px;">
         <div class="row no-gutters">
             <?php
             $local = '192.168.1.4';
@@ -60,7 +60,7 @@
             <div class="col-xs-12 col-sm-12 col-md-4">
                 <div class="card bg-transparent border-0 rounded">
                     <div class="card-body">
-                        <i class="fas fa-users float-right fa-3x text-info d-inline-block mt-1"></i>
+                        <i class="fas fa-users bg-info p-4 rounded float-right fa-3x text-white d-inline-block mt-1"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_asn'] ?>"
                         data-speed="3000" data-refresh-interval="50" class="display-4 "><?= $arr['jml_asn'] ?></h3>
                         <b class="text-secondary">Jumlah ASN Kab. Balangan</b>
@@ -70,7 +70,7 @@
             <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="card bg-transparent my-md-0 my-4 border-0 rounded-0 big-card">
                     <div class="card-body align-middle">
-                        <i class="fas fa-user-tie float-right fa-3x d-inline-block mt-1 text-dark"></i>
+                        <i class="fas fa-user-tie bg-light p-4 float-right fa-3x d-inline-block mt-1 text-white rounded"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
                         data-speed="3000" data-refresh-interval="50" class="display-4 "><?= $arr['jml_pns'] ?></h3>
                         <b class="text-secondary">Jumlah PNS + CPNS</b>
@@ -80,7 +80,7 @@
             <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="card bg-transparent rounded border-0">
                     <div class="card-body">
-                        <i class="far fa-user-circle float-right fa-3x d-inline-block mt-1 text-warning"></i>
+                        <i class="far bg-success p-4 fa-user-circle float-right fa-3x d-inline-block mt-1 text-white rounded"></i>
                         <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_ptt'] ?>"
                         data-speed="3000" data-refresh-interval="50" class="display-4 "><?= $arr['jml_ptt'] ?></h3>
                         <b class="text-secondary">Jumlah NON PNS</b>

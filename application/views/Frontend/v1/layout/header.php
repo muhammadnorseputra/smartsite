@@ -17,7 +17,7 @@
 					if ($submenu_jml > 0) {
 				?>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle rounded py-md-3 px-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle text-white rounded py-md-3 px-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
 						<?= $m->nama_menu; ?>
 					</a>
@@ -81,7 +81,7 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a  class="btn shadow-none btn-outline-primary my-2 my-sm-0 mr-2 px-4" href="<?= base_url('login_web'); ?>">
+			<a  class="btn shadow-none btn-outline-warning my-2 my-sm-0 mr-2 px-4" href="<?= base_url('login_web'); ?>">
 				<i class="far fa-user mr-2"></i> Login
 			</a>
 			<?php } ?>
