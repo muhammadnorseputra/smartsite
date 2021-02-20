@@ -56,7 +56,7 @@
   background-color: #eee !important;
 }
 [data-theme="dark"] .navbar-light .navbar-nav .nav-link {
-	color: #888 !important;
+	color: #000000 !important;
 }
 [data-theme="dark"] .border,
 [data-theme="dark"] .border-light,
@@ -66,7 +66,7 @@
 [data-theme="dark"] .border-bottom,
 [data-theme="dark"] .dropdown-divider
  {
- 	border-color: #444 !important;
+ 	border-color: #333 !important;
  }
  @media (max-width: 620px) {
   [data-theme="dark"] ul.navbar-nav  {

@@ -1,93 +1,10 @@
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
-<!-- <section class="my-5">
-    <div class="container">
-        <div class="lazy my-md-5" data-loader="ajax" data-src="beranda/slider">
-            <img class="d-block mx-auto my-5 py-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/tail-spin.svg'); ?>" alt="">
-        </div>
-    </div>
-</section> -->
-<section style="background-color: #003ECB; background-size: cover; background-position: right top; background-image: url('<?= base_url('assets/images/bg/bg-light.svg') ?>')">
-    <div class="container">
-        <div class="row py-md-5">
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 pb-5 py-md-5">
-                <p class="lead text-warning text-center text-md-left pt-md-3 mb-md-5">Hallo <i class="fas fa-grin-hearts"></i> pengunjung</p>
-                <div class="display-2 text-white font-weight-bold text-center text-md-left"><span id="halojs"></span></div>
-                <!-- Static halo -->
-                <p class="lead text-white intro-website text-center text-md-left mt-md-2">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</p>
-                <!-- Dinamic mengunakan typed.js -->
-                <!--                 <p class="halo_bkppd"><span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> <span>Update informasi resmi seputar layanan kepegawaian serta artikel terkait lainya langsung dari website kami.</span> <span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> </p>
-                <span id="typed" class="lead text-secondary intro-website"></span>
-                -->
-                <p class="mt-3 text-center text-md-left">
-                    <button type="button" onclick="explore()" class="btn shadow btn-warning rounded py-3 px-4 text-uppercase">
-                    Update Informasi <i class="fas fa-chevron-down ml-2"></i>
-                    </button>
-                    <a target="_blank" href="<?= $mf_beranda->fb; ?>" class="btn py-3 btn-primary-old my-2 ml-2 my-sm-0 animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Join group facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a target="_blank" href="https://www.instagram.com/<?= $mf_beranda->ig; ?>" class="btn  py-3 btn-danger my-2 my-sm-0 mx-2 btn-instagram animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Follow Our Instagram" data-username="<?= $mf_beranda->ig; ?>">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </p>
-                
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 my-3 pt-5 my-md-5 py-md-5 order-first order-md-last">
-                <div class="d-flex align-items-center">
-                    <div>
-                    <img class="img-fluid rounded d-none d-md-block" src="<?= base_url('assets/images/bg/bg-home.svg') ?>">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php $this->load->view('Frontend/v1/function/hero') ?>
 <section class="statistik mb-5">
     <div class="container py-5 bg-white mt--9 shadow-lg" style="border-radius: 10px;">
-        <div class="row no-gutters">
-            <?php
-            $local = '192.168.1.4';
-            $online = 'http://silka.bkppd-balangankab.info';
-            $status = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? $online : $local;
-            $host = $status;
-            ?>
-            <?php
-            $arr = [
-            'jml_asn' => api_curl_get($host.'/api/get_grap/asn'),
-            'jml_pns' => api_curl_get($host.'/api/get_grap/pns'),
-            'jml_ptt' => api_curl_get($host.'/api/get_grap/nonpns')
-            ]
-            ?>
-            <div class="col-xs-12 col-sm-12 col-md-4">
-                <div class="card bg-transparent border-0 rounded">
-                    <div class="card-body">
-                        <i class="fas fa-users bg-info p-4 rounded float-right fa-3x text-white d-inline-block mt-1"></i>
-                        <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_asn'] ?>"
-                        data-speed="3000" data-refresh-interval="50" class="display-4 "><?= $arr['jml_asn'] ?></h3>
-                        <b class="text-secondary">Jumlah ASN Kab. Balangan</b>
-                    </div>
-                </div>
+            <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/count_peg') ?>">
+                <img class="d-block mx-auto my-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/three-dots.svg'); ?>" alt="">
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-4">
-                <div class="card bg-transparent my-md-0 my-4 border-0 rounded-0 big-card">
-                    <div class="card-body align-middle">
-                        <i class="fas fa-user-tie bg-light p-4 float-right fa-3x d-inline-block mt-1 text-white rounded"></i>
-                        <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
-                        data-speed="3000" data-refresh-interval="50" class="display-4 "><?= $arr['jml_pns'] ?></h3>
-                        <b class="text-secondary">Jumlah PNS + CPNS</b>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-4">
-                <div class="card bg-transparent rounded border-0">
-                    <div class="card-body">
-                        <i class="far bg-success p-4 fa-user-circle float-right fa-3x d-inline-block mt-1 text-white rounded"></i>
-                        <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_ptt'] ?>"
-                        data-speed="3000" data-refresh-interval="50" class="display-4 "><?= $arr['jml_ptt'] ?></h3>
-                        <b class="text-secondary">Jumlah NON PNS</b>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 <?php endif; ?>
@@ -167,7 +84,7 @@
                             ?>
                             <div class="w-100 rounded m-1">
                                 <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
-                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy rounded" alt="<?= url_title($album->judul, '-', true) ?>">
+                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy rounded shadow-sm border" alt="<?= url_title($album->judul, '-', true) ?>">
                                 </a>
                             </div>
                             <?php if(($i) % $kolom==0) {
@@ -192,13 +109,13 @@
                         $nolist = 1;
                         foreach ($mf_berita_populer as $b) :
                         $id = encrypt_url($b->id_berita);
-                        $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($b->created_by))));
+                        $postby = strtolower(url_title($this->mf_users->get_namalengkap($b->created_by)));
                         $judul = strtolower($b->judul);
-                        $posturl = base_url("post/@{$postby}/{$id}/" . url_title($judul) . '');
+                        $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
                         if(empty($b->img)):
-                        $img = '<img class="rounded align-self-center lazy pull-left mr-2 w-25 shadow" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
+                        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
                         else:
-                        $img = '<img class="rounded align-self-center lazy pull-left mr-2 w-25 shadow" data-src="'.$b->path.'" alt="'.$b->judul.'">';
+                        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.$b->path.'" alt="'.$b->judul.'">';
                         endif;
                         ?>
                         <a  href="<?= $posturl; ?>" class="bg-transparent list-group-item list-group-item-action border-0 px-3  m-0">
@@ -221,30 +138,30 @@
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-leaf text-secondary mr-2"></i> Digital Goverment</span>
                     </div>
                     <div class="d-flex flex-wrap justify-content-between justify-content-md-start align-items-center mt-4">
-                    
-                    <div>
-                        <a target="_blank" data-toggle="tooltip" href="http://silka.bkppd-balangankab.info/" title="aplikasi sistem informasi layanan kepegawaian balangan">
-                            <?php echo '<img src="'.base_url('assets/images/logo-silka.png').'" width="140"/>'; ?>
-                        </a>
+                        
+                        <div>
+                            <a target="_blank" data-toggle="tooltip" href="http://silka.bkppd-balangankab.info/" title="aplikasi sistem informasi layanan kepegawaian balangan">
+                                <?php echo '<img src="'.base_url('assets/images/logo-silka.png').'" width="140"/>'; ?>
+                            </a>
+                        </div>
+                        <div class="mx-md-5">
+                            <a target="_blank" data-toggle="tooltip" href="https://eprilaku.bkppd-balangankab.info/" title="aplikasi e-prilaku balangan">
+                                <?php echo '<img src="'.base_url('assets/images/logo-eprilaku.png').'" width="80"/>'; ?>
+                            </a>
+                        </div>
+                        <div>
+                            <a target="_blank" data-toggle="tooltip" href="https://ekinerja.bkppd-balangankab.info/" title="aplikasi e-kinerja balangan">
+                                <?php echo '<img src="'.base_url('assets/images/logo-ekinerja.png').'" width="160"/>'; ?>
+                            </a>
+                        </div>
                     </div>
-                    <div class="mx-md-5">
-                        <a target="_blank" data-toggle="tooltip" href="https://eprilaku.bkppd-balangankab.info/" title="aplikasi e-prilaku balangan">
-                            <?php echo '<img src="'.base_url('assets/images/logo-eprilaku.png').'" width="80"/>'; ?>
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" data-toggle="tooltip" href="https://ekinerja.bkppd-balangankab.info/" title="aplikasi e-kinerja balangan">
-                            <?php echo '<img src="'.base_url('assets/images/logo-ekinerja.png').'" width="160"/>'; ?>
-                        </a>
-                    </div>
-                </div>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="row">
                     <div class="col-8 col-md-11">
                         <div class="separator">
-                        <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-primary mr-2"></i>Postingan Terbaru</span></span>
+                            <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-primary mr-2"></i>Postingan Terbaru</span></span>
                         </div>
                     </div>
                     <div class="col-4 col-md-1">
@@ -255,25 +172,25 @@
                 
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
-                     <div class="text-center"> 
-                        <button id="load_more" class="rounded-pill btn btn-primary rounded-pill px-4"><i class="fas fa-newspaper mr-2"></i> Load more berita</button>
-                     </div>
+                <div class="text-center">
+                    <button id="load_more" class="rounded-pill btn btn-primary rounded-pill px-4"><i class="fas fa-newspaper mr-2"></i> Load more berita</button>
+                </div>
             </div>
             <div class="col-md-2 order-last">
                 <div class="d-flex flex-column justify-content-center">
-                        <div class="w-100 my-2 my-md-0"></div>
-                        <a class="btn btn-info my-sm-0 d-block py-3" href="<?= base_url('kotak_saran'); ?>">
-                            <i class="fas fa-box fa-2x"></i> <br> Kotak Saran
-                        </a>
-                        <div class="w-100 my-2"></div>
-                        <a class="btn btn-success my-sm-0 d-block py-3" href="<?= base_url('survey'); ?>">
-                            <i class="fas fa-check-circle fa-2x"></i> <br> Survey IKM
-                        </a>
-                        <div class="w-100 my-2"></div>
-                        <a class="btn btn-outline-light disabled my-sm-0 d-block py-3" href="#">
-                            <i class="fab fa-buromobelexperte fa-2x"></i> <br> lainya
-                        </a>
-                    </div>
+                    <div class="w-100 my-2 my-md-0"></div>
+                    <a class="btn btn-info my-sm-0 d-block py-3" href="<?= base_url('kotak_saran'); ?>">
+                        <i class="fas fa-box fa-2x"></i> <br> Kotak Saran
+                    </a>
+                    <div class="w-100 my-2"></div>
+                    <a class="btn btn-success my-sm-0 d-block py-3" href="<?= base_url('survey'); ?>">
+                        <i class="fas fa-check-circle fa-2x"></i> <br> Survey IKM
+                    </a>
+                    <div class="w-100 my-2"></div>
+                    <a class="btn btn-outline-light disabled my-sm-0 d-block py-3" href="#">
+                        <i class="fab fa-buromobelexperte fa-2x"></i> <br> lainya
+                    </a>
+                </div>
             </div>
             <!-- <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 order-first">
                 <div class="mx-auto"> -->

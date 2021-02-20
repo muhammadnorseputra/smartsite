@@ -43,12 +43,12 @@ class Beranda extends CI_Controller
         $this->load->view('Frontend/v1/layout/wrapper', $data);
     }
 
-    public function slider()
+    public function section($section)
     {
         $data = [
-            'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
-        ];
-        $this->load->view('Frontend/v1/function/slider3', $data, false);
+                    'mf_beranda' => $this->mf_beranda->get_identitas()
+                ];
+        $this->load->view('Frontend/v1/function/'.$section, $data);
     }
 
     public function get_all_berita()
@@ -69,7 +69,7 @@ class Beranda extends CI_Controller
                 if (count($pecah) > 0) {
                     $tag = '';
                     for ($i = 0; $i < count($pecah); ++$i) {
-                        $tag .= '<a href="'.base_url('frontend/v1/post_list/tags?q='.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-secondary mr-2 mb-2">#'.$pecah[$i].'</a>';
+                        $tag .= '<a href="'.base_url('frontend/v1/post_list/tags?q='.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-secondary border-0 mr-2 mb-2">#'.$pecah[$i].'</a>';
                     }
                 }
                 $pilihan = $row->pilihan == 'Y' ? '<span class="text-success small float-right" data-toggle="tooltip" title="Pilihan Editor"><i class="fas fa-check-circle"></i></span>' : '';
@@ -90,9 +90,9 @@ class Beranda extends CI_Controller
                 }
 
                 $id = encrypt_url($row->id_berita);
-                $postby = strtolower($namalengkap);
+                $postby = strtolower(url_title($namalengkap));
                 $judul = strtolower($row->judul);
-                $posturl = "post/@{$postby}/{$id}/".url_title($judul).'';
+                $posturl = "post/{$postby}/{$id}/".url_title($judul).'';
                 
                 $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $row->id_berita) == 'on' ? 'btn-bookmark' : '';
                 $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $row->id_berita) == 'on' ? 'fas text-primary' : 'far';
@@ -113,7 +113,7 @@ class Beranda extends CI_Controller
 					<div class="card mb-4 border-0 shadow-sm bg-white" style="border-radius:10px;">
 					<div class="card-body p-4 mt-3">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
-                        <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded lazy">
+                        <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded-circle ml-3 lazy">
 						<h5 class="card-title"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
                         <p class="card-text">
                             <span class="badge badge-default px-0 font-weight-normal text-muted">Posted by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
@@ -128,7 +128,7 @@ class Beranda extends CI_Controller
 					<div class="card-body py-0 px-4">
 						<h3 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h3>
                         <p class="card-text font-weight-normal text-secondary my-4">'.character_limiter($isi, 150).'</p>
-                        <p><a href="#" class="btn btn-sm btn-warning mr-2 mb-2 text-white shadow">'.$namakategori.'</a>'.$tag. '</p>
+                        <p><a href="#" class="btn btn-sm btn-primary mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
 					</div>
 					<div class="card-footer bg-white p-2 border-0 d-flex justify-content-around"  style="border-bottom-left-radius:12px;border-bottom-right-radius:12px;">
 					

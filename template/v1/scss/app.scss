@@ -457,7 +457,7 @@ nav.navbar li a {
 
 img.lazy {
 	display: block;
-	background-color: #19456b;
+	background-color: transparent;
 	/* optional way, set loading as background */
 	// background-image: url("../../../assets/images/loader/rolling-2.gif");
 	background-image: url("../../../bower_components/SVG-Loaders/svg-loaders/oval.svg");
@@ -466,7 +466,7 @@ img.lazy {
 }
 
 img.isLoaded {
-	filter: blur(0px);
+	transition: all .3s ease-in;
 }
 
 i.likes {

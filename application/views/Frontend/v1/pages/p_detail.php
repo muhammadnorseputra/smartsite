@@ -30,7 +30,7 @@ $pecah = explode(',', $tags);
 if (count($pecah) > 0) {
 	$tag = '';
 	for ($i = 0; $i < count($pecah); ++$i) {
-		$tag .= '<a href="' . base_url('frontend/v1/post_list/tags?q=' . $pecah[$i]) . '" class="btn btn-sm btn-outline-dark ml-2 mb-2 mt-4">#' . $pecah[$i] . '</a>';
+		$tag .= '<a href="' . base_url('frontend/v1/post_list/tags?q=' . $pecah[$i]) . '" class="btn btn-sm btn-outline-secondary ml-2 mb-2 mt-4">#' . $pecah[$i] . '</a>';
 	}
 }
 ?>
@@ -39,21 +39,21 @@ if (count($pecah) > 0) {
 		<div class="row mt-4">
 			<div class="col-md-8 mt-5 mb-md-5 offset-md-2">
 				<div class="card border-0 rounded-lg shadow-none bg-transparent">
-					<div class="card-body">
-						<img data-src="<?= $photo; ?>" width="60" height="60" class="float-left mr-3 lazy rounded shadow-sm">
+					<div class="card-body ml-3">
+						<img data-src="<?= $photo; ?>" width="60" height="60" class="float-left mr-3 lazy rounded-circle shadow-sm">
 						<h5 class="card-title"><a href="<?= $link_profile_public ?>"><?= $namalengkap ?></a></h5>
 						<p class="card-text">
 							<span class="badge badge-default px-0 text-muted">Posted by <?= ucwords($namapanggilan); ?> &#8226;  <?php echo longdate_indo($post_detail->tgl_posting); ?></span></p>
 						</div>
 						<div class="p-3">
 						<?= $img ?>
-						<div class="ml-md-4"><?= $tag; ?></div>
+						<div class="mt-4"><?= $tag; ?></div>
 						</div>
-						<div class="card-body px-md-5">
+						<div class="card-body">
 							<h2 class="font-weight-bold display-5"><?php echo $post_detail->judul; ?></h2>
 							<p class="card-text font-weight-normal"><?php echo nl2br($post_detail->content); ?></p>
 						</div>
-						<div class="card-footer bg-transparent mx-md-5 p-2 border rounded-lg d-flex justify-content-around">
+						<div class="card-footer bg-transparent p-2 border rounded-lg d-flex justify-content-around">
 							<div class="w-100">
 							<button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100"><i class="far fa-eye mr-2"></i> <?= $count; ?> </button>
 							</div>
@@ -69,8 +69,8 @@ if (count($pecah) > 0) {
 						</div>
 					</div>
 					<?php if($post_detail->komentar_status == 0): ?>
-					<div class="card rounded-lg border-light my-3 mx-md-5 bg-transparent">
-						<div class="card-body p-0" style="max-height: 480px; overflow-y: auto;">
+					<div class="card my-4 bg-transparent border-0">
+						<div class="card-body" style="max-height: 480px; overflow-y: auto;">
 							<div id="tracking">
 								<div class="tracking-list">
 								</div>
@@ -78,8 +78,8 @@ if (count($pecah) > 0) {
 							
 						</div>
 					</div>
-					<div class="card border-light border-top-0 mx-md-5 rounded-lg bg-white">
-						<div class="card-body">
+					<div class="card border-top-light bg-transparent">
+						<div class="card-body p-5">
 							
 							<?php if ($this->session->userdata('user_portal_log')['online'] == 'ON') { ?>
 							<b class="reply_username float-right"></b>
@@ -98,13 +98,13 @@ if (count($pecah) > 0) {
 						</div>
 					</div>
 					<?php else: ?>
-					<div class="alert alert-warning text-center font-italic my-3" role="alert">
-						Diskusi publik tidak diinjinkan.
+					<div class="alert alert-warning text-center font-italic text-uppercase my-3" role="alert">
+						Komentar di non aktifkan
 					</div>
 					<?php endif; ?>
-					<div class="mx-md-5 mt-5">
+					<div class="mt-5">
 						<div class="separator">
-		                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-quote-left fa-pull-left text-danger mr-2"></i>Berita Selanjutnya</span>
+		                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-quote-left fa-pull-left text-primary mr-2"></i>Berita Selanjutnya</span>
 		                </div>
 
 							<div class="d-flex justify-content-between">
