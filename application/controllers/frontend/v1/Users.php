@@ -150,7 +150,7 @@ class Users extends CI_Controller {
 			$cek = $this->users->cek_login("t_users_portal", $where);
 			if($cek->num_rows() > 0){
 				
-				if($this->users->getuserportalbyemail($where['email'])->row()->online == 'OFF') {
+				if($this->users->getuserportalbyemail($where['email'])->row()->online === 'OFF') {
 				$q = $cek->row();
 				$data_session = array(
 					'nama_lengkap' => decrypt_url($q->nama_lengkap),
@@ -169,12 +169,12 @@ class Users extends CI_Controller {
 					'pesan' => "<div class='d-block mx-auto text-center'>Login berhasil, akun ditemukan ...</div>", 
 					'redirect' => base_url("frontend/v1/users/akun/".decrypt_url($q->nama_panggilan)).'/'.$q->nohp);
 				} else {
-					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'redirect' => base_url("frontend/v1/users/login"), 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
+					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'redirect' => base_url("login_web"), 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
 					$this->users->status_online('t_users_portal', ['email' => $where['email']], ['online' => 'OFF']);
 					$this->session->unset_userdata('user_portal_log');
 				}
 			}else{
-				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar", 'redirect' => base_url("frontend/v1/users/login"));
+				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar", 'redirect' => base_url("login_web"));
 			}
 			echo json_encode($msg);
 			}

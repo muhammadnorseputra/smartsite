@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Muhammad Nor Saputra"/>
     <meta name="description" content="<?= $mf_beranda->meta_desc; ?>"/>
     <meta name="keywords" content="<?= $mf_beranda->meta_seo; ?>"/>
     <meta name="subject" content="<?= $mf_beranda->meta_desc; ?>"/>
     <meta name="abstract" content="<?= $mf_beranda->meta_desc; ?>"/>
-    <meta name="author" content="Muhammad Nor Saputra"/>
     <meta name="robots" content="noindex,nofollow"/>
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     <meta name="google" content="translate" />

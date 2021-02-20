@@ -45,7 +45,7 @@
                 <div class="d-block">
                     <span class="text-secondary">Oleh</span> <?= ucwords($namapanggilan); ?>
                 </div> -->
-                <div class="sidebar">
+                <div>
                     <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-user-tie text-secondary mr-2"></i>Profile PNS</span>
                     </div>
@@ -84,7 +84,7 @@
                             ?>
                             <div class="w-100 rounded m-1">
                                 <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
-                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy rounded shadow-sm border" alt="<?= url_title($album->judul, '-', true) ?>">
+                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
                                 </a>
                             </div>
                             <?php if(($i) % $kolom==0) {

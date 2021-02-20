@@ -17,7 +17,7 @@
 					if ($submenu_jml > 0) {
 				?>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle text-white rounded py-md-3 px-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle rounded py-md-3 px-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
 						<?= $m->nama_menu; ?>
 					</a>
@@ -61,8 +61,15 @@
 					</ul>
 				</li>
 				<?php
-				}
+				} else {
 				?>
+<li class="nav-item">
+					<a class="nav-link rounded py-md-3 px-3" href="<?= base_url($m->link); ?>">
+						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
+						<?= ucwords($m->nama_menu); ?>
+					</a>
+				</li>
+				<?php } ?>
 				<?php endforeach; ?>
 				
 			</ul>

@@ -141,7 +141,7 @@
                     </div>                    
                     <div class="row">
                         <div class="col-xs-6 col-md-6">
-                            <a href="<?php echo base_url(); ?>" class="btn p-8 btn-block btn-rounded btn-link waves-effect">&larr; Beranda</a>
+                            <a href="<?php echo base_url('beranda'); ?>" class="btn p-8 btn-block btn-rounded btn-link waves-effect">&larr; Beranda</a>
                         </div>
                         <div class="col-xs-6 col-md-6">
                            <button type="submit" style="padding:10px 15px" class="btn btn-block btn-rounded waves-effect waves-light pull-right btn-success  waves-float" id="login" type="button"><em class="glyphicon glyphicon-send m-r-10"></em> MASUK</button> 

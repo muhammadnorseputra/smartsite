@@ -24,7 +24,7 @@ class Beranda extends CI_Controller
     public function index()
     {
         $data = [
-                    'title' => "Beranda | Website resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan Tahun ".date('Y'),
+                    'title' => "Beranda &bull; Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan",
                     'isi' => 'Frontend/v1/pages/home',
                     'mf_beranda' => $this->mf_beranda->get_identitas(),
                     'mf_menu' => $this->mf_beranda->get_menu(),
@@ -111,7 +111,7 @@ class Beranda extends CI_Controller
                 $output .= '
                 <div>
 					<div class="card mb-4 border-0 shadow-sm bg-white" style="border-radius:10px;">
-					<div class="card-body p-4 mt-3">
+					<div class="card-body px-3 mt-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded-circle ml-3 lazy">
 						<h5 class="card-title"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>

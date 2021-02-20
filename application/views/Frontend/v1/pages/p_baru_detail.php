@@ -15,12 +15,7 @@
 				</div>
 			</div>
 			<div class="col-md-4 mt-md-4">
-				<div>
-					<button type="button" id="batal" class="btn btn-default float-lg-right p-0" data-toggle="tooltip" title="Batal" data-placement="top">
-						<span class="far fa-times-circle fa-2x"></span>
-					</button>
-				</div>
-				<div class="clearfix"></div>
+
 				<div id="accordionExample" class="accordion mt-3">
 					<!-- Accordion item 1 -->
 					<div class="card rounded-0">
@@ -99,6 +94,9 @@
 					<button type="submit" class="btn btn-primary mt-2"><i class="far fa-share-square mr-2"></i>Publish</button>
 					<button type="button" id="draf" data-id="<?php echo $post->id_berita ?>" class="btn btn-secondary mt-2">
 						<span class="fas fa-hourglass-end mr-2"></span>Draf
+					</button>
+					<button type="button" id="batal" class="btn btn-danger mt-2">
+						<span class="fas fa-times-circle mr-2"></span> Batal
 					</button>
 				</div>
 			</div>

@@ -1,8 +1,14 @@
 $(document).ready(function() {
-    $(".sidebar").sticky({
-        topSpacing: 0,
-        bottomSpacing: 100,
-    });
+    if ($(window).width() < 320) {
+        $('.sidebar').on('sticky-bottom-unreached', function() {
+            console.log("Bottom unreached");
+        });
+    } else {
+        $(".sidebar").sticky({
+            topSpacing: 0,
+            bottomSpacing: 100,
+        });
+    }
     var prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
         var currentScrollPos = window.pageYOffset;
