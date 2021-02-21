@@ -103,21 +103,15 @@
 </nav>
 <!-- Modal -->
 <div class="modal bd-example-modal-lg" id="mpostseacrh" tabindex="-1" role="dialog" aria-labelledby="mpostseacrhLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
+	<div class="modal-dialog modal-lg animated slideIn" role="document">
 		<div class="modal-content border-0 shadow-lg">
-			<div class="modal-header">
-				<h5 class="modal-title" id="mpostseacrhLabel">Cari Postingan</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
 			<div class="modal-body">
 				<?= form_open(base_url('frontend/v1/post/search'), ['id' => 'form_post_search','class' => 'form-inline']); ?>
-				<div class="input-group mx-auto">
+				<div class="input-group mx-auto w-100">
 					<div class="input-group-prepend">
 						<div class="input-group-text"><i class="fas fa-search"></i></div>
 					</div>
-					<input type="text" name="q" class="form-control form-control-lg" id="search" placeholder="Masukan kata kunci...">
+					<input type="text" name="q" class="form-control form-control-lg" id="search" placeholder="Masukan kata kunci, lalu tekan enter atau cari">
 					<button type="submit" class="btn btn-outline-info ml-2">Cari</button>
 					
 				</div>

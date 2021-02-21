@@ -19,7 +19,7 @@ $(document).ready(function() {
     }
 
     function displayComments() {
-        $.getJSON(`${_uri}/frontend/v1/post/displayKomentar/${$host ? _uriSegment[7] : _uriSegment[6]}`, function(response) {
+        $.getJSON(`${_uri}/frontend/v1/post/displayKomentar/${$host ? _uriSegment[4] : _uriSegment[3]}`, function(response) {
             $(".tracking-list").html(response);
         });
     }

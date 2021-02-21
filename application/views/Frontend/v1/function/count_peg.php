@@ -23,7 +23,7 @@ $arr = [
 </div>
 <div class="col-xs-6 col-sm-6 col-md-4">
     <div class="card bg-transparent my-md-0 my-4 border-0 rounded-0 big-card">
-        <div class="card-body  data-aos="fade" data-aos-once="true"align-middle">
+        <div class="card-body"  data-aos="fade" data-aos-once="true" align-middle">
             <i class="fas fa-user-tie bg-danger p-4 float-right fa-3x d-inline-block mt-1 text-white rounded"></i>
             <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
             data-speed="3000" data-refresh-interval="50" class="display-4 "><?= $arr['jml_pns'] ?></h3>

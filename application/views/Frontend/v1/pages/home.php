@@ -159,6 +159,11 @@
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="row">
+                    <div class="col-md-12">
+                        <a target="_blank" href="<?= base_url('banner/'.$this->mf_beranda->get_banner('SLIDE', 'Web')[5].'/'.url_title($this->mf_beranda->get_banner('SLIDE', 'Web')[1])); ?>" data-toggle="tooltip" title="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"><img src="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[0]; ?>" class="img-fluid d-block mb-4 border rounded" alt="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"></a>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-8 col-md-11">
                         <div class="separator">
                             <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-primary mr-2"></i>Postingan Terbaru</span></span>
@@ -173,17 +178,17 @@
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
                 <div class="text-center">
-                    <button id="load_more" class="rounded-pill btn btn-primary rounded-pill px-4"><i class="fas fa-newspaper mr-2"></i> Load more berita</button>
+                    <button id="load_more" class="rounded-pill btn-block btn btn-primary rounded-pill px-4"><i class="fas fa-newspaper mr-2"></i> Load more berita</button>
                 </div>
             </div>
-            <div class="col-md-2 order-last">
+            <div class="col-md-2 order-md-first">
                 <div class="d-flex flex-column justify-content-center">
                     <div class="w-100 my-2 my-md-0"></div>
-                    <a class="btn btn-info my-sm-0 d-block py-3" href="<?= base_url('kotak_saran'); ?>">
+                    <a class="btn btn-outline-info my-sm-0 d-block py-3" href="<?= base_url('kotak_saran'); ?>">
                         <i class="fas fa-box fa-2x"></i> <br> Kotak Saran
                     </a>
                     <div class="w-100 my-2"></div>
-                    <a class="btn btn-success my-sm-0 d-block py-3" href="<?= base_url('survey'); ?>">
+                    <a class="btn btn-outline-success my-sm-0 d-block py-3" href="<?= base_url('survey'); ?>">
                         <i class="fas fa-check-circle fa-2x"></i> <br> Survey IKM
                     </a>
                     <div class="w-100 my-2"></div>

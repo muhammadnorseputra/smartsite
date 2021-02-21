@@ -351,11 +351,11 @@ class Users extends CI_Controller {
 		
 	public function profile($nama_panggilan,$id) {
 		$data = [
-				'title' => 'ID: '.ucfirst($nama_panggilan),
+				'title' => 'Halaman beranda &bull; '.ucfirst($nama_panggilan),
 				'isi' => 'Frontend/v1/pages/u_profile',
 				'mf_beranda' => $this->mf_beranda->get_identitas(),
 				'mf_menu' => $this->mf_beranda->get_menu(),
-                    'mf_kategori' => $this->mf_beranda->get_kategori_listing(),
+                'mf_kategori' => $this->mf_beranda->get_kategori_listing(),
                 'mf_berita_populer' => $this->mf_beranda->berita_populer(),
 				'public_profile' => $this->users->get_userportal_byid(decrypt_url($id))
 		];

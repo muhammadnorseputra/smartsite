@@ -69,7 +69,7 @@ class Beranda extends CI_Controller
                 if (count($pecah) > 0) {
                     $tag = '';
                     for ($i = 0; $i < count($pecah); ++$i) {
-                        $tag .= '<a href="'.base_url('frontend/v1/post_list/tags?q='.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-secondary border-0 mr-2 mb-2">#'.$pecah[$i].'</a>';
+                        $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-secondary border-0 mr-2 mb-2">#'.$pecah[$i].'</a>';
                     }
                 }
                 $pilihan = $row->pilihan == 'Y' ? '<span class="text-success small float-right" data-toggle="tooltip" title="Pilihan Editor"><i class="fas fa-check-circle"></i></span>' : '';
@@ -82,7 +82,7 @@ class Beranda extends CI_Controller
                     $gravatar = base_url('assets/images/users/'.$this->mf_users->get_gravatar($by));
                 } else {
                     $link_profile_public = 
-                    base_url("frontend/v1/users/profile/@".decrypt_url( $this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan)."/".encrypt_url($by));
+                    base_url("user/".decrypt_url( $this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan)."/".encrypt_url($by));
                     $namalengkap = decrypt_url($this->mf_users->get_userportal_namalengkap($by));
                     $namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
                     $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
@@ -106,11 +106,11 @@ class Beranda extends CI_Controller
                     $img = '<img class="card-img-top lazy border-light" style="border-radius:10px;" data-src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
                 endif;
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
-                $post_list_url = base_url('frontend/v1/post_list/views/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
+                $post_list_url = base_url('kategori/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
 // <a href="'.$post_list_url.'" class="btn btn-primary-old rounded float-right btn-sm px-3">'.$namakategori.'</a>
                 $output .= '
                 <div>
-					<div class="card mb-4 border-0 shadow-sm bg-white" style="border-radius:10px;">
+					<div class="card mb-4 border shadow-sm bg-white" style="border-radius:10px;">
 					<div class="card-body px-3 mt-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded-circle ml-3 lazy">
@@ -128,12 +128,12 @@ class Beranda extends CI_Controller
 					<div class="card-body py-0 px-4">
 						<h3 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h3>
                         <p class="card-text font-weight-normal text-secondary my-4">'.character_limiter($isi, 150).'</p>
-                        <p><a href="#" class="btn btn-sm btn-primary mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
+                        <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
 					</div>
 					<div class="card-footer bg-white p-2 border-0 d-flex justify-content-around"  style="border-bottom-left-radius:12px;border-bottom-right-radius:12px;">
 					
                     <div class="w-100">
-					<button type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
+					<button type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
                     </div>
                     <div class="w-100">
 					<button type="button" data-toggle="tooltip" title="Komentar" class="btn btn-transparent border-0 rounded p-2 w-100 text-info"><i class="far fa-comment-alt mr-2"></i> '.$this->komentar->jml_komentarbyidberita($row->id_berita). '</button>
@@ -143,6 +143,9 @@ class Beranda extends CI_Controller
                     </div>
                     <div class="w-100">
                     <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded p-2 w-100 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
+                    </div>
+                    <div class="w-100">
+                        <a href="'.$posturl.'" class="p-2 btn bg-white btn-transparent border-top-0 border-bottom-0 rounded border-light">Read more <i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
 					</div>
                     </div>

@@ -10,8 +10,8 @@
                 <!--                 <p class="halo_bkppd"><span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> <span>Update informasi resmi seputar layanan kepegawaian serta artikel terkait lainya langsung dari website kami.</span> <span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> </p>
                 <span id="typed" class="lead text-secondary intro-website"></span>
                 -->
-                <p class="mt-5 text-center text-md-left">
-                    <button data-aos="fade-zoom-in" data-aos-once="true" data-aos-duration="1200" type="button" onclick="explore()" class="btn shadow-lg btn-warning rounded py-3 px-4 text-uppercase">
+                <p class="mt-md-5 text-center text-md-left">
+                    <button data-aos="fade-zoom-in" data-aos-once="true" data-aos-duration="1200" type="button" onclick="explore()" class="btn shadow-lg btn-primary rounded py-3 px-4 text-uppercase">
                     Update Informasi <i class="fas fa-chevron-down ml-2"></i>
                     </button>
                     <a data-aos="fade-zoom-in" data-aos-once="true" data-aos-duration="1400" target="_blank" href="<?= $mf_beranda->fb; ?>" class="btn py-3 btn-primary-old my-2 ml-2 my-sm-0 animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Join group facebook">

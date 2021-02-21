@@ -70,11 +70,10 @@ class Post_list extends CI_Controller
         $this->load->view('Frontend/v1/layout/wrapper', $data, false);
     }
 
-    public function tags()
+    public function tags($tag)
     {
-        $tag = $_GET['q'];
         $data = [
-            'title' => 'tags: '.url_title($tag),
+            'title' => 'Label: '.url_title($tag),
             'isi' => 'Frontend/v1/pages/p_tags',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),

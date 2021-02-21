@@ -1,6 +1,6 @@
-<section class="mt-5 pt-3">
-  <div class="container border-top border-light pt-3">
-    <div class="d-flex justify-content-start align-items-center">
+<section class="pt-5 bg-white rounded shadow-lg">
+  <div class="container py-4">
+    <div class="d-flex justify-content-center align-items-center">
       <div class="font-weight-bold display-4 mr-md-3 pr-md-3 border-right border-light">Post Kategori</div>
       <div class="btn-group">
         <button class="btn py-3 px-3 btn-outline-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -23,7 +23,7 @@
             <?php
             foreach ($kategoris->result() as $kategori) :
             $active = $kategori->id_kategori == $uri_id ? 'active' : '';
-            $post_list_url = base_url('frontend/v1/post_list/views/' . encrypt_url($kategori->id_kategori) . '/' . url_title($kategori->nama_kategori) . '?order=desc');
+            $post_list_url = base_url('kategori/' . encrypt_url($kategori->id_kategori) . '/' . url_title($kategori->nama_kategori) . '?order=desc');
             ?>
             <a class="dropdown-item rounded-pill my-1 py-2 <?= $active; ?>" href="<?php echo $post_list_url; ?>"><span class="badge badge-primary px-3 mr-2 badge-pill"><?= $this->mf_beranda->count_kategori_berita($kategori->id_kategori); ?></span> <?php echo trim($kategori->nama_kategori); ?> </a>
             <?php endforeach; ?>
@@ -54,9 +54,9 @@
               $gravatar = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic) . '';
               }
               $id = encrypt_url($posts->id_berita);
-              $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($posts->created_by))));
+              $postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($posts->created_by))));
               $judul = strtolower($posts->judul);
-              $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
+              $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
               $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $posts->id_berita) == 'on' ? 'btn-bookmark' : '';
               $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $posts->id_berita) == 'on' ? 'fas text-primary' : 'far';
               if(!empty($posts->img_blob)):
@@ -65,15 +65,15 @@
               $img = '<img class="card-img-top rounded-lg" src="'.$posts->path.'">';
               endif;
               ?>
-              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div class="item">
-                  <div class="card mb-3 border-0 bg-transparent">
-                    <a href="<?php echo $posturl; ?>" class="mb-3">
+                  <div class="card mb-3 p-2 bg-transparent border">
+                    <a href="<?php echo $posturl; ?>">
                       <span class="rippler rippler-img rippler-bs-primary">
                         <?= $img ?>
                       </span>
                     </a>
-                    <div class="card-body border-bottom">
+                    <div class="card-body px-2">
                       <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent rounded px-2 py-0 float-right <?= $btn_bookmark ?>" title="Simpan Postingan" data-id-berita="<?= $posts->id_berita ?>" data-id-user="<?= $this->session->userdata('user_portal_log')['id'] ?>"><i class="<?= $status_bookmark ?> fa-bookmark"></i> </button>
                       <p>
                         <span class="font-weight-bold d-inline-block mt-1"><?php echo $namalengkap; ?></span>
@@ -98,8 +98,7 @@
                 <div class="d-block my-5 text-center font-weight-bold">
                   <img src="<?= base_url('template/v1/img/humaaans-2.png'); ?>" alt="croods" class="img-fluid rounded mx-auto">
                   <h3>Oppss! belum ada postingan disini.</h3>
-                  <p class="font-weight-light text-secondary">Sepertinya ini kesalahan dari kami yang masih kekurangan
-                  konten buat kalian.</p>
+                  <p class="font-weight-light text-secondary">Sepertinya ini kesalahan dari kami yang masih kekurangan konten.</p>
                 </div>
               </div>
               <?php
@@ -122,7 +121,7 @@
               foreach ($tags->result() as $tag) :
               $active = $tag->nama_tag;
               ?>
-              <a href="<?= base_url('frontend/v1/post_list/tags?q=' . $active); ?>" class="btn rounded-pill my-1 text-nowrap mx-2 px-3 btn-sm btn-outline-secondary ml-auto">#<?= $tag->nama_tag; ?></a>
+              <a href="<?= base_url('tag/' . $active); ?>" class="btn rounded-pill my-1 text-nowrap mx-2 px-3 btn-sm btn-outline-secondary ml-auto">#<?= $tag->nama_tag; ?></a>
               <?php endforeach; ?>
             </div>
           </div>

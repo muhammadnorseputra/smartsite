@@ -88,6 +88,11 @@ $route['kirim_saran'] = 'frontend/v1/halaman/simpan_saran';
 $route['survey'] = 'frontend/v1/halaman/survey';
 $route['album/(:any)'] = 'frontend/v1/album/detail/$1';
 $route['post/(:any)/(:any)/(:any)'] = 'frontend/v1/post/detail/$1/$2/$3';
+$route['user/(:any)/(:any)'] = 'frontend/v1/users/profile/$1/$2';
+$route['tag/(:any)'] = 'frontend/v1/post_list/tags/$1';
+$route['kategori/(:any)/(:any)'] = 'frontend/v1/post_list/views/$1/$2';
+$route['banner/(:any)/(:any)'] = 'frontend/v1/banner/detail/$1/$2';
+
 // $route['label?q=(:any)'] = 'frontend/v1/post_list/tags/?q=$1';
 
 

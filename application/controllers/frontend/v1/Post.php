@@ -45,26 +45,37 @@ class Post extends CI_Controller
            foreach($data->result() as $row)
            {
             $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
-            $isi = substr($isi_berita, 0, 80); // ambil sebanyak 80 karakter
+            $isi = substr($isi_berita, 0, 100); // ambil sebanyak 80 karakter
             $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
 
             $id = encrypt_url($row->id_berita);
-            $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($row->created_by))));
+            $postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($row->created_by))));
             $judul = strtolower($row->judul);
-            $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
-            $output .= '<a href="'.$posturl.'" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">'.character_limiter($row->judul, 25).'</h5>
-                          <span class="small">'.mediumdate_indo($row->tgl_posting).'</span>
+            $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
+
+            if(!empty($row->img_blob)):
+                $img = '<img class="img-thumbnail w-full" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+            else:
+                $img = '<img class="img-thumbnail w-full" src="'.$row->path.'">';
+            endif;
+            $output .= '<a href="'.$posturl.'" class="list-group-item border shadow-sm my-2 list-group-item-action flex-column align-items-start">
+                        <div class="d-flex justify-content-start">
+                            <div class="w-25 mr-4">
+                                '.$img.'
+                            </div>
+                             <div>
+                              <h5 class="mb-2 font-weight-bold">'.character_limiter($row->judul, 25).'</h5>
+                              <span class="small">'.longdate_indo($row->tgl_posting).'</span>
+                              <p class="mb-2 text-secondary">'.$isi.'...</p>
+                                <small class="text-primary">Posted by '.decrypt_url($this->mf_users->get_userportal_namalengkap($row->created_by)).'</small>
+                            </div>
                         </div>
-                        <p class="mb-1 small">'.$isi.'...</p>
-                        <small>Posted by '.decrypt_url($this->mf_users->get_userportal_namalengkap($row->created_by)).'</small>
                       </a>';
            }
           }
           else
           {
-           $output .= '<h4 class="mx-auto text-center text-secondary"><img src="'.base_url('assets/images/bg/undraw_empty_xct9.svg').'" class="img-fluid w-50"/> <br>Keyword Search Not Found</h4>';
+           $output .= '<h4 class="mx-auto text-center text-secondary"><img src="'.base_url('assets/images/bg/undraw_empty_xct9.svg').'" class="img-fluid w-50"/> <br>Keyword <b>"'.$query.'"</b> Not Found</h4>';
           }
           $output .= '</div>';
           echo $output;
@@ -97,6 +108,8 @@ class Post extends CI_Controller
         if ($data->num_rows() > 0) {
             $output .= '<div class="grid">';
             foreach ($data->result() as $row) {
+
+                // Post created by & gravatar 
                 $by = $row->created_by;
                 if($by == 'admin') {
                     $namalengkap = $this->mf_users->get_namalengkap($by);
@@ -106,11 +119,13 @@ class Post extends CI_Controller
                     $gravatar = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic) . '';
                 }
 
+                // Post link detail
                 $id = encrypt_url($row->id_berita);
                 $postby = strtolower($namalengkap);
-                $judul = strtolower($row->judul);
-                $posturl = base_url("frontend/v1/post/detail/$postby/$id/".url_title($judul));
+                $judul = strtolower(url_title($row->judul));
+                $posturl = base_url("post/$postby/$id/".url_title($judul));
 
+                // Post headline YES == 1
                 if ($row->headline == '1') {
                     $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
                     $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
@@ -119,43 +134,60 @@ class Post extends CI_Controller
                     $isi = $row->content;
                 }
                 
+                // Post button like
                 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'btn-like' : '';
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
-
-                if(empty($row->img)):
-                    $img = '<img class="img-fluid w-100" style="border-radius:15px;" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                
+                // Post image
+                if(!empty($row->img_blob)):
+                    $img = '<img class="img-fluid w-100" style="border-radius:10px;" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 else:
-                    $img = '<img class="img-fluid w-100" style="border-radius:15px;" src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
+                    $img = '<img class="img-fluid w-100" style="border-radius:10px;" src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
                 endif;
 
+                // Post name tags
+                $tags = $row->tags;
+                $pecah = explode(',', $tags);
+                if (count($pecah) > 0) {
+                    $tag = '';
+                    for ($i = 0; $i < count($pecah); ++$i) {
+                        $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-secondary border-0 mr-2 mb-2">#'.$pecah[$i].'</a>';
+                    }
+                }
+
+                // Post name kategori
+                $namakategori = $this->post->kategori_byid($row->fid_kategori);
+                $post_list_url = base_url('kategori/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
+
+                // Hasil render html
                 $output .= '
                     <div class="grid-item w-100">
-                        <div class="card border shadow-sm bg-white">
-                            <div class="card-header bg-white border-0">
-                                <img src="'.$gravatar. '" width="50" height="50" class="float-left mt-1 mr-4 d-inline-block rounded">
+                        <div class="card border shadow-sm bg-white mb-4" style="border-radius:10px;">
+                            <div class="card-header bg-white border-0 ml-3 mt-2" style="border-radius:10px;">
+                                <img src="'.$gravatar. '" width="50" height="50" class="float-left mt-1 mr-4 d-inline-block rounded-circle">
                                 <h5 class="card-title d-block">' . $namalengkap . '</h5>
                                 <small>'.longdate_indo($row->tgl_posting).'</small>
                             </div>
                             <a href="'.$posturl.'" class="p-3">
                                 '.$img.'
                             </a>
-                            <div class="card-body">
-                                <a href="'.$posturl.'"><span class="font-weight-bold">'.character_limiter($row->judul, 40).'</span></a>
+                            <div class="card-body py-2">
+                                <h3 class="card-title font-weight-bold"><a href="'.$posturl.'"><span class="font-weight-bold">'.character_limiter($row->judul, 40).'</span></a></h3>
                                 <p>
                                     '.$isi. '
                                 </p>
-                                
+                                <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
                             </div>
-                            <div class="card-footer p-0 bg-white border-light">
-                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-right border-light rounded-0 p-3 float-left"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
+                            <div class="card-footer bg-white p-2 border-0 d-flex justify-content-around" style="border-bottom-left-radius:12px;border-bottom-right-radius:12px;">
+                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-light rounded p-2 float-left text-secondary"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
 
-                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Komentar" class="btn btn-transparent border-right  border-light rounded-0 p-3 float-left"><i class="far fa-comment-alt mr-2"></i> '.$this->komentar->jml_komentarbyidberita($row->id_berita). '</button>
+                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Komentar" class="btn btn-transparent  border-light rounded p-2 float-left text-info"><i class="far fa-comment-alt mr-2"></i> '.$this->komentar->jml_komentarbyidberita($row->id_berita). '</button>
 
-                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Bagikan postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent border-right border-light rounded-0 p-3 float-left"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
+                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Bagikan postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent border-light rounded p-2 float-left text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
                             
-                            <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-secondary rounded-0 p-3 float-left '.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
+                            <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-secondary rounded p-2 float-left '.$btn_like.' text-danger" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
 
-                            <a href="'.$posturl.'" class="p-3 btn bg-white btn-transparent border-top-0 border-bottom-0 border-right-0 rounded-0 border-light">Baca Selengkapnya <i class="fas fa-arrow-right ml-2"></i></a>
+                            <a href="'.$posturl.'" class="p-2 btn bg-white btn-transparent border-top-0 border-bottom-0 rounded border-light">Read more <i class="fas fa-arrow-right ml-2"></i></a>
                             </div>
                         </div>
                         
@@ -164,7 +196,9 @@ class Post extends CI_Controller
             }
             $output .= '</div>';
         }
-        echo json_encode(['html' => $output, 'status' => 'Loaded']);
+
+        // Output json
+        echo json_encode(['html' => $output, 'status' => 'is_loaded']);
     }
 
         public function judul()

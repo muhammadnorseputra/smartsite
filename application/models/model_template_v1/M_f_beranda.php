@@ -37,7 +37,7 @@ class M_f_beranda extends CI_Model
         $q = $this->db->get();
         if ($q->num_rows() > 0) {
             $b = $q->row();
-            $data = [$b->path, $b->judul, $b->url, $b->upload_by, $b->gambar];
+            $data = [$b->path, $b->judul, $b->url, $b->upload_by, $b->gambar, encrypt_url($b->id_banner)];
             return $data;
         }
     }
@@ -171,7 +171,7 @@ class M_f_beranda extends CI_Model
     {
         $this->db->order_by('id_album_foto', 'desc');
 
-        return $this->db->get('t_album_foto', 6, 0)->result();
+        return $this->db->get('t_album_foto', 4, 0)->result();
     }
 
     public function get_photo_by_album($id_album_foto, $limit, $batas)

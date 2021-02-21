@@ -30,7 +30,7 @@ $pecah = explode(',', $tags);
 if (count($pecah) > 0) {
 	$tag = '';
 	for ($i = 0; $i < count($pecah); ++$i) {
-		$tag .= '<a href="' . base_url('frontend/v1/post_list/tags?q=' . $pecah[$i]) . '" class="btn btn-sm btn-outline-secondary ml-2 mb-2 mt-4">#' . $pecah[$i] . '</a>';
+		$tag .= '<a href="' . base_url('tag/' . $pecah[$i]) . '" class="btn btn-sm btn-outline-secondary ml-2 mb-2 mt-4">#' . $pecah[$i] . '</a>';
 	}
 }
 ?>
