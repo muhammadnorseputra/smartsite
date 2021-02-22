@@ -5,9 +5,9 @@ $tanggal_bergabung = longdate_indo($public_profile->tanggal_bergabung);
 $desc = $public_profile->deskripsi != '' ? $public_profile->deskripsi : '<span class="text-muted">Belum ada deskripsi</span>';
 $online = $public_profile->online == 'ON' ? '<span class="text-success animated fadeIn infinite"><sup> &bull; </sup></span>' : '<span class="text-secondary"><sup> &bull; </sup></span>';
 $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($public_profile->id_user_portal)->photo_pic) . '';
-$profileLink = base_url("frontend/v1/users/profile/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($public_profile->id_user_portal)->nama_panggilan) . "/" . encrypt_url($public_profile->id_user_portal));
-$sukaLink = base_url("frontend/v1/users/disukai/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($public_profile->id_user_portal)->nama_panggilan) . "/" . encrypt_url($public_profile->id_user_portal));
-$halamanLink = base_url("frontend/v1/users/halaman/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($public_profile->id_user_portal)->nama_panggilan) . "/" . encrypt_url($public_profile->id_user_portal));
+$profileLink = base_url("user/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($public_profile->id_user_portal)->nama_panggilan) . "/" . encrypt_url($public_profile->id_user_portal));
+$sukaLink = base_url("disukai/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($public_profile->id_user_portal)->nama_panggilan) . "/" . encrypt_url($public_profile->id_user_portal));
+$halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($public_profile->id_user_portal)->nama_panggilan) . "/" . encrypt_url($public_profile->id_user_portal));
 ?>
 <section class="my-5">
   <div class="container">

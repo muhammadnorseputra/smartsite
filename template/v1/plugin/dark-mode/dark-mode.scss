@@ -4,7 +4,9 @@
   background: #222 !important;
   color: #eee;
 }
-
+[data-theme="dark"] section.hero {
+  background-color: #222;
+}
 [data-theme="dark"] .separator {
     border-top: 1px solid #666;
 }
@@ -14,7 +16,10 @@
 }
 
 [data-theme="dark"] a {
-  color: #bbe1fa;
+  color: #219897;
+}
+[data-theme="dark"] a:hover {
+  color: #85cfcb;
 }
 [data-theme="dark"] .dropdown-menu {
   background-color: #333;

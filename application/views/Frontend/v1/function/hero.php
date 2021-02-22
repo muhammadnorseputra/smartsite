@@ -1,4 +1,4 @@
-<section style="background-color: #00917c; background-size: cover; background-position: right top; background-image: url('<?= base_url('assets/images/bg/bg-light.svg') ?>')">
+<section class="hero">
     <div class="container">
         <div class="row py-md-5">
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 pb-5 py-md-5 pr-md-5">
@@ -23,7 +23,7 @@
                 </p>
                 
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 my-3 pt-5 my-md-5 py-md-5 order-first order-md-last">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 my-3 pt-5 my-md-5 order-first order-md-last">
                 <div class="d-flex align-items-center animated pulse infinite">
                     <div>
                     <img class="img-fluid rounded d-none d-md-block" src="<?= base_url('assets/images/bg/bg-home.svg') ?>">

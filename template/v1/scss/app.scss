@@ -17,6 +17,13 @@
 .fill-gelombang {
 	fill: #e9ecef;
 }
+
+section.hero {
+	background-color: #00917c; 
+	background-size: cover; 
+	background-position: right top; 
+	background-image: url('../../../assets/images/bg/bg-light.svg');
+}
 // Loading Screen
 .page-slider {
 content: "";
@@ -192,26 +199,24 @@ h5.title-sidebar {
 	font-family: 'Space Grotesk', sans-serif;
 	font-weight: 700;
 }
-nav.navbar li a {
-	color: #999;
-	transition: all .1s ease-in;
-	font-family: 'Space Grotesk', sans-serif;
+.navbar li a {
+	color: #333 !important;
+	transition: background .1s ease-in;
+	font-family: "Roboto";
 	font-size: 16px;
 	font-weight: 500;
-	&li a:hover, 
-	&li a.active {
-		color: #09A79E !important;
-		background-color: #efefef;
-		cursor: pointer;
-	}
+	border-radius: 12px !important;
 }
-
+.navbar li a:hover {
+	background-color: #eff8ff !important;
+}
 .dropdown-menu {
-	top: 50	px;
-	// padding: 8px;
+	top: 62px;
+	left: 5px;
+	padding: 8px;
 	border: 0px;
-	box-shadow: 0 8px 3em #ccc;	
-	border-radius: 10px;
+	box-shadow: 0 8px 3em #999;	
+	border-radius: 12px;
 	transition: all 0.4s ease-in-out;
 }
 

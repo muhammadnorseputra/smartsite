@@ -393,23 +393,16 @@ class Users extends CI_Controller {
 
 			$by = $field->created_by;
 			if ($by == 'admin') {
-				$link_profile_public = 'javascript:void(0);';
 				$namalengkap = $this->mf_users->get_namalengkap($by);
-				$namapanggilan = $by;
-				$gravatar = base_url('assets/images/users/' . $this->mf_users->get_gravatar($by));
 			} else {
-				$link_profile_public =
-				base_url("frontend/v1/users/profile/@" . decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan) . "/" . encrypt_url($by));
 				$namalengkap = decrypt_url($this->mf_users->get_userportal_namalengkap($by));
-				$namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
-				$gravatar = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic) . '';
 			}
 
 			// Link detail berita
 			$id = encrypt_url($field->id_berita);
-			$postby = strtolower($namalengkap);
+			$postby = strtolower(url_title($namalengkap));
 			$judul = strtolower($field->judul);
-			$posturl = "frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '';
+			$posturl = "post/{$postby}/{$id}/" . url_title($judul) . '';
 
 			$btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $field->id_berita) == 'on' ? 'btn-bookmark' : '';
 			$status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $field->id_berita) == 'on' ? 'fas text-primary' : 'far';
@@ -422,11 +415,9 @@ class Users extends CI_Controller {
 			$row[] = '
 				<div class="container">
 					<div class="row">
-					<div class="col-md-1 p-0 text-left">
-						<a href="' . $link_profile_public . '">
-							<img data-toggle="tooltip" data-placement="bottom" title="' . $namalengkap . '" class="img-fluid w-75 rounded-circle border" src="' . $gravatar . '">
-						</a>
-							</div>
+						<div class="col-md-1 p-0 text-left display-4 bg-light text-center">
+							'.$no.'
+						</div>
 						
 						<div class="col-md-8">
 							<a href="'. base_url($posturl).'">'.$field->judul. '</a> 
@@ -464,7 +455,7 @@ class Users extends CI_Controller {
 	public function halaman($nama_panggilan, $id)
 	{
 		$data = [
-			'title' => 'Halaman: ' . ucfirst($nama_panggilan),
+			'title' => 'Halaman &bull; ' . ucfirst($nama_panggilan),
 			'isi' => 'Frontend/v1/pages/u_profile_halaman',
 			'mf_beranda' => $this->mf_beranda->get_identitas(),
 			'mf_menu' => $this->mf_beranda->get_menu(),

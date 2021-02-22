@@ -17,7 +17,7 @@
 					if ($submenu_jml > 0) {
 				?>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle rounded py-md-3 px-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle py-md-3 px-3 mx-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
 						<?= $m->nama_menu; ?>
 					</a>
@@ -25,7 +25,7 @@
 						<?php foreach ($submenu as $s) : ?>
 						<!-- Level 1 -->
 						<li>
-							<a class="dropdown-item py-md-2 rounded" href="<?= base_url($s->link_sub); ?>"><?= $s->nama_sub; ?>
+							<a class="dropdown-item py-md-2  href="<?= base_url($s->link_sub); ?>"><?= $s->nama_sub; ?>
 							<?php 
 								if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0): 
 							?>
@@ -37,7 +37,7 @@
 							<ul class="submenu dropdown-menu animate slideIn">
 								<?php foreach ($this->mf_beranda->sub_submenu($s->idsub) as $key):?>
 									<li>
-										<a class="dropdown-item py-md-2 rounded px-2 rounded-lg" href="<?= base_url($key->link_sub); ?>"> <?= $key->nama_sub ?>
+										<a class="dropdown-item py-md-2 px-2" href="<?= base_url($key->link_sub); ?>"> <?= $key->nama_sub ?>
 										<?php 
 											if($this->mf_beranda->parent_submenu($key->idsub)->num_rows() > 0): 
 										?>
@@ -48,7 +48,7 @@
 										<!-- Level 3 -->
 										<ul class="submenu dropdown-menu animate slideIn">
 											<?php foreach ($this->mf_beranda->sub_submenu($key->idsub) as $key_sub):?>
-												<li><a class="dropdown-item py-md-2 rounded px-2" href="<?= base_url("frontend/v1/" . $key_sub->link_sub); ?>"> <?= $key_sub->nama_sub ?></a></li>
+												<li><a class="dropdown-item py-md-2 px-2" href="<?= base_url("frontend/v1/" . $key_sub->link_sub); ?>"> <?= $key_sub->nama_sub ?></a></li>
 											<?php endforeach; ?>
 										</ul>
 										<?php endif; ?>
@@ -63,8 +63,8 @@
 				<?php
 				} else {
 				?>
-<li class="nav-item">
-					<a class="nav-link rounded py-md-3 px-3" href="<?= base_url($m->link); ?>">
+				<li class="nav-item">
+					<a class="nav-link py-md-3 px-3 mr-md-1" href="<?= base_url($m->link); ?>">
 						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
 						<?= ucwords($m->nama_menu); ?>
 					</a>

@@ -8,7 +8,7 @@ $online = $public_profile->online == 'ON' ? '<span class="text-success"><sup> &b
 $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($public_profile->id_user_portal)->photo_pic) . '';
 
 $link_profile_public =
-  base_url("frontend/v1/users/profile/@" . decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan) . "/" . encrypt_url($by));
+  base_url("user/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan) . "/" . encrypt_url($by));
 ?>
 
 <section class="my-5">
@@ -26,7 +26,7 @@ $link_profile_public =
                   <img src="<?= $photo ?>" class="img-fluid rounded">
                 </div>
                 <div class="col-md-8">
-                  <h3 class="font-weight-bold"><?= $namalengkap ?> <?= $online ?> <a href="<?= $link_profile_public ?>" data-toggle="tooltip" title="Profile @<?= $namalengkap ?>" class="btn btn-sm rounded-circle float-lg-right btn-outline-primary ml-1"><i class="fas fa-user" aria-hidden="true"></i></a></h3>
+                  <h3 class="font-weight-bold"><?= $namalengkap ?> <?= $online ?> <a href="<?= $link_profile_public ?>" data-toggle="tooltip" title="Profile @<?= $namalengkap ?>" class="btn btn-sm rounded float-lg-right btn-outline-primary ml-1"> Back to profile</a></h3>
 
                   <span class="text-secondary">@<?= $namapanggilan; ?> <span class="mx-1"> &bull;</span> <small>Bergabung pada: <?= $tanggal_bergabung; ?></small></span>
                   <!-- <hr> -->
@@ -37,11 +37,6 @@ $link_profile_public =
                           <th>Postingan Disukai</th>
                         </tr>
                       </thead>
-                      <!-- <tfoot>
-                        <tr>
-                          <th>Postingan</th>
-                        </tr>
-                      </tfoot> -->
                     </table>
                   </div>
                 </div>

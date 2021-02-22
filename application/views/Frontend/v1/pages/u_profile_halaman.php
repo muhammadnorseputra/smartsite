@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 $by = $public_profile->id_user_portal;
 $namalengkap = decrypt_url($public_profile->nama_lengkap);
 $namapanggilan = decrypt_url($public_profile->nama_panggilan);
@@ -9,7 +9,7 @@ $online = $public_profile->online == 'ON' ? '<span class="text-success"><sup> &b
 $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($public_profile->id_user_portal)->photo_pic) . '';
 
 $link_profile_public =
-  base_url("frontend/v1/users/profile/@" . decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan) . "/" . encrypt_url($by));
+  base_url("user/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan) . "/" . encrypt_url($by));
 ?>
 <section class="my-5">
   <div class="container">
@@ -17,15 +17,15 @@ $link_profile_public =
       <div class="col-md-12 mt-5">
         <div class="container">
           <div class="row mb-4">
-            <?php if (encrypt_url($public_profile->id_user_portal) == $this->uri->segment(6)) : ?>
-              <div class="col-md-2 text-center pl-md-0 pr-3">
-                <img src="<?= $photo ?>" class="img-fluid rounded-circle w-50 shadow-sm p-2">
+            <?php if (encrypt_url($public_profile->id_user_portal) == $this->uri->segment(3)) : ?>
+              <div class="col-md-2 text-center pl-md-0">
+                <img src="<?= $photo ?>" class="img-fluid rounded-circle w-50 bg-white shadow-sm p-2">
               </div>
               <div class="col-md-10 px-md-0 mt-2">
 
                 <h4 class="font-weight-bold"><?= $namalengkap ?> <?= $online ?></h4>
                 
-                <a data-toggle="tooltip" data-placement="top" title="Profile @<?= $namalengkap ?>" href="<?= $link_profile_public ?>" class="btn btn-light ml-3 rounded-circle float-right"><i class="fas fa-user"></i></a>
+                <a data-toggle="tooltip" data-placement="top" title="Profile @<?= $namalengkap ?>" href="<?= $link_profile_public ?>" class="btn btn-info btn-sm rounded float-right"> Back to profile</a>
                 
                 <h5 class="mb-0 text-primary font-weight-bold">Halaman /  <small class="text-muted">Ini adalah beberapa halaman yang telah dibuat "<?= $namalengkap ?>".</small>
                 </h5>
@@ -47,7 +47,7 @@ $link_profile_public =
             <?php foreach ($halaman->result() as $h) : ?>
               <?php
               if ($h->publish == 'Y') :
-                $target = base_url('frontend/v1/halaman/statis/' . $h->token_halaman . '/' . url_title($h->title));
+                $target = base_url('page/' . $h->token_halaman . '/' . url_title($h->title));
               else :
                 $target = '#';
               endif;
@@ -59,7 +59,7 @@ $link_profile_public =
                       <div class="card-body">
                         <h5 class="card-title text-dark"><?= $h->title; ?></h5>
                         <?php
-                        if ($h->filesize !== '0') :
+                        if ($h->file !== NULL) :
                           echo "<span class='badge badge-primary'>{$h->filename}</span>";
                         endif;
                         ?>

@@ -1,7 +1,7 @@
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/hero') ?>
-<section class="statistik mb-5">
-    <div class="container py-5 bg-white mt--9 shadow-lg" style="border-radius: 10px;">
+<section class="statistik mb-3 py-5 bg-white">
+    <div class="container">
             <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/count_peg') ?>">
                 <img class="d-block mx-auto my-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/three-dots.svg'); ?>" alt="">
             </div>
@@ -9,42 +9,45 @@
 </section>
 <?php endif; ?>
 <?php $my2 = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-5 pt-md-5' : '' ?>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 align-self-center">
+                <a target="_blank" href="<?= base_url('banner/'.$this->mf_beranda->get_banner('SLIDE', 'Web')[5].'/'.url_title($this->mf_beranda->get_banner('SLIDE', 'Web')[1])); ?>" data-toggle="tooltip" title="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"><img src="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[0]; ?>" class="img-fluid d-block shadow-lg mb-4 border-danger" alt="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"></a>
+            </div>
+            <div class="col-md-4">
+                <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-images text-secondary mr-2"></i> album photo</span>
+                    </div>
+                    <div class="overflow-hidden rounded-lg my-4 border-0 shadow-none">
+                        
+                        <?php
+                        $kolom = 2;
+                        $i = 1;
+                        foreach ($mf_album as $album):
+                        if(($i) % $kolom==1) {
+                        echo '<div class="d-flex">';
+                            }
+                            ?>
+                            <div class="w-100 rounded m-1">
+                                <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
+                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
+                                </a>
+                            </div>
+                            <?php if(($i) % $kolom==0) {
+                        echo '</div>';
+                        } ?>
+                        <?php $i++; endforeach; ?>
+                        <!-- <div class="small text-info position-absolute mx-auto mt-1">Directed by BinaInfo</div> -->
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="content-home <?= $my2 ?>">
     <div class="container">
         <div class="row">
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 order-first order-md-last">
-                
-                <!-- <h5 class="font-weight-bold text-primary title-sidebar">Pilihan Redaksi</h5> -->
-                <!-- <?php
-                $by = $mf_berita_pilihan->created_by;
-                $id = encrypt_url($mf_berita_pilihan->id_berita);
-                $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($by))));
-                $judul = strtolower($mf_berita_pilihan->judul);
-                $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
-                if ($by == 'admin') {
-                $namapanggilan = $by;
-                } else {
-                $namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
-                }
-                ?>
-                <a href="<?= $posturl; ?>">
-                    <img data-src="<?= $mf_berita_pilihan->path; ?>" class="rounded img-fluid mx-auto d-block lazy mb-3 border">
-                    <h5><?= $mf_berita_pilihan->judul; ?></h5>
-                </a>
-                <?php
-                $tags = $mf_berita_pilihan->tags;
-                $pecah = explode(',', $tags);
-                if (count($pecah) > 0) {
-                $tag = '';
-                for ($i = 0; $i < count($pecah); ++$i) {
-                $tag .= '<a href="' . base_url('frontend/v1/post_list/tags?q=' . url_title($pecah[$i])) . '" class="btn btn-sm border btn-default mr-2 mb-1">#' . $pecah[$i] . '</a>';
-                }
-                }
-                echo $tag;
-                ?>
-                <div class="d-block">
-                    <span class="text-secondary">Oleh</span> <?= ucwords($namapanggilan); ?>
-                </div> -->
                 <div>
                     <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-user-tie text-secondary mr-2"></i>Profile PNS</span>
@@ -69,31 +72,8 @@
                             </form>
                         </div>
                     </div>
-                    <div class="separator">
-                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-images text-secondary mr-2"></i> album photo</span>
-                    </div>
-                    <div class="overflow-hidden rounded-lg my-4 border-0 shadow-none">
-                        
-                        <?php
-                        $kolom = 2;
-                        $i = 1;
-                        foreach ($mf_album as $album):
-                        if(($i) % $kolom==1) {
-                        echo '<div class="d-flex">';
-                            }
-                            ?>
-                            <div class="w-100 rounded m-1">
-                                <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
-                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
-                                </a>
-                            </div>
-                            <?php if(($i) % $kolom==0) {
-                        echo '</div>';
-                        } ?>
-                        <?php $i++; endforeach; ?>
-                        <!-- <div class="small text-info position-absolute mx-auto mt-1">Directed by BinaInfo</div> -->
-                    </div>
-                    <div class="separator">
+                    
+                    <div class="separator mt-5">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-bullhorn text-secondary mr-2"></i> Poster</span>
                     </div>
                     <a id="banner" data-lightbox="BannerAside" data-title="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?>" href="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>">
@@ -101,7 +81,7 @@
                     <h6 class="font-weight-bold"><?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?></h6></a>
                     <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?>
                     
-                    <div class="separator">
+                    <div class="separator mt-5">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-heart text-secondary mr-2"></i> Populer Post</span>
                     </div>
                     <div class="list-group border-0 shadow-none p-0 d-none d-md-block">
@@ -134,7 +114,7 @@
                         </a>
                         <?php $nolist++; endforeach; ?>
                     </div>
-                    <div class="separator">
+                    <div class="separator mt-5">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-leaf text-secondary mr-2"></i> Digital Goverment</span>
                     </div>
                     <div class="d-flex flex-wrap justify-content-between justify-content-md-start align-items-center mt-4">
@@ -158,11 +138,6 @@
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a target="_blank" href="<?= base_url('banner/'.$this->mf_beranda->get_banner('SLIDE', 'Web')[5].'/'.url_title($this->mf_beranda->get_banner('SLIDE', 'Web')[1])); ?>" data-toggle="tooltip" title="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"><img src="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[0]; ?>" class="img-fluid d-block mb-4 border rounded" alt="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"></a>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-8 col-md-11">
                         <div class="separator">
