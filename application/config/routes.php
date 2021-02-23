@@ -77,6 +77,7 @@ $route['module/(:any)/update/(:any)'] = 'backend/module/$1/update/$2';
 /*
 * @FRONT END
 */
+$route['under-construction'] = 'theme/maintenance_site';
 $route['page/(:num)/(:any)'] = 'frontend/v1/halaman/statis/$1/$2';
 $route['beranda'] = 'frontend/v1/beranda';
 $route['login_web'] = 'frontend/v1/users/login';
