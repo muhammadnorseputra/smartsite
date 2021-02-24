@@ -19,7 +19,7 @@
 }
 
 section.hero {
-	background-color: #00917c; 
+	background-color: #8ac4d0; 
 	background-size: cover; 
 	background-position: right top; 
 	background-image: url('../../../assets/images/bg/bg-light.svg');
@@ -203,20 +203,21 @@ h5.title-sidebar {
 	color: #333 !important;
 	transition: background .1s ease-in;
 	font-family: "Roboto";
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 500;
 	border-radius: 12px !important;
 }
 .navbar li a:hover {
 	background-color: #eff8ff !important;
+	color: #333;
 }
 .dropdown-menu {
-	top: 62px;
+	top: 60px;
 	left: 5px;
-	padding: 8px;
+	padding: .5rem 0;
 	border: 0px;
 	box-shadow: 0 8px 3em #999;	
-	border-radius: 12px;
+	border-radius: 8px;
 	transition: all 0.4s ease-in-out;
 }
 
@@ -800,6 +801,7 @@ i.likes:hover {
 		border:0 !important;
 		border-color: transparent !important;
 	}
+
 	.slider {
 		width: 50%;
 	}

@@ -13,7 +13,7 @@ class Halaman extends CI_Controller
     if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
           // redirect(base_url('frontend/v1/beranda'),'refresh');
       } else {
-          redirect(base_url('theme/maintenance_site'),'refresh');
+          redirect(base_url('under-construction'),'refresh');
       }
   }
   public function index()

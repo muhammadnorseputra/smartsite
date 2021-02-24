@@ -25,7 +25,7 @@
 						<?php foreach ($submenu as $s) : ?>
 						<!-- Level 1 -->
 						<li>
-							<a class="dropdown-item py-md-2  href="<?= base_url($s->link_sub); ?>"><?= $s->nama_sub; ?>
+							<a class="dropdown-item py-md-2" href="<?= base_url($s->link_sub); ?>"><?= $s->nama_sub; ?>
 							<?php 
 								if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0): 
 							?>
@@ -48,7 +48,7 @@
 										<!-- Level 3 -->
 										<ul class="submenu dropdown-menu animate slideIn">
 											<?php foreach ($this->mf_beranda->sub_submenu($key->idsub) as $key_sub):?>
-												<li><a class="dropdown-item py-md-2 px-2" href="<?= base_url("frontend/v1/" . $key_sub->link_sub); ?>"> <?= $key_sub->nama_sub ?></a></li>
+												<li><a class="dropdown-item py-md-2 px-2" href="<?= base_url($key_sub->link_sub); ?>"> <?= $key_sub->nama_sub ?></a></li>
 											<?php endforeach; ?>
 										</ul>
 										<?php endif; ?>
@@ -65,7 +65,6 @@
 				?>
 				<li class="nav-item">
 					<a class="nav-link py-md-3 px-3 mr-md-1" href="<?= base_url($m->link); ?>">
-						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
 						<?= ucwords($m->nama_menu); ?>
 					</a>
 				</li>
@@ -88,7 +87,7 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a  class="btn shadow-none btn-outline-warning my-2 my-sm-0 mr-2 px-4" href="<?= base_url('login_web'); ?>">
+			<a  class="btn shadow-none btn-outline-dark my-2 my-sm-0 mr-2 px-4" href="<?= base_url('login_web'); ?>">
 				<i class="far fa-user mr-2"></i> Login
 			</a>
 			<?php } ?>
