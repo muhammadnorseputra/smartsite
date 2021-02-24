@@ -110,7 +110,7 @@ class Beranda extends CI_Controller
 // <a href="'.$post_list_url.'" class="btn btn-primary-old rounded float-right btn-sm px-3">'.$namakategori.'</a>
                 $output .= '
                 <div>
-					<div class="card mb-4 border shadow-sm bg-white" style="border-radius:10px;">
+					<div class="card mb-4 border bg-white">
 					<div class="card-body px-3 mt-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded-circle ml-3 lazy">
@@ -126,7 +126,7 @@ class Beranda extends CI_Controller
                         </div>
 					
 					<div class="card-body py-0 px-4">
-						<h3 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h3>
+						<h2 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h2>
                         <p class="card-text font-weight-normal text-secondary my-4">'.character_limiter($isi, 150).'</p>
                         <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
 					</div>

@@ -1,8 +1,8 @@
-<section class="bg-primary">
+<section class="bg-white mt-5">
 	<div class="container">
 		<div class="row text-center py-4">
 			<div class="col-md-12 d-flex align-items-center justify-content-center">
-				<div class="text-center text-white">
+				<div class="text-center text-secondary">
 					<div class="small">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</div>
 				</div>
 			</div>

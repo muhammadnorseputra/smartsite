@@ -149,7 +149,7 @@ content: "";
 	position: relative;
 }
 body {
-	background: #eff8ff;
+	background: #E9ECEF;
 	font-family: 'Space Grotesk', sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -233,7 +233,7 @@ h5.title-sidebar {
 	    padding: 0px 10px 0px 0px;
 	    font-family: inherit;
 	    font-weight: 600;
-	    background: #eff8ff;
+	    background: #E9ECEF;
 	    color: #8a8a8a;
 	}
 }
@@ -507,10 +507,6 @@ i.likes:hover {
 	background: rgb(247, 247, 247) !important;
 }
 
-/* Border */
-/* .border-light {
-	border-color: #eee !important;
-} */
 /* Custome Navbar hover */
 .navbar .nav-item:not(:last-child) {
 	margin-right: 0px;
