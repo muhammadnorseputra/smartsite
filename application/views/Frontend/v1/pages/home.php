@@ -1,22 +1,52 @@
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/hero') ?>
 <section class="statistik mt--9">
-    <div class="container mb-3">
+    <div class="container mb-4">
             <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/count_peg') ?>">
                 <img class="d-block mx-auto my-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/three-dots.svg'); ?>" alt="">
             </div>
     </div>
 </section>
 <?php endif; ?>
-<?php $my2 = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-5 pt-md-5' : '' ?>
-<section>
+<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-5 pt-md-5' : 'my-4' ?>
+<section class="<?= $my ?>">
     <div class="container">
         <div class="row">
             <div class="col-md-8 align-self-center">
-                <a target="_blank" href="<?= base_url('banner/'.$this->mf_beranda->get_banner('SLIDE', 'Web')[5].'/'.url_title($this->mf_beranda->get_banner('SLIDE', 'Web')[1])); ?>" data-toggle="tooltip" title="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"><img src="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[0]; ?>" class="img-fluid d-block mb-4 border" alt="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"></a>
+                <a href="<?= base_url('banner/'.$this->mf_beranda->get_banner('SLIDE', 'Web')[5].'/'.url_title($this->mf_beranda->get_banner('SLIDE', 'Web')[1])); ?>" data-toggle="tooltip" title="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"><img src="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[0]; ?>" class="img-fluid rounded d-block mb-4 p-2 border" alt="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"></a>
             </div>
             <div class="col-md-4">
-                <div class="separator">
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                    <!-- <div class="w-100 my-2 my-md-0"></div> -->
+                    <a class="btn btn-info my-sm-0 w-100 py-3" href="<?= base_url('kotak_saran'); ?>">
+                        <i class="fas fa-box fa-2x"></i> <br> Kotak Saran
+                    </a>
+                    <!-- <div class="w-100 my-2"></div> -->
+                    <a class="btn btn-success my-sm-0 w-100 mx-3 py-3" href="<?= base_url('survey'); ?>">
+                        <i class="fas fa-check-circle fa-2x"></i> <br> Survey IKM
+                    </a>
+                    <!-- <div class="w-100 my-2"></div> -->
+                    <a class="btn btn-secondary disabled my-sm-0 w-100 py-3" href="#">
+                        <i class="fab fa-buromobelexperte fa-2x"></i> <br> lainya
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content-home mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 order-first order-md-last">
+                <div>
+                    <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-bullhorn text-secondary mr-2"></i> Poster</span>
+                    </div>
+                    <a id="banner" data-lightbox="BannerAside" data-title="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?>" href="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>">
+                        <img src="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>" class="rounded img-fluid mx-auto d-block mb-3 shadow">
+                    <h6 class="font-weight-bold"><?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?></h6></a>
+                    <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?>
+                    <div class="separator mt-5">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-images text-secondary mr-2"></i> album photo</span>
                     </div>
                     <div class="overflow-hidden rounded-lg my-4 border-0 shadow-none">
@@ -40,48 +70,7 @@
                         <?php $i++; endforeach; ?>
                         <!-- <div class="small text-info position-absolute mx-auto mt-1">Directed by BinaInfo</div> -->
                     </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="content-home <?= $my2 ?>">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 order-first order-md-last">
-                <div>
-                    <div class="separator">
-                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-user-tie text-secondary mr-2"></i>Profile PNS</span>
-                    </div>
-                    <div class="card border-0 rounded shadow-sm bg-white my-4">
-                        <div class="card-body">
-                            <form class="form-horizontal" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
-                                <div class="typeahead__container form-group">
-                                    <label for="js-nipnama" class="text-secondary small">Masukan NIP, kemudian pilih detail untuk melihat profile pegawai</label>
-                                    <div class="typeahead__field">
-                                        
-                                        <div class="typeahead__query">
-                                            <input class="js-nipnama" id="js-nipnama" name="filter[query]" placeholder="Ketik NIP" maxlength="18" autocomplete="off">
-                                        </div>
-                                        <div class="typeahead__button">
-                                            <button type="submit">
-                                            <i class="typeahead__search-icon"></i> Detail
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    
-                    <div class="separator mt-5">
-                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-bullhorn text-secondary mr-2"></i> Poster</span>
-                    </div>
-                    <a id="banner" data-lightbox="BannerAside" data-title="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?>" href="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>">
-                        <img src="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>" class="rounded img-fluid mx-auto d-block mb-3 shadow">
-                    <h6 class="font-weight-bold"><?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?></h6></a>
-                    <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?>
-                    
-                    <div class="separator mt-5">
+                    <div class="separator d-none d-md-block mt-5">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-heart text-secondary mr-2"></i> Populer Post</span>
                     </div>
                     <div class="list-group border-0 shadow-none p-0 d-none d-md-block">
@@ -114,27 +103,7 @@
                         </a>
                         <?php $nolist++; endforeach; ?>
                     </div>
-                    <div class="separator mt-5">
-                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-leaf text-secondary mr-2"></i> Digital Goverment</span>
-                    </div>
-                    <div class="d-flex flex-wrap justify-content-between justify-content-md-start align-items-center mt-4">
-                        
-                        <div>
-                            <a target="_blank" data-toggle="tooltip" href="http://silka.bkppd-balangankab.info/" title="aplikasi sistem informasi layanan kepegawaian balangan">
-                                <?php echo '<img src="'.base_url('assets/images/logo-silka.png').'" width="140"/>'; ?>
-                            </a>
-                        </div>
-                        <div class="mx-md-5">
-                            <a target="_blank" data-toggle="tooltip" href="https://eprilaku.bkppd-balangankab.info/" title="aplikasi e-prilaku balangan">
-                                <?php echo '<img src="'.base_url('assets/images/logo-eprilaku.png').'" width="80"/>'; ?>
-                            </a>
-                        </div>
-                        <div>
-                            <a target="_blank" data-toggle="tooltip" href="https://ekinerja.bkppd-balangankab.info/" title="aplikasi e-kinerja balangan">
-                                <?php echo '<img src="'.base_url('assets/images/logo-ekinerja.png').'" width="160"/>'; ?>
-                            </a>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -148,29 +117,34 @@
                         <div class="float-right mt-2"><button data-toggle="tooltip" title="Search Post" id="caripost" class="btn btn-outline-primary border-0"> <i class="fas fa-search"></i></button></div>
                     </div>
                 </div>
-                
-                
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
                 <div class="text-center">
                     <button id="load_more" class="rounded-pill btn-block btn btn-primary rounded-pill px-4"><i class="fas fa-newspaper mr-2"></i> Load more berita</button>
                 </div>
             </div>
-            <div class="col-md-2 order-md-first">
-                <div class="d-flex flex-column justify-content-center">
-                    <div class="w-100 my-2 my-md-0"></div>
-                    <a class="btn btn-outline-info my-sm-0 d-block py-3" href="<?= base_url('kotak_saran'); ?>">
-                        <i class="fas fa-box fa-2x"></i> <br> Kotak Saran
-                    </a>
-                    <div class="w-100 my-2"></div>
-                    <a class="btn btn-outline-success my-sm-0 d-block py-3" href="<?= base_url('survey'); ?>">
-                        <i class="fas fa-check-circle fa-2x"></i> <br> Survey IKM
-                    </a>
-                    <div class="w-100 my-2"></div>
-                    <a class="btn btn-outline-light disabled my-sm-0 d-block py-3" href="#">
-                        <i class="fab fa-buromobelexperte fa-2x"></i> <br> lainya
-                    </a>
-                </div>
+            <div class="col-md-2 order-first order-md-last">
+                    <div class="separator">
+                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-leaf text-secondary mr-2"></i>Web Apps</span>
+                    </div>
+                    <div class="d-flex flex-column">
+                        
+                        <div>
+                            <a target="_blank" data-toggle="tooltip" href="http://silka.bkppd-balangankab.info/" title="aplikasi sistem informasi layanan kepegawaian balangan">
+                                <?php echo '<img src="'.base_url('assets/images/logo-silka.png').'" width="140"/>'; ?>
+                            </a>
+                        </div>
+                        <div class="my-4">
+                            <a target="_blank" data-toggle="tooltip" href="https://ekinerja.bkppd-balangankab.info/" title="aplikasi e-kinerja balangan">
+                                <?php echo '<img src="'.base_url('assets/images/logo-ekinerja.png').'" width="160"/>'; ?>
+                            </a>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <a target="_blank" data-toggle="tooltip" href="https://eprilaku.bkppd-balangankab.info/" title="aplikasi e-prilaku balangan">
+                                <?php echo '<img src="'.base_url('assets/images/logo-eprilaku.png').'" width="80"/>'; ?>
+                            </a>
+                        </div>
+                    </div>
             </div>
             <!-- <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 order-first">
                 <div class="mx-auto"> -->

@@ -29,5 +29,6 @@
   "bugs": {
     "url": "https://github.com/muhammadnorseputra/smartsite/issues"
   },
-  "homepage": "https://github.com/muhammadnorseputra/smartsite#readme"
+  "homepage": "https://github.com/muhammadnorseputra/smartsite#readme",
+  "main": "gulpfile.js"
 }

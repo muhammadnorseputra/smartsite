@@ -80,14 +80,14 @@
 			$img = '<img class="rounded mr-1 shadow-sm" width="23" src="data:image/jpeg;base64,'.base64_encode( $getImg ).'"/>';
 			?>
 			<div class="dropdown">
-				<button type="button" class="btn btn-outline-dark text-muted my-2 my-sm-0 mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<button type="button" class="btn btn-outline-light border-0 text-muted my-sm-0 mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<?= $img ?> <?= ucfirst($this->session->userdata('user_portal_log')['nama_panggilan']) ?>
 				<i class="fas fa-angle-down mx-2"></i>
 				</button>
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a  class="btn shadow-none btn-outline-dark my-2 my-sm-0 mr-2 px-4" href="<?= base_url('login_web'); ?>">
+			<a  class="btn shadow-none btn-dark  border-0 my-sm-0 py-2 mr-2 px-4" href="<?= base_url('login_web'); ?>">
 				<i class="far fa-user mr-2"></i> Login
 			</a>
 			<?php } ?>

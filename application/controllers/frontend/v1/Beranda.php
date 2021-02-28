@@ -113,13 +113,13 @@ class Beranda extends CI_Controller
 					<div class="card mb-4 border bg-white">
 					<div class="card-body px-3 mt-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
-                        <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded-circle ml-3 lazy">
+                        <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded ml-3 lazy">
 						<h5 class="card-title"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
                         <p class="card-text">
                             <span class="badge badge-default px-0 font-weight-normal text-muted">Posted by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
                         </p>
 					</div>
-                        <div class="canvas p-3 position-relative">
+                        <div class="canvas p-4 position-relative">
                         <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
 						  '.$img.'
                         </a>

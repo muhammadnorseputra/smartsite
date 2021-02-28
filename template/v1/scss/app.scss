@@ -19,7 +19,7 @@
 }
 
 section.hero {
-	background-color: #8ac4d0; 
+	background-color: #00917c; 
 	background-size: cover; 
 	background-position: right top; 
 	background-image: url('../../../assets/images/bg/bg-light.svg');
@@ -149,7 +149,7 @@ content: "";
 	position: relative;
 }
 body {
-	background: #E9ECEF;
+	background: #fff;
 	font-family: 'Space Grotesk', sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -199,15 +199,15 @@ h5.title-sidebar {
 	font-family: 'Space Grotesk', sans-serif;
 	font-weight: 700;
 }
-.navbar li a {
-	color: #333 !important;
+.navbar li.nav-item a {
+	color: #000 !important;
 	transition: background .1s ease-in;
-	font-family: "Roboto";
-	font-size: 14px;
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 16px;
 	font-weight: 500;
-	border-radius: 12px !important;
+	border-radius: 8px !important;
 }
-.navbar li a:hover {
+.navbar li.nav-item a:hover {
 	background-color: #eff8ff !important;
 	color: #333;
 }
@@ -220,7 +220,6 @@ h5.title-sidebar {
 	border-radius: 8px;
 	transition: all 0.4s ease-in-out;
 }
-
 .separator {
     margin: 30px 0;
     border-top: 1px solid #d8e2dc;
@@ -233,7 +232,7 @@ h5.title-sidebar {
 	    padding: 0px 10px 0px 0px;
 	    font-family: inherit;
 	    font-weight: 600;
-	    background: #E9ECEF;
+	    background: #fff;
 	    color: #8a8a8a;
 	}
 }
@@ -585,6 +584,9 @@ i.likes:hover {
 }
 
 /* Margin */
+.mt--4 {
+	margin-top: -15px !important;
+}
 .mt--5 {
 	margin-top: -25px !important;
 }

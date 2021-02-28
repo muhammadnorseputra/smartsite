@@ -155,18 +155,18 @@
 
 // VARIABLES -----------------------------------------------------------------------------------------------------------
 
-$typeahead-font-size: 1rem !default;
+$typeahead-font-size: 1.3rem !default;
 $typeahead-line-height: 1.25 !default;
 $typeahead-font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif !default;
 $typeahead-primary-color: #66afe9 !default;
 $typeahead-cancel-color: #d0021b !default;
-$typeahead-radius: 2px !default;
+$typeahead-radius: 8px !default;
 $typeahead-shadow: false !default; // true / false
 $typeahead-dropdown-spacing: 5px !default;
 $typeahead-outline-color: $typeahead-primary-color !default;
 $typeahead-loading-size: 1.35rem !default;
 
-$typeahead-padding-y: 0.5rem !default;
+$typeahead-padding-y: 1rem !default;
 $typeahead-padding-x: 0.75rem !default;
 
 $typeahead-color: #555 !default;
