@@ -6,12 +6,12 @@
         if ($detail->num_rows() > 0) :
           $h = $detail->row();
         ?>
-          <span class="font-weight-light small d-block text-white my-3">Posted by <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= $h->views ?>x Diakses</span>
+          <span class="font-weight-light small d-block text-dark my-3">Posted by <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= $h->views ?>x Diakses</span>
           <h1 class="font-weight-bold mb-0 pb-0">
-            <span class="d-block font-weight-bold text-white"><?= $h->title; ?></span>    
+            <span class="d-block font-weight-bold text-dark"><?= $h->title; ?></span>    
             </h1>
         <?php else : ?>
-          <h3 class="font-weight-bold text-white">not found</h3>
+          <h3 class="font-weight-bold text-dark">not found</h3>
           <small class="font-weight-light d-block text-light pb-4">PagesID: <?= $this->uri->segment(5) ?> | Halaman ini ditampilkan dalam waktu <strong>{elapsed_time}</strong> detik.</small>
         <?php endif; ?>
       </div>
@@ -21,7 +21,7 @@
 <section class="h-statis-detail">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 mb-md-5 mt--9 bg-white p-3 p-md-3 rounded">
+      <div class="col-md-8 mb-md-5 mt--9 bg-white p-3 p-md-4 rounded">
         <?php
         if ($detail->num_rows() > 0) :
           $h = $detail->row();

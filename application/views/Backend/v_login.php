@@ -36,7 +36,8 @@
 <audio src="<?= site_url('assets/audio/ukulele-BGM.mp3'); ?>" autoplay="true" hidden="true" loop="true" id="BgmLogin">
 <p>If you are reading this, it is because your browser does not support the audio element.</p>
 </audio>
-<?php
+        <div class="card loginBoxes">
+            <?php
                 $gtmsg = $_GET['message'];
                 if ($gtmsg == 'unset') {
                     ?>
@@ -53,8 +54,6 @@
             </div>
             <?php
                 } ?>
-        <div class="card loginBoxes">
-
             <div class="header text-center">
             <img src="<?php echo site_url('assets/images/logo.png'); ?>" alt="logo" class="img-rounded" width="70">
             <!-- <div class="logo" id="title-app"> 
@@ -148,20 +147,10 @@
                         </div>
                     </div>
                 <?= form_close(); ?>
-
-          
             </div>
-            <!-- <div class="card-footer">
-                <div class="text-center m-t-15 p-b-25">Badan Kepegawai, Pendidikan dan Pelatihan Daerah</div>
-            </div> -->
-
-
-            
         </div>
-        
     </div>
-    <div class="text-center login-footer help-block">&copy; <?php echo date('Y') ?> BKPPD BALANGAN </div>
-    <!-- <img src="<?= base_url('assets/images/bg/example-1.svg'); ?>" id="bgImgLogin" style="position:absolute; bottom:0; z-index:-1; margin:0 auto; width: 70%; left:15%; filter: blur(5px);"> -->
+    <div class="text-center login-footer">&copy; Pemerintah Kabupaten Balangan Tahun <?php echo date('Y') ?> &bull; Badan Kepegawaian Pendidikan dan Pelatihan Daerah</div>
     <?php
     foreach ($autoload_javascript as $script):
         echo script_tag($script);

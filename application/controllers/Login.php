@@ -50,18 +50,15 @@ class Login extends CI_Controller
             'lastlogon' => $this->ml->last_logon()->result(),
             'autoload_css' => array(
                 'assets/css/fonts.css',
-                // Google Fonts
                 'assets/css/icon.css',
-                // Google Fonts
-                'assets/plugins/bootstrap/css/bootstrap.min.css',							// Bootstrap Core Css
-                'assets/plugins/node-waves/waves.css',												// Waves Effect Css
+                'assets/plugins/bootstrap/css/bootstrap.min.css',							
+                'assets/plugins/node-waves/waves.css',												
                 'assets/plugins/waitme/waitMe.css',
-                // Wait Me Css
-                'assets/plugins/animate-css/animate.css',											//Animation Css
+                'assets/plugins/animate-css/animate.css',											                
                 'assets/plugins/mprogres/css/mprogress.min.css',
                 'assets/plugins/particles/particles.css',
                 'assets/plugins/pace/themes/green/pace-theme-center-simple.css',
-                'assets/css/style.css',																				// Custom Css themes
+                'assets/css/style.css'
             ),
             'autoload_javascript' => array(
                 'assets/plugins/jquery/jquery.min.js', 												// Jquery Core Js

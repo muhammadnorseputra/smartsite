@@ -735,6 +735,19 @@ $(document).ready(function () {
       $("nav#navbar").removeClass("shadow-sm bg-white");
     }
   });
+  var prevScrollpos = window.pageYOffset;
+
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-95px";
+    }
+
+    prevScrollpos = currentScrollPos;
+  };
 });
 // $(function() {
 // 	window.paceOptions = {
@@ -802,20 +815,6 @@ $(document).ready(function () {
       bottomSpacing: 100
     });
   }
-
-  var prevScrollpos = window.pageYOffset;
-
-  window.onscroll = function () {
-    var currentScrollPos = window.pageYOffset;
-
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").style.top = "-75px";
-    }
-
-    prevScrollpos = currentScrollPos;
-  };
 });
 // $(document).ready(function () {
 //   $(".titleModal").titleModal({});
