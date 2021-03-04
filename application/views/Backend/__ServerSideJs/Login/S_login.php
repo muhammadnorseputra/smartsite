@@ -117,7 +117,7 @@
         } else if (Valid == '') {
             $("[name='validasi']").focus();
         } else if (Validasi_hidden != Valid) {
-            $('.card').animateCss('shake');
+            $('.body-login').animateCss('shake');
             $("[name='validasi']").focus();
             $("button#login").html(`<em class="glyphicon glyphicon-send m-r-10"></em> MASUK`);
             $("[name='validasi']").val('').focus();
@@ -167,7 +167,7 @@
 
                     $('.loginBoxes,.login-footer,img').fadeIn('fast');
                         focus();
-                        $('.card').animateCss('shake');
+                        $('.body-login').animateCss('shake');
                         showNotification('bg-greadient-redpurple', '<b><b>Sorry!</b> Username & Password Salah</b>', 'top', 'center', 'animated fadeIn', 'animated fadeOut');
                         $("button#login").html(`<em class="glyphicon glyphicon-send m-r-10"></em> MASUK`);
                         $("input[type='password'],input[type='text']").val('');
@@ -176,7 +176,7 @@
                     }
                 },
                 error: function() {
-                    $('.card').animateCss('shake');
+                    $('.body-login').animateCss('shake');
                     $("button#login").html(`<em class="glyphicon glyphicon-send m-r-10"></em> MASUK`);
                     acak_angka();
                     $('#msg').html('<div class="alert alert-warning alert-dismissible" role="alert">' +

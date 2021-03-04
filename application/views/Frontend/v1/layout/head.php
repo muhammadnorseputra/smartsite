@@ -19,6 +19,7 @@
     <meta name="audience" content="all" />
     <meta name="Distribution" content="Global" />
     <meta  name="Rating" content="General"/>
+    <!-- <meta name="color-scheme" content="light"> -->
     <title><?= $title; ?></title>
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
 

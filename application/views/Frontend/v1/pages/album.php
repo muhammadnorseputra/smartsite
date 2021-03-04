@@ -1,13 +1,12 @@
-<div class="w-100">&nbsp;</div>
-<section class="mt-5">
-	<div class="container py-3">
-		<div class="d-flex justify-content-center justify-content-md-start align-items-center">
-			<div class="mx-2"><span class="font-weight-bold text-secondary">Album photo</span>
+<section class="hero py-5">
+	<div class="container py-5">
+		<div class="d-flex justify-content-center justify-content-md-center align-items-center">
+			<div class="mx-2"><span class="font-weight-bold display-3 text-light">Album photo</span>
 		</div>
 	</div>
 </div>
 </section>
-<section class="my-3">
+<section class="mb-3 mt--9">
 <div class="container">
 	<?php if($album->num_rows() > 0): ?>
 	<?php
@@ -17,12 +16,12 @@
 	<?php foreach($album->result() as $a): ?>
 	<?php
 		if(($i) % $kolom==1) {
-	echo '<div class="d-flex justify-content-between flex-column flex-md-row">';
+	echo '<div class="d-flex justify-content-between flex-column flex-md-row align-self-stretch">';
 		}
 		?>
-		<a href="<?= base_url('album/'.encrypt_url($a->id_album_foto)) ?>" class="w-100">
-			<div class="card border-0 w-100 p-2 mx-auto bg-transparent">
-				<img class="rounded shadow-sm lazy img-fluid" data-src="data:image/jpeg;base64,<?= base64_encode($a->gambar_blob) ?>" alt="Card image">
+		<a href="<?= base_url('album/'.encrypt_url($a->id_album_foto)) ?>" class="w-100 bg-white mx-md-3 h-100">
+			<div class="card border-0 w-100 p-md-3 mx-auto">
+				<img class="rounded lazy img-fluid" data-src="data:image/jpeg;base64,<?= base64_encode($a->gambar_blob) ?>" alt="Card image">
 				<div class="card-body bg-transparent px-0">
 					<?php if($a->tgl_publish === date('Y-m-d')): ?><span class="badge badge-pill badge-warning float-right">New!</span> <?php endif; ?>
 					<h5 class="card-title"><?= $a->judul ?></h5>

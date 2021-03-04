@@ -1,16 +1,15 @@
 <?php $id = decrypt_url($this->uri->segment(2)) ?>
-<div class="w-100">&nbsp;</div>
-<section class="mt-5">
-	<div class="container py-3">
-		<div class="d-flex justify-content-center justify-content-md-start align-items-center">
-			<p class="font-weight-bold text-secondary mx-2">Album <i class="fas fa-chevron-right mx-2"></i>
+<section class="hero py-5">
+	<div class="container py-5">
+		<div class="d-flex justify-content-center justify-content-md-center align-items-center">
+			<p class="font-weight-bold text-light mx-2">Album <i class="fas fa-chevron-right mx-2"></i>
 				<span class="text-success"><?= $this->album->judul_album_by_id($id) ?></span>
 			</p>
 		</div>
 	</div>
 </div>
 </section>
-<section>
+<section class="mb-3 mt--8">
 	<div class="container">
 			<?php if($photos->num_rows() > 0): ?>
 				<?php 
@@ -23,9 +22,9 @@
 	                    echo '<div class="d-flex justify-content-between align-items-stretch flex-no-wrap flex-column flex-md-row">';
 	                } 
                 ?>
-                	<a href="data:image/jpeg;base64,<?= base64_encode($photo->gambar_blob) ?>" data-lightbox="img_album" class="w-100" data-title="<?= $photo->keterangan ?>">
+                	<a href="data:image/jpeg;base64,<?= base64_encode($photo->gambar_blob) ?>" data-lightbox="img_album" class="w-100 bg-white mx-md-3 h-100 rounded" data-title="<?= $photo->keterangan ?>">
 					<div class="card border-0 p-2 rounded-0 mx-auto bg-transparent">
-						<img class="rounded-lg shadow lazy img-fluid" data-src="data:image/jpeg;base64,<?= base64_encode($photo->gambar_blob) ?>" alt="Card image">
+						<img class="rounded-lg lazy img-fluid" data-src="data:image/jpeg;base64,<?= base64_encode($photo->gambar_blob) ?>" alt="Card image">
 						<div class="card-body bg-transparent">
 							<span class="text-secondary small d-block mb-2"><i class="fas fa-calendar-alt mr-1"></i> Posted by <b class="text-info"><?= $photo->upload_by ?></b> &bull; <?= mediumdate_indo($photo->tgl_publish) ?></span>
 							<h5 class="card-title"><?= $photo->judul ?></h5>

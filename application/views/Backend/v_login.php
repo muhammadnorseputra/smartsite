@@ -79,7 +79,7 @@
                 <!-- <form id="sign_in" method="POST"> -->
                 <?= form_open('login/cek', array('id' => 'sign_in', 'autocomplete' => 'off')); ?>
                     <div id="msg"></div>
-                    <div class="row clearfix">
+                    <div class="row clearfix body-login">
                         <div class="col-md-12">
                                 <div class="input-group">
                                     <span class="input-group-addon" >
