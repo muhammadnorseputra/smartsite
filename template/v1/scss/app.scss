@@ -18,7 +18,7 @@
 section.hero-beranda {
 	background-size: cover; 
 	background-position: center; 
-	background-image: url('../../../assets/images/bg/kantor-bkppd.jpeg');
+	background-image: url('../../../assets/images/bg/kantor-bkppd.jpg');
 }
 section.hero {
 	background-color: #fbeeac; 
@@ -150,7 +150,7 @@ content: "";
 	height: inherit;
 	position: relative;
 }
-body {
+body {	
 	background: #fff;
 	font-family: 'Space Grotesk', sans-serif;
 	font-style: normal;
@@ -218,7 +218,6 @@ h5.title-sidebar {
 	left: 5px;
 	padding: .5rem 0;
 	border: 0px;
-	box-shadow: 0 8px 3em #ccc;	
 	border-radius: 8px;
 	transition: all 0.4s ease-in-out;
 }

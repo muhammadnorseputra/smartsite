@@ -130,7 +130,7 @@ class Beranda extends CI_Controller
                         <p class="card-text font-weight-normal text-secondary my-4">'.character_limiter($isi, 150).'</p>
                         <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
 					</div>
-					<div class="card-footer bg-white p-2 border-0 d-flex justify-content-around"  style="border-bottom-left-radius:12px;border-bottom-right-radius:12px;">
+					<div class="card-footer  bg-gradient-light p-2 border-0 d-flex justify-content-around">
 					
                     <div class="w-100">
 					<button type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>

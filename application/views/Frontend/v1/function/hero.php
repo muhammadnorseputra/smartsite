@@ -3,7 +3,7 @@
         <div class="row py-md-5">
             <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 mb-5 py-5 py-3 pr-md-5">
                 <!-- <p data-aos="fade-up" data-aos-duration="600" class="lead text-white text-center text-md-left my-5 rounded"><span class="border-bottom pt-3">Hallo <i class="fas fa-grin-hearts"></i> pengunjung.</span></p> -->
-                <div data-aos="fade-up" data-aos-duration="800" class="display-3 text-white font-weight-bold text-center text-md-left mt-5"><span id="halojs"></span></div>
+                <div data-aos="fade-up" data-aos-duration="800" class="display-3 text-white font-weight-bold text-center text-md-left mt-5">Selamat Datang</div>
                 <!-- Static halo -->
                 <p  data-aos="fade-up" data-aos-duration="1000" class="lead text-white intro-website text-center text-md-left mt-md-2">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</p>
                 <!-- Dinamic mengunakan typed.js -->

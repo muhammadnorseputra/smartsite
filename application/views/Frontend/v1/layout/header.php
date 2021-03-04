@@ -91,12 +91,12 @@
 				<i class="far fa-user mr-2"></i> Login
 			</a>
 			<?php } ?>
-			<label class="switch mt-2">
+			<!-- <label class="switch mt-2">
 				<input type="checkbox" id="darkSwitch">
 				<div>
 					<span></span>
 				</div>
-			</label>
+			</label> -->
 		</div>
 	</div>
 </nav>

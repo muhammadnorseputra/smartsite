@@ -891,10 +891,8 @@ $(document).ready(function () {
         ajax: function ajax(query) {
           return {
             type: "POST",
-            url: "http://silka.bkppd-balangankab.info/api/filternipnama",
+            url: "http://192.168.1.4/api/filternipnama",
             dataType: "json",
-            crossDomain: true,
-            async: true,
             data: {
               q: "{{query}}"
             }

@@ -1,4 +1,4 @@
-<section class="py-4 bg-gradient-light mt-4">
+<section class="py-2 bg-gradient-light mt-4">
 	<div class="container">
 		<div class="d-flex justify-content-lg-start align-content-center text-primary">
 			<div class="mr-3">
@@ -11,12 +11,12 @@
 		</div>
 	</div>
 </section>
-<section class="py-5 bg-white">
+<section class="py-5 bg-dark">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">
 				<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="110"/>'; ?>
-				<p class="my-4">
+				<p class="my-4 text-white">
 					<?= $mf_beranda->meta_desc ?>
 				</p>
 			</div>
@@ -29,11 +29,11 @@
 		</div>
 	</div>
 </section>
-<section class="bg-white">
+<section class="bg-dark">
 	<div class="container">
 		<div class="row text-center py-4">
 			<div class="col-md-12 d-flex align-items-center justify-content-center">
-				<div class="text-center text-secondary">
+				<div class="text-center text-white">
 					<div class="small">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</div>
 				</div>
 			</div>

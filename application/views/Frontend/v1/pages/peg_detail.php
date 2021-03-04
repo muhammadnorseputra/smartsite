@@ -1,19 +1,18 @@
-<section class="pt-5 rellax" style="background-image: url(<?= base_url('assets/images/bg/svg_.svg') ?>); background-size: cover; background-repeat: no-repeat; background-position: top left; background-clip: cover;">
+<section class="hero py-5">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 py-5 text-white text-center">
+			<div class="col-md-12 py-5 text-primary text-center">
 				<h1>Profile Pegawai</h1>
-				
 			</div>
 		</div>
 	</div>
 </section>
 <?php 
-	$response = api_curl('http://silka.bkppd-balangankab.info/api/detail_pns', ['nip' => $data['nip']]);
+	$response = api_curl_get('192.168.1.4/api/detail_pns/?nip='.$data['nip']);
 	$r = json_decode($response);
-	if(empty($data['nip']) || count($r) == 0) redirect('errors/html/error_404','refresh');
+	// if(empty($data['nip']) || count($r) === 0) redirect('errors/html/error_404','refresh');
 ?>
-<section class="mb-5 mt--5">
+<section class="mb-5 mt--8">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 offset-md-1">
@@ -23,10 +22,9 @@
 					</div>
 					<table class="table table-bordered">
 						<tbody>
-							
 							<tr>
 								<td width="140" rowspan="13">
-					<img class="img-thumbnail img-fluid" src="http://silka.bkppd-balangankab.info/photo/<?= $r[0]->photo ?>.jpg" alt="<?= $r[0]->nip ?>">									
+					<img class="img-thumbnail img-fluid" src="http://silka.bkppd-balangankab.info/photo/<?= $r[0]->nip ?>.jpg" alt="<?= $r[0]->nip ?>">									
 								</td>
 							</tr>
 							<tr class="font-weight-bold">
