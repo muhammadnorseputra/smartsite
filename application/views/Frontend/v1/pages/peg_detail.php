@@ -2,6 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 py-5 text-primary text-center">
+				<i class="fas fa-user-circle fa-4x my-3">	</i>
 				<h1>Profile Pegawai</h1>
 			</div>
 		</div>
