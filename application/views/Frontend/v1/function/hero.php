@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero-beranda">
     <div class="container">
         <div class="row py-md-5">
             <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 mb-5 py-5 py-3 pr-md-5">

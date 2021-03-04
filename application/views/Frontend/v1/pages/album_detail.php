@@ -2,7 +2,7 @@
 <section class="hero py-5">
 	<div class="container py-5">
 		<div class="d-flex justify-content-center justify-content-md-center align-items-center">
-			<p class="font-weight-bold text-light mx-2">Album <i class="fas fa-chevron-right mx-2"></i>
+			<p class="font-weight-bold text-white mx-2">Album <i class="fas fa-chevron-right mx-2"></i>
 				<span class="text-success"><?= $this->album->judul_album_by_id($id) ?></span>
 			</p>
 		</div>

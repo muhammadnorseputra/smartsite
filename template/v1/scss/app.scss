@@ -15,8 +15,13 @@
 .material-icons.orange600 { color: #FB8C00; }
 
 
+section.hero-beranda {
+	background-size: cover; 
+	background-position: center; 
+	background-image: url('../../../assets/images/bg/kantor-bkppd.jpeg');
+}
 section.hero {
-background-color: #00917c; 
+	background-color: #fbeeac; 
 	background-size: cover; 
 	background-position: right top; 
 	background-image: url('../../../assets/images/bg/bg-light.svg');

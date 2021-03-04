@@ -1,6 +1,6 @@
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/hero') ?>
-<section class="mt-4">
+<section class="content-home mb-3 py-5 hero">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -21,7 +21,7 @@
 <?php endif; ?>
 <?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-5 pt-md-5' : 'my-4' ?>
 
-<section class="content-home mb-5">
+<section class="mb-5">
     <div class="container">
         <div class="row">
             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 order-first order-md-last">
@@ -88,6 +88,23 @@
                 </div>
             </div>
             <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                
+                <div class="row">
+                    <div class="col-8 col-md-11">
+                        <div class="separator">
+                            <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-secondary mr-2"></i>Postingan Terbaru</span></span>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-1">
+                        <div class="float-right mt-2"><button data-toggle="tooltip" title="Search Post" id="caripost" class="btn btn-outline-primary border-0"> <i class="fas fa-search"></i></button></div>
+                    </div>
+                </div>
+                <div id="load_data"></div>
+                <div id="load_data_message"></div>
+                <div class="text-center">
+                    <button id="load_more" class="rounded-pill btn-block btn btn-primary rounded-pill px-4"><i class="fas fa-newspaper mr-2"></i> Load more berita</button>
+                </div>
+
                 <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-leaf text-secondary mr-2"></i>Digital Goverment</span>
                     </div>
@@ -109,21 +126,6 @@
                             </a>
                         </div>
                     </div>
-                <div class="row">
-                    <div class="col-8 col-md-11">
-                        <div class="separator">
-                            <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-secondary mr-2"></i>Postingan Terbaru</span></span>
-                        </div>
-                    </div>
-                    <div class="col-4 col-md-1">
-                        <div class="float-right mt-2"><button data-toggle="tooltip" title="Search Post" id="caripost" class="btn btn-outline-primary border-0"> <i class="fas fa-search"></i></button></div>
-                    </div>
-                </div>
-                <div id="load_data"></div>
-                <div id="load_data_message"></div>
-                <div class="text-center">
-                    <button id="load_more" class="rounded-pill btn-block btn btn-primary rounded-pill px-4"><i class="fas fa-newspaper mr-2"></i> Load more berita</button>
-                </div>
             </div>
             <div class="col-md-2 order-first order-md-last">
                     

@@ -1,7 +1,7 @@
 <section class="hero py-5">
 	<div class="container py-5">
 		<div class="d-flex justify-content-center justify-content-md-center align-items-center">
-			<div class="mx-2"><span class="font-weight-bold display-3 text-light">Album photo</span>
+			<div class="mx-2"><span class="font-weight-bold display-3 text-white">Album photo</span>
 		</div>
 	</div>
 </div>

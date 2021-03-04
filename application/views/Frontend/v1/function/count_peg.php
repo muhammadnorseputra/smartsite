@@ -11,7 +11,7 @@ $arr = [
 'jml_ptt' => api_curl_get($host.'/api/get_grap/nonpns')
 ]
 ?>
-<div class="col-xs-12 col-sm-12 col-md-4 bg-white rounded-left">
+<div class="col-xs-12 col-sm-12 col-md-4 rounded-left">
     <div class="card bg-transparent border-0 rounded">
         <div class="card-body">
             <i class="fas fa-users p-4 rounded fa-3x text-info mx-auto"></i>
@@ -21,7 +21,7 @@ $arr = [
         </div>
     </div>
 </div>
-<div class="col-xs-6 col-sm-6 col-md-4  bg-white">
+<div class="col-xs-6 col-sm-6 col-md-4 ">
     <div class="card bg-transparent my-md-0 my-4 border-0 rounded-0 big-card">
         <div class="card-body"  align-middle">
             <i class="fas fa-user-tie p-4 fa-3x mx-auto text-danger rounded"></i>
@@ -31,7 +31,7 @@ $arr = [
         </div>
     </div>
 </div>
-<div class="col-xs-6 col-sm-6 col-md-4  bg-white rounded-right">
+<div class="col-xs-6 col-sm-6 col-md-4  rounded-right">
     <div class="card bg-transparent rounded border-0">
         <div class="card-body">
             <i class="far p-4 fa-user-circle fa-3x mx-auto text-success rounded"></i>
