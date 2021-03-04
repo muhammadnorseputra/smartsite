@@ -14,18 +14,18 @@
 <section class="py-5 bg-white">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-12 text-center">
 				<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="110"/>'; ?>
 				<p class="my-4">
 					<?= $mf_beranda->meta_desc ?>
 				</p>
 			</div>
-			<div class="col-md-3">
+			<!-- <div class="col-md-3">
 				<h6>Bantuan</h6>
 			</div>
 			<div class="col-md-3">
 				<h6>Privacy</h6>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>
