@@ -6,7 +6,8 @@
 			</div>
 			<div>
 				<span class="d-block font-weight-bold">Alamat</span>
-				Batupiring Km. 4,5 Paringin Selatan Kabupaten Balangan. Kodepos 71662
+				Batupiring Km. 4,5 Paringin Selatan Kabupaten Balangan. Kodepos 71662, 
+				<span class="text-dark">Kalimantan Selatan - Indonesia</span>
 			</div>
 		</div>
 	</div>
@@ -14,7 +15,7 @@
 <section class="py-5 bg-dark">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-9 text-left">
+			<div class="col-md-6 text-left">
 				<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="150"/>'; ?>
 				<p class="my-4 text-white">
 					<?= $mf_beranda->meta_desc ?>
@@ -46,13 +47,13 @@
 
 				</ul>
 			</div>
-			<!-- <div class="col-md-3">
-				<h6>Privacy</h6>
-			</div> -->
+			<div class="col-md-3">
+				<h6 class="text-white pb-2 border-bottom">Privacy</h6>
+			</div>
 		</div>
 	</div>
 </section>
-<section class="bg-dark border-top border-info">
+<section class="bg-dark border-top border-primary">
 	<div class="container">
 		<div class="row text-center py-4">
 			<div class="col-md-12 d-flex align-items-center justify-content-center">

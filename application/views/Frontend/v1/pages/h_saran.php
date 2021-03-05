@@ -1,5 +1,14 @@
-<section class="my-5">
-<div class="container">
+<section class="py-5 hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 my-3 pt-4 text-left pb-5">
+        
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mt--9">
+<div class="container bg-white rounded ">
 	<div class="row">
 		<div class="col-md-6 offset-md-1 mt-4">
 			<div class="mr-md-3 pr-md-3">

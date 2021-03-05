@@ -11,7 +11,7 @@
 <?php 
 	$response = api_curl_get('192.168.1.4/api/detail_pns/?nip='.$data['nip']);
 	$r = json_decode($response);
-	// if(empty($data['nip']) || count($r) === 0) redirect('errors/html/error_404','refresh');
+	if(empty($data['nip']) || count($r) === 0) redirect('errors/html/error_404','refresh');
 ?>
 <section class="mb-5 mt--8">
 	<div class="container">
