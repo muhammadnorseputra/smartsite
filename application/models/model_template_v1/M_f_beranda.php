@@ -7,6 +7,9 @@ class M_f_beranda extends CI_Model
     {
         // setiap akses halaman web cek informasi pengguna untuk mengetahui jumlah pengunjung
         parent::__construct();
+
+    }
+    public function visitor() {
         $ip    = $this->input->ip_address(); // Mendapatkan IP user
         $date  = date("Y-m-d"); // Mendapatkan tanggal sekarang
         $waktu = time(); //
@@ -30,9 +33,9 @@ class M_f_beranda extends CI_Model
         $bataswaktu = time() - 300;
         $pengunjungonline  = $this->db->query("SELECT * FROM public_visitor WHERE online > '".$bataswaktu."'")->num_rows(); // hitung pengunjung online
           
-        return $data = ['jml_hariini' => $pengunjunghariini, 'jml_total_pengunjung' => $totalpengunjung, 'jml_online' => $pengunjungonline];
+        $data = ['jml_hariini' => $pengunjunghariini, 'jml_total_pengunjung' => $totalpengunjung, 'jml_online' => $pengunjungonline];
+        return $data;
     }
-
     public function get_identitas()
     {
         return $this->db->get('t_pengaturan')->row();

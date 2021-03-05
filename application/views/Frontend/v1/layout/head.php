@@ -29,10 +29,13 @@
 
 <body>
 <div class="page-slider">
-    <div class="logo-loading"><img class="w-25" src="<?= base_url('assets/images/logo.png'); ?>" alt="balangankab"></div>
+    <div class="logo-loading">
+        <img class="w-25" src="<?= base_url('assets/images/logo.png'); ?>" alt="balangankab">
+    </div>
   <div class="slider">
     <div class="line"></div>
     <div class="subline inc"></div>
     <div class="subline dec"></div>
   </div>
+  <p>Mohon tunggu loading halaman ...</p>
 </div>

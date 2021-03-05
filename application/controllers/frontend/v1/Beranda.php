@@ -8,6 +8,7 @@ class Beranda extends CI_Controller
         $this->load->model('model_template_v1/M_f_users', 'mf_users');
         $this->load->model('model_template_v1/M_f_post', 'post');
         $this->load->model('M_b_komentar', 'komentar');
+            $this->mf_beranda->visitor();
         
         //Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
