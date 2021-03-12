@@ -4,7 +4,7 @@ Tabel Halaman
 </h5>
 
 <div class="table-responsive my-2 p-3">
-	<table data-id="<?= $id_user ?>" class="table table-condensed table-borderless table-striped table-sm display" id="table-halamanstatis">
+	<table data-id="<?= $id_user ?>" class="table table-condensed table-borderless table-striped display" id="table-halamanstatis">
 		<thead>
 			<tr>
 				<th class="text-center">No</th>

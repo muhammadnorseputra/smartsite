@@ -18,10 +18,10 @@ $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata(
 $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == 'on' ? 'fas text-primary' : 'far';
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
-if(empty($post_detail->img)):
-$img = '<img class="img-fluid card-img-top rounded" src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
-else:
+if(!empty($post_detail->img)):
 $img = '<img class="img-fluid card-img-top rounded" src="'.$post_detail->path.'">';
+else:
+$img = '<img class="img-fluid card-img-top rounded" src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
 endif;
 ?>
 <?php
@@ -80,7 +80,7 @@ if (count($pecah) > 0) {
 						</div>
 					</div>
 					<?php if($post_detail->komentar_status == 0): ?>
-					<div class="card my-4 bg-white">
+					<div class="card my-4 border-0 bg-white">
 						<div class="card-body" style="max-height: 480px; overflow-y: auto;">
 							<div id="tracking">
 								<div class="tracking-list">
@@ -130,10 +130,10 @@ if (count($pecah) > 0) {
 							} else {
 							$namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
 							}
-							if(empty($b->img)):
-							$img = '<img class="img-fluid rounded lazy p-0 m-0" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
-							else:
+							if(!empty($b->img)):
 							$img = '<img class="img-fluid rounded lazy p-0 m-0" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="'.$b->path.'">';
+							else:
+							$img = '<img class="img-fluid rounded lazy p-0 m-0" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
 							endif;
 							?>
 							<?php if($berita_selanjutnya->num_rows() > 0): ?>

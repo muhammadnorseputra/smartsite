@@ -21,7 +21,7 @@
 <?php endif; ?>
 <?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-5 pt-md-5' : 'my-4' ?>
 
-<section class="mb-5">
+<section class="mb-5 <?= $my ?>">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 order-first order-md-last">
@@ -42,7 +42,11 @@
                             ?>
                             <div class="w-100 rounded m-1">
                                 <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
+                                    <?php if(!empty($a->gambar)): ?>
+                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="<?= base_url('files/file_album/'.$album->gambar) ?>" class="img-fluid lazy rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
+                                    <?php else: ?>
                                     <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
+                                    <?php endif; ?>
                                 </a>
                             </div>
                             <?php if(($i) % $kolom==0) {
@@ -62,10 +66,10 @@
                         $postby = strtolower(url_title($this->mf_users->get_namalengkap($b->created_by)));
                         $judul = strtolower($b->judul);
                         $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
-                        if(empty($b->img)):
-                        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
-                        else:
+                        if(!empty($b->img)):
                         $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.$b->path.'" alt="'.$b->judul.'">';
+                        else:
+                        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
                         endif;
                         ?>
                         <a  href="<?= $posturl; ?>" class="bg-transparent list-group-item list-group-item-action border-0 px-3  m-0">

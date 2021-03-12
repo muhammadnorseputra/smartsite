@@ -24,7 +24,11 @@
                 ?>
                 	<a href="data:image/jpeg;base64,<?= base64_encode($photo->gambar_blob) ?>" data-lightbox="img_album" class="w-100 bg-white mx-md-3 h-100 rounded" data-title="<?= $photo->keterangan ?>">
 					<div class="card border-0 p-2 rounded-0 mx-auto bg-transparent">
+						<?php if(!empty($photo->gambar)): ?>
+						<img class="rounded-lg lazy img-fluid" data-src="<?= base_url('files/file_galeri/'.$photo->gambar) ?>" alt="Card image">
+						<?php else: ?>
 						<img class="rounded-lg lazy img-fluid" data-src="data:image/jpeg;base64,<?= base64_encode($photo->gambar_blob) ?>" alt="Card image">
+						<?php endif; ?>
 						<div class="card-body bg-transparent">
 							<span class="text-secondary small d-block mb-2"><i class="fas fa-calendar-alt mr-1"></i> Posted by <b class="text-info"><?= $photo->upload_by ?></b> &bull; <?= mediumdate_indo($photo->tgl_publish) ?></span>
 							<h5 class="card-title"><?= $photo->judul ?></h5>

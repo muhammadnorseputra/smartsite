@@ -8,8 +8,6 @@ class Beranda extends CI_Controller
         $this->load->model('model_template_v1/M_f_users', 'mf_users');
         $this->load->model('model_template_v1/M_f_post', 'post');
         $this->load->model('M_b_komentar', 'komentar');
-            $this->mf_beranda->visitor();
-        
         //Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
             // redirect(base_url('frontend/v1/beranda'),'refresh');
@@ -101,10 +99,10 @@ class Beranda extends CI_Controller
                 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'btn-like' : '';
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
-                if(empty($row->img)):
-                    $img = '<img class="card-img-top lazy border-light" style="border-radius:10px;" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
-                else:
+                if(!empty($row->img)):
                     $img = '<img class="card-img-top lazy border-light" style="border-radius:10px;" data-src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
+                else:
+                    $img = '<img class="card-img-top lazy border-light" style="border-radius:10px;" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 endif;
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('kategori/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');

@@ -53,10 +53,10 @@ class Post extends CI_Controller
             $judul = strtolower($row->judul);
             $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
 
-            if(!empty($row->img_blob)):
-                $img = '<img class="img-thumbnail w-full" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
-            else:
+            if(!empty($row->img)):
                 $img = '<img class="img-thumbnail w-full" src="'.$row->path.'">';
+            else:
+                $img = '<img class="img-thumbnail w-full" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
             endif;
             $output .= '<a href="'.$posturl.'" class="list-group-item border shadow-sm my-2 list-group-item-action flex-column align-items-start">
                         <div class="d-flex justify-content-start">
@@ -139,10 +139,10 @@ class Post extends CI_Controller
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
                 
                 // Post image
-                if(!empty($row->img_blob)):
-                    $img = '<img class="img-fluid w-100" style="border-radius:10px;" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
-                else:
+                if(!empty($row->img)):
                     $img = '<img class="img-fluid w-100" style="border-radius:10px;" src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
+                else:
+                    $img = '<img class="img-fluid w-100" style="border-radius:10px;" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 endif;
 
                 // Post name tags

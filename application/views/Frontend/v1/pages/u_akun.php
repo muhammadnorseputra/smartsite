@@ -7,9 +7,9 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
 <section class="my-5 pt-md-5">
   <div class="container bg-white border border-light shadow-sm rounded-lg">
     <div class="row">
-      <div class="col-md-3 no-gutters px-0 py-1">
-        <div class="list-group bg-white border-0 rounded-0 py-2">
-          <div class="list-group-item text-muted border-0 rounded-0 mb-2 bg-white">
+      <div class="col-md-3 no-gutters px-0">
+        <div class="list-group bg-white border-0 rounded-0">
+          <div class="list-group-item text-muted border-0 rounded-0 mb-2 bg-light">
             <b class="d-block">Menu</b>
             Halo, <?= $this->session->userdata('user_portal_log')['nama_lengkap']; ?> welcome back.
           </div>
@@ -21,7 +21,8 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
           <a id="module" href="<?= base_url('frontend/v1/users/post/'.encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted bg-white"><i class="fas fa-newspaper mr-3 float-right" aria-hidden="true"></i> Postingan</a>
           <a id="module" href="<?= base_url('frontend/v1/users/halamanstatis/' . encrypt_url($d->id_user_portal)); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted bg-white"><i class="fas fa-pager mr-3 float-right" aria-hidden="true"></i> Halaman</a>
           <a id="module" href="<?= base_url('frontend/v1/users/halamanlink/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted bg-white"><i class="fas fa-link mr-3 float-right" aria-hidden="true"></i> Halaman Link</a>
-
+          <a id="module" href="<?= base_url('frontend/v1/users/galeri/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted bg-white"><i class="fas fa-images mr-3 float-right" aria-hidden="true"></i> Galeri Foto</a>
+          <a id="module" href="<?= base_url('frontend/v1/users/banner/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted bg-white"><i class="fas fa-image mr-3 float-right" aria-hidden="true"></i> Banner</a>
           <?php endif; ?>
           
           <a id="module" href="<?= base_url('frontend/v1/users/postDisukai/'.encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted bg-white"><i class="fas fa-thumbs-up mr-3 float-right" aria-hidden="true"></i> Disukai</a>
@@ -35,8 +36,5 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
         </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <a href="<?php echo base_url('frontend/v1/users/logout/') ?>" class="btn btn-sm btn-link btn-default mt-3"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
   </div>
 </section>

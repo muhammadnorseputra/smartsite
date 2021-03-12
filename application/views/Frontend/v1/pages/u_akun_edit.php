@@ -1,8 +1,16 @@
-<section class="my-5">
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 my-5 pt-4 text-left pb-5">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mt--9">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 offset-md-1">
-				<div class="card border-0 shadow-sm mt-5 bg-white">
+				<div class="card mt-5 bg-white">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Identitas</h5>
 					</div>
@@ -29,7 +37,7 @@
 				</div>
 				<?= form_open_multipart(base_url('frontend/v1/users/update/'), ['id' => 'form_edit']); ?>
 				<input type="hidden" name="id" value="<?= encrypt_url($profile->id_user_portal) ?>">
-				<div class="card border-0 shadow-sm mt-3 bg-white">
+				<div class="card mt-3 bg-white">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Edit Profile</h5>
 					</div>
@@ -98,7 +106,7 @@
 					</div>
 				</div>
 
-				<div class="card my-3 border-0 shadow-sm bg-white">
+				<div class="card my-3 bg-white">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Deskripsi</h5>
 					</div>
@@ -110,7 +118,7 @@
 					</div>
 				</div>
 
-				<div class="card mb-3 border-0 shadow-sm bg-white">
+				<div class="card mb-3 bg-light">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Informasi masuk</h5>
 					</div>
@@ -139,10 +147,10 @@
 						</div>
 					</div>
 				</div>
-				<button type="submit" id="save" class="btn btn-primary">
+				<button type="submit" id="save" class="btn btn-lg btn-primary">
 					<i class="fas fa-save mr-2"></i> Simpan perubahan
 				</button>
-				<button onclick="window.history.back(-1)" type="button" class="btn btn-link btn-active">Batalkan</button>
+				<button onclick="window.history.back(-1)" type="button" class="btn btn-link btn-lg">Batalkan</button>
 
 				<?= form_close(); ?>
 			</div>

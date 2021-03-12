@@ -19,7 +19,7 @@
 				<div id="accordionExample" class="accordion mt-3">
 					<!-- Accordion item 1 -->
 					<div class="card rounded-0">
-						<div class="card-header bg-white shadow-sm border-0">
+						<div class="card-header shadow-sm border-0">
 							<h6 class="mb-0 font-weight-bold">
 								<a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Photo utama</a>
 							</h6>
@@ -42,7 +42,7 @@
 
 					<!-- Accordion item 3 -->
 					<div class="card rounded-0">
-						<div class="card-header bg-white shadow-sm border-0">
+						<div class="card-header shadow-sm border-0">
 							<h6 class="mb-0 font-weight-bold">
 								<a href="#" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree" class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Photo terkait</a>
 							</h6>
@@ -70,7 +70,7 @@
 					</div>
 					<!-- Accordion item 2 -->
 					<div class="card rounded-0">
-						<div class="card-header bg-white shadow-sm border-0">
+						<div class="card-header shadow-sm border-0">
 							<h6 class="mb-0 font-weight-bold">
 								<a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Tags / Label</a>
 							</h6>

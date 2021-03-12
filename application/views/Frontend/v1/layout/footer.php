@@ -9,6 +9,9 @@
 				Batupiring Km. 4,5 Paringin Selatan Kabupaten Balangan. Kodepos 71662, 
 				<span class="text-dark">Kalimantan Selatan - Indonesia</span>
 			</div>
+			<div class="ml-auto my-auto">
+				<a target="_blank" href="https://www.google.com/maps/dir//-2.364905,115.470992" class="btn btn-sm btn-primary">Buka pada maps <i class="fas fa-link"></i></a>
+			</div>
 		</div>
 	</div>
 </section>
@@ -22,17 +25,17 @@
 				</p>
 				<div class="d-flex text-white align-content-around">
 					<div>
-						<b>Jumlah Hits</b>
-						<h3><span class="text-info"><?= $this->mf_beranda->visitor()['jml_hariini']  ?></span> Orang</h3>
+						<b>Pengunjung Online</b>
+						<h3><span class="text-danger"><?= $this->mf_visitor->visitor_count()['jml_online']  ?></span> Orang</h3>
 					</div>
 					<div class="mx-md-5 mx-2">
-						<b>Total Pengunjung</b>
-						<h3><span class="text-warning"><?= $this->mf_beranda->visitor()['jml_total_pengunjung']  ?></span> Orang</h3>
-					</div>	
-					<div>
-						<b>Pengunjung Online</b>
-						<h3><span class="text-danger"><?= $this->mf_beranda->visitor()['jml_online']  ?></span> Orang</h3>
+						<b>Total Hari Ini</b>
+						<h3><span class="text-info"><?= $this->mf_visitor->visitor_count()['jml_hariini']  ?></span> Orang</h3>
 					</div>
+					<div>
+						<b>Total Pengunjung</b>
+						<h3><span class="text-warning"><?= $this->mf_visitor->visitor_count()['jml_total_pengunjung']  ?></span> Orang</h3>
+					</div>	
 				</div>
 			</div>
 			<div class="col-md-3">
@@ -53,9 +56,9 @@
 		</div>
 	</div>
 </section>
-<section class="bg-dark border-top border-primary">
+<section class="bg-dark">
 	<div class="container">
-		<div class="row text-center py-4">
+		<div class="row text-center py-5 border-top border-light">
 			<div class="col-md-12 d-flex align-items-center justify-content-center">
 				<div class="text-center text-white">
 					<div class="small">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</div>

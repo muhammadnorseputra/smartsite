@@ -8,6 +8,7 @@ class Users extends CI_Controller {
 		$this->load->model('M_f_users','users');
 		$this->load->model('model_template_v1/M_f_post','posts');
 		$this->load->model('model_template_v1/M_f_halaman', 'halaman');
+		$this->load->model('model_template_v1/M_f_album', 'album');
 		$this->load->model('M_b_komentar', 'komentar');
 		//Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
@@ -242,7 +243,7 @@ class Users extends CI_Controller {
 				$getlinkbyid = $this->users->getlinkbyid($id)->row();
 				$pecah = explode("/", $getlinkbyid->link_sub);
 				// $getTokenLink = $pecah[2];
-				$newLink = $pecah[0].'/'.$pecah[1].'/'.$token.'/'.$title;
+				$newLink = $pecah[0].'/'.$token.'/'.$title;
 				$msg = ['newtoken' => $token, 'newlink' => $newLink];
 				$this->users->updatelinkhalaman('t_submenu', ['link_sub' => $newLink], ['idsub' => $id]);
 			} else {
@@ -266,8 +267,8 @@ class Users extends CI_Controller {
 		foreach ($list as $h) {
 
 			$btnAksi = '<div class="dropdown dropright">
-								  <button id="dLabel" class="btn btn-sm border-0 btn-light bg-white p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								    <i class="fas fa-ellipsis-h p-1"></i>
+								  <button id="dLabel" class="btn btn-lg border-0 btn-light bg-white p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    <i class="fas fa-ellipsis-h p-2"></i>
 								  </button>
 								  <div class="dropdown-menu" aria-labelledby="dLabel">
 								    <a class="dropdown-item rounded-pill text-primary" href="'.base_url('frontend/v1/halaman/halamanstatis/edit?token='.$h->token_halaman).'"><i class="fas fa-edit mr-2"></i> Edit</a>
@@ -315,8 +316,8 @@ class Users extends CI_Controller {
 		        foreach ($list as $p) {
 
 		        	$btnAksi = $p->publish != 0 ? '<div class="dropdown dropright">
-								  <button id="dLabel" class="btn btn-sm border-0 btn-light bg-white p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								    <i class="fas fa-ellipsis-h p-1"></i>
+								  <button id="dLabel" class="btn btn-lg border-0 btn-light bg-white p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    <i class="fas fa-ellipsis-h p-2"></i>
 								  </button>
 								  <div class="dropdown-menu" aria-labelledby="dLabel">
 								    <a class="dropdown-item text-muted rounded-pill" href="'.base_url('frontend/v1/post/postDetail/'.encrypt_url($p->id_berita)).'"><i class="fas fa-edit mr-2"></i> Edit</a>
@@ -325,7 +326,7 @@ class Users extends CI_Controller {
 								</div>' : '<button title="Draf" class="btn btn-dark p-1 text-warning" disabled>D</button>';
 
 					$countKomentar = $this->komentar->jml_komentarbyidberita($p->id_berita);
-					$komentar = $countKomentar != 0 ? '<b>'.$countKomentar.'</button>' : $countKomentar;
+					$komentar = $countKomentar != 0 ? '<b>'.$countKomentar.'</b>' : $countKomentar;
 
 					$btnPublish = $p->publish == 0 ? '<a href="' . base_url('frontend/v1/post/postDetail/' . encrypt_url($p->id_berita)) . '" title="Belum Dipublish" class="btn btn-default border-left ml-4 px-3 py-0"><i class="material-icons text-warning py-1 m-0">publish</i></a>' : '';
 					$btnHapus = $p->publish == 0 ? '<a id="btn-hapus" data-id="'.$p->id_berita.'" href="#" title="Hapus Postingan" class="btn btn-default ml-2 px-2 py-0"><i class="fas fa-trash text-danger"></i></a>' : '';
@@ -334,8 +335,8 @@ class Users extends CI_Controller {
 		            $row = array();
 		            $row[] = $no;
 		            $row[] = $btnAksi;
-		            $row[] = $p->judul.'<i class="far fa-comment-alt mx-2"></i>'.$komentar. $btnPublish.$btnHapus;
-		 
+		            $row[] = $p->judul. $btnPublish.$btnHapus;
+		            $row[] = '<i class="far fa-comment-alt mx-2"></i>'.$komentar;
 		            $data[] = $row;
 		        }
 		 
@@ -348,7 +349,24 @@ class Users extends CI_Controller {
 		        //output to json format
 		        echo json_encode($output);
 			}
-		
+	public function galeri() {
+		$user_id = $this->session->userdata('user_portal_log')['id'];
+		$data = [
+				'id_user' => $user_id,
+				'fotos' => $this->album->get_all_album()
+			];
+
+			return $this->load->view('Frontend/v1/pages/u_akun_galeri', $data);
+	}
+	public function banner() {
+		$user_id = $this->session->userdata('user_portal_log')['id'];
+		$data = [
+				'id_user' => $user_id,
+				'fotos' => $this->album->get_all_album()
+			];
+
+			return $this->load->view('Frontend/v1/pages/u_akun_galeri', $data);
+	}
 	public function profile($nama_panggilan,$id) {
 		$data = [
 				'title' => 'Halaman beranda &bull; '.ucfirst($nama_panggilan),

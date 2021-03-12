@@ -1,11 +1,12 @@
 <h4 class="px-3 py-3 border-bottom border-light animated fadeIn">Tabel Postingan <a href="<?php echo base_url('frontend/v1/post/judul') ?>" title="Buat Postingan Baru" data-toggle="tooltip" class="btn btn-sm btn-primary rounded-circle float-right"><i class="fas fa-plus"></i></a></h4>
 <div class="table-responsive p-3 my-2 animated fadeIn">
-	<table data-id="<?= $id_user ?>" class="table table-condensed table-borderless table-striped table-sm display" id="table-postingan">
+	<table data-id="<?= $id_user ?>" class="table table-condensed table-borderless table-striped display" id="table-postingan">
 		<thead>
 			<tr>
 				<th class="text-center">No</th>
 				<th class="text-center"></th>
 				<th>Postingan</th>
+				<th>Komentar</th>
 			</tr>
 		</thead>
 	</table>
@@ -53,6 +54,10 @@
 			{
 				"targets": [2],
 				"orderable": true,
+			},
+			{
+				"targets": [3],
+				"orderable": false,
 			}
 		],
 		"language": {

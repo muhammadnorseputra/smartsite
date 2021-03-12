@@ -21,7 +21,11 @@
 		?>
 		<a href="<?= base_url('album/'.encrypt_url($a->id_album_foto)) ?>" class="w-100 bg-white mx-md-3 h-100">
 			<div class="card border-0 w-100 p-md-3 mx-auto">
+				<?php if(!empty($a->gambar)): ?>
+				<img class="rounded lazy img-fluid" data-src="<?= base_url('files/file_album/'.$a->gambar) ?>" alt="Card image">
+				<?php else: ?>
 				<img class="rounded lazy img-fluid" data-src="data:image/jpeg;base64,<?= base64_encode($a->gambar_blob) ?>" alt="Card image">
+				<?php endif; ?>
 				<div class="card-body bg-transparent px-0">
 					<?php if($a->tgl_publish === date('Y-m-d')): ?><span class="badge badge-pill badge-warning float-right">New!</span> <?php endif; ?>
 					<h5 class="card-title"><?= $a->judul ?></h5>

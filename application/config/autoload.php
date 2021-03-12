@@ -140,4 +140,5 @@ $autoload['model'] = array('mlogin',
 						   'M_b_admin' => 'madmin', 
 						   'M_b_menu' => 'menu',
 						   'model_template_v1/M_f_beranda' => 'mf_beranda',
-						   'model_template_v1/M_f_users' => 'mf_users');
+						   'model_template_v1/M_f_users' => 'mf_users',
+							'model_template_v1/M_f_visitor' => 'mf_visitor');

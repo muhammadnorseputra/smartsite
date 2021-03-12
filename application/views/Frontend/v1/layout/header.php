@@ -16,7 +16,7 @@
 					$submenu_jml = $this->mf_beranda->get_submenu_jml($m->id_menu);
 					if ($submenu_jml > 0) {
 				?>
-				<li class="nav-item dropdown">
+				<div class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle px-3 mx-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
 						<?= $m->nama_menu; ?>
@@ -59,7 +59,7 @@
 						</li>
 						<?php endforeach; ?>
 					</ul>
-				</li>
+				</div>
 				<?php
 				} else {
 				?>
