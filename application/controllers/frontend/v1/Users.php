@@ -9,6 +9,7 @@ class Users extends CI_Controller {
 		$this->load->model('model_template_v1/M_f_post','posts');
 		$this->load->model('model_template_v1/M_f_halaman', 'halaman');
 		$this->load->model('model_template_v1/M_f_album', 'album');
+		$this->load->model('model_template_v1/M_f_banner', 'banner');
 		$this->load->model('M_b_komentar', 'komentar');
 		//Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
@@ -170,12 +171,12 @@ class Users extends CI_Controller {
 					'pesan' => "<div class='d-block mx-auto text-center'>Login berhasil, akun ditemukan ...</div>", 
 					'redirect' => base_url("frontend/v1/users/akun/".decrypt_url($q->nama_panggilan)).'/'.$q->nohp);
 				} else {
-					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'redirect' => base_url("login_web"), 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
+					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
 					$this->users->status_online('t_users_portal', ['email' => $where['email']], ['online' => 'OFF']);
 					$this->session->unset_userdata('user_portal_log');
 				}
 			}else{
-				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar", 'redirect' => base_url("login_web"));
+				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar");
 			}
 			echo json_encode($msg);
 			}
@@ -350,22 +351,19 @@ class Users extends CI_Controller {
 		        echo json_encode($output);
 			}
 	public function galeri() {
-		$user_id = $this->session->userdata('user_portal_log')['id'];
+		$username = $this->session->userdata('user_portal_log')['nama_panggilan'];
 		$data = [
-				'id_user' => $user_id,
+				'username' => $username,
 				'fotos' => $this->album->get_all_album()
 			];
 
 			return $this->load->view('Frontend/v1/pages/u_akun_galeri', $data);
 	}
 	public function banner() {
-		$user_id = $this->session->userdata('user_portal_log')['id'];
 		$data = [
-				'id_user' => $user_id,
-				'fotos' => $this->album->get_all_album()
+				'banner' => $this->banner->get_list_banner()
 			];
-
-			return $this->load->view('Frontend/v1/pages/u_akun_galeri', $data);
+			return $this->load->view('Frontend/v1/pages/b_list', $data);
 	}
 	public function profile($nama_panggilan,$id) {
 		$data = [

@@ -4,16 +4,37 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <a href="<?= base_url('banner/'.$this->mf_beranda->get_banner('SLIDE', 'Web')[5].'/'.url_title($this->mf_beranda->get_banner('SLIDE', 'Web')[1])); ?>" data-toggle="tooltip" title="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"><img src="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[0]; ?>" class="img-fluid bg-white rounded d-block border" alt="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"></a>
+            <!-- Banenr slide horizontal -->
+             <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/banner_horizontal_home') ?>">
+                <span class="content-placeholder my-3" style="width: 100%; height: 230px;"></span>
+             </div>   
+
+            <!-- Counter jumlah pegawai -->
             <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/count_peg') ?>">
-                <img class="d-block mx-auto my-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/three-dots.svg'); ?>" alt="">
+                    <div class="col-md-4 mt-4 p-2">
+                        <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
+                        <span class="content-placeholder my-3" style="width: 100%; height: 60px;"></span>
+                        <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
+                    </div>
+                    <div class="col-md-4 mt-4 p-2">
+                        <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
+                        <span class="content-placeholder my-3" style="width: 100%; height: 60px;"></span>
+                        <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
+                    </div>
+                    <div class="col-md-4 mt-4 p-2">
+                        <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
+                        <span class="content-placeholder my-3" style="width: 100%; height: 60px;"></span>
+                        <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
+                    </div>
             </div>
             </div>
             <div class="col-md-4">
-                <a id="banner" data-lightbox="BannerAside" data-title="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?>" href="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>">
-                        <img src="<?= $this->mf_beranda->get_banner('BANNER', 'Aside')[0]; ?>" class="rounded img-fluid mx-auto d-block mb-3">
-                    <h6 class="font-weight-bold"><?= $this->mf_beranda->get_banner('BANNER', 'Aside')[1]; ?></h6></a>
-                    <span class="text-secondary small">Posted by</span> <?= ucwords($this->mf_beranda->get_banner('BANNER', 'Aside')[3]); ?>
+                <!-- Banner vertikal -->
+                <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/banner_vertical_home') ?>">
+                <span class="content-placeholder" style="width: 100%; height: 430px;"></span>
+                <span class="content-placeholder my-2" style="width: 80%; height: 20px;"></span>
+                <span class="content-placeholder" style="width: 40%; height: 20px;"></span>
+             </div>  
             </div>
         </div>
     </div>
@@ -25,71 +46,8 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 order-first order-md-last">
-                <div>
-                    
-                    <div class="separator">
-                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-images text-secondary mr-2"></i> album photo</span>
-                    </div>
-                    <div class="overflow-hidden rounded-lg my-4 border-0 shadow-none">
-                        
-                        <?php
-                        $kolom = 2;
-                        $i = 1;
-                        foreach ($mf_album as $album):
-                        if(($i) % $kolom==1) {
-                        echo '<div class="d-flex">';
-                            }
-                            ?>
-                            <div class="w-100 rounded m-1">
-                                <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
-                                    <?php if(!empty($a->gambar)): ?>
-                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="<?= base_url('files/file_album/'.$album->gambar) ?>" class="img-fluid lazy rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
-                                    <?php else: ?>
-                                    <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
-                                    <?php endif; ?>
-                                </a>
-                            </div>
-                            <?php if(($i) % $kolom==0) {
-                        echo '</div>';
-                        } ?>
-                        <?php $i++; endforeach; ?>
-                        <!-- <div class="small text-info position-absolute mx-auto mt-1">Directed by BinaInfo</div> -->
-                    </div>
-                    <div class="separator d-none d-md-block mt-5">
-                        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-heart text-secondary mr-2"></i> Populer Post</span>
-                    </div>
-                    <div class="list-group border-0 shadow-none p-0 d-none d-md-block">
-                        <?php
-                        $nolist = 1;
-                        foreach ($mf_berita_populer as $b) :
-                        $id = encrypt_url($b->id_berita);
-                        $postby = strtolower(url_title($this->mf_users->get_namalengkap($b->created_by)));
-                        $judul = strtolower($b->judul);
-                        $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
-                        if(!empty($b->img)):
-                        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.$b->path.'" alt="'.$b->judul.'">';
-                        else:
-                        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
-                        endif;
-                        ?>
-                        <a  href="<?= $posturl; ?>" class="bg-transparent list-group-item list-group-item-action border-0 px-3  m-0">
-                            <div class="media m-0">
-                                <?= $img ?>
-                                <div class="media-body">
-                                    <span class="font-weight-lighter text-primary"><?= character_limiter($b->judul, 30); ?></span>
-                                    <small class="d-block mt-2 align-middle text-left font-weight-bold">
-                                    <i class="far fa-thumbs-up"></i> <?= $b->like_count ?> Likes </small>
-                                    </small>
-                                </div>
-                            </div>
-                            
-                            <br>
-                            
-                        </a>
-                        <?php $nolist++; endforeach; ?>
-                    </div>
-                    
-                </div>
+                    <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>
+                    <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                 

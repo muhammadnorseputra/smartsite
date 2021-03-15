@@ -1,0 +1,1 @@
+<h4 class="px-3 py-4 m-0 border-bottom border-light animated fadeIn">Tabel Banner <a href="<?php echo base_url('frontend/v1/banner/new_banner') ?>" title="Upload Banner Baru" data-toggle="tooltip" class="btn btn-sm btn-primary rounded-circle float-right"><i class="fas fa-plus"></i></a></h4>

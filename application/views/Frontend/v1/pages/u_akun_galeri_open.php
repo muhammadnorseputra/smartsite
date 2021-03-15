@@ -3,11 +3,12 @@
 	<div class="container py-5">
 		<div class="col-md-8 offset-md-2 py-3 d-flex justify-content-between align-items-center">
 			<div>
+				<span class="text-muted">Photo in album:</span>
 				<h5><span class="text-primary font-weight-bold"><?= $this->album->judul_album_by_id(decrypt_url($id)) ?></span></h5>
 			</div>
 			<div>
-				<button onclick="window.history.back(-1)" class="btn btn-sm btn-danger"><i class="fas fa-arrow-left"></i> Kembali</button>
-				<a href="<?= base_url('frontend/v1/album/tambah_photo/'. $id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-image"></i> Tambah Photo</a>
+				<a href="<?= base_url('frontend/v1/album/tambah_photo/'. $id) ?>" class="btn btn-primary"><i class="fas fa-image"></i> Upload Photo</a>
+				<button onclick="window.history.back(-1)" class="btn btn-danger">Kembali <i class="fas fa-arrow-right"></i></button>
 			</div>
 		</div>
 	</div>
@@ -38,8 +39,8 @@
 						</p>
 					</td>
 					<td class="d-flex align-content-center justify-content-between">
-						<a href="<?= base_url('frontend/v1/album/edit_photo/'.encrypt_url($photo->id_foto)) ?>" class="btn btn-lg btn-primary"><i class="fas fa-edit"></i></a>
-						<a onclick="return confirm('Apakah anda yakin akan menghapus foto tersebut?')" href="<?= base_url('frontend/v1/album/hapus_photo/'.encrypt_url($photo->id_foto)) ?>" class="btn btn-lg btn-default btn-link text-danger"><i class="fas fa-trash"></i></a>
+						<a data-toggle="tooltip" title="Edit Photo" href="<?= base_url('frontend/v1/album/edit_photo/'.encrypt_url($photo->id_foto)) ?>" class="btn btn-sm btn-primary px-3 mx-2"><i class="fas fa-edit"></i></a>
+						<a  data-toggle="tooltip" title="Hapus Photo" onclick="return confirm('Apakah anda yakin akan menghapus foto tersebut?')" href="<?= base_url('frontend/v1/album/hapus_photo/'.encrypt_url($photo->id_foto)) ?>" class="btn btn-sm btn-default btn-link text-danger"><i class="fas fa-trash"></i></a>
 					</td>
 				</tr>
 				<?php endforeach; ?>

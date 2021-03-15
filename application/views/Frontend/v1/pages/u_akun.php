@@ -11,7 +11,7 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
         <div class="list-group bg-white border-0 rounded-0">
           <div class="list-group-item text-muted border-0 rounded-0 mb-2 bg-light">
             <b class="d-block">Menu</b>
-            Halo, <?= $this->session->userdata('user_portal_log')['nama_lengkap']; ?> welcome back.
+            Halo, <?= $this->session->userdata('user_portal_log')['nama_panggilan']; ?> welcome back.
           </div>
           <a id="module" href="<?= base_url('frontend/v1/users/akunProfile'); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted bg-white">
             <i class="fas fa-user mr-3 float-right" aria-hidden="true"></i> Profile

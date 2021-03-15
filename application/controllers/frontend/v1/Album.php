@@ -9,7 +9,7 @@ class Album extends CI_Controller {
 		$this->load->model('M_b_foto', 'mfoto');
 		$this->load->library('image_lib');
 		if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
-            // redirect(base_url('frontend/v1/beranda'),'refresh');
+            // redirect(base_url('frontend/v1/mf_berandaa'),'refresh');
         } else {
             redirect(base_url('under-construction'),'refresh');
         }
@@ -29,16 +29,20 @@ class Album extends CI_Controller {
 	
 	public function tambah_photo($id)
 	{
-		$id_album = decrypt_url($id);
-		$data = [
-			'title' => 'Tambah photo',
-			'id_album' => $id_album,
-			'mf_beranda' => $this->mf_beranda->get_identitas(),
-            'mf_menu' => $this->mf_beranda->get_menu(),
-			'isi'	=> 'Frontend/v1/pages/u_akun_galeri_add',
-		];
+		if(empty($this->session->userdata('user_portal_log')['id'])):
+		return	 redirect(base_url('login_web'),'refresh');
+		endif;
 
-		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+			$id_album = decrypt_url($id);
+			$data = [
+				'title' => 'Tambah photo',
+				'id_album' => $id_album,
+				'mf_beranda' => $this->mf_beranda->get_identitas(),
+	            'mf_menu' => $this->mf_beranda->get_menu(),
+				'isi'	=> 'Frontend/v1/pages/u_akun_galeri_add',
+			];
+
+			$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
 
 	public function detail($id)
@@ -57,6 +61,9 @@ class Album extends CI_Controller {
 
 	public function open($id)
 	{
+		if(empty($this->session->userdata('user_portal_log')['id'])):
+		return redirect(base_url('login_web'),'refresh');
+		endif;
 		$id_album = decrypt_url($id);
 		$data = [
 			'title' => url_title($this->album->judul_album_by_id($id_album), '-', true),
@@ -70,6 +77,9 @@ class Album extends CI_Controller {
 	}
 
 	public function edit_photo($id) {
+		if(empty($this->session->userdata('user_portal_log')['id'])):
+		return redirect(base_url('login_web'),'refresh');
+		endif;
 		$id_photo = decrypt_url($id);
 		$data = [
 			'title' => url_title($this->album->detail_photo($id_photo)->judul, '-', true),
@@ -82,6 +92,68 @@ class Album extends CI_Controller {
 		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
 
+	public function new_album() {
+		if(empty($this->session->userdata('user_portal_log')['id'])):
+		return redirect(base_url('login_web'),'refresh');
+		endif;
+		$data = [
+			'title' => 'Buat album baru',
+			'mf_beranda' => $this->mf_beranda->get_identitas(),
+            'mf_menu' => $this->mf_beranda->get_menu(),
+			'isi'	=> 'Frontend/v1/pages/album_baru',
+		];
+
+		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+	}
+	public function upload_album()
+	{
+		if(empty($this->session->userdata('user_portal_log')['id'])):
+		return redirect(base_url('login_web'),'refresh');
+		endif;
+		$fileName  = $_FILES['foto']['name'];
+		$fileName_blob    = file_get_contents($_FILES['foto']['tmp_name']);
+
+		$acak27 = generateRandomString(27);
+		$date = date('Y-m-d');
+
+		$jdl = $this->input->post('photo_judul');
+
+		$files = "bkppdbalangan_".str_replace(" ","",$jdl)."_".$acak27;
+		//init library upload
+		$config['upload_path']      = './files/file_album/';
+		$path_now 								  = base_url('./files/file_album/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
+		$config['allowed_types']    = 'jpg|jpeg|png';
+		$config['max_size'] 				= '5120'; //maksimum besar file 5M
+		$config['max_width'] 				= '1366';
+		$config['overwrite']				= true;
+		$config['file_ext_tolower'] = true;
+		$config['file_name'] 				= strtoupper($files); //nama yang terupload nantinya
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('foto')) {
+			$this->session->set_flashdata(['message' =>  $this->upload->display_errors(), 'class' => 'alert-warning']);
+				redirect(base_url('frontend/v1/album/new_album/'),'refresh');
+		} else {
+				if (file_exists('./files/file_album/'.$files)) {
+					unlink('./files/file_album/'.$files);
+				}
+				$values = [
+					'judul' => $jdl,
+					'keterangan' => $this->input->post('photo_keterangan'),
+					'gambar' => strtoupper($this->upload->data('file_name')),
+					'gambar_blob' => $fileName_blob,
+					'path' => $path_now,
+					'publish' => $this->input->post('publish_album'),
+					'tgl_publish' => date('Y-m-d'),
+					'upload_by' => $this->session->userdata('user_portal_log')['nama_panggilan'],
+					'upload_at' => date('Y-m-d H:i:s')
+				];
+
+				$this->mfoto->addphoto('t_album_foto', $values);
+				$this->session->set_flashdata(['message' => 'Album <b>'.$jdl.'</b> has ben created', 'class' => 'alert-success']);
+					redirect(base_url('frontend/v1/album/new_album/'),'refresh');
+		}	
+	}
 	public function ajax_list_album()
 	{
 		$json = [];
@@ -102,6 +174,9 @@ class Album extends CI_Controller {
 	}
 	public function upload_foto()
 	{
+		if(empty($this->session->userdata('user_portal_log')['id'])):
+		return redirect(base_url('login_web'),'refresh');
+		endif;
 		$album_id = $this->input->post('id_album');
 		$fileName  = $_FILES['foto']['name'];
 		$fileName_blob = file_get_contents($_FILES['foto']['tmp_name']);
@@ -151,8 +226,84 @@ class Album extends CI_Controller {
 			}
 		}
 	}
+	public function update_foto() 
+	{
+		if(empty($this->session->userdata('user_portal_log')['id'])):
+		return redirect(base_url('login_web'),'refresh');
+		endif;
+		$id = $this->input->post('id_foto');
+		$id_album = $this->album->detail_photo(decrypt_url($id))->fid_album_foto;
+		// Foto New
+		$fileName  = $_FILES['foto']['name'];
+		// Foto Before
+		$fileName_before = $this->album->detail_photo(decrypt_url($id))->gambar;
+
+		$judul = $this->input->post('photo_judul');
+		$acak27 = generateRandomString(27);
+		$date = date('Y-m-d');
+
+		$files = "bkppdbalangan_".str_replace(" ","",$judul)."_".$acak27;	
+		//init library upload
+		$config['upload_path']      = './files/file_galeri/';
+		$path_now 					= base_url('/files/file_galeri/'.strtoupper(str_replace("/","",$files)).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
+		$config['allowed_types']    = 'jpg|jpeg|png';
+		$config['max_size'] 				= '5120'; //maksimum besar file 5M
+		$config['max_width'] 				= '1366';
+		$config['overwrite']				= true;
+		$config['file_ext_tolower'] = true;
+		$config['file_name'] 				= strtoupper($files); //nama yang terupload nantinya
+
+		$this->load->library('upload', $config);
+		if(!empty($fileName)) {
+			$fileName_blob = file_get_contents($_FILES['foto']['tmp_name']);
+			if (!$this->upload->do_upload('foto')) {
+				$this->session->set_flashdata(['message' =>  $this->upload->display_errors(), 'class' => 'alert-warning']);
+				redirect(base_url('frontend/v1/album/edit_photo/'.$id),'refresh');
+			} else {
+					if (file_exists('./files/file_galeri/'.$fileName_before)) {
+						unlink('./files/file_galeri/'.$fileName_before);
+						unlink('./files/file_galeri/thumb/'.$fileName_before);
+					}
+					$values = [
+						'judul' => $this->input->post('photo_judul'),
+						'keterangan' => $this->input->post('photo_keterangan'),
+						'gambar' => strtoupper($this->upload->data('file_name')),
+						'gambar_blob' => $fileName_blob,
+						'path' => $path_now,
+						'publish' => $this->input->post('publish_galeri'),
+						'update_at' => date('Y-m-d H:i:s'),
+						'update_by' => $this->session->userdata('user_portal_log')['nama_panggilan']
+					];
+
+					//function image_lib ci 
+					$this->watermark($this->upload->data('file_name'));
+					$this->resizeImage($this->upload->data('file_name'));
+					$this->mfoto->updategaleri('t_foto', $values, ['id_foto' => decrypt_url($id)]);
+					$this->session->set_flashdata(['message' => 'Foto <b>'.$this->input->post('photo_judul').'</b> berhasil diupdate', 'class' => 'alert-success']);
+					redirect(base_url('frontend/v1/album/open/'.encrypt_url($id_album)),'refresh');
+			}
+		} else {
+			$set = [
+				'judul' => $this->input->post('photo_judul'),
+				'keterangan' => $this->input->post('photo_keterangan'),
+				'publish' => $this->input->post('publish_galeri'),
+				'update_by' => $this->session->userdata('user_portal_log')['nama_panggilan'],
+				'update_at' => date('Y-m-d H:i:s')
+			];
+			$whr = [
+				'id_foto' => decrypt_url($id)
+			];
+			$this->mfoto->updategaleri('t_foto', $set, $whr);
+			$this->session->set_flashdata(['message' => 'Foto <b>'.$this->input->post('photo_judul').'</b> berhasil diupdate', 'class' => 'alert-success']);
+			redirect(base_url('frontend/v1/album/open/'.encrypt_url($id_album)),'refresh');
+		}
+
+	}
 	public function hapus_photo($id) 
 	{
+		if(empty($this->session->userdata('user_portal_log')['id'])):
+		return redirect(base_url('login_web'),'refresh');
+		endif;
 		$id_album = $this->album->detail_photo(decrypt_url($id))->fid_album_foto; 
 		$file = $this->album->detail_photo(decrypt_url($id))->gambar;
 		$tbl = 't_foto';
@@ -172,6 +323,42 @@ class Album extends CI_Controller {
 			$this->session->set_flashdata(['message' => 'Foto gagal dihapus', 'class' => 'alert-danger']);
 		}
 		redirect(base_url('frontend/v1/album/open/'.encrypt_url($id_album)),'refresh');
+	}
+
+	public function hapus_album($id) 
+	{
+		if(empty($this->session->userdata('user_portal_log')['id'])):
+		return redirect(base_url('login_web'),'refresh');
+		endif;
+		$id_album = decrypt_url($id); 
+		$file = $this->album->detail_album($id_album)->gambar;
+		$tbl = 't_album_foto';
+		$where = [
+			'id_album_foto' => $id_album,
+			'gambar' => $file
+		];
+
+		$path = './files/file_album/';
+		if(file_exists($path.$file)) {
+			unlink($path.$file);
+			$this->mfoto->hapus_album($tbl,$where);
+			$this->session->set_flashdata(['message' => 'Album berhasil dihapus', 'class' => 'alert-success']);
+		} else {
+			$this->session->set_flashdata(['message' => 'Album gagal dihapus', 'class' => 'alert-danger']);
+		}
+		redirect(base_url('frontend/v1/album/alert'),'refresh');
+	}
+
+	public function alert() 
+	{
+		$data = [
+			'title' => 'Sucess album has ben deleted',
+			'mf_beranda' => $this->mf_beranda->get_identitas(),
+            'mf_menu' => $this->mf_beranda->get_menu(),
+			'isi'	=> 'Frontend/v1/pages/alert',
+		];
+
+		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
 
 	public function watermark($filename) {

@@ -6,7 +6,7 @@
                 <img class="imglogo pull-left m-l--10 m-r-10 hidden-xs hidden-sm" src="<?= site_url('assets/images/favicon2.png') ?>" alt="<?= $title ?>" width="45">
                 <a href="javascript:void(0);" class="bars"></a>
                 <a class="navbar-brand m-t--10" href="#">
-                    <?= $title ?> <br>
+                    <?= $title ?> <span class="badge badge-danger">Super User</span>  <br>
                     <div class="font-11">Badan Kepegawaian, Pendidikan dan Pelatihan Daerah</div>
                 </a>
                 <!-- <span class="tagline"></span> -->

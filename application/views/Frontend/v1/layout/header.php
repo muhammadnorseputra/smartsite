@@ -73,7 +73,7 @@
 				
 			</ul>
 			
-			<?php if ($this->session->userdata('user_portal_log')['online'] == 'ON') { ?>
+			<?php if ($this->session->userdata('user_portal_log')['online'] === 'ON') { ?>
 			<?php
 			$idSes = $this->session->userdata('user_portal_log')['id'];
 			$getImg = $this->mf_users->get_userportal_byid($idSes)->photo_pic;

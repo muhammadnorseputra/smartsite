@@ -10,6 +10,10 @@ class M_f_album extends CI_Model
 		$q = $this->db->get()->row();
 		return $q->judul;
 	}
+	public function detail_album($id) {
+		$q = $this->db->get_where('t_album_foto', ['id_album_foto' => $id]);
+		return $q->row();
+	}
 	public function detail_photo($id) {
 		$q = $this->db->get_where('t_foto', ['id_foto' => $id]);
 		return $q->row();
@@ -30,10 +34,10 @@ class M_f_album extends CI_Model
 		return $this->db->order_by('id_foto', 'desc')->get_where('t_foto', ['fid_album_foto' => $id, 'publish ' => 'Y']);
 	}
 	public function jml_photo_in_album($idalbum) {
-		$q = $this->db->get_where('t_foto', ['fid_album_foto' => $idalbum]);
+		$q = $this->db->get_where('t_foto', ['fid_album_foto' => $idalbum, 'publish ' => 'Y']);
 		return $q->num_rows();
 	}
 	public function get_all_album() {
-		return $this->db->get_where('t_album_foto', array('publish' => 'Y'));
+		return $this->db->order_by('id_album_foto','desc')->get_where('t_album_foto', array('publish' => 'Y'));
 	}
 }
