@@ -1,11 +1,11 @@
 <section class="hero-beranda">
     <div class="container">
         <div class="row py-md-5">
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mb-5 py-5 py-3 pr-md-5 offset-md-2">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mb-5 py-5 py-3 offset-md-2">
                 <!-- <p data-aos="fade-up" data-aos-duration="600" class="lead text-white text-center text-md-left my-5 rounded"><span class="border-bottom pt-3">Hallo <i class="fas fa-grin-hearts"></i> pengunjung.</span></p> -->
-                <div data-aos="fade-up" data-aos-duration="800" class="display-2 text-white font-weight-bold text-center mt-5">Selamat Datang</div>
+                <div data-aos="fade-up" data-aos-duration="800" class="display-3 text-white font-weight-bold text-center mt-5">Selamat Datang</div>
                 <!-- Static halo -->
-                <p data-aos="fade-up" data-aos-duration="1000" class="lead text-white intro-website text-center mt-md-2">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</p>
+                <p data-aos="fade-up" data-aos-duration="1000" class="lead text-white intro-website text-center mt-md-2">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah</p>
                 <!-- Dinamic mengunakan typed.js -->
                 <!--                 <p class="halo_bkppd"><span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> <span>Update informasi resmi seputar layanan kepegawaian serta artikel terkait lainya langsung dari website kami.</span> <span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> </p>
                 <span id="typed" class="lead text-secondary intro-website"></span>

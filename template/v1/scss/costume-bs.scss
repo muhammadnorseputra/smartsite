@@ -1,3 +1,4 @@
+
 $theme-colors: (
 	"primary": #09A79E, 
 	  "secondary":  #6b705c,
@@ -22,8 +23,3 @@ $enable-rounded: true;
 $enable-shadows: true;
 $enable-gradients: true;
 $spacer: 1.05rem;
-.rounded-pill {
-	border-radius: 50px;
-	-webkit-border-radius:50px;
-	-o-border-radius: 50px;
-}

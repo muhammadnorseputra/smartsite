@@ -1,14 +1,14 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light">
+<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light py-md-1">
 	<div class="container">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
-			<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="160"/>'; ?>
+			<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="150"/>'; ?>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav ml-auto p-0 mr-md-auto">
+			<ul class="navbar-nav ml-auto mr-md-auto p-0">
 				<?php
 				$menu = $mf_menu;
 				foreach ($menu as $m) :
@@ -16,7 +16,7 @@
 					$submenu_jml = $this->mf_beranda->get_submenu_jml($m->id_menu);
 					if ($submenu_jml > 0) {
 				?>
-				<div class="nav-item dropdown">
+				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle px-3 mx-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
 						<?= $m->nama_menu; ?>
@@ -59,7 +59,7 @@
 						</li>
 						<?php endforeach; ?>
 					</ul>
-				</div>
+				</li>
 				<?php
 				} else {
 				?>
@@ -87,7 +87,7 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a  class="btn shadow-none btn-dark  border-0 mr-2 px-4" href="<?= base_url('login_web'); ?>">
+			<a  class="btn shadow-sm btn-danger rounded-pill border-0 py-2 px-4" href="<?= base_url('login_web'); ?>">
 				<i class="far fa-user mr-2"></i> Login
 			</a>
 			<?php } ?>

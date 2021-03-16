@@ -162,7 +162,7 @@ position: fixed;
 }
 body {	
 	background: #fff;
-	font-family: 'Space Grotesk', sans-serif;
+	font-family: 'Rubik', sans-serif;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
@@ -198,7 +198,7 @@ body {
 }
 a {
 	text-decoration: none;
-	font-family: 'Space Grotesk', sans-serif;
+	font-family: 'Rubik', sans-serif;
 	font-weight: 500;
 }
 
@@ -208,15 +208,15 @@ a:hover {
 }
 
 h5.title-sidebar {
-	font-family: 'Space Grotesk', sans-serif;
+	font-family: 'Rubik', sans-serif;
 	font-weight: 700;
 }
 .navbar li.nav-item a {
 	color: #000 !important;
 	transition: background .1s ease-in;
-	font-family: 'Space Grotesk', sans-serif;
+	font-family: 'Rubik', sans-serif;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 400;
 	border-radius: 8px !important;
 }
 .navbar li.nav-item a:hover {
@@ -887,4 +887,9 @@ i.likes:hover {
 .slideIn {
   -webkit-animation-name: slideIn;
   animation-name: slideIn;
+}
+.rounded-pill {
+	border-radius: 50px;
+	-webkit-border-radius:50px;
+	-o-border-radius: 50px;
 }
