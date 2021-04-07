@@ -7,7 +7,7 @@
 				<th class="text-center" width="30">#</th>
 				<th class="text-center">Album</th>
 				<th>Keterangan</th>
-				<th></th>
+				<th class="text-center"><i class="fas fa-images"></i></th>
 			</tr>
 		</thead>
 		<tbody>

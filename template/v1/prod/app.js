@@ -916,6 +916,7 @@ $(document).ready(function () {
     var $this = $(this);
     var $url = $this.attr('href');
     var $container = $("#containerModule");
+    $("a#module").removeClass("active");
     $.ajax({
       url: $url,
       method: 'post',
@@ -923,11 +924,12 @@ $(document).ready(function () {
       beforeSend: preloadModule,
       success: function success(res) {
         $container.html(res);
+        $this.addClass('active');
       }
     });
 
     function preloadModule() {
-      $container.html("<div id=\"loader\" class=\"m-2\"></div> ");
+      $container.html("<div class=\"d-flex justify-content-center align-items-center\">\n            \t<div id=\"loader\" class=\"m-2\"></div></div>");
     }
   });
 });

@@ -14,6 +14,7 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
         <div class="col-9 col-md-9 pb-3 pb-md-0">
           <a href="<?= base_url('frontend/v1/users/edit/' . encrypt_url($d->id_user_portal)); ?>" class="btn btn-sm btn-light border float-right mt-1"><i class="fas fa-cog mr-2" aria-hidden="true"></i> Edit Profile</a>
           <h3 class="font-weight-bold"><?= $this->session->userdata('user_portal_log')['nama_lengkap']; ?></h3>
+          <?= $this->session->userdata('user_portal_log')['email'] . " " . $cek_verify; ?> <br>
           <span class="text-secondary">@<?= $this->session->userdata('user_portal_log')['nama_panggilan']; ?> <span class="mx-1"> &bull;</span> <small>Bergabung pada: <?= longdate_indo($d->tanggal_bergabung); ?></small></span>
           <hr>
           <?= $desc; ?> <br>
@@ -25,12 +26,6 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
         </div>
       </div>
     </div>
-  </div>
-  <div class="card-footer bg-white p-4">
-    <span class="text-secondary d-inline-block mt-2">
-      <?= $this->session->userdata('user_portal_log')['email'] . " " . $cek_verify; ?>
-    </span>
-    
   </div>
 </div>
 </div>

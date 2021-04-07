@@ -1,4 +1,4 @@
-<section class="py-2 bg-gradient-light mt-4">
+<section class="py-2 bg-gradient-light">
 	<div class="container">
 		<div class="d-flex justify-content-lg-start align-content-center text-primary">
 			<div class="mr-3">

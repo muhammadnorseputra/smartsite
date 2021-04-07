@@ -206,7 +206,9 @@ a:hover {
 	color: #000;
 	text-decoration: none;
 }
-
+a.active {
+	background-color: #F4F5F6 !important;
+}
 h5.title-sidebar {
 	font-family: 'Rubik', sans-serif;
 	font-weight: 700;
