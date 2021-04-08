@@ -2,9 +2,9 @@ $(document).ready(function() {
     // make it as accordion for smaller screens
     $(document).scroll(function() {
         if ($(document).scrollTop() > 10) {
-            $("nav#navbar").css("transition", ".1s ease-in").addClass("bg-white");
+            $("nav#navbar").css("transition", ".1s ease-in").addClass("bg-white shadow-sm");
         } else {
-            $("nav#navbar").removeClass("bg-white");
+            $("nav#navbar").removeClass("bg-white shadow-sm");
         }
     });
 

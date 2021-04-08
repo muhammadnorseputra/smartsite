@@ -12,9 +12,16 @@ class M_f_banner extends CI_Model {
 		$r = $q->row();
 		return ucwords($r->judul);
 	}
-	public function get_list_banner() 
+	public function get_list_jns_banner()
 	{
-		return $this->db->get('t_banner');
+		return $this->db->get('ref_jns_banner');
+	}
+	public function get_list_banner($whr) 
+	{
+		$arr = ['fid_jns_banner' => $whr];
+		$this->db->join('ref_jns_banner', 't_banner.fid_jns_banner  = ref_jns_banner.id_jns_banner', 'left');
+		$q=$this->db->get_where('t_banner', $arr);
+		return $q->result();
 	}
 	public function get_all_banner($id) {
 		return $this->db->get_where('t_banner', ['publish' => 'Y', 'id_banner !=' => $id]);

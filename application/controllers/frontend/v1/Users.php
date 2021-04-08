@@ -361,7 +361,7 @@ class Users extends CI_Controller {
 	}
 	public function banner() {
 		$data = [
-				'banner' => $this->banner->get_list_banner()
+				'jns_banner' => $this->banner->get_list_jns_banner()->result()
 			];
 			return $this->load->view('Frontend/v1/pages/b_list', $data);
 	}

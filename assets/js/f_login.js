@@ -45,7 +45,7 @@
   function suksesLogin(response) {
       $('#content2').notifyModal({
           duration: 1800,
-          placement: 'centerTopSlide',
+          placement: 'center',
           overlay: true,
           type: 'success',
           icon: false,
