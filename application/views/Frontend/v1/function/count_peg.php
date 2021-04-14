@@ -1,5 +1,5 @@
 <?php
-$local = '192.168.1.4';
+$local = 'http://silka.bkppd-balangankab.info';
 $online = 'http://silka.bkppd-balangankab.info';
 $status = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? $online : $local;
 $host = $status;
