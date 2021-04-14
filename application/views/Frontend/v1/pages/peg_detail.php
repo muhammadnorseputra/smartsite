@@ -11,7 +11,7 @@
 <?php 
 	$response = api_curl_get('silka.bkppd-balangankab.info/api/detail_pns/?nip='.$data['nip']);
 	$r = json_decode($response);
-	if(empty($data['nip']) || count($r) === 0) redirect('errors/html/error_404','refresh');
+	// if(empty($data['nip']) || count($r) === 0) redirect('errors/html/error_404','refresh');
 ?>
 <section class="mb-5 mt--8">
 	<div class="container">
@@ -23,7 +23,7 @@
 					</div>
 					<table class="table table-bordered">
 						<tbody>
-							<tr>
+							<tr class="d-none d-md-block">
 								<td width="140" rowspan="13">
 					<img class="img-thumbnail img-fluid" src="http://silka.bkppd-balangankab.info/photo/<?= $r[0]->nip ?>.jpg" alt="<?= $r[0]->nip ?>">									
 								</td>
