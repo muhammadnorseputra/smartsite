@@ -6,7 +6,7 @@
         if ($detail->num_rows() > 0) :
           $h = $detail->row();
         ?>
-          <span class="font-weight-light small d-block text-dark my-3">Posted by <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= $h->views ?>x Diakses</span>
+          <span class="font-weight-light small d-block text-dark my-3">Created by <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= $h->views ?>x Diakses</span>
           <h1 class="font-weight-bold mb-0 pb-0">
             <span class="d-block font-weight-bold text-dark"><?= $h->title; ?></span>    
             </h1>
@@ -26,6 +26,19 @@
         if ($detail->num_rows() > 0) :
           $h = $detail->row();
         ?>
+        
+        <?= $h->content ?>
+        <?php else : ?>
+          <img class="d-block mx-auto mb-2 mt-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/page-not-found.svg') ?>">
+          <p>
+            <h4 class="text-center">Halaman tidak ditemukan!</h4>
+            <p class="text-center font-weight-light">
+              Ops, halaman yang kamu cari tidak ditemukan.
+            </p>
+          </p>
+        <?php endif; ?>
+      </div>
+      <div class="col-md-4">
         <?php 
         if(!empty($h->file)):
         $path = $h->filename;
@@ -38,16 +51,6 @@
           <?php else: ?>
             <img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto mb-3 w-25 d-block">
           <?php endif; ?>
-        <?php endif; ?>
-        <?= $h->content ?>
-        <?php else : ?>
-          <img class="d-block mx-auto mb-2 mt-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/page-not-found.svg') ?>">
-          <p>
-            <h4 class="text-center">Halaman tidak ditemukan!</h4>
-            <p class="text-center font-weight-light">
-              Ops, halaman yang kamu cari tidak ditemukan.
-            </p>
-          </p>
         <?php endif; ?>
       </div>
     </div>
