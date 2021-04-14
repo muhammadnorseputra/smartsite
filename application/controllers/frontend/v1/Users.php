@@ -171,12 +171,12 @@ class Users extends CI_Controller {
 					'pesan' => "<div class='d-block mx-auto text-center'>Login berhasil, akun ditemukan ...</div>", 
 					'redirect' => base_url("frontend/v1/users/akun/".decrypt_url($q->nama_panggilan)).'/'.$q->nohp);
 				} else {
-					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
+					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online, 'redirect' => base_url('login_web'));
 					$this->users->status_online('t_users_portal', ['email' => $where['email']], ['online' => 'OFF']);
 					$this->session->unset_userdata('user_portal_log');
 				}
 			}else{
-				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar", 'redirect' => base_url('beranda'));
+				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar", 'redirect' => base_url('login_web'));
 			}
 			echo json_encode($msg);
 			}
