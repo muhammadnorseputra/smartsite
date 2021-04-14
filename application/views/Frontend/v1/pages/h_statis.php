@@ -38,12 +38,12 @@
           </p>
         <?php endif; ?>
       </div>
-      <div class="col-md-4 mb-md-5 mt--9 bg-white p-3 p-md-4 rounded">
         <?php 
         if(!empty($h->file)):
         $path = $h->filename;
         $ext = pathinfo($path, PATHINFO_EXTENSION); 
         ?>
+      <div class="col-md-4 mb-md-5 mt--9 bg-white ml-2 p-md-4 rounded">
           <?php 
             if($ext === 'pdf'):
           ?>
@@ -51,8 +51,8 @@
           <?php else: ?>
             <img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block">
           <?php endif; ?>
-        <?php endif; ?>
       </div>
+        <?php endif; ?>
     </div>
   </div>
 </section>
