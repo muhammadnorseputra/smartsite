@@ -215,7 +215,7 @@
 			var oFReader = new FileReader();
 			oFReader.readAsDataURL(this.files[0]);
 			$.ajax({
-				url: _uri + "/frontend/v1/post/upload_single_photo/" + _uriSegment[6],
+				url: _uri + "/frontend/v1/post/upload_single_photo/" + _uriSegment[5],
 				method: "POST",
 				data: form_data,
 				contentType: false,
