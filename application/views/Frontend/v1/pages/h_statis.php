@@ -21,7 +21,7 @@
 <section class="h-statis-detail">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 mb-md-5 mt--9 bg-white p-3 p-md-4 border-right">
+      <div class="col-md-8 mt--9 bg-white p-3 p-md-4 border-right">
         <?php
         if ($detail->num_rows() > 0) :
           $h = $detail->row();
@@ -43,7 +43,7 @@
         $path = $h->filename;
         $ext = pathinfo($path, PATHINFO_EXTENSION); 
         ?>
-      <div class="col-md-4 mb-md-5 mt--9 bg-white p-md-4">
+      <div class="col-md-4 mt--9 bg-white p-md-4">
           <?php 
             if($ext === 'pdf'):
           ?>
