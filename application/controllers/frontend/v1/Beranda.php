@@ -118,15 +118,19 @@ class Beranda extends CI_Controller
                             <span class="badge badge-default px-0 font-weight-normal text-muted">Posted by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
                         </p>
 					</div>
-                        <div class="canvas p-4 position-relative">
+
+                    <div class="canvas p-4 position-relative">
                         <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
 						  '.$img.'
                         </a>
                         </div>
 					
 					<div class="card-body py-0 px-4">
-						<h2 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h2>
+						<hr>
+                        <h2 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h2>
+                        <hr>
                         <p class="card-text font-weight-normal text-secondary my-4">'.character_limiter($isi, 150).'</p>
+                        <hr>
                         <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
 					</div>
 					<div class="card-footer  bg-gradient-light p-2 border-0 d-flex justify-content-around">
