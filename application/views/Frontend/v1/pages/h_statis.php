@@ -49,7 +49,7 @@
           ?>
           <object class="rounded-lg border mb-3" data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:350px; width: 100%;"></object>
           <?php else: ?>
-            <img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto mb-3 w-25 d-block">
+            <img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block">
           <?php endif; ?>
         <?php endif; ?>
       </div>
