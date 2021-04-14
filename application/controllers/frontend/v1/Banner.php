@@ -32,7 +32,44 @@ class Banner extends CI_Controller {
 
 		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
+	public function new_banner($id_jns_banner) 
+	{
+		if(empty($this->session->userdata('user_portal_log')['id'])):
+		return	redirect(base_url('login_web'),'refresh');
+		endif;
 
+			$idjns = decrypt_url($id_jns_banner);
+			$data = [
+				'title' => 'Tambah Banner',
+				'idjns' => $idjns,
+				'mf_beranda' => $this->mf_beranda->get_identitas(),
+	            'mf_menu' => $this->mf_beranda->get_menu(),
+				'isi'	=> 'Frontend/v1/pages/b_baru',
+			];
+
+			$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+	}
+
+	public function hapus_banner($id) 
+	{
+		$d = $this->banner->get_detail_banner(decrypt_url($id))->row();
+		$file = $d->gambar;
+		$tbl = 't_banner';
+		$where = [
+			'id_banner' => decrypt_url($id),
+			'gambar' => $file
+		];
+
+		$path = './files/file_banner/';
+		if(file_exists($path.$file)) {
+			unlink($path.$file);
+			$this->banner->hapus_banner($tbl,$where);
+			$this->session->set_flashdata(['message' => 'Banner berhasil dihapus', 'class' => 'alert-success']);
+		} else {
+			$this->session->set_flashdata(['message' => 'Banner Gagal dihapus', 'class' => 'alert-danger']);
+		}
+		redirect(base_url('frontend/v1/album/alert'),'refresh');
+	}
 }
 
 /* End of file Banner.php */

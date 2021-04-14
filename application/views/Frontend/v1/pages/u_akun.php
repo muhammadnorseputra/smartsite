@@ -15,7 +15,7 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
 </div>
 </section>
 <section class="mt--9">
-  <div class="container bg-white rounded-lg">
+  <div class="container bg-white rounded-lg border mb-3 shadow-sm">
     <div class="row">
       <div class="col-md-3 no-gutters px-0">
         <div class="list-group border-0 rounded-0">
@@ -34,13 +34,12 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
           <a id="module" href="<?= base_url('frontend/v1/users/galeri/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-images mr-3 float-right" aria-hidden="true"></i> Galeri Foto</a>
           <a id="module" href="<?= base_url('frontend/v1/users/banner/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-image mr-3 float-right" aria-hidden="true"></i> Banner</a>
           <?php endif; ?>
-          
-          <a id="module" href="<?= base_url('frontend/v1/users/postDisukai/'.encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-thumbs-up mr-3 float-right" aria-hidden="true"></i> Disukai</a>
-          <a id="module" href="<?= base_url('frontend/v1/users/postDisimpan/'.encrypt_url($d->id_user_portal)); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-bookmark mr-3 float-right" aria-hidden="true"></i> Disimpan</a>
           <!-- <a id="module" href="#" class="border-0  rounded-0 list-group-item list-group-item-action"><i class="fas fa-cogs mr-3 float-right" aria-hidden="true"></i> Pengaturan</a> -->
           <div class="list-group-item text-muted border-0 rounded-0 mb-2">
             <b class="d-block">Lainnya</b>
           </div>
+          <a id="module" href="<?= base_url('frontend/v1/users/postDisukai/'.encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-thumbs-up mr-3 float-right" aria-hidden="true"></i> Disukai</a>
+          <a id="module" href="<?= base_url('frontend/v1/users/postDisimpan/'.encrypt_url($d->id_user_portal)); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-bookmark mr-3 float-right" aria-hidden="true"></i> Disimpan</a>
           <a id="module" href="<?= base_url('frontend/v1/users/logout/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-sign-out-alt mr-3 float-right" aria-hidden="true"></i> Logout</a>
         </div>
       </div>

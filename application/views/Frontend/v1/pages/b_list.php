@@ -16,7 +16,7 @@ foreach ($jns_banner as $j) {
 	  					<a href="#" class="btn btn-warning text-center">
 	  						<i class="fas fa-edit"></i> <br> Edit
 	  					</a>
-	  					<a href="#" class="btn btn-danger text-center">
+	  					<a onclick="return confirm('Apakah anda yakin akan menghapus banner tersebut?');" href="<?= base_url('frontend/v1/banner/hapus_banner/'.encrypt_url($b->id_banner)) ?>" class="btn btn-danger text-center">
 	  						<i class="fas fa-trash"></i> <br> Hapus
 	  					</a>
 	  				</div>
