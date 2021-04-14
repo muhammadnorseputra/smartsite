@@ -38,7 +38,7 @@
           </p>
         <?php endif; ?>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mb-md-5 mt--9 bg-white p-3 p-md-4 rounded">
         <?php 
         if(!empty($h->file)):
         $path = $h->filename;
