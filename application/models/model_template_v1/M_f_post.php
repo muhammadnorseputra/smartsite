@@ -222,6 +222,7 @@ class M_f_post extends CI_Model {
         $this->db->from('t_berita_save AS a');
         $this->db->join('t_berita AS b', 'a.fid_berita = b.id_berita');
         $this->db->join('t_users_portal AS c', 'b.created_by = c.id_user_portal');
+        $this->db->where('a.save', 'on');
         $this->db->where('a.fid_users_portal', $id);
         $q = $this->db->get();
         return $q;

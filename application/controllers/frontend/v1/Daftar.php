@@ -107,7 +107,7 @@ class Daftar extends CI_Controller
                 $this->email->to($to_email);
                 $this->email->subject('Email Verification!');
 
-                $message .= '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
+                $message = '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
                 $message .= '<p> Konfirmasi email kamu untuk mengakses fitur dari web sites kami.  <a class="btn btn-warning" target="_blank" href="' . base_url().'frontend/v1/users/verify/'.$data['nohp'].'">Klik Disini</a></p>';
                 $message .= '<p> Terimakasih. </p>';
                 
