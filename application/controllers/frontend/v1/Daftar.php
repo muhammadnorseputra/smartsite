@@ -92,7 +92,7 @@ class Daftar extends CI_Controller
 
                 $config = array(
                         'protocol' => 'smtp',
-                        'smtp_host' => 'ssl://smtp.gemail.com',
+                        'smtp_host' => 'ssl://smtp.gmail.com',
                         'smtp_port' => 465,
                         'smtp_user' => $from_email,
                         'smtp_pass' => '@putrabungsu6',
