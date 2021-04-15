@@ -70,7 +70,7 @@ class Users extends CI_Controller {
 		$data  = $this->users->getuserportalbyemail($email)->row_array();
 		// var_dump($data);
 		// Configurasi Email
-        $from_email = 'bkppdbalangan@gmail.com';
+        $from_email = 'muhammadnorseputra@gmail.com';
         $to_email = decrypt_url($email);
 
         $config = array(
@@ -78,12 +78,9 @@ class Users extends CI_Controller {
                 'smtp_host' => 'ssl://smtp.googlemail.com',
                 'smtp_port' => 465,
                 'smtp_user' => $from_email,
-                'smtp_pass' => 'wulanbungas',
+                'smtp_pass' => '@putrabungsu6',
                 'mailtype' => 'html',
                 'charset' => 'utf-8',
-                'wordwrap' => TRUE,
-                'validate' => TRUE,
-                'dsn' => TRUE
         );
 
         $this->load->library('email', $config);
