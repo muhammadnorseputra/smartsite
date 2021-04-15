@@ -92,7 +92,7 @@ class Daftar extends CI_Controller
 
                 $config = array(
                         'protocol' => 'smtp',
-                        'smtp_host' => 'ssl://smtp.googlemail.com',
+                        'smtp_host' => 'ssl://smtp.gemail.com',
                         'smtp_port' => 465,
                         'smtp_user' => $from_email,
                         'smtp_pass' => '@putrabungsu6',
@@ -116,7 +116,7 @@ class Daftar extends CI_Controller
                 //Send mail 
                 $this->daftar->send_akun('t_users_portal', $data);
                 if($this->email->send()){
-                    $this->session->set_flashdata("notif","Email verifikasi berhasil dikirim."); 
+                    $this->session->set_flashdata("notif","Akun kamu telah aktif, untuk mendapatkan fitur lengkap kami silahakan verifikasi email kamu."); 
                     // daftarkan akun ke database
                     // Simpan gambar di website
                     // if ( ! $this->upload->do_upload('photo_pic')){
