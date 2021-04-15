@@ -80,7 +80,10 @@ class Users extends CI_Controller {
                 'smtp_user' => $from_email,
                 'smtp_pass' => 'wulanbungas',
                 'mailtype' => 'html',
-                'charset' => 'iso-8859-1',
+                'charset' => 'utf-8',
+                'wordwrap' => TRUE,
+                'validate' => TRUE,
+                'dsn' => TRUE
         );
 
         $this->load->library('email', $config);
@@ -93,7 +96,7 @@ class Users extends CI_Controller {
         $url = base_url().'frontend/v1/users/reset_pass/'.$data['nohp'].'/'.encrypt_url(date('Ymd'));
         $message = '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
         $message .= '<p> Untuk melakukan reset password, silahkan anda klik pada link berikut <br>.  
-        	<a target="_blank" href="' .$url.'">'.$url.'</a></p>';
+        	{unwrap}<a target="_blank" href="' .$url.'">'.$url.'</a>{unwrap}</p>';
         $message .= '<p> Terimakasih. </p>';
         
         $this->email->message($message); 

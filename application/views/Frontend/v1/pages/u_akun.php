@@ -27,7 +27,7 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
             <i class="fas fa-user mr-3 float-right" aria-hidden="true"></i> Profile
           </a>
 
-          <?php if($d->email_verifikasi == 'Y'): ?>
+          <?php if($d->role == 'EDITOR'): ?>
           <a id="module" href="<?= base_url('frontend/v1/users/post/'.encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-newspaper mr-3 float-right" aria-hidden="true"></i> Postingan</a>
           <a id="module" href="<?= base_url('frontend/v1/users/halamanstatis/' . encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-pager mr-3 float-right" aria-hidden="true"></i> Halaman</a>
           <a id="module" href="<?= base_url('frontend/v1/users/halamanlink/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-link mr-3 float-right" aria-hidden="true"></i> Halaman Link</a>
