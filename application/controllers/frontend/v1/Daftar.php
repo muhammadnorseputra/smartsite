@@ -114,10 +114,10 @@ class Daftar extends CI_Controller
                 $this->email->message($message); 
                 
                 //Send mail 
+                $this->daftar->send_akun('t_users_portal', $data);
                 if($this->email->send()){
                     $this->session->set_flashdata("notif","Email verifikasi berhasil dikirim."); 
                     // daftarkan akun ke database
-                    $this->daftar->send_akun('t_users_portal', $data);
                     // Simpan gambar di website
                     // if ( ! $this->upload->do_upload('photo_pic')){
                     //     $msg = $this->upload->display_errors();
