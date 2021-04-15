@@ -126,7 +126,7 @@ class Daftar extends CI_Controller
                     // }
                     // $this->session->set_flashdata('photo_msg', $msg);
                 }else {
-                    $this->session->set_flashdata("notif","Email verifikasi gagal dikirim.");  
+                    $this->session->set_flashdata("notif","Akun kamu telah aktif, untuk mendapatkan fitur kami silahakan verifikasi email kamu.");  
                 } 
                 // Message success regitered
                 $msg = array('valid' => true, 'msg' => 'Register Berhasil', 'data' => $data);
