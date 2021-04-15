@@ -1,4 +1,5 @@
   $(document).ready(function() {
+      $("input[name='email']").focus();
       $.validate({
           form: '#f_login',
           lang: 'en',

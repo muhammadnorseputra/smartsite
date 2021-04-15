@@ -36,7 +36,7 @@
 								<label class="mb-2 d-block" for="password">
 									Password  <a href="<?= base_url('lupa_password') ?>" class="small float-right">(Lupa sandi?)</a>
 								</label>
-								<input type="password" class="form-control form-control-lg mb-2 shadow-sm  rounded-0" name="password" id="password-field" placeholder="Password"  required="required">
+								<input type="password" autocomplete="off" class="form-control form-control-lg mb-2 shadow-sm  rounded-0" name="password" id="password-field" placeholder="Password"  required="required">
 								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 							
@@ -51,7 +51,7 @@
 									Berapa hasil penjumlahan dari <strong><?= $val_1 ?> + <?= $val_2 ?></strong> ?
 								</p>
 								<div class="row">
-									<div class="form-group col-6">
+									<div class="form-group col-8">
 										<div class="input-group mb-2">
 											<div class="input-group-prepend">
 												<div class="input-group-text rounded-0"><i class="fas fa-key"></i></div>

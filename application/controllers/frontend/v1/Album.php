@@ -342,9 +342,9 @@ class Album extends CI_Controller {
 		if(file_exists($path.$file)) {
 			unlink($path.$file);
 			$this->mfoto->hapus_album($tbl,$where);
-			$this->session->set_flashdata(['message' => 'Album berhasil dihapus', 'class' => 'alert-success']);
+			$this->session->set_flashdata(['message' => 'Album berhasil dihapus', 'class' => 'alert-success', 'message_title' => 'Success']);
 		} else {
-			$this->session->set_flashdata(['message' => 'Album gagal dihapus', 'class' => 'alert-danger']);
+			$this->session->set_flashdata(['message' => 'Album gagal dihapus', 'class' => 'alert-danger', 'message_title' => 'Gagal']);
 		}
 		redirect(base_url('frontend/v1/album/alert'),'refresh');
 	}

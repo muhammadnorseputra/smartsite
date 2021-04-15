@@ -18,10 +18,11 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
           <span class="text-secondary">@<?= $this->session->userdata('user_portal_log')['nama_panggilan']; ?> <span class="mx-1"> &bull;</span> <small>Bergabung pada: <?= longdate_indo($d->tanggal_bergabung); ?></small></span>
           <hr>
           <?= $desc; ?> <br>
-          <?php if($d->email_verifikasi == 'Y'): ?>
+          <?php if($d->role == 'EDITOR'): ?>
           <a href="<?= base_url('frontend/v1/post/judul') ?>" class="btn border text-primary btn-default mt-3 p-3"> <i class="fas fa-newspaper my-2 fa-3x" aria-hidden="true"></i> <br> New Post </a>
           <a href="<?= base_url('frontend/v1/halaman/halamanstatis/add') ?>" class="btn border text-primary btn-default mt-3 p-3"> <i class="fas fa-pager my-2 fa-3x" aria-hidden="true"></i> <br> New Page </a>
           <a href="<?= base_url('frontend/v1/album/new_album') ?>" class="btn border text-primary btn-default mt-3 p-3"> <i class="fas fa-images my-2 fa-3x" aria-hidden="true"></i> <br> New Album </a>
+          <a href="<?= base_url('frontend/v1/banner/new_banner') ?>" class="btn border text-primary btn-default mt-3 p-3"> <i class="fas fa-image my-2 fa-3x" aria-hidden="true"></i> <br> New Banner </a>
         <?php endif; ?>
         </div>
       </div>

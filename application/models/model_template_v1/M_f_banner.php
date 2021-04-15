@@ -31,6 +31,10 @@ class M_f_banner extends CI_Model {
 	{
 		return $this->db->get_where('t_banner', ['id_banner' => $id]);
 	}
+	public function get_detail_by($whr)
+	{
+		return $this->db->get_where('t_banner', $whr);
+	}
 
 	public function hapus_banner($tbl, $whr)
 	  {
@@ -42,6 +46,15 @@ class M_f_banner extends CI_Model {
 	  {
 	    return $this->db->get($tbl);
 	  }
+	public function upload($tbl, $val)
+	  {
+	    return $this->db->insert($tbl,$val);
+	  }
+	  public function update_banner($tbl, $set, $unix) 
+	  {
+	    $this->db->where($unix);
+	    $this->db->update($tbl,$set);
+	  } 
 }
 
 /* End of file M_f_banner.php */
