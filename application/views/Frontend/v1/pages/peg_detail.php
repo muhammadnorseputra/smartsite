@@ -17,7 +17,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 offset-md-1">
-				<div class="card shadow-lg pt-3 px-3 border-0 bg-white">
+				<div class="card pt-3 px-3 border-0 bg-white">
 					<div class="alert alert-warning">
 						<span class="font-weight-nomal"><i class="fa fa-info-circle mr-2"></i> Data ini ditampilkan secara realtime, berdasarkan pada aplikasi SILKa (Sistem Informasi Layanan Kepegawian) Kabupaten Balangan.</span>
 					</div>
