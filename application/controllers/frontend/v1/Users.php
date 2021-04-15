@@ -487,16 +487,36 @@ class Users extends CI_Controller {
 		$d = $this->users->get_userportal_byid(decrypt_url($id));
 		if($this->session->userdata('user_portal_log')['online'] == 'ON') {
 		$data = [
+			'id' => $id,
             'title' => 'Edit: @'.ucfirst(decrypt_url($d->nama_panggilan)),
             'isi' => 'Frontend/v1/pages/u_akun_edit',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
-						'mf_menu' => $this->mf_beranda->get_menu(),
-						'profile' => $d
+			'mf_menu' => $this->mf_beranda->get_menu(),
+			'profile' => $d
         ];
         $this->load->view('Frontend/v1/layout/wrapper', $data);
     	} else {
 			redirect(base_url('frontend/v1/beranda'));
     	}
+	}
+
+	public function hapus_akun($id)
+	{
+		$akundb = $this->users->get_userportal_byid(decrypt_url($id));
+		// var_dump($akundb);
+		$tbl = 't_users_portal';
+		$whr = ['id_user_portal' => decrypt_url($id)];
+		if(decrypt_url($id) == $akundb->id_user_portal) {
+			$db = $this->users->hapus_akun($tbl, $whr);
+			if($db) {
+				$this->session->unset_userdata('user_portal_log');
+				$this->session->set_flashdata(['message' => 'Akun berhasil dihapus', 'class' => 'alert-success']);
+			} else {
+				$this->session->set_flashdata(['message' => 'Akun gagal dihapus', 'class' => 'alert-danger']);
+			}
+			redirect(base_url('beranda'),'refresh');
+		}
+			
 	}
 
 	public function upload_photo() 

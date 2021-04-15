@@ -38,6 +38,10 @@ class M_f_banner extends CI_Model {
 	    $this->db->delete($tbl);
 	    
 	  }
+	  public function list_jenisbanner($tbl) 
+	  {
+	    return $this->db->get($tbl);
+	  }
 }
 
 /* End of file M_f_banner.php */

@@ -40,10 +40,11 @@ class Banner extends CI_Controller {
 
 			$idjns = decrypt_url($id_jns_banner);
 			$data = [
-				'title' => 'Tambah Banner',
+				'title' => 'Created New Banner',
 				'idjns' => $idjns,
 				'mf_beranda' => $this->mf_beranda->get_identitas(),
 	            'mf_menu' => $this->mf_beranda->get_menu(),
+            	'jnsbanner' => $this->banner->list_jenisbanner('ref_jns_banner')->result(),
 				'isi'	=> 'Frontend/v1/pages/b_baru',
 			];
 

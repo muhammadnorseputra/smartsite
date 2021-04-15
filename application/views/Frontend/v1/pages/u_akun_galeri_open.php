@@ -8,7 +8,7 @@
 			</div>
 			<div>
 				<a href="<?= base_url('frontend/v1/album/tambah_photo/'. $id) ?>" class="btn btn-primary"><i class="fas fa-image"></i> Upload Photo</a>
-				<button onclick="window.history.back(-1)" class="btn btn-danger">Kembali <i class="fas fa-arrow-right"></i></button>
+				<!-- <button onclick="window.history.back(-1)" class="btn btn-danger">Kembali <i class="fas fa-arrow-right"></i></button> -->
 			</div>
 		</div>
 	</div>

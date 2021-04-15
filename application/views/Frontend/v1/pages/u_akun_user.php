@@ -1,6 +1,6 @@
 <?php
 $d = $this->users->detail_user(encrypt_url($this->session->userdata('user_portal_log')['email']));
-$cek_verify = $d->email_verifikasi == 'Y' ? '<i class="fas text-success fa-check-circle"></i>' : '<br><span class="badge badge-warning">Belum verify</span>';
+$cek_verify = $d->email_verifikasi == 'Y' ? '<i class="fas text-success fa-check-circle"></i>' : '<br> <span class="badge badge-warning">User Tamu</span>';
 $desc = $d->deskripsi == '' ? '<button class="btn btn-default text-left text-secondary" ><i class="fas fa-plus mr-2"></i> Tambahkan deskripsi tentang kamu disini.</button>' : $d->deskripsi;
 $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($d->id_user_portal)->photo_pic) . '';
 ?>

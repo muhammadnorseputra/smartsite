@@ -1,13 +1,13 @@
 <section class="hero">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 my-5 pt-4 text-left pb-5">
+      <div class="col-md-12 my-5 pt-4 text-left pb-3">
       </div>
     </div>
   </div>
 </section>
 <section class="mt--9">
-	<div class="container">
+	<div class="container mb-5">
 		<div class="row">
 			<div class="col-md-10 offset-md-1">
 				<div class="card mt-5 bg-white">
@@ -151,6 +151,10 @@
 					<i class="fas fa-save mr-2"></i> Simpan perubahan
 				</button>
 				<button onclick="window.history.back(-1)" type="button" class="btn btn-link btn-lg">Batalkan</button>
+
+				<a href="<?= base_url('frontend/v1/users/hapus_akun/'.$id) ?>" onclick="return confirm('Apakah anda yakin akan menghapus akun?')" id="hapus_akun" type="button" class="btn btn-link btn-lg float-right text-danger">
+					<i class="fas fa-trash mr-2"></i> Hapus akun saya!</a>
+
 
 				<?= form_close(); ?>
 			</div>

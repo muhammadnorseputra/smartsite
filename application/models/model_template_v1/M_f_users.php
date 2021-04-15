@@ -240,6 +240,12 @@ class M_f_users extends CI_Model
         $this->db->update($tbl, $data);
         return true;
     }
+    public function hapus_akun($tbl, $whr) {
+        $this->db->where($whr);
+        $this->db->delete($tbl);
+        return true;
+    }
+    
 }
 
 /* End of file M_f_users.php */
