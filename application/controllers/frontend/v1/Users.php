@@ -80,7 +80,7 @@ class Users extends CI_Controller {
                 'smtp_user' => $from_email,
                 'smtp_pass' => '@putrabungsu6',
                 'mailtype' => 'html',
-                'charset' => 'utf-8',
+                'charset' => 'iso-8859-1',
         );
 
         $this->load->library('email', $config);

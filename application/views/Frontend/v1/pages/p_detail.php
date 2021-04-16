@@ -131,7 +131,7 @@ if (count($pecah) > 0) {
 							$namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
 							}
 							if(!empty($b->img)):
-							$img = '<img class="img-fluid rounded lazy p-0 m-0" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="'.base_url('files/file_berita/'.$b->path).'">';
+							$img = '<img class="img-fluid rounded lazy p-0 m-0" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="'.base_url('files/file_berita/'.$b->img).'">';
 							else:
 							$img = '<img class="img-fluid rounded lazy p-0 m-0" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
 							endif;
