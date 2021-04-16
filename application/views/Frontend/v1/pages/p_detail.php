@@ -19,7 +19,7 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
-$img = '<img class="img-fluid card-img-top rounded" src="'.$post_detail->path.'">';
+$img = '<img class="img-fluid card-img-top rounded" src="'.base_url('files/file_berita/'.$post_detail->gambar).'">';
 else:
 $img = '<img class="img-fluid card-img-top rounded" src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
 endif;
