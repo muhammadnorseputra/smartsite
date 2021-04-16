@@ -1,4 +1,4 @@
-<section class="hero-beranda">
+<section class="hero-beranda" style="background-image: url('<?= $this->mf_beranda->get_banner('BANNER', 'Hero')[0]; ?>');">
     <div class="container">
         <div class="row py-md-5">
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mb-5 py-5 py-3 offset-md-2">

@@ -929,7 +929,9 @@ $(document).ready(function () {
     });
 
     function preloadModule() {
-      $container.html("<div class=\"d-flex justify-content-center align-items-center\">\n            \t<div id=\"loader\" class=\"m-2\"></div></div>");
+      /*$container.html(`<div class="d-flex justify-content-center align-items-center">
+          <div id="loader" class="m-2"></div></div>`);*/
+      $container.html("<div class=\"slider\"><div class=\"line\"></div> <div class=\"subline inc\">< /div> \n                <div class=\"subline dec\"> </div></div>");
     }
   });
 });

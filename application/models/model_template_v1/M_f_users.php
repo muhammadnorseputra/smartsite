@@ -246,6 +246,10 @@ class M_f_users extends CI_Model
         return true;
     }
     
+    public function get_mainmenu()
+    {
+        return $this->db->where('aktif','Y')->where('sts','FRONTEND')->where('link','#')->get('t_menu');
+    }
 }
 
 /* End of file M_f_users.php */

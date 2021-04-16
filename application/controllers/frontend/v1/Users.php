@@ -235,6 +235,15 @@ class Users extends CI_Controller {
 			return $this->load->view('Frontend/v1/pages/u_akun_halaman_link', $data);
 		}
 
+		public function submenu() {
+			$data = [
+				'data_submenu' => $this->users->getsubmenu()->result(),
+				'data_mainmenu' => $this->users->get_mainmenu()->result(),
+			];
+
+			return $this->load->view('Frontend/v1/pages/u_akun_submenu', $data);
+		}
+
 		public function updatelinkhalaman($id) {
 			$token = $this->input->post('txt');
 			
