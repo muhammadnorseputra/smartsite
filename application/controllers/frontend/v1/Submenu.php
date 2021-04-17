@@ -24,7 +24,7 @@ class Submenu extends CI_Controller {
 		$data = array();
 		$no = $_POST['start'];
 		foreach ($list as $s) {
-			$active = $s->aktif === 'Y' ? '<span class="badge badge-primary">Active</span>' : '<span class="badge badge-light">Unactive</span>';
+			$active = $s->aktif === 'Y' ? '<span class="badge badge-primary">Active</span>' : '<span class="badge badge-danger">Unactive</span>';
 			if($s->created_by === $this->session->userdata('user_portal_log')['id']):	
 			$btnAksi = '<div class="dropdown dropright">
 						  <button id="dLabel" class="btn btn-lg border-0 btn-light bg-white p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -88,8 +88,40 @@ class Submenu extends CI_Controller {
 	{
 		$id = $this->input->get('id');
 		$db = $this->submenu->detail($id)->row();
-		echo $db;
+		echo json_encode($db);
 	}
+
+	public function update()
+	{
+		$p = $this->input->post();
+		//UNTUK ID CEK PADA DATABASE TABLE `t_module` 
+		$module = !empty($p['e_module']) ? '27' : '0';
+		$link = $module == '27' ? 'page/'.$p['e_link_sub'].'/'.$this->halaman->get_title_halaman($p['e_link_sub']) : $p['e_link_sub'];
+		$parent = $p['e_parentsub'] === '0' ? null : $p['e_parentsub'];
+
+		$whr = [
+			'idsub' => $p['idsub']
+		];
+
+		$value = [
+			'idmain' => $p['e_mainmenu'],
+			'fid_idsub' => $parent,
+			'fid_module' => $module,
+			'nama_sub' => $p['e_nama_sub'],
+			'link_sub' => $link,
+			'order' => $p['e_order'],
+			'aktif' => $p['e_aktif']
+		];
+
+		$db = $this->submenu->update('t_submenu', $value, $whr);
+		if($db) {
+			$msg = true;
+		} else {
+			$msg = false;
+		}
+		echo json_encode($msg);
+	}
+
 	public function hapus()
 	{
 		$id = $this->input->post('id');

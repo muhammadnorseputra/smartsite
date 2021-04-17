@@ -351,9 +351,9 @@ class Post extends CI_Controller
         $output = '';
          // if($this->post->jml_replay_komentar($id_komentar) > 0):
            foreach ($this->post->user_replay_komentar($id_komentar) as $reply) {
-            if($reply->fid_users_portal == $this->session->userdata('user_portal_log')['id']) {
-                if($reply->tanggal === date('Y-m-d')):
-                $button = '<div class="btn-group float-right">
+            if(($reply->fid_users_portal == $this->session->userdata('user_portal_log')['id']) && ($reply->aktif != 'N')) {
+                if($reply->tanggal === date('Y-m-d')){
+                $button_more = '<div class="btn-group float-right">
                                 <button type="button" class="btn btn-default text-muted dropdown-toggle dropdown-toggle-split btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
@@ -362,17 +362,25 @@ class Post extends CI_Controller
                                         <i class="fas fa-trash"></i> Hapus</button>
                                 </div>
                             </div>';
-                else:
-                $button = '';
-                endif;
+                }
+            }  else {
+                $button_more = '';
             }
-        if($this->session->userdata('user_portal_log')['online'] == 'ON') {
-            $btn_reply = '<button type="button" id="btn-reply-comment" data-id-parent="' . encrypt_url($reply->fid_users_portal) . '"
-                            data-id-comment="'.$reply->id_komentar.'"
-                            data-id-berita="' . encrypt_url($reply->fid_berita) . '"
-                            data-id-user-comment="' . encrypt_url($this->session->userdata('user_portal_log')['id']) . '"
-                            data-username="' . decrypt_url($reply->nama_lengkap) . '" class="btn text-muted font-small btn-link ml-1 p-0"> <small><i class="fas fa-retweet"></i> Reply</small> </button>';
-        }
+                if(($this->session->userdata('user_portal_log')['online'] == 'ON') && ($reply->aktif != 'N')) {
+                    $btn_reply = '<button type="button" id="btn-reply-comment" data-id-parent="' . encrypt_url($reply->fid_users_portal) . '"
+                                    data-id-comment="'.$reply->id_komentar.'"
+                                    data-id-berita="' . encrypt_url($reply->fid_berita) . '"
+                                    data-id-user-comment="' . encrypt_url($this->session->userdata('user_portal_log')['id']) . '"
+                                    data-username="' . decrypt_url($reply->nama_lengkap) . '" class="btn text-muted font-small btn-link ml-1 p-0"> <small><i class="fas fa-retweet"></i> Reply</small> </button>';
+                } else {
+                    $btn_reply = '';
+                }
+
+                if($reply->aktif === 'N') {
+                    $isi_komentar = '<i class="text-danger">This Comment Is Blocked Administrator</i>';
+                } else {
+                    $isi_komentar = $reply->isi;
+                }
                $output .= ' 
                     <div class="tracking-item reply" id="'.$reply->id_komentar.'">
                         <div class="tracking-icon status-intransit ml-5">
@@ -380,8 +388,8 @@ class Post extends CI_Controller
                         </div>
                         <div class="tracking-date small">'.mediumdate_indo($reply->tanggal).'</div>
                         <div class="tracking-content ml-5">
-                        '.$button.'
-                        '.decrypt_url($reply->nama_lengkap). ' &bull; <i class="small">'.time_ago($reply->waktu).'</i><span>'.$reply->isi. '</span> <div id="displayReplyId'. encrypt_url($reply->fid_users_portal).'"></div> '. $btn_reply.'
+                        '.$button_more.'
+                        '.decrypt_url($reply->nama_lengkap). ' &bull; <i class="small">'.time_ago($reply->waktu).'</i><span>'.$isi_komentar. '</span> <div id="displayReplyId'. encrypt_url($reply->fid_users_portal).'"></div> '. $btn_reply.'
                         </div>
                     </div>
          ';  
@@ -399,7 +407,7 @@ class Post extends CI_Controller
             $output = '';
             foreach($comments->result() as $comment):
                 $profileUser = $this->mf_users->get_userportal_byid($comment->fid_users_portal);
-                if($comment->fid_users_portal == $this->session->userdata('user_portal_log')['id']) {
+                if(($comment->fid_users_portal == $this->session->userdata('user_portal_log')['id']) && $comment->aktif != 'N') {
                     if($comment->tanggal === date('Y-m-d')):
                     $button = '<div class="btn-group float-right">
                                     <button type="button" class="btn btn-default text-muted dropdown-toggle dropdown-toggle-split btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -417,12 +425,20 @@ class Post extends CI_Controller
                     $button = '';
                 }
 
-                if($this->session->userdata('user_portal_log')['online'] == 'ON') {
+                if(($this->session->userdata('user_portal_log')['online'] == 'ON') && $comment->aktif != 'N') {
                     $btn_reply = '<button type="button" id="btn-reply-comment" data-id-parent="' . encrypt_url($comment->fid_users_portal) . '"
                                     data-id-comment="'.$comment->id_komentar.'"
                                     data-id-berita="' . encrypt_url($comment->fid_berita) . '"
                                     data-id-user-comment="' . encrypt_url($this->session->userdata('user_portal_log')['id']) . '"
                                     data-username="' . decrypt_url($profileUser->nama_lengkap) . '" class="btn text-muted font-small btn-link ml-1 p-0"> <small><i class="fas fa-retweet"></i> Reply</small> </button>';
+                } else {
+                    $btn_reply = '';
+                }
+
+                if($comment->aktif === 'N') {
+                    $isi_komentar = '<i class="text-danger">This Comment Is Blocked Administrator</i>';
+                } else {
+                    $isi_komentar = $comment->isi;
                 }
                 
                 $output .= ' 
@@ -433,7 +449,7 @@ class Post extends CI_Controller
                                 <div class="tracking-date">'.mediumdate_indo($comment->tanggal).'</div>
                                 <div class="tracking-content">
                                 '.$button.'
-                                '.decrypt_url($profileUser->nama_lengkap). ' &bull; <i class="small">'.time_ago($comment->waktu, true).'</i><span>'.$comment->isi. '</span> <div id="displayReplyId'. encrypt_url($comment->fid_users_portal).'"></div> '. $btn_reply.' 
+                                '.decrypt_url($profileUser->nama_lengkap). ' &bull; <i class="small">'.time_ago($comment->waktu, true).'</i><span>'.$isi_komentar. '</span> <div id="displayReplyId'. encrypt_url($comment->fid_users_portal).'"></div> '. $btn_reply.' 
                                 </div>
                             </div>
                  ';

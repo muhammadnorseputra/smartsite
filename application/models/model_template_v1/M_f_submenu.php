@@ -10,9 +10,12 @@ class M_f_submenu extends CI_Model {
   protected $column_search = array('nama_sub');
   // default order 
   protected $order = array('idsub' => 'desc');
+  // default select
+  protected $select = array('t_submenu.*','t_menu.sts');
 
   private function _get_datatables_query()
   {
+    $this->db->select($this->select);
     $this->db->from($this->table);
     $this->db->join('t_menu', 't_submenu.idmain = t_menu.id_menu');
     $this->db->where('t_menu.sts', 'FRONTEND');
@@ -63,6 +66,7 @@ class M_f_submenu extends CI_Model {
 
   public function count_all()
   {
+    $this->db->select($this->select);
     $this->db->from($this->table);
     $this->db->join('t_menu', 't_submenu.idmain = t_menu.id_menu');
     $this->db->where('t_menu.sts', 'FRONTEND');
@@ -76,6 +80,12 @@ class M_f_submenu extends CI_Model {
   public function detail($id) 
   {
   	return $this->db->get_where('t_submenu', ['idsub' => $id]);
+  }
+  public function update($tbl, $data, $whr) 
+  {
+    $this->db->where($whr);
+    $this->db->update($tbl, $data);
+    return true;
   }
   public function hapus($whr, $tbl)
   {
