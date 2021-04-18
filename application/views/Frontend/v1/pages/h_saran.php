@@ -1,4 +1,4 @@
-<section class="py-5 hero">
+<section class="py-4 hero">
   <div class="container">
     <div class="row">
       <div class="col-md-12 my-3 pt-4 text-left pb-5">
@@ -8,14 +8,14 @@
   </div>
 </section>
 <section class="mt--9">
-<div class="container bg-white rounded ">
+<div class="container">
 	<div class="row">
-		<div class="col-md-6 offset-md-1 mt-4">
+		<div class="col-md-7 mt-4 bg-white p-md-5">
 			<div class="mr-md-3 pr-md-3">
 				<div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold text-dark"><i class="fas fa-box text-dark mr-2"></i>Kotak Saran</span>
                 </div>
-					<p class="font-weight-bold text-secondary">Silahkan masukan saran anda terkait layanan yang kami berikan diwebsite ini maupun ditempat kerja.</p>
+					<p class="font-weight-bold text-secondary">Silahkan masukan saran anda terkait layanan atau maupun fitur yang kami berikan di website.</p>
 				</div>
 			<?php if($this->session->flashdata('captcha_salah') <> ''): ?>
 			<div class="alert alert-danger" role="alert">
@@ -29,6 +29,18 @@
 						<label for="nama_lengkap">Nama <span class="text-danger">*</span></label>
 						<input type="text" name="nama_lengkap" class="rounded-0 shadow-sm form-control-lg form-control <?= !form_error('nama_lengkap') ? 'is-valid' : 'is-invalid'  ?>" id="nama_lengkap" placeholder="Masukan nama kamu" value="<?php echo set_value('nama_lengkap'); ?>">
 						<?php echo form_error('nama_lengkap'); ?>
+					</div>
+					<div class="form-group">
+						<label for="category">Ketegori Saran <span class="text-danger">*</span></label>
+						<select class="rounded-0 shadow-sm form-control-lg form-control" name="category" id="category">
+							<option value="">-- Pilih Kategori --</option>
+							<option value="fitur">Fitur Website</option>
+							<option value="layanan">Layanan Website</option>
+							<option value="peforma">Peforma</option>
+							<option value="bug">Error / BUG</option>
+							<option value="lainnya">Lainnya</option>
+						</select>
+						<?php echo form_error('category'); ?>
 					</div>
 					<div class="form-group">
 						<label for="email">Email <span class="text-info">(Opsional)</span></label>
@@ -54,7 +66,7 @@
 							Penjumlahan <span class="text-danger">*</span> <h3><?= $val_1 ?> + <?= $val_2 ?></h3>
 						</p>
 					</div>
-					<div class="input-group col-md-6 pl-0">
+					<div class="input-group col-md-7 pl-0">
 						<input type="text" name="captcha" class="rounded-0 shadow-sm form-control-lg form-control <?= !form_error('captcha') ? 'is-valid' : 'is-invalid'  ?>" placeholder="Masukan hasil?" aria-describedby="button-addon2">
 						<div class="input-group-append">
 							<button class="btn btn-primary btn-sm" type="submit" id="button-addon2">Kirim Saran</button>
@@ -66,7 +78,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4 d-none d-md-block d-lg-block d-xl-block mt-5">
+		<div class="col-md-5 d-none d-md-block d-lg-block d-xl-block mt-4 bg-light p-md-5 border-left">
 			<img src="<?= base_url('assets/images/bg/Gak Pusying.235aa0ce.png') ?>" alt="saran-buat-website-bkppd-nih-bagai-mana-ya" class="img-fluid">
 		</div>
 	</div>

@@ -52,13 +52,10 @@
             <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                 
                 <div class="row">
-                    <div class="col-8 col-md-11">
+                    <div class="col-12">
                         <div class="separator">
                             <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-secondary mr-2"></i>Postingan Terbaru</span></span>
                         </div>
-                    </div>
-                    <div class="col-4 col-md-1">
-                        <div class="float-right mt-2"><button data-toggle="tooltip" title="Search Post" id="caripost" class="btn btn-outline-primary border-0"> <i class="fas fa-search"></i></button></div>
                     </div>
                 </div>
                 <div id="load_data"></div>

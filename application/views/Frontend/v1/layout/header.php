@@ -72,7 +72,9 @@
 				<?php endforeach; ?>
 				
 			</ul>
-			
+			<button data-toggle="tooltip" title="Klik untuk mencari daftar postingan yang telah dibuat berdasarkan judul postingan" class="btn btn-outline-primary rounded-pill py-2 px-4 mr-2" id="caripost">
+				<i class="fas fa-search mr-2"></i> Cari Postingan
+			</button>
 			<?php if ($this->session->userdata('user_portal_log')['online'] === 'ON') { ?>
 			<?php
 			$idSes = $this->session->userdata('user_portal_log')['id'];

@@ -57,19 +57,19 @@ content: "";
   opacity: 0.4;
   background:$teal;
   width:190%;
-  height:5px;
+  height:3px;
 }
 
 .subline{
   position:absolute;
   background:$green;
-  height:5px; 
+  height:3px; 
 }
 .inc{
   animation: increase 2.5s infinite;
 }
 .dec{
-  animation: decrease 1.5s 0.5s infinite;
+  animation: decrease 2.5s 0.5s infinite;
 }
 .logo-loading {
 	position: fixed;
@@ -819,8 +819,8 @@ i.likes:hover {
 		border-color: transparent !important;
 	}
 	.logo-loading {
-	  top: 50%;
-	  transform: translate(-50%, -50%);
+	  top: 40%;
+	  transform: translate(-50%, -40%);
 	}
 }
 @media (min-width: 992px){

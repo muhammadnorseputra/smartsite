@@ -721,7 +721,10 @@ $(document).ready(function () {
   $(document).scroll(function () {
     if ($(document).scrollTop() > 10) {
       $("nav#navbar").css("transition", ".1s ease-in").addClass("bg-white shadow-sm");
+      $("button#caripost").addClass('btn-outline-light');
     } else {
+      $("button#caripost").removeClass('btn-outline-light'); // $("button#caripost").toggleClass('');
+
       $("nav#navbar").removeClass("bg-white shadow-sm");
     }
   });
@@ -801,7 +804,7 @@ $(document).ready(function () {
     });
   } else {
     $(".sidebar").sticky({
-      topSpacing: 0,
+      topSpacing: 30,
       bottomSpacing: 100
     });
   }

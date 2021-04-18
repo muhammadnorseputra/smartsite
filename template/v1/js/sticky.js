@@ -5,7 +5,7 @@ $(document).ready(function() {
         });
     } else {
         $(".sidebar").sticky({
-            topSpacing: 0,
+            topSpacing: 30,
             bottomSpacing: 100,
         });
     }

@@ -16,14 +16,14 @@ if ($by == 'admin') {
 $id = encrypt_url($detail->id_berita);
 $postby = strtolower($namalengkap);
 $judul = strtolower($detail->judul);
-$posturl = "post/detail/{$postby}/{$id}/" . url_title($judul) . '';
+$posturl = "post/{$postby}/{$id}/" . url_title($judul) . '';
 ?>
 <script>
     var data_count = <?= $detail->share_count; ?>;
     $("#share").jsSocials({
         url: "<?= base_url($posturl) ?>",
         shares: ["email", "twitter", "facebook", "whatsapp"],
-        text: " <?= $detail->judul; ?>",
+        text: "<?= $detail->judul; ?>",
         showLabel: true,
         showCount: true,
         showCount: "inside",

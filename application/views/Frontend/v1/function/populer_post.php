@@ -15,14 +15,22 @@
                         $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
                         endif;
                         ?>
-                        <a  href="<?= $posturl; ?>" class="bg-transparent list-group-item list-group-item-action border-0 px-3  m-0">
-                            <div class="media m-0">
+                        <a  href="<?= $posturl; ?>" class="list-group-item list-group-item-action px-3 border-0">
+                            <div class="media">
                                 <?= $img ?>
                                 <div class="media-body">
-                                    <span class="font-weight-lighter text-primary"><?= character_limiter($b->judul, 30); ?></span>
-                                    <small class="d-block mt-2 align-middle text-left font-weight-bold">
-                                    <i class="far fa-thumbs-up"></i> <?= $b->like_count ?> Likes </small>
-                                    </small>
+                                    <span class="font-weight-lighter text-primary"><?= character_limiter($b->judul, 35); ?></span>
+                                    <div class="mt-2 align-middle text-left small text-secondary d-flex justify-content-between">
+                                    <span>
+                                        <i class="far fa-thumbs-up mr-2"></i> <?= $b->like_count ?> Likes
+                                    </span>
+                                    <span>
+                                        <i class="fas fa-share mr-2"></i> <?= $b->share_count ?> Share   
+                                    </span>
+                                    <span>
+                                        <i class="fas fa-eye mr-2"></i> <?= $b->views ?> Views   
+                                    </span>
+                                    </div>
                                 </div>
                             </div>
                             

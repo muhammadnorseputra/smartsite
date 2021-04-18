@@ -3,7 +3,7 @@
 Submenu 
 </h5>
 <div class="table-responsive px-3 pb-3">
-	<table class="table table-condensed table-borderless table-striped display" id="table-submenu">
+	<table class="table table-condensed display" id="table-submenu">
 		<thead>
 			<tr>
 				<th class="text-center">No</th>

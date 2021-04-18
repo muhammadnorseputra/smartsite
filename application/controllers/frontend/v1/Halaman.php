@@ -217,6 +217,7 @@ class Halaman extends CI_Controller
       
       $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap', 'required|min_length[3]', ['required' => '{field} wajib diisi', 'min_length' => '{field} minimal 3 karakter']);
       $this->form_validation->set_rules('isi_saran', 'Isi Saran', 'required', ['required' => '{field} wajib diisi']);
+      $this->form_validation->set_rules('category', 'Kategori Saran', 'required', ['required' => '{field} belum dipilih']);
       $this->form_validation->set_rules('captcha', 'Pertanyaan Keamanan', 'required', ['required' => '{field} dijawab']);
 
       if($this->form_validation->run() == FALSE):
@@ -227,6 +228,7 @@ class Halaman extends CI_Controller
           $data = [
             'nama_lengkap' => $this->input->post('nama_lengkap'),
             'email' => $this->input->post('email'),
+            'kategori' => $this->input->post('category'),
             'isi_saran' => $this->input->post('isi_saran'),
             'tgl_kirim' => date('Y-m-d h:i:s')
           ];

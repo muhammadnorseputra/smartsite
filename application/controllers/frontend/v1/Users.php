@@ -171,12 +171,12 @@ class Users extends CI_Controller {
 					'pesan' => "<div class='d-block mx-auto text-center'>Login berhasil, akun ditemukan ...</div>", 
 					'redirect' => base_url("frontend/v1/users/akun/".decrypt_url($q->nama_panggilan)).'/'.$q->nohp);
 				} else {
-					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online, 'redirect' => base_url('login_web'));
+					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
 					$this->users->status_online('t_users_portal', ['email' => $where['email']], ['online' => 'OFF']);
 					$this->session->unset_userdata('user_portal_log');
 				}
 			}else{
-				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar", 'redirect' => base_url('login_web'));
+				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar");
 			}
 			echo json_encode($msg);
 			}
@@ -233,6 +233,13 @@ class Users extends CI_Controller {
 			];
 
 			return $this->load->view('Frontend/v1/pages/u_akun_halaman_link', $data);
+		}
+
+		public function kotak_saran() {
+			$data = [
+				'kategori_saran' => $this->users->karegori_saran()->result()
+			];
+			return $this->load->view('Frontend/v1/pages/u_akun_kotak_saran', $data);
 		}
 
 		public function submenu() {

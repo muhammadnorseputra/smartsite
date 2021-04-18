@@ -39,6 +39,7 @@
               });
               return false; // Will stop the submission of the form
               $form.removeClass('toggle-disabled');
+              $form.get(0).reset();
           }
       });
   });
@@ -62,7 +63,6 @@
               if (response.valid == true) {
                   window.location.href = response.redirect;
               }
-              $form.get(0).reset();
           }
       });
   }
@@ -95,7 +95,7 @@
           },
           onClose: function(el) {
               $('button[type="submit"]').html(`<i class="fas fa-lock mr-2"></i> Log In`);
-              window.location.href = msg.redirect;
+              // window.location.href = msg.redirect;
           }
       });
   }

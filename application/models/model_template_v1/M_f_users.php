@@ -250,6 +250,14 @@ class M_f_users extends CI_Model
     {
         return $this->db->where('aktif','Y')->where('sts','FRONTEND')->where('link','#')->get('t_menu');
     }
+
+    public function karegori_saran() 
+    {
+        $this->db->select('kategori');
+        $this->db->from('public_saran');
+        $q = $this->db->get();
+        return $q;
+    }
 }
 
 /* End of file M_f_users.php */
