@@ -101,10 +101,10 @@
 			"width": "20%"
 		}],
 		"language": {
-			"lengthMenu": "_MENU_ Data per halaman",
-			"zeroRecords": "Belum ada halaman",
+			"lengthMenu": "_MENU_ Data per saran",
+			"zeroRecords": "Belum ada saran",
 			"info": "Showing page _PAGE_ of _PAGES_",
-			"infoEmpty": "Belum ada halaman",
+			"infoEmpty": "Belum ada saran",
 			"infoFiltered": "(filtered from _MAX_ total records)",
 			"search": "Pencarian",
 			"processing": "<img src='" + _uri + "/bower_components/SVG-Loaders/svg-loaders/oval-datatable.svg' />"
