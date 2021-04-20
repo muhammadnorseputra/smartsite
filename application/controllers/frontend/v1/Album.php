@@ -140,7 +140,7 @@ class Album extends CI_Controller {
 				$values = [
 					'judul' => $jdl,
 					'keterangan' => $this->input->post('photo_keterangan'),
-					'gambar' => strtoupper($this->upload->data('file_name')),
+					'gambar' => $this->upload->data('file_name'),
 					'gambar_blob' => $fileName_blob,
 					'path' => $path_now,
 					'publish' => $this->input->post('publish_album'),
@@ -209,7 +209,7 @@ class Album extends CI_Controller {
 						'fid_album_foto' => decrypt_url($album_id),
 						'judul' => $this->input->post('photo_judul'),
 						'keterangan' => $this->input->post('photo_keterangan'),
-						'gambar' => strtoupper($this->upload->data('file_name')),
+						'gambar' => $this->upload->data('file_name'),
 						'gambar_blob' => $fileName_blob,
 						'path' => $path_now,
 						'publish' => $this->input->post('publish_galeri'),
@@ -267,7 +267,7 @@ class Album extends CI_Controller {
 					$values = [
 						'judul' => $this->input->post('photo_judul'),
 						'keterangan' => $this->input->post('photo_keterangan'),
-						'gambar' => strtoupper($this->upload->data('file_name')),
+						'gambar' => $this->upload->data('file_name'),
 						'gambar_blob' => $fileName_blob,
 						'path' => $path_now,
 						'publish' => $this->input->post('publish_galeri'),
