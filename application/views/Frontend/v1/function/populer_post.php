@@ -10,7 +10,7 @@
                         $judul = strtolower($b->judul);
                         $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
                         if(!empty($b->img)):
-                        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.$b->path.'" alt="'.$b->judul.'">';
+                        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="files/file_berita/'.$b->img.'" alt="'.$b->judul.'">';
                         else:
                         $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
                         endif;
