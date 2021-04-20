@@ -67,7 +67,7 @@ $config = array(
     | without final / (DON'T TOUCH)
     |
     */
-    'base_url' => ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http"). "://". @$_SERVER['HTTP_HOST'].'/smartsite/files/filemanager-v2/',
+    'base_url' => ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http"). "://". @$_SERVER['HTTP_HOST'].'/files/filemanager-v2/',
     /*
     |--------------------------------------------------------------------------
     | path from base_url to base of upload folder
