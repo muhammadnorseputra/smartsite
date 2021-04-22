@@ -31,7 +31,7 @@ $posturl = "post/{$postby}/{$id}/" . url_title($judul) . '';
         on: {
             click: function(e) {
                 data_count++;
-                $.post('<?= base_url('beranda/share_count_saved/' . $detail->id_berita); ?>', {
+                $.post('<?= base_url('frontend/v1/beranda/share_count_saved/' . $detail->id_berita); ?>', {
                     count: data_count
                 }, function(result) {
                     console.log(result);
