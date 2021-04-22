@@ -4,7 +4,7 @@
     <div id="share"></div>
 </div>
 <?php
-$by = $detail->created_by;
+$by = $detail->created_by;  
 if ($by == 'admin') {
     $namalengkap = $this->mf_users->get_namalengkap($by);
     $namapanggilan = $by;
@@ -31,7 +31,7 @@ $posturl = "post/{$postby}/{$id}/" . url_title($judul) . '';
         on: {
             click: function(e) {
                 data_count++;
-                $.post('<?= 'beranda/share_count_saved/' . $detail->id_berita; ?>', {
+                $.post('<?= base_url('beranda/share_count_saved/' . $detail->id_berita); ?>', {
                     count: data_count
                 }, function(result) {
                     console.log(result);
