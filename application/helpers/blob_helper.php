@@ -1,5 +1,14 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+if ( ! function_exists('img_blob'))
+{
+    
+  function img_blob($url) {
+    $txt = "data:image/jpeg;base64,".base64_encode($url)."";
+    return $txt;
+  }
+}
+
 if ( ! function_exists('blob_filename'))
 {
     

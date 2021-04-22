@@ -49,7 +49,7 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
           <a id="module" href="<?= base_url('frontend/v1/users/postDisukai/'.encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="far fa-thumbs-up mr-3 float-right" aria-hidden="true"></i> Disukai</a>
           <a id="module" href="<?= base_url('frontend/v1/users/postDisimpan/'.encrypt_url($d->id_user_portal)); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="far fa-bookmark mr-3 float-right" aria-hidden="true"></i> Disimpan</a>
           <?php endif; ?>
-          <a id="module" href="<?= base_url('frontend/v1/users/logout/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-sign-out-alt mr-3 float-right" aria-hidden="true"></i> Logout</a>
+          <a href="<?= base_url('frontend/v1/users/logout/'); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-sign-out-alt mr-3 float-right" aria-hidden="true"></i> Logout</a>
         </div>
       </div>
       <div class="col-md-9 px-md-0 border-left order-first order-md-last">

@@ -40,7 +40,7 @@
     </div>
 </section>
 <?php endif; ?>
-<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-5 pt-md-5' : 'my-4' ?>
+<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-4 pt-md-5' : 'my-4' ?>
 
 <section class="mb-5 <?= $my ?>">
     <div class="container">

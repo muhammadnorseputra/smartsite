@@ -51,7 +51,12 @@
 				</ul>
 			</div>
 			<div class="col-md-3">
-				<h6 class="text-white pb-2 border-bottom">Privacy</h6>
+				<h6 class="text-white pb-2 border-bottom">Lainnya</h6>
+				<ul class="list-unstyled">
+					<li>	
+						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-check-circle text-white mr-2"></i></span>User Terdaftar</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>

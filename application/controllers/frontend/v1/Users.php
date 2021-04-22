@@ -19,7 +19,18 @@ class Users extends CI_Controller {
         }
 	}
 	
-	
+	public function user_terdaftar()
+	{
+		$data = [
+            'title' => 'BKPPD &bull; User terdaftar',
+            'isi' => 'Frontend/v1/pages/user_list',
+            'mf_beranda' => $this->mf_beranda->get_identitas(),
+            'mf_menu' => $this->mf_beranda->get_menu(),
+            'userlist' => $this->users->userlist()->result(),
+        ];
+        $this->load->view('Frontend/v1/layout/wrapper', $data);
+	}
+
 	public function verify($nohp) {
 		if(isset($nohp)) {
 			$db = $this->users->verify_email($nohp);
@@ -55,6 +66,14 @@ class Users extends CI_Controller {
     		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('user_portal_log')['nama_panggilan'].'/'.encrypt_url($this->session->userdata('user_portal_log')['nohp'])),'refresh');
     	}
 	}
+	public function userguide()
+	{
+		$data = [
+            'mf_beranda' => $this->mf_beranda->get_identitas()
+		];
+		$this->load->view('Frontend/v1/pages/userguide', $data);
+	}
+
 	public function lupa_password() {
 		$data = [
             'mf_beranda' => $this->mf_beranda->get_identitas()
@@ -68,6 +87,8 @@ class Users extends CI_Controller {
 	public function reset_password() {
 		$email = encrypt_url($this->input->post('email'));
 		$data  = $this->users->getuserportalbyemail($email)->row_array();
+		$num = rand(10000000,99999999);
+		$db = $this->users->update_token('t_users_portal', ['token_verifikasi' => $num], ['email' => $email]);
 		// var_dump($data);
 		// Configurasi Email
         $from_email = 'muhammadnorseputra@gmail.com';
@@ -82,34 +103,80 @@ class Users extends CI_Controller {
                 'mailtype' => 'html',
                 'charset' => 'iso-8859-1',
         );
+        if(($db) && (decrypt_url($data['email']) == $to_email)) {
+	        $this->load->library('email', $config);
+	        $this->email->set_newline("\r\n");
 
-        $this->load->library('email', $config);
-        $this->email->set_newline("\r\n");
+	        $this->email->from($from_email, 'BKPPD Kab. Balangan'); 
+	        $this->email->to($to_email);
+	        $this->email->subject('Reset Password!');
 
-        $this->email->from($from_email, 'BKPPD Kab. Balangan'); 
-        $this->email->to($to_email);
-        $this->email->subject('Reset Password!');
-
-        $url = base_url().'frontend/v1/users/reset_pass/'.$data['nohp'].'/'.encrypt_url(date('Ymd'));
-        $message = '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
-        $message .= '<p> Untuk melakukan reset password, silahkan anda klik pada link berikut <br>.  
-        	{unwrap}<a target="_blank" href="' .$url.'">'.$url.'</a>{unwrap}</p>';
-        $message .= '<p> Terimakasih. </p>';
-        
-        $this->email->message($message); 
-        if($this->email->send()){
-        	$this->session->set_flashdata("notif","Link reset password telah dikirm ke email anda.");
-        }else {
-            $this->session->set_flashdata("notif","Link reset password gagal dikirim.");  
-        } 
+	        $url = base_url().'frontend/v1/users/reset_pass/'.$data['nohp'].'/'.encrypt_url(date('Ymd'));
+	        $message = '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
+	        $message .= '<h1>'.$num.'</h1>';
+	        $message .= '<p> Terimakasih. </p>';
+	        
+	        $this->email->message($message); 
+	        if($this->email->send()){
+	        	$this->session->set_flashdata("notif","TOKEN telah dikirm ke email anda.");
+        		redirect(base_url('cek-token/'.encrypt_url($data['id_user_portal'])));
+	        }else {
+	            $this->session->set_flashdata("notif","TOKEN gagal dikirim.");  
+	        } 
+        } else {
+        	$this->session->set_flashdata("notif","Email tidak terdaftar.");
+        }
         redirect(base_url('lupa_password'));
 	}
 
+	public function cek_token($iduserportal)
+	{
+		$id = decrypt_url($iduserportal);
+		$user  = $this->users->get_userportal_byid($id);
+		$data = [
+            'mf_beranda' => $this->mf_beranda->get_identitas(),
+            'iduserportal' => $iduserportal
+		];
+		// var_dump($user);
+		if(($user->id_user_portal != $id) || ($user->token_verifikasi == null)) {
+        	$this->load->view('Frontend/v1/pages/f_lupa_password', $data);
+        } else {
+    		$this->load->view('Frontend/v1/pages/f_cek_token', $data);
+    	}
+	}
+
+	public function verify_token($iduserportal) {
+		$p = $this->input->post();
+		$id = decrypt_url($iduserportal);
+		$user  = $this->users->get_userportal_byid($id);
+		if($p['token'] === $user->token_verifikasi) {
+			redirect(base_url('reset-pass/'.$iduserportal.'/'.encrypt_url(date('YmdH'))),'refresh');
+		} else {
+			$data = [
+	            'mf_beranda' => $this->mf_beranda->get_identitas()
+			];
+			$this->session->set_flashdata("notif","TOKEN yang anda masukan salah");
+			redirect(base_url('cek-token/'.$iduserportal),'refresh');
+		}
+	}
+
+	public function reset_pass($iduserportal,$tglnow) {
+		$data = [
+            'mf_beranda' => $this->mf_beranda->get_identitas(),
+            'data' => ['id_user' => $iduserportal, 'token' => decrypt_url($tglnow)]
+		];
+		if($this->session->userdata('user_portal_log')['online'] == 'OFF' || empty($this->session->set_userdata	('user_portal_log')['online'])) {
+        	$this->load->view('Frontend/v1/pages/f_reset_password', $data);
+        } else {
+    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('user_portal_log')['nama_panggilan'].'/'.encrypt_url($this->session->userdata('user_portal_log')['nohp'])),'refresh');
+    	}
+	}
+
 	public function resetpasswordnow() {
-		$id = $this->input->post('id');
+		$id = decrypt_url($this->input->post('id'));
 		$new_password = $this->input->post('password');
 		if(!empty($new_password)) {
-			$whr = ['nohp' => $id];
+			$whr = ['id_user_portal' => $id];
 			$data = ['password' => "$".sha1('bkppd_balangan')."$".encrypt_url($new_password)];
 			$db = $this->users->do_reset_password('t_users_portal', $data, $whr);
 			if($db) {
@@ -119,18 +186,6 @@ class Users extends CI_Controller {
 			}
 			redirect(base_url('login_web'),'refresh');
 		}
-	}
-
-	public function reset_pass($nohp, $tglnow) {
-		$data = [
-            'mf_beranda' => $this->mf_beranda->get_identitas(),
-            'data' => ['nohp' => $nohp, 'token' => decrypt_url($tglnow)]
-		];
-		if($this->session->userdata('user_portal_log')['online'] == 'OFF' || empty($this->session->set_userdata	('user_portal_log')['online'])) {
-        	$this->load->view('Frontend/v1/pages/f_reset_password', $data);
-        } else {
-    		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('user_portal_log')['nama_panggilan'].'/'.encrypt_url($this->session->userdata('user_portal_log')['nohp'])),'refresh');
-    	}
 	}
 
     public function cek_akun() {

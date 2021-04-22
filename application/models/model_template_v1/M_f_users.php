@@ -228,7 +228,7 @@ class M_f_users extends CI_Model
     }
 
     public function getuserportalbyemail($mail) {
-        $this->db->select('email, nama_lengkap, nohp, online');
+        $this->db->select('id_user_portal, email, nama_lengkap, nohp, online, token_verifikasi');
         $this->db->from('t_users_portal');
         $this->db->where('email', $mail);
         $q = $this->db->get();
@@ -257,6 +257,19 @@ class M_f_users extends CI_Model
         $this->db->from('public_saran');
         $q = $this->db->get();
         return $q;
+    }
+
+    public function update_token($tbl, $data, $whr)
+    {
+        $this->db->where($whr);
+        $this->db->update($tbl, $data);
+        return true;
+    }
+
+    public function userlist()
+    {
+        $this->db->select('photo_pic,nama_lengkap,nama_panggilan,role,id_user_portal,online');
+        return $this->db->get('t_users_portal');
     }
 }
 

@@ -7,7 +7,7 @@
 		<link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
 		<!-- Custome -->
 		<link rel="stylesheet" href="<?= base_url('assets/css/f_login.css') ?>">
-		<title>Portal | Lupa Password</title>
+		<title>Portal | TOKEN Verifikasi</title>
 	</head>
 	<body>
 		<div id="content2">
@@ -21,26 +21,22 @@
 							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="210"/>'; ?>
 							</div>
-							<h3 class="font-weight-bold mb-3 mt-5 text-center text-md-left">Lupa Password</h3>
+							<h3 class="font-weight-bold mb-3 mt-5 text-center text-md-left">Verify</h3>
 							<?php if($this->session->flashdata('notif') <> ''): ?>
 								<div class="alert border alert-warning" role="alert">
 								 <?= $this->session->flashdata('notif') ?>
 								</div>
 							<?php endif; ?>
 							<div class="alert alert-default alert-dismissible border-0 rounded p-0 fade show text-secondary" role="alert">
-							  <strong>Note!</strong> <br> Link <u>reset password</u> akan kami kirimkan pada email yang anda daftarkan.
-							  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							    <span aria-hidden="true">&times;</span>
-							  </button>
+							  <strong>Note!</strong> <br> Masukan token yang telah kami kirim pada email anda.
 							</div>
-							<?= form_open(base_url('frontend/v1/users/reset_password'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
+							<?= form_open(base_url('frontend/v1/users/verify_token/'.$iduserportal), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
 							<div class="form-group">
-								<label class="mb-2" for="email">Email</label>
-								<input type="email"  class="form-control form-control-lg shadow-sm border-0 mb-2 rounded-0" name="email" id="email" placeholder="mail@website.com" required="required">
+								<label class="mb-2" for="token">MASUKAN TOKEN</label>
+								<input type="number"  class="form-control form-control-lg shadow-sm border-0 mb-2 rounded-0" name="token" id="token" placeholder="XXXXXXXX" required="required">
 							</div>
-							<button type="submit" class="btn btn-primary btn-lg shadow btn-block small rounded-0"><i class="fas fa-share mr-2"></i> Kirim</button>
+							<button type="submit" class="btn btn-primary btn-lg shadow btn-block small rounded-0"><i class="fas fa-share mr-2"></i> Verifikasi</button>
 							<?= form_close(); ?>
-							
 							
 						</div>
 					</div>

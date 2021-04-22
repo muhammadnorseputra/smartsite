@@ -19,7 +19,7 @@
 					<div class="col-xs-12 col-md-4 offset-md-1" id="sidebar">
 						<div class="px-2 px-md-5 pt-4">
 							<div class="logo text-center text-md-left">
-								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="140"/>'; ?>
+								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="210"/>'; ?>
 							</div>
 							<h3 class="font-weight-bold mb-3 mt-5 text-center text-md-left">Log In</h3> 
 							<?php if($this->session->flashdata('notif') <> ''): ?>
@@ -66,10 +66,23 @@
 						</div>
 					</div>
 					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content">
-						<div class="d-flex justify-content-end" id="navSimple">
-								<div><a href="<?= base_url('beranda') ?>" class="btn text-white btn-link my-3"><i class="fas fa-home mr-2"></i> Beranda</a></div>
-								<div class="mx-2"><a href="<?= base_url('daftar'); ?>" class="btn text-white btn-link my-3"><i class="fas fa-user mr-2"></i> Kontribusi/Mendaftar</a></div>
+						<div class="d-flex justify-content-end mt-md-2" id="navSimple">
+							<div>
+								<a href="<?= base_url('beranda') ?>" class="btn text-white btn-link">
+									<i class="fas fa-home"></i> <br> Beranda
+								</a>
 							</div>
+							<div class="mx-2">
+								<a href="<?= base_url('daftar'); ?>" class="btn text-white btn-link">
+									<i class="fas fa-user"></i> <br> Kontribusi/Mendaftar</a>
+							</div>
+							<div class="text-center">
+								<a href="<?= base_url('userguide') ?>" class="btn btn-link text-white">
+									<i class="fas fa-book"></i> <br> User Guide
+								</a>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 			</div>
