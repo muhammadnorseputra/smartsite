@@ -50,6 +50,7 @@ $(document).ready(function() {
                     },
                     success: function(data) {
                         $('small.msg-pic').html(data);
+                        alert(_uriSegment[5]);
                     }
                 });
             }

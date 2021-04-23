@@ -1,5 +1,5 @@
 <div class="d-block mx-auto text-center">
-    <?php echo '<img class="mx-auto d-block" src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="60"/>'; ?><br>
+    <?php echo '<img class="mx-auto d-block" src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="210"/>'; ?><br>
     <b> <?= $detail->judul; ?> </b>
     <div id="share"></div>
 </div>
