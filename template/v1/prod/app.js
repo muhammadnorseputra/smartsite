@@ -794,7 +794,8 @@ if ($host) {
 
 var _uriSegment = window.location.pathname.split('/');
 
-console.log(_uri);
+console.log('Location Origin', _uri);
+console.log('Uri', _uriSegment);
 "use strict";
 
 $(document).ready(function () {
@@ -972,7 +973,7 @@ $(document).ready(function () {
       } else {
         form_data.append("file", this.files[0]);
         $.ajax({
-          url: "".concat(_uri, "/frontend/v1/users/upload_photo?jenis=pic&id=").concat(_uriSegment[6]),
+          url: "".concat(_uri, "/frontend/v1/users/upload_photo?jenis=pic&id=").concat(_uriSegment[5]),
           method: "POST",
           data: form_data,
           contentType: false,
@@ -984,6 +985,7 @@ $(document).ready(function () {
           },
           success: function success(data) {
             $('small.msg-pic').html(data);
+            console.log(_uriSegment[5]);
           }
         });
       }
@@ -1016,7 +1018,7 @@ $(document).ready(function () {
       } else {
         form_data.append("file", this.files[0]);
         $.ajax({
-          url: "".concat(_uri, "/frontend/v1/users/upload_photo?jenis=ktp&id=").concat(_uriSegment[6]),
+          url: "".concat(_uri, "/frontend/v1/users/upload_photo?jenis=ktp&id=").concat(_uriSegment[5]),
           method: "POST",
           data: form_data,
           contentType: false,
