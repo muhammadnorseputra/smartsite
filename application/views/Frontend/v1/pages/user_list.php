@@ -17,9 +17,9 @@
 			?>
 			<div class="col-md-3">
 				<div class="card border-0">
-                    <div class="card-body bg-white text-center">
+                    <div class="card-body bg-white text-center rounded">
                     	
-                        <img class="w-50 h-50 rounded-circle" src="<?= img_blob($u->photo_pic) ?>" alt="<?= $u->nama_lengkap ?>">
+                        <img class="w-25 h-25" src="<?= img_blob($u->photo_pic) ?>" alt="<?= $u->nama_lengkap ?>">
                         <hr>
                         <h6><?= decrypt_url($u->nama_lengkap) ?></h6> <?= $role ?> <br> <?= $online ?>
                         <hr>

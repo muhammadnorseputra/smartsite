@@ -1,28 +1,23 @@
 <div class="separator">
     <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-images text-secondary mr-2"></i> album photo</span>
 </div>
-<div class="overflow-hidden rounded-lg my-4 border-0 shadow-none">
-    
-    <?php
-    $kolom = 2;
-    $i = 1;
-    foreach ($mf_album as $album):
-    if(($i) % $kolom==1) {
-    echo '<div class="d-flex justify-content-between align-items-center">';
-        }
+<div class="rounded-lg my-4 border-0 shadow-none">
+    <div class="album-slick">
+        <?php
+        foreach ($mf_album as $album):
         ?>
-        <div class="w-100 rounded m-1">
+            <div>
             <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
                 <?php if(!empty($a->gambar)): ?>
-                <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="<?= base_url('files/file_album/'.$album->gambar) ?>" class="img-fluid lazy rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
+                <img data-src="<?= base_url('files/file_album/'.$album->gambar) ?>" class="img-fluid w-100 lazy rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
                 <?php else: ?>
-                <img data-toggle="tooltip" title="<?= $album->judul ?>" data-src="data:image/jpeg;base64,<?= base64_encode( $album->gambar_blob ); ?>" class="img-fluid lazy rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
+                <img data-src="<?= img_blob($album->gambar_blob) ?>" class="img-fluid w-100 lazy rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
                 <?php endif; ?>
+                <div class="text-secondary float-right badge-light p-2 rounded mt-2"><?= $this->album->jml_photo_in_album($album->id_album_foto) ?> Photo</div> 
+                <p class="text-muted mt-3"><?= $album->judul ?></p>
             </a>
-        </div>
-        <?php if(($i) % $kolom==0) {
-    echo '</div>';
-    } ?>
-    <?php $i++; endforeach; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
     <!-- <div class="small text-info position-absolute mx-auto mt-1">Directed by BinaInfo</div> -->
 </div>

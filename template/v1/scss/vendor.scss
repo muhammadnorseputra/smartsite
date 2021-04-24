@@ -8,8 +8,8 @@ $fa-font-path: "../../../bower_components/Font-Awesome/webfonts/";
 
 @import "bower_components/bootstrap/scss/bootstrap";
 
-// @import "../../../template/v1/plugin/slick/slick/slick.scss";
-// @import "../../../template/v1/plugin/slick/slick/slick-theme.scss";
+@import "../../../template/v1/plugin/slick/slick/slick.scss";
+@import "../../../template/v1/plugin/slick/slick/slick-theme.scss";
 @import "../../../template/v1/plugin/notifIt/css/notifIt.scss";
 @import "../../../template/v1/plugin/popmodal/popModal.scss";
 @import "../../../template/v1/plugin/rippler/dist/css/rippler.scss";

@@ -14,4 +14,3 @@ if ($host) {
 }
 var _uriSegment = window.location.pathname.split('/');
 console.log('Location Origin', _uri);
-console.log('Uri', _uriSegment);

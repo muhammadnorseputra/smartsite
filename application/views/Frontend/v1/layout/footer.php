@@ -1,3 +1,27 @@
+<section>
+	<div class="container">
+		<div class="separator">
+			<span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-leaf text-secondary mr-2"></i>Digital Goverment</span>
+		</div>
+		<div class="d-flex flex-row align-items-center justify-content-around">
+			<div>
+				<a target="_blank" data-toggle="tooltip" href="http://silka.bkppd-balangankab.info/" title="aplikasi sistem informasi layanan kepegawaian balangan">
+					<?php echo '<img src="'.base_url('assets/images/logo-silka.png').'" width="140"/>'; ?>
+				</a>
+			</div>
+			<div class="my-4">
+				<a target="_blank" data-toggle="tooltip" href="https://ekinerja.bkppd-balangankab.info/" title="aplikasi e-kinerja balangan">
+					<?php echo '<img src="'.base_url('assets/images/logo-ekinerja.png').'" width="160"/>'; ?>
+				</a>
+			</div>
+			<div class="mt-2 p-2">
+				<a target="_blank" data-toggle="tooltip" href="https://eprilaku.bkppd-balangankab.info/" title="aplikasi e-prilaku balangan">
+					<?php echo '<img src="'.base_url('assets/images/logo-eprilaku.png').'" width="80"/>'; ?>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
 <section class="py-2 bg-gradient-light">
 	<div class="container">
 		<div class="d-flex justify-content-lg-start align-content-center text-primary">
@@ -6,7 +30,7 @@
 			</div>
 			<div>
 				<span class="d-block font-weight-bold">Alamat</span>
-				Batupiring Km. 4,5 Paringin Selatan Kabupaten Balangan. Kodepos 71662, 
+				Batupiring Km. 4,5 Paringin Selatan Kabupaten Balangan. Kodepos 71662,
 				<span class="text-dark">Kalimantan Selatan - Indonesia</span>
 			</div>
 			<div class="ml-auto my-auto">
@@ -35,7 +59,7 @@
 					<div>
 						<b>Total Pengunjung</b>
 						<h3><span class="text-warning"><?= $this->mf_visitor->visitor_count()['jml_total_pengunjung']  ?></span> Orang</h3>
-					</div>	
+					</div>
 				</div>
 			</div>
 			<div class="col-md-3">
@@ -44,16 +68,15 @@
 					<li>
 						<a href="<?= base_url('survey') ?>"><span><i class="fas fa-check-circle text-white mr-2"></i></span>Survey Kepegawaian</a>
 					</li>
-					<li>	
+					<li>
 						<a href="<?= base_url('kotak_saran') ?>"><span><i class="fas fa-check-circle text-white mr-2"></i></span>Kirim Saran</a>
 					</li>
-
 				</ul>
 			</div>
 			<div class="col-md-3">
 				<h6 class="text-white pb-2 border-bottom">Lainnya</h6>
 				<ul class="list-unstyled">
-					<li>	
+					<li>
 						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-check-circle text-white mr-2"></i></span>User Terdaftar</a>
 					</li>
 				</ul>
