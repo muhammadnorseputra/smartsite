@@ -63,7 +63,7 @@ if (count($pecah) > 0) {
 						<div class="card-body px-4">
 							<h2 class="font-weight-bold display-5"><?php echo $post_detail->judul; ?></h2>
 							
-							<p class="card-text font-weight-normal"><?php echo nl2br($post_detail->content); ?></p>
+							<p class="card-text font-weight-normal"><?php echo $post_detail->content; ?></p>
 						</div>
 						<div class="card-footer bg-transparent p-2 border-top rounded-lg d-flex justify-content-around">
 							<div class="w-100">
