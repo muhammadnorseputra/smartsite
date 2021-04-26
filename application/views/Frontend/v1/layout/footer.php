@@ -1,6 +1,6 @@
 <section>
 	<div class="container">
-		<div class="separator">
+		<div class="separator mb-0">
 			<span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-leaf text-secondary mr-2"></i>Digital Goverment</span>
 		</div>
 		<div class="d-flex flex-row align-items-center justify-content-around">
@@ -87,9 +87,12 @@
 <section class="bg-dark">
 	<div class="container">
 		<div class="row text-center py-5 border-top border-light">
-			<div class="col-md-12 d-flex align-items-center justify-content-center">
-				<div class="text-center text-white">
+			<div class="col-md-12 d-flex align-items-center justify-content-around">
+				<div class="text-left text-white">
 					<div class="small">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</div>
+				</div>
+				<div class="text-right text-white">
+					
 				</div>
 			</div>
 		</div>
@@ -98,5 +101,6 @@
 <!-- jQuery -->
 <script src="<?= base_url('template/v1/prod/vendor-min.js'); ?>"></script>
 <script src="<?= base_url('template/v1/prod/app-min.js'); ?>"></script>
+<script src="https://apis.google.com/js/platform.js"></script>
 </body>
 </html>

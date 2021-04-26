@@ -14,9 +14,17 @@ class Banner extends CI_Controller {
             redirect(base_url('under-construction'),'refresh');
         }
 	}
-	public function index()
+	public function list()
 	{
-		
+		$data = [
+			'title' => 'BKPPD &bull; Banner',
+			'isi'	=> 'Frontend/v1/pages/banner/banner_list',
+            'mf_beranda' => $this->mf_beranda->get_identitas(),
+            'mf_menu' => $this->mf_beranda->get_menu(),
+            'banner' => $this->banner->get_all_banner(null)->result(),
+		];
+
+		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
 	public function detail($id, $judul) 
 	{

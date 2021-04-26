@@ -17,7 +17,7 @@ class Album extends CI_Controller {
 	public function index() 
 	{
 		$data = [
-			'title' => 'BKPPD | Album',
+			'title' => 'BKPPD &bull; Album',
 			'album' => $this->album->album(),
 			'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),

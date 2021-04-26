@@ -107,7 +107,7 @@ $autoload['helper'] = array('url','form','number','security','string',
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array();
+$autoload['config'] = array('webconfig');
 
 /*
 | -------------------------------------------------------------------

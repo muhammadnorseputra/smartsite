@@ -87,6 +87,8 @@ $route['lupa_password'] = 'frontend/v1/users/lupa_password';
 $route['cek-token/(:any)'] = 'frontend/v1/users/cek_token/$1';
 $route['reset-pass/(:any)/(:any)'] = 'frontend/v1/users/reset_pass/$1/$2';
 $route['album'] = 'frontend/v1/album';
+$route['video'] = 'frontend/v1/video';
+$route['bannerlist'] = 'frontend/v1/banner/list';
 $route['kotak_saran'] = 'frontend/v1/halaman/saran';
 $route['kirim_saran'] = 'frontend/v1/halaman/simpan_saran';
 $route['survey'] = 'frontend/v1/halaman/survey';
@@ -100,7 +102,7 @@ $route['tag/(:any)'] = 'frontend/v1/post_list/tags/$1';
 $route['kategori/(:any)/(:any)'] = 'frontend/v1/post_list/views/$1/$2';
 $route['banner/(:any)/(:any)'] = 'frontend/v1/banner/detail/$1/$2';
 
-// $route['label?q=(:any)'] = 'frontend/v1/post_list/tags/?q=$1';
+$route['testing'] = 'frontend/v1/beranda/testing';
 
 
 /*

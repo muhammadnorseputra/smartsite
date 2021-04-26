@@ -4,7 +4,7 @@
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mb-5 py-5 py-3 offset-md-2">
                 <!-- <p data-aos="fade-up" data-aos-duration="600" class="lead text-white text-center text-md-left my-5 rounded"><span class="border-bottom pt-3">Hallo <i class="fas fa-grin-hearts"></i> pengunjung.</span></p> -->
                 <?php $this->load->view('msg/flashdata'); ?>
-                <div data-aos="fade-up" data-aos-duration="800" class="display-3 text-white font-weight-bold text-center mt-5">Selamat Datang</div>
+                <div data-aos="fade-up" data-aos-duration="800" class="display-2 text-white font-weight-bold text-center mt-5">Selamat Datang</div>
                 <!-- Static halo -->
                 <p data-aos="fade-up" data-aos-duration="1000" class="lead text-white intro-website text-center mt-md-2">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah</p>
                 <!-- Dinamic mengunakan typed.js -->
@@ -16,7 +16,7 @@
                                     <label for="js-nipnama" class="text-white  border-bottom pb-2 small">Masukan NIP, kemudian pilih detail untuk menampilkan profile pegawai</label>
                                     <div class="typeahead__field">
                                         <div class="typeahead__query">
-                                            <input class="js-nipnama" id="js-nipnama" name="filter[query]" placeholder="Masukan Nomor Induk Pegawai Disini..." maxlength="18" autocomplete="off">
+                                            <input class="js-nipnama" id="js-nipnama" name="filter[query]" placeholder="Masukan Nomor Induk Pegawai" maxlength="18" autocomplete="off">
                                         </div>
                                         <div class="typeahead__button">
                                             <button type="submit">

@@ -24,7 +24,12 @@ class M_f_banner extends CI_Model {
 		return $q->result();
 	}
 	public function get_all_banner($id) {
-		return $this->db->get_where('t_banner', ['publish' => 'Y', 'id_banner !=' => $id]);
+		if($id != ''):
+			 $db = $this->db->get_where('t_banner', ['publish' => 'Y', 'id_banner !=' => $id]);
+		else:
+			 $db = $this->db->get('t_banner');
+		endif;
+		return $db;
 	}
 
 	public function get_detail_banner($id)

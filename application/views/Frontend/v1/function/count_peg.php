@@ -11,7 +11,7 @@ $arr = [
 'jml_ptt' => api_curl_get($host.'/api/get_grap/nonpns')
 ]
 ?>
-<div class="col-6 col-sm-6 col-md-4 rounded-left">
+<div class="col-6 col-sm-6 col-md-3 rounded-left">
     <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent border-0 rounded">
         <div class="card-body text-center">
             <i class="fas fa-users pb-md-4 rounded fa-3x text-info"></i>
@@ -21,7 +21,7 @@ $arr = [
         </div>
     </div>
 </div>
-<div class="col-6 col-sm-6 col-md-4 ">
+<div class="col-6 col-sm-6 col-md-3 ">
     <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent my-md-0 my-4 border-0 rounded-0">
         <div class="card-body text-center">
             <i class="fas fa-user-tie pb-md-4 fa-3x mx-auto text-danger rounded"></i>
@@ -31,13 +31,23 @@ $arr = [
         </div>
     </div>
 </div>
-<div class="col-12 col-sm-12 col-md-4  rounded-right">
+<div class="col-6 col-sm-12 col-md-3 rounded-right">
     <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent rounded border-0">
         <div class="card-body text-center">
             <i class="far pb-md-4 fa-user-circle fa-3x mx-auto text-success rounded"></i>
             <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_ptt'] ?>"
             data-speed="3000" data-refresh-interval="50" class="display-4 "><?= $arr['jml_ptt'] ?></h3>
             <b class="text-secondary">Jumlah NON PNS</b>
+        </div>
+    </div>
+</div>
+<div class="col-6 col-sm-12 col-md-3 rounded-right">
+    <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent rounded border-0">
+        <div class="card-body text-center">
+            <i class="far pb-md-4 fa-user-circle fa-3x mx-auto text-success rounded"></i>
+            <h3 id="count_jml" data-from="0" data-to="100"
+            data-speed="3000" data-refresh-interval="50" class="display-4 "><?= "100" ?></h3>
+            <b class="text-secondary">Jumlah Pensiun Tahun 2020</b>
         </div>
     </div>
 </div>
