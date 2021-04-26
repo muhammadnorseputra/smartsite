@@ -19,9 +19,9 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
-$img = '<img class="img-fluid card-img-top rounded" src="'.base_url('files/file_berita/'.$post_detail->img).'">';
+$img = '<img class="img-fluid card-img-top rounded mb-2" src="'.base_url('files/file_berita/'.$post_detail->img).'">';
 else:
-$img = '<img class="img-fluid card-img-top rounded" src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
+$img = '<img class="img-fluid card-img-top rounded mb-2" src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
 endif;
 ?>
 <?php
@@ -30,7 +30,7 @@ $pecah = explode(',', $tags);
 if (count($pecah) > 0) {
 	$tag = '';
 	for ($i = 0; $i < count($pecah); ++$i) {
-		$tag .= '<a href="' . base_url('tag/' . $pecah[$i]) . '" class="btn btn-sm btn-outline-secondary ml-2 mb-2 mt-4">#' . $pecah[$i] . '</a>';
+		$tag .= '<a href="' . base_url('tag/' . $pecah[$i]) . '" class="btn btn-sm btn-outline-secondary ml-2 mb-2">#' . $pecah[$i] . '</a>';
 	}
 }
 ?>
@@ -48,12 +48,13 @@ if (count($pecah) > 0) {
 		<div class="row mt--9">
 			<div class="col-md-8 mb-md-5 pb-md-5 px-0 mx-md-0 mx-3">
 				<div class="card rounded-lg shadow-none bg-white rounded border-0">
-					<div class="card bg-transparent border-0 p-4">
+					<div class="card bg-transparent border-0 p-3">
 						<div class="card-body">
 							<img data-src="<?= $photo; ?>" width="60" height="60" class="float-left mr-4 lazy rounded shadow-sm">
 							<h5 class="card-title"><a href="<?= $link_profile_public ?>"><?= $namalengkap ?></a></h5>
 							<p class="card-text">
-								<span class="badge badge-default px-0 text-muted">Posted by <?= ucwords($namapanggilan); ?> &#8226;  <?php echo longdate_indo($post_detail->tgl_posting); ?></span></p>
+								<span class="badge badge-default px-0 text-muted">Posted by <?= ucwords($namapanggilan); ?> &#8226;  <?php echo longdate_indo($post_detail->tgl_posting); ?></span>
+							</p>
 							</div>
 						</div>
 						<div class="px-4">
