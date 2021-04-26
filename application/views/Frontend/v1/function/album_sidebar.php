@@ -6,6 +6,7 @@
         <?php
         foreach ($mf_album as $album):
         ?>
+            <div>
                 <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
                     <?php if(!empty($a->gambar)): ?>
                     <img src="<?= base_url('files/file_album/'.$album->gambar) ?>" class="w-100 rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
@@ -15,6 +16,7 @@
                     <div class="text-secondary text-center badge-light p-2 rounded mt-2"><?= $this->album->jml_photo_in_album($album->id_album_foto) ?> Photo</div> 
                     <p class="text-muted mt-3"><?= $album->judul ?></p>
                 </a>
+            </div>
         <?php endforeach; ?>
     </div>
     <!-- <div class="small text-info position-absolute mx-auto mt-1">Directed by BinaInfo</div> -->
