@@ -129,7 +129,7 @@ class Beranda extends CI_Controller
                     </div>
 					
 					<div class="card-body py-0 px-4">
-                        <h2 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h2>
+                        <h3 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h3>
                         <hr>
                         <p class="card-text font-weight-normal text-secondary my-4">'.character_limiter($isi, 150).'</p>
                         <hr>
