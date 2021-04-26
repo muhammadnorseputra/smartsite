@@ -14,7 +14,7 @@ class Banner extends CI_Controller {
             redirect(base_url('under-construction'),'refresh');
         }
 	}
-	public function list()
+	public function listimage()
 	{
 		$data = [
 			'title' => 'BKPPD &bull; Banner',
