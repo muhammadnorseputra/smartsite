@@ -21,4 +21,3 @@
     </div>
     <!-- <div class="small text-info position-absolute mx-auto mt-1">Directed by BinaInfo</div> -->
 </div>
-<div class="clearfix w-100"></div>
