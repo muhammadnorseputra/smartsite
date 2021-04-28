@@ -1,5 +1,5 @@
 <?php
-$local = '192.168.1.4';
+$local = 'http://silka.bkppd-balangankab.info';
 $online = 'http://silka.bkppd-balangankab.info';
 $status = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? $online : $local;
 $host = $status;
@@ -48,7 +48,7 @@ $arr = [
             <i class="fas pb-md-4 fa-house-user fa-3x mx-auto text-secondary rounded"></i>
             <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pensiun'] ?>"
             data-speed="3000" data-refresh-interval="50" class="display-4 "><?= $arr['jml_pensiun'] ?></h3>
-            <b class="text-secondary">Jumlah PNS Pensiun pada tahun <?= date('Y') - 1 ?></b>
+            <b class="text-secondary">Jumlah PNS Pensiun pada tahun <?= date('Y') ?></b>
         </div>
     </div>
 </div>

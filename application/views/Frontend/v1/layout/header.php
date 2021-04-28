@@ -72,7 +72,7 @@
 				<?php endforeach; ?>
 				
 			</ul>
-			<button data-toggle="tooltip" title="Klik untuk mencari daftar postingan yang telah dibuat berdasarkan judul postingan" class="btn btn-outline-primary rounded-pill py-2 px-4 mr-2" id="caripost">
+			<button class="btn shadow-sm btn-outline-primary rounded-pill py-2 px-4 mr-2" id="caripost">
 				<i class="fas fa-search mr-2"></i> Cari Postingan
 			</button>
 			<?php if ($this->session->userdata('user_portal_log')['online'] === 'ON') { ?>
@@ -90,7 +90,10 @@
 			</div>
 			<?php } else { ?>
 			<a  class="btn shadow-sm btn-primary rounded-pill border-0 py-2 px-4" href="<?= base_url('login_web'); ?>">
-				<i class="far fa-user mr-2"></i> Login
+				<i class="far fa-user mr-2"></i> Masuk
+			</a>
+			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn shadow-sm btn-outline-primary rounded-circle py-2 ml-2" href="<?= base_url('daftar'); ?>">
+				<i class="fas fa-user-plus"></i>
 			</a>
 			<?php } ?>
 			<!-- <label class="switch mt-2">

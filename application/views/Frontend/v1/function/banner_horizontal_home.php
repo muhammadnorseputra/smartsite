@@ -1,3 +1,3 @@
-<div class="p-3 bg-light">
+<div class="p-2 bg-light shadow-sm rounded">
 <a href="<?= base_url('banner/'.$this->mf_beranda->get_banner('SLIDE', 'Web')[5].'/'.url_title($this->mf_beranda->get_banner('SLIDE', 'Web')[1])); ?>" data-toggle="tooltip" title="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"><img src="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[0]; ?>" class="img-fluid bg-white rounded d-block" alt="<?= $this->mf_beranda->get_banner('SLIDE', 'Web')[1]; ?>"></a>
 </div>
