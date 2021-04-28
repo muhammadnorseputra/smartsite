@@ -35,9 +35,6 @@ $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 				<div class="col-12 col-sm-6 col-md-4 col-lg-4">
 					<a href="<?= $videoID ?>" id="btn-view-video" title="<?= $title_video ?>" class="position-relative">
 						<img src="<?= $thumb_video ?>" alt="<?= $title_video ?>" class="img-fluid border border-secondary w-100 shadow-sm rounded mb-3">
-						<div class="text-center position-absolute w-100 h-100 mt--5" style="left: 0;top: 0;">
-							<i class="far fa-play-circle fa-4x shadow rounded-circle  text-warning"></i>
-						</div>
 					</a>
 					<div class="small text-white badge badge-info mb-2">Upload: <?= longdate_indo(substr($publish_video, 0, 10)) ?></div>
 					<a href="<?= $videoID ?>" id="btn-view-video" title="<?= $title_video ?>">

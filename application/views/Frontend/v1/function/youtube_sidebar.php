@@ -24,7 +24,7 @@ $publish_video    = $playlist['items'][0]['snippet']['publishedAt'];
 	<a href="<?= $videoID ?>" id="btn-view-video" title="<?= $title_video ?>" class="position-relative">
 		<img src="<?= $thumb_video ?>" alt="<?= $title_video ?>" class="img-fluid border border-secondary w-100 rounded mb-3">
 		<div class="text-center position-absolute w-100 h-100 mt--5" style="left: 0;top: 0;">
-			<i class="far fa-play-circle fa-4x shadow text-warning"></i>
+			<i class="far fa-play-circle fa-4x shadow"></i>
 		</div>
 	</a>
 	<div class="small text-secondary">Published: <?= longdate_indo(substr($publish_video, 0, 10)) ?></div>
