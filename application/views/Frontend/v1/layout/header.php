@@ -21,7 +21,7 @@
 						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
 						<?= $m->nama_menu; ?>
 					</a>
-					<ul class="dropdown-menu border-light animate slideIn" aria-labelledby="navbarDropdown">
+					<ul class="dropdown-menu animate slideIn" aria-labelledby="navbarDropdown">
 						<?php foreach ($submenu as $s) : ?>
 						<!-- Level 1 -->
 						<li>
@@ -66,11 +66,32 @@
 				<li class="nav-item">
 					<a class="nav-link px-3 mr-md-1" href="<?= base_url($m->link); ?>">
 						<?= ucwords($m->nama_menu); ?>
+
 					</a>
 				</li>
 				<?php } ?>
 				<?php endforeach; ?>
-				
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle px-3 mr-md-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Apps
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<div class="d-flex justify-content-between align-items-center">
+							<a target="_blank" href="https://ekinerja.bkppd-balangankab.info/" class="p-4 text-nowrap text-center flex-shrink-1">
+								<?php echo '<img src="'.base_url('assets/images/logo-ekinerja.png').'" width="110"/> <br>' ; ?>
+								e-Kinerja
+							</a>
+							<a target="_blank" href="http://silka.bkppd-balangankab.info/" class="p-4 text-nowrap text-center flex-shrink-1">
+								<?php echo '<img src="'.base_url('assets/images/logo-silka.png').'" width="110"/> <br>'; ?>
+								SILKa Online
+							</a>
+							<a target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4 text-nowrap text-center flex-shrink-1">
+								<?php echo '<img src="'.base_url('assets/images/logo-eprilaku.png').'" width="50"/> <br>'; ?>
+								e-Prilaku
+							</a>
+						</div>
+					</ul>
+				</li>
 			</ul>
 			<button class="btn shadow-sm btn-outline-primary rounded-pill py-2 px-4 mr-2" id="caripost">
 				<i class="fas fa-search mr-2"></i> Cari Postingan
