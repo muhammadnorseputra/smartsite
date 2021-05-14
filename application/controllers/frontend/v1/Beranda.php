@@ -103,9 +103,9 @@ class Beranda extends CI_Controller
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
                 if(!empty($row->img)):
-                    $img = '<img class="card-img-top lazy border-light rounded-0 mb-3" data-src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
+                    $img = '<img class="card-img-top lazy border-light" data-src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
                 else:
-                    $img = '<img class="card-img-top lazy border-light rounded-0 mb-3" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img class="card-img-top lazy border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 endif;
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('kategori/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
@@ -122,20 +122,19 @@ class Beranda extends CI_Controller
                         </p>
 					</div>
 
-                    <div class="canvas position-relative">
-                        <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
+                    <div class="canvas position-relative p-4">
+                        <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" style="border-radius:0.5em;" title="'.$row->judul.'">
 						  '.$img.'
                         </a>
                     </div>
 					
-					<div class="card-body py-0 px-4">
-                        <h2 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h2>
-                        <hr>
+					<div class="card-body py-0 px-5">
+                        <h2 class="card-title font-weight-bold text-responsive"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h2>
                         <p class="card-text font-weight-normal text-secondary my-4">'.character_limiter($isi, 150).'</p>
                         <hr>
                         <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
 					</div>
-					<div class="card-footer bg-transparent p-2 border-0 d-flex justify-content-around">
+					<div class="card-footer bg-transparent p-2 border-0 d-flex justify-content-start">
 					
                     <div class="w-100">
 					<button type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
@@ -148,9 +147,6 @@ class Beranda extends CI_Controller
                     </div>
                     <div class="w-100">
                     <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded p-2 w-100 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
-                    </div>
-                    <div class="w-100">
-                        <a href="'.$posturl.'" class="p-2 btn bg-white btn-transparent border-top-0 border-bottom-0 rounded border-light">Read more <i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
 					</div>
                     </div>

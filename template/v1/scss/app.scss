@@ -234,8 +234,8 @@ h5.title-sidebar {
 	color: #333;
 }
 .dropdown-menu {
-	top: 40px;
-	left: auto;
+	top: 45px;
+	left: 5px;
 	padding: .5rem;
 	border: 0px;
 	border-radius: 8px;
@@ -527,6 +527,7 @@ i.likes:hover {
 }
 
 /* Custome Navbar hover */
+
 .navbar .nav-item:not(:last-child) {
 	margin-right: 0px;
 }

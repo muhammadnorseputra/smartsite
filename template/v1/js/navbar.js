@@ -10,7 +10,6 @@ $(document).ready(function() {
             $("nav#navbar").removeClass("bg-white shadow-sm");
         }
     });
-
     var prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
         var currentScrollPos = window.pageYOffset;

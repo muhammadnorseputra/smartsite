@@ -151,6 +151,15 @@ $(document).ready(function() {
         $("input[name='q']").focus();
     });
 
+    $("a#caripost").on("click", function() {
+        $("#mpostseacrh").modal('show');
+        $("input[name='q']").focus();
+    });
+
+    $("a#mobileMenuNav").on("click", function() {
+        $("#mobileMenu").modal('show')
+    });
+
     $('#mpostseacrh').on('hidden.bs.modal', function(e) {
         $("input[name='q']").val('');
         $("#form_post_search").submit();

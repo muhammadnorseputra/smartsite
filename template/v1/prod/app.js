@@ -222,6 +222,12 @@ function modeBaca(x) {
 "use strict";
 "use strict";
 
+$('.collapsible-link').click(function () {
+  $(this).find('i').toggleClass('fas fa-folder fas fa-folder-open');
+  $(this).find('i').toggleClass('text-white text-warning');
+});
+"use strict";
+
 $(document).ready(function () {
   var $el = $("#exampleFormControlTextarea1").emojioneArea({
     pickerPosition: "top",
@@ -581,6 +587,13 @@ $(document).ready(function () {
   $("button#caripost").on("click", function () {
     $("#mpostseacrh").modal('show');
     $("input[name='q']").focus();
+  });
+  $("a#caripost").on("click", function () {
+    $("#mpostseacrh").modal('show');
+    $("input[name='q']").focus();
+  });
+  $("a#mobileMenuNav").on("click", function () {
+    $("#mobileMenu").modal('show');
   });
   $('#mpostseacrh').on('hidden.bs.modal', function (e) {
     $("input[name='q']").val('');

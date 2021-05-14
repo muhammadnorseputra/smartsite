@@ -119,7 +119,7 @@ if (count($pecah) > 0) {
 						<div class="separator">
 							<span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-quote-left fa-pull-left text-primary mr-2"></i>Berita Selanjutnya</span>
 						</div>
-						<div class="d-flex justify-content-between">
+						<div class="d-flex justify-content-between flex-lg-row flex-column">
 							<?php
 							foreach ($berita_selanjutnya->result() as $b):
 							$by = $b->created_by;
@@ -145,7 +145,10 @@ if (count($pecah) > 0) {
 										<?= $img ?>
 									</span>
 									<div class="media-body px-2">
-										<h6 class="mt-0 small"><?= $b->judul; ?></h6>
+										<p class="mb-0"><?= word_limiter($b->judul, 4); ?></p>
+										<span class="text-muted small">
+											<?= word_limiter($b->content, 6) ?>
+										</span>
 									</div>
 								</div>
 							</a>
