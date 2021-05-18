@@ -34,18 +34,10 @@ if (count($pecah) > 0) {
 	}
 }
 ?>
-<section class="hero py-5">
+
+<section class="mt-3 pt-md-5 mt-md-5">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 my-5 pt-4 text-left">
-				
-			</div>
-		</div>
-	</div>
-</section>
-<section>
-	<div class="container">
-		<div class="row mt--9">
 			<div class="col-md-8 mb-md-5 pb-md-5 px-0 mx-md-0 mx-3">
 				<div class="card rounded-lg shadow-none bg-white rounded border-0">
 					<div class="card bg-transparent border-0 p-3">

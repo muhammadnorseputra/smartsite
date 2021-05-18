@@ -1,31 +1,31 @@
 <section class="hero-beranda" style="background-image: url('<?= $this->mf_beranda->get_banner('BANNER', 'Hero')[0]; ?>');">
     <div class="container">
         <div class="row py-md-5">
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mb-5 py-md-5">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-5 py-md-5">
                 <!-- <p data-aos="fade-up" data-aos-duration="600" class="lead text-white text-center text-md-left my-5 rounded"><span class="border-bottom pt-3">Hallo <i class="fas fa-grin-hearts"></i> pengunjung.</span></p> -->
                 <?php $this->load->view('msg/flashdata'); ?>
-                <div data-aos="fade-up" data-aos-duration="300" class="display-3 text-md-left text-center text-white font-weight-bold mt-md-5 mt-3">Selamat Datang</div>
+                <div data-aos="fade-up" data-aos-duration="300" class="display-3 text-md-left text-center text-light font-weight-bold mt-md-5 mt-3">Selamat Datang</div>
                 <!-- Static halo -->
-                <p data-aos="fade-up" data-aos-duration="500" class="lead text-white text-responsive intro-website text-center text-md-left mt-md-2 shadow-lg">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah</p>
+                <p data-aos="fade-up" data-aos-duration="500" class="lead text-white text-responsive intro-website text-center text-md-left mt-md-2">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah</p>
                 <!-- Dinamic mengunakan typed.js -->
                 <!--                 <p class="halo_bkppd"><span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> <span>Update informasi resmi seputar layanan kepegawaian serta artikel terkait lainya langsung dari website kami.</span> <span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> </p>
                 <span id="typed" class="lead text-secondary intro-website"></span>
                 -->
-                <form data-aos="fade-up" data-aos-duration="700" class="form-horizontal" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
-                                <div class="typeahead__container form-group text-left"><!-- 
-                                    <label for="js-nipnama" class="text-primary bg-white border-bottom pb-2 small">Masukan NIP, kemudian pilih detail untuk menampilkan profile pegawai</label> -->
-                                    <div class="typeahead__field">
-                                        <div class="typeahead__query">
-                                            <input class="js-nipnama" id="js-nipnama" name="filter[query]" placeholder="Masukan Nomor Induk Pegawai" maxlength="18" autocomplete="off">
-                                        </div>
-                                        <div class="typeahead__button">
-                                            <button type="submit">
-                                            <i class="typeahead__search-icon"></i> Detail
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                <form data-aos="fade-up" data-aos-duration="700" class="form-horizontal col-md-6 pl-0" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
+                    <div class="typeahead__container form-group text-left"><!-- 
+                        <label for="js-nipnama" class="text-primary bg-white border-bottom pb-2 small">Masukan NIP, kemudian pilih detail untuk menampilkan profile pegawai</label> -->
+                        <div class="typeahead__field">
+                            <div class="typeahead__query">
+                                <input class="js-nipnama" id="js-nipnama" name="filter[query]" placeholder="Masukan Nomor Induk Pegawai" maxlength="18" autocomplete="off">
+                            </div>
+                            <div class="typeahead__button">
+                                <button type="submit">
+                                <i class="typeahead__search-icon"></i> Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
                 <p class="mt-md-5 text-center text-md-left">
                     <button data-aos="fade-up" data-aos-once="true" data-aos-duration="1200" type="button" onclick="explore()" class="btn shadow-lg rounded btn-outline-white py-3 px-4 text-uppercase">
                     Update Informasi <i class="fas fa-chevron-down animated fadeInDown infinite ml-2"></i>

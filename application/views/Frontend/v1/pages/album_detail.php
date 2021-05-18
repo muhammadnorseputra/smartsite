@@ -1,6 +1,6 @@
 <?php $id = decrypt_url($this->uri->segment(2)) ?>
-<section class="hero py-5">
-	<div class="container py-5">
+<section class="hero py-md-5">
+	<div class="container pt-5">
 		<div class="d-flex justify-content-center justify-content-md-center align-items-center">
 			<p class="font-weight-bold text-white mx-2">Album <i class="fas fa-chevron-right mx-2"></i>
 				<span class="text-success"><?= $this->album->judul_album_by_id($id) ?></span>
@@ -9,7 +9,7 @@
 	</div>
 </div>
 </section>
-<section class="mb-3 mt--8">
+<section class="my-3">
 	<div class="container">
 			<?php if($photos->num_rows() > 0): ?>
 				<?php 

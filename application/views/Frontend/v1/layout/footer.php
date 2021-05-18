@@ -15,7 +15,7 @@
 		</div>
 	</div>
 </section>
-<section class="py-5 bg-dark">
+<section class="py-3 bg-dark">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 text-left">
@@ -29,7 +29,8 @@
 						  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
 						</svg>
 						<div class="small">Pengunjung Online</div>
-						<h3><span class="text-danger"><?= $this->mf_visitor->visitor_count()['jml_online']  ?></span> Orang</h3>
+						<h3><span class="text-danger"><?= $this->mf_visitor->visitor_count()['jml_online']  ?></span> 
+							<span class="d-none d-md-block">Orang</span></h3>
 					</div>
 					<div class="mx-md-5 mx-2">
 						<svg xmlns="http://www.w3.org/2000/svg" width="1.8em" height="1.8em" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -38,18 +39,18 @@
 						  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
 						</svg>
 						<div class="small">Total Hari Ini</div>
-						<h3><span class="text-info"><?= $this->mf_visitor->visitor_count()['jml_hariini']  ?></span> Orang</h3>
+						<h3><span class="text-info"><?= $this->mf_visitor->visitor_count()['jml_hariini']  ?></span> <span class="d-none d-md-block">Orang</span></h3>
 					</div>
 					<div>
 						<svg xmlns="http://www.w3.org/2000/svg" width="1.8em" height="1.8em" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
 						  <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
 						</svg>
 						<div class="small">Total Pengunjung</div>
-						<h3><span class="text-warning"><?= $this->mf_visitor->visitor_count()['jml_total_pengunjung']  ?></span> Orang</h3>
+						<h3><span class="text-warning"><?= $this->mf_visitor->visitor_count()['jml_total_pengunjung']  ?></span> <span class="d-none d-md-block">Orang</span></h3>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-6">
 				<h6 class="text-white pb-2 border-bottom">Ikuti Juga</h6>
 				<ul class="list-unstyled">
 					<li>
@@ -60,7 +61,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-6">
 				<h6 class="text-white pb-2 border-bottom">Lainnya</h6>
 				<ul class="list-unstyled">
 					<li>

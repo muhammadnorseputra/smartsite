@@ -1,7 +1,7 @@
-<section class="py-5 hero">
+<section class="py-md-5 hero">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 my-5 pt-4 text-left pb-5">
+      <div class="col-md-12 pt-md-5 text-left pb-3 pb-md-0">
         <?php
         if ($detail->num_rows() > 0) :
           $h = $detail->row();
@@ -21,7 +21,7 @@
 <section class="h-statis-detail">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 mt--9 bg-white p-3 p-md-4 border-right">
+      <div class="col-md-8 bg-white p-3 p-md-4">
         <?php
         if ($detail->num_rows() > 0) :
           $h = $detail->row();
@@ -43,7 +43,7 @@
         $path = $h->filename;
         $ext = pathinfo($path, PATHINFO_EXTENSION); 
         ?>
-      <div class="col-md-4 mt--9 bg-white p-md-4">
+      <div class="col-md-4 bg-white p-md-4">
           <?php 
             if($ext === 'pdf'):
           ?>

@@ -22,8 +22,8 @@ $arr = [
         </div>
     </div>
 </div>
-<div class="col-6 col-sm-6 col-md-3 ">
-    <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent my-md-0 my-4 border-0 rounded-0">
+<div class="col-6 col-sm-6 col-md-3">
+    <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent border-0 rounded">
         <div class="card-body text-center">
             <i class="fas fa-user-tie pb-md-4 fa-3x mx-auto text-success rounded"></i>
             <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
@@ -32,7 +32,7 @@ $arr = [
         </div>
     </div>
 </div>
-<div class="col-6 col-sm-12 col-md-3 rounded-right">
+<div class="col-6 col-sm-6 col-md-3 rounded-right">
     <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent rounded border-0">
         <div class="card-body text-center">
             <i class="far pb-md-4 fa-user-circle fa-3x mx-auto text-warning rounded"></i>
@@ -42,7 +42,7 @@ $arr = [
         </div>
     </div>
 </div>
-<div class="col-6 col-sm-12 col-md-3 rounded-right">
+<div class="col-6 col-sm-6 col-md-3 rounded-right">
     <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent rounded border-0">
         <div class="card-body text-center">
             <i class="fas pb-md-4 fa-house-user fa-3x mx-auto text-secondary rounded"></i>

@@ -1,8 +1,8 @@
 <section class="hero py-5">
-	<div class="container pt-5">
-		<div class="d-flex justify-content-between align-items-center">
+	<div class="container pt-md-5">
+		<div class="d-flex justify-content-between align-items-start">
 			<div>
-				<div class="font-weight-bold text-white">Daftar Album</div>
+				<div class="font-weight-bold text-dark">Daftar Album</div>
 				<p class="text-muted small">Resources Dokumentasi BKPPD</p>
 			</div>
 		</div>
