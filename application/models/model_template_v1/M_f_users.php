@@ -268,7 +268,7 @@ class M_f_users extends CI_Model
 
     public function userlist()
     {
-        $this->db->select('photo_pic,nama_lengkap,nama_panggilan,role,id_user_portal,online');
+        $this->db->select('photo_pic,nama_lengkap,nama_panggilan,role,id_user_portal,online,tanggal_bergabung');
         return $this->db->get('t_users_portal');
     }
 }

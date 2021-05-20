@@ -4,10 +4,10 @@ $chanelId = $this->config->item('YOUTUBE_CHANNELID'); //ID chanel youtube
 $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 ?>
 <section class="hero py-5">
-	<div class="container pt-5">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>	
-				<div class="font-weight-bold text-white">Daftar Video</div>
+	<div class="container pt-md-5">
+		<div class="d-flex justify-content-between align-items-md-center align-items-start flex-lg-row  flex-md-row flex-column">
+			<div class="d-none d-md-block d-lg-block">	
+				<div class="font-weight-bold text-responsive">Daftar Video</div>
 				<p class="text-muted small">Resources <a href="www.youtube.com"> www.youtube.com</a></p>
 			</div>
 			<div>
@@ -34,7 +34,7 @@ $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 			?>
 				<div class="col-12 col-sm-6 col-md-4 col-lg-4">
 					<a href="<?= $videoID ?>" id="btn-view-video" title="<?= $title_video ?>" class="position-relative">
-						<img src="<?= $thumb_video ?>" alt="<?= $title_video ?>" class="img-fluid border border-secondary w-100 shadow-sm rounded mb-3">
+						<img src="<?= $thumb_video ?>" alt="<?= $title_video ?>" class="img-fluid w-100 shadow-sm rounded mb-3">
 					</a>
 					<div class="small text-white badge badge-info mb-2">Upload: <?= longdate_indo(substr($publish_video, 0, 10)) ?></div>
 					<a href="<?= $videoID ?>" id="btn-view-video" title="<?= $title_video ?>">
