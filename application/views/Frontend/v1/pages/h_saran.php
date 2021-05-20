@@ -1,16 +1,7 @@
-<section class="py-4 hero">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 my-3 pt-4 text-left pb-5">
-        
-      </div>
-    </div>
-  </div>
-</section>
-<section class="mt--9">
+<section>
 <div class="container">
 	<div class="row">
-		<div class="col-md-7 mt-4 bg-white p-md-5">
+		<div class="col-md-7 mt-md-4 bg-white p-md-5">
 			<div class="mr-md-3 pr-md-3">
 				<div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold text-dark"><i class="fas fa-box text-dark mr-2"></i>Kotak Saran</span>
@@ -23,7 +14,7 @@
 			</div>
 			<?php endif; ?>
 			<div class="card bg-transparent border-0">
-				<div class="card-body pl-md-0">
+				<div class="card-body px-0">
 					<?= form_open(base_url('kirim_saran')); ?>
 					<div class="form-group">
 						<label for="nama_lengkap">Nama <span class="text-danger">*</span></label>
@@ -78,7 +69,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-5 d-none d-md-block d-lg-block d-xl-block mt-4 bg-light p-md-5 border-left">
+		<div class="col-md-5 d-none d-md-block d-lg-block d-xl-block mt-4 p-md-5">
 			<img src="<?= base_url('assets/images/bg/Gak Pusying.235aa0ce.png') ?>" alt="saran-buat-website-bkppd-nih-bagai-mana-ya" class="img-fluid">
 		</div>
 	</div>

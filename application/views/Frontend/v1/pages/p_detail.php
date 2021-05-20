@@ -40,8 +40,8 @@ if (count($pecah) > 0) {
 		<div class="row">
 			<div class="col-md-8 mb-md-5 pb-md-5 px-0 mx-md-0 mx-3">
 				<div class="card rounded-lg shadow-none bg-white rounded border-0">
-					<div class="card bg-transparent border-0 p-md-3 p-0">
-						<div class="card-body px-0 px-md-2">
+					<div class="card bg-transparent border-0 px-md-3 pt-md-0 p-0">
+						<div class="card-body px-0 px-md-2 pt-md-0">
 							<img data-src="<?= $photo; ?>" width="60" height="60" class="float-left mr-md-4 mr-3 lazy rounded shadow-sm">
 							<h5 class="card-title"><a href="<?= $link_profile_public ?>"><?= $namalengkap ?></a></h5>
 							<p class="card-text">
@@ -82,9 +82,8 @@ if (count($pecah) > 0) {
 							
 						</div>
 					</div>
-					<div class="card border-top-light bg-white">
+					<div class="card border-top-light bg-light">
 						<div class="card-body p-5">
-							
 							<?php if ($this->session->userdata('user_portal_log')['online'] == 'ON') { ?>
 							<b class="reply_username float-right"></b>
 							<h5 class="card-title"><i class="far fa-comment-alt mr-2"></i> Post Komentar</h5>
@@ -95,15 +94,26 @@ if (count($pecah) > 0) {
 							<button type="submit" class="btn btn-light btn-outline-primary">Kirim</button>
 							<?= form_close() ?>
 							<?php } else { ?>
-							<p class="text-center"><b>Login Dulu, Ya!</b></p>
-							<p class=" text-center text-muted">Mau ikutan diskusi? Untuk ikutan diskusi kamu harus punya identitas, maka dari itu login dulu.</p>
-							<a href="<?php echo base_url('login_web') ?>" class="btn btn-dark btn-md btn-block"><i class="fas fa-lock mr-3"></i> Login</a>
+							<p class="text-center text-responsive"><b>Login Dulu, Ya!</b></p>
+							<p class=" text-center text-muted px-md-5 px-0">Mau ikutan diskusi? Untuk ikutan diskusi kamu harus punya identitas, maka dari itu login dulu.</p>
+							<div class="d-flex justify-content-center flex-wrap-reverse">
+							<div>
+								<a href="<?php echo base_url('login_web') ?>" class="btn btn-dark btn-md btn-block"><i class="fas fa-lock mr-3"></i> Login</a>
+							</div>
+							<div class="ml-2">
+								<a href="<?php echo base_url('daftar') ?>" class="btn btn-success btn-md btn-block"><i class="fas fa-user-plus mr-3"></i> Daftar</a>
+							</div>
+
+							</div>
 							<?php } ?>
 						</div>
 					</div>
 					<?php else: ?>
-					<div class="alert alert-warning text-center font-italic text-uppercase my-3" role="alert">
-						Komentar di non aktifkan
+					<div class="alert alert-secondary text-muted text-center text-uppercase my-3 border-0" role="alert">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-slash-fill mr-2 mt--1" viewBox="0 0 16 16">
+						  <path d="M5.164 14H15c-1.5-1-2-5.902-2-7 0-.264-.02-.523-.06-.776L5.164 14zm6.288-10.617A4.988 4.988 0 0 0 8.995 2.1a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 7c0 .898-.335 4.342-1.278 6.113l9.73-9.73zM10 15a2 2 0 1 1-4 0h4zm-9.375.625a.53.53 0 0 0 .75.75l14.75-14.75a.53.53 0 0 0-.75-.75L.625 15.625z"/>
+						</svg>
+						 Komentar Ditutup
 					</div>
 					<?php endif; ?>
 					<div class="mt-md-5 mt-3">

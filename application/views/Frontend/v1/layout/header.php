@@ -136,10 +136,10 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a  class="btn shadow-sm btn-primary rounded-pill border-0 py-2 px-4" href="<?= base_url('login_web'); ?>">
-				<i class="far fa-user mr-2"></i> Masuk
+			<a  class="btn shadow-sm btn-dark rounded-pill border-0 py-2 px-4" href="<?= base_url('login_web'); ?>">
+				<i class="fas fa-lock mr-2"></i> Login
 			</a>
-			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn shadow-sm btn-primary rounded-circle py-2 ml-2" href="<?= base_url('daftar'); ?>">
+			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn shadow-sm btn-success rounded-circle py-2 ml-2" href="<?= base_url('daftar'); ?>">
 				<i class="fas fa-user-plus"></i>
 			</a>
 			<?php } ?>
