@@ -1,8 +1,8 @@
 <?php $id = decrypt_url($this->uri->segment(2)) ?>
 <section class="hero py-md-5">
-	<div class="container pt-5">
+	<div class="container pt-md-5 pt-2">
 		<div class="d-flex justify-content-center justify-content-md-center align-items-center">
-			<p class="font-weight-bold text-white mx-2">Album <i class="fas fa-chevron-right mx-2"></i>
+			<p class="font-weight-bold mx-2">Album <i class="fas fa-chevron-right mx-2"></i>
 				<span class="text-success"><?= $this->album->judul_album_by_id($id) ?></span>
 			</p>
 		</div>
