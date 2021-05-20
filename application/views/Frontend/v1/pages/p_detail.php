@@ -30,32 +30,31 @@ $pecah = explode(',', $tags);
 if (count($pecah) > 0) {
 	$tag = '';
 	for ($i = 0; $i < count($pecah); ++$i) {
-		$tag .= '<a href="' . base_url('tag/' . $pecah[$i]) . '" class="btn btn-sm btn-outline-secondary ml-2 mb-2">#' . $pecah[$i] . '</a>';
+		$tag .= '<a href="' . base_url('tag/' . $pecah[$i]) . '" class="btn btn-sm btn-outline-light">#' . $pecah[$i] . '</a>';
 	}
 }
 ?>
 
-<section class="mt-3 pt-md-5 mt-md-5">
+<section class="pt-md-5 mt-md-5">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 mb-md-5 pb-md-5 px-0 mx-md-0 mx-3">
 				<div class="card rounded-lg shadow-none bg-white rounded border-0">
-					<div class="card bg-transparent border-0 p-3">
-						<div class="card-body">
-							<img data-src="<?= $photo; ?>" width="60" height="60" class="float-left mr-4 lazy rounded shadow-sm">
+					<div class="card bg-transparent border-0 p-md-3 p-0">
+						<div class="card-body px-0 px-md-2">
+							<img data-src="<?= $photo; ?>" width="60" height="60" class="float-left mr-md-4 mr-3 lazy rounded-circle shadow-sm">
 							<h5 class="card-title"><a href="<?= $link_profile_public ?>"><?= $namalengkap ?></a></h5>
 							<p class="card-text">
-								<span class="badge badge-default px-0 text-muted">Posted by <?= ucwords($namapanggilan); ?> &#8226;  <?php echo longdate_indo($post_detail->tgl_posting); ?></span>
+								<span class="badge badge-default px-0 text-light">Posted by <?= ucwords($namapanggilan); ?> &#8226;  <?php echo longdate_indo($post_detail->tgl_posting); ?></span>
 							</p>
 							</div>
 						</div>
-						<div class="px-4">
+						<div class="px-0 px-md-4">
 							<?= $img ?>
-							<?= $tag; ?>
 						</div>
-						<div class="card-body px-4">
+						<div class="card-body px-0 px-md-4">
 							<h2 class="font-weight-bold display-5"><?php echo $post_detail->judul; ?></h2>
-							
+							<?= $tag; ?>
 							<p class="card-text font-weight-normal"><?php echo $post_detail->content; ?></p>
 						</div>
 						<div class="card-footer bg-transparent p-2 border-top rounded-lg d-flex justify-content-around">
@@ -107,9 +106,9 @@ if (count($pecah) > 0) {
 						Komentar di non aktifkan
 					</div>
 					<?php endif; ?>
-					<div class="mt-5">
+					<div class="mt-md-5 mt-3">
 						<div class="separator">
-							<span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-quote-left fa-pull-left text-primary mr-2"></i>Berita Selanjutnya</span>
+							<span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-quote-left fa-pull-left mr-2"></i>Berita Selanjutnya</span>
 						</div>
 						<div class="d-flex justify-content-between flex-lg-row flex-column">
 							<?php
@@ -150,8 +149,8 @@ if (count($pecah) > 0) {
 					</div>
 				</div>
 				<div class="col-md-4 d-none d-md-block">
-					<div class="card bg-white rounded border-0">
-						<div class="card-body pt-0">
+					<div class="card bg-white rounded border-light">
+						<div class="card-body p-0">
                     		<?php $this->load->view('Frontend/v1/function/populer_post'); ?>
 						</div>
 					</div>

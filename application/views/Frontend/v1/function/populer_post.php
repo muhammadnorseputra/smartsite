@@ -1,4 +1,4 @@
-<div class="separator d-none d-md-block mt-5">
+<div class="separator d-none d-md-block ml-3">
     <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-heart text-secondary mr-2"></i> Populer Post</span>
 </div>
 <div class="list-group border-0 shadow-none p-0 d-none d-md-block">
