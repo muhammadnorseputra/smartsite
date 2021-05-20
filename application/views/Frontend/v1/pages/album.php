@@ -2,7 +2,7 @@
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-start">
 			<div>
-				<div class="font-weight-bold text-dark">Daftar Album</div>
+				<div class="font-weight-bold text-dark text-responsive">Daftar Album</div>
 				<p class="text-muted small">Resources Dokumentasi BKPPD</p>
 			</div>
 		</div>
@@ -26,7 +26,7 @@
 				</div>
 				<div class="card-body bg-transparent px-0">
 					<?php if($a->tgl_publish === date('Y-m-d')): ?><span class="badge badge-pill badge-warning float-right">New!</span> <?php endif; ?>
-					<h5 class="card-title"><?= $a->judul ?></h5>
+					<div><?= $a->judul ?></div>
 					<span class="text-secondary label"><?= $this->album->jml_photo_in_album($a->id_album_foto) ?> Photo</span>
 				</div>
 			</div>
