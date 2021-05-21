@@ -11,10 +11,10 @@ $link_profile_public =
   base_url("user/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan) . "/" . encrypt_url($by));
 ?>
 
-<section class="my-5">
+<section class="my-md-5">
   <div class="container">
     <div class="row">
-      <div class="col-12 mt-5">
+      <div class="col-12 mt-md-5 my-2">
         <div class="card bg-white">
           <div class="card-body p-0">
             <div class="card-header mb-4 py-4 bg-transparent">

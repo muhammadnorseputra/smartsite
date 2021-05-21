@@ -66,7 +66,7 @@
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
                 <div class="text-center">
-                    <button id="load_more" class="btn-block btn btn-primary rounded-lg px-4"><i class="fas fa-newspaper mr-2"></i> Load more berita</button>
+                    <button id="load_more" class="btn p-2 btn-primary rounded-lg px-4"><i class="fas fa-newspaper mr-2"></i> Loadmore</button>
                 </div>
             </div>
         </div>

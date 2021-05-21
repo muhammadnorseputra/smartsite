@@ -71,7 +71,7 @@ class Beranda extends CI_Controller
                 if (count($pecah) > 0) {
                     $tag = '';
                     for ($i = 0; $i < count($pecah); ++$i) {
-                        $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-secondary border-0 mr-2 mb-2">#'.$pecah[$i].'</a>';
+                        $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-light border-0 mr-2 mb-2">#'.$pecah[$i].'</a>';
                     }
                 }
                 $pilihan = $row->pilihan == 'Y' ? '<span class="text-success small float-right" data-toggle="tooltip" title="Pilihan Editor"><i class="fas fa-check-circle"></i></span>' : '';
@@ -112,7 +112,7 @@ class Beranda extends CI_Controller
 // <a href="'.$post_list_url.'" class="btn btn-primary-old rounded float-right btn-sm px-3">'.$namakategori.'</a>
                 $output .= '
                 <div>
-					<div class="card mb-4 border bg-white">
+					<div class="card mb-4 border bg-white shadow-sm">
 					<div class="card-body px-2 mt-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded ml-3 lazy">
@@ -129,10 +129,10 @@ class Beranda extends CI_Controller
                     </div>
 					
 					<div class="card-body py-0 px-5">
-                        <h2 class="card-title font-weight-bold text-responsive"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h2>
+                        <h1 class="card-title font-weight-bold text-responsive"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h1>
                         <p class="card-text font-weight-normal text-secondary my-4">'.character_limiter($isi, 150).'</p>
                         <hr>
-                        <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
+                        <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary mr-2 mb-2 p-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
 					</div>
 					<div class="card-footer bg-transparent p-2 border-0 d-flex justify-content-start">
 					

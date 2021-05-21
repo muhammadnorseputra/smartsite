@@ -151,7 +151,7 @@ class Post extends CI_Controller
                 if (count($pecah) > 0) {
                     $tag = '';
                     for ($i = 0; $i < count($pecah); ++$i) {
-                        $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-secondary border-0 mr-2 mb-2">#'.$pecah[$i].'</a>';
+                        $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-light border-0 mr-2 mb-2">#'.$pecah[$i].'</a>';
                     }
                 }
 
@@ -164,7 +164,7 @@ class Post extends CI_Controller
                     <div class="grid-item w-100">
                         <div class="card border shadow-sm bg-white mb-4" style="border-radius:10px;">
                             <div class="card-header bg-white border-0 ml-3 mt-2" style="border-radius:10px;">
-                                <img src="'.$gravatar. '" width="50" height="50" class="float-left mt-1 mr-4 d-inline-block rounded-circle">
+                                <img src="'.$gravatar. '" width="50" height="50" class="float-left mt-1 mr-4 d-inline-block rounded">
                                 <h5 class="card-title d-block">' . $namalengkap . '</h5>
                                 <small>'.longdate_indo($row->tgl_posting).'</small>
                             </div>
@@ -176,18 +176,17 @@ class Post extends CI_Controller
                                 <p>
                                     '.$isi. '
                                 </p>
-                                <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
+                                <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary p-2 mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
                             </div>
                             <div class="card-footer bg-white p-2 border-0 d-flex justify-content-around" style="border-bottom-left-radius:12px;border-bottom-right-radius:12px;">
-                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-light rounded p-2 float-left text-secondary"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
 
-                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Komentar" class="btn btn-transparent  border-light rounded p-2 float-left text-info"><i class="far fa-comment-alt mr-2"></i> '.$this->komentar->jml_komentarbyidberita($row->id_berita). '</button>
+                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-light rounded p-2 w-100 float-left text-secondary"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
 
-                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Bagikan postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent border-light rounded p-2 float-left text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
+                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Komentar" class="btn btn-transparent  border-light rounded p-2 w-100 float-left text-info"><i class="far fa-comment-alt mr-2"></i> '.$this->komentar->jml_komentarbyidberita($row->id_berita). '</button>
+
+                            <button type="button" data-toggle="tooltip" data-placement="bottom" title="Bagikan postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent border-light rounded p-2 w-100 float-left text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
                             
-                            <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-secondary rounded p-2 float-left '.$btn_like.' text-danger" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
-
-                            <a href="'.$posturl.'" class="p-2 btn bg-white btn-transparent border-top-0 border-bottom-0 rounded border-light">Read more <i class="fas fa-arrow-right ml-2"></i></a>
+                            <button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent w-100 border-secondary rounded p-2 float-left '.$btn_like.' text-danger" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
                             </div>
                         </div>
                         

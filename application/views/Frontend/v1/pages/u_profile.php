@@ -9,7 +9,7 @@ $profileLink = base_url("user/" . decrypt_url($this->mf_users->get_userportal_na
 $sukaLink = base_url("disukai/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($public_profile->id_user_portal)->nama_panggilan) . "/" . encrypt_url($public_profile->id_user_portal));
 $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($public_profile->id_user_portal)->nama_panggilan) . "/" . encrypt_url($public_profile->id_user_portal));
 ?>
-<section class="my-5">
+<section class="my-md-4">
   <div class="container">
     <div class="row">
       <!-- <div class="col-md-3 mt-5">
@@ -21,13 +21,13 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
           </div>
         </div>
       </div> -->
-      <div class="col-md-12 mt-5">
+      <div class="col-md-12 mt-md-5">
         <div>
           <div class="row">
             <div class="col-xs-9 col-sm-9 col-md-9">
               <div class="row">
                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 py-3">
-                  <img class="img-fluid rounded-circle" src="<?= $photo ?>">
+                  <img class="img-fluid rounded" src="<?= $photo ?>">
                 </div>
                 <div class="col-md-10 py-3">
                   <h3 class="font-weight-bold"><?= $namalengkap ?> <?= $online ?></h3>
@@ -38,45 +38,12 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
               </div>
               <div class="w-100 my-4"></div>
               <div class="row">
-                <div class="col-md-4 order-2 order-md-first">
+                <div class="col-md-4 order-3 order-md-first">
                   <div id="sidebar">
-                    <div class="separator">
-                        <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-heart text-secondary mr-2"></i>Populer Post</span></span>
-                        </div>
-                    <div class="list-group border-0 shadow-none p-0">
-                        <?php
-                        $nolist = 1;
-                        foreach ($mf_berita_populer as $b) :
-                        $id = encrypt_url($b->id_berita);
-                        $postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($b->created_by))));
-                        $judul = strtolower($b->judul);
-                        $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
-                        if(empty($b->img)):
-                        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
-                        else:
-                        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow" data-src="'.$b->path.'" alt="'.$b->judul.'">';
-                        endif;
-                        ?>
-                        <a  href="<?= $posturl; ?>" class="bg-transparent list-group-item list-group-item-action border-0 px-3  m-0">
-                            <div class="media m-0">
-                                <?= $img ?>
-                                <div class="media-body">
-                                    <span class="font-weight-lighter text-primary"><?= character_limiter($b->judul, 25); ?></span>
-                                    <small class="d-block mt-2 align-middle text-left">
-                                    <i class="far fa-thumbs-up"></i> <?= $b->like_count ?> Likes </small>
-                                    </small>
-                                </div>
-                            </div>
-                            
-                            <br>
-                            
-                        </a>
-                        <?php $nolist++; endforeach; ?>
-                    </div>
-
+                    <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
                   </div>
                 </div>
-                <div class="col-md-8 order-3 order-md-2">
+                <div class="col-md-8 order-last order-md-2">
                   <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-secondary mr-2"></i>Postingan Terbaru</span></span>
                         </div>
@@ -85,7 +52,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                 </div>
               </div>
             </div>
-            <div class="col-md-3 order-md-last order-first">
+            <div class="col-md-3 order-first order-md-last">
               <div id="sidebar">
                 <div class="my-auto mx-auto">
                   
@@ -99,7 +66,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                       <a href="<?= $halamanLink ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default"><i class="fas fa-newspaper float-right" aria-hidden="true"></i> Halaman</a>
                     </div>
                     <div class="w-100"></div>
-                    <div class="list-group">
+                    <div class="list-group d-none d-md-block d-lg-block">
                       <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-shapes text-secondary mr-2"></i>Kategori Terbaru</span></span>
                         </div>
