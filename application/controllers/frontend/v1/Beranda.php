@@ -132,7 +132,7 @@ class Beranda extends CI_Controller
                         <div class="col-12 col-md-6">
                             <a href="'.$post_list_url.'" class="btn btn-sm btn-primary rounded-pill text-white shadow-sm mt-2 mb-2 mt-md-0 mb-md-2 ml-3 ml-md-0">&bull; '.$namakategori.'</a>
                             <h4 class="font-weight-bold mx-3 mx-md-0"><a href="'.$posturl.'">'.word_limiter($row->judul, 6).'&nbsp;'.$pilihan.'</a></h4>
-                            <p class="card-text font-weight-normal text-secondary my-4 mx-3 mx-md-0">'.character_limiter($isi, 120).'</p>
+                            <p class="card-text font-weight-lighter text-muted my-4 mx-3 mx-md-0">'.character_limiter($isi, 110).'</p>
                             <hr>
                             <p class="px-3 px-md-0">'.$tag. '</p>
                         </div>
