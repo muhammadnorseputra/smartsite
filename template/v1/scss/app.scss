@@ -238,7 +238,7 @@ h5.title-sidebar {
 }
 .dropdown-menu {
 	top: 40px;
-	left: 0px;
+	// left: 0px;
 	padding: .5rem;
 	border: 0px;
 	border-radius: 8px;
@@ -824,8 +824,10 @@ i.likes:hover {
 		border-color: transparent !important;
 	}
 	.logo-loading {
-	  top: 40%;
-	  transform: translate(-50%, -40%);
+	  top: 50%;
+	  left: 52%;
+	  width: 50% !important;
+	  transform: translate(-52%, -50%);
 	}
 }
 @media (min-width: 992px){
