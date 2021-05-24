@@ -60,6 +60,7 @@ class Beranda extends CI_Controller
         $output = '';
         $data = $this->mf_beranda->get_all_berita($this->input->post('limit'),$this->input->post('start'));
         if ($data->num_rows() > 0) {
+            $no=1;
             foreach ($data->result() as $row) {
                 if ($row->headline == '1') {
                     $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
@@ -112,7 +113,11 @@ class Beranda extends CI_Controller
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('kategori/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
                 
-                $arr_color = ['bg-primary', 'bg-success', 'bg-info', 'bg-warning', 'bg-danger'];
+                $arr_color = ['btn-primary', 'btn-success', 'btn-info', 'btn-warning', 'btn-danger'];
+                $rand = '';
+                for($x=0; $x<count($arr_color);$x++):
+                    $rand = $arr_color[$no];
+                endfor;
 
 // <a href="'.$post_list_url.'" class="btn btn-primary-old rounded float-right btn-sm px-3">'.$namakategori.'</a>
                 $output .= '
@@ -135,7 +140,7 @@ class Beranda extends CI_Controller
                         </div>
                     
                         <div class="col-12 col-md-6">
-                            <a href="'.$post_list_url.'" class="btn btn-sm btn-primary rounded-pill text-white shadow-sm mt-2 mb-2 mt-md-0 mb-md-2 ml-3 ml-md-0">&bull; '.$namakategori.'</a>
+                            <a href="'.$post_list_url.'" class="btn btn-sm rounded-pill text-white shadow-sm mt-2 mb-2 mt-md-0 mb-md-2 ml-3 ml-md-0 '.$rand.'">&bull; '.$namakategori.'</a>
                             <h4 class="font-weight-bold mx-3 mx-md-0"><a href="'.$posturl.'">'.word_limiter($row->judul, 6).'&nbsp;'.$pilihan.'</a></h4>
                             <p class="card-text font-weight-lighter text-muted my-4 mx-3 mx-md-0">'.character_limiter($isi, 110).'</p>
                             <hr>
@@ -161,6 +166,7 @@ class Beranda extends CI_Controller
                     </div>
 				</div>
 				';
+                $no++;
             }
         }
         echo json_encode(['html' => $output, 'status' => 'Oke']);
