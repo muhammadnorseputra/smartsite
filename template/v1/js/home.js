@@ -8,7 +8,7 @@ function explore() {
 $(document).ready(function() {
 
     // get all berita
-    var limit = 3;
+    var limit = 4;
     var start = 0;
     var action = "inactive";
     console.log(_uriSegment);
@@ -32,24 +32,13 @@ $(document).ready(function() {
                     </p> 
                     </div> 
                     <div class = "card-body p-0">
-                    <span class ="content-placeholder rounded-0" style = "width:100%; height: 300px;"> &nbsp; </span>
-                    <span class="content-placeholder rounded-lg my-2 mx-4"
-                    style ="width:90%; height: 30px;"> &nbsp; </span>
-                    <span class="content-placeholder rounded-lg my-2 mx-4"
-                    style ="width:90%; height: 50px;"> &nbsp; </span>
+                    <span class ="content-placeholder rounded-0" style="width:100%; height: 300px;"> &nbsp; </span>
                     </div> 
-                    <div class ="card-footer text-muted p-3 bg-transparent" >
-                     <span class ="content-placeholder rounded-circle mr-2"
-                    style ="width:45px; height: 45px;"> &nbsp; </span>
-                    <span class ="content-placeholder rounded-circle mr-2"
-                    style ="width:45px; height: 45px;"> &nbsp; </span>
-                    <span class ="content-placeholder rounded-circle mr-2"
-                    style ="width:45px; height: 45px;"> &nbsp; </span>
-                    <span class ="content-placeholder rounded-circle"
-                    style ="width:45px; height: 45px;"> &nbsp; </span>
-
-                    <span class ="content-placeholder rounded-circle float-right"
-                    style ="width:45px; height: 45px;"> &nbsp; </span>
+                    <div class ="card-footer d-flex justify-content-bettwen p-3 bg-transparent">
+                        <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
+                        <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
+                        <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
+                        <span class="content-placeholder rounded w-100 p-2"> &nbsp; </span>
                     </div> 
                 </div>
             `;

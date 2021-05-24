@@ -37,5 +37,5 @@
     <div class="subline inc"></div>
     <div class="subline dec"></div>
   </div>
-  <!-- <p>Mohon tunggu loading halaman ...</p> -->
+  <!-- <p>loading ...</p> -->
 </div>

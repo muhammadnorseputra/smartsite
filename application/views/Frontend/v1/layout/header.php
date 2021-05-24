@@ -1,5 +1,5 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light py-md-1 d-none d-md-block d-lg-block">
+<nav id="navbar" class="navbar fixed-top navbar-expand-sm bg-white navbar-light d-none d-md-block d-lg-block">
 	<div class="container">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
 			<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="150"/>'; ?>
@@ -74,54 +74,52 @@
 					<a class="nav-link dropdown-toggle px-3 mr-md-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Apps
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<div class="d-flex flex-lg-column justify-content-between align-items-center">
-							<a target="_blank" href="https://ekinerja.bkppd-balangankab.info/" class="p-4 text-nowrap">
-								<div class="d-flex justify-content-start align-content-center text-left">
-									<span>
-										<?php echo '<img class="rounded" src="'.base_url('assets/images/logo-ekinerja.png').'" width="110"/> <br>' ; ?>
-									</span>
-									<span>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 400px;">
+						<div class="d-flex flex-lg-column justify-content-start align-items-center ">
+							<a target="_blank" href="https://ekinerja.bkppd-balangankab.info/" class="p-4">
+								<div class="row">
+									<div class="col-4">
+										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-ekinerja.png').'"/>' ; ?>
+									</div>
+									<div class="col-8">
 										<b class="font-weight-bold text-dark">e-Kinerja</b>
-										<p class="text-light small">
-											Lorem ipsum dolor sit amet, <br> consectetur adipisicing, elit. Obcaecati, ipsum!
+										<p class="text-muted small">
+											Mengukur dan memantau kinerja PNS secara periodic, <br> sebagai salah satu data acuan pemberian  tunjangan <br> kinerja yang  diterima pegawai
 										</p>
-									</span>
+									</div>
 								</div>
 							</a>
-							<a target="_blank" href="http://silka.bkppd-balangankab.info/" class="p-4 text-nowrap">
-								<div class="d-flex justify-content-start align-content-center text-left">
-									<span>
-										<?php echo '<img class="rounded" src="'.base_url('assets/images/logo-silka.png').'" width="110"/> <br>'; ?>
-									</span>
-									<span>
+							<a target="_blank" href="http://silka.bkppd-balangankab.info/" class="p-4">
+								<div class="row">
+									<div class="col-4">
+										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-silka.png').'"/>'; ?>
+									</div>
+									<div class="col-8">
 										<b class="font-weight-bold text-dark">SILKa Online</b>
-										<p class="text-light small">
-											Lorem ipsum dolor sit amet, <br> consectetur adipisicing, elit. Obcaecati, ipsum!
+										<p class="text-muted small">
+											SILKa Online (Sistem Informasi Layanan Kepegawaian) <br> pengelolaan data kepegawaian kabupaten balangan
 										</p>
-									</span>
+									</div>
 								</div>
 							</a>
-							<a target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4 text-nowrap">
-								<div class="d-flex justify-content-start align-content-start text-left">
-									<span>
-										<?php echo '<img class="rounded mr-5" src="'.base_url('assets/images/logo-eprilaku.png').'" width="60"/> <br>'; ?>
-									</span>
-									<span>
-										<b class="font-weight-bold text-dark">e-Prilaku</b>
-										<p class="text-light small">
-											Lorem ipsum dolor sit amet, <br> consectetur adipisicing, elit. Obcaecati, ipsum!
+							<a target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4">
+								<div class="row">
+									<div class="col-4">
+										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-eprilaku.png').'"/>'; ?>
+									</div>
+									<div class="col-8">
+										<b class="font-weight-bold text-dark">e-Prilaku (360)</b>
+										<p class="text-muted small">
+											Aplikasi untuk Menilai dan Mengukur Perilaku yang dinilai<br> oleh Atasan, Teman/Peer dan Bawahan (360 Derajat) <br>dengan menggunakan survei tertutup sehingga lebih objektif.
 										</p>
-									</span>
+									</div>
 								</div>
 							</a>
 						</div>
 					</ul>
 				</li>
 			</ul>
-			<button class="btn shadow-sm btn-outline-primary rounded-pill py-2 px-4 mr-2" id="caripost">
-			<i class="fas fa-search mr-2"></i> Cari Postingan
-			</button>
+			
 			<?php if ($this->session->userdata('user_portal_log')['online'] === 'ON') { ?>
 			<?php
 			$idSes = $this->session->userdata('user_portal_log')['id'];
@@ -139,10 +137,13 @@
 			<a  class="btn shadow-sm btn-dark rounded-pill border-0 py-2 px-4" href="<?= base_url('login_web'); ?>">
 				<i class="fas fa-lock mr-2"></i> Login
 			</a>
-			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn shadow-sm btn-success rounded-circle py-2 ml-2" href="<?= base_url('daftar'); ?>">
+			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn shadow-none border-0 rounded-circle ml-2" href="<?= base_url('daftar'); ?>">
 				<i class="fas fa-user-plus"></i>
 			</a>
 			<?php } ?>
+			<button class="btn shadow-sm btn-outline-primary rounded-pill py-2 ml-2" id="caripost">
+			<i class="fas fa-search"></i>
+			</button>
 			<!-- <label class="switch mt-2">
 							<input type="checkbox" id="darkSwitch">
 							<div>

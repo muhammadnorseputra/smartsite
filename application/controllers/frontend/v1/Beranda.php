@@ -71,7 +71,7 @@ class Beranda extends CI_Controller
                 if (count($pecah) > 0) {
                     $tag = '';
                     for ($i = 0; $i < count($pecah); ++$i) {
-                        $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-light border-0 mr-2 mb-2">#'.$pecah[$i].'</a>';
+                        $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-light border-0 mr-1 mb-1">#'.$pecah[$i].'</a>';
                     }
                 }
                 $pilihan = $row->pilihan == 'Y' ? '<span class="text-success small float-right" data-toggle="tooltip" title="Pilihan Editor"><i class="fas fa-check-circle"></i></span>' : '';
@@ -103,9 +103,9 @@ class Beranda extends CI_Controller
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
                 if(!empty($row->img)):
-                    $img = '<img class="card-img-top lazy border-light" data-src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
+                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
                 else:
-                    $img = '<img class="card-img-top lazy border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img class="w-100 lazy rounded border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 endif;
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('kategori/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
@@ -122,18 +122,22 @@ class Beranda extends CI_Controller
                         </p>
 					</div>
 
-                    <div class="canvas position-relative p-4">
-                        <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" style="border-radius:0.5em;" title="'.$row->judul.'">
-						  '.$img.'
-                        </a>
+                    <div class="row">
+                        <div class="canvas col-12 col-md-6">
+                            <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info px-3 pl-md-4" title="'.$row->judul.'">
+                              '.$img.'
+                            </a>
+                        </div>
+                    
+                        <div class="col-12 col-md-6">
+                            <a href="'.$post_list_url.'" class="btn btn-sm btn-primary rounded-pill text-white shadow-sm mt-2 mb-2 mt-md-0 mb-md-2 ml-3 ml-md-0">&bull; '.$namakategori.'</a>
+                            <h4 class="font-weight-bold mx-3 mx-md-0"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h4>
+                            <p class="card-text font-weight-normal text-secondary my-4 mx-3 mx-md-0">'.character_limiter($isi, 150).'</p>
+                            <hr>
+                            <p class="px-3 px-md-0">'.$tag. '</p>
+                        </div>
                     </div>
-					
-					<div class="card-body py-0 px-5">
-                        <h1 class="card-title font-weight-bold text-responsive"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h1>
-                        <p class="card-text font-weight-normal text-secondary my-4">'.character_limiter($isi, 150).'</p>
-                        <hr>
-                        <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary mr-2 mb-2 p-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
-					</div>
+
 					<div class="card-footer bg-transparent p-2 border-0 d-flex justify-content-start">
 					
                     <div class="w-100">

@@ -6,7 +6,7 @@
                 <?php $this->load->view('msg/flashdata'); ?>
                 <div data-aos="fade-up" data-aos-duration="300" class="display-3 text-md-left text-center text-light font-weight-bold mt-md-5 mt-3">Selamat Datang</div>
                 <!-- Static halo -->
-                <p data-aos="fade-up" data-aos-duration="500" class="lead text-white text-responsive intro-website text-center text-md-left mt-md-2">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah</p>
+                <p data-aos="fade-up" data-aos-duration="500" class="lead text-white intro-website text-center text-md-left mt-md-2">Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah</p>
                 <!-- Dinamic mengunakan typed.js -->
                 <!--                 <p class="halo_bkppd"><span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> <span>Update informasi resmi seputar layanan kepegawaian serta artikel terkait lainya langsung dari website kami.</span> <span>Websites Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</span> </p>
                 <span id="typed" class="lead text-secondary intro-website"></span>

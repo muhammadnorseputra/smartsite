@@ -31,9 +31,10 @@ content: "";
   position:fixed;
   min-width: 100%;
   min-height: 100vh;
-  background-color: transparent;
+  background-color: #eee;
   left:0;
   top: 0;
+  z-index: 9999;
 }
 .slider{
   z-index: 9999;
@@ -41,29 +42,29 @@ content: "";
   height:4.5px;
   overflow-x: hidden;
   // ditengah layar
-  /*
-  width:25%;
+  
+  width:30%;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  */
+  top: 55%;
+  transform: translate(-50%, -55%);
+  
   //kiri atas
-  width:100%;
-  left: 0;
-  top: 0;
+  // width:100%;
+  // left: 0;
+  // top: 0;
 }
 .line{
   position:absolute;
   opacity: 0.4;
   background:$teal;
   width:190%;
-  height:3px;
+  height:4.5px;
 }
 
 .subline{
   position:absolute;
   background:$green;
-  height:3px; 
+  height:4.5px; 
 }
 .inc{
   animation: increase 2.5s infinite;
@@ -73,23 +74,24 @@ content: "";
 }
 .logo-loading {
 	position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 47%;
+  top: 42%;
+  transform: translate(-42%, -47%);
 	text-align: center;
 	vertical-align: middle;
 	z-index: 9999;
-	opacity: 0.5;
+	// opacity: 0.5;
 }
 .page-slider p {
 position: fixed;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 58%;
+  transform: translate(-50%, -58%);
 	text-align: center;
 	vertical-align: middle;
 	z-index: 9999;
 	margin-top: 30px; 
+	color: #999;
 }
 @keyframes increase {
    from { left: -5%; width: 5%; }
@@ -228,6 +230,7 @@ h5.title-sidebar {
 	font-weight: 400;
 	border-radius: 8px !important;
 	padding-top: .5rem .3rem;
+	border: 1px solid transparent;
 }
 .navbar li.nav-item a:hover {
 	background-color: #eff8ff !important;
@@ -846,7 +849,6 @@ i.likes:hover {
 	.nav-item .submenu-left{ 
 		right:100%; left:auto;
 	}
-	.dropdown-menu > li:hover{ background-color: #f1f1f1 }
 	.dropdown-menu > li:hover > .submenu{
 		display: block;
 	}

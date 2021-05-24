@@ -1,6 +1,6 @@
-<section class="pt-5 bg-white rounded shadow-lg">
+<section class="pt-md-5 pt-2 bg-white rounded shadow-lg">
   <div class="container py-4">
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-between align-items-center justify-content-lg-start flex-lg-row flex-column">
       <div class="font-weight-bold display-4 mr-md-3 pr-md-3 border-right border-light">Post Kategori</div>
       <div class="btn-group">
         <button class="btn py-3 px-3 btn-outline-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

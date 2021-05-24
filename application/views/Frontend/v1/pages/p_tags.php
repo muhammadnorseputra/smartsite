@@ -1,15 +1,15 @@
-<section class="mt-0 pt-5 bg-white rounded shadow-lg">
-  <div class="container py-4">
-    <div class="d-flex justify-content-center align-items-center">
+<section class="mt-0 pt-md-5 bg-white rounded shadow-lg">
+  <div class="container py-md-4">
+    <div class="d-flex justify-content-center align-items-center flex-md-row flex-column">
       <div class="font-weight-bold display-4 mr-md-3 pr-md-3 border-right border-light">Post by tags</div>
       <div>
-      	<div class="d-flex flex-nowrap justify-content-start align-items-center"  style="overflow-x: auto; overflow-y: hidden; max-width: 720px;">
+      	<div class="d-flex flex-wrap justify-content-center align-items-center">
 	        <?php
 	        foreach ($tags->result() as $tag) :
 	          $active = url_title($tag->nama_tag);
 	          $active_tag = $active == $this->uri->segment(2) ? 'active' : '';
 	        ?>
-	          <a href="<?= base_url('tag/' . $active); ?>" class="btn rounded-pill my-1 text-nowrap mx-2 p-3 btn-sm btn-outline-secondary ml-auto <?= $active_tag ?>">#<?= url_title($tag->nama_tag); ?></a>
+	          <a href="<?= base_url('tag/' . $active); ?>" class="btn rounded-pill my-1 text-nowrap mx-2 p-2 btn-sm btn-outline-secondary ml-auto <?= $active_tag ?>">#<?= url_title($tag->nama_tag); ?></a>
 	        <?php endforeach; ?>
 	        </div>
       </div>

@@ -6,22 +6,22 @@
             <div class="col-md-12">
                 <!-- Counter jumlah pegawai -->
                 <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/count_peg') ?>">
-                    <div class="col-md-3 p-2">
+                    <div class="col-6 col-md-3 p-2">
                         <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
                         <span class="content-placeholder my-3" style="width: 100%; height: 60px;"></span>
                         <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
                     </div>
-                    <div class="col-md-3 p-2">
+                    <div class="col-6 col-md-3 p-2">
                         <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
                         <span class="content-placeholder my-3" style="width: 100%; height: 60px;"></span>
                         <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
                     </div>
-                    <div class="col-md-3 p-2">
+                    <div class="col-6 col-md-3 p-2">
                         <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
                         <span class="content-placeholder my-3" style="width: 100%; height: 60px;"></span>
                         <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
                     </div>
-                    <div class="col-md-3 p-2">
+                    <div class="col-6 col-md-3 p-2">
                         <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
                         <span class="content-placeholder my-3" style="width: 100%; height: 60px;"></span>
                         <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
@@ -40,7 +40,7 @@
             <div class="col-12">
                 
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-md-0 mt-4">
                     <?php $this->load->view('Frontend/v1/function/youtube_sidebar'); ?>
                     <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>
                     <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
@@ -55,6 +55,7 @@
                 <!-- Banenr slide horizontal -->
                  <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/banner_horizontal_home') ?>">
                     <span class="content-placeholder my-3" style="width: 100%; height: 230px;"></span>
+                    <span class="content-placeholder" style="width: 40%; height: 20px;"></span>
                  </div> 
                 <div class="row">
                     <div class="col-12">

@@ -485,7 +485,7 @@ function explore() {
 
 $(document).ready(function () {
   // get all berita
-  var limit = 3;
+  var limit = 4;
   var start = 0;
   var action = "inactive";
   console.log(_uriSegment);
@@ -496,7 +496,7 @@ $(document).ready(function () {
       var output = "";
 
       for (var count = 0; count < 1; count++) {
-        output += "\n                <div class=\"card border border-light bg-white shadow-sm mb-3\" style=\"border-radius:10px;\">\n                    <div class=\"card-header border-0 bg-white\" style=\"border-radius:10px;\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style = \"width:100%; height: 300px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 30px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 50px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer text-muted p-3 bg-transparent\" >\n                     <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
+        output += "\n                <div class=\"card border border-light bg-white shadow-sm mb-3\" style=\"border-radius:10px;\">\n                    <div class=\"card-header border-0 bg-white\" style=\"border-radius:10px;\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style=\"width:100%; height: 300px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer d-flex justify-content-bettwen p-3 bg-transparent\">\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 p-2\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
       }
 
       $("#load_data_message").html(output);
@@ -733,27 +733,23 @@ $(document).ready(function () {
   // make it as accordion for smaller screens
   $(document).scroll(function () {
     if ($(document).scrollTop() > 10) {
-      $("nav#navbar").css("transition", ".1s ease-in").addClass("bg-white shadow-sm");
+      $("nav#navbar").css("transition", ".1s ease-in").addClass("shadow py-0");
       $("button#caripost").addClass('btn-outline-light');
     } else {
       $("button#caripost").removeClass('btn-outline-light'); // $("button#caripost").toggleClass('');
 
-      $("nav#navbar").removeClass("bg-white shadow-sm");
+      $("nav#navbar").removeClass("shadow py-0");
     }
-  });
-  var prevScrollpos = window.pageYOffset;
-
-  window.onscroll = function () {
-    var currentScrollPos = window.pageYOffset;
-
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").style.top = "-80px";
-    }
-
-    prevScrollpos = currentScrollPos;
-  };
+  }); // var prevScrollpos = window.pageYOffset;
+  // window.onscroll = function() {
+  //     var currentScrollPos = window.pageYOffset;
+  //     if (prevScrollpos > currentScrollPos) {
+  //         document.getElementById("navbar").style.top = "0";
+  //     } else {
+  //         document.getElementById("navbar").style.top = "-80px";
+  //     }
+  //     prevScrollpos = currentScrollPos;
+  // }
 });
 // $(function() {
 // 	window.paceOptions = {
