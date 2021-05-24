@@ -7,7 +7,7 @@ $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-md-center align-items-start flex-lg-row  flex-md-row flex-column">
 			<div class="d-none d-md-block d-lg-block">	
-				<div class="font-weight-bold text-responsive">Daftar Video</div>
+				<h3 class="font-weight-bold text-responsive">Youtube Bkppd</h3>
 				<p class="text-muted small">Resources <a href="www.youtube.com"> www.youtube.com</a></p>
 			</div>
 			<div>
