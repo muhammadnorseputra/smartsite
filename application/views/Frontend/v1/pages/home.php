@@ -33,13 +33,9 @@
 </section>
 <?php endif; ?>
 <?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-4 pt-md-5' : 'my-4' ?>
-
 <section class="mb-5 <?= $my ?>">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                
-            </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-md-0 mt-4">
                     <?php $this->load->view('Frontend/v1/function/youtube_sidebar'); ?>
                     <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>
@@ -70,6 +66,7 @@
                     <button id="load_more" class="btn p-2 btn-primary rounded-lg px-4"><i class="fas fa-newspaper mr-2"></i> Loadmore</button>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
