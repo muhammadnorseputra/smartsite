@@ -305,6 +305,38 @@ class M_f_beranda extends CI_Model
             return true;
         }
     }
+    public function get_poling_a()
+    {
+        return $this->db->order_by('id_poling','desc')->limit('1')->get_where('t_poling', ['status' => 'PERTANYAAN']);
+    }
+    public function get_poling_b()
+    {
+        return $this->db->order_by('value','desc')->get_where('t_poling', ['status' => 'JAWABAN']);
+    }
+    public function get_poling_id($id)
+    {
+        $q =  $this->db->get_where('t_poling', ['id_poling' => $id]);
+        if($q->num_rows() > 0){
+            $r = $q->row();
+            $msg = $r->value;
+        } else {
+            $msg = 'ID Not Found';
+        }
+        return $msg;
+    }
+    public function update_vote($tbl, $data, $whr) {
+        $this->db->where($whr);
+        $this->db->update($tbl, $data);
+        return true;
+    }
+    public function total_vote_seluruhopsi()
+    {
+        $this->db->select('SUM(value) as total_vote_opsi');
+        $this->db->from('t_poling');
+        $this->db->where('status', 'JAWABAN');
+        $q = $this->db->get()->row();
+        return $q->total_vote_opsi;
+    }
 }
 
 /* End of file M_f_identitas.php */

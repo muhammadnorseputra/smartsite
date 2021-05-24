@@ -40,6 +40,8 @@ class Beranda extends CI_Controller
                     'mf_berita_populer' => $this->mf_beranda->berita_populer(),
                     'mf_kategori' => $this->mf_beranda->get_kategori_listing(),
                     'mf_agenda' => $this->mf_beranda->get_agenda_terbaru(),
+                    'mf_poling_pertanyaan' => $this->mf_beranda->get_poling_a()->row(),
+                    'mf_poling_jawaban' => $this->mf_beranda->get_poling_b(),
                     'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
                 ];
         $this->load->view('Frontend/v1/layout/wrapper', $data);
@@ -109,6 +111,9 @@ class Beranda extends CI_Controller
                 endif;
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('kategori/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
+                
+                $arr_color = ['bg-primary', 'bg-success', 'bg-info', 'bg-warning', 'bg-danger'];
+
 // <a href="'.$post_list_url.'" class="btn btn-primary-old rounded float-right btn-sm px-3">'.$namakategori.'</a>
                 $output .= '
                 <div>

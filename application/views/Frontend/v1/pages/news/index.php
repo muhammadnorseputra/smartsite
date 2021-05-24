@@ -14,13 +14,13 @@
 			<div>
 				<form class="form-inline" method="get">
 					<input type="hidden" name="category" value="<?= $category ?>">
-					<input type="hidden" name="page" value="<?= $page ?>">
+					<input type="hidden" name="page" value="1">
 					<label class="sr-only" for="search">Username</label>
 					<div class="input-group mb-2 mr-sm-2">
 						<div class="input-group-prepend">
 							<div class="input-group-text"><i class="fas fa-filter"></i></div>
 						</div>
-						<input type="text" name="q" value="<?= isset($_GET['q']) ? $_GET['q'] : ''; ?>" class="form-control form-control-lg" id="search" placeholder="Keywords">
+						<input type="text" name="q" value="<?= isset($_GET['q']) ? $_GET['q'] : ''; ?>" class="form-control form-control-lg" id="search" placeholder="In <?= $category ?>">
 					</div>
 					<button type="submit" class="btn btn-lg border-0 mb-2"><i class="fas fa-search"></i></button>
 				</form>

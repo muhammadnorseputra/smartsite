@@ -1,32 +1,11 @@
+<?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/hero') ?>
 <section class="content-home hero py-md-2">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <!-- Counter jumlah pegawai -->
-                <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/count_peg') ?>">
-                    <div class="col-6 col-md-3 p-2">
-                        <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
-                        <span class="content-placeholder my-3" style="width: 100%; height: 60px;"></span>
-                        <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
-                    </div>
-                    <div class="col-6 col-md-3 p-2">
-                        <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
-                        <span class="content-placeholder my-3" style="width: 100%; height: 60px;"></span>
-                        <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
-                    </div>
-                    <div class="col-6 col-md-3 p-2">
-                        <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
-                        <span class="content-placeholder my-3" style="width: 100%; height: 60px;"></span>
-                        <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
-                    </div>
-                    <div class="col-6 col-md-3 p-2">
-                        <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
-                        <span class="content-placeholder my-3" style="width: 100%; height: 60px;"></span>
-                        <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
-                    </div>
-                </div>
+                    <?php $this->load->view('Frontend/v1/function/count_peg_home'); ?>
             </div>
         </div>
     </div>
@@ -37,15 +16,11 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-md-0 mt-4">
-                    <?php $this->load->view('Frontend/v1/function/youtube_sidebar'); ?>
+                    <!-- <?php $this->load->view('Frontend/v1/function/youtube_sidebar'); ?> -->
+                    <?php $this->load->view('Frontend/v1/function/poling'); ?>
                     <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>
                     <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
-                    <!-- Banner vertikal -->
-                    <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/banner_vertical_home') ?>">
-                        <span class="content-placeholder" style="width: 100%; height: 430px;"></span>
-                        <span class="content-placeholder my-2" style="width: 80%; height: 20px;"></span>
-                        <span class="content-placeholder" style="width: 40%; height: 20px;"></span>
-                     </div> 
+                    <?php $this->load->view('Frontend/v1/function/banner_sidebar'); ?>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                 <!-- Banenr slide horizontal -->

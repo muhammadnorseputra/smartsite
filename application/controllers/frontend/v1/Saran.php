@@ -7,6 +7,7 @@ class Saran extends CI_Controller {
 		parent::__construct();
 		//Do your magic here
 		$this->load->model('model_template_v1/M_f_saran', 'saran');
+		$this->load->model('model_template_v1/M_f_beranda', 'beranda');
 		//Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
             // redirect(base_url('frontend/v1/beranda'),'refresh');
@@ -49,5 +50,24 @@ class Saran extends CI_Controller {
 		$id = $this->input->post('id');
 		$db = $this->saran->detail('public_saran', ['id_saran' => $id])->row();
 		echo json_encode($db);
+	}
+	public function votes()
+	{
+		$id = decrypt_url($this->input->post('vote'));
+		$cookie = get_cookie('cookie_vote');
+			// var_dump($count);
+		if(empty($cookie) || $cookie !== '1') {
+			$count = $this->beranda->get_poling_id($id);
+			$whr  = ['id_poling' => $id];
+			$data = ['value' => $count+1];
+			$db = $this->beranda->update_vote('t_poling', $data, $whr);
+			if($db)
+			{
+				set_cookie('cookie_vote','1','3600');
+			} else {
+				delete_cookie('cookie_vote');
+			}
+			redirect(base_url('beranda'),'refresh');
+		}
 	}
  }
