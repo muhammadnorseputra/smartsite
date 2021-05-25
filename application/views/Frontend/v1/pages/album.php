@@ -2,7 +2,7 @@
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-start">
 			<div>
-				<div class="font-weight-bold text-dark text-responsive">Daftar Album</div>
+				<h3 class="font-weight-bold text-dark text-responsive">Daftar Album</h3>
 				<p class="text-muted small">Resources Dokumentasi BKPPD</p>
 			</div>
 		</div>

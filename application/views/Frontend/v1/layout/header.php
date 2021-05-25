@@ -1,5 +1,5 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar fixed-top navbar-expand-sm bg-white navbar-light d-none d-md-block d-lg-block">
+<nav id="navbar" class="navbar fixed-top navbar-expand-sm bg-white shadow-sm navbar-light d-none d-md-block d-lg-block">
 	<div class="container">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
 			<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="150"/>'; ?>
@@ -137,11 +137,12 @@
 			<a  class="btn shadow-sm btn-dark rounded-pill border-0 py-2 px-4" href="<?= base_url('login_web'); ?>">
 				<i class="fas fa-lock mr-2"></i> Login
 			</a>
-			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn shadow-none border-0 rounded-circle ml-2" href="<?= base_url('daftar'); ?>">
-				<i class="fas fa-user-plus"></i>
+			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-light shadow-sm border-0 rounded-circle ml-2" href="<?= base_url('daftar'); ?>">
+				<i class="fas fa-user"></i>
 			</a>
 			<?php } ?>
-			<button class="btn shadow-sm btn-outline-primary rounded-pill py-2 ml-2" id="caripost">
+			<span class="text-light ml-2">|</span>
+			<button class="btn shadow-sm btn-primary rounded-pill py-2 ml-2" id="caripost">
 			<i class="fas fa-search"></i>
 			</button>
 			<!-- <label class="switch mt-2">

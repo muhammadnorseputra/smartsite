@@ -7,7 +7,7 @@ $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-md-center align-items-start flex-lg-row  flex-md-row flex-column">
 			<div class="d-none d-md-block d-lg-block">	
-				<h3 class="font-weight-bold text-responsive">Youtube Bkppd</h3>
+				<h3 class="font-weight-bold text-responsive">Videos</h3>
 				<p class="text-muted small">Resources <a href="www.youtube.com"> www.youtube.com</a></p>
 			</div>
 			<div>
@@ -36,7 +36,7 @@ $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 					<a href="<?= $videoID ?>" id="btn-view-video" title="<?= $title_video ?>" class="position-relative">
 						<img src="<?= $thumb_video ?>" alt="<?= $title_video ?>" class="img-fluid w-100 shadow-sm rounded mb-3">
 					</a>
-					<div class="small text-white badge badge-info mb-2">Upload: <?= longdate_indo(substr($publish_video, 0, 10)) ?></div>
+					<div class="small text-light mb-3">Upload: <?= longdate_indo(substr($publish_video, 0, 10)) ?></div>
 					<a href="<?= $videoID ?>" id="btn-view-video" title="<?= $title_video ?>">
 						<h6><?= $title_video ?></h6>
 					</a>
