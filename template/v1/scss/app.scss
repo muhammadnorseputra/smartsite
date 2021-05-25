@@ -821,8 +821,11 @@ i.likes:hover {
 	.big-card {
 		transform: scale(1) !important;	
 	}
+	section.hero-beranda::before {
+		background: #70af85;
+	}
 	.intro-website {
-		color: #ccc !important;
+		color: #fff !important;
 		text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
 	}
 	#halojs {
