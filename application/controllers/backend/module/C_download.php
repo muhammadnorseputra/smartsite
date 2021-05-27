@@ -69,7 +69,8 @@ class C_download extends CI_Controller {
 					$row .= '
 										<tr class="'.$col.'">
 											<td class="'.$col.'">'.$no.'</td>
-											<td class="'.$col.'">'.$val->judul.' <br><code>'.$val->file.'</code></td>
+											<td class="'.$col.'"><code>'.$val->d_key.'<code></td>
+											<td class="'.$col.'"><b>'.$val->judul.'</b><br><code>'.$val->file.'</code><br>'.word_limiter($val->keterangan, 8).'</td>
 											<td class="'.$col.'">'.date_indo($val->tgl_publish).'</td>											
 											<td class="align-center"><a href="javascript:void(0)" onclick=\'window.open("'.$val->path.'", "_blank", "height=650, width=800, top=50, left=250, scrollbars=no, resizable=no")\'><em class="material-icons font-20">attach_file</em></a></td>
 											<td class="align-right '.$col.'"><em class="material-icons font-20 pull-left col-grey">file_download</em>'.$val->count.'</td>
@@ -87,7 +88,7 @@ class C_download extends CI_Controller {
 					$no++;
 				}
 		} else {
-			$row = '<tr><td colspan="7" class="text-center col-grey"><em class="font-20 material-icons">find_in_page</em>  Data Kosong</td></tr>';
+			$row = '<tr><td colspan="8" class="text-center col-grey"><em class="font-20 material-icons">find_in_page</em>  Data Kosong</td></tr>';
 		}
 
 		$json = json_encode(['data' => $row]);
@@ -108,7 +109,8 @@ class C_download extends CI_Controller {
 					$row .= '
 										<tr>
 											<td class="'.$col.'">'.$no.'</td>
-											<td class="'.$col.'">'.$val->judul.'</td>
+											<td class="'.$col.'"><code>'.$val->d_key.'<code></td>
+											<td class="'.$col.'"><b>'.$val->judul.'</b><br>'.word_limiter($val->keterangan,8).'</td>
 											<td class="'.$col.'">'.date_indo($val->tgl_publish).'</td>
 											<td class="align-center"><a href="javascript:void(0);" onclick=\'window.open("'.$val->link.'", "_blank", "height=650, width=800, top=50, left=250, scrollbars=no, resizable=no")\'><em class="material-icons font-20">attach_file</em></a></td>
 											<td class="align-right '.$col.'"><em class="material-icons font-20 pull-left col-grey">file_download</em>'.$val->count.'</td>
@@ -125,7 +127,7 @@ class C_download extends CI_Controller {
 					$no++;
 				}
 		} else {
-			$row = '<tr><td colspan="6" class="text-center col-grey"><em class="font-20 material-icons">find_in_page</em>  Data Kosong</td></tr>';
+			$row = '<tr><td colspan="7" class="text-center col-grey"><em class="font-20 material-icons">find_in_page</em>  Data Kosong</td></tr>';
 		}
 
 		$json = json_encode(['data' => $row]);
@@ -144,9 +146,12 @@ class C_download extends CI_Controller {
 	//==========================================//
   ## PROSES DOWNLOAD BERDASARKAN LINK EKSTERNAL 
 	public function addByLink()
-	{
+	{	
+		$key = generateRandomString(10);
 		$values = [
+			'd_key' => $key,
 			'judul' => $this->input->post('judul'),
+			'keterangan' => $this->input->post('keterangan'),
 			'link' => reduce_double_slashes($this->input->post('link')),
 			'publish' => $this->input->post('publish')
 		];
@@ -172,6 +177,7 @@ class C_download extends CI_Controller {
 
 			if(!empty($file)){
 					// membuat nomor acak untuk nama file
+					$key = generateRandomString(10);
 					$acak27 = generateRandomString(27);
 					$date = date('Y-m-d');
 					
@@ -190,7 +196,9 @@ class C_download extends CI_Controller {
 						$msg['type'] = "error";
 					} else {
 						$values = [
+							'd_key' => $key,
 							'judul' => $this->input->post('judul'),
+							'keterangan' => $this->input->post('keterangan'),
 							'file' => strtolower($this->upload->data('file_name')),	
 							'file_blob' => $file_blob,
 							'type' => $this->upload->data('file_ext'),
@@ -265,6 +273,7 @@ class C_download extends CI_Controller {
 		$judul = $this->input->post('judul');
 		$publish = $this->input->post('publish');
 		$link = $this->input->post('link');
+		$ket = $this->input->post('keterangan');
 		$fileBefore = $this->input->post('file_lama');
 		$file = $this->input->post('file');
 
@@ -272,6 +281,7 @@ class C_download extends CI_Controller {
 
 			$set = [
 				'judul' => $judul,
+				'keterangan' => $ket,
 				'publish' => $publish,
 				'link' => $link
 			];
@@ -316,6 +326,7 @@ class C_download extends CI_Controller {
 					];
 					$values = [
 						'judul' => $this->input->post('judul'),
+						'keterangan' => $ket,
 						'file' => strtolower($this->upload->data('file_name')),	
 						'file_blob' => $file_name_blob,
 						'type' => $this->upload->data('file_ext'),
@@ -333,6 +344,7 @@ class C_download extends CI_Controller {
 			} else {
 				$set = [
 					'judul' => $judul,
+					'keterangan' => $ket,
 					'publish' => $publish
 				];
 				$whr = [

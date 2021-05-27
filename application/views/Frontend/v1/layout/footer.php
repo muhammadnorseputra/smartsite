@@ -1,4 +1,3 @@
-
 <section class="py-2 bg-gradient-light">
 	<div class="container">
 		<div class="d-flex justify-content-lg-start align-content-center text-primary flex-column flex-lg-row">
@@ -19,7 +18,7 @@
 <section class="py-3 bg-dark">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 text-left">
+			<div class="col-md-5 text-left">
 				<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="150"/>'; ?>
 				<p class="my-4 text-white">
 					<?= $mf_beranda->meta_desc ?>
@@ -52,21 +51,45 @@
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-6">
-				<h6 class="text-white pb-2 border-bottom">Ikuti Juga</h6>
+				<h6 class="text-white pb-3 border-bottom">Ikuti Juga</h6>
 				<ul class="list-unstyled">
 					<li>
-						<a href="<?= base_url('survey') ?>"><span><i class="fas fa-check-circle text-white mr-2"></i></span>Survey Kepegawaian</a>
+						<a href="<?= base_url('survey') ?>"><span><i class="fas fa-external-link-alt text-white mr-2"></i></span>Survey Kepegawaian</a>
 					</li>
 					<li>
-						<a href="<?= base_url('kotak_saran') ?>"><span><i class="fas fa-check-circle text-white mr-2"></i></span>Kirim Saran</a>
+						<a href="<?= base_url('kotak_saran') ?>"><span><i class="fas fa-external-link-alt text-white mr-2"></i></span>Kirim Saran / Laporkan BUG</a>
+					</li>
+					<li>
+						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-external-link-alt text-white mr-2"></i></span>Userportal</a>
 					</li>
 				</ul>
 			</div>
-			<div class="col-md-3 col-sm-6">
-				<h6 class="text-white pb-2 border-bottom">Lainnya</h6>
+			<div class="col-md-4 col-sm-6">
+				<h6 class="text-white pb-3 border-bottom">Link Terkait</h6>
 				<ul class="list-unstyled">
-					<li>
-						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-check-circle text-white mr-2"></i></span>Userportal</a>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-white mr-2"></i></span>
+						<a target="_blank" href="https://www.bkn.go.id/">BKN Pusat</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-white mr-2"></i></span>
+						<a target="_blank" href="https://www.kemendagri.go.id/">Kementerian Dalam Negeri</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-white mr-2"></i></span>
+						<a target="_blank" href="https://www.menpan.go.id/site/">Kementrian Pemberdayagunaan Aparatur Negara</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-white mr-2"></i></span>
+						<a target="_blank" href="https://bkd.kalselprov.go.id/">BKD Provinsi Kalimantan Selatan</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-white mr-2"></i></span>
+						<a target="_blank" href="https://bpsdm.kalselprov.go.id/">BPSDM Provinsi Kalimantan Selatan</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-white mr-2"></i></span>
+						<a target="_blank" href="https://balangankab.go.id/">Pemerintah Kabupaten Balangan</a>
 					</li>
 				</ul>
 			</div>

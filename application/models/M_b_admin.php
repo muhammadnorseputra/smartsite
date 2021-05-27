@@ -82,14 +82,15 @@ class M_b_admin extends CI_Model {
         return $q;
     }
 
-    public function menu($label)
+    public function menu($label,$arr_token)
     {
         if($this->session->userdata('lvl') == 'USER') {
 			
             $q = $this->db->select('m.*,mod.token')
 						  ->from('t_menu AS m')
-						  ->join('t_module AS mod', 'mod.id_module=m.fid_module', 'left')
+						  ->join('t_module AS mod', 'mod.id_module=m.fid_module')
 						  ->where(array('m.fid_label' => $label, 'm.aktif' => 'Y', 'm.sts' => 'BACKEND', 'user_menu' => 'Y'))
+                          ->where_in($arr_token)
 						  ->order_by('order','asc')
 						  ->get();
         } else {
@@ -100,10 +101,15 @@ class M_b_admin extends CI_Model {
 						  ->join('t_module AS mod', 'mod.id_module=m.fid_module', 'left')
 						  ->where(array('m.fid_label' => $label, 'm.aktif' => 'Y', 'm.sts' => 'BACKEND'))
 						  ->order_by('order','asc')
+                          ->where_in($arr_token)
 						  ->get();
 		}
         return $q->result();
 
+    }
+    public function get_access_menu($iduser)
+    {
+        return $this->db->select('fid_token')->from('t_users')->where('id_user', $iduser)->get()->row();
     }
     public function submenu($primary)
     {
@@ -128,7 +134,7 @@ class M_b_admin extends CI_Model {
     }
     public function getallmodule() {
         $this->db->select('token');
-        $q  = $this->db->get('t_module')->result();
+        $q  = $this->db->get('t_module')->row();
         return $q;
     }
     public function getmodule($nm) {
@@ -142,8 +148,16 @@ class M_b_admin extends CI_Model {
         $this->db->select('token');
         $this->db->from('t_module');
         $this->db->where('id_module', $id);
-        $q = $this->db->get()->result();
-        return $q[0]->token;
+        $q = $this->db->get()->row();
+        return $q->token;
+    }  
+    public function getmodulebytoken($id) {
+        $this->db->select('token, id_module');
+        $this->db->from('t_module');
+        $this->db->join('t_menu', 't_menu.fid_module = t_module.id_module', 'left');
+        $this->db->where('token', $id);
+        $q = $this->db->get()->row();
+        return $q->id_module;
     }  
     public function getmodulebycontroller($nama_controller) {
         $this->db->select('token');

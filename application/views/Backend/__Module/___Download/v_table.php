@@ -29,6 +29,7 @@
 						<thead>
 							<tr>
 								<th width="20">No</th>
+								<th width="100">KEY</th>
 								<th width="250">Judul</th>
 								<th width="130">Tgl Publish</th>
 								<th width="30" class="text-center">File</th>
@@ -47,6 +48,7 @@
 					<thead>
 						<tr>
 							<th width="20">No</th>
+							<th width="100">KEY</th>
 							<th width="250">Judul</th>
 							<th width="100">Tgl Publish</th>
 							<th width="30" class="text-center">File</th>
@@ -77,6 +79,16 @@
 		<div class="form-group">
 			<div class="form-line">
 				<input type="text" id="judul" name="judul" class="form-control" placeholder="Masukan Judul Download">
+			</div>
+		</div>
+		<div class="row m-b-20">
+			<div class="form-group">
+				<label for="keterangan" class="control-label col-md-12">Keterangan</label>
+				<div class="col-md-12">
+					<div class="form-line">
+						<textarea class="form-control" name="keterangan" id="keterangan" rows="3" placeholder="Masukan keterangan disini ..."></textarea>
+						</div>
+					</div>
 			</div>
 		</div>
 		<div class="row">

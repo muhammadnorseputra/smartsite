@@ -390,13 +390,13 @@ class Users extends CI_Controller {
 		        $data = array();
 		        $no = $_POST['start'];
 		        foreach ($list as $p) {
-
+		        	$type = $p->type === 'BERITA' ? 'postDetail' : 'postDetailYoutube';
 		        	$btnAksi = $p->publish != 0 ? '<div class="dropdown dropright">
 								  <button id="dLabel" class="btn btn-lg border-0 btn-light bg-white p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								    <i class="fas fa-ellipsis-h p-2"></i>
 								  </button>
 								  <div class="dropdown-menu" aria-labelledby="dLabel">
-								    <a class="dropdown-item text-muted rounded-pill" href="'.base_url('frontend/v1/post/postDetail/'.encrypt_url($p->id_berita)).'"><i class="fas fa-edit mr-2"></i> Edit</a>
+								    <a class="dropdown-item text-muted rounded-pill" href="'.base_url('frontend/v1/post/'.$type.'/'.encrypt_url($p->id_berita)).'"><i class="fas fa-edit mr-2"></i> Edit</a>
 									<a id="btn-hapus" data-id="' . $p->id_berita . '" class="dropdown-item text-muted rounded-pill" href="#"><i class="fas fa-trash mr-2 text-danger"></i> Hapus</a>
 								  </div>
 								</div>' : '<button title="Draf" class="btn btn-dark p-1 text-warning" disabled>D</button>';
@@ -404,7 +404,11 @@ class Users extends CI_Controller {
 					$countKomentar = $this->komentar->jml_komentarbyidberita($p->id_berita);
 					$komentar = $countKomentar != 0 ? '<b>'.$countKomentar.'</b>' : $countKomentar;
 
-					$btnPublish = $p->publish == 0 ? '<a href="' . base_url('frontend/v1/post/postDetail/' . encrypt_url($p->id_berita)) . '" title="Belum Dipublish" class="btn btn-default border-left ml-4 px-3 py-0"><i class="material-icons text-warning py-1 m-0">publish</i></a>' : '';
+					if($p->type === 'BERITA'):
+					$btnPublish = $p->publish == 0 ? '<a href="' . base_url('frontend/v1/post/postDetail/' . encrypt_url($p->id_berita)) . '" title="Belum Dipublish" class="btn btn-default border-left ml-4 px-3">Publish</a>' : '';
+					else:
+					$btnPublish = $p->publish == 0 ? '<a href="' . base_url('frontend/v1/post/postDetailYoutube/' . encrypt_url($p->id_berita)) . '" title="Belum Dipublish" class="btn btn-dark border-left ml-4 px-3">Publish</a>' : '';	
+					endif;
 					$btnHapus = $p->publish == 0 ? '<a id="btn-hapus" data-id="'.$p->id_berita.'" href="#" title="Hapus Postingan" class="btn btn-default ml-2 px-2 py-0"><i class="fas fa-trash text-danger"></i></a>' : '';
 
 		            $no++;

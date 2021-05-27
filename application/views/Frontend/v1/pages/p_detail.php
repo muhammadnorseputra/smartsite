@@ -14,14 +14,35 @@ if ($by == 'admin') {
 	$photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic) . '';
 	$link_profile_public = base_url("user/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan) . "/" . encrypt_url($by));
 }
+
+// Youtube Data
+if($post_detail->type === 'YOUTUBE'):
+    $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
+    $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,player&id='.$post_detail->content.'&key='.$key;
+    $yt     = api_client($url);
+    $yt_channel = $yt['items'][0]['snippet']['channelId'];
+    $yt_desc = $yt['items'][0]['snippet']['description'];
+    $yt_src = $yt['items'][0]['snippet']['channelTitle'];
+    $yt_player = $yt['items'][0]['player']['embedHtml'];
+endif;
+
 $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == 'on' ? 'btn-bookmark' : '';
 $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == 'on' ? 'fas text-primary' : 'far';
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
 $img = '<img class="img-fluid card-img-top rounded lazy" data-src="'.base_url('files/file_berita/'.$post_detail->img).'">';
+elseif($post_detail->type === 'YOUTUBE'):
+$img = $yt_player;
 else:
 $img = '<img class="img-fluid card-img-top rounded lazy" data-src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
+endif;
+
+// Content
+if($post_detail->type === 'YOUTUBE'):
+    $content = nl2br($yt_desc);
+else:
+    $content = $post_detail->content;
 endif;
 ?>
 <?php
@@ -47,14 +68,21 @@ if (count($pecah) > 0) {
 							<p class="card-text">
 								<span class="badge badge-default px-0 text-light">Posted by <?= ucwords($namapanggilan); ?> &#8226;  <?php echo longdate_indo($post_detail->tgl_posting); ?></span>
 							</p>
-							</div>
 						</div>
-						<div class="px-0 px-md-4">
+						</div>
+						<div class="px-0 px-md-4 media_youtube">
 							<?= $img ?>
 						</div>
 						<div class="card-body px-0 px-md-4">
+							<?php  
+								if($post_detail->type === 'YOUTUBE'):
+							?>
+								<div class="g-ytsubscribe mt-md-0 mt-4" data-channelid="<?= $yt_channel ?>" data-layout="full" data-theme="light" data-count="default"></div>
+							<?php
+								endif;
+							?>
 							<h2 class="font-weight-bold text-responsive"><?php echo $post_detail->judul; ?></h2>
-							<p class="card-text font-weight-normal"><?php echo $post_detail->content; ?></p>
+							<p class="card-text font-weight-normal"><?php echo $content; ?></p>
 							<?= $tag; ?>
 						</div>
 						<div class="card-footer bg-transparent p-2 border-top rounded-lg d-flex justify-content-around">

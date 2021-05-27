@@ -14,7 +14,7 @@
                     <img src="<?= img_blob($album->gambar_blob) ?>" class="w-100 rounded shadow-sm border" alt="<?= url_title($album->judul, '-', true) ?>">
                     <?php endif; ?>
                     <div class="text-secondary text-center badge-light p-2 rounded mt-2"><?= $this->album->jml_photo_in_album($album->id_album_foto) ?> Photo</div> 
-                    <p class="text-muted mt-3"><?= $album->judul ?></p>
+                    <p class="text-muted mt-3"><?= word_limiter($album->judul, 5) ?></p>
                 </a>
             </div>
         <?php endforeach; ?>

@@ -25,22 +25,18 @@ class M_b_download extends CI_Model {
     return $this->db->insert($tbl,$data);
   }
 
-
-
   public function list_internal($tbl) 
   {
-    return $this->db->select('id_download, judul, file, type, path, ukuran, publish, tgl_publish, count')
+    return $this->db->select('id_download, keterangan, d_key, judul, file, type, path, ukuran, publish, tgl_publish, count')
                     ->from($tbl)
                     ->where('link', '')
                     ->order_by('id_download','desc')
                     ->get();
   }
 
-
-
   public function list_eksternal($tbl) 
   {
-    return $this->db->select('id_download, judul, link, publish, tgl_publish, count')
+    return $this->db->select('id_download, keterangan, d_key, judul, link, publish, tgl_publish, count')
                     ->from($tbl)
                     ->where('link !=', '')
                     ->order_by('id_download','desc')

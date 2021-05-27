@@ -31,7 +31,12 @@
 
 					<?php
 					if ($this->madmin->listmenu_jml($m->id_label)->num_rows() > 0) {
-						foreach ($this->madmin->menu($m->id_label) as $key) {
+						$inc=0;
+						$iduser = $this->session->userdata('userkey');
+						$access_menu = $this->madmin->get_access_menu($iduser);
+						$pecah_access_menu = explode(",", $access_menu->fid_token);
+						// $get_token = $this->madmin->getmodulebytoken($pecah_access_menu[$inc]);
+						foreach ($this->madmin->menu($m->id_label, $pecah_access_menu) as $key) {
 					?>
 							<?php
 							//Untuk Kondisi Menu Aktif Saat Ini
@@ -40,10 +45,9 @@
 							} else {
 								$linkqu = 'javascript:void(0);';
 							}
-							$pecah_fid_module = explode("|", $key->fid_module);
-
 							$allmodule  = $this->madmin->getallmodule();
 
+							$pecah_fid_module = explode(",", $key->fid_module);
 							if (count($pecah_fid_module) > 1) {
 								$modulebyid = $this->madmin->getmodulebyid($pecah_fid_module[1]);
 							} else {
@@ -58,7 +62,6 @@
 							// var_dump(count($pecah_fid_module));
 
 							?>
-
 							<li class="<?= $active ?>" style="background-color: <?= $key->color ?>;">
 								<?php
 								//Untuk Kondisi Ada Submenu / Dropdown Menu
@@ -123,9 +126,9 @@
 										</li>
 									<?php } ?>
 								</ul>
-
 							</li>
 					<?php
+					$inc++;
 						}
 					}
 					?>

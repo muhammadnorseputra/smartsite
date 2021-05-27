@@ -93,7 +93,8 @@ $autoload['helper'] = array('url','form','number','security','string',
                             'text','typography','date','download',
                             'file','html','inflector','tgl_indo',
                             'rand_helper','script_tag','blob', 
-                            'directory', 'login', 'apiclient', 'nominal', 'cookie');
+                            'directory', 'login', 'apiclient', 
+                            'nominal', 'cookie', 'getmeta', 'seo');
 
 /*
 | -------------------------------------------------------------------
@@ -107,7 +108,7 @@ $autoload['helper'] = array('url','form','number','security','string',
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array('webconfig');
+$autoload['config'] = array('webconfig','seo_config');
 
 /*
 | -------------------------------------------------------------------

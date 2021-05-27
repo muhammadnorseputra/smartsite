@@ -62,7 +62,7 @@ gulp.task("vendor-js", function() {
             // "template/v1/plugin/garand-sticky/jquery.sticky.js",
             // "template/v1/plugin/camera/scripts/jquery.easing.1.3.js",
             // "template/v1/plugin/camera/scripts/camera.min.js",
-            "template/v1/plugin/dark-mode/dark-mode-switch.js",
+            // "template/v1/plugin/dark-mode/dark-mode-switch.js",
             "assets/plugins/jquery-cookie/jquery.cookie.js",
             "assets/plugins/jquery-countto/jquery.countTo.js",
             "assets/plugins/jquery-confirm/jquery-confirm.min.js",

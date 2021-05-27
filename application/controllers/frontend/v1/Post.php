@@ -216,9 +216,11 @@ class Post extends CI_Controller
         {
             $judul = $this->input->post('judul');
             $kategori = $this->input->post('kategori');
+            $type = $this->input->post('type');
         
             $data = [
                 'judul' => $judul,
+                'type' => $type,
                 'fid_kategori' => $kategori,
                 'headline' => '1',
                 'publish' => '0',
@@ -227,14 +229,16 @@ class Post extends CI_Controller
                 'created_by' => $this->session->userdata('user_portal_log')['id']
             ];
 
-            if(empty($judul)):
+            if(empty($judul) && $type === 'BERITA'):
                 $msg = ['valid' => false, 'pesan' => 'Judul wajid dibuat untuk postingan!'];
             elseif(empty($kategori)):
                 $msg = ['valid' => false, 'pesan' => 'Kategori belum dipilih'];
+            elseif(empty($type)):
+                $msg = ['valid' => false, 'pesan' => 'Type Post belum dipilih'];
             else:
                 $this->post->doInsertJudulBaru('t_berita', $data);
                 $getId = $this->post->getIdByJudul($judul);
-                $msg = ['valid' => true, 'pesan' => 'Judul berhasil dibuat, klik OK untuk melanjutkan', 'id' => encrypt_url($getId)];
+                $msg = ['valid' => true, 'type' => $type, 'pesan' => 'Judul berhasil dibuat, klik OK untuk melanjutkan', 'id' => encrypt_url($getId)];
             endif;
             echo json_encode($msg);
             
@@ -255,6 +259,22 @@ class Post extends CI_Controller
             ];
             $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
         }
+
+        public function postDetailYoutube($id)
+        {
+            $idb = decrypt_url($id);
+            $judul = $this->post->getJudulById($idb);
+
+            $data = [
+                'title' => ucwords($judul),
+                'isi' => 'Frontend/v1/pages/p_baru_detail_youtube',
+                'mf_beranda' => $this->mf_beranda->get_identitas(),
+                'mf_menu' => $this->mf_beranda->get_menu(),
+                'post' => $this->post->detail($idb)->row(),
+                'tags' => $this->postlist->get_all_tag()->result()
+            ];
+            $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+        }
         
         public function upload_single_photo($id)
         {
@@ -272,7 +292,39 @@ class Post extends CI_Controller
             }
             echo json_encode($msg);
         }
+        public function preview_url_youtube($watchID)
+        {
+            $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
+            $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$watchID.'&key='.$key;
+            $data     = api_client($url);
+            echo json_encode($data);
+        }
+        public function update_post_youtube($publish)
+        {
+            $id = $this->input->post('id_berita');
+            $judul = $this->input->post('judul');
+            $content = $this->input->post('content');
+            $tags = @implode(',', $this->input->post('tags'));
+            $data = [
+                'judul' => $judul,
+                'content' => $content,
+                'tags' => $tags,
+                'publish' => $publish,
+                'update_at' => date('Y-m-d H:i:s'),
+                'update_by' => $this->session->userdata('user_portal_log')['id']
+            ];
 
+            $update = $this->post->doUpdatePost('t_berita', $id, $data);
+            if($update == true)
+            {
+                $msg = ['valid' => true];
+            }
+            else 
+            {
+                $msg = ['valid' => false];
+            }
+            echo json_encode($msg);
+        }
         public function update_post($publish)
         {
             $id = $this->input->post('id');

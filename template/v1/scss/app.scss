@@ -14,7 +14,10 @@
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 .material-icons.orange600 { color: #FB8C00; }
 
-
+.media_youtube iframe {
+	width: 100% !important;
+	max-width: 100%;
+}
 section.hero-beranda {
 	background: url('../../../assets/images/bg/bgheader.svg');
 	background-size: cover; 

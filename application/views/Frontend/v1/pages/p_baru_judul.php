@@ -13,12 +13,23 @@
 							<input type="text" name="judul" class="form-control form-control-lg" id="judul" autocomplete="false" onchange="myFunction()" onkeyup="myFunction()" aria-describedby="judulBlockHelp" placeholder="Buat judul postingan kamu disini.">
 							<small id="judulBlockHelp" class="form-text my-2"><i>Slug:</i> <span class="text-muted" id="judul_slug"></span></small>
 						</div>
-						<label for="kategori" class=" text-danger font-weight-bold">Pilih Kategorimu: <span class="change_label font-weight-bold"></span></label>
 						<div class="form-group">
-							<div class="btn-group btn-group-toggle d-flex flex-wrap justify-content-between" data-toggle="buttons">
+							<label for="typepost" class="text-danger font-weight-bold">Type Post</label>
+							<div id="typepost" class="btn-group btn-group-toggle d-flex flex-wrap justify-content-start" data-toggle="buttons">
+								<label class="btn btn-outline-primary rounded-pill my-1 text-nowrap">
+									<input type="radio" name="type" value="BERITA"> Berita
+								</label>
+								<label class="btn btn-outline-primary rounded-pill my-1 text-nowrap">
+									<input type="radio" name="type" value="YOUTUBE"> Youtube
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+						<label for="kategori" class="text-danger font-weight-bold">Pilih Kategorimu <span class="change_label font-weight-bold text-muted"></span></label>
+							<div id="kategori" class="btn-group btn-group-toggle d-flex flex-wrap justify-content-start" data-toggle="buttons">
 								<?php foreach ($kategori as $k) : ?>
-									<label class="btn btn-outline-light rounded-0 mx-1 my-1 text-nowrap">
-										<input type="radio" name="kategori" value="<?php echo $k->id_kategori ?>" id="<?php echo $k->id_kategori ?>" autocomplete="off" data-title="#<?php echo $k->nama_kategori ?>">
+									<label class="btn btn-outline-secondary rounded-pill my-1 text-nowrap">
+										<input type="radio" name="kategori" value="<?php echo $k->id_kategori ?>" id="<?php echo $k->id_kategori ?>" data-title="<?= $k->nama_kategori ?>">
 										#<?php echo $k->nama_kategori ?>
 									</label>
 								<?php endforeach; ?>
@@ -40,9 +51,10 @@
 		y.innerHTML = x.value.toLowerCase().replace(/\s/g, "-");
 	}
 
-	$("input[name='kategori']").on("click", function() {
+	$("input[name='kategori']").on("click", function(e) {
+		e.preventDefault();
 		let val = $(this).attr('data-title');
-		$("span.change_label").text(val);
+		$("span.change_label").html(`(${val})`);
 		// alert(val)
 	})
 
@@ -56,7 +68,11 @@
 
 			if (response.valid == true) {
 				alert(response.pesan);
-				window.location.href = _uri + '/frontend/v1/post/postDetail/' + response.id;
+				if(response.type == 'BERITA') {
+					window.location.href = _uri + '/frontend/v1/post/postDetail/' + response.id;
+				} else if(response.type == 'YOUTUBE') {
+					window.location.href = _uri + '/frontend/v1/post/postDetailYoutube/' + response.id;
+				}
 			} else {
 				notif({
 					msg: response.pesan,

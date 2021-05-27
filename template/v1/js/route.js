@@ -14,3 +14,8 @@ if ($host) {
 }
 var _uriSegment = window.location.pathname.split('/');
 console.log('Location Origin', _uri);
+
+// Params
+var queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
+console.log('Params', queryString);

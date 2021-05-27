@@ -21,14 +21,22 @@ class Beranda extends CI_Controller
         // }
     }
     public function testing() {
-        $this->load->view('Frontend/v1/function/youtube_sidebar');
+        var_dump(getSiteOG("https://web.bkppd-balangankab.info/post/binainfo/bnNXNmJJZ3hnVG04bTVRTk5vbFJrQT09/ceremonial-penyerahan-penghargaan-bagi-aparatur-sipil-negara-berprestasiberkinerja-terbaik-di-lingkungan-pemerintah-kabupaten-balangan")); //note the incorrect url
     }
     public function index()
     {
+        $id = $this->mf_beranda->get_identitas();
+        $e = array(
+          'general' => true, //description, keywords
+          'og' => false,
+          'twitter'=> false,
+          'robot'=> true
+        );
+        $meta_tag = meta_tags($e, $desc=$id->meta_desc, $keyWords=$id->meta_seo);
         $data = [
                     'title' => "Beranda &bull; Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan",
                     'isi' => 'Frontend/v1/pages/home',
-                    'mf_beranda' => $this->mf_beranda->get_identitas(),
+                    'mf_beranda' => $id,
                     'mf_menu' => $this->mf_beranda->get_menu(),
                     'mf_informasi_terbaru' => $this->mf_beranda->get_informasi_terbaru(),
                     'mf_berita_terakhir' => $this->mf_beranda->berita_terakhir(),
@@ -43,6 +51,7 @@ class Beranda extends CI_Controller
                     'mf_poling_pertanyaan' => $this->mf_beranda->get_poling_a()->row(),
                     'mf_poling_jawaban' => $this->mf_beranda->get_poling_b(),
                     'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
+                    'meta' => $meta_tag
                 ];
         $this->load->view('Frontend/v1/layout/wrapper', $data);
     }
@@ -62,13 +71,8 @@ class Beranda extends CI_Controller
         if ($data->num_rows() > 0) {
             $no=1;
             foreach ($data->result() as $row) {
-                if ($row->headline == '1') {
-                    $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
-                    $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
-                    $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
-                } else {
-                    $isi = $row->content;
-                }
+
+                // Tags
                 $tags = $row->tags;
                 $pecah = explode(',', $tags);
                 if (count($pecah) > 0) {
@@ -77,8 +81,11 @@ class Beranda extends CI_Controller
                         $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-light border-0 mr-1 mb-1">#'.$pecah[$i].'</a>';
                     }
                 }
+
+                // Berita pilihan tanda check warna hijau
                 $pilihan = $row->pilihan == 'Y' ? '<span class="text-success small float-right" data-toggle="tooltip" title="Pilihan Editor"><i class="fas fa-check-circle"></i></span>' : '';
 
+                // Profile akun yang posting
                 $by = $row->created_by;
                 if($by == 'admin') {
                     $link_profile_public = 'javascript:void(0);';
@@ -94,22 +101,61 @@ class Beranda extends CI_Controller
 
                 }
 
+                // Post Link Detail
                 $id = encrypt_url($row->id_berita);
                 $postby = strtolower(url_title($namalengkap));
                 $judul = strtolower($row->judul);
                 $posturl = "post/{$postby}/{$id}/".url_title($judul).'';
                 
+                // Bookmark button
                 $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $row->id_berita) == 'on' ? 'btn-bookmark' : '';
                 $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $row->id_berita) == 'on' ? 'fas text-primary' : 'far';
 
+                // Like button
                 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'btn-like' : '';
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
-                if(!empty($row->img)):
+                // Post Youtube
+                if($row->type === 'YOUTUBE'):
+                    $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
+                    $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$row->content.'&key='.$key;
+                    $yt     = api_client($url);
+                    $yt_thumb = $yt['items'][0]['snippet']['thumbnails']['high']['url'];
+                    $yt_desc = $yt['items'][0]['snippet']['description'];
+                    $yt_src = $yt['items'][0]['snippet']['channelTitle'];
+                endif;
+
+                // Headline
+                if ($row->headline == '1') {
+                    $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
+                    $isi = substr($isi_berita, 0, 160); // ambil sebanyak 80 karakter
+                    $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
+                } else {
+                    $isi = $row->content;
+                }
+
+                // Content
+                if($row->type === 'YOUTUBE'):
+                    $content = word_limiter($yt_desc,20);
+                else:
+                    $content = $isi."...";
+                endif;
+
+                // Sumber
+                if($row->type === 'YOUTUBE'):
+                    $sumber = '<div class="text-muted py-2 small"><i class="fab fa-youtube mr-2"></i> <b>'.$yt_src.'</b></div>';
+                endif;
+
+                // Gambar
+                if(!empty($row->img) && $row->type === 'BERITA'):
                     $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
+                elseif($row->type === 'YOUTUBE'):
+                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'">'.$sumber;
                 else:
                     $img = '<img class="w-100 lazy rounded border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 endif;
+
+                // Kategori
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('kategori/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
                 
@@ -119,7 +165,6 @@ class Beranda extends CI_Controller
                     $rand = $arr_color[$no];
                 endfor;
 
-// <a href="'.$post_list_url.'" class="btn btn-primary-old rounded float-right btn-sm px-3">'.$namakategori.'</a>
                 $output .= '
                 <div>
 					<div class="card mb-4 border bg-white shadow-sm">
@@ -142,9 +187,9 @@ class Beranda extends CI_Controller
                         <div class="col-12 col-md-6">
                             <a href="'.$post_list_url.'" class="btn btn-sm rounded-pill text-white shadow-sm mt-2 mb-2 mt-md-0 mb-md-2 ml-3 ml-md-0 '.$rand.'">&bull; '.$namakategori.'</a>
                             <h4 class="font-weight-bold mx-3 mx-md-0"><a href="'.$posturl.'">'.word_limiter($row->judul, 6).'&nbsp;'.$pilihan.'</a></h4>
-                            <p class="card-text font-weight-lighter text-muted my-4 mx-3 mx-md-0">'.character_limiter($isi, 110).'</p>
+                            <p class="card-text font-weight-lighter text-muted my-4 mx-3 mx-md-0">'.$content.'</p>
                             <hr>
-                            <p class="px-3 px-md-0">'.$tag. '</p>
+                            <p class="px-2 px-md-0">'.$tag. '</p>
                         </div>
                     </div>
 

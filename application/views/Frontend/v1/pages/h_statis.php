@@ -10,6 +10,7 @@
           <h1 class="font-weight-bold mb-0 pb-0">
             <span class="d-block font-weight-bold text-dark"><?= $h->title; ?></span>    
             </h1>
+          <div id="share"></div>
         <?php else : ?>
           <h3 class="font-weight-bold text-dark">not found</h3>
           <small class="font-weight-light d-block text-light pb-4">PagesID: <?= $this->uri->segment(5) ?> | Halaman ini ditampilkan dalam waktu <strong>{elapsed_time}</strong> detik.</small>
@@ -56,3 +57,12 @@
     </div>
   </div>
 </section>
+<script src="<?= base_url('bower_components/jquery/dist/jquery.min.js') ?>"></script>
+<script>
+$(function() {
+
+    $("#share").jsSocials({
+        shares: ["email", "twitter", "facebook", "telegram", "whatsapp"]
+    });
+})
+</script>

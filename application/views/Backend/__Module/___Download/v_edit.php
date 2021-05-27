@@ -64,7 +64,16 @@
 								</div>
 							</div>
 						</div>
-
+						<div class="row">
+							<div class="form-group">
+								<label for="keterangan" class="control-label col-md-12">Keterangan</label>
+								<div class="col-md-12">
+									<div class="form-line">
+	        							<textarea class="form-control" name="keterangan" id="keterangan" rows="3" placeholder="Masukan keterangan disini ..."><?= $formdata[0]['keterangan'] ?></textarea>
+	      							</div>
+      							</div>
+							</div>
+						</div>
 						<div class="row">
 							<div class="alert alert-message" role="alert" style="display:<?= $sel_ffile ?>;">
 								<span class="col-red">*</span> apabila file tidak diganti, biarkan kosong
@@ -116,12 +125,12 @@
 
 				<div class="clearfix">
 
-					<?php if($formdata[0]['type'] == '.pdf' ? $typepo = "block" : $typepo = "none"); ?>
+					<?php if($formdata[0]['type'] == '.pdf' || $formdata[0]['type'] == '.PDF' ? $typepo = "block" : $typepo = "none"); ?>
 
 					<input type="hidden" class="form-control" name="file_lama" value="<?= $formdata[0]['file'] ?>">
 					<div style="display:<?= $sel_ffile ?>;"
 						class="col-md-12 border border-1 border-col-grey p-t-5 p-b-5 bg-blue-grey">
-						<?php if($formdata[0]['type'] == '.pdf') { ?>
+						<?php if($formdata[0]['type'] == '.pdf' || $formdata[0]['type'] == '.PDF') { ?>
 
 						<!-- <iframe id="view-file" src="<?= $formdata[0]['path'] ?>" frameborder="0" height="450" width="100%" class="p-t-10 p-b-5" style="display: <?= $typepo ?>"></iframe> -->
 						<object id="view-file" data="data:application/pdf;base64, <?= base64_encode($formdata[0]['file_blob']) ?>" width="100%" height="450" style="display: <?= $typepo ?>"></object>

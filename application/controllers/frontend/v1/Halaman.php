@@ -21,14 +21,28 @@ class Halaman extends CI_Controller
   }
   public function statis($token_halaman, $judul)
   {
+    $e = array(
+      'general' => true, //description, keywords
+      'og' => true,
+      'twitter'=> true,
+      'robot'=> true
+    );
+    // Meta SEO
+    $title = $this->halaman->get_namahalaman($token_halaman).' &bull; BKPPD Kabupaten Balangan';
+    $detail = $this->halaman->get_detail_halaman($token_halaman);
+    $keywords = str_replace('-',',',url_title(strtolower($title)));
+    $meta_tag = meta_tags($e, $title = $title, $desc = strip_tags(url_title($detail->row()->content)),$imgurl ='', $url = base_url('page/'.$token_halaman.'/'.url_title($judul)), $keyWords = $keywords);
+    // Data
     $data = [
-      'title' => $this->halaman->get_namahalaman($token_halaman).' &bull; BKPPD Kab. Balangan',
+      'title' => $title,
       'isi'  => 'Frontend/v1/pages/h_statis',
       'uri_token_halaman' => $token_halaman,
       'mf_beranda' => $this->mf_beranda->get_identitas(),
       'mf_menu' => $this->mf_beranda->get_menu(),
-      'detail' => $this->halaman->get_detail_halaman($token_halaman)
+      'detail' => $detail,
+      'meta' => $meta_tag
     ];
+
     $this->halaman->diakses('t_halaman',$token_halaman, $this->halaman->get_viewshalaman($token_halaman));
     $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
   }

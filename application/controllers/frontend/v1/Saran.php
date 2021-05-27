@@ -64,6 +64,7 @@ class Saran extends CI_Controller {
 			if($db)
 			{
 				set_cookie('cookie_vote','1','3600');
+				$this->session->set_flashdata(['message' => '<i class="fas fa-check-circle text-success mr-3"></i><b>Terimakasih</b>, voting anda telah direkam', 'class' => 'alert-warning']);
 			} else {
 				delete_cookie('cookie_vote');
 			}

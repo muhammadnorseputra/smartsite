@@ -273,7 +273,8 @@ jQuery(function () {
 					'<?= site_url('backend/module/c_download/addByLinK'); ?>', {
 						judul: jQuery("[name='judul']").val(),
 						publish: jQuery("[name='publish']").val(),
-						link: jQuery("[name='link_file']").val()
+						link: jQuery("[name='link_file']").val(),
+						keterangan: jQuery("[name='keterangan']").val()
 					},
 					function (result) {
 						if (result.responses.type == 'success') {
