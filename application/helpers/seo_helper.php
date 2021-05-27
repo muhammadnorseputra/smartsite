@@ -21,9 +21,23 @@
  * @param   string  Image URL
  * @param   string  Page URL
  */
-
+if(! function_exists('curPageURL')){
+    function curPageURL() {
+      if(isset($_SERVER["HTTPS"]) && !empty($_SERVER["HTTPS"]) && ($_SERVER["HTTPS"] != 'on' )) {
+            $url = 'https://'.$_SERVER["SERVER_NAME"];//https url
+      }  else {
+        $url =  'http://'.$_SERVER["SERVER_NAME"];//http url
+      }
+      if(( $_SERVER["SERVER_PORT"] != 80 )) {
+         $url .= $_SERVER["SERVER_PORT"];
+      }
+      $url .= $_SERVER["REQUEST_URI"];
+      return $url;
+    }
+}
 if(! function_exists('meta_tags')){
-    function meta_tags($enable = array('general' => true, 'og'=> true, 'twitter'=> true, 'robot'=> true), $title = '', $desc = '', $imgurl ='', $url = '', $keyWords = '', $type = ''){
+    function meta_tags($enable = array('general' => true, 'og'=> true, 'twitter'=> true, 'robot'=> true), 
+        $title = '', $desc = '', $imgUrl ='', $url = '', $keyWords = '', $type = ''){
         $CI =& get_instance();
         $CI->config->load('seo_config');
         $CI->load->model('M_f_beranda');
@@ -37,8 +51,8 @@ if(! function_exists('meta_tags')){
         if($desc == ''){
             $desc = $id->meta_desc;
         }
-        if($imgurl == ''){
-            $imgurl = $CI->config->item('seo_imgurl');
+        if($imgUrl == ''){
+            $imgUrl = $CI->config->item('seo_imgurl');
         }
         if($url == ''){
             $url = base_url();
@@ -50,13 +64,6 @@ if(! function_exists('meta_tags')){
             $type = $CI->config->item('seo_type');
         }
         if($enable['general']){
-            $output .= '<meta name="keywords" content="'.$keyWords.'" />';
-            $output .= '<meta name="description" content="'.$desc.'" />';
-        }
-        if($enable['robot']){
-            $output .= '<meta name="robots" content="index,follow"/>';
-
-        } else {
             $output .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
             $output .= '<meta  name="Rating" content="General"/>';
             $output .= '<meta name="Distribution" content="Global" />';
@@ -66,6 +73,12 @@ if(! function_exists('meta_tags')){
             $output .= '<meta name="geo.placename" content="Indonesia"/>';
             $output .= '<meta name="geo.country" content="id" />';
             $output .= '<meta name="google" content="translate" />';
+            $output .= '<meta name="keywords" content="'.$keyWords.'" />';
+            $output .= '<meta name="description" content="'.$desc.'" />';
+        }
+        if($enable['robot']){
+            $output .= '<meta name="robots" content="index,follow"/>';
+        } else {
             $output .= '<meta name="robots" content="noindex,nofollow"/>';
         }
 
@@ -75,7 +88,7 @@ if(! function_exists('meta_tags')){
             $output .= '<meta property="og:title" content="'.$title.'"/>'
                 .'<meta property="og:description" content="'.$desc.'"/>'
                 .'<meta property="og:type" content="'.$type.'"/>'
-                .'<meta property="og:image" content="'.base_url($imgurl).'"/>'
+                .'<meta property="og:image" content="'.$imgUrl.'"/>'
                 .'<meta property="og:url" content="'.$url.'"/>';
         }
 
@@ -85,7 +98,7 @@ if(! function_exists('meta_tags')){
                 .'<meta name="twitter:title" content="'.$title.'"/>'
                 .'<meta name="twitter:url" content="'.$url.'"/>'
                 .'<meta name="twitter:description" content="'.$desc.'"/>'
-                .'<meta name="twitter:image" content="'.base_url($imgurl).'"/>';
+                .'<meta name="twitter:image" content="'.$imgUrl.'"/>';
         }
 
         return $output;

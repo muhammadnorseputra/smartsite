@@ -31,7 +31,18 @@ class Halaman extends CI_Controller
     $title = $this->halaman->get_namahalaman($token_halaman).' &bull; BKPPD Kabupaten Balangan';
     $detail = $this->halaman->get_detail_halaman($token_halaman);
     $keywords = str_replace('-',',',url_title(strtolower($title)));
-    $meta_tag = meta_tags($e, $title = $title, $desc = strip_tags(url_title($detail->row()->content)),$imgurl ='', $url = base_url('page/'.$token_halaman.'/'.url_title($judul)), $keyWords = $keywords);
+    // jika ada gambar
+    $path = $detail->row()->filename;
+    $ext = pathinfo($path, PATHINFO_EXTENSION); 
+    $imgurl = $ext != '.pdf' ? 'data:image/jpeg;base64,'.$detail->row()->file.'' : '-';
+    $meta_tag = meta_tags($e, 
+                          $title = $title, 
+                          $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 25))), 
+                          $imgUrl = '', 
+                          $url = base_url('page/'.$token_halaman.'/'.url_title($judul)), 
+                          $keyWords = $keywords,
+                          $type = 'page'
+                        );
     // Data
     $data = [
       'title' => $title,

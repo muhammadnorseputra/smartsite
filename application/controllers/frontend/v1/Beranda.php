@@ -28,11 +28,11 @@ class Beranda extends CI_Controller
         $id = $this->mf_beranda->get_identitas();
         $e = array(
           'general' => true, //description, keywords
-          'og' => false,
-          'twitter'=> false,
+          'og' => true,
+          'twitter'=> true,
           'robot'=> true
         );
-        $meta_tag = meta_tags($e, $desc=$id->meta_desc, $keyWords=$id->meta_seo);
+        $meta_tag = meta_tags($e, $title = '', $desc=$id->meta_desc,$imgUrl ='',$url = '',$keyWords=$id->meta_seo,$type='web,blog');
         $data = [
                     'title' => "Beranda &bull; Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan",
                     'isi' => 'Frontend/v1/pages/home',

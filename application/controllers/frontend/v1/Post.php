@@ -21,16 +21,49 @@ class Post extends CI_Controller
     }
     
     public function detail($username, $id,  $judul) {
+        $judul = ucwords($judul);
+        $detail = $this->post->detail(decrypt_url($id))->row();
+        // Youtube Data
+        if($detail->type === 'YOUTUBE'):
+            $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
+            $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,player&id='.$detail->content.'&key='.$key;
+            $yt     = api_client($url);
+            $yt_thumb = $yt['items'][0]['snippet']['thumbnails']['medium']['url'];
+            $yt_desc = $yt['items'][0]['snippet']['description'];
+        endif;
+
+        if(!empty($detail->img) && $detail->type === 'BERITA'):
+            $img = base_url('files/file_berita/'.$detail->img.'');
+        else:
+            $img = 'data:image/jpeg;base64,'.base64_encode( $detail->img_blob ).'';
+        endif;
         
+        if($detail->type === 'YOUTUBE'):
+            $imgurl = $yt_thumb;
+            $content = $yt_desc;
+        else:
+            $imgurl = $img;
+            $content = strip_tags(str_replace('"', '', word_limiter($detail->content, 35)));
+        endif;
+
+        $e = array(
+          'general' => true, //description, keywords
+          'og' => true,
+          'twitter'=> true,
+          'robot'=> true
+        );
+        $meta_tag = meta_tags($e, $title = $judul, $desc=$content,$imgUrl = $imgurl,$url = curPageURL(),$keyWords=$detail->tags,$type='article,blog,berita,post');
+
     	$data = [
-    		'title' => ucwords($judul),
+    		'title' => $judul,
     		'isi' => 'Frontend/v1/pages/p_detail',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
             'berita_selanjutnya' => $this->mf_beranda->berita_selanjutnya(decrypt_url($id)),
-            'post_detail' => $this->post->detail(decrypt_url($id))->row(),
+            'post_detail' => $detail,
             'mf_kategori' => $this->mf_beranda->get_kategori_listing(),
             'mf_berita_populer' => $this->mf_beranda->berita_populer(),
+            'meta' => $meta_tag
     	];
     	$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
     }
