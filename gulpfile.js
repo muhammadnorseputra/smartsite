@@ -60,8 +60,8 @@ gulp.task("vendor-js", function() {
             // "template/v1/plugin/rellax/rellax.min.js",
             "template/v1/plugin/rippler/dist/js/jquery.rippler.min.js",
             // "template/v1/plugin/garand-sticky/jquery.sticky.js",
-            // "template/v1/plugin/camera/scripts/jquery.easing.1.3.js",
-            // "template/v1/plugin/camera/scripts/camera.min.js",
+            "template/v1/plugin/camera/scripts/jquery.easing.1.3.js",
+            "template/v1/plugin/camera/scripts/camera.min.js",
             // "template/v1/plugin/dark-mode/dark-mode-switch.js",
             "assets/plugins/jquery-cookie/jquery.cookie.js",
             "assets/plugins/jquery-countto/jquery.countTo.js",
@@ -71,6 +71,7 @@ gulp.task("vendor-js", function() {
             // "bower_components/jquery-mask-plugin/dist/jquery.mask.min.js",
             "bower_components/jquery-form-validator/form-validator/jquery.form-validator.min.js",
             "bower_components/aos/dist/aos.js",
+            "template/v1/plugin/jquery-easy-ticker-master/dist/jquery.easy-ticker.min.js"
             // "assets/plugins/pace/pace.min.js",
             // "assets/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js",
             // "assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"

@@ -390,7 +390,15 @@ class Users extends CI_Controller {
 		        $data = array();
 		        $no = $_POST['start'];
 		        foreach ($list as $p) {
-		        	$type = $p->type === 'BERITA' ? 'postDetail' : 'postDetailYoutube';
+
+		        	if($p->type === 'BERITA'):
+		        		$type = 'postDetail';
+		        	elseif($p->type === 'LINK'):
+		        		$type = 'postDetailLink';
+		        	else:
+		        		$type = 'postDetailYoutube';
+		        	endif;
+		        	
 		        	$btnAksi = $p->publish != 0 ? '<div class="dropdown dropright">
 								  <button id="dLabel" class="btn btn-lg border-0 btn-light bg-white p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								    <i class="fas fa-ellipsis-h p-2"></i>

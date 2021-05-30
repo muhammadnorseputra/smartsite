@@ -1,7 +1,10 @@
 <?php
+// Update count view
 $count_v = $post_detail->views;
 $count = $count_v + 1;
 $this->post->update_count_post(decrypt_url($this->uri->segment(3)), $count);
+
+// Profile postinger
 $by = $post_detail->created_by;
 if ($by == 'admin') {
 	$namalengkap = $this->mf_users->get_namalengkap($post_detail->created_by);
@@ -18,12 +21,14 @@ if ($by == 'admin') {
 // Youtube Data
 if($post_detail->type === 'YOUTUBE'):
     $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
-    $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,player&id='.$post_detail->content.'&key='.$key;
+    $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,status,player&id='.$post_detail->content.'&key='.$key;
     $yt     = api_client($url);
+    $yt_id     = $yt['items'][0]['id'];
     $yt_channel = $yt['items'][0]['snippet']['channelId'];
     $yt_desc = $yt['items'][0]['snippet']['description'];
     $yt_src = $yt['items'][0]['snippet']['channelTitle'];
     $yt_player = $yt['items'][0]['player']['embedHtml'];
+    $yt_sumber = $yt['items'][0]['status']['license'];
 endif;
 
 $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == 'on' ? 'btn-bookmark' : '';
@@ -72,15 +77,26 @@ if (count($pecah) > 0) {
 						</div>
 						<div class="px-0 px-md-4 media_youtube">
 							<?= $img ?>
+							<?php  if($post_detail->type === 'YOUTUBE'): ?>
+								<div class="pl-3 border-left border-light">
+									<div class="d-flex justify-content-start align-items-start align-items-md-center">
+										<div class="mr-3 text-light">
+											<i class="fas fa-info-circle"></i>
+										</div>
+										<div class="small text-muted">
+											Postingan ini merupakan <abbr title="<?= ucwords($yt_sumber) ?>">Repost</abbr> dari sumber aslinya.
+										</div>
+										<div class="ml-auto">
+											<a href="https://www.youtube.com/watch?v=<?= $yt_id ?>?ref=bkppd_balangan" target="_blank" class="btn btn-light btn-sm">Lihat sumber asli</a>
+										</div>
+									</div>
+								</div>
+							<?php endif; ?>
 						</div>
 						<div class="card-body px-0 px-md-4">
-							<?php  
-								if($post_detail->type === 'YOUTUBE'):
-							?>
+							<?php  if($post_detail->type === 'YOUTUBE'): ?>
 								<div class="g-ytsubscribe mt-md-0 mt-4" data-channelid="<?= $yt_channel ?>" data-layout="full" data-theme="light" data-count="default"></div>
-							<?php
-								endif;
-							?>
+							<?php endif; ?>
 							<h2 class="font-weight-bold text-responsive"><?php echo $post_detail->judul; ?></h2>
 							<p class="card-text font-weight-normal"><?php echo $content; ?></p>
 							<?= $tag; ?>
@@ -187,12 +203,18 @@ if (count($pecah) > 0) {
 					</div>
 				</div>
 				<div class="col-md-4 d-none d-md-block">
+					<?php if(cek_internet() == true): ?>
 					<div class="card bg-white rounded border-light">
 						<div class="card-body p-0">
-                    		<?php $this->load->view('Frontend/v1/function/populer_post'); ?>
+                    		<!-- <?php $this->load->view('Frontend/v1/function/populer_post'); ?> -->
+							<div id="gpr-kominfo-widget-container"></div>
 						</div>
 					</div>
+					<?php else: ?>
+						<?php $this->load->view('msg/lose-connection'); ?>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
 	</section>
+	<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>

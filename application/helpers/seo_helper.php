@@ -64,7 +64,6 @@ if(! function_exists('meta_tags')){
             $type = $CI->config->item('seo_type');
         }
         if($enable['general']){
-            $output .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
             $output .= '<meta  name="Rating" content="General"/>';
             $output .= '<meta name="Distribution" content="Global" />';
             $output .= '<meta name="audience" content="all" />';

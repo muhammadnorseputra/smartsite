@@ -155,12 +155,24 @@ class M_f_beranda extends CI_Model
         return $q->result();
     }
 
-    public function get_all_berita($limit, $start)
+    public function get_all_berita($limit, $start, $type, $sort)
     {
         $this->db->select('*');
         $this->db->from('t_berita');
-        $this->db->order_by('id_berita', 'DESC');
         $this->db->where('publish', '1');
+        
+        if(!empty($type) && $type != 'all'):
+            $this->db->where('type', strtoupper($type));
+        endif;
+
+        if(!empty($sort) && $sort === 'populer'):
+            $this->db->where('views !=', '0');
+            $this->db->order_by('views', 'desc');
+            $this->db->order_by('like_count', 'desc');
+            $this->db->order_by('share_count', 'desc');
+        elseif(empty($sort) || $sort === 'newest'):
+            $this->db->order_by('id_berita', 'DESC');
+        endif;
         $this->db->limit($limit, $start);
         $query = $this->db->get();
 

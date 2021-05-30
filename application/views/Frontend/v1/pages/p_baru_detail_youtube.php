@@ -1,23 +1,29 @@
-<section class="my-md-5 my-2">
-	<div class="container">
+<section class="mt-md-5">
+	<div class="container shadow-sm pt-3 pt-md-0">
 		<?= form_open(base_url('frontend/v1/post/update_post_youtube/1'), ['id' => 'f_post'], ['id_berita' => $post->id_berita]) ?>
 		<div id="title" class="sr-only"><?= $post->judul ?></div>
 		<div class="row">
 			<div class="col-md-8 mt-md-5">
-				<span class="badge badge-pill badge-light p-3 mb-2">#<?= $this->postlist->get_namakategori($post->fid_kategori) ?></span>
-				<div class="d-flex mb-3">
+				<div class="btn-group mr-2 mt-md-0 mt-3" role="group" aria-label="button">
+				    <button type="button" class="btn btn-dark" disabled>Kategori</button>
+				    <button type="button" class="btn btn-default">#<?= $this->postlist->get_namakategori($post->fid_kategori) ?></button>
+				  </div>
+				<div class="d-flex my-3">
 					<div class="w-100">
 						<label for="judul">Judul</label>
 						<input type="text" id="judul" name="judul" value="<?= $post->judul ?>" class="form-control form-control-lg">
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="basic-url">URL Video Youtube</label>
+					<label for="basic-url">ID Video Youtube</label>
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
-							<span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v=</span>
+							<span class="input-group-text" id="basic-addon3"><i class="fab fa-youtube"></i></span>
 						</div>
 						<input type="text" class="form-control form-control-lg" name="content" value="<?= $post->content ?>" id="basic-url" aria-describedby="basic-addon3">
+						<small id="passwordHelpBlock" class="form-text d-block text-muted border-left border-danger pl-3">
+  Kamu dapat memasukan ID dari video youtube, untuk mendapatkan ID tersebut silahkan buka video yang bersumber dari youtube. Contoh: <s>https://www.youtube.com/watch?v=</s><code>gvU_8LNK00E</code>
+</small>
 					</div>
 				</div>
 				<div class="form-group">
@@ -32,10 +38,10 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<button type="submit" class="btn btn-lg btn-primary mt-2"><i class="far fa-share-square mr-2"></i>Update & Publish</button>
+					<button type="submit" class="btn btn-block btn-danger mt-2"><i class="far fa-share-square mr-2"></i>Update & Publish</button>
 				</div>
 			</div>
-			<div class="col-md-4 mt-md-5">
+			<div class="col-md-4 mt-md-5 order-first order-md-last">
 				<div id="preview"></div>
 			</div>
 		</div>
@@ -59,8 +65,9 @@ function preview_yt(id) {
 	$.getJSON(`${_uri}/frontend/v1/post/preview_url_youtube/${id}`, function(res) {
 		$("#preview").html(`
 			<img src="${res.items[0].snippet.thumbnails.high.url}" class="img-fluid w-100 rounded mb-3">
+			<p class="text-primary">${res.items[0].snippet.channelTitle}</p>
 			<b>${res.items[0].snippet.title}</b>
-			<p class="text-mutted mt-3">${res.items[0].snippet.channelTitle}</p>
+			<p class="text-muted small">${res.items[0].snippet.description.substr(0,70)}</p>
 		`);
 		$("input[name='judul']").val(res.items[0].snippet.title);
 	});

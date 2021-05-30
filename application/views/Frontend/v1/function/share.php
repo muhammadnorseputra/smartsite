@@ -17,20 +17,27 @@ if($detail->type === 'YOUTUBE'):
     $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
     $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$detail->content.'&key='.$key;
     $yt     = api_client($url);
-    $yt_thumb = $yt['items'][0]['snippet']['thumbnails']['medium']['url'];
+    $imgSrc = $yt['items'][0]['snippet']['thumbnails']['medium']['url'];
 endif;
-
+if($detail->type === 'LINK'):
+    $url = $detail->content;
+    $linker = getSiteOG($url);
+    $imgSrc = $linker['image'];
+    // var_dump($linker);
+endif;
 ?>
 <div class="conteiner bg-light rounded m-3">
     <div class="row">
         <div class="col-12 col-md-6">
         <?php
-        if(!empty($detail->img)):
-        $img = '<img class="img-fluid card-img-top" src="'.base_url('files/file_berita/'.$detail->img).'">';
-        elseif($detail->type === 'YOUTUBE'):
-        $img = '<img class="img-fluid card-img-top" src="'.$yt_thumb.'">';
+        if($detail->type === 'BERITA'):
+            if(!empty($detail->img)):
+                $img = '<img class="img-fluid rounded-left" src="'.base_url('files/file_berita/'.$detail->img).'">';
+            else:
+                $img = '<img class="img-fluid rounded-left" src="data:image/jpeg;base64,'.base64_encode( $detail->img_blob ).'"/>';
+            endif;
         else:
-        $img = '<img class="img-fluid card-img-top" src="data:image/jpeg;base64,'.base64_encode( $detail->img_blob ).'"/>';
+            $img = '<img class="img-fluid rounded-left" src="'.$imgSrc.'">';
         endif; 
         echo $img;
         ?>

@@ -98,7 +98,6 @@ class M_f_post extends CI_Model {
         }
         return $result;
     }
-
     public function getIdByJudul($judul){
         $this->db->select('id_berita');
         $this->db->from('t_berita');
@@ -111,6 +110,36 @@ class M_f_post extends CI_Model {
         } else {
             $result = 'ID NULL';
         }   
+        return $result;
+    }
+    public function getIdByJudulAndType($judul, $type){
+        $this->db->select('id_berita');
+        $this->db->from('t_berita');
+        $this->db->where('judul', $judul);
+        $this->db->where('type', $type);
+        $db = $this->db->get();
+        if($db->num_rows() > 0)
+        {
+            $r = $db->row();
+            $result = $r->id_berita;
+        } else {
+            $result = 'ID NULL';
+        }   
+        return $result;
+    }
+
+    public function getDetailByUrl($url){
+        $this->db->select('id_berita, views, type');
+        $this->db->from('t_berita');
+        $this->db->where('content', $url);
+        $db = $this->db->get();
+        if($db->num_rows() > 0)
+        {
+            $r = $db->row();
+            $result = $r;
+        } else {
+            $result = "";
+        }
         return $result;
     }
 
@@ -234,6 +263,7 @@ class M_f_post extends CI_Model {
           if($query != '')
           {
            $this->db->like('judul', $query);
+           $this->db->or_like('tags', $query);
           }
           $this->db->order_by('id_berita', 'DESC');
           return $this->db->get();

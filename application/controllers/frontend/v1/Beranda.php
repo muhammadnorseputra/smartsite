@@ -21,7 +21,7 @@ class Beranda extends CI_Controller
         // }
     }
     public function testing() {
-        var_dump(getSiteOG("https://web.bkppd-balangankab.info/post/binainfo/bnNXNmJJZ3hnVG04bTVRTk5vbFJrQT09/ceremonial-penyerahan-penghargaan-bagi-aparatur-sipil-negara-berprestasiberkinerja-terbaik-di-lingkungan-pemerintah-kabupaten-balangan")); //note the incorrect url
+        var_dump(getSiteOG("https://www.liputan6.com/tekno/read/4568990/penyimpanan-google-drive-penuh-lakukan-cara-ini")); //note the incorrect url
     }
     public function index()
     {
@@ -32,7 +32,7 @@ class Beranda extends CI_Controller
           'twitter'=> true,
           'robot'=> true
         );
-        $meta_tag = meta_tags($e, $title = '', $desc=$id->meta_desc,$imgUrl ='',$url = '',$keyWords=$id->meta_seo,$type='web,blog');
+        $meta_tag = meta_tags($e, $title = '', $desc=$id->meta_desc,$imgUrl = base_url('assets/images/logo.png'),$url = base_url('beranda'),$keyWords=$id->meta_seo,$type='web');
         $data = [
                     'title' => "Beranda &bull; Website Resmi Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan",
                     'isi' => 'Frontend/v1/pages/home',
@@ -64,10 +64,22 @@ class Beranda extends CI_Controller
         $this->load->view('Frontend/v1/function/'.$section, $data);
     }
 
+    function template_sumber($text, $icon) {
+        $html = '<div class="btn-group btn-group-sm mb-2 ml-2 ml-md-0" role="group" aria-label="button">
+                    <button type="button" class="btn btn-sm btn-light" disabled>'.$icon.'</button>
+                    <button type="button" class="btn btn-sm btn-default"  disabled>'.$text.'</button>
+                </div>';
+        return $html;
+    }
+
     public function get_all_berita()
     {
+        $limit = $this->input->post('limit');
+        $start = $this->input->post('start');
+        $type  = $this->input->post('type');
+        $sort  = $this->input->post('sort');
         $output = '';
-        $data = $this->mf_beranda->get_all_berita($this->input->post('limit'),$this->input->post('start'));
+        $data = $this->mf_beranda->get_all_berita($limit,$start,$type,$sort);
         if ($data->num_rows() > 0) {
             $no=1;
             foreach ($data->result() as $row) {
@@ -75,12 +87,12 @@ class Beranda extends CI_Controller
                 // Tags
                 $tags = $row->tags;
                 $pecah = explode(',', $tags);
-                if (count($pecah) > 0) {
                     $tag = '';
-                    for ($i = 0; $i < count($pecah); ++$i) {
-                        $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-light border-0 mr-1 mb-1">#'.$pecah[$i].'</a>';
+                    for ($i = 0; $i < count($pecah); $i++) {
+                        if (count($pecah) > 0) {
+                            $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-light mr-1 mb-1">#'.$pecah[$i].'</a>';
+                        }
                     }
-                }
 
                 // Berita pilihan tanda check warna hijau
                 $pilihan = $row->pilihan == 'Y' ? '<span class="text-success small float-right" data-toggle="tooltip" title="Pilihan Editor"><i class="fas fa-check-circle"></i></span>' : '';
@@ -102,10 +114,14 @@ class Beranda extends CI_Controller
                 }
 
                 // Post Link Detail
-                $id = encrypt_url($row->id_berita);
-                $postby = strtolower(url_title($namalengkap));
-                $judul = strtolower($row->judul);
-                $posturl = "post/{$postby}/{$id}/".url_title($judul).'';
+                if($row->type === 'YOUTUBE' || $row->type === 'BERITA'):
+                    $id = encrypt_url($row->id_berita);
+                    $postby = strtolower(url_title($namalengkap));
+                    $judul = strtolower($row->judul);
+                    $posturl = "post/{$postby}/{$id}/".url_title($judul).'';
+                else:
+                    $posturl = base_url('leave?go='.encrypt_url($row->content));
+                endif;
                 
                 // Bookmark button
                 $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $row->id_berita) == 'on' ? 'btn-bookmark' : '';
@@ -115,7 +131,7 @@ class Beranda extends CI_Controller
                 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'btn-like' : '';
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
-                // Post Youtube
+                // Post Data Youtube
                 if($row->type === 'YOUTUBE'):
                     $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
                     $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$row->content.'&key='.$key;
@@ -123,6 +139,12 @@ class Beranda extends CI_Controller
                     $yt_thumb = $yt['items'][0]['snippet']['thumbnails']['high']['url'];
                     $yt_desc = $yt['items'][0]['snippet']['description'];
                     $yt_src = $yt['items'][0]['snippet']['channelTitle'];
+                endif;
+
+                if($row->type === 'LINK'):
+                    $url = $row->content;
+                    $linker = getSiteOG($url);
+                    // var_dump($linker);
                 endif;
 
                 // Headline
@@ -137,33 +159,83 @@ class Beranda extends CI_Controller
                 // Content
                 if($row->type === 'YOUTUBE'):
                     $content = word_limiter($yt_desc,20);
+                elseif($row->type === 'LINK'):
+                    $content = word_limiter($linker['description'],15);
                 else:
                     $content = $isi."...";
                 endif;
 
                 // Sumber
                 if($row->type === 'YOUTUBE'):
-                    $sumber = '<div class="text-muted py-2 small"><i class="fab fa-youtube mr-2"></i> <b>'.$yt_src.'</b></div>';
+                    $status_posted = '<abbr title="Repost adalah diposting ulang atau ditampilkan kembali, berdasarkan sumber tertentu.">Repost</abbr>';
+                    $text = $yt_src;
+                    $icon = '<i class="fab fa-youtube"></i>';
+                    $sumber = $this->template_sumber($text, $icon);
+                elseif($row->type === 'LINK'):
+                    $domain = parse_url($row->content, PHP_URL_HOST);
+                    $status_posted = '<abbr title="Repost adalah diposting ulang atau ditampilkan kembali, berdasarkan sumber tertentu.">Repost</abbr>';
+                    $text = $domain;
+                    $icon = '<i class="fas fa-link"></i>';
+                    $sumber = $this->template_sumber($text, $icon);
+                else:
+                    $domain = parse_url(base_url(), PHP_URL_HOST);
+                    $status_posted = 'Posted';
+                    $text = $domain;
+                    $icon = '<i class="fas fa-globe-asia"></i>';
+                    $sumber = $this->template_sumber($text, $icon);
                 endif;
 
                 // Gambar
-                if(!empty($row->img) && $row->type === 'BERITA'):
-                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
+                if($row->type === 'BERITA'):
+                    if(!empty($row->img)):
+                        $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('files/file_berita/'.$row->img).'" alt="'.$row->img.'">';
+                    elseif(!empty($row->img_blob)):
+                        $img = '<img class="w-100 lazy rounded border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    else:
+                        $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                    endif;
                 elseif($row->type === 'YOUTUBE'):
-                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'">'.$sumber;
+                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'">';
+                elseif($row->type === 'LINK'):
+                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
                 else:
-                    $img = '<img class="w-100 lazy rounded border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                 endif;
 
                 // Kategori
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('kategori/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
                 
-                $arr_color = ['btn-primary', 'btn-success', 'btn-info', 'btn-warning', 'btn-danger'];
+                $arr_color = ['btn-primary', 'btn-success', 'btn-info', 'btn-warning', 'btn-danger', 'btn-default', 'btn-dark'];
                 $rand = '';
                 for($x=0; $x<count($arr_color);$x++):
                     $rand = $arr_color[$no];
                 endfor;
+
+                if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'LINK'):
+                $content_body = '<div class="row">
+
+                                    <div class="canvas col-12 col-md-6">
+                                        <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info px-3 pl-md-4" title="'.$row->judul.'">
+                                          '.$img.'
+                                        </a>
+                                    </div>
+                                
+                                    <div class="col-12 col-md-6 pl-md-0 mt-md-0 mt-2">
+                                        <div class="btn-group btn-group-sm mb-2 ml-3 ml-md-0" role="group" aria-label="button">
+                                            <button type="button" class="btn btn-sm btn-light" disabled><i class="fas fa-tag"></i></button>
+                                            <a href="'.$post_list_url.'" class="btn btn-sm '.$rand.'">'.$namakategori.'</a>
+                                        </div>
+                                        '.$sumber.'
+                                        <div class="mx-3 mx-md-0 pr-md-4">
+                                        <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 6).'&nbsp;'.$pilihan.'</a></h4>
+                                        <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
+                                        <hr>
+                                        <p>'.$tag. '</p>
+                                        </div>
+                                    </div>
+                                </div>';
+                endif;
 
                 $output .= '
                 <div>
@@ -171,27 +243,13 @@ class Beranda extends CI_Controller
 					<div class="card-body px-2 mt-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded ml-3 lazy">
-						<h5 class="card-title"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
+						<h5 class="card-title mb-0 pb-1"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
                         <p class="card-text">
-                            <span class="badge badge-default px-0 font-weight-normal text-muted">Posted by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
+                            <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
                         </p>
 					</div>
-
-                    <div class="row">
-                        <div class="canvas col-12 col-md-6">
-                            <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info px-3 pl-md-4" title="'.$row->judul.'">
-                              '.$img.'
-                            </a>
-                        </div>
                     
-                        <div class="col-12 col-md-6">
-                            <a href="'.$post_list_url.'" class="btn btn-sm rounded-pill text-white shadow-sm mt-2 mb-2 mt-md-0 mb-md-2 ml-3 ml-md-0 '.$rand.'">&bull; '.$namakategori.'</a>
-                            <h4 class="font-weight-bold mx-3 mx-md-0"><a href="'.$posturl.'">'.word_limiter($row->judul, 6).'&nbsp;'.$pilihan.'</a></h4>
-                            <p class="card-text font-weight-lighter text-muted my-4 mx-3 mx-md-0">'.$content.'</p>
-                            <hr>
-                            <p class="px-2 px-md-0">'.$tag. '</p>
-                        </div>
-                    </div>
+                    '.$content_body.'
 
 					<div class="card-footer bg-transparent p-2 border-0 d-flex justify-content-start">
 					
@@ -214,9 +272,9 @@ class Beranda extends CI_Controller
                 $no++;
             }
         }
-        echo json_encode(['html' => $output, 'status' => 'Oke']);
+        echo json_encode(['html' => $output, 'count' => $data->num_rows(), 'status' => 'Oke']);
     }
-
+    
     public function share_artikel($id)
     {
         return $this->load->view('Frontend/v1/function/share',

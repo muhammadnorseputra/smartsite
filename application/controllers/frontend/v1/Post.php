@@ -35,7 +35,7 @@ class Post extends CI_Controller
         if(!empty($detail->img) && $detail->type === 'BERITA'):
             $img = base_url('files/file_berita/'.$detail->img.'');
         else:
-            $img = 'data:image/jpeg;base64,'.base64_encode( $detail->img_blob ).'';
+            $img = base_url('assets/images/logo.png');
         endif;
         
         if($detail->type === 'YOUTUBE'):
@@ -46,13 +46,14 @@ class Post extends CI_Controller
             $content = strip_tags(str_replace('"', '', word_limiter($detail->content, 35)));
         endif;
 
+        // Meta SEO
         $e = array(
           'general' => true, //description, keywords
           'og' => true,
           'twitter'=> true,
           'robot'=> true
         );
-        $meta_tag = meta_tags($e, $title = $judul, $desc=$content,$imgUrl = $imgurl,$url = curPageURL(),$keyWords=$detail->tags,$type='article,blog,berita,post');
+        $meta_tag = meta_tags($e, $title = str_replace('-', ' ', $judul), $desc=$content,$imgUrl = $imgurl,$url = curPageURL(),$keyWords=$detail->tags,$type='article');
 
     	$data = [
     		'title' => $judul,
@@ -77,29 +78,59 @@ class Post extends CI_Controller
           {
            foreach($data->result() as $row)
            {
+
+            // if($row->type === 'YOUTUBE'):
+            //     $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
+            //     $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$row->content.'&key='.$key;
+            //     $yt     = api_client($url);
+            //     $imgSrc = $yt['items'][0]['snippet']['thumbnails']['medium']['url'];
+            //     $yt_desc = $yt['items'][0]['snippet']['description'];
+            // endif;
+            // if($row->type === 'LINK'):
+            //     $url = $row->content;
+            //     $linker = getSiteOG($url);
+            //     $imgSrc = $linker['image'];
+            //     // var_dump($linker);
+            // endif;
+
             $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
             $isi = substr($isi_berita, 0, 100); // ambil sebanyak 80 karakter
             $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
+
+            // Content
+            // if($row->type === 'YOUTUBE'):
+            //     $content = word_limiter($yt_desc,20);
+            // elseif($row->type === 'LINK'):
+            //     $content = word_limiter($linker['description'],15);
+            // else:
+            //     $content = $isi."...";
+            // endif;
+
 
             $id = encrypt_url($row->id_berita);
             $postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($row->created_by))));
             $judul = strtolower($row->judul);
             $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
 
-            if(!empty($row->img)):
-                $img = '<img class="img-thumbnail w-full" src="'.$row->path.'">';
+            if($row->type === 'BERITA'):
+                if(!empty($row->img)):
+                    $img = '<img class="img-fluid rounded-left" src="'.base_url('files/file_berita/'.$row->img).'">';
+                else:
+                    $img = '<img class="img-fluid rounded-left" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                endif;
             else:
-                $img = '<img class="img-thumbnail w-full" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
-            endif;
-            $output .= '<a href="'.$posturl.'" class="list-group-item border shadow-sm my-2 list-group-item-action flex-column align-items-start">
-                        <div class="d-flex justify-content-start">
-                            <div class="w-25 mr-4">
+                $img = '<img class="img-fluid rounded-left" src="'.base_url('assets/images/noimage.gif').'">';
+            endif; 
+
+            $output .= '<a href="'.$posturl.'" class="list-group-item border shadow-sm my-2 list-group-item-action rounded p-3 p-md-0">
+                        <div class="d-flex justify-content-start align-items-start">
+                            <div class="w-50 mr-4 d-none d-md-block">
                                 '.$img.'
                             </div>
-                             <div>
-                              <h5 class="mb-2 font-weight-bold">'.character_limiter($row->judul, 25).'</h5>
+                            <div class="pt-md-3">
+                              <h5>'.character_limiter($row->judul, 25).'</h5>
                               <span class="small">'.longdate_indo($row->tgl_posting).'</span>
-                              <p class="mb-2 text-secondary">'.$isi.'...</p>
+                              <p class="mb-2 text-muted small">'.$isi.'...</p>
                                 <small class="text-primary">Posted by '.decrypt_url($this->mf_users->get_userportal_namalengkap($row->created_by)).'</small>
                             </div>
                         </div>
@@ -108,10 +139,18 @@ class Post extends CI_Controller
           }
           else
           {
-           $output .= '<h4 class="mx-auto text-center text-secondary"><img src="'.base_url('assets/images/bg/undraw_empty_xct9.svg').'" class="img-fluid w-50"/> <br>Keyword <b>"'.$query.'"</b> Not Found</h4>';
+           $output .= '<div class="d-flex justify-content-center align-items-center">
+                        <div class="w-25">
+                            <img src="'.base_url('assets/images/bg/undraw_empty_xct9.svg').'" class="img-fluid"/>
+                        </div>
+                        <div class="px-3">
+                            <h4 class="text-muted"> Keyword <b>"'.$query.'"</b> Not Found</h4>
+                            <p class="pl-3 border-left border-warning small text-muted">Sepertinya katakunci yang kamu masukan tidak ada pada database kami</p>
+                        </div>
+                    </div>';
           }
           $output .= '</div>';
-          echo $output;
+          echo json_encode(['data' => $output, 'count' => $data->num_rows()]);
          }
 
     public function listdetail()
@@ -236,7 +275,7 @@ class Post extends CI_Controller
         public function judul()
         {
             $data = [
-                'title' => 'Buat judul postingan',
+                'title' => 'BUAT POSTINGAN',
                 'isi' => 'Frontend/v1/pages/p_baru_judul',
                 'mf_beranda' => $this->mf_beranda->get_identitas(),
                 'mf_menu' => $this->mf_beranda->get_menu(),
@@ -263,15 +302,15 @@ class Post extends CI_Controller
             ];
 
             if(empty($judul) && $type === 'BERITA'):
-                $msg = ['valid' => false, 'pesan' => 'Judul wajid dibuat untuk postingan!'];
+                $msg = ['valid' => false, 'pesan' => 'Judul wajid dibuat untuk postingan berita!'];
             elseif(empty($kategori)):
                 $msg = ['valid' => false, 'pesan' => 'Kategori belum dipilih'];
             elseif(empty($type)):
                 $msg = ['valid' => false, 'pesan' => 'Type Post belum dipilih'];
             else:
                 $this->post->doInsertJudulBaru('t_berita', $data);
-                $getId = $this->post->getIdByJudul($judul);
-                $msg = ['valid' => true, 'type' => $type, 'pesan' => 'Judul berhasil dibuat, klik OK untuk melanjutkan', 'id' => encrypt_url($getId)];
+                $getId = $this->post->getIdByJudulAndType($judul,$type);
+                $msg = ['valid' => true, 'type' => $type, 'pesan' => 'Post Berhasil Dibuat, klik OK untuk melanjutkan', 'id' => encrypt_url($getId)];
             endif;
             echo json_encode($msg);
             
@@ -308,20 +347,50 @@ class Post extends CI_Controller
             ];
             $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
         }
-        
-        public function upload_single_photo($id)
+        public function preview_url_link()
+        {
+            $url = $this->input->post('url');
+            $data = getSiteOG($url);
+            echo json_encode($data);
+        }
+        public function postDetailLink($id)
         {
             $idb = decrypt_url($id);
-            $blob = file_get_contents($_FILES['file']['tmp_name']);
+            $judul = $this->post->getJudulById($idb);
+
             $data = [
-                'img_blob' => $blob
+                'title' => ucwords($judul),
+                'isi' => 'Frontend/v1/pages/p_baru_detail_link',
+                'mf_beranda' => $this->mf_beranda->get_identitas(),
+                'mf_menu' => $this->mf_beranda->get_menu(),
+                'post' => $this->post->detail($idb)->row(),
+                'tags' => $this->postlist->get_all_tag()->result()
             ];
-            $upload = $this->post->doUpdatePhoto('t_berita', $idb, $data);
-            if($upload == true)
+            $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+        }
+        public function update_post_link($publish)
+        {
+            $id = $this->input->post('id_berita');
+            $judul = $this->input->post('judul');
+            $content = $this->input->post('content');
+            $tags = @implode(',', $this->input->post('tags'));
+            $data = [
+                'judul' => $judul,
+                'content' => $content,
+                'tags' => $tags,
+                'publish' => $publish,
+                'update_at' => date('Y-m-d H:i:s'),
+                'update_by' => $this->session->userdata('user_portal_log')['id']
+            ];
+
+            $update = $this->post->doUpdatePost('t_berita', $id, $data);
+            if($update == true)
             {
-                $msg = true;
-            } else {
-                $msg = false;
+                $msg = ['valid' => true];
+            }
+            else 
+            {
+                $msg = ['valid' => false];
             }
             echo json_encode($msg);
         }
@@ -385,6 +454,22 @@ class Post extends CI_Controller
             echo json_encode($msg);
         }
 
+        public function upload_single_photo($id)
+        {
+            $idb = decrypt_url($id);
+            $blob = file_get_contents($_FILES['file']['tmp_name']);
+            $data = [
+                'img_blob' => $blob
+            ];
+            $upload = $this->post->doUpdatePhoto('t_berita', $idb, $data);
+            if($upload == true)
+            {
+                $msg = true;
+            } else {
+                $msg = false;
+            }
+            echo json_encode($msg);
+        }
         public function deletePost()
         {
             $table = 't_berita';

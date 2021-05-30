@@ -1,7 +1,7 @@
-<div class="separator">
+<div class="separator d-none d-md-block">
     <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-images text-secondary mr-2"></i> album photo</span>
 </div>
-<div class="rounded-lg my-4 border-0 shadow-none">
+<div class="rounded-lg my-4 border-0 shadow-none  d-none d-md-block">
     <div class="album-slick">
         <?php
         foreach ($mf_album as $album):

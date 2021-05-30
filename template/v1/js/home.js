@@ -8,19 +8,34 @@ function explore() {
 $(document).ready(function() {
 
     // get all berita
-    var limit = 4;
+    var limit = 6;
     var start = 0;
     var action = "inactive";
     console.log(_uriSegment);
     let $url = $host ? _uriSegment[2] : _uriSegment[1];
 
     if ($url == 'beranda') {
+
+        function load_data_message() {
+
+            $("#load_data_message").html(
+                `<div class="card border-0 bg-transparent shadow-none mb-5">
+                        <div class="card-body text-danger text-center">
+                        <img src="${_uri}/template/v1/img/humaaans-3.png" alt="croods" class="img-fluid rounded">
+                            <h5 class="card-title">Yahhh! abis</h5>  
+                            <p class="font-weight-light text-secondary"> Berita yang anda load mungkin telah berakhir.</p>
+                        </div>
+                    </div>`
+            );
+
+        }
+
         function lazzy_loader(limit) {
             var output = "";
             for (var count = 0; count < 1; count++) {
                 output += `
-                <div class="card border border-light bg-white shadow-sm mb-3" style="border-radius:10px;">
-                    <div class="card-header border-0 bg-white" style="border-radius:10px;">
+                <div class="card border border-light bg-white shadow-sm mb-3" style="border-radius:5px;">
+                    <div class="card-header border-0 bg-white" style="border-radius:5px;">
                     <p>
                     <span class="content-placeholder rounded-circle float-left mr-3" style="width:50px; height: 50px;">&nbsp;</span>
 
@@ -56,26 +71,25 @@ $(document).ready(function() {
                 data: {
                     limit: limit,
                     start: start,
+                    type: urlParams.get('type'),
+                    sort: urlParams.get('sort')
                 },
                 cache: false,
                 dataType: "json",
                 success: function(data) {
                     if (data.html == "") {
-                        $("#load_data_message").html(
-                            `<div class="card border-0 bg-transparent shadow-none mb-5">
-                                <div class="card-body text-danger text-center">
-                                <img src="${_uri}/template/v1/img/humaaans-3.png" alt="croods" class="img-fluid rounded">
-                                    <h5 class="card-title">Yahhh! abis</h5>  
-                                    <p class="font-weight-light text-secondary"> Berita yang anda load mungkin telah berakhir.</p>
-                                </div>
-                            </div>`
-                        );
+                        load_data_message();
                         $("button#load_more").hide();
                         action = "active";
                     } else {
+                        if (data.count < 6) {
+                            $("button#load_more").hide();
+                            load_data_message();
+                        } else {
+                            $("#load_data_message").html("");
+                        }
                         $("#load_data").append(data.html);
-                        $("#load_data_message").html("");
-                        $("button#load_more").html(`<i class="fas fa-newspaper mr-2"></i> Load more berita`).prop('disabled', false);
+                        $("button#load_more").html(`<i class="fas fa-newspaper mr-2"></i> Loadmore`).prop('disabled', false);
                         action = "inactive";
                         $(".lazy").lazy({
                             beforeLoad: function(element) {
@@ -92,7 +106,7 @@ $(document).ready(function() {
                         $('[data-toggle="tooltip"]').tooltip({
                             delay: 300,
                             offset: '0,10px',
-                            padding: 8
+                            padding: 10
                         });
                     }
                 },
@@ -135,58 +149,4 @@ $(document).ready(function() {
         console.log('Semua berita tidak ditampilkan, karna bukan halaman beranda');
     }
 
-    $("button#caripost").on("click", function() {
-        $("#mpostseacrh").modal('show');
-        $("input[name='q']").focus();
-    });
-
-    $("a#caripost").on("click", function() {
-        $("#mpostseacrh").modal('show');
-        $("input[name='q']").focus();
-    });
-
-    $("a#mobileMenuNav").on("click", function() {
-        $("#mobileMenu").modal('show')
-    });
-
-    $('#mpostseacrh').on('hidden.bs.modal', function(e) {
-        $("input[name='q']").val('');
-        $("#form_post_search").submit();
-    });
-
-    $("#form_post_search").on("submit", function(e) {
-        e.preventDefault();
-        let _this = $(this);
-        let _input = _this[0].q;
-        let _container = $("#search-result");
-
-        if (_input.value == '') {
-            _container.html('<h5 class="mx-auto text-center text-secondary">Kata kunci belum kamu masukan?</h5>');
-        }
-
-        function lazzy() {
-            _container.html('<div id="loader" class="mx-auto my-5"></div>');
-        }
-
-        if (_input.value.length > 3) {
-            $.ajax({
-                url: _this[0].action,
-                method: "POST",
-                data: {
-                    q: _input.value
-                },
-                cache: false,
-                dataType: "html",
-                beforeSend: lazzy,
-                timeout: 1000,
-                success: function(data) {
-                    _container.html(data);
-                },
-                error: function(xhr) {
-                    alert('error function');
-                },
-            });
-        }
-        // console.log(_this[0].action);
-    });
 });

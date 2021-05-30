@@ -207,19 +207,21 @@ function modeBaca(x) {
     Focusable.hide();
   }
 }
-// $(document).ready(function() {
-// 	$('#camera_wrap').camera({ //here I declared some settings, the height and the presence of the thumbnails 
-// 		height: '40%',
-// 		pagination: false,
-// 		thumbnails: false,
-// 		loader: 'pie',
-// 		autoAdvance: true,
-// 		barPosition: 'bottom', 
-// 		loaderColor: '#fff',
-// 		loaderBgColor: 'lightseagreen'
-// 	});
-// });
 "use strict";
+
+$(document).ready(function () {
+  $('#camera_wrap').camera({
+    //here I declared some settings, the height and the presence of the thumbnails 
+    height: '30%',
+    pagination: false,
+    thumbnails: false,
+    loader: 'bar',
+    autoAdvance: true,
+    barPosition: 'bottom',
+    loaderColor: 'lightseagreen',
+    loaderBgColor: '#fff'
+  });
+});
 "use strict";
 
 $('.collapsible-link').click(function () {
@@ -313,6 +315,35 @@ function batal() {
   $(".emojionearea-editor").removeClass('is-invalid').addClass('is-valid');
   $(".reply_username").attr('id', '').html('');
 }
+"use strict";
+
+$(document).ready(function () {
+  $('.controler-ticker').easyTicker({
+    direction: 'up',
+    easing: 'swing',
+    speed: 'slow',
+    interval: 2000,
+    height: '250px',
+    visible: 3,
+    mousePause: true,
+    controls: {
+      up: '.btn-up',
+      down: '.btn-down',
+      toggle: '.btn-toggle',
+      playText: '<i class="fas fa-play-circle"></i>',
+      stopText: '<i class="fas fa-pause-circle"></i>'
+    },
+    callbacks: {
+      before: false,
+      after: false
+    }
+  });
+  $('.headline-ticker').easyTicker({
+    visible: 1,
+    interval: 4000,
+    direction: 'up'
+  });
+});
 // $(document).ready(function () {
 // 	$.validate({
 // 		form: '#form_daftar',
@@ -485,18 +516,22 @@ function explore() {
 
 $(document).ready(function () {
   // get all berita
-  var limit = 4;
+  var limit = 6;
   var start = 0;
   var action = "inactive";
   console.log(_uriSegment);
   var $url = $host ? _uriSegment[2] : _uriSegment[1];
 
   if ($url == 'beranda') {
+    var load_data_message = function load_data_message() {
+      $("#load_data_message").html("<div class=\"card border-0 bg-transparent shadow-none mb-5\">\n                        <div class=\"card-body text-danger text-center\">\n                        <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                            <h5 class=\"card-title\">Yahhh! abis</h5>  \n                            <p class=\"font-weight-light text-secondary\"> Berita yang anda load mungkin telah berakhir.</p>\n                        </div>\n                    </div>"));
+    };
+
     var lazzy_loader = function lazzy_loader(limit) {
       var output = "";
 
       for (var count = 0; count < 1; count++) {
-        output += "\n                <div class=\"card border border-light bg-white shadow-sm mb-3\" style=\"border-radius:10px;\">\n                    <div class=\"card-header border-0 bg-white\" style=\"border-radius:10px;\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style=\"width:100%; height: 300px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer d-flex justify-content-bettwen p-3 bg-transparent\">\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 p-2\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
+        output += "\n                <div class=\"card border border-light bg-white shadow-sm mb-3\" style=\"border-radius:5px;\">\n                    <div class=\"card-header border-0 bg-white\" style=\"border-radius:5px;\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style=\"width:100%; height: 300px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer d-flex justify-content-bettwen p-3 bg-transparent\">\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 p-2\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
       }
 
       $("#load_data_message").html(output);
@@ -509,19 +544,27 @@ $(document).ready(function () {
         method: "POST",
         data: {
           limit: limit,
-          start: start
+          start: start,
+          type: urlParams.get('type'),
+          sort: urlParams.get('sort')
         },
         cache: false,
         dataType: "json",
         success: function success(data) {
           if (data.html == "") {
-            $("#load_data_message").html("<div class=\"card border-0 bg-transparent shadow-none mb-5\">\n                                <div class=\"card-body text-danger text-center\">\n                                <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                                    <h5 class=\"card-title\">Yahhh! abis</h5>  \n                                    <p class=\"font-weight-light text-secondary\"> Berita yang anda load mungkin telah berakhir.</p>\n                                </div>\n                            </div>"));
+            load_data_message();
             $("button#load_more").hide();
             action = "active";
           } else {
+            if (data.count < 6) {
+              $("button#load_more").hide();
+              load_data_message();
+            } else {
+              $("#load_data_message").html("");
+            }
+
             $("#load_data").append(data.html);
-            $("#load_data_message").html("");
-            $("button#load_more").html("<i class=\"fas fa-newspaper mr-2\"></i> Load more berita").prop('disabled', false);
+            $("button#load_more").html("<i class=\"fas fa-newspaper mr-2\"></i> Loadmore").prop('disabled', false);
             action = "inactive";
             $(".lazy").lazy({
               beforeLoad: function beforeLoad(element) {
@@ -538,7 +581,7 @@ $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip({
               delay: 300,
               offset: '0,10px',
-              padding: 8
+              padding: 10
             });
           }
         },
@@ -583,60 +626,6 @@ $(document).ready(function () {
   } else {
     console.log('Semua berita tidak ditampilkan, karna bukan halaman beranda');
   }
-
-  $("button#caripost").on("click", function () {
-    $("#mpostseacrh").modal('show');
-    $("input[name='q']").focus();
-  });
-  $("a#caripost").on("click", function () {
-    $("#mpostseacrh").modal('show');
-    $("input[name='q']").focus();
-  });
-  $("a#mobileMenuNav").on("click", function () {
-    $("#mobileMenu").modal('show');
-  });
-  $('#mpostseacrh').on('hidden.bs.modal', function (e) {
-    $("input[name='q']").val('');
-    $("#form_post_search").submit();
-  });
-  $("#form_post_search").on("submit", function (e) {
-    e.preventDefault();
-
-    var _this = $(this);
-
-    var _input = _this[0].q;
-
-    var _container = $("#search-result");
-
-    if (_input.value == '') {
-      _container.html('<h5 class="mx-auto text-center text-secondary">Kata kunci belum kamu masukan?</h5>');
-    }
-
-    function lazzy() {
-      _container.html('<div id="loader" class="mx-auto my-5"></div>');
-    }
-
-    if (_input.value.length > 3) {
-      $.ajax({
-        url: _this[0].action,
-        method: "POST",
-        data: {
-          q: _input.value
-        },
-        cache: false,
-        dataType: "html",
-        beforeSend: lazzy,
-        timeout: 1000,
-        success: function success(data) {
-          _container.html(data);
-        },
-        error: function error(xhr) {
-          alert('error function');
-        }
-      });
-    } // console.log(_this[0].action);
-
-  });
 });
 "use strict";
 "use strict";
@@ -808,6 +797,79 @@ console.log('Location Origin', _uri); // Params
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 console.log('Params', queryString);
+"use strict";
+
+$(function () {
+  $("button#caripost").on("click", function () {
+    $("#mpostseacrh").modal('show');
+    $("input[name='q']").focus();
+  });
+  $("a#caripost").on("click", function () {
+    $("#mpostseacrh").modal('show');
+    $("input[name='q']").focus();
+  });
+  $("a#mobileMenuNav").on("click", function () {
+    $("#mobileMenu").modal('show');
+  });
+  $('#mpostseacrh').on('hidden.bs.modal', function (e) {
+    $("input[name='q']").val('');
+    $("#form_post_search").submit();
+  });
+  $("#form_post_search").on("submit", function (e) {
+    e.preventDefault();
+
+    var _this = $(this);
+
+    var _input = _this[0].q;
+
+    var _container = $("#search-result");
+
+    if (_input.value == '') {
+      _container.html("<div class=\"pl-3 pl-md-0 rounded d-flex justify-content-around align-items-center\">\n\t\t            \t\t<div class=\"d-none d-md-block\">\n\t\t            \t\t\t<i class=\"fas fa-search fa-2x\"></i>\n\t\t            \t\t</div>\n\t\t            \t\t<div class=\"py-3\">\n\t\t\t\t\t\t\t\t<h5>Silahkan masukan katakunci !</h5>\n\t\t\t\t            \t<p class=\"text-muted pl-3 border-left border-warning\">\n\t\t\t\t            \t\tSilahkan masukan keywords pencarian, dengan memasukan judul atau label\n\t\t\t\t            \t</p>\n\t\t            \t\t</div>\n\t\t            \t</div>\n            ");
+    }
+
+    function message(x, y) {
+      notif({
+        msg: "<i class='fas fa-info-circle mr-2'></i> ".concat(x),
+        type: y,
+        position: "bottom"
+      });
+    }
+
+    function lazzy() {
+      _container.html('<div id="loader" class="mx-auto my-5"></div>');
+    }
+
+    var old_keywords = JSON.parse(localStorage.getItem('keywords'));
+
+    if (_input.value.length > 3) {
+      $.ajax({
+        url: _this[0].action,
+        method: "POST",
+        data: {
+          q: _input.value
+        },
+        cache: false,
+        dataType: "json",
+        beforeSend: lazzy,
+        timeout: 1000,
+        success: function success(res) {
+          _container.html(res.data);
+
+          if (res.count != '0') {
+            message("".concat(res.count, " data ditemukan"), 'success');
+          }
+        },
+        error: function error(xhr) {
+          message('error function', 'error');
+        }
+      });
+    } else {
+      message('Silahkan masukan min. 3 karakter.', 'warning');
+    } // console.log(_this[0].action);
+
+  });
+});
 "use strict";
 
 $(document).ready(function () {

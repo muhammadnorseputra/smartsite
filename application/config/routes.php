@@ -106,6 +106,7 @@ $route['banner/(:any)/(:any)'] = 'frontend/v1/banner/detail/$1/$2';
 
 $route['testing'] = 'frontend/v1/beranda/testing';
 $route['d/(:any)/(:any)'] = 'frontend/v1/download/d/$1/$2';
+$route['leave'] = 'frontend/v1/api/leave';
 $route['go/(:any)'] = 'frontend/v1/download/openurl/$1';
 
 
