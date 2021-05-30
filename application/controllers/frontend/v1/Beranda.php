@@ -65,7 +65,7 @@ class Beranda extends CI_Controller
     }
 
     function template_sumber($text, $icon) {
-        $html = '<div class="btn-group btn-group-sm mb-2 ml-2 ml-md-0" role="group" aria-label="button">
+        $html = '<div class="btn-group btn-group-sm mb-2 ml-3 ml-md-0" role="group" aria-label="button">
                     <button type="button" class="btn btn-sm btn-light" disabled>'.$icon.'</button>
                     <button type="button" class="btn btn-sm btn-default"  disabled>'.$text.'</button>
                 </div>';
