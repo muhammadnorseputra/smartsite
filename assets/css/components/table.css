@@ -1,0 +1,89 @@
+/* Tables ====================================== */
+
+.table tbody tr td,
+.table tbody tr th {
+	padding: 15px 10px 5px 10px;
+	border-top: 1px solid #f6f6f6;
+	border-bottom: 1px solid #f6f6f6;
+	font-size: 12px;
+	color: #666;
+	font-family: "Roboto", sans-serif;
+}
+
+/* .table tbody tr {
+	border-left: 1px solid #eee;
+}
+
+.table tbody tr:hover {
+	background: rgb(255, 254, 217);
+	border-left: 1px solid teal;
+
+} */
+
+/* .table tbody tr:last-child {
+	border-bottom: 2px solid #ccc;
+	-webkit-box-shadow: inset -0px -1em 1em rgba(161, 161, 161, 0.3);
+	border-left: 3px solid transparent;
+} */
+
+.table tbody tr.primary td,
+.table tbody tr.primary th {
+	background-color: #1f91f3;
+	color: #fff;
+}
+
+.table tbody tr.success td,
+.table tbody tr.success th {
+	background-color: #2b982b;
+	color: #fff;
+}
+
+.table tbody tr.info td,
+.table tbody tr.info th {
+	background-color: #00b0e4;
+	color: #fff;
+}
+
+.table tbody tr.warning td,
+.table tbody tr.warning th {
+	background-color: #ff9600;
+	color: #fff;
+}
+
+.table tbody tr.danger td,
+.table tbody tr.danger th {
+	background-color: #fb483a;
+	color: #fff;
+}
+
+.table thead tr th,
+.table tfoot tr th {
+	padding: 10px;
+	/* background: #DEDEDE; */
+	color: #999;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+/* .table thead tr th:last-child {
+	border-top-right-radius: 5px;
+}
+
+.table thead tr th:first-child {
+	border-top-left-radius: 5px;
+} */
+
+.table-bordered {
+	border-top: 1px solid #eee;
+}
+
+.table-bordered tbody tr td,
+.table-bordered tbody tr th {
+	padding: 10px;
+	border: 1px solid #eee;
+}
+
+.table-bordered thead tr th {
+	padding: 10px;
+	border: 1px solid #eee;
+}

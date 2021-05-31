@@ -1,0 +1,7 @@
+/* Mouse selection */
+::selection,
+::-moz-selection,
+::-webkit-selection {
+	background: teal !important;
+	color: rgb(255, 255, 255) !important;
+}

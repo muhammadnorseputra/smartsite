@@ -1,0 +1,458 @@
+/* Badge | List Group Item ===================== */
+.badge {
+	border-radius: 2px;
+}
+
+.list-group-item {
+	border-radius: 0;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.list-group .active {
+	background-color: #2196f3;
+	border-color: #2196f3;
+}
+
+.list-group .active:hover,
+.list-group .active:focus,
+.list-group .active:active {
+	background-color: #2196f3;
+	border-color: #2196f3;
+}
+
+.list-group .active .list-group-item-text {
+	color: #dfe9f1;
+	font-size: 13px;
+}
+
+.list-group .active .list-group-item-text:hover,
+.list-group .active .list-group-item-text:active,
+.list-group .active .list-group-item-text:focus {
+	color: #dfe9f1;
+}
+
+.list-group .list-group-item.active:hover .list-group-item-text,
+.list-group .list-group-item.active:focus .list-group-item-text,
+.list-group .list-group-item.active:active .list-group-item-text {
+	color: #dfe9f1;
+}
+
+.list-group .list-group-item:first-child,
+.list-group .list-group-item:last-child {
+	border-radius: 0;
+}
+
+.list-group .list-group-item .list-group-item-heading {
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.list-group .list-group-item-success {
+	background-color: #2b982b;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-item-success:hover,
+.list-group .list-group-item-success:focus {
+	background-color: #2b982b;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .list-group-item-info {
+	background-color: #00b0e4;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-item-info:hover,
+.list-group .list-group-item-info:focus {
+	background-color: #00b0e4;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .list-group-item-warning {
+	background-color: #ff9600;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-item-warning:hover,
+.list-group .list-group-item-warning:focus {
+	background-color: #ff9600;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .list-group-item-danger {
+	background-color: #fb483a;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-item-danger:hover,
+.list-group .list-group-item-danger:focus {
+	background-color: #fb483a;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-red {
+	stroke: #f44336;
+}
+
+.list-group .list-group-bg-red {
+	background-color: #f44336;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-red:hover,
+.list-group .list-group-bg-red:focus {
+	background-color: #f44336;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-pink {
+	stroke: #e91e63;
+}
+
+.list-group .list-group-bg-pink {
+	background-color: #e91e63;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-pink:hover,
+.list-group .list-group-bg-pink:focus {
+	background-color: #e91e63;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-purple {
+	stroke: #9c27b0;
+}
+
+.list-group .list-group-bg-purple {
+	background-color: #9c27b0;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-purple:hover,
+.list-group .list-group-bg-purple:focus {
+	background-color: #9c27b0;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-deep-purple {
+	stroke: #673ab7;
+}
+
+.list-group .list-group-bg-deep-purple {
+	background-color: #673ab7;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-deep-purple:hover,
+.list-group .list-group-bg-deep-purple:focus {
+	background-color: #673ab7;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-indigo {
+	stroke: #3f51b5;
+}
+
+.list-group .list-group-bg-indigo {
+	background-color: #3f51b5;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-indigo:hover,
+.list-group .list-group-bg-indigo:focus {
+	background-color: #3f51b5;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-blue {
+	stroke: #2196f3;
+}
+
+.list-group .list-group-bg-blue {
+	background-color: #2196f3;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-blue:hover,
+.list-group .list-group-bg-blue:focus {
+	background-color: #2196f3;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-light-blue {
+	stroke: #03a9f4;
+}
+
+.list-group .list-group-bg-light-blue {
+	background-color: #03a9f4;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-light-blue:hover,
+.list-group .list-group-bg-light-blue:focus {
+	background-color: #03a9f4;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-cyan {
+	stroke: #00bcd4;
+}
+
+.list-group .list-group-bg-cyan {
+	background-color: #00bcd4;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-cyan:hover,
+.list-group .list-group-bg-cyan:focus {
+	background-color: #00bcd4;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-teal {
+	stroke: #009688;
+}
+
+.list-group .list-group-bg-teal {
+	background-color: #009688;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-teal:hover,
+.list-group .list-group-bg-teal:focus {
+	background-color: #009688;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-green {
+	stroke: #4caf50;
+}
+
+.list-group .list-group-bg-green {
+	background-color: #4caf50;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-green:hover,
+.list-group .list-group-bg-green:focus {
+	background-color: #4caf50;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-light-green {
+	stroke: #8bc34a;
+}
+
+.list-group .list-group-bg-light-green {
+	background-color: #8bc34a;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-light-green:hover,
+.list-group .list-group-bg-light-green:focus {
+	background-color: #8bc34a;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-lime {
+	stroke: #cddc39;
+}
+
+.list-group .list-group-bg-lime {
+	background-color: #cddc39;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-lime:hover,
+.list-group .list-group-bg-lime:focus {
+	background-color: #cddc39;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-yellow {
+	stroke: #ffe821;
+}
+
+.list-group .list-group-bg-yellow {
+	background-color: #ffe821;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-yellow:hover,
+.list-group .list-group-bg-yellow:focus {
+	background-color: #ffe821;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-amber {
+	stroke: #ffc107;
+}
+
+.list-group .list-group-bg-amber {
+	background-color: #ffc107;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-amber:hover,
+.list-group .list-group-bg-amber:focus {
+	background-color: #ffc107;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-orange {
+	stroke: #ff9800;
+}
+
+.list-group .list-group-bg-orange {
+	background-color: #ff9800;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-orange:hover,
+.list-group .list-group-bg-orange:focus {
+	background-color: #ff9800;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-deep-orange {
+	stroke: #ff5722;
+}
+
+.list-group .list-group-bg-deep-orange {
+	background-color: #ff5722;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-deep-orange:hover,
+.list-group .list-group-bg-deep-orange:focus {
+	background-color: #ff5722;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-brown {
+	stroke: #795548;
+}
+
+.list-group .list-group-bg-brown {
+	background-color: #795548;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-brown:hover,
+.list-group .list-group-bg-brown:focus {
+	background-color: #795548;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-grey {
+	stroke: #9e9e9e;
+}
+
+.list-group .list-group-bg-grey {
+	background-color: #9e9e9e;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-grey:hover,
+.list-group .list-group-bg-grey:focus {
+	background-color: #9e9e9e;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-blue-grey {
+	stroke: #607d8b;
+}
+
+.list-group .list-group-bg-blue-grey {
+	background-color: #607d8b;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-blue-grey:hover,
+.list-group .list-group-bg-blue-grey:focus {
+	background-color: #607d8b;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-black {
+	stroke: #000000;
+}
+
+.list-group .list-group-bg-black {
+	background-color: #000000;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-black:hover,
+.list-group .list-group-bg-black:focus {
+	background-color: #000000;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.list-group .pl-white {
+	stroke: #ffffff;
+}
+
+.list-group .list-group-bg-white {
+	background-color: #ffffff;
+	border: none;
+	color: #fff;
+}
+
+.list-group .list-group-bg-white:hover,
+.list-group .list-group-bg-white:focus {
+	background-color: #ffffff;
+	color: #fff;
+	opacity: 0.8;
+}

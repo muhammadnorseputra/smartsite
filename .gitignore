@@ -1,0 +1,8 @@
+node_modules/*
+.sass-cache/*
+.vscode/*
+vendor/*
+workspace.code-workspace
+*.txt
+old-index.php
+.editorconfig
