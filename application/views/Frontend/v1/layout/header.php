@@ -1,5 +1,5 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar fixed-top navbar-expand-sm bg-white shadow-sm py-1 navbar-light d-none d-md-block d-lg-block">
+<nav id="navbar" class="navbar fixed-top navbar-expand-sm bg-white navbar-light d-none d-md-block d-lg-block">
 	<div class="container">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
 			<?php echo '<img class="lazy" data-src="data:image/jpeg;base64,' . word_limiter(base64_encode($mf_beranda->site_logo), 4) . '" width="150"/>'; ?>

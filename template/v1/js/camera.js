@@ -5,13 +5,13 @@ $(document).ready(function() {
         thumbnails: false,
         loader: 'bar',
         autoAdvance: true,
-        barPosition: 'bottom',
+        barPosition: 'top',
         loaderColor: 'lightseagreen',
         loaderBgColor: '#fff',
         alignment: 'center',
         easing: 'easeInOutExpo', //http://jqueryui.com/demos/effect/easing.html
         fx: 'random',
-        time: 7000,
+        time: 10000,
         transPeriod: 1500
     });
 });

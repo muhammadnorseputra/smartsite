@@ -217,14 +217,14 @@ $(document).ready(function () {
     thumbnails: false,
     loader: 'bar',
     autoAdvance: true,
-    barPosition: 'bottom',
+    barPosition: 'top',
     loaderColor: 'lightseagreen',
     loaderBgColor: '#fff',
     alignment: 'center',
     easing: 'easeInOutExpo',
     //http://jqueryui.com/demos/effect/easing.html
     fx: 'random',
-    time: 7000,
+    time: 10000,
     transPeriod: 1500
   });
 });
@@ -739,7 +739,7 @@ $(document).ready(function () {
   // make it as accordion for smaller screens
   $(document).scroll(function () {
     if ($(document).scrollTop() > 10) {
-      $("nav#navbar").css("transition", ".1s ease-in").addClass("shadow py-0");
+      $("nav#navbar").css("transition", ".5s ease-in-out").addClass("shadow py-0");
       $("button#caripost").addClass('btn-outline-light');
     } else {
       $("button#caripost").removeClass('btn-outline-light'); // $("button#caripost").toggleClass('');
