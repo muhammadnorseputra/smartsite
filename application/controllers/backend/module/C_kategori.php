@@ -15,7 +15,7 @@ class C_kategori extends CI_Controller {
 	{
  
     $data = [
-        'content' => 'Backend/__module/___Kategori/v_table',
+        'content' => 'Backend/__Module/___Kategori/v_table',
         'scriptjs' => 'Backend/__ServerSideJs/Kategori/s_kategori',
         'pageinfo' => '<li> Dasboard</li>
               <li class="active">Kategori</li>',
