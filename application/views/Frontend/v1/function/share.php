@@ -54,7 +54,7 @@ endif;
     $("#share").jsSocials({
         url: "<?= base_url($posturl) ?>",
         shares: ["email", "twitter", "facebook", "whatsapp", 'telegram'],
-        text: "<?= $detail->judul; ?>",
+        text: "",
         showLabel: true,
         showCount: true,
         showCount: "inside",
