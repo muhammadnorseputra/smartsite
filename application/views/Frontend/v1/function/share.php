@@ -25,26 +25,30 @@ if($detail->type === 'LINK'):
     $imgSrc = $linker['image'];
     // var_dump($linker);
 endif;
+$url_sumber = base_url('beranda');
+$sumber = parse_url($url_sumber, PHP_URL_HOST);
 ?>
-<div class="conteiner bg-light rounded m-3">
+<div class="conteiner bg-light shadow rounded m-3">
     <div class="row">
+        <div class="col-12 col-md-6 order-last order-md-first">
+            <div class="p-2">
+                <div class="text-muted small ml-md-0 mb-2 text-center text-md-left"><?= $sumber ?></div> 
+                <b class="small text-dark text-left d-block"> <?= word_limiter($detail->judul, 8); ?> </b>
+            </div>
+        </div>
         <div class="col-12 col-md-6">
         <?php
         if($detail->type === 'BERITA'):
             if(!empty($detail->img)):
-                $img = '<img class="img-fluid rounded-left" src="'.base_url('files/file_berita/'.$detail->img).'">';
+                $img = '<img class="img-fluid rounded-right" src="'.base_url('files/file_berita/'.$detail->img).'">';
             else:
-                $img = '<img class="img-fluid rounded-left" src="data:image/jpeg;base64,'.base64_encode( $detail->img_blob ).'"/>';
+                $img = '<img class="img-fluid rounded-right" src="data:image/jpeg;base64,'.base64_encode( $detail->img_blob ).'"/>';
             endif;
         else:
             $img = '<img class="img-fluid rounded-left" src="'.$imgSrc.'">';
         endif; 
         echo $img;
         ?>
-        </div>
-        <div class="col-12 col-md-6">
-            <div class="text-muted small my-3 ml-3 ml-md-0"><?= base_url() ?></div> 
-            <b class="small text-reset text-center text-md-left d-block"> <?= word_limiter($detail->judul, 10); ?> </b>
         </div>
     </div>
 </div>
@@ -55,7 +59,7 @@ endif;
         url: "<?= base_url($posturl) ?>",
         shares: ["email", "twitter", "facebook", "whatsapp", 'telegram'],
         text: "",
-        showLabel: true,
+        showLabel: false,
         showCount: true,
         showCount: "inside",
         shareIn: "popup",

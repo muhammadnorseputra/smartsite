@@ -61,9 +61,11 @@
 <script>
 $(function() {
     $("#share").jsSocials({
-        url: "<?= curPageURL() ?>",
         shares: ["email", "twitter", "facebook", "telegram", "whatsapp"],
-        text: ""
+        text: "",
+        shareIn: "blank",
+        showCount: "inside",
+        showLabel: false,
     });
 })
 </script>

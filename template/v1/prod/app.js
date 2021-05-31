@@ -67,7 +67,7 @@ $(document).ready(function () {
       title: false,
       content: "url:" + _uri + "/frontend/v1/beranda/share_artikel/" + _id,
       columnClass: "medium",
-      theme: "material",
+      theme: "supervan",
       bgOpacity: 0.9,
       animateFromElement: true,
       animationSpeed: 800,
