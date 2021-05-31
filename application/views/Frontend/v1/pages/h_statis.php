@@ -60,9 +60,10 @@
 <script src="<?= base_url('bower_components/jquery/dist/jquery.min.js') ?>"></script>
 <script>
 $(function() {
-
     $("#share").jsSocials({
-        shares: ["email", "twitter", "facebook", "telegram", "whatsapp"]
+        url: "<?= curPageURL() ?>",
+        shares: ["email", "twitter", "facebook", "telegram", "whatsapp"],
+        text: ""
     });
 })
 </script>

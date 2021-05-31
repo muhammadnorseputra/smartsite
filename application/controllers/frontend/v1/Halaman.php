@@ -40,11 +40,11 @@ class Halaman extends CI_Controller
     
     $meta_tag = meta_tags($e, 
                           $title = $title, 
-                          $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 25))), 
+                          $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 10))), 
                           $imgUrl = $imgurl, 
                           $url = base_url('page/'.$token_halaman.'/'.url_title($judul)), 
                           $keyWords = $keywords,
-                          $type = 'page'
+                          $type = 'article'
                         );
     else:
       $meta_tag = '';
