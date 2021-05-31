@@ -12,6 +12,7 @@ class Post extends CI_Controller
         $this->load->model('model_template_v1/M_f_users', 'mf_users'); 
         $this->load->model('M_b_komentar', 'komentar');
         $this->load->helper('time_ago');
+        $this->load->library('image_lib');
         //Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
             // redirect(base_url('frontend/v1/beranda'),'refresh');
@@ -457,14 +458,59 @@ class Post extends CI_Controller
         public function upload_single_photo($id)
         {
             $idb = decrypt_url($id);
+            
+            $filename = "blob_".strtolower($_FILES['file']['name']);
+            $path = 'files/file_berita/';
+
+            $file_old = $this->post->getFileNameById($idb);
+            if (file_exists('./files/file_berita/'.$file_old)) {
+                unlink('./files/file_berita/'.$file_old);
+                if(file_exists('./files/file_berita/thumb/'.$file_old)) {
+                    unlink('./files/file_berita/thumb/'.$file_old);
+                }
+            }
+
             $blob = file_get_contents($_FILES['file']['tmp_name']);
             $data = [
-                'img_blob' => $blob
+                'img_blob' => $blob,
+                'img' => $filename
             ];
-            $upload = $this->post->doUpdatePhoto('t_berita', $idb, $data);
+            $upload = $this->post->doUpdatePhoto('t_berita', ['id_berita' => $idb], $data);
             if($upload == true)
             {
                 $msg = true;
+                file_put_contents($path.$filename,$blob);
+                $this->watermark($filename);
+                $this->resizeImage($filename);
+            } else {
+                $msg = false;
+            }
+            echo json_encode($msg);
+        }
+        public function upload_single_photo_terkait($id_berita)
+        {
+            $id = decrypt_url($id_berita);
+            $path_dir = 'files/file_berita/photo_terkait/'.$id_berita;
+            if (!is_dir($path_dir)) {
+                mkdir('files/file_berita/photo_terkait/'.$id_berita, 0777, TRUE);
+            }
+            $filename = strtolower($_FILES['file']['name']);
+            $path = 'files/file_berita/photo_terkait/'.$id_berita.'/';
+            
+
+            $blob = file_get_contents($_FILES['file']['tmp_name']);
+            $data = [
+                'fid_berita' => $id,
+                'judul' => $this->input->post('judul_photo'),
+                'photo' => $filename,
+                'created_at' => date('Y-m-d'),
+                'created_by' => $this->session->userdata('user_portal_log')['id']
+            ];
+            $upload = $this->post->doInsertPhotoTerkait('t_berita_photo', $data);
+            if($upload == true)
+            {
+                $msg = true;
+                file_put_contents($path.$filename,$blob);
             } else {
                 $msg = false;
             }
@@ -474,8 +520,15 @@ class Post extends CI_Controller
         {
             $table = 't_berita';
             $id = $this->input->post('id');
+            $file_old = $this->post->getFileNameById($id);
+            if (file_exists('./files/file_berita/'.$file_old)) {
+                unlink('./files/file_berita/'.$file_old);
+                if(file_exists('./files/file_berita/thumb/'.$file_old)) {
+                    unlink('./files/file_berita/thumb/'.$file_old);
+                }
+            }
+
             $delete = $this->post->deletePost($table, $id);
-            
             if($delete == true)
             {
                 $msg = ['valid' => true];
@@ -652,6 +705,41 @@ class Post extends CI_Controller
             $valid = false;
         }
         echo json_encode($valid);
+    }
+
+    public function watermark($filename) {
+        $url = base_url('beranda');
+        $wm = parse_url($url, PHP_URL_HOST);
+        $config['source_image'] = './files/file_berita/'. $filename;
+        $config['wm_text'] = $wm;
+        $config['wm_type'] = 'text';
+        $config['wm_font_size'] = '8';
+        $config['wm_font_color'] = '#ffffff';
+        $config['wm_vrt_alignment'] = 'bottom';
+        $config['wm_hor_alignment'] = 'left';
+        $config['wm_padding'] = '3';
+
+        $this->image_lib->initialize($config);
+        $this->image_lib->watermark();
+    }
+    
+    public function resizeImage($filename)
+    {
+        
+        $source_path = './files/file_berita/' . $filename;
+        $target_path = './files/file_berita/thumb/'. $filename;
+        $config = array(
+                'image_library' => 'gd2',
+                'source_image' => $source_path,
+                'new_image' => $target_path,
+                'create_thumb' => TRUE,
+                'maintain_ratio' => FALSE,
+                'width' => '450',
+                'height' => '292'
+        );
+    
+        $this->image_lib->initialize($config);
+        $this->image_lib->resize();
     }
 }
 

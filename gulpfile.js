@@ -64,7 +64,7 @@ gulp.task("vendor-js", function() {
             "template/v1/plugin/camera/scripts/camera.min.js",
             // "template/v1/plugin/dark-mode/dark-mode-switch.js",
             "assets/plugins/jquery-cookie/jquery.cookie.js",
-            "assets/plugins/jquery-countto/jquery.countTo.js",
+            // "assets/plugins/jquery-countto/jquery.countTo.js",
             "assets/plugins/jquery-confirm/jquery-confirm.min.js",
             "bower_components/bootstrap/dist/js/bootstrap.bundle.min.js",
             // "bower_components/typed.js/lib/typed.min.js",

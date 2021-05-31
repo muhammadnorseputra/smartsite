@@ -40,6 +40,7 @@
 						</div>
 					</div>
 
+					<?php if($post->type === 'SLIDE'): ?>
 					<!-- Accordion item 3 -->
 					<div class="card rounded-0">
 						<div class="card-header shadow-sm border-0">
@@ -49,13 +50,12 @@
 						</div>
 						<div id="collapseTree" aria-labelledby="headingTree" data-parent="#accordionExample" class="collapse">
 							<?php if($photo_terkait->num_rows() > 0): ?>
-								<?php foreach ($photo_terkait as $p):?>
+								<?php foreach ($photo_terkait->result() as $p):?>
 									<div class="card bg-dark text-white">
 									  <img class="card-img" src="data:image/jpeg;base64,<?= base64_encode($p->photo) ?>" alt="photo terkait">
 									  <div class="card-img-overlay">
 									    <h5 class="card-title"><?= $p->judul ?></h5>
 									    <p class="card-text"><?= $p->keterangan ?></p>
-									    <p class="card-text">Last updated 3 mins ago</p>
 									  </div>
 									</div>
 								<?php endforeach; ?>
@@ -68,6 +68,7 @@
 							<?php endif; ?>
 						</div>
 					</div>
+					<?php endif ?>
 					<!-- Accordion item 2 -->
 					<div class="card rounded-0">
 						<div class="card-header shadow-sm border-0">
@@ -108,7 +109,7 @@
 <div class="modal" id="uploadPhoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <?= form_open_multipart(base_url('frontend/v1/upload_photo')) ?>
+      <?= form_open_multipart(base_url('#'), ['id' => 'f_photo_terkait']) ?>
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Single Upload</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -117,18 +118,16 @@
       </div>
       <div class="modal-body">
           <div class="form-group">
-          	<div class="custom-file">
-			  <input type="file" class="custom-file-input" id="customFile">
-			  <label class="custom-file-label" name="photo" for="customFile">Pilih file</label>
-			</div>
+						  <label for="file_foto">Pilih file</label>
+						  <input type="file" id="file_foto" class="form-control">
           </div>	
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Judul:</label>
-            <input type="text" class="form-control" name="judul" id="recipient-name">
+            <input type="text" class="form-control" name="judul_photo" id="recipient-name">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Keterangan:</label>
-            <textarea class="form-control" name="keterangan" id="message-text"></textarea>
+            <textarea class="form-control" name="keterangan_photo" id="message-text"></textarea>
           </div>
       </div>
       <div class="modal-footer">
@@ -154,9 +153,15 @@
 	});
 
 	$(document).ready(function() {
-		function upload_photo() {
-
+		// Message
+		function message(x,y) {
+			notif({
+				msg: `<i class='fas fa-info-circle mr-2'></i> ${x}`,
+				type: y,
+				position: "bottom",
+			});
 		}
+
 		// Image Preview
 		function readURL(input, $element) {
 			if (input.files && input.files[0]) {
@@ -196,6 +201,41 @@
 			}
 		});
 
+		/* upload single photo terkait */
+		var upload_photo = $("#file_foto");
+		var judul_photo = $("input[name='judul_photo']");
+		upload_photo.change(function() {
+			var fileName = $(this).val().split('\\')[$(this).val().split('\\').length - 1];
+			judul_photo.val(fileName.split('.').slice(0, -1).join('.'));
+		    var form_data = new FormData();
+				form_data.append("file", this.files[0]);
+
+				var oFReader = new FileReader();
+				oFReader.readAsDataURL(this.files[0]);
+			$("form#f_photo_terkait").on("submit", function(e) {
+				e.preventDefault();
+				let $online = _uriSegment[5];
+		    let $local = _uriSegment[6];
+		    let $id = $host ? $local : $online;
+
+		    $.ajax({
+					url: _uri + "/frontend/v1/post/upload_single_photo_terkait/" + $id,
+					method: "POST",
+					data: form_data,
+					contentType: false,
+					cache: false,
+					dataType: 'json',
+					processData: false,
+					success: function(data) {
+						if (data == true) {
+							message('Photo Uploaded', 'success');
+						}
+					}
+				});
+			})
+	  });
+
+		
 		/* upload single photo berita */
 		var fileupload = $("#FileUpload");
 		var filePath = $("p#FilePath");
@@ -214,8 +254,13 @@
 
 			var oFReader = new FileReader();
 			oFReader.readAsDataURL(this.files[0]);
+
+			let $online = _uriSegment[5];
+	    let $local = _uriSegment[6];
+	    let $id = $host ? $local : $online;
+			
 			$.ajax({
-				url: _uri + "/frontend/v1/post/upload_single_photo/" + _uriSegment[5],
+				url: _uri + "/frontend/v1/post/upload_single_photo/" + $id,
 				method: "POST",
 				data: form_data,
 				contentType: false,

@@ -32,17 +32,24 @@ class Halaman extends CI_Controller
     $detail = $this->halaman->get_detail_halaman($token_halaman);
     $keywords = str_replace('-',',',url_title(strtolower($title)));
     // jika ada gambar
+    
+    if($detail->num_rows() > 0):
     $path = $detail->row()->filename;
     $ext = pathinfo($path, PATHINFO_EXTENSION); 
-    $imgurl = $ext != '.pdf' ? 'data:image/jpeg;base64,'.$detail->row()->file.'' : '-';
+    $imgurl = $ext != 'pdf' ? base_url('files/randoms/'.$path) : base_url('assets/images/logo.png');
+    
     $meta_tag = meta_tags($e, 
                           $title = $title, 
                           $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 25))), 
-                          $imgUrl = '', 
+                          $imgUrl = $imgurl, 
                           $url = base_url('page/'.$token_halaman.'/'.url_title($judul)), 
                           $keyWords = $keywords,
                           $type = 'page'
                         );
+    else:
+      $meta_tag = '';
+    endif;
+
     // Data
     $data = [
       'title' => $title,
@@ -92,6 +99,7 @@ class Halaman extends CI_Controller
     if(!empty($filename)) 
     {
       $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
+      file_put_contents('files/randoms/'.$filename,$file);
       $data = [
         'fid_users_portal' => $this->session->userdata('user_portal_log')['id'],
         'token_halaman' => $token,
@@ -131,13 +139,19 @@ class Halaman extends CI_Controller
     $isi   = $this->input->post('content');
     $etoken    = $this->input->post('etoken');
     $newtoken    = mt_rand(100000000,999999999);
-    
+    $path = 'files/randoms/';
     if($etoken == 'on')
     {
       $token_halaman = $newtoken;
       if(!empty($_FILES['lampiran']['tmp_name']) 
        && file_exists($_FILES['lampiran']['tmp_name'])) {
+
+        $file_old = $this->halaman->getFileNameByToken($token);
+        if (file_exists($path.$file_old)) {
+            unlink($path.$file_old);
+        }
         $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
+        file_put_contents($path.$filename,$file);
         $data = [
           'token_halaman' => $newtoken,
           'title' => $title,
@@ -159,7 +173,14 @@ class Halaman extends CI_Controller
       $token_halaman = intval($token);
       if(!empty($_FILES['lampiran']['tmp_name']) 
        && file_exists($_FILES['lampiran']['tmp_name'])) {
+        $file_old = $this->halaman->getFileNameByToken($token_halaman);
+        if(!empty($file_old)):
+          if (file_exists($path.$file_old)) {
+              unlink($path.$file_old);
+          }
+        endif;
         $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
+        file_put_contents($path.$filename,$file);
         $data = [
           'title' => $title,
           'content' => $isi,
@@ -191,9 +212,13 @@ class Halaman extends CI_Controller
   public function deleteHalaman()
   {
     $table = 't_halaman';
-    $id = $this->input->post('id');
+    $id = $this->input->post('id'); // TOKEN
+    $path = 'files/randoms/';
+    $file_old = $this->halaman->getFileNameByToken($id);
+    if (file_exists($path.$file_old)) {
+        unlink($path.$file_old);
+    }
     $delete = $this->halaman->doDeleteHalaman($table, $id);
-
     if ($delete == true) {
       $msg = ['valid' => true];
     } else {
@@ -275,6 +300,11 @@ class Halaman extends CI_Controller
 
   public function hapus_lampiran() {
     $id = $this->input->get('id');
+    $path = 'files/randoms/';
+    $file_old = $this->halaman->getFileNameByToken($id);
+    if (file_exists($path.$file_old)) {
+        unlink($path.$file_old);
+    }
     $data = ['filename' => NULL, 'file' => NULL];
     $whr = ['token_halaman' => $id];
     $db = $this->halaman->hapus_lampiran('t_halaman', $whr, $data);
@@ -283,6 +313,7 @@ class Halaman extends CI_Controller
     } else {
       $msg = false;
     }
+
     echo json_encode($msg);
   }
 }

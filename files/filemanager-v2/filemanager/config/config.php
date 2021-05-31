@@ -211,7 +211,7 @@ $config = array(
     | in Megabytes
     |
     */
-    'MaxSizeUpload' => 10,
+    'MaxSizeUpload' => 20,
 
     /*
     |--------------------------------------------------------------------------
@@ -219,8 +219,8 @@ $config = array(
     |--------------------------------------------------------------------------
     |
     */
-    'filePermission' => 0766,
-    'folderPermission' => 0766,
+    'filePermission' => 777,
+    'folderPermission' => 777,
 
 
     /*

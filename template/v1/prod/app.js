@@ -219,7 +219,13 @@ $(document).ready(function () {
     autoAdvance: true,
     barPosition: 'bottom',
     loaderColor: 'lightseagreen',
-    loaderBgColor: '#fff'
+    loaderBgColor: '#fff',
+    alignment: 'center',
+    easing: 'easeInOutExpo',
+    //http://jqueryui.com/demos/effect/easing.html
+    fx: 'random',
+    time: 7000,
+    transPeriod: 1500
   });
 });
 "use strict";
@@ -341,7 +347,14 @@ $(document).ready(function () {
   $('.headline-ticker').easyTicker({
     visible: 1,
     interval: 4000,
-    direction: 'up'
+    direction: 'up',
+    controls: {
+      up: '.btn-up',
+      down: '.btn-down',
+      toggle: '.btn-toggle',
+      playText: '<i class="fas fa-play-circle"></i>',
+      stopText: '<i class="fas fa-pause-circle"></i>'
+    }
   });
 });
 // $(document).ready(function () {
@@ -628,11 +641,15 @@ $(document).ready(function () {
   }
 });
 "use strict";
+// $(function() {
+//     $('h3#count_jml').countTo({
+//         refreshInterval: '50',
+//         formatter: function(value, options) {
+//             return value.toFixed(options.decimals);
+//         },
+//     });
+// });
 "use strict";
-
-$(function () {
-  $('h3#count_jml').countTo();
-});
 // $(document).ready(function () {
 // // Instagram
 // function nFormatter(num) {

@@ -41,7 +41,7 @@
       </div>
         <?php 
         if(!empty($h->file)):
-        $path = $h->filename;
+        $path = !empty($h->filename) ? $h->filename : '';
         $ext = pathinfo($path, PATHINFO_EXTENSION); 
         ?>
       <div class="col-md-4 bg-white p-md-4">

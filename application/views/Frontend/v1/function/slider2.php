@@ -1,6 +1,6 @@
 <div class="container-fluid mt-md-5">
     <div class="row">
-    <div id="camera_wrap" class="camera_wrap camera_black_skin shadow bg-white mt-md-3">
+    <div id="camera_wrap" class="camera_wrap camera_black_skin shadow mt-md-3">
         <?php
         if ($mf_banner->num_rows() > 0) {
         foreach ($mf_banner->result() as $b):

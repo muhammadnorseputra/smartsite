@@ -116,6 +116,49 @@ if (count($pecah) > 0) {
 							</div>
 						</div>
 					</div>
+
+					<div>
+						<div class="py-1 mb-3 bg-light"></div>
+						<div class="d-flex justify-content-between flex-lg-row flex-column">
+							<?php
+							foreach ($berita_selanjutnya->result() as $b):
+							$by = $b->created_by;
+							$id = encrypt_url($b->id_berita);
+							$postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($by))));
+							$judul = strtolower($b->judul);
+							$posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
+							if ($by == 'admin') {
+							$namapanggilan = $by;
+							} else {
+							$namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
+							}
+							if(!empty($b->img)):
+							$img = '<img class="img-fluid rounded lazy p-0 m-0" data-src="'.base_url('files/file_berita/'.$b->img).'">';
+							else:
+							$img = '<img class="img-fluid rounded lazy p-0 m-0" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
+							endif;
+							?>
+							<?php if($berita_selanjutnya->num_rows() > 0): ?>
+							<a href="<?= $posturl ?>" class="text-link">
+								<div class="media">
+									<span class="rippler rippler-img rippler-bs-danger mr-3 w-25">
+										<?= $img ?>
+									</span>
+									<div class="media-body px-2">
+										<p class="mb-0"><?= word_limiter($b->judul, 4); ?></p>
+										<span class="text-muted small">
+											<?= word_limiter($b->content, 6) ?>
+										</span>
+									</div>
+								</div>
+							</a>
+							<?php endif; ?>
+							<?php endforeach; ?>
+						</div>
+						<div class="py-1 bg-light"></div>
+
+					</div>
+
 					<?php if($post_detail->komentar_status == 0): ?>
 					<div class="card my-4 border-0 bg-white">
 						<div class="card-body" style="max-height: 480px; overflow-y: auto;">
@@ -160,53 +203,13 @@ if (count($pecah) > 0) {
 						 Komentar Ditutup
 					</div>
 					<?php endif; ?>
-					<div class="mt-md-5 mt-3">
-						<div class="separator">
-							<span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-quote-left fa-pull-left mr-2"></i>Berita Selanjutnya</span>
-						</div>
-						<div class="d-flex justify-content-between flex-lg-row flex-column">
-							<?php
-							foreach ($berita_selanjutnya->result() as $b):
-							$by = $b->created_by;
-							$id = encrypt_url($b->id_berita);
-							$postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($by))));
-							$judul = strtolower($b->judul);
-							$posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
-							if ($by == 'admin') {
-							$namapanggilan = $by;
-							} else {
-							$namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
-							}
-							if(!empty($b->img)):
-							$img = '<img class="img-fluid rounded lazy p-0 m-0" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="'.base_url('files/file_berita/'.$b->img).'">';
-							else:
-							$img = '<img class="img-fluid rounded lazy p-0 m-0" src="'.base_url("bower_components/SVG-Loaders/svg-loaders/oval.svg").'" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
-							endif;
-							?>
-							<?php if($berita_selanjutnya->num_rows() > 0): ?>
-							<a href="<?= $posturl ?>" class="text-link">
-								<div class="media">
-									<span class="rippler rippler-img rippler-bs-danger mr-3 w-25">
-										<?= $img ?>
-									</span>
-									<div class="media-body px-2">
-										<p class="mb-0"><?= word_limiter($b->judul, 4); ?></p>
-										<span class="text-muted small">
-											<?= word_limiter($b->content, 6) ?>
-										</span>
-									</div>
-								</div>
-							</a>
-							<?php endif; ?>
-							<?php endforeach; ?>
-						</div>
-					</div>
+					
 				</div>
 				<div class="col-md-4 d-none d-md-block">
 					<?php if(cek_internet() == true): ?>
-					<div class="card bg-white rounded border-light">
+					<div class="card border-0">
 						<div class="card-body p-0">
-                    		<!-- <?php $this->load->view('Frontend/v1/function/populer_post'); ?> -->
+                    		<?php $this->load->view('Frontend/v1/function/populer_post'); ?>
 							<div id="gpr-kominfo-widget-container"></div>
 						</div>
 					</div>

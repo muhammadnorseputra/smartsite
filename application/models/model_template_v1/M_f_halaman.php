@@ -137,6 +137,13 @@ class M_f_halaman extends CI_Model
     $this->db->update($tbl, ['views' => $views+1]);
     return true; 
   } 
+  public function getFileNameByToken($token) {
+    $this->db->select('filename');
+    $this->db->from('t_halaman');
+    $this->db->where('token_halaman', $token);
+    $q = $this->db->get()->row();
+    return $q->filename;
+  }
 }
 
 /* End of file M_f_halaman.php */

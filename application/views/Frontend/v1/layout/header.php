@@ -17,7 +17,7 @@
 					if ($submenu_jml > 0) {
 				?>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle px-3 mx-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle px-3 mx-1" href="#" id="navbarDropdown" role="button" style="background-color: <?= $m->color ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
 						<?= $m->nama_menu; ?>
 					</a>
@@ -64,7 +64,7 @@
 				} else {
 				?>
 				<li class="nav-item">
-					<a class="nav-link px-3 mr-md-1" href="<?= base_url($m->link); ?>">
+					<a class="nav-link px-3 mr-md-1" style="background-color: <?= $m->color ?>" href="<?= base_url($m->link); ?>">
 						<?= ucwords($m->nama_menu); ?>
 					</a>
 				</li>

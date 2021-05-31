@@ -7,6 +7,11 @@ $(document).ready(function() {
         autoAdvance: true,
         barPosition: 'bottom',
         loaderColor: 'lightseagreen',
-        loaderBgColor: '#fff'
+        loaderBgColor: '#fff',
+        alignment: 'center',
+        easing: 'easeInOutExpo', //http://jqueryui.com/demos/effect/easing.html
+        fx: 'random',
+        time: 7000,
+        transPeriod: 1500
     });
 });

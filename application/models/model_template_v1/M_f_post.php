@@ -148,11 +148,16 @@ class M_f_post extends CI_Model {
         return $this->db->insert($tbl, $data);
     }
     
-    public function doUpdatePhoto($tbl, $id, $data)
+    public function doUpdatePhoto($tbl, $whr, $data)
     {
-        $this->db->where('id_berita', $id);
+        $this->db->where($whr);
         $this->db->update($tbl, $data);
         return true;
+    }
+
+    public function doInsertPhotoTerkait($tbl, $data)
+    {
+        return $this->db->insert($tbl, $data);
     }
 
     public function doUpdatePost($tbl, $id, $data)
@@ -267,6 +272,14 @@ class M_f_post extends CI_Model {
           }
           $this->db->order_by('id_berita', 'DESC');
           return $this->db->get();
+    }
+
+    public function getFileNameById($id) {
+        $this->db->select('img');
+        $this->db->from('t_berita');
+        $this->db->where('id_berita', $id);
+        $q = $this->db->get()->row();
+        return $q->img;
     }
 }
 

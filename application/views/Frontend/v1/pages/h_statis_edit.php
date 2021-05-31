@@ -22,9 +22,6 @@
 			<div class="col-md-8">
 				<!-- form cotent halaman -->
 				<div class="card border-0 rounded">
-					<div class="card-header bg-white border">
-						<h5 class="card-title">Isi halaman statis </h5>
-					</div>
 					<div class="card-body py-2 px-0 bg-white border-0">
 						<div class="form-group">
 						    <textarea class="form-control" name="content" id="content" rows="3">
@@ -74,10 +71,12 @@
 <script src="<?= base_url('files/tinymce/js/tinymce.min.js'); ?>"></script>
 <script>
 	$(document).ready(function() {
+
 		var tiny = tinymce.init({
 			selector: "#content",
 			height: 400,
 			themes: "modern",
+			apiKey: "E5EXDFLT",
 			mobile: {
 			    theme: 'mobile',
 			    plugins: [ 'autosave', 'lists', 'autolink' ]
@@ -85,7 +84,8 @@
 			plugins: [
 				"advlist autolink link image lists charmap print preview hr anchor pagebreak tabfocus searchreplace codesample help",
 				"searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
-				"table contextmenu directionality emoticons paste textcolor code fullscreen"
+				"table contextmenu directionality emoticons paste textcolor code fullscreen",
+				"n1ed"
 			],
 			content_css: [
 				'<?= base_url("bower_components/bootstrap/dist/css/bootstrap.min.css") ?>',

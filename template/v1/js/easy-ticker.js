@@ -24,5 +24,12 @@ $(document).ready(function() {
         visible: 1,
         interval: 4000,
         direction: 'up',
+        controls: {
+            up: '.btn-up',
+            down: '.btn-down',
+            toggle: '.btn-toggle',
+            playText: '<i class="fas fa-play-circle"></i>',
+            stopText: '<i class="fas fa-pause-circle"></i>'
+        },
     });
 });
