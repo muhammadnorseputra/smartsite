@@ -37,11 +37,12 @@
 	</div>
 </section>
 <script src="<?= base_url('bower_components/jquery/dist/jquery.min.js') ?>"></script>
+<script src="<?= base_url('template/v1/js/route.js') ?>"></script>
 <script src="<?= base_url('bower_components/highcharts/highcharts.js') ?>"></script>
 <script src="<?= base_url('bower_components/highcharts/highcharts-3d.js') ?>"></script>
 <script src="<?= base_url('bower_components/highcharts/modules/cylinder.js') ?>"></script>
 <script>
-	let url = 'http://192.168.1.4';
+let url = _silka;
 $(document).ready(function () {
 // Jenis Kelamin
 $.getJSON(`${url}/api/get_grap_pns/jenkel`, function (response) {
