@@ -1,7 +1,7 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider2') ?>
-<section class="content-home hero py-md-2">
+<section class="content-home hero py-md-3">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

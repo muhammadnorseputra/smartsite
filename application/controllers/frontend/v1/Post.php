@@ -174,6 +174,13 @@ class Post extends CI_Controller
         echo $msg;
     }
 
+    function template_sumber($text, $icon) {
+        $html = '<div class="btn-group btn-group-sm mb-2 ml-3 ml-md-0" role="group" aria-label="button">
+                    <button type="button" class="btn btn-sm btn-light" disabled>'.$icon.'</button>
+                    <button type="button" class="btn btn-sm btn-default"  disabled>'.$text.'</button>
+                </div>';
+        return $html;
+    }
     public function get_all_post_by_user($id)
     {
         $output = '';
@@ -192,11 +199,31 @@ class Post extends CI_Controller
                     $gravatar = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic) . '';
                 }
 
-                // Post link detail
-                $id = encrypt_url($row->id_berita);
-                $postby = strtolower($namalengkap);
-                $judul = strtolower(url_title($row->judul));
-                $posturl = base_url("post/$postby/$id/".url_title($judul));
+                // Post Data Youtube
+                if($row->type === 'YOUTUBE'):
+                    $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
+                    $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$row->content.'&key='.$key;
+                    $yt     = api_client($url);
+                    $yt_thumb = $yt['items'][0]['snippet']['thumbnails']['high']['url'];
+                    $yt_desc = $yt['items'][0]['snippet']['description'];
+                    $yt_src = $yt['items'][0]['snippet']['channelTitle'];
+                endif;
+
+                if($row->type === 'LINK'):
+                    $url = $row->content;
+                    $linker = getSiteOG($url);
+                    // var_dump($linker);
+                endif;
+
+                // Post Link Detail
+                if($row->type === 'YOUTUBE' || $row->type === 'BERITA'):
+                    $id = encrypt_url($row->id_berita);
+                    $postby = strtolower(url_title($namalengkap));
+                    $judul = strtolower($row->judul);
+                    $posturl = "post/{$postby}/{$id}/".url_title($judul).'';
+                else:
+                    $posturl = base_url('leave?go='.encrypt_url($row->content));
+                endif;
 
                 // Post headline YES == 1
                 if ($row->headline == '1') {
@@ -206,16 +233,55 @@ class Post extends CI_Controller
                 } else {
                     $isi = $row->content;
                 }
+
+                // Content
+                if($row->type === 'YOUTUBE'):
+                    $content = word_limiter($yt_desc,20);
+                elseif($row->type === 'LINK'):
+                    $content = word_limiter($linker['description'],15);
+                else:
+                    $content = $isi."...";
+                endif;
                 
                 // Post button like
                 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'btn-like' : '';
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
                 
-                // Post image
-                if(!empty($row->img)):
-                    $img = '<img class="img-fluid w-100" style="border-radius:10px;" src="'.base_url('files/file_berita/thumb/'.$row->img).'" alt="'.$row->img.'">';
+                // Gambar
+                if($row->type === 'BERITA'):
+                    if(!empty($row->img)):
+                        $img = '<img class="card-img-top rounded border-light" src="'.base_url('files/file_berita/'.$row->img).'" alt="'.$row->img.'">';
+                    elseif(!empty($row->img_blob)):
+                        $img = '<img class="card-img-top rounded border-light" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    else:
+                        $img = '<img class="card-img-top rounded border-light" src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                    endif;
+                elseif($row->type === 'YOUTUBE'):
+                    $img = '<img class="card-img-top rounded border-light" src="'.$yt_thumb.'" alt="'.$row->judul.'">';
+                elseif($row->type === 'LINK'):
+                    $img = '<img class="card-img-top rounded border-light" src="'.$linker['image'].'" alt="'.$row->judul.'">';
                 else:
-                    $img = '<img class="img-fluid w-100" style="border-radius:10px;" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img class="card-img-top rounded border-light" src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                endif;
+
+                // Sumber
+                if($row->type === 'YOUTUBE'):
+                    $status_posted = '<abbr title="Repost adalah diposting ulang atau ditampilkan kembali, berdasarkan sumber tertentu.">Repost</abbr>';
+                    $text = $yt_src;
+                    $icon = '<i class="fab fa-youtube"></i>';
+                    $sumber = $this->template_sumber($text, $icon);
+                elseif($row->type === 'LINK'):
+                    $domain = parse_url($row->content, PHP_URL_HOST);
+                    $status_posted = '<abbr title="Repost adalah diposting ulang atau ditampilkan kembali, berdasarkan sumber tertentu.">Repost</abbr>';
+                    $text = $domain;
+                    $icon = '<i class="fas fa-link"></i>';
+                    $sumber = $this->template_sumber($text, $icon);
+                else:
+                    $domain = parse_url(base_url(), PHP_URL_HOST);
+                    $status_posted = 'Posted';
+                    $text = $domain;
+                    $icon = '<i class="fas fa-globe-asia"></i>';
+                    $sumber = $this->template_sumber($text, $icon);
                 endif;
 
                 // Post name tags
@@ -236,7 +302,7 @@ class Post extends CI_Controller
                 $output .= '
                     <div class="grid-item w-100">
                         <div class="card border shadow-sm bg-white mb-4" style="border-radius:10px;">
-                            <div class="card-header bg-white border-0 ml-3 mt-2" style="border-radius:10px;">
+                            <div class="card-header bg-white border-0 mt-2" style="border-radius:10px;">
                                 <img src="'.$gravatar. '" width="50" height="50" class="float-left mt-1 mr-4 d-inline-block rounded">
                                 <h5 class="card-title d-block">' . $namalengkap . '</h5>
                                 <small>'.longdate_indo($row->tgl_posting).'</small>
@@ -245,9 +311,10 @@ class Post extends CI_Controller
                                 '.$img.'
                             </a>
                             <div class="card-body py-2">
+                                '.$sumber.'
                                 <h3 class="card-title font-weight-bold"><a href="'.$posturl.'"><span class="font-weight-bold">'.character_limiter($row->judul, 40).'</span></a></h3>
                                 <p>
-                                    '.$isi. '
+                                    '.$content. '
                                 </p>
                                 <p><a href="'.$post_list_url.'" class="btn btn-sm btn-primary p-2 mr-2 mb-2 text-white shadow-sm">'.$namakategori.'</a>'.$tag. '</p>
                             </div>

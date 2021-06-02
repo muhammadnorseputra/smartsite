@@ -17,8 +17,8 @@ class C_download extends CI_Controller {
 	{
 
 		$data = [
-				'content' 	=> 'Backend/__module/___Download/v_table',
-				'scriptjs'  => 'Backend/__ServerSideJs/Download/s_download',
+				'content' 	=> 'Backend/__Module/___Download/v_table',
+				'scriptjs'  => 'Backend/__ServerSideJs/Download/S_download',
 				'pageinfo' 		=> '<li><a href="#"><i class="material-icons">dashboard</i> Dasboard</a></li>
 							<li class="active">Download</li>',
 				'css' => [
@@ -41,8 +41,8 @@ class C_download extends CI_Controller {
 	{
 		
     $data = [
-			'content' 	=> 'Backend/__module/___Download/v_edit',
-			'scriptjs'  => 'Backend/__ServerSideJs/Download/s_download',
+			'content' 	=> 'Backend/__Module/___Download/v_edit',
+			'scriptjs'  => 'Backend/__ServerSideJs/Download/S_download',
 			'pageinfo' 		=> '<li><a href="#"><i class="material-icons">dashboard</i> Dasboard</a></li><li><a href="#"><i class="material-icons">file_download</i> Download</a></li>
 							<li class="active">Edit Download</li>',
 			'formdata' 	=> $this->mdownload->edit('t_download', $id)->result_array(),

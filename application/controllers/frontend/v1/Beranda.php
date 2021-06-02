@@ -21,7 +21,9 @@ class Beranda extends CI_Controller
         // }
     }
     public function testing() {
-        var_dump(getSiteOG("https://www.liputan6.com/tekno/read/4568990/penyimpanan-google-drive-penuh-lakukan-cara-ini")); //note the incorrect url
+        $url = base_url('beranda?id=123&media=id');
+        $parse = parse_url($url, PHP_URL_SCHEME);
+        var_dump(parse_str($_SERVER['QUERY_STRING'], $_GET));
     }
     public function index()
     {

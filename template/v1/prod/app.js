@@ -217,15 +217,16 @@ $(document).ready(function () {
     thumbnails: false,
     loader: 'bar',
     autoAdvance: true,
+    mobileAutoAdvance: true,
     barPosition: 'top',
-    loaderColor: 'lightseagreen',
+    loaderColor: 'teal',
     loaderBgColor: '#fff',
     alignment: 'center',
-    easing: 'easeInOutExpo',
+    easing: 'easeInOutCubic',
     //http://jqueryui.com/demos/effect/easing.html
     fx: 'random',
     time: 10000,
-    transPeriod: 1500
+    transPeriod: 1300
   });
 });
 "use strict";

@@ -52,3 +52,6 @@ $arr = [
         </div>
     </div>
 </div>
+<div class="col-12 text-md-right text-center mb-3 mb-md-0">
+    <button class="btn btn-sm btn-outline-secondary shadow-sm">Info Grafik Pegawai Lainnya <i class="fas fa-arrow-right ml-4"></i></button>
+</div>

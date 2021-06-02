@@ -21,7 +21,7 @@
 							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="210"/>'; ?>
 							</div>
-							<h3 class="font-weight-bold mb-3 mt-5 text-center text-md-left">Log In</h3> 
+							<h3 class="font-weight-bold mb-3 mt-3 text-center text-md-left">Log In</h3> 
 							<?php if($this->session->flashdata('notif') <> ''): ?>
 								<div class="alert border alert-light" role="alert">
 								 <?= $this->session->flashdata('notif') ?>
@@ -63,6 +63,22 @@
 								</div>
 							<button type="submit" class="btn btn-success btn-block shadow-lg btn-lg rounded-0 mb-4"><i class="fas fa-lock mr-2"></i> Log In</button>
 							<?= form_close(); ?>
+							<div class="d-block d-md-none">
+								<a href="<?= base_url() ?>" class="btn btn-block btn-default text-muted"><i class="fas fa-arrow-left mr-4"></i>Back to beranda</a>
+								<p class="py-1 bg-secondary my-3 text-center"></p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div>
+										<a href="<?= base_url('daftar'); ?>" class="btn btn-default text-primary">
+											<i class="fas fa-user"></i> <br> Mendaftar
+										</a>
+									</div>
+									<div>
+										<a href="<?= base_url('userguide') ?>" class="btn btn-default text-primary">
+											<i class="fas fa-book"></i> <br> User Guide
+										</a>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content">

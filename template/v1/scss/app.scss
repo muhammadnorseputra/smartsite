@@ -508,7 +508,8 @@ img.lazy {
 	background-color: transparent;
 	/* optional way, set loading as background */
 	// background-image: url("../../../assets/images/loader/rolling-2.gif");
-	background-image: url("../../../bower_components/SVG-Loaders/svg-loaders/oval.svg");
+	background-size: cover;
+	background-image: url("https://via.placeholder.com/300.png?text=BKPPD");
 	background-repeat: no-repeat;
 	background-position: center center;
 }

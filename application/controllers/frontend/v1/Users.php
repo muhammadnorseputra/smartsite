@@ -452,9 +452,9 @@ class Users extends CI_Controller {
 			];
 			return $this->load->view('Frontend/v1/pages/b_list', $data);
 	}
-	public function profile($nama_panggilan,$id) {
+	public function profile($nama_panggilan, $id) {
 		$data = [
-				'title' => 'Halaman beranda &bull; '.ucfirst($nama_panggilan),
+				'title' => 'Profile &dash; '.ucfirst($nama_panggilan),
 				'isi' => 'Frontend/v1/pages/u_profile',
 				'mf_beranda' => $this->mf_beranda->get_identitas(),
 				'mf_menu' => $this->mf_beranda->get_menu(),
