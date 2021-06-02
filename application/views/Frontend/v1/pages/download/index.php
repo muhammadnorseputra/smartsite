@@ -17,10 +17,10 @@
 				<tr>
 					<th data-priority="1">No</th>
 					<th data-priority="2">Judul</th>
-					<th data-priority="3">Keterangan</th>
+					<th>Keterangan</th>
 					<th>Hits</th>
 					<th>Size</th>
-					<th>Download</th>
+					<th data-priority="3">Download</th>
 				</tr>
 			</thead>
 		</table>
