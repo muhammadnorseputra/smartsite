@@ -14,7 +14,7 @@
 	<div class="row">
 		<?php if($album->num_rows() > 0): ?>
 		<?php foreach($album->result() as $a): ?>
-		<div class="col-6 col-sm-6 col-md-4 col-lg-4">
+		<div class="col-6 col-sm-6 col-md-4 col-lg-4 shadow-lg">
 		<a href="<?= base_url('album/'.encrypt_url($a->id_album_foto)) ?>" class="w-100 bg-white mx-md-3 h-100">
 			<div class="card bg-white border-0 w-100 p-3 mx-auto">
 				<div class="w-50 h-50 overflow-hidden">
