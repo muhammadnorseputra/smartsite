@@ -217,7 +217,6 @@ $(document).ready(function () {
     thumbnails: false,
     loader: 'bar',
     autoAdvance: true,
-    mobileAutoAdvance: true,
     barPosition: 'top',
     loaderColor: 'teal',
     loaderBgColor: '#fff',
@@ -225,7 +224,7 @@ $(document).ready(function () {
     easing: 'easeInOutCubic',
     //http://jqueryui.com/demos/effect/easing.html
     fx: 'random',
-    time: 10000,
+    time: 7000,
     transPeriod: 1300
   });
 });

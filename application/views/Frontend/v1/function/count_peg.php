@@ -1,5 +1,5 @@
 <?php
-$local = 'http://silka.bkppd-balangankab.info';
+$local = '192.168.1.4';
 $online = 'http://silka.bkppd-balangankab.info';
 $status = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? $online : $local;
 $host = $status;
@@ -53,5 +53,5 @@ $arr = [
     </div>
 </div>
 <div class="col-12 text-md-right text-center mb-3 mb-md-0">
-    <button class="btn btn-sm btn-outline-secondary shadow-sm">Info Grafik Pegawai Lainnya <i class="fas fa-arrow-right ml-4"></i></button>
+    <a href="<?= base_url('api/grafik') ?>" class="btn btn-sm btn-outline-secondary shadow-sm">Info Grafik Pegawai Lainnya <i class="fas fa-arrow-right ml-4"></i></a>
 </div>

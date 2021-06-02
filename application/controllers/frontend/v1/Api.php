@@ -48,4 +48,15 @@ class Api extends CI_Controller {
 		endif;
 		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
+	public function grafik()
+	{
+		$data = [
+			'title' => 'Grafik Pegawai &bull; BKPPD Kabupaten Balangan',
+			'mf_beranda' => $this->mf_beranda->get_identitas(),
+            'mf_menu' => $this->mf_beranda->get_menu(),
+			'isi'	=> 'Frontend/v1/pages/pegawai/index',
+		];
+
+		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+	}
 }
