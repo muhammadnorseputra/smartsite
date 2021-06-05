@@ -2,7 +2,7 @@
 <nav id="navbar" class="navbar fixed-top navbar-expand-sm bg-white navbar-light d-none d-md-block d-lg-block">
 	<div class="container">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
-			<?php echo '<img class="lazy" data-src="data:image/jpeg;base64,' . word_limiter(base64_encode($mf_beranda->site_logo), 4) . '" width="150"/>'; ?>
+			<?php echo '<img src="data:image/jpeg;base64,' . character_limiter(base64_encode($mf_beranda->site_logo), 4) . '" alt="Logo BKPPD Kab. Balangan" width="150"/>'; ?>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -79,7 +79,7 @@
 							<a target="_blank" href="https://ekinerja.bkppd-balangankab.info/" class="p-4">
 								<div class="row">
 									<div class="col-4">
-										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-ekinerja.png').'"/>' ; ?>
+										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-ekinerja.png').'" alt="e-Kinerja"/>' ; ?>
 									</div>
 									<div class="col-8">
 										<b class="font-weight-bold text-dark">e-Kinerja</b>
@@ -92,7 +92,7 @@
 							<a target="_blank" href="http://silka.bkppd-balangankab.info/" class="p-4">
 								<div class="row">
 									<div class="col-4">
-										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-silka.png').'"/>'; ?>
+										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-silka.png').'" alt="SILKa Online"/>'; ?>
 									</div>
 									<div class="col-8">
 										<b class="font-weight-bold text-dark">SILKa Online</b>
@@ -105,7 +105,7 @@
 							<a target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4">
 								<div class="row">
 									<div class="col-4">
-										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-eprilaku.png').'"/>'; ?>
+										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-eprilaku.png').'" alt="e-Prilaku"/>'; ?>
 									</div>
 									<div class="col-8">
 										<b class="font-weight-bold text-dark">e-Prilaku (360)</b>
@@ -124,7 +124,7 @@
 			<?php
 			$idSes = $this->session->userdata('user_portal_log')['id'];
 			$getImg = $this->mf_users->get_userportal_byid($idSes)->photo_pic;
-			$img = '<img class="rounded mr-1 shadow-sm" width="23" src="data:image/jpeg;base64,'.base64_encode( $getImg ).'"/>';
+			$img = '<img class="rounded mr-1 shadow-sm" width="23" src="data:image/jpeg;base64,'.base64_encode( $getImg ).'" alt="Userportal"/>';
 			?>
 			<div class="dropdown">
 				<button type="button" class="btn btn-outline-light border-0 text-muted my-sm-0 mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
