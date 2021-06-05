@@ -30,7 +30,7 @@ $(function() {
 		            			<i class="fas fa-search fa-2x"></i>
 		            		</div>
 		            		<div class="py-3">
-								<h5>Silahkan masukan katakunci !</h5>
+								<h2>Silahkan masukan katakunci !</h2>
 				            	<p class="text-muted pl-3 border-left border-warning">
 				            		Silahkan masukan keywords pencarian, dengan memasukan judul atau label
 				            	</p>
@@ -51,7 +51,6 @@ $(function() {
             _container.html('<div id="loader" class="mx-auto my-5"></div>');
         }
 
-        var old_keywords = JSON.parse(localStorage.getItem('keywords'));
         if (_input.value.length > 3) {
             $.ajax({
                 url: _this[0].action,

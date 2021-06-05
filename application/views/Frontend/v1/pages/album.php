@@ -14,10 +14,10 @@
 	<div class="row">
 		<?php if($album->num_rows() > 0): ?>
 		<?php foreach($album->result() as $a): ?>
-		<div class="col-6 col-sm-6 col-md-4 col-lg-4 shadow-lg">
+		<div class="col-6 col-sm-6 col-md-4 col-lg-4">
 		<a href="<?= base_url('album/'.encrypt_url($a->id_album_foto)) ?>" class="w-100 bg-white mx-md-3 h-100">
-			<div class="card bg-white border-0 w-100 p-3 mx-auto">
-				<div class="w-50 h-50 overflow-hidden">
+			<div class="card bg-white border-0 w-100 p-5 mx-auto  shadow-lg">
+				<div class="overflow-hidden">
 				<?php if(!empty($a->gambar)): ?>
 				<img class="rounded lazy img-fluid w-100" data-src="<?= base_url('files/file_album/'.$a->gambar) ?>" alt="Card image">
 				<?php else: ?>

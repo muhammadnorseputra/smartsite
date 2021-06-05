@@ -148,7 +148,7 @@ class Halaman extends CI_Controller
 
         $file_old = $this->halaman->getFileNameByToken($token);
         if (file_exists($path.$file_old)) {
-            unlink($path.$file_old);
+            @unlink($path.$file_old);
         }
         $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
         file_put_contents($path.$filename,$file);
@@ -176,7 +176,7 @@ class Halaman extends CI_Controller
         $file_old = $this->halaman->getFileNameByToken($token_halaman);
         if(!empty($file_old)):
           if (file_exists($path.$file_old)) {
-              unlink($path.$file_old);
+              @unlink($path.$file_old);
           }
         endif;
         $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
@@ -216,7 +216,7 @@ class Halaman extends CI_Controller
     $path = 'files/randoms/';
     $file_old = $this->halaman->getFileNameByToken($id);
     if (file_exists($path.$file_old)) {
-        unlink($path.$file_old);
+        @unlink($path.$file_old);
     }
     $delete = $this->halaman->doDeleteHalaman($table, $id);
     if ($delete == true) {
@@ -303,7 +303,7 @@ class Halaman extends CI_Controller
     $path = 'files/randoms/';
     $file_old = $this->halaman->getFileNameByToken($id);
     if (file_exists($path.$file_old)) {
-        unlink($path.$file_old);
+        @unlink($path.$file_old);
     }
     $data = ['filename' => NULL, 'file' => NULL];
     $whr = ['token_halaman' => $id];

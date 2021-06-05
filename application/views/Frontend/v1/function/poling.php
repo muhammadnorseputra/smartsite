@@ -3,7 +3,7 @@
 </div>
 <div class="border-0 shadow-none p-3 bg-light rounded">
 	<?php $poling_q = $mf_poling_pertanyaan; ?>
-	<b class="text-uppercase"><?= $poling_q->label ?> ?</b>
+	<p class="text-uppercase font-weight-bold"><?= $poling_q->label ?> ?</p>
 	<?php  
 		$poling_j = $mf_poling_jawaban;
 		foreach ($poling_j->result() as $j):

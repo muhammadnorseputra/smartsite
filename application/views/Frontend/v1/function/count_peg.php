@@ -16,8 +16,8 @@ $arr = [
     <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent border-0 rounded">
         <div class="card-body text-center">
             <i class="fas fa-users pb-md-4 rounded fa-3x text-info"></i>
-            <h3 id="count_jml"  data-from="0" data-to="<?= $arr['jml_asn'] ?>"
-            data-speed="3000" class="display-4 "><?= nominal($arr['jml_asn']) ?></h3>
+            <h1 id="count_jml"  data-from="0" data-to="<?= $arr['jml_asn'] ?>"
+            data-speed="3000"><?= nominal($arr['jml_asn']) ?></h1>
             <b class="text-secondary small">Jumlah ASN Kab. Balangan</b>
         </div>
     </div>
@@ -26,8 +26,8 @@ $arr = [
     <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent border-0 rounded">
         <div class="card-body text-center">
             <i class="fas fa-user-tie pb-md-4 fa-3x mx-auto text-success rounded"></i>
-            <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
-            data-speed="3000" class="display-4 "><?= nominal($arr['jml_pns']) ?></h3>
+            <h1 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
+            data-speed="3000"><?= nominal($arr['jml_pns']) ?></h1>
             <b class="text-secondary small">Jumlah PNS + CPNS</b>
         </div>
     </div>
@@ -36,8 +36,8 @@ $arr = [
     <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent rounded border-0">
         <div class="card-body text-center">
             <i class="far pb-md-4 fa-user-circle fa-3x mx-auto text-warning rounded"></i>
-            <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_ptt'] ?>"
-            data-speed="3000" class="display-4 "><?= nominal($arr['jml_ptt']) ?></h3>
+            <h1 id="count_jml" data-from="0" data-to="<?= $arr['jml_ptt'] ?>"
+            data-speed="3000"><?= nominal($arr['jml_ptt']) ?></h1>
             <b class="text-secondary small">Jumlah NON PNS</b>
         </div>
     </div>
@@ -46,8 +46,8 @@ $arr = [
     <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent rounded border-0">
         <div class="card-body text-center">
             <i class="fas pb-md-4 fa-house-user fa-3x mx-auto text-secondary rounded"></i>
-            <h3 id="count_jml" data-from="0" data-to="<?= $arr['jml_pensiun'] ?>"
-            data-speed="3000" class="display-4 "><?= ($arr['jml_pensiun']) ?></h3>
+            <h1 id="count_jml" data-from="0" data-to="<?= $arr['jml_pensiun'] ?>"
+            data-speed="3000"><?= ($arr['jml_pensiun']) ?></h1>
             <b class="text-secondary small">Jumlah PNS Pensiun pada tahun <?= date('Y') ?></b>
         </div>
     </div>

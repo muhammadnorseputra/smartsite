@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id-ID">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +12,7 @@
                                  <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>';  
     ?>
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
+    <link rel="apple-touch-icon" href="<?= base_url('assets/images/logo.png'); ?>">
 
     <link href="<?= base_url('template/v1/prod/app.css'); ?>" rel="stylesheet" type="text/css">
     <!-- <script data-ad-client="ca-pub-1099792537777374" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->

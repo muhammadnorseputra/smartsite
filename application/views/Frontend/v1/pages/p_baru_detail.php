@@ -52,13 +52,14 @@
 							<?php if($photo_terkait->num_rows() > 0): ?>
 								<?php foreach ($photo_terkait->result() as $p):?>
 									<div class="card bg-dark text-white">
-									  <img class="card-img" src="data:image/jpeg;base64,<?= base64_encode($p->photo) ?>" alt="photo terkait">
+									  <img class="card-img" src="<?= base_url('files/file_berita/photo_terkait/'.$this->uri->segment(5).'/'.$p->photo) ?>" alt="photo terkait">
 									  <div class="card-img-overlay">
 									    <h5 class="card-title"><?= $p->judul ?></h5>
 									    <p class="card-text"><?= $p->keterangan ?></p>
 									  </div>
 									</div>
 								<?php endforeach; ?>
+								<button type="button" data-toggle="modal" data-target="#uploadPhoto" id="upload" class="btn btn-sm mx-auto d-block btn-outline-primary my-2"><i class="fas fa-plus mr-3"></i> Add new photo</button>
 							<?php else: ?>
 								<p class="d-block text-center my-5 text-secondary">
 									Belum ada photo terkait <br>
@@ -109,7 +110,7 @@
 <div class="modal" id="uploadPhoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <?= form_open_multipart(base_url('#'), ['id' => 'f_photo_terkait']) ?>
+      <?= form_open_multipart(base_url(), ['id' => 'f_photo_terkait']) ?>
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Single Upload</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -205,33 +206,37 @@
 		var upload_photo = $("#file_foto");
 		var judul_photo = $("input[name='judul_photo']");
 		upload_photo.change(function() {
-			var fileName = $(this).val().split('\\')[$(this).val().split('\\').length - 1];
-			judul_photo.val(fileName.split('.').slice(0, -1).join('.'));
-		    var form_data = new FormData();
-				form_data.append("file", this.files[0]);
+				var fileName = $(this).val().split('\\')[$(this).val().split('\\').length - 1];
+				judul_photo.val(fileName.split('.').slice(0, -1).join('.'));
+		    
 
-				var oFReader = new FileReader();
-				oFReader.readAsDataURL(this.files[0]);
+				// var oFReader = new FileReader();
+				// oFReader.readAsDataURL(this.files[0]);
 			$("form#f_photo_terkait").on("submit", function(e) {
 				e.preventDefault();
-				let $online = _uriSegment[5];
-		    let $local = _uriSegment[6];
-		    let $id = $host ? $local : $online;
+		    var form_data = new FormData();
+				form_data.append("file", this[1].files[0]);
+				form_data.append("judul_photo", judul_photo.val());
+				form_data.append("keterangan_photo", this[3].value);
+				// console.log($(this).reset);
+				// let $online = _uriSegment[5];
+		  //   let $local = _uriSegment[6];
+		  //   let $id = $host ? $local : $online;
 
-		    $.ajax({
-					url: _uri + "/frontend/v1/post/upload_single_photo_terkait/" + $id,
-					method: "POST",
-					data: form_data,
-					contentType: false,
-					cache: false,
-					dataType: 'json',
-					processData: false,
-					success: function(data) {
-						if (data == true) {
-							message('Photo Uploaded', 'success');
-						}
-					}
-				});
+		  //   $.ajax({
+				// 	url: _uri + "/frontend/v1/post/upload_single_photo_terkait/" + $id,
+				// 	method: "POST",
+				// 	data: form_data,
+				// 	contentType: false,
+				// 	cache: false,
+				// 	dataType: 'json',
+				// 	processData: false,
+				// 	success: function(data) {
+				// 		if (data == true) {
+				// 			message('Photo Uploaded', 'success');
+				// 		}
+				// 	}
+				// });
 			})
 	  });
 

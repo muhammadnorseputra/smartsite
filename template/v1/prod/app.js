@@ -846,7 +846,7 @@ $(function () {
     var _container = $("#search-result");
 
     if (_input.value == '') {
-      _container.html("<div class=\"pl-3 pl-md-0 rounded d-flex justify-content-around align-items-center\">\n\t\t            \t\t<div class=\"d-none d-md-block\">\n\t\t            \t\t\t<i class=\"fas fa-search fa-2x\"></i>\n\t\t            \t\t</div>\n\t\t            \t\t<div class=\"py-3\">\n\t\t\t\t\t\t\t\t<h5>Silahkan masukan katakunci !</h5>\n\t\t\t\t            \t<p class=\"text-muted pl-3 border-left border-warning\">\n\t\t\t\t            \t\tSilahkan masukan keywords pencarian, dengan memasukan judul atau label\n\t\t\t\t            \t</p>\n\t\t            \t\t</div>\n\t\t            \t</div>\n            ");
+      _container.html("<div class=\"pl-3 pl-md-0 rounded d-flex justify-content-around align-items-center\">\n\t\t            \t\t<div class=\"d-none d-md-block\">\n\t\t            \t\t\t<i class=\"fas fa-search fa-2x\"></i>\n\t\t            \t\t</div>\n\t\t            \t\t<div class=\"py-3\">\n\t\t\t\t\t\t\t\t<h2>Silahkan masukan katakunci !</h2>\n\t\t\t\t            \t<p class=\"text-muted pl-3 border-left border-warning\">\n\t\t\t\t            \t\tSilahkan masukan keywords pencarian, dengan memasukan judul atau label\n\t\t\t\t            \t</p>\n\t\t            \t\t</div>\n\t\t            \t</div>\n            ");
     }
 
     function message(x, y) {
@@ -860,8 +860,6 @@ $(function () {
     function lazzy() {
       _container.html('<div id="loader" class="mx-auto my-5"></div>');
     }
-
-    var old_keywords = JSON.parse(localStorage.getItem('keywords'));
 
     if (_input.value.length > 3) {
       $.ajax({

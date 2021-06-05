@@ -51,44 +51,44 @@
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-6">
-				<h6 class="text-light pb-3 border-bottom">Ikuti Juga</h6>
+				<h6 class="text-white-50 pb-3 border-bottom">Ikuti Juga</h6>
 				<ul class="list-unstyled">
 					<li>
-						<a href="<?= base_url('survey') ?>"><span><i class="fas fa-external-link-alt text-muted mr-2"></i></span>Survey Kepegawaian</a>
+						<a href="<?= base_url('survey') ?>"><span><i class="fas fa-external-link-alt text-white mr-2"></i></span>Survey Kepegawaian</a>
 					</li>
 					<li>
-						<a href="<?= base_url('kotak_saran') ?>"><span><i class="fas fa-external-link-alt text-muted mr-2"></i></span>Kirim Saran / Laporkan BUG</a>
+						<a href="<?= base_url('kotak_saran') ?>"><span><i class="fas fa-external-link-alt text-white mr-2"></i></span>Kirim Saran / Laporkan BUG</a>
 					</li>
 					<li>
-						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-external-link-alt text-muted mr-2"></i></span>Userportal</a>
+						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-external-link-alt text-white mr-2"></i></span>Userportal</a>
 					</li>
 				</ul>
 			</div>
 			<div class="col-md-4 col-sm-6">
-				<h6 class="text-light pb-3 border-bottom">Link Terkait</h6>
+				<h6 class="text-white-50 pb-3 border-bottom">Link Terkait</h6>
 				<ul class="list-unstyled">
 					<li class="d-flex">
-						<span><i class="fas fa-link text-muted mr-2"></i></span>
+						<span><i class="fas fa-link text-white mr-2"></i></span>
 						<a target="_blank" href="https://www.bkn.go.id/">BKN Pusat</a>
 					</li>
 					<li class="d-flex">
-						<span><i class="fas fa-link text-muted mr-2"></i></span>
+						<span><i class="fas fa-link text-white mr-2"></i></span>
 						<a target="_blank" href="https://www.kemendagri.go.id/">Kementerian Dalam Negeri</a>
 					</li>
 					<li class="d-flex">
-						<span><i class="fas fa-link text-muted mr-2"></i></span>
+						<span><i class="fas fa-link text-white mr-2"></i></span>
 						<a target="_blank" href="https://www.menpan.go.id/site/">Kementrian Pemberdayagunaan Aparatur Negara</a>
 					</li>
 					<li class="d-flex">
-						<span><i class="fas fa-link text-muted mr-2"></i></span>
+						<span><i class="fas fa-link text-white mr-2"></i></span>
 						<a target="_blank" href="https://bkd.kalselprov.go.id/">BKD Provinsi Kalimantan Selatan</a>
 					</li>
 					<li class="d-flex">
-						<span><i class="fas fa-link text-muted mr-2"></i></span>
+						<span><i class="fas fa-link text-white mr-2"></i></span>
 						<a target="_blank" href="https://bpsdm.kalselprov.go.id/">BPSDM Provinsi Kalimantan Selatan</a>
 					</li>
 					<li class="d-flex">
-						<span><i class="fas fa-link text-muted mr-2"></i></span>
+						<span><i class="fas fa-link text-white mr-2"></i></span>
 						<a target="_blank" href="https://balangankab.go.id/">Pemerintah Kabupaten Balangan</a>
 					</li>
 				</ul>

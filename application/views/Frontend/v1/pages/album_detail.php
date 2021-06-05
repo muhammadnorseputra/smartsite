@@ -9,7 +9,7 @@
 	</div>
 </div>
 </section>
-<section class="my-3">
+<section class="bg-dark">
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 offset-md-2">
@@ -19,7 +19,7 @@
 	$kolom = 3;
 	$i = 1;
 	?>
-	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+	<div id="carouselExampleIndicators" class="carousel slide shadow-lg" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<?php foreach($photos->result() as $key => $value): $active = ($key == 0) ? 'active' : ''; ?>
 			<li data-target="#carouselExampleIndicators" data-slide-to="<?= $key ?>" class="<?= $active ?>"></li>

@@ -369,8 +369,8 @@ class Post extends CI_Controller
                 'created_by' => $this->session->userdata('user_portal_log')['id']
             ];
 
-            if(empty($judul) && $type === 'BERITA'):
-                $msg = ['valid' => false, 'pesan' => 'Judul wajid dibuat untuk postingan berita!'];
+            if(empty($judul) && ($type === 'BERITA' || $type === 'SLIDE')):
+                $msg = ['valid' => false, 'pesan' => 'Judul wajid dibuat untuk postingan '.$type];
             elseif(empty($kategori)):
                 $msg = ['valid' => false, 'pesan' => 'Kategori belum dipilih'];
             elseif(empty($type)):
@@ -378,7 +378,7 @@ class Post extends CI_Controller
             else:
                 $this->post->doInsertJudulBaru('t_berita', $data);
                 $getId = $this->post->getIdByJudulAndType($judul,$type);
-                $msg = ['valid' => true, 'type' => $type, 'pesan' => 'Post Berhasil Dibuat, klik OK untuk melanjutkan', 'id' => encrypt_url($getId)];
+                $msg = ['valid' => true, 'type' => $type, 'pesan' => 'Post berhasil dibuat, tunggu mengalihkan', 'id' => encrypt_url($getId)];
             endif;
             echo json_encode($msg);
             
@@ -531,9 +531,9 @@ class Post extends CI_Controller
 
             $file_old = $this->post->getFileNameById($idb);
             if (file_exists('./files/file_berita/'.$file_old)) {
-                unlink('./files/file_berita/'.$file_old);
+                @unlink('./files/file_berita/'.$file_old);
                 if(file_exists('./files/file_berita/thumb/'.$file_old)) {
-                    unlink('./files/file_berita/thumb/'.$file_old);
+                    @unlink('./files/file_berita/thumb/'.$file_old);
                 }
             }
 
@@ -559,16 +559,17 @@ class Post extends CI_Controller
             $id = decrypt_url($id_berita);
             $path_dir = 'files/file_berita/photo_terkait/'.$id_berita;
             if (!is_dir($path_dir)) {
-                mkdir('files/file_berita/photo_terkait/'.$id_berita, 0777, TRUE);
+                @mkdir('files/file_berita/photo_terkait/'.$id_berita, 0777, TRUE);
             }
             $filename = strtolower($_FILES['file']['name']);
             $path = 'files/file_berita/photo_terkait/'.$id_berita.'/';
             
 
-            $blob = file_get_contents($_FILES['file']['tmp_name']);
+            $blob = @file_get_contents($_FILES['file']['tmp_name']);
             $data = [
                 'fid_berita' => $id,
                 'judul' => $this->input->post('judul_photo'),
+                'keterangan' => $this->input->post('keterangan_photo'),
                 'photo' => $filename,
                 'created_at' => date('Y-m-d'),
                 'created_by' => $this->session->userdata('user_portal_log')['id']
@@ -577,7 +578,7 @@ class Post extends CI_Controller
             if($upload == true)
             {
                 $msg = true;
-                file_put_contents($path.$filename,$blob);
+                @file_put_contents($path.$filename,$blob);
             } else {
                 $msg = false;
             }
@@ -589,9 +590,9 @@ class Post extends CI_Controller
             $id = $this->input->post('id');
             $file_old = $this->post->getFileNameById($id);
             if (file_exists('./files/file_berita/'.$file_old)) {
-                unlink('./files/file_berita/'.$file_old);
+                @unlink('./files/file_berita/'.$file_old);
                 if(file_exists('./files/file_berita/thumb/'.$file_old)) {
-                    unlink('./files/file_berita/thumb/'.$file_old);
+                    @unlink('./files/file_berita/thumb/'.$file_old);
                 }
             }
 

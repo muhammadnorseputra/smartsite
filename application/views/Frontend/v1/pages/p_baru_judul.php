@@ -25,6 +25,10 @@
 									<i class="fas fa-link mr-2"></i>Link
 								</label>
 								<label class="btn btn-outline-primary rounded-pill my-1 text-nowrap">
+									<input type="radio" name="type" value="SLIDE"> 
+									<i class="fas fa-images mr-2"></i>Slide
+								</label>
+								<label class="btn btn-outline-primary rounded-pill my-1 text-nowrap">
 									<input type="radio" name="type" value="YOUTUBE"> 
 									<i class="fab fa-youtube mr-2"></i>Youtube
 								</label>
@@ -73,8 +77,13 @@
 		$.post(act, data, function(response) {
 
 			if (response.valid == true) {
-				alert(response.pesan);
-				if(response.type == 'BERITA') {
+				notif({
+					msg: response.pesan,
+					type: "success",
+					position: "bottom",
+					offset: -10,
+				});
+				if(response.type == 'BERITA' || response.type == 'SLIDE') {
 					window.location.href = _uri + '/frontend/v1/post/postDetail/' + response.id;
 				} else if(response.type == 'YOUTUBE') {
 					window.location.href = _uri + '/frontend/v1/post/postDetailYoutube/' + response.id;
