@@ -55,7 +55,8 @@ class Beranda extends CI_Controller
                     'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
                     'meta' => $meta_tag
                 ];
-        $this->load->view('Frontend/v1/layout/wrapper', $data);
+         
+         $this->load->view('Frontend/v1/layout/wrapper', $data);
     }
 
     public function section($section)
