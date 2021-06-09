@@ -1,6 +1,4 @@
     $(document).ready(function() {
-        var img = document.getElementById('picture');
-        AntiModerate.process(img, img.getAttribute("antimoderate-data"));
         $(".lazy").lazy({
             threshold: 300,
             beforeLoad: function(element) {
