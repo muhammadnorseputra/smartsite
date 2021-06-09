@@ -1,5 +1,5 @@
 function explore() {
-    document.querySelector('section.content-home').scrollIntoView({
+    document.querySelector('#').scrollIntoView({
         behavior: 'smooth',
         block: "start"
     })
@@ -99,6 +99,9 @@ $(document).ready(function() {
                                 element.addClass('isLoaded').removeClass('lazy beforeLoaded');
                             }
                         });
+                        var img = document.getElementById('picture');
+                        AntiModerate.process(img, img.getAttribute("antimoderate-data"));
+
                         $(".rippler").rippler({
                             effectClass: 'rippler-effect'
                         });
