@@ -30,8 +30,7 @@ class C_video extends CI_Controller
 				'assets/plugins/jquery-validation/jquery.validate.js',
 				'assets/plugins/jquery-validation/additional-methods.js',
 				'assets/plugins/select2/js/select2.min.js',
-				'assets/plugins/lightbox/ekko-lightbox.min.js',
-				'assets/plugins/jquery-sticky/jquery.sticky.js'
+				'assets/plugins/lightbox/ekko-lightbox.min.js'
 			]
 		];
 		$this->load->view('Backend/v_home', $data);

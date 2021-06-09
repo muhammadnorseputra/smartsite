@@ -93,7 +93,8 @@ $autoload['helper'] = array('url','form','number','security','string',
                             'text','typography','date','download',
                             'file','html','inflector','tgl_indo',
                             'rand_helper','script_tag','blob', 
-                            'directory', 'login', 'apiclient');
+                            'directory', 'login', 'apiclient', 
+                            'nominal', 'cookie', 'getmeta', 'seo', 'cek_internet');
 
 /*
 | -------------------------------------------------------------------
@@ -107,7 +108,7 @@ $autoload['helper'] = array('url','form','number','security','string',
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array();
+$autoload['config'] = array('webconfig','seo_config');
 
 /*
 | -------------------------------------------------------------------
@@ -140,4 +141,5 @@ $autoload['model'] = array('mlogin',
 						   'M_b_admin' => 'madmin', 
 						   'M_b_menu' => 'menu',
 						   'model_template_v1/M_f_beranda' => 'mf_beranda',
-						   'model_template_v1/M_f_users' => 'mf_users');
+						   'model_template_v1/M_f_users' => 'mf_users',
+							'model_template_v1/M_f_visitor' => 'mf_visitor');

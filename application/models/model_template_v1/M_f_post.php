@@ -98,7 +98,6 @@ class M_f_post extends CI_Model {
         }
         return $result;
     }
-
     public function getIdByJudul($judul){
         $this->db->select('id_berita');
         $this->db->from('t_berita');
@@ -113,17 +112,52 @@ class M_f_post extends CI_Model {
         }   
         return $result;
     }
+    public function getIdByJudulAndType($judul, $type){
+        $this->db->select('id_berita');
+        $this->db->from('t_berita');
+        $this->db->where('judul', $judul);
+        $this->db->where('type', $type);
+        $db = $this->db->get();
+        if($db->num_rows() > 0)
+        {
+            $r = $db->row();
+            $result = $r->id_berita;
+        } else {
+            $result = 'ID NULL';
+        }   
+        return $result;
+    }
+
+    public function getDetailByUrl($url){
+        $this->db->select('id_berita, views, type');
+        $this->db->from('t_berita');
+        $this->db->where('content', $url);
+        $db = $this->db->get();
+        if($db->num_rows() > 0)
+        {
+            $r = $db->row();
+            $result = $r;
+        } else {
+            $result = "";
+        }
+        return $result;
+    }
 
     public function doInsertJudulBaru($tbl, $data)
     {
         return $this->db->insert($tbl, $data);
     }
     
-    public function doUpdatePhoto($tbl, $id, $data)
+    public function doUpdatePhoto($tbl, $whr, $data)
     {
-        $this->db->where('id_berita', $id);
+        $this->db->where($whr);
         $this->db->update($tbl, $data);
         return true;
+    }
+
+    public function doInsertPhotoTerkait($tbl, $data)
+    {
+        return $this->db->insert($tbl, $data);
     }
 
     public function doUpdatePost($tbl, $id, $data)
@@ -172,6 +206,27 @@ class M_f_post extends CI_Model {
         return $q;
     }
 
+    public function jml_replay_komentar($parentId) 
+    {
+        $this->db->select('id_komentar, parent_id');
+        $this->db->from('t_komentar');
+        $this->db->where('parent_id !=', NULL);
+       $this->db->where('parent_id', $parentId);
+        $q = $this->db->get();
+        return $q->num_rows();
+    }
+
+    public function user_replay_komentar($parentId) 
+    {
+        $this->db->select('k.*, u.nama_lengkap, u.photo_pic');
+        $this->db->from('t_komentar AS k');
+        $this->db->join('t_users_portal AS u', 'k.fid_users_portal = u.id_user_portal', 'left');
+        $this->db->where('k.parent_id', $parentId);
+        $this->db->order_by('k.parent_id', 'asc');
+        $q = $this->db->get();
+        return $q->result();
+    }
+
     public function kategori_byid($id) 
     {
         $q = $this->db->get_where('t_kategori', ['id_kategori' => $id])->row();
@@ -201,6 +256,7 @@ class M_f_post extends CI_Model {
         $this->db->from('t_berita_save AS a');
         $this->db->join('t_berita AS b', 'a.fid_berita = b.id_berita');
         $this->db->join('t_users_portal AS c', 'b.created_by = c.id_user_portal');
+        $this->db->where('a.save', 'on');
         $this->db->where('a.fid_users_portal', $id);
         $q = $this->db->get();
         return $q;
@@ -212,9 +268,18 @@ class M_f_post extends CI_Model {
           if($query != '')
           {
            $this->db->like('judul', $query);
+           $this->db->or_like('tags', $query);
           }
           $this->db->order_by('id_berita', 'DESC');
           return $this->db->get();
+    }
+
+    public function getFileNameById($id) {
+        $this->db->select('img');
+        $this->db->from('t_berita');
+        $this->db->where('id_berita', $id);
+        $q = $this->db->get()->row();
+        return $q->img;
     }
 }
 

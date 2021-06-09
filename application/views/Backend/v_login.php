@@ -36,7 +36,8 @@
 <audio src="<?= site_url('assets/audio/ukulele-BGM.mp3'); ?>" autoplay="true" hidden="true" loop="true" id="BgmLogin">
 <p>If you are reading this, it is because your browser does not support the audio element.</p>
 </audio>
-<?php
+        <div class="card loginBoxes">
+            <?php
                 $gtmsg = $_GET['message'];
                 if ($gtmsg == 'unset') {
                     ?>
@@ -53,8 +54,6 @@
             </div>
             <?php
                 } ?>
-        <div class="card loginBoxes">
-
             <div class="header text-center">
             <img src="<?php echo site_url('assets/images/logo.png'); ?>" alt="logo" class="img-rounded" width="70">
             <!-- <div class="logo" id="title-app"> 
@@ -80,7 +79,7 @@
                 <!-- <form id="sign_in" method="POST"> -->
                 <?= form_open('login/cek', array('id' => 'sign_in', 'autocomplete' => 'off')); ?>
                     <div id="msg"></div>
-                    <div class="row clearfix">
+                    <div class="row clearfix body-login">
                         <div class="col-md-12">
                                 <div class="input-group">
                                     <span class="input-group-addon" >
@@ -141,27 +140,17 @@
                     </div>                    
                     <div class="row">
                         <div class="col-xs-6 col-md-6">
-                            <a href="<?php echo base_url(); ?>" class="btn p-8 btn-block btn-rounded btn-link waves-effect">&larr; Beranda</a>
+                            <a href="<?php echo base_url('beranda'); ?>" class="btn p-8 btn-block btn-rounded btn-link waves-effect">&larr; Beranda</a>
                         </div>
                         <div class="col-xs-6 col-md-6">
                            <button type="submit" style="padding:10px 15px" class="btn btn-block btn-rounded waves-effect waves-light pull-right btn-success  waves-float" id="login" type="button"><em class="glyphicon glyphicon-send m-r-10"></em> MASUK</button> 
                         </div>
                     </div>
                 <?= form_close(); ?>
-
-          
             </div>
-            <!-- <div class="card-footer">
-                <div class="text-center m-t-15 p-b-25">Badan Kepegawai, Pendidikan dan Pelatihan Daerah</div>
-            </div> -->
-
-
-            
         </div>
-        
     </div>
-    <div class="text-center login-footer help-block">&copy; <?php echo date('Y') ?> BKPPD BALANGAN </div>
-    <!-- <img src="<?= base_url('assets/images/bg/example-1.svg'); ?>" id="bgImgLogin" style="position:absolute; bottom:0; z-index:-1; margin:0 auto; width: 70%; left:15%; filter: blur(5px);"> -->
+    <div class="text-center login-footer">&copy; Pemerintah Kabupaten Balangan Tahun <?php echo date('Y') ?> &bull; Badan Kepegawaian Pendidikan dan Pelatihan Daerah</div>
     <?php
     foreach ($autoload_javascript as $script):
         echo script_tag($script);

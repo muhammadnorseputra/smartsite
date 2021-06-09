@@ -13,7 +13,7 @@ class Halaman extends CI_Controller
     if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
           // redirect(base_url('frontend/v1/beranda'),'refresh');
       } else {
-          redirect(base_url('theme/maintenance_site'),'refresh');
+          redirect(base_url('under-construction'),'refresh');
       }
   }
   public function index()
@@ -21,15 +21,47 @@ class Halaman extends CI_Controller
   }
   public function statis($token_halaman, $judul)
   {
+    $e = array(
+      'general' => true, //description, keywords
+      'og' => true,
+      'twitter'=> true,
+      'robot'=> true
+    );
+    // Meta SEO
+    $title = $this->halaman->get_namahalaman($token_halaman).' &bull; BKPPD Kabupaten Balangan';
+    $detail = $this->halaman->get_detail_halaman($token_halaman);
+    $keywords = str_replace('-',',',url_title(strtolower($title)));
+    // jika ada gambar
+    
+    if($detail->num_rows() > 0):
+    $path = $detail->row()->filename;
+    $ext = pathinfo($path, PATHINFO_EXTENSION); 
+    $imgurl = $ext != 'pdf' ? base_url('files/randoms/'.$path) : base_url('assets/images/logo.png');
+    
+    $meta_tag = meta_tags($e, 
+                          $title = $title, 
+                          $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 10))), 
+                          $imgUrl = $imgurl, 
+                          $url = base_url('page/'.$token_halaman.'/'.url_title($judul)), 
+                          $keyWords = $keywords,
+                          $type = 'article'
+                        );
+    else:
+      $meta_tag = '';
+    endif;
+
+    // Data
     $data = [
-      'title' => 'BKPPD Kab. Balangan, ' . $this->halaman->get_namahalaman($token_halaman),
+      'title' => $title,
       'isi'  => 'Frontend/v1/pages/h_statis',
       'uri_token_halaman' => $token_halaman,
       'mf_beranda' => $this->mf_beranda->get_identitas(),
       'mf_menu' => $this->mf_beranda->get_menu(),
-      'detail' => $this->halaman->get_detail_halaman($token_halaman)
+      'detail' => $detail,
+      'meta' => $meta_tag
     ];
 
+    $this->halaman->diakses('t_halaman',$token_halaman, $this->halaman->get_viewshalaman($token_halaman));
     $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
   }
 
@@ -67,6 +99,7 @@ class Halaman extends CI_Controller
     if(!empty($filename)) 
     {
       $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
+      file_put_contents('files/randoms/'.$filename,$file);
       $data = [
         'fid_users_portal' => $this->session->userdata('user_portal_log')['id'],
         'token_halaman' => $token,
@@ -106,13 +139,19 @@ class Halaman extends CI_Controller
     $isi   = $this->input->post('content');
     $etoken    = $this->input->post('etoken');
     $newtoken    = mt_rand(100000000,999999999);
-    
+    $path = 'files/randoms/';
     if($etoken == 'on')
     {
       $token_halaman = $newtoken;
       if(!empty($_FILES['lampiran']['tmp_name']) 
        && file_exists($_FILES['lampiran']['tmp_name'])) {
+
+        $file_old = $this->halaman->getFileNameByToken($token);
+        if (file_exists($path.$file_old)) {
+            @unlink($path.$file_old);
+        }
         $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
+        file_put_contents($path.$filename,$file);
         $data = [
           'token_halaman' => $newtoken,
           'title' => $title,
@@ -134,7 +173,14 @@ class Halaman extends CI_Controller
       $token_halaman = intval($token);
       if(!empty($_FILES['lampiran']['tmp_name']) 
        && file_exists($_FILES['lampiran']['tmp_name'])) {
+        $file_old = $this->halaman->getFileNameByToken($token_halaman);
+        if(!empty($file_old)):
+          if (file_exists($path.$file_old)) {
+              @unlink($path.$file_old);
+          }
+        endif;
         $file  = file_get_contents($_FILES['lampiran']['tmp_name']);
+        file_put_contents($path.$filename,$file);
         $data = [
           'title' => $title,
           'content' => $isi,
@@ -166,9 +212,13 @@ class Halaman extends CI_Controller
   public function deleteHalaman()
   {
     $table = 't_halaman';
-    $id = $this->input->post('id');
+    $id = $this->input->post('id'); // TOKEN
+    $path = 'files/randoms/';
+    $file_old = $this->halaman->getFileNameByToken($id);
+    if (file_exists($path.$file_old)) {
+        @unlink($path.$file_old);
+    }
     $delete = $this->halaman->doDeleteHalaman($table, $id);
-
     if ($delete == true) {
       $msg = ['valid' => true];
     } else {
@@ -217,6 +267,7 @@ class Halaman extends CI_Controller
       
       $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap', 'required|min_length[3]', ['required' => '{field} wajib diisi', 'min_length' => '{field} minimal 3 karakter']);
       $this->form_validation->set_rules('isi_saran', 'Isi Saran', 'required', ['required' => '{field} wajib diisi']);
+      $this->form_validation->set_rules('category', 'Kategori Saran', 'required', ['required' => '{field} belum dipilih']);
       $this->form_validation->set_rules('captcha', 'Pertanyaan Keamanan', 'required', ['required' => '{field} dijawab']);
 
       if($this->form_validation->run() == FALSE):
@@ -227,6 +278,7 @@ class Halaman extends CI_Controller
           $data = [
             'nama_lengkap' => $this->input->post('nama_lengkap'),
             'email' => $this->input->post('email'),
+            'kategori' => $this->input->post('category'),
             'isi_saran' => $this->input->post('isi_saran'),
             'tgl_kirim' => date('Y-m-d h:i:s')
           ];
@@ -240,10 +292,29 @@ class Halaman extends CI_Controller
           redirect(base_url('frontend/v1/halaman/saran_status'));
         else:
           $this->session->set_flashdata('captcha_salah', '<b>Error</b>, jawaban keamanan salah, coba ulangi lagi.');
-          redirect(base_url('frontend/v1/halaman/saran'));
+          redirect(base_url('kotak_saran'));
         endif;
       endif;
     endif;
+  }
+
+  public function hapus_lampiran() {
+    $id = $this->input->get('id');
+    $path = 'files/randoms/';
+    $file_old = $this->halaman->getFileNameByToken($id);
+    if (file_exists($path.$file_old)) {
+        @unlink($path.$file_old);
+    }
+    $data = ['filename' => NULL, 'file' => NULL];
+    $whr = ['token_halaman' => $id];
+    $db = $this->halaman->hapus_lampiran('t_halaman', $whr, $data);
+    if($db) {
+      $msg = true;
+    } else {
+      $msg = false;
+    }
+
+    echo json_encode($msg);
   }
 }
 

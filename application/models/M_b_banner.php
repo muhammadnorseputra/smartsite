@@ -36,7 +36,7 @@ class M_b_banner extends CI_Model {
     return  $this->db->select('t.*, j.jenis, j.posisi')
     ->from($tbl.' AS t')
     ->join('ref_jns_banner AS j', 't.fid_jns_banner = j.id_jns_banner', 'left')
-    ->where('t.upload_by', $this->session->userdata('user'))
+    // ->where('t.upload_by', $this->session->userdata('user'))
     ->get();
   }
 

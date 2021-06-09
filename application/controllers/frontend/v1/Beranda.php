@@ -7,25 +7,38 @@ class Beranda extends CI_Controller
         parent::__construct();
         $this->load->model('model_template_v1/M_f_users', 'mf_users');
         $this->load->model('model_template_v1/M_f_post', 'post');
+        $this->load->model('model_template_v1/M_f_album', 'album');
         $this->load->model('M_b_komentar', 'komentar');
         //Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
             // redirect(base_url('frontend/v1/beranda'),'refresh');
         } else {
-            redirect(base_url('theme/maintenance_site'),'refresh');
+            redirect(base_url('under-construction'),'refresh');
         }
         // Cek session
         // if(!$this->session->userdata('email')) {
         //     redirect(base_url('frontend/v1/users/login'),'refresh');
         // }
     }
-
+    public function testing() {
+        $url = base_url('beranda?id=123&media=id');
+        $parse = parse_url($url, PHP_URL_SCHEME);
+        var_dump(parse_str($_SERVER['QUERY_STRING'], $_GET));
+    }
     public function index()
     {
+        $id = $this->mf_beranda->get_identitas();
+        $e = array(
+          'general' => true, //description, keywords
+          'og' => true,
+          'twitter'=> true,
+          'robot'=> true
+        );
+        $meta_tag = meta_tags($e, $title = '', $desc=$id->meta_desc,$imgUrl = base_url('assets/images/logo.png'),$url = base_url('beranda'),$keyWords=$id->meta_seo,$type='web');
         $data = [
-                    'title' => 'Home',
+                    'title' => "Beranda &dash; BKPPD Kab. Balangan",
                     'isi' => 'Frontend/v1/pages/home',
-                    'mf_beranda' => $this->mf_beranda->get_identitas(),
+                    'mf_beranda' => $id,
                     'mf_menu' => $this->mf_beranda->get_menu(),
                     'mf_informasi_terbaru' => $this->mf_beranda->get_informasi_terbaru(),
                     'mf_berita_terakhir' => $this->mf_beranda->berita_terakhir(),
@@ -37,42 +50,57 @@ class Beranda extends CI_Controller
                     'mf_berita_populer' => $this->mf_beranda->berita_populer(),
                     'mf_kategori' => $this->mf_beranda->get_kategori_listing(),
                     'mf_agenda' => $this->mf_beranda->get_agenda_terbaru(),
+                    'mf_poling_pertanyaan' => $this->mf_beranda->get_poling_a()->row(),
+                    'mf_poling_jawaban' => $this->mf_beranda->get_poling_b(),
                     'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
+                    'meta' => $meta_tag
                 ];
-        $this->load->view('Frontend/v1/layout/wrapper', $data);
+         
+         $this->load->view('Frontend/v1/layout/wrapper', $data);
     }
 
-    public function slider()
+    public function section($section)
     {
         $data = [
-            'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
-        ];
-        $this->load->view('Frontend/v1/function/slider3', $data, false);
+                    'mf_beranda' => $this->mf_beranda->get_identitas()
+                ];
+        $this->load->view('Frontend/v1/function/'.$section, $data);
+    }
+
+    function template_sumber($text, $icon) {
+        $html = '<div class="btn-group btn-group-sm mb-2 ml-3 ml-md-0" role="group" aria-label="button">
+                    <button type="button" class="btn btn-sm btn-light" disabled>'.$icon.'</button>
+                    <button type="button" class="btn btn-sm btn-default"  disabled>'.$text.'</button>
+                </div>';
+        return $html;
     }
 
     public function get_all_berita()
     {
+        $limit = $this->input->post('limit');
+        $start = $this->input->post('start');
+        $type  = $this->input->post('type');
+        $sort  = $this->input->post('sort');
         $output = '';
-        $data = $this->mf_beranda->get_all_berita($this->input->post('limit'),$this->input->post('start'));
+        $data = $this->mf_beranda->get_all_berita($limit,$start,$type,$sort);
         if ($data->num_rows() > 0) {
+            $no=1;
             foreach ($data->result() as $row) {
-                if ($row->headline == '1') {
-                    $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
-                    $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
-                    $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
-                } else {
-                    $isi = $row->content;
-                }
+
+                // Tags
                 $tags = $row->tags;
                 $pecah = explode(',', $tags);
-                if (count($pecah) > 0) {
                     $tag = '';
-                    for ($i = 0; $i < count($pecah); ++$i) {
-                        $tag .= '<a href="'.base_url('frontend/v1/post_list/tags?q='.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-secondary mr-2 mb-2">#'.$pecah[$i].'</a>';
+                    for ($i = 0; $i < count($pecah); $i++) {
+                        if (count($pecah) > 0) {
+                            $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-light mr-1 mb-1">#'.$pecah[$i].'</a>';
+                        }
                     }
-                }
+
+                // Berita pilihan tanda check warna hijau
                 $pilihan = $row->pilihan == 'Y' ? '<span class="text-success small float-right" data-toggle="tooltip" title="Pilihan Editor"><i class="fas fa-check-circle"></i></span>' : '';
 
+                // Profile akun yang posting
                 $by = $row->created_by;
                 if($by == 'admin') {
                     $link_profile_public = 'javascript:void(0);';
@@ -81,58 +109,155 @@ class Beranda extends CI_Controller
                     $gravatar = base_url('assets/images/users/'.$this->mf_users->get_gravatar($by));
                 } else {
                     $link_profile_public = 
-                    base_url("frontend/v1/users/profile/@".decrypt_url( $this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan)."/".encrypt_url($by));
+                    base_url("user/".decrypt_url( $this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan)."/".encrypt_url($by));
                     $namalengkap = decrypt_url($this->mf_users->get_userportal_namalengkap($by));
                     $namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
                     $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
 
                 }
 
-                $id = encrypt_url($row->id_berita);
-                $postby = strtolower($namalengkap);
-                $judul = strtolower($row->judul);
-                $posturl = "post/detail/{$postby}/{$id}/".url_title($judul).'';
+                // Post Link Detail
+                if($row->type === 'YOUTUBE' || $row->type === 'BERITA'):
+                    $id = encrypt_url($row->id_berita);
+                    $postby = strtolower(url_title($namalengkap));
+                    $judul = strtolower($row->judul);
+                    $posturl = "post/{$postby}/{$id}/".url_title($judul).'';
+                else:
+                    $posturl = base_url('leave?go='.encrypt_url($row->content));
+                endif;
                 
+                // Bookmark button
                 $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $row->id_berita) == 'on' ? 'btn-bookmark' : '';
                 $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $row->id_berita) == 'on' ? 'fas text-primary' : 'far';
 
+                // Like button
                 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'btn-like' : '';
                 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $row->id_berita) == true ? 'fas text-danger' : 'far';
 
-                if(empty($row->img)):
-                    $img = '<img class="card-img-top lazy" style="border-radius:15px;" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
-                else:
-                    $img = '<img class="card-img-top lazy" style="border-radius:15px;" data-src="'.$row->path.'" alt="'.$row->img.'">';
+                // Post Data Youtube
+                if($row->type === 'YOUTUBE'):
+                    $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
+                    $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$row->content.'&key='.$key;
+                    $yt     = api_client($url);
+                    $yt_thumb = $yt['items'][0]['snippet']['thumbnails']['high']['url'];
+                    $yt_desc = $yt['items'][0]['snippet']['description'];
+                    $yt_src = $yt['items'][0]['snippet']['channelTitle'];
                 endif;
+
+                if($row->type === 'LINK'):
+                    $url = $row->content;
+                    $linker = getSiteOG($url);
+                    // var_dump($linker);
+                endif;
+
+                // Headline
+                if ($row->headline == '1') {
+                    $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
+                    $isi = substr($isi_berita, 0, 160); // ambil sebanyak 80 karakter
+                    $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
+                } else {
+                    $isi = $row->content;
+                }
+
+                // Content
+                if($row->type === 'YOUTUBE'):
+                    $content = word_limiter($yt_desc,20);
+                elseif($row->type === 'LINK'):
+                    $content = word_limiter($linker['description'],15);
+                else:
+                    $content = $isi."...";
+                endif;
+
+                // Sumber
+                if($row->type === 'YOUTUBE'):
+                    $status_posted = '<abbr title="Repost adalah diposting ulang atau ditampilkan kembali, berdasarkan sumber tertentu.">Repost</abbr>';
+                    $text = $yt_src;
+                    $icon = '<i class="fab fa-youtube"></i>';
+                    $sumber = $this->template_sumber($text, $icon);
+                elseif($row->type === 'LINK'):
+                    $domain = parse_url($row->content, PHP_URL_HOST);
+                    $status_posted = '<abbr title="Repost adalah diposting ulang atau ditampilkan kembali, berdasarkan sumber tertentu.">Repost</abbr>';
+                    $text = $domain;
+                    $icon = '<i class="fas fa-link"></i>';
+                    $sumber = $this->template_sumber($text, $icon);
+                else:
+                    $domain = parse_url(base_url(), PHP_URL_HOST);
+                    $status_posted = 'Posted';
+                    $text = $domain;
+                    $icon = '<i class="fas fa-globe-asia"></i>';
+                    $sumber = $this->template_sumber($text, $icon);
+                endif;
+
+                // Gambar
+                if($row->type === 'BERITA'):
+                    if(!empty($row->img)):
+                        $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('files/file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                    elseif(!empty($row->img_blob)):
+                        $img = '<img class="w-100 lazy rounded border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
+                    else:
+                        $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                    endif;
+                elseif($row->type === 'YOUTUBE'):
+                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'">';
+                elseif($row->type === 'LINK'):
+                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
+                else:
+                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                endif;
+
+                // Kategori
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
-                $post_list_url = base_url('frontend/v1/post_list/views/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
-// <a href="'.$post_list_url.'" class="btn btn-primary-old rounded float-right btn-sm px-3">'.$namakategori.'</a>
+                $post_list_url = base_url('kategori/' . encrypt_url($row->fid_kategori) . '/' . url_title($namakategori) . '?order=desc');
+                
+                $arr_color = ['btn-primary', 'btn-success', 'btn-info', 'btn-warning', 'btn-danger', 'btn-default', 'btn-dark'];
+                $rand = '';
+                for($x=0; $x<count($arr_color);$x++):
+                    $rand = $arr_color[$no];
+                endfor;
+
+                if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'LINK'):
+                $content_body = '<div class="row">
+
+                                    <div class="canvas col-12 col-md-6">
+                                        <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info px-3 pl-md-4" title="'.$row->judul.'">
+                                          '.$img.'
+                                        </a>
+                                    </div>
+                                
+                                    <div class="col-12 col-md-6 pl-md-0 mt-md-0 mt-2">
+                                        <div class="btn-group btn-group-sm mb-2 ml-3 ml-md-0" role="group" aria-label="button">
+                                            <button type="button" class="btn btn-sm btn-light" disabled><i class="fas fa-tag"></i></button>
+                                            <a href="'.$post_list_url.'" class="btn btn-sm '.$rand.'">'.$namakategori.'</a>
+                                        </div>
+                                        '.$sumber.'
+                                        <div class="mx-3 mx-md-0 pr-md-4">
+                                        <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 6).'&nbsp;'.$pilihan.'</a></h4>
+                                        <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
+                                        <hr>
+                                        <p>'.$tag. '</p>
+                                        </div>
+                                    </div>
+                                </div>';
+                endif;
+
                 $output .= '
-                <div>
-					<div class="card mb-5 border-light shadow-sm bg-white" style="border-radius:12px;">
-					<div class="card-body p-3">
+                <div data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
+					<div class="card mb-4 border bg-white shadow-sm">
+					<div class="card-body px-2 mt-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
-                        <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded lazy">
-						<h5 class="card-title"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
+                        <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded ml-3 lazy">
+						<h5 class="card-title mb-0 pb-1"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
                         <p class="card-text">
-                            <span class="badge badge-default px-0 font-weight-normal text-muted">Posted by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
+                            <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
                         </p>
 					</div>
-                        <div class="canvas p-3 position-relative">
-                        <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
-						  '.$img.'
-                        </a>
-                        </div>
-					
-					<div class="card-body py-0 px-4">
-						<h3 class="card-title font-weight-bold"><a href="'.$posturl.'">'.$row->judul.'&nbsp;'.$pilihan.'</a></h3>
-                        <p class="card-text font-weight-normal text-secondary">'.character_limiter($isi, 150).'</p>
-                        <p><a href="#" class="btn btn-sm btn-warning mr-2 mb-2 text-white shadow">'.$namakategori.'</a>'.$tag. '</p>
-					</div>
-					<div class="card-footer bg-white p-2 border-light d-flex justify-content-around"  style="border-bottom-left-radius:12px;border-bottom-right-radius:12px;">
+                    
+                    '.$content_body.'
+
+					<div class="card-footer bg-transparent p-2 border-0 d-flex justify-content-start">
 					
                     <div class="w-100">
-					<button type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
+					<button type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
                     </div>
                     <div class="w-100">
 					<button type="button" data-toggle="tooltip" title="Komentar" class="btn btn-transparent border-0 rounded p-2 w-100 text-info"><i class="far fa-comment-alt mr-2"></i> '.$this->komentar->jml_komentarbyidberita($row->id_berita). '</button>
@@ -147,11 +272,12 @@ class Beranda extends CI_Controller
                     </div>
 				</div>
 				';
+                $no++;
             }
         }
-        echo json_encode(['html' => $output, 'status' => 'Oke']);
+        echo json_encode(['html' => $output, 'count' => $data->num_rows(), 'status' => 'Oke']);
     }
-
+    
     public function share_artikel($id)
     {
         return $this->load->view('Frontend/v1/function/share',
@@ -237,4 +363,7 @@ class Beranda extends CI_Controller
     {
         return $this->load->view('Frontend/v1/function/f_menus');
     }    
+    public function yt_view_video($id) {
+        return $this->load->view('Frontend/v1/function/yt_view_video', ['videoId' => $id]);
+    }
 }

@@ -3,7 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_f_beranda extends CI_Model
 {
-
     public function get_identitas()
     {
         return $this->db->get('t_pengaturan')->row();
@@ -31,13 +30,13 @@ class M_f_beranda extends CI_Model
         $this->db->where(['t_banner.publish' => 'Y',
                           'ref_jns_banner.jenis' => $jns_banner,
                           'ref_jns_banner.posisi' => $posisi, ]);
-        $this->db->order_by('t_banner.id_banner');
+        $this->db->order_by('t_banner.id_banner', 'desc');
         $this->db->limit(1, 0);
         $this->db->group_by('t_banner.id_banner');
         $q = $this->db->get();
         if ($q->num_rows() > 0) {
             $b = $q->row();
-            $data = [$b->path, $b->judul, $b->url, $b->upload_by];
+            $data = [$b->path, $b->judul, $b->url, $b->upload_by, $b->gambar, encrypt_url($b->id_banner)];
             return $data;
         }
     }
@@ -61,9 +60,29 @@ class M_f_beranda extends CI_Model
         $this->db->join('t_menu AS menu', 'submenu.idmain = menu.id_menu', 'left');
         $this->db->where('submenu.aktif', 'Y');
         $this->db->where('submenu.idmain', $id_menu);
+        $this->db->where('fid_idsub', NULL);
         $this->db->order_by('submenu.order', 'asc');
         $q = $this->db->get();
 
+        return $q->result();
+    }
+
+    public function parent_submenu($idsub) {
+        $this->db->select('idsub, fid_idsub');
+        $this->db->from('t_submenu');
+        $this->db->where('fid_idsub !=', NULL);
+        $this->db->where('fid_idsub', $idsub);
+        $q = $this->db->get();
+        return $q;
+    }
+
+    public function sub_submenu($idsub) {
+        $this->db->select('nama_sub, link_sub, idsub');
+        $this->db->from('t_submenu');
+        $this->db->where('fid_idsub', $idsub);
+        $this->db->where('aktif', 'Y');
+        $this->db->order_by('order', 'asc');
+        $q = $this->db->get();
         return $q->result();
     }
 
@@ -108,7 +127,7 @@ class M_f_beranda extends CI_Model
 
     public function berita_selanjutnya($id)
     {
-        return $this->db->order_by('id_berita')->get_where('t_berita', ['id_berita !=' => $id ], 2, 0);
+        return $this->db->order_by('id_berita', rand())->get_where('t_berita', ['id_berita !=' => $id ], 2, 0);
     }
 
     public function berita_by_kategori($limit, $offset)
@@ -128,19 +147,32 @@ class M_f_beranda extends CI_Model
 
     public function berita_populer()
     {
-        $this->db->where('like_count !=', '0');
+        $this->db->where('views !=', '0');
+        $this->db->order_by('views', 'desc');
         $this->db->order_by('like_count', 'desc');
+        $this->db->order_by('share_count', 'desc');
         $q = $this->db->get('t_berita', 6, 0);
-
         return $q->result();
     }
 
-    public function get_all_berita($limit, $start)
+    public function get_all_berita($limit, $start, $type, $sort)
     {
         $this->db->select('*');
         $this->db->from('t_berita');
-        $this->db->order_by('id_berita', 'DESC');
         $this->db->where('publish', '1');
+        
+        if(!empty($type) && $type != 'all'):
+            $this->db->where('type', strtoupper($type));
+        endif;
+
+        if(!empty($sort) && $sort === 'populer'):
+            $this->db->where('views !=', '0');
+            $this->db->order_by('views', 'desc');
+            $this->db->order_by('like_count', 'desc');
+            $this->db->order_by('share_count', 'desc');
+        elseif(empty($sort) || $sort === 'newest'):
+            $this->db->order_by('id_berita', 'DESC');
+        endif;
         $this->db->limit($limit, $start);
         $query = $this->db->get();
 
@@ -151,7 +183,7 @@ class M_f_beranda extends CI_Model
     {
         $this->db->order_by('id_album_foto', 'desc');
 
-        return $this->db->get('t_album_foto', 6, 0)->result();
+        return $this->db->get('t_album_foto', 4, 0)->result();
     }
 
     public function get_photo_by_album($id_album_foto, $limit, $batas)
@@ -284,6 +316,38 @@ class M_f_beranda extends CI_Model
         if ($q->num_rows() > 0) {
             return true;
         }
+    }
+    public function get_poling_a()
+    {
+        return $this->db->order_by('id_poling','desc')->limit('1')->get_where('t_poling', ['status' => 'PERTANYAAN']);
+    }
+    public function get_poling_b()
+    {
+        return $this->db->order_by('value','desc')->get_where('t_poling', ['status' => 'JAWABAN']);
+    }
+    public function get_poling_id($id)
+    {
+        $q =  $this->db->get_where('t_poling', ['id_poling' => $id]);
+        if($q->num_rows() > 0){
+            $r = $q->row();
+            $msg = $r->value;
+        } else {
+            $msg = 'ID Not Found';
+        }
+        return $msg;
+    }
+    public function update_vote($tbl, $data, $whr) {
+        $this->db->where($whr);
+        $this->db->update($tbl, $data);
+        return true;
+    }
+    public function total_vote_seluruhopsi()
+    {
+        $this->db->select('SUM(value) as total_vote_opsi');
+        $this->db->from('t_poling');
+        $this->db->where('status', 'JAWABAN');
+        $q = $this->db->get()->row();
+        return $q->total_vote_opsi;
     }
 }
 

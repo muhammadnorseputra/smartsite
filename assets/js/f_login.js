@@ -1,4 +1,5 @@
   $(document).ready(function() {
+      $("input[name='email']").focus();
       $.validate({
           form: '#f_login',
           lang: 'en',
@@ -38,6 +39,7 @@
               });
               return false; // Will stop the submission of the form
               $form.removeClass('toggle-disabled');
+              $form.get(0).reset();
           }
       });
   });
@@ -45,7 +47,7 @@
   function suksesLogin(response) {
       $('#content2').notifyModal({
           duration: 1800,
-          placement: 'centerTopSlide',
+          placement: 'center',
           overlay: true,
           type: 'success',
           icon: false,
@@ -61,7 +63,6 @@
               if (response.valid == true) {
                   window.location.href = response.redirect;
               }
-              $form.get(0).reset();
           }
       });
   }
@@ -94,7 +95,7 @@
           },
           onClose: function(el) {
               $('button[type="submit"]').html(`<i class="fas fa-lock mr-2"></i> Log In`);
-              window.location.href = msg.redirect;
+              // window.location.href = msg.redirect;
           }
       });
   }

@@ -78,16 +78,18 @@ class C_submenu extends CI_Controller {
 	{
 		$submain = $this->input->post('submainmenu');
 		$submenu = $this->input->post('submenu');
+		$parentsubmenu = $this->input->post('parentsubmenu');
 		$module  = $this->input->post('modulesubmenu');
 		$linksub = $this->input->post('linksub');
 		$order 	 = $this->input->post('ordersub');
 		$aktif 	 = $this->input->post('aktifsub');
 
 		//UNTUK ID CEK PADA DATABASE TABLE `t_module` 
-		$link = $module == '27' ? 'halaman/statis/'.$linksub.'/'.$this->mhalaman->get_title_halaman($linksub) : $linksub;
+		$link = $module == '27' ? 'page/'.$linksub.'/'.$this->mhalaman->get_title_halaman($linksub) : $linksub;
 
 		$value = [
 			'idmain' => $submain,
+			'fid_idsub' => $parentsubmenu,
 			'fid_module' => $module,
 			'nama_sub' => $submenu,
 			'link_sub' => $link,
@@ -143,6 +145,24 @@ class C_submenu extends CI_Controller {
 		}
 		echo json_encode($rows);
 	}
+
+	public function parent_sub()
+	{
+		$sql = $this->msubmenu->get_submenu_list()->result();
+
+		if(count($sql) > 0)
+		{
+			$rows = '<option value="">Default (Null)</option>';
+			foreach ($sql as $key) {
+				$rows .= '<option value="'.$key->idsub.'">'.ucwords($key->nama_sub).'</option>';
+			}
+		}
+		else
+		{
+			$rows .= '<option>Parent Sub Kosong</option>';
+		}
+		echo json_encode($rows);
+	}	
 	
 	public function editsubmenu()
 	{
@@ -157,6 +177,7 @@ class C_submenu extends CI_Controller {
 	{
 		$idmain = $this->input->post('editidmainmenu');
 		$fidmodule = $this->input->post('editnamamodule');
+		$fid_idsub = $this->input->post('editparentsubmenu');
 		$namasub = $this->input->post('editsubmenu');
 		$linksub = $this->input->post('editlinksub');
 		$ordersub = $this->input->post('editordersub');
@@ -164,12 +185,13 @@ class C_submenu extends CI_Controller {
 		$id = $this->input->post('editidsub');
 
 		//UNTUK ID CEK PADA DATABASE TABLE `t_module` 
-		$link = $fidmodule == '27' ? 'halaman/statis/'.$linksub.'/'.$this->mhalaman->get_title_halaman($linksub) : $linksub;
+		$link = $fidmodule == '27' ? 'page/'.$linksub.'/'.$this->mhalaman->get_title_halaman($linksub) : $linksub;
 
 		if(!empty($id))
 		{
 			$values = array(
 				'idmain' => $idmain,
+				'fid_idsub' => empty($fid_idsub) ? NULL : $fid_idsub,
 				'fid_module' => $fidmodule,
 				'nama_sub' => $namasub,
 				'link_sub' => $link,

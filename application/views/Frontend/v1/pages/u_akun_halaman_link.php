@@ -41,19 +41,24 @@
 		</div>
 	</div>
 </section>
+<link rel="stylesheet" href="<?= base_url('assets/plugins/select2/css/select2-materialize.css') ?>">
+<script src="<?= base_url('assets/plugins/select2/js/select2.full.min.js') ?>"></script>
 <script>
+	$(document).ready(function() {
+	    $("select[name='submenu']").select2();
+	});
 	$("select[name='submenu']").on("change", function() {
 		if($(this).val() != '') {
 			$.getJSON(_uri+'/frontend/v1/users/getsubmenubyid', {id: $(this).val()}, function(res) {
 				// console.log(res);
 				let link = res.link_sub;
 				let slice = link.split("/");
-				if(typeof slice[2] == 'undefined') {
+				if(typeof slice[1] == 'undefined') {
 				$("button#save-token").prop('disabled', false);
 					$("table tr td.link").html(`${_uri}/${link}`);
 				 return	$("table tr td.token").html(`-`);	
 				}
-				$("table tr td.token").html(`${slice[2]}`);
+				$("table tr td.token").html(`${slice[1]}`);
 				$("table tr td.link").html(`${_uri}/${link}`);
 				$("button#save-token").prop('disabled', false);
 			});

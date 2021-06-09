@@ -8,8 +8,8 @@ $(document).ready(function() {
         filtersPosition: "top",
         recentEmojis: false,
     });
-    let $online = _uriSegment[3] == 'post' && _uriSegment[4] == 'detail';
-    let $local = _uriSegment[4] == 'post' && _uriSegment[5] == 'detail';
+    let $online = _uriSegment[1] == 'post';
+    let $local = _uriSegment[2] == 'post';
     let $url = $host ? $local : $online;
 
     if ($url) {
@@ -19,10 +19,12 @@ $(document).ready(function() {
     }
 
     function displayComments() {
-        $.getJSON(`${_uri}/frontend/v1/post/displayKomentar/${$host ? _uriSegment[7] : _uriSegment[6]}`, function(response) {
+        $.getJSON(`${_uri}/frontend/v1/post/displayKomentar/${$host ? _uriSegment[4] : _uriSegment[3]}`, function(response) {
             $(".tracking-list").html(response);
         });
     }
+
+
 
     // Reply komentar
     $(document).on('click', '#btn-reply-comment', function() {
@@ -30,8 +32,11 @@ $(document).ready(function() {
         var id_berita = $(this).attr('data-id-berita');
         var id_user_comment = $(this).attr('data-id-user-comment');
         var id_user_username = $(this).attr('data-username');
-
-        $(".emojionearea-editor").html(`<span class="text-info">@${id_user_username.trim().toLowerCase()} </span>`).focus();
+        var id_comment = $(this).attr('data-id-comment');
+        $(".reply_username").attr('id', `${
+            id_comment
+        }`).attr('username', `@${id_user_username.trim().toLowerCase()}`).html(`Reply <span class="text-info">@${id_user_username.trim().toLowerCase()}</span> <button onclick="batal()" class="btn btn-sm text-danger btn-default">x</button>`);
+        $(".emojionearea-editor").html(`@${id_user_username.trim().toLowerCase()}`).focus();
     });
 
     // Button hapus komentar
@@ -58,16 +63,18 @@ $(document).ready(function() {
         let method = form.attr('method');
         let action = form.attr('action');
         let id_berita = form.attr('class');
+        let id_user_comment = $(".reply_username").attr('id');
+        let id_user_username = $(".reply_username").attr('username');
         // let isi_komentar = $("textarea").val();
-        var isi_komentar = $el[0].emojioneArea.getText();
+        let isi_komentar = $el[0].emojioneArea.getText();
         if (isi_komentar != '') {
             $.post(action, {
                 id_b: id_berita,
+                id_c: id_user_comment,
                 isi: isi_komentar
             }, function(response) {
                 if (response == true) {
-                    $(".emojionearea-editor").html('');
-                    $(".emojionearea-editor").removeClass('is-invalid').addClass('is-valid');
+                    batal();
                     displayComments();
                 }
             }, 'json');
@@ -78,3 +85,9 @@ $(document).ready(function() {
     });
 
 });
+
+function batal() {
+    $(".emojionearea-editor").html('');
+    $(".emojionearea-editor").removeClass('is-invalid').addClass('is-valid');
+    $(".reply_username").attr('id', '').html('');
+}

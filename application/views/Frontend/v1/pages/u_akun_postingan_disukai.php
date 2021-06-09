@@ -10,7 +10,7 @@
 		$id = encrypt_url($data->id_berita);
 	    $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($data->created_by))));
 	    $judul = strtolower($data->judul);
-	    $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
+	    $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
 
 		echo '<div class="col-md-3 mb-3 pb-3 border-bottom"><a href="'.$posturl.'">';
 		if(!empty($data->img_blob)):
@@ -18,7 +18,7 @@
 		else:
 			echo '<img class="img-fluid img-thumbnail" src="'.$data->path.'">';
 		endif;
-		echo "<span class='small'>".$data->judul."</span>";
+		echo "<span class='small'>".word_limiter($data->judul, 7)."</span>";
 		echo '</a></div>'; 
 	}
 	

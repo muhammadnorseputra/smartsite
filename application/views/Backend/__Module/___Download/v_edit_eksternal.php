@@ -37,6 +37,7 @@
         </div>
         <?php } ?>
       </div>
+      
       <div class="form-group">
         <label for="publishDate">Dipublish pada</label><br>
         <?= longdate_indo(substr($formdata[0]->tgl_publish,0,10)) ?>

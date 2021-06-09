@@ -50,7 +50,7 @@
 							</svg>
 					<i class="fas fa-lock"></i>	Login adminpanel</a>
 					</footer>
-					<a href="<?= base_url() ?>" class="backToHome"><i class="far fa-arrow-left"></i> Beranda</a>
+					<a href="<?= base_url('beranda') ?>" class="backToHome"><i class="far fa-arrow-left"></i> Beranda</a>
 				</div>
 			</section>
 			<!-- Footer -->
@@ -72,7 +72,7 @@
 				$("a.btn").unbind().bind("click", function(e) {
 					e.preventDefault();
 					$.blockUI({
-                        message: '<center><img src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/oval-datatable.svg'); ?>"></center>',
+                        message: '<center><img src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/three-dots.svg'); ?>"></center>',
                         css: {
                             border: '',
                             width: '100%',
@@ -86,7 +86,9 @@
                         },
                         fadeIn: 500,
                         onBlock: function() { 
-			                window.location.href = $("a.btn").attr('href'); 
+                        	setTimeout(() => {
+			                	window.location.href = $("a.btn").attr('href'); 
+                        	}, 1000);
 			            }
                     });
 				})

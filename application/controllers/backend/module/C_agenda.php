@@ -17,7 +17,7 @@ class C_agenda extends CI_Controller {
 	{
 
 				$data = [
-						'content' => 'Backend/__module/___Agenda/v_table',
+						'content' => 'Backend/__Module/___Agenda/v_table',
 						'scriptjs' => 'Backend/__ServerSideJs/Agenda/s_agenda',
 						'pageinfo' => '<li>
 															<a href="#"><i class="material-icons">dashboard</i> Dasboard</a>
@@ -179,7 +179,7 @@ class C_agenda extends CI_Controller {
 		
     $get = $this->db->get_where('t_agenda', ['id_agenda' => $id])->result();
     $data = [
-			'content' => 'Backend/__module/___Agenda/v_edit',
+			'content' => 'Backend/__Module/___Agenda/v_edit',
 			'scriptjs' => 'Backend/__ServerSideJs/Agenda/s_edit',
 			'pageinfo' => '<li><a href="#"><i class="material-icons">dashboard</i> Dasboard</a></li>
 						<li><a href="#"><i class="material-icons">assignment</i> Agenda</a></li> <li class="active">Edit Agenda</li>',

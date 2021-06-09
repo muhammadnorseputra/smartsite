@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
         document.body.removeAttribute('data-theme');
         localStorage.removeItem('darkSwitch');
     };
-    if (h > 17 && h < 24) {
+    if (h > 16 && h < 24) {
         // malam
         document.body.setAttribute('data-theme', 'dark');
         localStorage.setItem('darkSwitch', 'dark');

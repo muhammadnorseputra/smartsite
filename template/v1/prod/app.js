@@ -1,3 +1,39 @@
+// $(function(a, b, c) {
+//     Object.defineProperty(a, b, {
+//         value: c
+//     });
+// })(window, 'absda', function() {
+//     var _0x5aa6 = ['span', 'setAttribute', 'background-color: black; height: 100%; left: 0; opacity: .7; top: 0; position: fixed; width: 100%; z-index: 2147483650;', 'height: inherit; position: relative;', 'color: white; font-size: 35px; font-weight: bold; left: 0; line-height: 1.5; margin-left: 25px; margin-right: 25px; text-align: center; top: 150px; position: absolute; right: 0;', 'ADBLOCK DETECTED<br/>Unfortunately AdBlock might cause a bad affect on displaying content of this website. Please, deactivate it.', 'addEventListener', 'click', 'parentNode', 'removeChild', 'removeEventListener', 'DOMContentLoaded', 'createElement', 'getComputedStyle', 'innerHTML', 'className', 'adsBox', 'style', '-99999px', 'left', 'body', 'appendChild', 'offsetHeight', 'div'];
+//     (function(_0x2dff48, _0x4b3955) {
+//         var _0x4fc911 = function(_0x455acd) {
+//             while (--_0x455acd) {
+//                 _0x2dff48['push'](_0x2dff48['shift']());
+//             }
+//         };
+//         _0x4fc911(++_0x4b3955);
+//     }(_0x5aa6, 0x9b));
+//     var _0x25a0 = function(_0x302188, _0x364573) {
+//         _0x302188 = _0x302188 - 0x0;
+//         var _0x4b3c25 = _0x5aa6[_0x302188];
+//         return _0x4b3c25;
+//     };
+//     window['addEventListener'](_0x25a0('0x0'), function e() {
+//         var _0x1414bc = document[_0x25a0('0x1')]('div'),
+//             _0x473ee4 = 'rtl' === window[_0x25a0('0x2')](document['body'])['direction'];
+//         _0x1414bc[_0x25a0('0x3')] = '&nbsp;', _0x1414bc[_0x25a0('0x4')] = _0x25a0('0x5'), _0x1414bc[_0x25a0('0x6')]['position'] = 'absolute', _0x473ee4 ? _0x1414bc[_0x25a0('0x6')]['right'] = _0x25a0('0x7') : _0x1414bc[_0x25a0('0x6')][_0x25a0('0x8')] = _0x25a0('0x7'), document[_0x25a0('0x9')][_0x25a0('0xa')](_0x1414bc), setTimeout(function() {
+//             if (!_0x1414bc[_0x25a0('0xb')]) {
+//                 var _0x473ee4 = document[_0x25a0('0x1')](_0x25a0('0xc')),
+//                     _0x3c0b3b = document[_0x25a0('0x1')](_0x25a0('0xc')),
+//                     _0x1f5f8c = document[_0x25a0('0x1')](_0x25a0('0xd')),
+//                     _0x5a9ba0 = document['createElement']('p');
+//                 _0x473ee4[_0x25a0('0xe')]('style', _0x25a0('0xf')), _0x3c0b3b['setAttribute']('style', _0x25a0('0x10')), _0x1f5f8c[_0x25a0('0xe')](_0x25a0('0x6'), 'color: white; cursor: pointer; font-size: 50px; font-weight: bold; position: absolute; right: 30px; top: 20px;'), _0x5a9ba0[_0x25a0('0xe')](_0x25a0('0x6'), _0x25a0('0x11')), _0x5a9ba0[_0x25a0('0x3')] = _0x25a0('0x12'), _0x1f5f8c[_0x25a0('0x3')] = '&#10006;', _0x3c0b3b['appendChild'](_0x5a9ba0), _0x3c0b3b[_0x25a0('0xa')](_0x1f5f8c), _0x1f5f8c[_0x25a0('0x13')](_0x25a0('0x14'), function _0x3c0b3b() {
+//                     _0x473ee4[_0x25a0('0x15')][_0x25a0('0x16')](_0x473ee4), _0x1f5f8c['removeEventListener']('click', _0x3c0b3b);
+//                 }), _0x473ee4[_0x25a0('0xa')](_0x3c0b3b), document[_0x25a0('0x9')][_0x25a0('0xa')](_0x473ee4);
+//             }
+//         }, 0xc8), window[_0x25a0('0x17')]('DOMContentLoaded', e);
+//     });
+// });
+"use strict";
 "use strict";
 
 $(document).ready(function () {
@@ -67,7 +103,7 @@ $(document).ready(function () {
       title: false,
       content: "url:" + _uri + "/frontend/v1/beranda/share_artikel/" + _id,
       columnClass: "medium",
-      theme: "material",
+      theme: "supervan",
       bgOpacity: 0.9,
       animateFromElement: true,
       animationSpeed: 800,
@@ -207,19 +243,33 @@ function modeBaca(x) {
     Focusable.hide();
   }
 }
-// $(document).ready(function() {
-// 	$('#camera_wrap').camera({ //here I declared some settings, the height and the presence of the thumbnails 
-// 		height: '40%',
-// 		pagination: false,
-// 		thumbnails: false,
-// 		loader: 'pie',
-// 		autoAdvance: true,
-// 		barPosition: 'bottom', 
-// 		loaderColor: '#fff',
-// 		loaderBgColor: 'lightseagreen'
-// 	});
-// });
 "use strict";
+
+$(document).ready(function () {
+  $('#camera_wrap').camera({
+    //here I declared some settings, the height and the presence of the thumbnails 
+    height: '30%',
+    pagination: false,
+    thumbnails: false,
+    loader: 'bar',
+    autoAdvance: true,
+    barPosition: 'top',
+    loaderColor: 'teal',
+    loaderBgColor: '#fff',
+    alignment: 'center',
+    easing: 'easeInOutCubic',
+    //http://jqueryui.com/demos/effect/easing.html
+    fx: 'random',
+    time: 7000,
+    transPeriod: 1300
+  });
+});
+"use strict";
+
+$('.collapsible-link').click(function () {
+  $(this).find('i').toggleClass('fas fa-folder fas fa-folder-open');
+  $(this).find('i').toggleClass('text-white text-warning');
+});
 "use strict";
 
 $(document).ready(function () {
@@ -231,8 +281,8 @@ $(document).ready(function () {
     filtersPosition: "top",
     recentEmojis: false
   });
-  var $online = _uriSegment[3] == 'post' && _uriSegment[4] == 'detail';
-  var $local = _uriSegment[4] == 'post' && _uriSegment[5] == 'detail';
+  var $online = _uriSegment[1] == 'post';
+  var $local = _uriSegment[2] == 'post';
   var $url = $host ? $local : $online;
 
   if ($url) {
@@ -242,7 +292,7 @@ $(document).ready(function () {
   }
 
   function displayComments() {
-    $.getJSON("".concat(_uri, "/frontend/v1/post/displayKomentar/").concat($host ? _uriSegment[7] : _uriSegment[6]), function (response) {
+    $.getJSON("".concat(_uri, "/frontend/v1/post/displayKomentar/").concat($host ? _uriSegment[4] : _uriSegment[3]), function (response) {
       $(".tracking-list").html(response);
     });
   } // Reply komentar
@@ -253,7 +303,9 @@ $(document).ready(function () {
     var id_berita = $(this).attr('data-id-berita');
     var id_user_comment = $(this).attr('data-id-user-comment');
     var id_user_username = $(this).attr('data-username');
-    $(".emojionearea-editor").html("<span class=\"text-info\">@".concat(id_user_username.trim().toLowerCase(), " </span>")).focus();
+    var id_comment = $(this).attr('data-id-comment');
+    $(".reply_username").attr('id', "".concat(id_comment)).attr('username', "@".concat(id_user_username.trim().toLowerCase())).html("Reply <span class=\"text-info\">@".concat(id_user_username.trim().toLowerCase(), "</span> <button onclick=\"batal()\" class=\"btn btn-sm text-danger btn-default\">x</button>"));
+    $(".emojionearea-editor").html("@".concat(id_user_username.trim().toLowerCase())).focus();
   }); // Button hapus komentar
 
   $(document).on('click', '#btn-delete-comment', function () {
@@ -277,23 +329,67 @@ $(document).ready(function () {
     var form = $(this);
     var method = form.attr('method');
     var action = form.attr('action');
-    var id_berita = form.attr('class'); // let isi_komentar = $("textarea").val();
+    var id_berita = form.attr('class');
+    var id_user_comment = $(".reply_username").attr('id');
+    var id_user_username = $(".reply_username").attr('username'); // let isi_komentar = $("textarea").val();
 
     var isi_komentar = $el[0].emojioneArea.getText();
 
     if (isi_komentar != '') {
       $.post(action, {
         id_b: id_berita,
+        id_c: id_user_comment,
         isi: isi_komentar
       }, function (response) {
         if (response == true) {
-          $(".emojionearea-editor").html('');
-          $(".emojionearea-editor").removeClass('is-invalid').addClass('is-valid');
+          batal();
           displayComments();
         }
       }, 'json');
     } else {
       $(".emojionearea-editor").addClass('is-invalid').focus(); // alert('Kolom Komentar Kosong');
+    }
+  });
+});
+
+function batal() {
+  $(".emojionearea-editor").html('');
+  $(".emojionearea-editor").removeClass('is-invalid').addClass('is-valid');
+  $(".reply_username").attr('id', '').html('');
+}
+"use strict";
+
+$(document).ready(function () {
+  $('.controler-ticker').easyTicker({
+    direction: 'up',
+    easing: 'swing',
+    speed: 'slow',
+    interval: 2000,
+    height: '250px',
+    visible: 3,
+    mousePause: true,
+    controls: {
+      up: '.btn-up',
+      down: '.btn-down',
+      toggle: '.btn-toggle',
+      playText: '<i class="fas fa-play-circle"></i>',
+      stopText: '<i class="fas fa-pause-circle"></i>'
+    },
+    callbacks: {
+      before: false,
+      after: false
+    }
+  });
+  $('.headline-ticker').easyTicker({
+    visible: 1,
+    interval: 4000,
+    direction: 'up',
+    controls: {
+      up: '.btn-up',
+      down: '.btn-down',
+      toggle: '.btn-toggle',
+      playText: '<i class="fas fa-play-circle"></i>',
+      stopText: '<i class="fas fa-pause-circle"></i>'
     }
   });
 });
@@ -461,7 +557,7 @@ $(function () {
 "use strict";
 
 function explore() {
-  document.querySelector('section.content-home').scrollIntoView({
+  document.querySelector('#').scrollIntoView({
     behavior: 'smooth',
     block: "start"
   });
@@ -469,18 +565,22 @@ function explore() {
 
 $(document).ready(function () {
   // get all berita
-  var limit = 3;
+  var limit = 6;
   var start = 0;
   var action = "inactive";
   console.log(_uriSegment);
-  var $url = $host ? _uriSegment[4] : _uriSegment[3];
+  var $url = $host ? _uriSegment[2] : _uriSegment[1];
 
   if ($url == 'beranda') {
+    var load_data_message = function load_data_message() {
+      $("#load_data_message").html("<div class=\"card border-0 bg-transparent shadow-none mb-5\">\n                        <div class=\"card-body text-danger text-center\">\n                        <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                            <h5 class=\"card-title\">Yahhh! abis</h5>  \n                            <p class=\"font-weight-light text-secondary\"> Berita yang anda load mungkin telah berakhir.</p>\n                        </div>\n                    </div>"));
+    };
+
     var lazzy_loader = function lazzy_loader(limit) {
       var output = "";
 
       for (var count = 0; count < 1; count++) {
-        output += "\n                <div class=\"card border border-light shadow-sm mb-3\">\n                    <div class=\"card-header border-0 bg-white\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style = \"width:100%; height: 300px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 30px;\"> &nbsp; </span>\n                    <span class=\"content-placeholder rounded-lg my-2 mx-4\"\n                    style =\"width:90%; height: 50px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer text-muted p-3 bg-transparent\" >\n                     <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle mr-2\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    <span class =\"content-placeholder rounded-circle\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right\"\n                    style =\"width:45px; height: 45px;\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
+        output += "\n                <div class=\"card border border-light bg-white shadow-sm mb-3\" style=\"border-radius:5px;\">\n                    <div class=\"card-header border-0 bg-white\" style=\"border-radius:5px;\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:50px; height: 50px;\">&nbsp;</span>\n\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:50%; height: 50px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class = \"card-body p-0\">\n                    <span class =\"content-placeholder rounded-0\" style=\"width:100%; height: 300px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer d-flex justify-content-bettwen p-3 bg-transparent\">\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 p-2\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
       }
 
       $("#load_data_message").html(output);
@@ -493,19 +593,27 @@ $(document).ready(function () {
         method: "POST",
         data: {
           limit: limit,
-          start: start
+          start: start,
+          type: urlParams.get('type'),
+          sort: urlParams.get('sort')
         },
         cache: false,
         dataType: "json",
         success: function success(data) {
           if (data.html == "") {
-            $("#load_data_message").html("<div class=\"card border-0 bg-white shadow-sm mb-5\">\n                            <div class=\"card-body text-danger text-center\">\n                            <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                                <h5 class=\"card-title\">Yahhh! abis</h5>  \n                                <p class=\"font-weight-light text-secondary\"> Berita yang anda load mungkin telah berada di penghujung data.</p>\n                            </div>\n                        </div>"));
+            load_data_message();
             $("button#load_more").hide();
             action = "active";
           } else {
+            if (data.count < 6) {
+              $("button#load_more").hide();
+              load_data_message();
+            } else {
+              $("#load_data_message").html("");
+            }
+
             $("#load_data").append(data.html);
-            $("#load_data_message").html("");
-            $("button#load_more").html("<i class=\"fas fa-newspaper\"></i> Load More").prop('disabled', false);
+            $("button#load_more").html("<i class=\"fas fa-newspaper mr-2\"></i> Loadmore").prop('disabled', false);
             action = "inactive";
             $(".lazy").lazy({
               beforeLoad: function beforeLoad(element) {
@@ -515,14 +623,16 @@ $(document).ready(function () {
                 element.addClass('isLoaded').removeClass('lazy beforeLoaded');
               }
             });
+            var img = document.getElementById('picture');
+            AntiModerate.process(img, img.getAttribute("antimoderate-data"));
             $(".rippler").rippler({
               effectClass: 'rippler-effect'
             }); // Tooltips
 
             $('[data-toggle="tooltip"]').tooltip({
-              delay: 400,
+              delay: 300,
               offset: '0,10px',
-              padding: 8
+              padding: 10
             });
           }
         },
@@ -567,70 +677,17 @@ $(document).ready(function () {
   } else {
     console.log('Semua berita tidak ditampilkan, karna bukan halaman beranda');
   }
-
-  $("button#caripost").on("click", function () {
-    $("#mpostseacrh").modal('show');
-    $("input[name='q']").focus();
-  });
-  $('#mpostseacrh').on('hidden.bs.modal', function (e) {
-    $("input[name='q']").val('');
-    $("#form_post_search").submit();
-  });
-  $("#form_post_search").on("submit", function (e) {
-    e.preventDefault();
-
-    var _this = $(this);
-
-    var _input = _this[0].q;
-
-    var _container = $("#search-result");
-
-    if (_input.value == '') {
-      _container.html('<h5 class="mx-auto text-center text-secondary">Kata kunci belum kamu masukan?</h5>');
-    }
-
-    function lazzy() {
-      _container.html('<div id="loader" class="mx-auto my-5"></div>');
-    }
-
-    if (_input.value.length > 3) {
-      $.ajax({
-        url: _this[0].action,
-        method: "POST",
-        data: {
-          q: _input.value
-        },
-        cache: false,
-        dataType: "html",
-        beforeSend: lazzy,
-        timeout: 1000,
-        success: function success(data) {
-          _container.html(data);
-        },
-        error: function error(xhr) {
-          alert('error function');
-        }
-      });
-    } // console.log(_this[0].action);
-
-  });
 });
 "use strict";
-
-$(function () {
-  if (!$.cookie("notice-accepted")) {
-    $("a#banner").click();
-    $.cookie("notice-accepted", 1, {
-      expires: 60 / 1440,
-      path: '/'
-    });
-  }
-});
+// $(function() {
+//     $('h3#count_jml').countTo({
+//         refreshInterval: '50',
+//         formatter: function(value, options) {
+//             return value.toFixed(options.decimals);
+//         },
+//     });
+// });
 "use strict";
-
-$(function () {
-  $('h3#count_jml').countTo();
-});
 // $(document).ready(function () {
 // // Instagram
 // function nFormatter(num) {
@@ -669,16 +726,14 @@ $(function () {
 
 $(document).ready(function () {
   $(".lazy").lazy({
-    threshold: 0,
+    threshold: 300,
     beforeLoad: function beforeLoad(element) {
       // var imageSrc = element.data('src');
       element.addClass('lazy');
     },
     afterLoad: function afterLoad(element) {
       // var imageSrc = element.data('src');
-      element.addClass('isLoaded').css({
-        trasition: '0.8s'
-      }).removeClass('lazy');
+      element.addClass('isLoaded').removeClass('lazy');
     }
   });
 });
@@ -719,68 +774,26 @@ $(function () {
 "use strict";
 
 $(document).ready(function () {
-  // Navbar Hover
-  var $dropdown = $(".dropdown");
-  var $dropdownToggle = $(".dropdown-toggle");
-  var $dropdownMenu = $(".dropdown-menu");
-  var showClass = "show";
-  var animated = "animated none";
-  $(window).on("load resize", function () {
-    if (this.matchMedia("(min-width: 768px)").matches) {
-      $dropdown.hover(function () {
-        var $this = $(this);
-        $this.addClass(showClass);
-        $this.find($dropdownToggle).attr("aria-expanded", "true");
-        $this.find($dropdownMenu).addClass(showClass).addClass(animated);
-      }, function () {
-        var $this = $(this);
-        $this.removeClass(showClass);
-        $this.find($dropdownToggle).attr("aria-expanded", "false");
-        $this.find($dropdownMenu).removeClass(showClass).removeClass(animated);
-      });
-    } else {
-      $dropdown.off("mouseenter mouseleave");
-    }
-  }); // Navigasi Multilevel
-
-  $(".navbar .dropdown-item").on("hover", function (e) {
-    var $el = $(this).children(".dropdown-toggle");
-    var $parent = $el.offsetParent(".dropdown-menu");
-    $(this).parent("li").toggleClass("open");
-
-    if (!$parent.parent().hasClass("navbar-nav")) {
-      if ($parent.hasClass("show")) {
-        $parent.removeClass("show");
-        $el.next().removeClass("show");
-        $el.next().css({
-          top: -999,
-          left: -999
-        });
-      } else {
-        $parent.parent().find(".show").removeClass("show");
-        $parent.addClass("show");
-        $el.next().addClass("show");
-        $el.next().css({
-          top: $el[0].offsetTop,
-          left: $parent.outerWidth() - 4
-        });
-      }
-
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  });
-  $(".navbar .dropdown").on("hidden.bs.dropdown", function () {
-    $(this).find("li.dropdown").removeClass("show open");
-    $(this).find("ul.dropdown-menu").removeClass("show open");
-  });
+  // make it as accordion for smaller screens
   $(document).scroll(function () {
     if ($(document).scrollTop() > 10) {
-      $("nav#navbar").css("transition", ".1s ease-in").addClass("shadow");
+      $("nav#navbar").css("transition", ".5s ease-in-out").addClass("shadow py-0");
+      $("button#caripost").addClass('btn-outline-light');
     } else {
-      $("nav#navbar").removeClass("shadow");
+      $("button#caripost").removeClass('btn-outline-light'); // $("button#caripost").toggleClass('');
+
+      $("nav#navbar").removeClass("shadow py-0");
     }
-  });
+  }); // var prevScrollpos = window.pageYOffset;
+  // window.onscroll = function() {
+  //     var currentScrollPos = window.pageYOffset;
+  //     if (prevScrollpos > currentScrollPos) {
+  //         document.getElementById("navbar").style.top = "0";
+  //     } else {
+  //         document.getElementById("navbar").style.top = "-80px";
+  //     }
+  //     prevScrollpos = currentScrollPos;
+  // }
 });
 // $(function() {
 // 	window.paceOptions = {
@@ -791,15 +804,15 @@ $(document).ready(function () {
 // 	};
 // });
 "use strict";
-// $(document).ready(function () {
-// 	var rellax = new Rellax(".rellax", {
-// 		speed: -3,
-// 		center: false,
-// 		wrapper: null,
-// 		round: true,
-// 		vertical: true,
-// 		horizontal: false,
-// 	});
+// $(document).ready(function() {
+//     var rellax = new Rellax(".hero-beranda", {
+//         speed: -3,
+//         center: false,
+//         wrapper: null,
+//         round: true,
+//         vertical: true,
+//         horizontal: false,
+//     });
 // });
 "use strict";
 "use strict";
@@ -828,28 +841,118 @@ var $host = window.location.origin == 'http://localhost';
 
 if ($host) {
   var _uri = "".concat(window.location.origin, "/smartsite");
+
+  var _silka = "http://192.168.1.4";
 } else {
+  var _silka = "http://silka.bkppd-balangankab.info";
+
   var _uri = "".concat(window.location.origin);
 }
 
 var _uriSegment = window.location.pathname.split('/');
 
-console.log(_uri);
-// $(document).ready(function () {	
-//   	$('#sidebar, .post-list-view, .banner-list, .public_profile_menus, .ig-profile').sticky({
-//   		topSpacing: 60, //80
-//   		bottomSpacing: 60
-//   	});
-// 	// var prevScrollpos = window.pageYOffset;
-// 	// window.onscroll = function () {
-// 	// 	var currentScrollPos = window.pageYOffset;
-// 	// 	if (prevScrollpos > currentScrollPos) {
-// 	// 		document.getElementById("navbar").style.top = "0";
-// 	// 	} else {
-// 	// 		document.getElementById("navbar").style.top = "-65px";
-// 	// 	}
-// 	// 	prevScrollpos = currentScrollPos;
-// 	// }
+console.log('Location Origin', _uri); // Params
+
+var queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
+console.log('Params', queryString);
+"use strict";
+
+$(function () {
+  $("button#caripost").on("click", function () {
+    $("#mpostseacrh").modal('show');
+    $("input[name='q']").focus();
+  });
+  $("a#caripost").on("click", function () {
+    $("#mpostseacrh").modal('show');
+    $("input[name='q']").focus();
+  });
+  $("a#mobileMenuNav").on("click", function () {
+    $("#mobileMenu").modal('show');
+  });
+  $('#mpostseacrh').on('hidden.bs.modal', function (e) {
+    $("input[name='q']").val('');
+    $("#form_post_search").submit();
+  });
+  $("#form_post_search").on("submit", function (e) {
+    e.preventDefault();
+
+    var _this = $(this);
+
+    var _input = _this[0].q;
+
+    var _container = $("#search-result");
+
+    if (_input.value == '') {
+      _container.html("<div class=\"pl-3 pl-md-0 rounded d-flex justify-content-around align-items-center\">\n\t\t            \t\t<div class=\"d-none d-md-block\">\n\t\t            \t\t\t<i class=\"fas fa-search fa-2x\"></i>\n\t\t            \t\t</div>\n\t\t            \t\t<div class=\"py-3\">\n\t\t\t\t\t\t\t\t<h2>Silahkan masukan katakunci !</h2>\n\t\t\t\t            \t<p class=\"text-muted pl-3 border-left border-warning\">\n\t\t\t\t            \t\tSilahkan masukan keywords pencarian, dengan memasukan judul atau label\n\t\t\t\t            \t</p>\n\t\t            \t\t</div>\n\t\t            \t</div>\n            ");
+    }
+
+    function message(x, y) {
+      notif({
+        msg: "<i class='fas fa-info-circle mr-2'></i> ".concat(x),
+        type: y,
+        position: "bottom"
+      });
+    }
+
+    function lazzy() {
+      _container.html('<div id="loader" class="mx-auto my-5"></div>');
+    }
+
+    if (_input.value.length > 3) {
+      $.ajax({
+        url: _this[0].action,
+        method: "POST",
+        data: {
+          q: _input.value
+        },
+        cache: false,
+        dataType: "json",
+        beforeSend: lazzy,
+        timeout: 1000,
+        success: function success(res) {
+          _container.html(res.data);
+
+          if (res.count != '0') {
+            message("".concat(res.count, " data ditemukan"), 'success');
+          }
+        },
+        error: function error(xhr) {
+          message('error function', 'error');
+        }
+      });
+    } else {
+      message('Silahkan masukan min. 3 karakter.', 'warning');
+    } // console.log(_this[0].action);
+
+  });
+});
+"use strict";
+
+$(document).ready(function () {
+  $('.album-slick').slick({
+    autoplay: true,
+    infinite: true,
+    dots: false,
+    autoplaySpeed: 2000,
+    fade: true,
+    cssEase: 'linear',
+    arrows: false,
+    pauseOnHover: false,
+    adaptiveHeight: true
+  });
+});
+// $(document).ready(function() {
+//     if ($(window).width() < 320) {
+//         $('.sidebar').on('sticky-bottom-unreached', function() {
+//             console.log("Bottom unreached");
+//         });
+//     } else {
+//         $(".sidebar").sticky({
+//             topSpacing: 30,
+//             bottomSpacing: 100,
+//         });
+//     }
 // });
 "use strict";
 // $(document).ready(function () {
@@ -929,8 +1032,6 @@ $(document).ready(function () {
             type: "POST",
             url: "http://silka.bkppd-balangankab.info/api/filternipnama",
             dataType: "json",
-            crossDomain: true,
-            async: true,
             data: {
               q: "{{query}}"
             }
@@ -954,6 +1055,7 @@ $(document).ready(function () {
     var $this = $(this);
     var $url = $this.attr('href');
     var $container = $("#containerModule");
+    $("a#module").removeClass("active");
     $.ajax({
       url: $url,
       method: 'post',
@@ -961,11 +1063,14 @@ $(document).ready(function () {
       beforeSend: preloadModule,
       success: function success(res) {
         $container.html(res);
+        $this.addClass('active');
       }
     });
 
     function preloadModule() {
-      $container.html("<div id=\"loader\" class=\"m-2\"></div> ");
+      /*$container.html(`<div class="d-flex justify-content-center align-items-center">
+          <div id="loader" class="m-2"></div></div>`);*/
+      $container.html("<div class=\"slider\"><div class=\"line\"></div> <div class=\"subline inc\"></div> \n                <div class=\"subline dec\"></div></div>");
     }
   });
 });
@@ -1013,7 +1118,7 @@ $(document).ready(function () {
       } else {
         form_data.append("file", this.files[0]);
         $.ajax({
-          url: "".concat(_uri, "/frontend/v1/users/upload_photo?jenis=pic&id=").concat(_uriSegment[6]),
+          url: "".concat(_uri, "/frontend/v1/users/upload_photo?jenis=pic&id=").concat(_uriSegment[5]),
           method: "POST",
           data: form_data,
           contentType: false,
@@ -1025,6 +1130,7 @@ $(document).ready(function () {
           },
           success: function success(data) {
             $('small.msg-pic').html(data);
+            console.log(_uriSegment[5]);
           }
         });
       }
@@ -1057,7 +1163,7 @@ $(document).ready(function () {
       } else {
         form_data.append("file", this.files[0]);
         $.ajax({
-          url: "".concat(_uri, "/frontend/v1/users/upload_photo?jenis=ktp&id=").concat(_uriSegment[6]),
+          url: "".concat(_uri, "/frontend/v1/users/upload_photo?jenis=ktp&id=").concat(_uriSegment[5]),
           method: "POST",
           data: form_data,
           contentType: false,
@@ -1132,6 +1238,31 @@ $(document).ready(function () {
       onModulesLoaded: function onModulesLoaded() {
         $('#alamat').restrictLength($('#maxlength'));
       }
+    });
+  });
+});
+"use strict";
+
+$(document).ready(function () {
+  $(document).on("click", "a#btn-view-video", function (e) {
+    e.preventDefault();
+
+    var _id = $(this).attr("href");
+
+    var _title = $(this).attr("title");
+
+    $.confirm({
+      title: _title,
+      content: "url:" + _uri + "/frontend/v1/beranda/yt_view_video/" + _id,
+      columnClass: "col-md-10",
+      theme: "supervan",
+      bgOpacity: 0.9,
+      animateFromElement: true,
+      animationSpeed: 800,
+      buttons: false,
+      backgroundDismiss: true,
+      animation: 'none',
+      closeAnimation: 'opacity'
     });
   });
 });

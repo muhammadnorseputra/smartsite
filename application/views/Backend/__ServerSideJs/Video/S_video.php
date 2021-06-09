@@ -23,13 +23,6 @@
 	});
 
 	$(document).ready(function() {
-		var h_nav = $('.navbar').height();
-		$("#sticky-left").sticky({
-			topSpacing: h_nav
-		});
-	});
-
-	$(document).ready(function() {
 		//FORM VALIDATION
 		$('#FormVideo').validate({
 			rules: {

@@ -5,7 +5,7 @@ class C_foto extends CI_Controller {
 	public function __construct() 
 	{
     parent::__construct();
-		$this->load->helper('createdimage');
+		// $this->load->helper('createdimage');
 		$this->load->model('M_b_foto', 'mfoto');
 		$this->load->library('image_lib');
     _is_logged_in();

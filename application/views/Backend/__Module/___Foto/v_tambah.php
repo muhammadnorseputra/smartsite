@@ -83,7 +83,7 @@
 				<div class="alert alert-message" role="alert">
 					* Pilih Album untuk menambah galeri
 				</div>
-				<input type="hidden" name="idalbumadd" class="form-control" readonly>
+				<input type="text" name="idalbumadd" class="form-control">
 				<div class="row clearfix">
 					<div class="msg"></div>
 					<div class="col-md-5">

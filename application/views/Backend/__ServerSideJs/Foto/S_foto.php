@@ -396,9 +396,9 @@ $(function () {
 
 		let form = $(this);
 		if (($("[name='judul']").val() == '')) {
-			showNotification('bg-pink', 'Judul Tidak Boleh Kosong', 'bottom', 'right', 'animated fadeIn', 'animated fadeOut');
+			showNotification('bg-red', 'Judul Tidak Boleh Kosong', 'bottom', 'left', 'animated fadeIn', 'animated fadeOut');
 		} else if ((form[0].publish[0].checked == false) && (form[0].publish[1].checked == false)) {
-			showNotification('bg-pink', 'Publish belum dipilih', 'bottom', 'right', 'animated fadeIn', 'animated fadeOut');
+			showNotification('bg-red', 'Publish belum dipilih', 'bottom', 'left', 'animated fadeIn', 'animated fadeOut');
 		} else {
 
 			$.ajax({
@@ -423,13 +423,13 @@ $(function () {
 						// $("#ShowPhoto").html('<img src="' + result.pesan.file + '" class="img-responsive">');
 						$("#preview").css("display","block");
 						$("#before").css("display","none");	
-						showNotification('bg-teal', result.pesan.content, 'bottom', 'right', 'animated fadeIn', 'animated fadeOut');
+						showNotification('bg-teal', result.pesan.content, 'bottom', 'left', 'animated fadeIn', 'animated fadeOut');
 						// form[0].reset();
 						list();
 						$('#album').waitMe("hide");	
 					} else {
 						$("#preview").css("display","block").attr('src', result.pesan.file);
-						showNotification('bg-pink', result.pesan.error, 'bottom', 'right', 'animated fadeIn', 'animated fadeOut');
+						showNotification('bg-pink', result.pesan.error, 'bottom', 'left', 'animated fadeIn', 'animated fadeOut');
 						$('#album').waitMe("hide");	
 					}
 				},

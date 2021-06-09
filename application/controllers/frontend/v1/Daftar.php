@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 class Daftar extends CI_Controller
 {
@@ -12,7 +11,7 @@ class Daftar extends CI_Controller
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
             // redirect(base_url('frontend/v1/beranda'),'refresh');
         } else {
-            redirect(base_url('theme/maintenance_site'),'refresh');
+            redirect(base_url('under-construction'),'refresh');
         }
     }
 
@@ -88,7 +87,7 @@ class Daftar extends CI_Controller
                     'tanggal_bergabung' => date('Y-m-d')
                 ];
                 // Configurasi Email
-                $from_email = 'bkppdbalangan@gmail.com';
+                $from_email = 'muhammadnorseputra@gmail.com';
                 $to_email = $this->input->post('email');
 
                 $config = array(
@@ -96,7 +95,7 @@ class Daftar extends CI_Controller
                         'smtp_host' => 'ssl://smtp.googlemail.com',
                         'smtp_port' => 465,
                         'smtp_user' => $from_email,
-                        'smtp_pass' => 'wulanbungas',
+                        'smtp_pass' => '@putrabungsu6',
                         'mailtype' => 'html',
                         'charset' => 'iso-8859-1',
                 );
@@ -108,17 +107,17 @@ class Daftar extends CI_Controller
                 $this->email->to($to_email);
                 $this->email->subject('Email Verification!');
 
-                $message .= '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
+                $message = '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
                 $message .= '<p> Konfirmasi email kamu untuk mengakses fitur dari web sites kami.  <a class="btn btn-warning" target="_blank" href="' . base_url().'frontend/v1/users/verify/'.$data['nohp'].'">Klik Disini</a></p>';
                 $message .= '<p> Terimakasih. </p>';
                 
                 $this->email->message($message); 
                 
                 //Send mail 
+                $this->daftar->send_akun('t_users_portal', $data);
                 if($this->email->send()){
-                    $this->session->set_flashdata("notif","Email verifikasi berhasil dikirim."); 
+                    $this->session->set_flashdata("notif","Akun kamu telah aktif, untuk mendapatkan fitur lengkap kami silahakan verifikasi email kamu."); 
                     // daftarkan akun ke database
-                    $this->daftar->send_akun('t_users_portal', $data);
                     // Simpan gambar di website
                     // if ( ! $this->upload->do_upload('photo_pic')){
                     //     $msg = $this->upload->display_errors();
@@ -127,7 +126,7 @@ class Daftar extends CI_Controller
                     // }
                     // $this->session->set_flashdata('photo_msg', $msg);
                 }else {
-                    $this->session->set_flashdata("notif","Email verifikasi gagal dikirim.");  
+                    $this->session->set_flashdata("notif","Akun kamu telah aktif, untuk mendapatkan fitur kami silahakan verifikasi email kamu.");  
                 } 
                 // Message success regitered
                 $msg = array('valid' => true, 'msg' => 'Register Berhasil', 'data' => $data);

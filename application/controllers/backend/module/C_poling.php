@@ -17,7 +17,7 @@ class C_poling extends CI_Controller {
 	{
 
     $data = [
-        'content' => 'Backend/__module/___Poling/v_table',
+        'content' => 'Backend/__Module/___Poling/v_table',
         'scriptjs' => 'Backend/__ServerSideJs/Poling/s_poling',
         'pageinfo' => '<li><a href="#"><i class="material-icons">dashboard</i> Dasboard</a></li>
               <li class="active">Poling</li>',

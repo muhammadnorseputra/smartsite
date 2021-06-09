@@ -22,15 +22,15 @@
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="140"/>'; ?>
 							</div>
 							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Reset Password</h3> 
-							<?php if($data['token'] != date('Ymd')): ?>
+							<?php if($data['token'] != date('YmdH')): ?>
 							<div class="alert alert-warning" role="alert">
-							  Link ini telah kadaluarsa <a href="#" class="alert-link">:)</a>. <br>silahkan kembali ke halaman reset password.
+							  Link ini telah kadaluarsa <a href="#" class="alert-link">:)</a> Silahkan coba lagi besok.
 							</div>
 							<?php else: ?>
-							<?= form_open(base_url('frontend/v1/users/resetpasswordnow'), '', ['id' => encrypt_url($data['nohp'])]); ?>
+							<?= form_open(base_url('frontend/v1/users/resetpasswordnow'), '', ['id' => $data['id_user']]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="password">Password Baru</label>
-								<input type="password"  class="form-control mb-2" name="password" id="password-field" placeholder="Password Baru" required="required">
+								<input type="password"  class="form-control form-control-lg shadow-sm border-0 mb-2 rounded-0" name="password" id="password-field" placeholder="Password Baru" required="required">
 								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 							<button type="submit" class="btn btn-primary btn-block small">Simpan</button>
