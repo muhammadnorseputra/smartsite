@@ -2,7 +2,7 @@
 <nav id="navbar" class="navbar fixed-top navbar-expand-sm bg-white navbar-light d-none d-md-block d-lg-block">
 	<div class="container">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
-			<?php echo '<img src="data:image/jpeg;base64,' .base64_encode($mf_beranda->site_logo) . '" alt="BKPPD Kab. Balangan" width="160"/>'; ?>
+			<?php echo '<img src="data:image/jpeg;base64,' .base64_encode($mf_beranda->site_logo) . '" alt="BKPPD Kab. Balangan" width="150"/>'; ?>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>

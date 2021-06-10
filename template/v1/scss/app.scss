@@ -58,17 +58,17 @@ content: "";
   position:fixed;
   height:4.5px;
   overflow-x: hidden;
+
   // ditengah layar
-  
-  width:30%;
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%, -55%);
+  // width:30%;
+  // left: 50%;
+  // top: 55%;
+  // transform: translate(-50%, -55%);
   
   //kiri atas
-  // width:100%;
-  // left: 0;
-  // top: 0;
+  width:100%;
+  left: 0;
+  top: 0;
 }
 .line{
   position:absolute;
@@ -91,9 +91,9 @@ content: "";
 }
 .logo-loading {
 	position: fixed;
-  left: 47%;
-  top: 42%;
-  transform: translate(-42%, -47%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 	text-align: center;
 	vertical-align: middle;
 	z-index: 9999;
