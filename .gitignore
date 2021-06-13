@@ -3,7 +3,6 @@ node_modules/*
 .vscode/*
 vendor/*
 workspace.code-workspace
-*.txt
 old-index.php
 .editorconfig
 gulpfile.js
