@@ -8,7 +8,7 @@
     <script data-ad-client="ca-pub-1099792537777374" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <title><?= $title; ?></title>
     <?= 
-        !empty($meta) ? $meta : '<meta name="author" content="Muhammad Nor Saputra"/>
+        !empty($meta) ? $meta : '<meta name="author" content="M. Nor Saputra"/>
                                  <meta name="description" content="'.$mf_beranda->meta_desc.'"/>
                                  <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>';  
     ?>
