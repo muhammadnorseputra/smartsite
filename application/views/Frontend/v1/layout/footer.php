@@ -119,6 +119,15 @@
 <script src="<?= base_url('template/v1/prod/vendor-min.js'); ?>"></script>
 <script src="<?= base_url('template/v1/prod/app-min.js'); ?>"></script>
 <script src="https://apis.google.com/js/platform.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4HM5RMHK4R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4HM5RMHK4R');
+</script>
 <!-- <script type='text/javascript' src='//overlapflintsidenote.com/ee/4a/40/ee4a400fe2d588e699491311fb2352cc.js'></script> -->
 </body>
 </html>
