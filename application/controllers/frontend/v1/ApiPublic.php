@@ -43,7 +43,7 @@ class ApiPublic extends RestController {
 				// Post Data Youtube
                 if($r->type === 'YOUTUBE'):
                     $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
-                    $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$row->content.'&key='.$key;
+                    $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$r->content.'&key='.$key;
                     $yt     = api_client($url);
                     $img = $yt['items'][0]['snippet']['thumbnails']['high']['url'];
                 endif;
