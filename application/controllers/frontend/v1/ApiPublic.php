@@ -8,6 +8,7 @@ class ApiPublic extends RestController {
 	public function __construct()
 	{
 		parent::__construct();
+		
 		//Check maintenance website
         $this->load->model('model_template_v1/M_f_post', 'post');
         $this->load->model('model_template_v1/M_f_users', 'mf_users');
