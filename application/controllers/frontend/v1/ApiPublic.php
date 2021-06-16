@@ -8,7 +8,7 @@ class ApiPublic extends RestController {
 	public function __construct()
 	{
 		parent::__construct();
-		
+
 		//Check maintenance website
         $this->load->model('model_template_v1/M_f_post', 'post');
         $this->load->model('model_template_v1/M_f_users', 'mf_users');
@@ -47,6 +47,8 @@ class ApiPublic extends RestController {
                     $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$r->content.'&key='.$key;
                     $yt     = api_client($url);
                     $img = $yt['items'][0]['snippet']['thumbnails']['high']['url'];
+                    $yt_desc = $yt['items'][0]['snippet']['description'];
+                    $yt_src = $yt['items'][0]['snippet']['channelTitle'];
                 endif;
 
                 if($r->type === 'LINK'):
@@ -57,6 +59,19 @@ class ApiPublic extends RestController {
 
                 if($r->type === 'BERITA'):
                 	$img = base_url('files/file_berita/'.$r->img);
+                endif;
+
+                // Content
+                if($r->type === 'YOUTUBE'):
+                    $content = word_limiter($yt_desc,20);
+                    $by = $yt_src;
+                elseif($r->type === 'LINK'):
+                    $content = word_limiter($linker['description'],15);
+                    $domain = parse_url($r->content, PHP_URL_HOST);
+                    $by = $domain;
+                else:
+                    $content = word_limiter($r->content, 25);
+                    $by=$namapanggilan;
                 endif;
 
                 // Post Link Detail
@@ -72,13 +87,13 @@ class ApiPublic extends RestController {
 				$datas = [
 					'id_article' => $r->id_berita,
 					'jdl_article' => $r->judul,
-					'isi_article' => word_limiter($r->content, 25), 
+					'isi_article' => $content, 
 					'img_article' => $img,
 					'url_article' => $posturl,
 					'tgl_posting_article' => longdate_indo($r->tgl_posting),
 					'jml_comments_article' => $this->komentar->jml_komentarbyidberita($r->id_berita),
 					'user_posting' => [
-						'user_nama' => $namapanggilan,
+						'user_nama' => $by,
 						'user_link' => $link_profile_public
 					]
 				];
