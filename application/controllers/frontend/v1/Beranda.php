@@ -113,7 +113,6 @@ class Beranda extends CI_Controller
                     $namalengkap = decrypt_url($this->mf_users->get_userportal_namalengkap($by));
                     $namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
                     $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
-
                 }
 
                 // Post Link Detail

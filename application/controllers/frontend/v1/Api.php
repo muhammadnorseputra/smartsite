@@ -7,6 +7,8 @@ class Api extends CI_Controller {
 		parent::__construct();
 		//Check maintenance website
         $this->load->model('model_template_v1/M_f_post', 'post');
+        $this->load->model('model_template_v1/M_f_users', 'mf_users');
+        $this->load->model('M_b_komentar', 'komentar');
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
             // redirect(base_url('frontend/v1/beranda'),'refresh');
         } else {
@@ -58,5 +60,23 @@ class Api extends CI_Controller {
 		];
 
 		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+	}
+
+	public function article_all($start='0', $limit=3, $type=null, $sort=null)
+	{
+		$data = $this->mf_beranda->get_all_berita($limit,$start,$type,$sort);
+		if ($data->num_rows() > 0):
+			$row = $data->result();
+			$data_array = [];
+			foreach($row as $d):
+				$data_array = ['jdl_article' => $d->judul];
+			endforeach;
+			$json = $data_array;
+		else:
+			$json = ['msg' => 'Invalid Request'];
+		endif;
+
+		echo var_dump($json);
+		// var_dump($json);
 	}
 }
