@@ -87,6 +87,7 @@ class ApiPublic extends RestController {
 				$datas = [
 					'id_article' => $r->id_berita,
 					'jdl_article' => $r->judul,
+					'slug_article' => url_title(strtolower($r->judul)),
 					'isi_article' => $content, 
 					'img_article' => $img,
 					'url_article' => $posturl,
