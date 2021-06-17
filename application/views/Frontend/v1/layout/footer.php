@@ -116,7 +116,8 @@
 	</div>
 </section>
 <!-- jQuery -->
-<script src="assets-web.b-cdn.net"></script>
+<script src="https://assets-web.b-cdn.net/vendor-min.js"></script>
+<script src="https://assets-web.b-cdn.net/app-min.js"></script>
 <script src="https://apis.google.com/js/platform.js"></script>
 </body>
 </html>
