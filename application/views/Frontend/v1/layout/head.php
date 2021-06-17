@@ -13,7 +13,7 @@
     ?>
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
     <link rel="apple-touch-icon" href="<?= base_url('assets/images/logo.png'); ?>">
-    <link href="<?= base_url('template/v1/prod/app.css'); ?>" rel="stylesheet" type="text/css">
+    <link href="https://assets-web.b-cdn.net/app.css" rel="stylesheet" type="text/css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199508931-1"></script>
     <script>

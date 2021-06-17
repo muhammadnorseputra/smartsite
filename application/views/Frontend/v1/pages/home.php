@@ -14,7 +14,6 @@
 <?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-4 pt-md-5' : 'my-4' ?>
 <section class="mb-5 <?= $my ?>">
     <div class="container">
-        <?php $this->load->view('Frontend/v1/function/top-headline'); ?>
         <div class="bg-light my-3 py-1"></div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-md-0 mt-4">
