@@ -58,19 +58,23 @@ class ApiPublic extends RestController {
                 endif;
 
                 if($r->type === 'BERITA'):
-                	$img = base_url('files/file_berita/'.$r->img);
+                    if(empty($r->img)):
+                        $img = base_url('assets/images/noimage.gif');
+                    else:
+                	   $img = base_url('files/file_berita/'.$r->img);
+                    endif;
                 endif;
 
                 // Content
                 if($r->type === 'YOUTUBE'):
-                    $content = word_limiter($yt_desc,20);
+                    $content = word_limiter($yt_desc,12);
                     $by = $yt_src;
                 elseif($r->type === 'LINK'):
-                    $content = word_limiter($linker['description'],15);
+                    $content = word_limiter($linker['description'],12);
                     $domain = parse_url($r->content, PHP_URL_HOST);
                     $by = $domain;
                 else:
-                    $content = word_limiter($r->content, 25);
+                    $content = word_limiter($r->content, 12);
                     $by=$namapanggilan;
                 endif;
 
