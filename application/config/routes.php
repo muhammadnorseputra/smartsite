@@ -113,6 +113,7 @@ $route['go/(:any)'] = 'frontend/v1/download/openurl/$1';
 // IKM
 $route['skm'] = 'frontend/skm/skmIndex';
 $route['survei'] = 'frontend/skm/skmIndex/survei';
+$route['finish/(:any)'] = 'frontend/skm/skmProses/selesai/$1';
 
 
 /*

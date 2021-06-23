@@ -3,7 +3,7 @@
 		<h3 class="text-light">Formulir Survei IKM (NON ASN Balangan)</h3>
 	</div>
 	<?php  
-	$hidden = ['token_' => encrypt_url('bkppd_balangan_'.date('dmY')), 'nomor' => $nomor];
+	$hidden = ['token_' => encrypt_url('@270599bkppd_balangan_'.date('dmYH')), 'nomor' => $nomor];
 	echo form_open(base_url('frontend/skm/skmProses'), ['id' => 'f-survei-non-asn'], $hidden);
 	?>
 	<div class="container">
@@ -15,7 +15,7 @@
 						<h6 class="card-subtitle mb-2 text-muted">Sebelum memulai survei, silahkan isi data diri responden</h6>
 					</div>
 					<div>
-						<h5 class="text-muted d-none d-md-block">F-<?= strtoupper($nomor) ?></h5>
+						<h5 class="text-muted d-none d-md-block"><abbr title="Ini adalah kode formulir anda.">F-<?= strtoupper($nomor) ?></abbr></h5>
 					</div>
 				</div>
 
@@ -38,7 +38,7 @@
 					</div>
 					<div class="col-md-4">
 						<label for="umur" class="form-label fw-bold">Umur</label>
-						<input type="text" data-validation="number" data-validation-allowing="range[1;100]" name="umur" class="form-control form-control-lg" id="umur" placeholder="Umur" data-validation="required">
+						<input type="text" data-validation="number" data-validation-allowing="range[18;52]" name="umur" data-validation-help="Batasan umur 18 - 52 tahun." class="form-control form-control-lg" id="umur" placeholder="Umur - only number" data-validation="required">
 					</div>
 				</div>
 				<div class="row mb-4 gy-3">
@@ -78,8 +78,9 @@
 					<li class="list-group-item py-4">
 						<p class="fw-bold"><?= ucwords($p->jdl_pertanyaan) ?></p>
 						<?php foreach($this->skm->skm_jawaban_pertanyaan($p->id)->result() as $j):  ?>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="jawaban_id[<?= $j->fid_pertanyaan ?>]" id="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>" value="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>" data-validation="required" data-validation-error-msg="Pilih salahsatu jawaban yang tersedia">
+						<span id="msg-check-<?= $j->fid_pertanyaan  ?>"></span>
+						<div class="d-flex justify-content-start gap-3">
+							<input class="shadow" type="radio" name="respon_id[<?= $j->fid_pertanyaan ?>]" id="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>" value="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>" data-validation="required" data-validation-error-msg-container="#msg-check-<?= $j->fid_pertanyaan ?>" data-validation-error-msg="Silahkan pilih salahsatu jawaban yang tersedia">
 							<label class="form-check-label text-muted" for="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>">
 								<?= $j->jdl_jawaban ?> 
 							</label>
@@ -89,9 +90,9 @@
 					<?php endforeach; ?>
 				</ul>
 				<hr>
-				<p>
+				<!-- <p>
 				    <input data-validation="recaptcha" data-validation-recaptcha-sitekey="6LfiM08bAAAAAJkf5geIEBau6f9-kMOEzxkxw06_">
-				</p>
+				</p> -->
 				<button type="submit" class="btn btn-primary btn-lg">Kirim Survei
 				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-up-right-square ms-3" viewBox="0 0 16 16">
 					<path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"/>

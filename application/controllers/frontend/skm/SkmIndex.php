@@ -27,6 +27,11 @@ class SkmIndex extends CI_Controller
         $data = [
             'title' => $title,
             'content' => 'Frontend/skm/pages/survei_asn_balangan',
+            'pertanyaan' => $this->skm->skm_pertanyaan(),
+            'jenis_layanan' => $this->skm->skm_jenis_layanan(),
+            'pendidikan' => $this->skm->skm_pendidikan(),
+            'pekerjaan' => $this->skm->skm_pekerjaan(),
+            'nomor' => generateRandomString(7)
         ];  
         elseif($card === 'non_asn_balangan'):
         $data = [
@@ -36,7 +41,7 @@ class SkmIndex extends CI_Controller
             'jenis_layanan' => $this->skm->skm_jenis_layanan(),
             'pendidikan' => $this->skm->skm_pendidikan(),
             'pekerjaan' => $this->skm->skm_pekerjaan(),
-            'nomor' => generateRandomString(5)
+            'nomor' => generateRandomString(7)
         ];  
         else:
         $data = [

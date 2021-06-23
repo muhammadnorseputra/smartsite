@@ -13,7 +13,32 @@ class SkmProses extends CI_Controller
     public function index()
     {
         $post = $this->input->post();
-        var_dump($post);
+        $token_verify = '@270599bkppd_balangan_'.date('dmYH');
+        $token = decrypt_url($post['token_']);
+        if(!empty($token) && ($token === $token_verify)):
+            $msg = ['msg' => 'Token Valid', 'status' => true, 'redirectTo' => base_url('finish/'.encrypt_url($post['nomor']))];
+        else:
+            $msg = ['msg' => 'Invalid Token', 'status' => false];
+        endif;
+        echo json_encode($msg);
+    }
+
+    public function selesai($nomor)
+    {
+        $no = decrypt_url($nomor);
+        $cek_nomor = $this->skm->ceknomor($no)->num_rows();
+        $data = [
+            'title' => 'Finish - Survei telah selesai.',
+            'content' => 'Frontend/skm/pages/survei_selesai',
+            'nomor' => $nomor
+        ];  
+
+        if(!empty($nomor)):
+            $this->load->view('Frontend/skm/layout/app', $data);
+        else:
+            exit(redirect(base_url('survei?msg=NotFound'),'refresh'));
+        endif;
+
     }
 
 }

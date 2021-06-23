@@ -21,4 +21,8 @@ class Skm extends CI_Model {
 	{
 		return $this->db->get('skm_pekerjaan');
 	}	
+	public function ceknomor($nomor)
+	{
+		return $this->db->get_where('skm', ['nomor' => $nomor]);
+	}
 }
