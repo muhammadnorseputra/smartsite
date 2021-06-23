@@ -34,11 +34,13 @@ class ApiPublic extends RestController {
                     $link_profile_public = 'javascript:void(0);';
                     $namalengkap = $this->mf_users->get_namalengkap($by);
                     $namapanggilan = $by;
+                    $gravatar = base_url('assets/images/users/'.$this->mf_users->get_gravatar($by));
                 } else {
                     $link_profile_public = 
                     base_url("user/".decrypt_url( $this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan)."/".encrypt_url($by));
                     $namalengkap = decrypt_url($this->mf_users->get_userportal_namalengkap($by));
                     $namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
+                    $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
                 }
 
 				// Post Data Youtube
@@ -99,6 +101,7 @@ class ApiPublic extends RestController {
 					'jml_comments_article' => $this->komentar->jml_komentarbyidberita($r->id_berita),
 					'user_posting' => [
 						'user_nama' => $by,
+                        'user_image' => blob_filename($gravatar),
 						'user_link' => $link_profile_public
 					]
 				];

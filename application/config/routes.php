@@ -110,6 +110,10 @@ $route['d/(:any)/(:any)'] = 'frontend/v1/download/d/$1/$2';
 $route['leave'] = 'frontend/v1/api/leave';
 $route['go/(:any)'] = 'frontend/v1/download/openurl/$1';
 
+// IKM
+$route['skm'] = 'frontend/skm/skmIndex';
+$route['survei'] = 'frontend/skm/skmIndex/survei';
+
 
 /*
 * @BAWAAN CODEIGNITER
