@@ -3,6 +3,22 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="IKM - BKPPD BALANGAN">
+		<meta name="description" content="Indexs Kepuasan Masyarakat (IKM) BKPPD Balangan">
+		<meta name="robots" content="index,follow"/>
+		<!-- Meta Properti GOOGLE -->
+		<meta property="og:title" content="IKM - BKPPD BALANGAN">
+		<meta property="og:description" content="Indexs Kepuasan Masyarakat (IKM) BKPPD Balangan">
+		<meta property="og:type" content="web">
+		<meta property="og:image" content="<?= base_url('assets/images/qr-code-ikm.png') ?>">
+		<meta property="og:url" content="<?= base_url('ikm') ?>">
+		<!-- Meta Properti Twitter -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:description" content="Indexs Kepuasan Masyarakat (IKM) BKPPD Balangan">
+		<meta name="twitter:type" content="web">
+		<meta name="twitter:image" content="<?= base_url('assets/images/qr-code-ikm.png') ?>">
+		<meta name="twitter:url" content="<?= base_url('ikm') ?>">
+
 		<title><?= $title ?></title>
 		<link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
 		<link rel="apple-touch-icon" href="<?= base_url('assets/images/logo.png'); ?>">
@@ -15,5 +31,5 @@
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<?php endif; ?>
 	</head>
-	<body id="top">
+	<body id="top" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50">
 		<div class="main">

@@ -11,7 +11,7 @@ body {
 	width: 100%;
 	height: 100%;
 	background: #ffffff;
-	filter: blur(5px);
+	filter: blur(1.5px);
 	content: "";
 	left: 0;
 	top: 0;

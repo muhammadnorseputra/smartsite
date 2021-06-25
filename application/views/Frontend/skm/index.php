@@ -9,20 +9,22 @@
 			<div class="d-flex justify-content-between align-items-md-center align-items-start flex-lg-row flex-column">
 				<div>
 					<h1 class="display-3 fw-bold text-secondary">Selamat Datang</h1>
-					<p class="col-md-8 fs-4 text-secondary text-nowrap d-none d-md-block">Di Module Survei IKM BKPPD Kab. Balangan</p>
-					<div class="mb-4">
-						<span class="display-2 fw-bold text-info">293K</span>
-						<p class="text-muted">Total Responden sampai sekarang.</p>
-					</div>
+					<p class="fs-4 text-secondary">Di Module Survei IKM BKPPD Kab. Balangan</p>
+					
 					<a href="<?= base_url('survei') ?>" class="btn btn-danger btn-lg px-4 shadow">
 					Isi Survei Sekarang
 					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 20 20">
 						<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
 					</svg>
 					</a>
+					<div class="mt-4">
+						<span class="display-1 fw-bold text-info countTo" data-from="0" data-to="<?= nominal($total_responden) ?>"
+      data-speed="300" data-refresh-interval="50">0</span>
+						<p class="text-muted">Total Responden sampai saat ini.</p>
+					</div>
 				</div>
 				<div>
-					<img src="<?= base_url('assets/images/bg/hero-img.png') ?>" class="animated bounce img-responsive" alt="Survey BKPPD">
+					<img src="<?= base_url('assets/images/bg/hero-img.png') ?>" class="animated bounce img-fluid" alt="Survey BKPPD">
 				</div>
 			</div>
 		</div>
@@ -87,3 +89,4 @@
 </div>
 </div>
 </section>
+<?php $this->load->view('Frontend/skm/pages/print_modal'); ?>

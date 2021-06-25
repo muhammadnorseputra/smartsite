@@ -1,3 +1,4 @@
+<?php $this->load->view('Frontend/skm/pages/print_modal'); ?>
 <footer class="bg-light border-top">
 	<div class="container">
 		<div class="row">
@@ -15,11 +16,22 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<script src="<?= base_url('assets/js/skm.js') ?>"></script>
+
+<?php if($this->uri->segment(1) === 'skm' || $this->uri->segment(1) === 'ikm'): ?>
+<script src="<?= base_url('assets/plugins/jquery-countto/jquery.countTo.js') ?>"></script>
+<script>
+	 $('.countTo').countTo();
+</script>
+	<?php if($this->uri->segment(1) === 'ikm'): ?>
+	<script src="<?= base_url('assets/js/skm_text_slide.js') ?>"></script>
+	<?php endif; ?>
+<?php endif; ?>
+
 <?php if($this->uri->segment(1) === 'survei'): ?>
 <script src="<?= base_url('bower_components/jquery-form-validator/form-validator/jquery.form-validator.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/skm_validation_non_asn.js') ?>"></script>
-<script src="<?= base_url('assets/plugins/bootstrap-notify/bootstrap-notify.min.js') ?>"></script>
 <?php endif; ?>
+<script src="<?= base_url('assets/plugins/bootstrap-notify/bootstrap-notify.min.js') ?>"></script>
+<script src="<?= base_url('assets/js/skm.js') ?>"></script>
 </body>
 </html>

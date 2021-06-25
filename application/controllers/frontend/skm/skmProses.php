@@ -16,7 +16,26 @@ class SkmProses extends CI_Controller
         $token_verify = '@270599bkppd_balangan_'.date('dmYH');
         $token = decrypt_url($post['token_']);
         if(!empty($token) && ($token === $token_verify)):
-            $msg = ['msg' => 'Token Valid', 'status' => true, 'redirectTo' => base_url('finish/'.encrypt_url($post['nomor']))];
+            $jawab = implode(',', $post['jawaban_id']);
+            $data = [
+                'fid_periode' => decrypt_url($post['periode']),
+                'fid_jenis_layanan' => $post['jns_layanan'],
+                'nomor' => decrypt_url($post['nomor']),
+                'nama_lengkap' => $post['nama_lengkap'],
+                'umur' => $post['umur'],
+                'jns_kelamin' => $post['jns_kelamin'],
+                'fid_pendidikan' => $post['pendidikan'],
+                'fid_pekerjaan' => $post['pekerjaan'],
+                'card_responden' => $post['card'],
+                'jawaban_responden' => $jawab
+            ];
+            $db = $this->skm->skm_insert('skm', $data);
+            if($db)
+            {
+                $msg = ['msg' => 'Token Valid', 'status' => true, 'redirectTo' => base_url('finish/'.$post['nomor'])];
+            } else {
+                $msg = ['msg' => 'Token valid, but send to server error', 'status' => false];
+            }
         else:
             $msg = ['msg' => 'Invalid Token', 'status' => false];
         endif;

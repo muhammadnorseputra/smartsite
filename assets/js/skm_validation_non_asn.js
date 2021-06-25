@@ -32,7 +32,8 @@ $(document).ready(function() {
                         showProgressbar: true
                     });
                     $('.main').addClass('blured');
-                    $('button[type=submit]').prop('disabled', true);
+                    $('button[type=submit]').prop('disabled', true).html(`<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...`);
                 },
                 dataType: 'json',
                 success: function(response) {
@@ -44,25 +45,30 @@ $(document).ready(function() {
                                 'message': '<strong>Success</strong> Your survei has been saved!',
                             }, {
                                 type: 'success',
-                                timer: 500,
+                                allow_dismiss: false,
                                 onClose: function() {
                                     window.location.replace(response.redirectTo);
                                     $('.main').removeClass('blured');
                                 }
                             });
                             $.notify({
-                                'icon': 'fas fa-external-link-alt',
-                                'message': '<strong>Please wait rediracting ...</strong>',
+                                // 'icon': 'fas fa-external-link-alt',
+                                'message': `<div class="d-flex align-items-center">
+                                      <strong>Please wait rediracting...</strong>
+                                      <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                                    </div>`
                             }, {
-                                type: 'info'
+                                type: 'info',
+                                allow_dismiss: false,
                             });
                             $form.get(0).reset();
-                            $('button[type=submit]').prop('disabled', true);
+                            $('button[type=submit]').prop('disabled', true).html(`<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...`);
                         }, 5000);
                     }
                 },
                 error: function(error) {
-                    $('button[type=submit]').prop('disabled', false);
+                    $('button[type=submit]').prop('disabled', false).html('Kirim Survei');
                     $.notify({
                         icon: 'fas fa-times',
                         title: '<strong>Error!</strong>',
