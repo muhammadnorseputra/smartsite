@@ -40,7 +40,7 @@
 		<div class="col-12 col-md-6">
 			<div class="card border-0">
 				<div class="card-body lead">
-					<h5 class="card-title text-info fw-bold">Apa sih survei ikm itu ?</h5>
+					<h5 class="card-title text-info fw-bold">Apa sih IKM itu ?</h5>
 					<!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
 					<div class="card-text">
 						<p>
@@ -83,10 +83,28 @@
 		<div class="col my-4">
 			<img class="animated bounce w-50 shadow-lg rounded mb-4" src="<?= base_url('assets/images/bg/bg-hero-function-2.png') ?>" alt="Survei BKPPD">
 			<h4 class="d-flex"><span class="text-danger me-3">&bull;</span> Motivasi Kami Untuk Lebih Maju Lagi</h4>
-			<h4 class="d-flex"><span class="text-danger me-3">&bull;</span> Relatif sederhana untuk menganalisis, mengutip dan menghubungkan data yang diperoleh dengan metode survei. </h4>
+			<h4 class="d-flex"><span class="text-danger me-3">&bull;</span> Sebagai indikator dalam mengetahui Kualitas dan Kuantitas suatu layanan. </h4>
 		</div>
 	</div>
 </div>
 </div>
 </section>
+<footer class="bg-dark py-4"> 
+	<div class="container">
+		<div class="row gap-4">
+			<div class="col-2 offset-md-2">
+				<img src="<?= base_url('assets/images/qr-code-ikm.png') ?>" class="img-fluid" alt="qr-code-ikm-bkppd-balangan">
+			</div>
+			<div class="col-6">
+				<div class="fs-4 fw-bold text-light">Tinjau Perkembangan IKM</div>
+				<p class="text-muted">
+					Silahkan pindai QR-Code disamping untuk meninjau secara langsung hasil dari penilaian Indexs Kepuasan Masyarakat (IKM) atau dengan mengunjungi alamat url (<code>https://qrco.de/ikm-bkppd-balangan</code>)
+				</p>
+				<p class="text-muted">
+					Kami selaku unit pelayanan mengucapkan terimakasih atas partisipasi anda dalam pelaksanaan penilaian IKM secara Online maupun Offline.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
 <?php $this->load->view('Frontend/skm/pages/print_modal'); ?>

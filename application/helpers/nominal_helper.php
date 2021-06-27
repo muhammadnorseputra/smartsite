@@ -6,6 +6,13 @@ if (!function_exists('nominal')) {
 		return $jd;
 	}
 }
+
+if (!function_exists('cekValue')) {
+	function cekValue($value, $default = null){
+		$jd = isset($value) ? $value : $default;
+		return $jd;
+	}
+}
 //RUN SCRIPT
 // $this->load->helper('nominal');
 // echo nominal('300000');

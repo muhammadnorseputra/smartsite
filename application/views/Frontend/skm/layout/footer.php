@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="row">
 			<p class="text-center text-muted py-4">
-				&copy; <?= date('Y') ?> Survei IKM BKPPD Kab. Balangan
+				&copy; <?= date('Y') ?> Survei IKM BKPPD Balangan
 			</p>
 		</div>
 	</div>

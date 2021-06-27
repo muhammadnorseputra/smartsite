@@ -1,9 +1,21 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Skm extends CI_Model {
+	public function skm_unsur_layanan()
+	{
+		return $this->db->get('skm_unsur');
+	}
+	public function skm_all_periode()
+	{
+		return $this->db->order_by('id','desc')->get('skm_periode');
+	}
 	public function skm_periode()
 	{
 		return $this->db->order_by('id','desc')->get('skm_periode', 1);
+	}
+	public function skm_periode_by_id($id)
+	{
+		return $this->db->get_where('skm_periode', ['id'=>$id])->row();
 	}
 	public function skm_pertanyaan()
 	{
@@ -90,35 +102,55 @@ class Skm extends CI_Model {
 		return $q->poin;
 	}
 
-	// public function get_pertanyaan($id_pertanyaan)
-	// {
-	// 	$this->db->select('jdl_pertanyaan');
-	// 	$this->db->from('skm_pertanyaan');
-	// 	$this->db->where('id', $id_pertanyaan);
-	// 	$q = $this->db->get()->row();
-	// 	return $q->jdl_pertanyaan;
-	// }
+	public function predikat($ikm) {
+        if($ikm >= '1.00' && $ikm <= '2.5996'):
+            $c = 'danger';
+            $x = 'D';
+            $y = 'TIDAK BAIK';
+        elseif($ikm >= '2.60' && $ikm <= '3.064'):
+            $c = 'warning';
+            $x = 'C';
+            $y = 'KURANG BAIK';
+        elseif($ikm >= '3.0644' && $ikm <= '3.532'):
+            $c = 'info';
+            $x = 'B';
+            $y = 'BAIK';
+        elseif($ikm >= '3.5324' && $ikm <= '4.00'):
+            $c = 'success';
+            $x = 'A';
+            $y = 'SANGAT BAIK';
+        else:
+            $c = 'muted';
+            $x = '~';
+            $y = 'Tidak Terdefinisi';
+        endif;
+        return ['x' => $x, 'y' => $y, 'c' => $c];   
+    }
 
-	// public function get_poin($id_jawaban)
-	// {
-	// 	$this->db->select('poin');
-	// 	$this->db->from('skm_jawaban');
-	// 	$this->db->where('id', $id_jawaban);
-	// 	$q = $this->db->get()->row();
-	// 	return $q->poin;
-	// }
-
-	// public function _get_jawaban_perunsur()
-	// {
-	// 	$data = $this->_get_jawaban_responden();
-	// 	foreach($data as $key => $value):
-	// 		$r[] = $data[$key];
-	// 	endforeach;
-	// 	return $r;
-	// }
-	// public function skm_total_nilai_perunsur()
-	// {
-
-	// }
+    public function nilai_predikat($ikm)
+    {
+        if($ikm >= '25.00' && $ikm <= '64.99'):
+            $c = 'danger';
+            $x = 'D';
+            $y = 'TIDAK BAIK';
+        elseif($ikm >= '65.00' && $ikm <= '76.60'):
+            $c = 'warning';
+            $x = 'C';
+            $y = 'KURANG BAIK';
+        elseif($ikm >= '76.61' && $ikm <= '88.30'):
+            $c = 'info';
+            $x = 'B';
+            $y = 'BAIK';
+        elseif($ikm >= '88.31' && $ikm <= '100.00'):
+            $c = 'success';
+            $x = 'A';
+            $y = 'SANGAT BAIK';
+        else:
+            $c = 'muted';
+            $x = '~';
+            $y = 'Tidak Terdefinisi';
+        endif;
+        return ['x' => $x, 'y' => $y, 'c' => $c];
+    }
 
 }

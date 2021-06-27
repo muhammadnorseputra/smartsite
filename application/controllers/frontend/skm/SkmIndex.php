@@ -9,57 +9,8 @@ class SkmIndex extends CI_Controller
         parent::__construct();
         $this->load->model('skm');
     }
-    public function predikat($ikm) {
-        if($ikm >= '1.00' && $ikm <= '2.5996'):
-            $c = 'danger';
-            $x = 'D';
-            $y = 'TIDAK BAIK';
-        elseif($ikm >= '2.60' && $ikm <= '3.064'):
-            $c = 'warning';
-            $x = 'C';
-            $y = 'KURANG BAIK';
-        elseif($ikm >= '3.0644' && $ikm <= '3.532'):
-            $c = 'info';
-            $x = 'B';
-            $y = 'BAIK';
-        elseif($ikm >= '3.5324' && $ikm <= '4.00'):
-            $c = 'success';
-            $x = 'A';
-            $y = 'SANGAT BAIK';
-        else:
-            $c = 'muted';
-            $x = '~';
-            $y = 'Tidak Terdefinisi';
-        endif;
-        return ['x' => $x, 'y' => $y, 'c' => $c];   
-    }
 
-    public function nilai_predikat($ikm)
-    {
-        if($ikm >= '25.00' && $ikm <= '64.99'):
-            $c = 'danger';
-            $x = 'D';
-            $y = 'TIDAK BAIK';
-        elseif($ikm >= '65.00' && $ikm <= '76.60'):
-            $c = 'warning';
-            $x = 'C';
-            $y = 'KURANG BAIK';
-        elseif($ikm >= '76.61' && $ikm <= '88.30'):
-            $c = 'info';
-            $x = 'B';
-            $y = 'BAIK';
-        elseif($ikm >= '88.31' && $ikm <= '100.00'):
-            $c = 'success';
-            $x = 'A';
-            $y = 'SANGAT BAIK';
-        else:
-            $c = 'muted';
-            $x = '~';
-            $y = 'Tidak Terdefinisi';
-        endif;
-        return ['x' => $x, 'y' => $y, 'c' => $c];
-    }
-
+    
     public function _cekValue($value, $default = null)
     {
         return isset($value) ? $value : $default;
@@ -103,7 +54,6 @@ class SkmIndex extends CI_Controller
             $total_u9 = array_sum($u9);
 
         endforeach;
-
             // TOTAL POIN PER RESPONDEN (x)
             for ($i=0; $i < $total_responden ; $i++) { 
                 $total_p_r_p[] = array_sum($total_poin_per_responden[$i]);
@@ -116,7 +66,7 @@ class SkmIndex extends CI_Controller
 
             // PREDIKAT (x)
             for ($y=0; $y < $total_responden; $y++) { 
-                $predikat_x[] = $this->predikat($rr_p_p[$y]);
+                $predikat_x[] = $this->skm->predikat($rr_p_p[$y]);
             }
 
             // GET_PREDIKAT (x)
@@ -168,21 +118,20 @@ class SkmIndex extends CI_Controller
             $nnr_t_u7 = $nnr_u7*$bobot_nilai;
             $nnr_t_u8 = $nnr_u8*$bobot_nilai;
             $nnr_t_u9 = $nnr_u9*$bobot_nilai;
-            
             // TOTAL RATA-RATA TERTIMBANG
-            $total_nnr_t = ($nnr_t_u1 + $nnr_t_u2 + $nnr_t_u3 + $nnr_t_u4 + $nnr_t_u5 + 
-                $nnr_t_u6 + $nnr_t_u7 + $nnr_t_u8 + $nnr_t_u9);
+            $total_nnr_t = $nnr_t_u1 + $nnr_t_u2 + $nnr_t_u3 + $nnr_t_u4 + $nnr_t_u5 + 
+                $nnr_t_u6 + $nnr_t_u7 + $nnr_t_u8 + $nnr_t_u9;
 
-            // var_dump($total_nnr_t);
             // die();
             // NILAI IKM
-            $ikm = number_format(($total_nnr_t * 25), 2);
+            $ikm = ($total_nnr_t * 25);
+            // var_dump($total_nnr_t);die();
 
         else:
             $ikm = '0';
         endif;
             // NILAI IKM DIKONVERSI 
-            $konversi = $this->nilai_predikat($ikm);
+            $konversi = $this->skm->nilai_predikat($ikm);
             // var_dump($konversi);
             $j = ['nilai_ikm' => $ikm, 'nilai_konversi' => $konversi, 'presentase' => $presentase_predikat];
             // var_dump($j);

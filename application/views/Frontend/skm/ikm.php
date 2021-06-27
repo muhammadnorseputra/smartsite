@@ -23,7 +23,7 @@
 						</div>
 					</div>
 					<div class="text-center">
-						<p class="fw-bold text-light">Predikat Mutu Pelayanan</p>
+						<p class="fw-bold text-light">Kategori Mutu Unit Pelayanan</p>
 						<div class="display-1 text-<?= $hasil['nilai_konversi']['c'] ?>">
 							<?= $hasil['nilai_konversi']['x'] ?>
 						</div>
@@ -109,5 +109,48 @@
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-6">
+			<div id="piechart_3d" style="height:400px;"></div>
+		</div>
+	</div>
 </div>
 </section>
+<?php
+$values = []; 
+$labels= [];
+foreach($hasil['presentase'] as $k => $v): 
+	$labels[] = $k; 
+	$values[$k] = intval(round($v)); 
+endforeach;
+	$label = json_encode($labels);
+	$value = $values;
+?>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+           ['Baik','Tidak'],
+          ['Sangat Baik (P.4)', <?= $value['A'] ?>],
+          ['Baik (P.3)', <?= $value['B'] ?>],
+          ['Cukup (P.2)', <?= $value['C'] ?>],
+          ['Tidak Baik (P.1)', <?= $value['D'] ?>]
+        ]);
+
+        var options = {
+          title: 'Persentase presepsi responden pada unit layanan',
+          is3D: true,
+          slices: {
+            0: { color: 'teal' },
+            1: { color: 'green' },
+            2: { color: 'yellow' },
+            3: { color: 'red' },
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>

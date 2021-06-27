@@ -33,7 +33,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link fw-bold" href="#cetak" tabindex="-1" aria-disabled="true" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Cetak Formulir</a>
+					<a class="nav-link fw-bold" href="#cetak" tabindex="-1" aria-disabled="true" data-bs-toggle="offcanvas" role="button" aria-controls="offcanvasExample">Cetak Formulir</a>
 				</li>
 				<?php //if(!empty($this->session->userdata('user_portal_log')['id'])): ?>
 				<li class="nav-item">

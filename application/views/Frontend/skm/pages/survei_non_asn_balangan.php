@@ -29,7 +29,7 @@
 					</div>
 					<div class="col-md-4">
 						<div class="form-floating">
-						<input type="text" data-validation="number" data-validation-allowing="range[18;52]" name="umur" data-validation-help="Batasan umur 18 - 52 tahun." class="form-control" id="umur" placeholder="Umur - only number" data-validation="required">
+						<input type="text" data-validation="number" data-validation-allowing="range[18;60]" name="umur" data-validation-help="Batasan umur 18 - 60 tahun." class="form-control" id="umur" placeholder="Umur - only number" data-validation="required">
 						<label for="umur" class="form-label fw-bold">Umur</label>
 						</div>
 					</div>
