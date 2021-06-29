@@ -1,10 +1,13 @@
+<?php  
+$card = isset($_GET['card']) ? $_GET['card'] : '';
+?>
 <section class="survei-non-asn">
 	<div class="py-3 px-2 bg-secondary bg-gradient text-center">
-		<h3 class="text-light">Formulir Survei IKM (NON ASN Balangan)</h3>
+		<h3 class="text-light">Formulir Survei IKM</h3>
 	</div>
 	<?php  
 	$hidden = ['token_' => encrypt_url('@270599bkppd_balangan_'.date('dmYH')), 'nomor' => encrypt_url($nomor), 'card' => $_GET['card'], 'periode' => encrypt_url($periode->id)];
-	echo form_open(base_url('frontend/skm/skmProses'), ['id' => 'f-survei-non-asn', 'class' => 'toggle-disabled'], $hidden);
+	echo form_open(base_url('frontend/skm/skmProses'), ['id' => 'f-survei', 'class' => 'toggle-disabled', 'autocomplete' => 'off'], $hidden);
 	?>
 	<div class="container">
 		<div class="card my-3 bg-light shadow-sm">
@@ -18,12 +21,24 @@
 						<h5 class="text-muted d-none d-md-block"><abbr title="Ini adalah kode formulir anda.">F-<?= strtoupper($nomor) ?></abbr></h5>
 					</div>
 				</div>
-
 				<hr>
+				<?php if(($card === 'asn_balangan') || ($card === 'demo')): ?>
+				<div class="row mb-md-4 mb-3">
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="text" name="cek_nipnik" class="form-control form-control-lg" id="nipnik" placeholder="NIP/NIK" data-validation-param-name="nipnik" data-validation="server required number length" data-validation-length="16-18" data-validation-url="<?= base_url('frontend/skm/skmIndex/cekNipNik') ?>">
+							<label for="nipnik" class="form-label fw-bold">NIP/NIK</label>
+						</div>					
+					</div>
+					<div class="col col-md-4">
+						<!-- <div id="msg-asn-data" class="align-self-middle"></div> -->
+					</div>					
+				</div>
+				<?php endif; ?>
 				<div class="row mb-md-4 mb-3 g-3">
 					<div class="col-md-4">
 						<div class="form-floating">
-							<input type="text" name="nama_lengkap" class="form-control" id="namalengkap" placeholder="Nama Lengkap" data-validation="required">
+							<input type="text" name="nama_lengkap" class="form-control" id="namalengkap" placeholder="Nama Lengkap" data-validation="required letternumeric" data-validation-allowing="'.A-Z ">
 							<label for="namalengkap" class="form-label fw-bold">Nama Lengkap</label>
 						</div>
 					</div>

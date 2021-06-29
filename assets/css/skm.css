@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
 body {
 	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
-	font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Poppins', sans-serif;
 }	
 .blured {
 	position: absolute;
@@ -63,3 +63,19 @@ body {
 		-webkit-animation-name: bounce;
 		animation-name: bounce;
 		}
+.rightToLeft{
+  -webkit-animation: linear infinite;
+  -webkit-animation-name: run;
+  -webkit-animation-duration: 5s;
+}
+@-webkit-keyframes run {
+  0% {
+    left: 0;
+  }
+  50% { 
+    left: calc(100% - 100px); 
+   }
+  100% {
+    left: 0;     
+  }
+}

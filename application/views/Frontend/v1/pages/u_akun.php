@@ -34,6 +34,11 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
           <a id="module" href="<?= base_url('frontend/v1/users/galeri/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-images mr-3 float-right" aria-hidden="true"></i> Galeri Foto</a>
           <a id="module" href="<?= base_url('frontend/v1/users/banner/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-image mr-3 float-right" aria-hidden="true"></i> Banner</a>
           <a id="module" href="<?= base_url('frontend/v1/users/submenu/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-leaf mr-3 float-right" aria-hidden="true"></i> Submenu</a>
+          <div class="list-group-item text-primary border-0 rounded-0 mb-2">
+            <b class="d-block">IKM</b>
+          </div>
+          <a id="module" href="<?= base_url('frontend/v1/users/ikm_periode/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-check-circle mr-3 float-right" aria-hidden="true"></i> Periode</a>
+          <a id="module" href="<?= base_url('frontend/v1/users/ikm_responden/'); ?>" class="border-0  rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-user-circle mr-3 float-right" aria-hidden="true"></i> Responden</a>
 
           <div class="list-group-item text-primary border-0 rounded-0 mb-2">
             <b class="d-block">Interaksi</b>

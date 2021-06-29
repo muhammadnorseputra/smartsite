@@ -5,6 +5,10 @@ class Skm extends CI_Model {
 	{
 		return $this->db->get('skm_unsur');
 	}
+	public function skm_all_tahun()
+	{
+		return $this->db->order_by('id','desc')->group_by('tahun')->get('skm_periode');
+	}
 	public function skm_all_periode()
 	{
 		return $this->db->order_by('id','desc')->get('skm_periode');
@@ -49,21 +53,29 @@ class Skm extends CI_Model {
 	{
 		return $this->db->insert($tbl, $data);
 	}
-	public function get_responden()
+	public function skm_total_responden_all()
 	{
-		return $this->db->get_where('skm', ['fid_periode' => 1]);
+		return $this->db->get_where('skm')->num_rows();
 	}
-	public function skm_total_responden()
+	public function get_responden($periode=null)
 	{
-		return $this->db->get_where('skm',  ['fid_periode' => 1])->num_rows();
+		return $this->db->get_where('skm', ['fid_periode' => $periode]);
 	}
-	public function skm_total_responden_l()
+	public function responden_by_nipnik($nipnik)
 	{
-		return $this->db->get_where('skm', ['jns_kelamin' => 'L', 'fid_periode' => 1]); //Laki-laki
+		return $this->db->get_where('skm', ['nipnik' => $nipnik]);
 	}
-	public function skm_total_responden_p()
+	public function skm_total_responden($periode=null)
 	{
-		return $this->db->get_where('skm', ['jns_kelamin' => 'P', 'fid_periode' => 1]); //Perempuan
+		return $this->db->get_where('skm',  ['fid_periode' => $periode])->num_rows();
+	}
+	public function skm_total_responden_l($periode=null)
+	{
+		return $this->db->get_where('skm', ['jns_kelamin' => 'L', 'fid_periode' => $periode]); //Laki-laki
+	}
+	public function skm_total_responden_p($periode=null)
+	{
+		return $this->db->get_where('skm', ['jns_kelamin' => 'P', 'fid_periode' => $periode]); //Perempuan
 	}
 	public function skm_total_layanan()
 	{
@@ -100,6 +112,11 @@ class Skm extends CI_Model {
 		$this->db->where('id', $id);
 		$q = $this->db->get()->row();
 		return $q->poin;
+	}
+
+	public function ceknipnik($n,$periode_id)
+	{
+		return $this->db->get_where('skm', ['nipnik' => $n, 'fid_periode' => $periode_id]);
 	}
 
 	public function predikat($ikm) {

@@ -8,6 +8,7 @@ class Users extends CI_Controller {
 		$this->load->model('M_f_users','users');
 		$this->load->model('model_template_v1/M_f_post','posts');
 		$this->load->model('model_template_v1/M_f_halaman', 'halaman');
+		$this->load->model('model_template_v1/M_f_ikm', 'ikm');
 		$this->load->model('model_template_v1/M_f_album', 'album');
 		$this->load->model('model_template_v1/M_f_banner', 'banner');
 		$this->load->model('M_b_komentar', 'komentar');
@@ -295,6 +296,16 @@ class Users extends CI_Controller {
 				'kategori_saran' => $this->users->karegori_saran()->result()
 			];
 			return $this->load->view('Frontend/v1/pages/u_akun_kotak_saran', $data);
+		}
+
+		public function ikm_periode() {
+			$data = [
+				'ikm_periode' => $this->ikm->ikm_periode()->result()
+			];
+			return $this->load->view('Frontend/v1/pages/ikm/ikm_periode', $data);
+		}
+		public function ikm_responden() {
+			return $this->load->view('Frontend/v1/pages/ikm/ikm_responden');
 		}
 
 		public function submenu() {

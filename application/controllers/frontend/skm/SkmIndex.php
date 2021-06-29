@@ -8,9 +8,40 @@ class SkmIndex extends CI_Controller
     {
         parent::__construct();
         $this->load->model('skm');
+
+        // $this->tahun_skr = $this->skm->skm_periode()->row()->tahun;
+        $this->periode_skr = $this->skm->skm_periode()->row()->id;
     }
 
-    
+    public function cekNipNik()
+    {
+        $response = array(
+            'valid' => false,
+            'message' => 'Silahkan masukan NIP/NIK anda dengan benar.'
+        );
+        $input= $this->input->post('nipnik');
+        if(!empty($input)) {
+            $period_skr = $this->skm->skm_periode()->row();
+            $nipnik = $this->skm->ceknipnik($input, $period_skr->id);
+            $cek_periode = $this->skm->responden_by_nipnik($input);
+            $getnipnik = $nipnik->num_rows();
+            
+            if($cek_periode->num_rows() > 0){
+                $periode = $cek_periode->row();
+                $p = $periode->fid_periode;
+            }
+
+            if( ($getnipnik === 1) && ($period_skr->id === $p) ) {
+                // false, nipnik ada di database
+                $response = array('valid' => false, 'message' => 'Anda hanya dapat mengikuti survei 1 kali dalam 1 periode, silahkan untuk mengikuti pada periode berikutnya.');
+            } else {
+                // true, nipnik baru
+                $response = array('valid' => true);
+            }
+        }
+        echo json_encode($response);
+    }
+
     public function _cekValue($value, $default = null)
     {
         return isset($value) ? $value : $default;
@@ -18,9 +49,11 @@ class SkmIndex extends CI_Controller
 
     public function hitung()
     {
-        $res = $this->skm->get_responden();
+
+        $res = $this->skm->get_responden($this->periode_skr);
         $total_responden = $res->num_rows();
         $total_unsur = $this->skm->skm_total_indikator()->num_rows();
+        // var_dump($total_responden);die();
         if($total_responden > 0):
         foreach($res->result() as $r):
             $db = $this->skm->_get_jawaban_responden($r->id);
@@ -90,11 +123,12 @@ class SkmIndex extends CI_Controller
                                     'B' => number_format($presentase_b, 2), 
                                     'C' => number_format($presentase_c, 2), 
                                     'D' => number_format($presentase_d, 2)];
+            // var_dump($total_predikat_sama);die();
             // var_dump($presentase_predikat);die();
             
             // TOTAL KESELURUHAN UNSUR
-            $total_u = $total_u1 + $total_u2 + $total_u3 + $total_u4 + $total_u5 + $total_u6 
-                        + $total_u7 + $total_u8 + $total_u9; 
+            // $total_u = $total_u1 + $total_u2 + $total_u3 + $total_u4 + $total_u5 + $total_u6 
+            //             + $total_u7 + $total_u8 + $total_u9; 
             
             // NILAI RATA-RATA PER UNSUR
             $nnr_u1 = ($total_u1/$total_responden);
@@ -106,25 +140,28 @@ class SkmIndex extends CI_Controller
             $nnr_u7 = ($total_u7/$total_responden);
             $nnr_u8 = ($total_u8/$total_responden);
             $nnr_u9 = ($total_u9/$total_responden);
+            // TOTAL RATA - RATA
+            $total_nnr = [$nnr_u1,$nnr_u2,$nnr_u3,$nnr_u4,$nnr_u5,$nnr_u6,$nnr_u7,$nnr_u8,$nnr_u9];
 
             // NILAI RATA-RATA TERTIMBANG PER UNSUR
             $bobot_nilai = $this->skm->skm_bobot_nilai();
-            $nnr_t_u1 = $nnr_u1*$bobot_nilai;
-            $nnr_t_u2 = $nnr_u2*$bobot_nilai;
-            $nnr_t_u3 = $nnr_u3*$bobot_nilai;
-            $nnr_t_u4 = $nnr_u4*$bobot_nilai;
-            $nnr_t_u5 = $nnr_u5*$bobot_nilai;
-            $nnr_t_u6 = $nnr_u6*$bobot_nilai;
-            $nnr_t_u7 = $nnr_u7*$bobot_nilai;
-            $nnr_t_u8 = $nnr_u8*$bobot_nilai;
-            $nnr_t_u9 = $nnr_u9*$bobot_nilai;
+            $nnr_t_u1 = ($nnr_u1*$bobot_nilai);
+            $nnr_t_u2 = ($nnr_u2*$bobot_nilai);
+            $nnr_t_u3 = ($nnr_u3*$bobot_nilai);
+            $nnr_t_u4 = ($nnr_u4*$bobot_nilai);
+            $nnr_t_u5 = ($nnr_u5*$bobot_nilai);
+            $nnr_t_u6 = ($nnr_u6*$bobot_nilai);
+            $nnr_t_u7 = ($nnr_u7*$bobot_nilai);
+            $nnr_t_u8 = ($nnr_u8*$bobot_nilai);
+            $nnr_t_u9 = ($nnr_u9*$bobot_nilai);
             // TOTAL RATA-RATA TERTIMBANG
-            $total_nnr_t = $nnr_t_u1 + $nnr_t_u2 + $nnr_t_u3 + $nnr_t_u4 + $nnr_t_u5 + 
-                $nnr_t_u6 + $nnr_t_u7 + $nnr_t_u8 + $nnr_t_u9;
+            $total_nnr_t = [$nnr_t_u1,$nnr_t_u2,$nnr_t_u3, $nnr_t_u4, $nnr_t_u5, $nnr_t_u6, $nnr_t_u7, $nnr_t_u8, $nnr_t_u9];
+
+            // var_dump(array_sum($total_nnr)*25*0.11);die();
 
             // die();
             // NILAI IKM
-            $ikm = ($total_nnr_t * 25);
+            $ikm = array_sum($total_nnr_t) * 25;
             // var_dump($total_nnr_t);die();
 
         else:
@@ -133,7 +170,7 @@ class SkmIndex extends CI_Controller
             // NILAI IKM DIKONVERSI 
             $konversi = $this->skm->nilai_predikat($ikm);
             // var_dump($konversi);
-            $j = ['nilai_ikm' => $ikm, 'nilai_konversi' => $konversi, 'presentase' => $presentase_predikat];
+            $j = ['nilai_ikm' => $ikm, 'nilai_konversi' => $konversi, 'presentase' => @$presentase_predikat];
             // var_dump($j);
             return $j;
     }
@@ -143,7 +180,7 @@ class SkmIndex extends CI_Controller
         $data = [
             'title' => 'SKM - BKPPD Balangan',
             'content' => 'Frontend/skm/index',
-            'total_responden' => $this->skm->skm_total_responden()
+            'total_responden' => $this->skm->skm_total_responden_all()
         ];
         $this->load->view('Frontend/skm/layout/app', $data);
     }
@@ -155,7 +192,7 @@ class SkmIndex extends CI_Controller
         if($card === 'asn_balangan'):
         $data = [
             'title' => $title,
-            'content' => 'Frontend/skm/pages/survei_asn_balangan',
+            'content' => 'Frontend/skm/pages/survei_mulai',
             'periode' => $this->skm->skm_periode()->row(),
             'pertanyaan' => $this->skm->skm_pertanyaan(),
             'jenis_layanan' => $this->skm->skm_jenis_layanan(),
@@ -166,7 +203,18 @@ class SkmIndex extends CI_Controller
         elseif($card === 'non_asn_balangan'):
         $data = [
             'title' => $title,
-            'content' => 'Frontend/skm/pages/survei_non_asn_balangan',
+            'content' => 'Frontend/skm/pages/survei_mulai',
+            'periode' => $this->skm->skm_periode()->row(),
+            'pertanyaan' => $this->skm->skm_pertanyaan(),
+            'jenis_layanan' => $this->skm->skm_jenis_layanan(),
+            'pendidikan' => $this->skm->skm_pendidikan(),
+            'pekerjaan' => $this->skm->skm_pekerjaan(),
+            'nomor' => generateRandomString(7)
+        ];  
+    elseif($card === 'demo'):
+        $data = [
+            'title' => $title,
+            'content' => 'Frontend/skm/pages/survei_mulai',
             'periode' => $this->skm->skm_periode()->row(),
             'pertanyaan' => $this->skm->skm_pertanyaan(),
             'jenis_layanan' => $this->skm->skm_jenis_layanan(),
@@ -188,9 +236,9 @@ class SkmIndex extends CI_Controller
             'title' => 'IKM - BKPPD Kab. Balangan',
             'content' => 'Frontend/skm/ikm',
             'periode' => $this->skm->skm_periode()->row(),
-            'total_responden' => $this->skm->skm_total_responden(),
-            'total_responden_l' => $this->skm->skm_total_responden_l()->num_rows(),
-            'total_responden_p' => $this->skm->skm_total_responden_p()->num_rows(),
+            'total_responden' => $this->skm->skm_total_responden($this->periode_skr),
+            'total_responden_l' => $this->skm->skm_total_responden_l($this->periode_skr)->num_rows(),
+            'total_responden_p' => $this->skm->skm_total_responden_p($this->periode_skr)->num_rows(),
             'total_layanan' => $this->skm->skm_total_layanan()->num_rows(),
             'total_indikator' => $this->skm->skm_total_indikator()->num_rows(),
             'hasil' => $this->hitung(),  

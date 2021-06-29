@@ -1,15 +1,10 @@
 <section class="hero">
 	<div class="p-md-5 py-3 px-2 bg-light bg-gradient">
 		<div class="container py-md-3">
-			<!--
-			<span class="text-muted">
-												&copy; 2021 www.bkppd-balangankab.info
-			</span>
-			<hr> -->
 			<div class="d-flex justify-content-between align-items-md-center align-items-start flex-lg-row flex-column">
 				<div>
 					<h1 class="display-3 fw-bold text-secondary">Selamat Datang</h1>
-					<p class="fs-4 text-secondary">Di Module Survei IKM BKPPD Kab. Balangan</p>
+					<p class="fs-4 text-secondary">Di Survei IKM BKPPD Balangan</p>
 					
 					<a href="<?= base_url('survei') ?>" class="btn btn-danger btn-lg px-4 shadow">
 					Isi Survei Sekarang
@@ -24,7 +19,10 @@
 					</div>
 				</div>
 				<div>
-					<img src="<?= base_url('assets/images/bg/hero-img.png') ?>" class="animated bounce img-fluid" alt="Survey BKPPD">
+						<div>
+							<img src="<?= base_url('assets/images/bg/hero-img.png') ?>" class="animated bounce img-fluid" alt="Survey BKPPD">
+						</div>
+
 				</div>
 			</div>
 		</div>
@@ -52,12 +50,12 @@
 						<p>
 							Dengan adanya survey IKM ini diharapkan kami dapat selalu meningkatkan layanan kami terhadap masyarakat.
 						</p>
-						<button class="btn btn-danger btn-lg px-4 d-none d-md-block shadow" type="button">
+						<a  class="btn btn-danger btn-lg px-4 shadow" href="<?= base_url('survei') ?>">
 						Isi Survei Sekarang
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 20 20">
 							<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
 						</svg>
-						</button>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -71,7 +69,7 @@
 <div class="container">
 	<div class="row mb-4">
 		<div class="col">
-			<h3 class="fw-bold display-5"> Apasih Untungnya Responden Anda Bagi Kami</h3>
+			<h3 class="fw-bold display-6"> Apasih Untungnya Responden Anda Bagi Kami</h3>
 		</div>
 	</div>
 	<div class="row">
@@ -92,13 +90,13 @@
 <footer class="bg-dark py-4"> 
 	<div class="container">
 		<div class="row gap-4">
-			<div class="col-2 offset-md-2">
+			<div class="col-12 col-md-2 offset-md-2">
 				<img src="<?= base_url('assets/images/qr-code-ikm.png') ?>" class="img-fluid" alt="qr-code-ikm-bkppd-balangan">
 			</div>
-			<div class="col-6">
+			<div class="col-12 col-md-6">
 				<div class="fs-4 fw-bold text-light">Tinjau Perkembangan IKM</div>
 				<p class="text-muted">
-					Silahkan pindai QR-Code disamping untuk meninjau secara langsung hasil dari penilaian Indexs Kepuasan Masyarakat (IKM) atau dengan mengunjungi alamat url (<code>https://qrco.de/ikm-bkppd-balangan</code>)
+					Silahkan pindai QR-Code untuk meninjau secara langsung hasil dari penilaian Indeks Kepuasan Masyarakat (IKM) atau dengan mengunjungi alamat url (<code>https://qrco.de/ikm-bkppd-balangan</code>)
 				</p>
 				<p class="text-muted">
 					Kami selaku unit pelayanan mengucapkan terimakasih atas partisipasi anda dalam pelaksanaan penilaian IKM secara Online maupun Offline.

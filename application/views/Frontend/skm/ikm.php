@@ -34,7 +34,9 @@
 		</div>
 	</div>
 </section>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="#212529" fill-opacity="1" d="M0,192L26.7,165.3C53.3,139,107,85,160,53.3C213.3,21,267,11,320,10.7C373.3,11,427,21,480,42.7C533.3,64,587,96,640,106.7C693.3,117,747,107,800,90.7C853.3,75,907,53,960,58.7C1013.3,64,1067,96,1120,122.7C1173.3,149,1227,171,1280,176C1333.3,181,1387,171,1413,165.3L1440,160L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
+<div>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 190"><path fill="#212529" fill-opacity="1" d="M0,192L26.7,165.3C53.3,139,107,85,160,53.3C213.3,21,267,11,320,10.7C373.3,11,427,21,480,42.7C533.3,64,587,96,640,106.7C693.3,117,747,107,800,90.7C853.3,75,907,53,960,58.7C1013.3,64,1067,96,1120,122.7C1173.3,149,1227,171,1280,176C1333.3,181,1387,171,1413,165.3L1440,160L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
+</div>
 <section>
 <div class="container">
 	<div class="row">
@@ -111,14 +113,16 @@
 	</div>
 	<div class="row">
 		<div class="col-6">
-			<div id="piechart_3d" style="height:400px;"></div>
+			<div id="piechart_3d"></div>
 		</div>
 	</div>
 </div>
 </section>
 <?php
+// var_dump($hasil);die();
 $values = []; 
 $labels= [];
+if(!$hasil['presentase'] === 0):
 foreach($hasil['presentase'] as $k => $v): 
 	$labels[] = $k; 
 	$values[$k] = intval(round($v)); 
@@ -132,15 +136,15 @@ endforeach;
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-           ['Baik','Tidak'],
-          ['Sangat Baik (P.4)', <?= $value['A'] ?>],
-          ['Baik (P.3)', <?= $value['B'] ?>],
-          ['Cukup (P.2)', <?= $value['C'] ?>],
-          ['Tidak Baik (P.1)', <?= $value['D'] ?>]
+          ['A','B'],
+          ['P.4', 1],
+          ['P.3', 33],
+          ['P.2', 30],
+          ['P.1', 1]
         ]);
 
         var options = {
-          title: 'Persentase presepsi responden pada unit layanan',
+          title: 'Persentase persepsi (p) responden pada unsur layanan',
           is3D: true,
           slices: {
             0: { color: 'teal' },
@@ -154,3 +158,4 @@ endforeach;
         chart.draw(data, options);
       }
     </script>
+<?php endif; ?>

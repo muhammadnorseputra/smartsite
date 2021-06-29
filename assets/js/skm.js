@@ -33,5 +33,5 @@ $(document).ready(function() {
         } else {
             window.open($url, '_blank', '', true);
         }
-    })
+    });
 });

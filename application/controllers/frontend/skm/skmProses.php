@@ -21,6 +21,7 @@ class SkmProses extends CI_Controller
                 'fid_periode' => decrypt_url($post['periode']),
                 'fid_jenis_layanan' => $post['jns_layanan'],
                 'nomor' => decrypt_url($post['nomor']),
+                'nipnik' => !empty($post['cek_nipnik']) ? $post['cek_nipnik'] : null,
                 'nama_lengkap' => $post['nama_lengkap'],
                 'umur' => $post['umur'],
                 'jns_kelamin' => $post['jns_kelamin'],

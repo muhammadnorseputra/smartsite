@@ -17,6 +17,21 @@ class Skm_laporan extends CI_Model {
 		$q = $this->db->get();
 		return $q;
     }	
+    public function skm_unsur_layanan_tahun($tahun)
+    {
+    	$this->db->select('u.*, p.*');
+    	$this->db->from('Table');
+    }
+    public function tahun_list()
+    {
+    	$this->db->select('tahun');
+    	$this->db->from('skm_periode');
+    	$this->db->order_by('id', 'desc');
+    	$this->db->limit('3');
+    	$q = $this->db->get();
+    	return $q;
+    }
+
     public function target_by_tahun($tahun)
     {
     	$this->db->select('SUM(target) as target_tahunan');
@@ -147,11 +162,16 @@ class Skm_laporan extends CI_Model {
 		$q = $this->db->get();
 		return $q->num_rows();
 	}
-	public function responden_by_jenis_akun()
+	public function responden_by_jenis_akun($tahun,$periode=null)
 	{
-		$this->db->select('count(id) as total_responden, card_responden');
-		$this->db->from('skm');
-		$this->db->group_by('card_responden');
+		$this->db->select('count(s.id) as total_responden, s.card_responden');
+		$this->db->from('skm AS s');
+		$this->db->join('skm_periode AS p', 's.fid_periode = p.id');
+		$this->db->where('p.tahun', $tahun);
+		if(!empty($periode)):
+			$this->db->where('s.fid_periode', $periode);
+		endif;
+		$this->db->group_by('s.card_responden');
 		$q = $this->db->get();
 		return $q;
 	}

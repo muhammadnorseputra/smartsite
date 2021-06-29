@@ -1,9 +1,62 @@
 $(document).ready(function() {
+    $("input[name='cek_nipnik']").on('blur', function() {
+        // let value = $("input[name='cek_nipnik']").val();
+        let value = $(this).val();
+        $("#msg-asn-data").removeClass('text-success text-danger');
+        $.getJSON(`http://192.168.1.4/api/filternipnik/${value}`, function(res) {
+            let r = res[0];
+            console.log(res);
+            if (value != '') {
+                if (r.kind == true) {
+                    $("input[name='nama_lengkap']").val(r.nama)
+                        .removeClass('error')
+                        .addClass('valid')
+                        .parent()
+                        .removeClass('has-error')
+                        .addClass('has-success');
+                    $("input[name='umur']").val(r.umur)
+                        .removeClass('error')
+                        .addClass('valid')
+                        .parent()
+                        .removeClass('has-error')
+                        .addClass('has-success');
+                    $("select[name='jns_kelamin']").val(r.jk)
+                        .removeClass('error')
+                        .addClass('valid')
+                        .parent()
+                        .removeClass('has-error')
+                        .addClass('has-success');
+                    // $("#msg-asn-data").html(`${r.message}`).addClass('text-success');
+                }
+                if (r.kind == false) {
+                    $("input[name='umur']").val('').addClass('error').removeClass('valid');
+                    $("input[name='nama_lengkap']").val('').addClass('error').removeClass('valid');
+                    $("select[name='jns_kelamin']").val('').addClass('error').removeClass('valid');
+                    // $("#msg-asn-data").html(`${r.message}`).addClass('text-danger');
+                }
+            } else {
+                $("input[name='nama_lengkap']").val('').addClass('error').removeClass('valid');
+                $("input[name='umur']").val('').addClass('error').removeClass('valid');
+                $("select[name='jns_kelamin']").val('').addClass('error').removeClass('valid');
+                // $("#msg-asn-data").html('');
+            }
+        });
+    });
+    // Add validator
+    // $.formUtils.addValidator({
+    //     name: 'cek_asn',
+    //     validatorFunction: function(value, $el, config, language, $form) {
+
+    //     },
+    //     errorMessage: 'NIP/NIK Invalid',
+    //     errorMessageKey: 'NIP/NIK Tidak Ditemukan'
+    // });
+
     $.validate({
-        form: '#f-survei-non-asn',
-        modules: 'toggleDisabled, date, security, html5, sanitize',
-        disabledFormFilter: 'form.toggle-disabled',
+        form: '#f-survei',
+        modules: 'date, security, html5, sanitize',
         showErrorDialogs: true,
+        // disabledFormFilter: 'form.toggle-disabled',
         // reCaptchaSiteKey: '6LfiM08bAAAAAJkf5geIEBau6f9-kMOEzxkxw06_',
         // reCaptchaTheme: 'light',
         onError: function($form) {
