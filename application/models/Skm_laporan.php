@@ -17,11 +17,6 @@ class Skm_laporan extends CI_Model {
 		$q = $this->db->get();
 		return $q;
     }	
-    public function skm_unsur_layanan_tahun($tahun)
-    {
-    	$this->db->select('u.*, p.*');
-    	$this->db->from('Table');
-    }
     public function tahun_list()
     {
     	$this->db->select('tahun');
