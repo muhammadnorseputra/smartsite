@@ -451,34 +451,33 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 							$responden_unsur_tahun = $this->lap->responden_by_tahun_periode($t->tahun);
 							foreach($responden_unsur_tahun->result() as $r):
 								$get_jawaban = $this->skm->_get_jawaban_responden($r->id);
-									$poin = [];
+									$poin_tahun = [];
 									foreach($get_jawaban as $j):
-									$poin[] = $this->skm->_get_poin_responden_per_unsur($j);
+									$poin_tahun[] = $this->skm->_get_poin_responden_per_unsur($j);
 									endforeach;
 									// POIN PER UNSUR
-									$u1_tahun[] = $poin[0];
-									$u2_tahun[] = $poin[1];
-									$u3_tahun[] = $poin[2];
-									$u4_tahun[] = $poin[3];
-									$u5_tahun[] = $poin[4];
-									$u6_tahun[] = $poin[5];
-									$u7_tahun[] = $poin[6];
-									$u8_tahun[] = $poin[7];
-									$u9_tahun[] = $poin[8];
+									$u1_tahun[] = $poin_tahun[0];
+									$u2_tahun[] = $poin_tahun[1];
+									$u3_tahun[] = $poin_tahun[2];
+									$u4_tahun[] = $poin_tahun[3];
+									$u5_tahun[] = $poin_tahun[4];
+									$u6_tahun[] = $poin_tahun[5];
+									$u7_tahun[] = $poin_tahun[6];
+									$u8_tahun[] = $poin_tahun[7];
+									$u9_tahun[] = $poin_tahun[8];
 									
 									// TOTAL NI PER UNSUR
-									$total_u1 = array_sum($u1_tahun)/$total_responden_tahun;
-									$total_u2 = array_sum($u2_tahun)/$total_responden_tahun;
-									$total_u3 = array_sum($u3_tahun)/$total_responden_tahun;
-									$total_u4 = array_sum($u4_tahun)/$total_responden_tahun;
-									$total_u5 = array_sum($u5_tahun)/$total_responden_tahun;
-									$total_u6 = array_sum($u6_tahun)/$total_responden_tahun;
-									$total_u7 = array_sum($u7_tahun)/$total_responden_tahun;
-									$total_u8 = array_sum($u8_tahun)/$total_responden_tahun;
-									$total_u9 = array_sum($u9_tahun)/$total_responden_tahun;
+									$total_u1_tahun = array_sum($u1_tahun)/$total_responden_tahun;
+									$total_u2_tahun = array_sum($u2_tahun)/$total_responden_tahun;
+									$total_u3_tahun = array_sum($u3_tahun)/$total_responden_tahun;
+									$total_u4_tahun = array_sum($u4_tahun)/$total_responden_tahun;
+									$total_u5_tahun = array_sum($u5_tahun)/$total_responden_tahun;
+									$total_u6_tahun = array_sum($u6_tahun)/$total_responden_tahun;
+									$total_u7_tahun = array_sum($u7_tahun)/$total_responden_tahun;
+									$total_u8_tahun = array_sum($u8_tahun)/$total_responden_tahun;
+									$total_u9_tahun = array_sum($u9_tahun)/$total_responden_tahun;
 							endforeach; 
-							$nnr_unsur_tahun = ['1' => @$total_u1, '2' => @$total_u2, '3' => @$total_u3, '4' => @$total_u4,'5' => @$total_u5,'6' => @$total_u6,'7' => @$total_u7,'8' => @$total_u8,'9' => @$total_u9];
-							// var_dump($result_tahun);die();
+							$nnr_unsur_tahun = ['1' => @$total_u1_tahun, '2' => @$total_u2_tahun, '3' => @$total_u3_tahun, '4' => @$total_u4_tahun,'5' => @$total_u5_tahun,'6' => @$total_u6_tahun,'7' => @$total_u7_tahun,'8' => @$total_u8_tahun,'9' => @$total_u9_tahun];
 							
 						?>			
 						<tr>
@@ -498,6 +497,7 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 						</tr>
 						<tr class="table-info">
 							<?php
+							// var_dump(array_sum($nrr_tertimbang_sum_tahun) * 25);
 							$ikm_konversi_tahun = (array_sum($nrr_tertimbang_sum_tahun) * 25);
 							$total_ikm_tahun = $ikm_konversi_tahun;
 							?>
