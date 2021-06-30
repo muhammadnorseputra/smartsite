@@ -39,12 +39,12 @@
         </p>
         <?php endif; ?>
       </div>
+      <div class="col-md-4 bg-white p-md-4">
       <?php
       if(!empty($h->file)):
       $path = !empty($h->filename) ? $h->filename : '';
       $ext = pathinfo($path, PATHINFO_EXTENSION);
       ?>
-      <div class="col-md-4 bg-white p-md-4">
         <?php
         if($ext === 'pdf'):
         ?>
@@ -52,8 +52,19 @@
         <?php else: ?>
         <img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block">
         <?php endif; ?>
-      </div>
       <?php endif; ?>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ads-display-->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1099792537777374"
+             data-ad-slot="5114117650"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
     </div>
   </div>
 </section>

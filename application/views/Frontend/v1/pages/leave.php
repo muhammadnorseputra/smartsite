@@ -37,6 +37,18 @@
 								<a href="<?= $url_decode ?>?ref=bkppd_balangan" class="btn btn-block btn-primary">Lanjutkan <i class="fas fa-arrow-right ml-3"></i></a>
 							</div>
 						</div>
+						<hr>
+						<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- ads-display -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-1099792537777374"
+						     data-ad-slot="8859326512"
+						     data-ad-format="auto"
+						     data-full-width-responsive="true"></ins>
+						<script>
+						     (adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
 					</div>
 				</div>
 			</div>
