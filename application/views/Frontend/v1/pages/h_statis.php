@@ -38,16 +38,6 @@
           </p>
         </p>
         <?php endif; ?>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-format="fluid"
-        data-ad-layout-key="-ef+6k-30-ac+ty"
-        data-ad-client="ca-pub-1099792537777374"
-        data-ad-slot="1412915482"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
       </div>
       <?php
       if(!empty($h->file)):
@@ -62,17 +52,6 @@
         <?php else: ?>
         <img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block">
         <?php endif; ?>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- web-ads-display-halstatis -->
-        <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-1099792537777374"
-        data-ad-slot="5114117650"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
       </div>
       <?php endif; ?>
     </div>
