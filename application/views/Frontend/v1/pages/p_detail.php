@@ -210,7 +210,18 @@ if (count($pecah) > 0) {
 					<div class="card border-0">
 						<div class="card-body p-0">
                     		<?php $this->load->view('Frontend/v1/function/populer_post'); ?>
-							<div id="gpr-kominfo-widget-container"></div>
+							<!--<div id="gpr-kominfo-widget-container"></div>-->
+							<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+							<!-- ads -->
+							<ins class="adsbygoogle"
+							     style="display:inline-block"
+							     data-ad-client="ca-pub-1099792537777374"
+							     data-ad-slot="6508565159"
+							     data-ad-format="auto"
+							     data-full-width-responsive="true"></ins>
+							<script>
+							     (adsbygoogle = window.adsbygoogle || []).push({});
+							</script>
 						</div>
 					</div>
 					<?php else: ?>
@@ -220,4 +231,4 @@ if (count($pecah) > 0) {
 			</div>
 		</div>
 	</section>
-	<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
+	<!--<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>-->
