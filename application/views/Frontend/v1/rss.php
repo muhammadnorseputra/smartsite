@@ -18,7 +18,6 @@
  
     <dc:rights>Copyright <?php echo gmdate("Y", time()); ?></dc:rights>
     <admin:generatorAgent rdf:resource="http://www.codeigniter.com/" />
-    <copyright>(c) <?= date('Y') ?></copyright>
  
     <?php 
       foreach($posts->result() as $post):
@@ -49,12 +48,6 @@
             <description>
               <?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>  
             </description>
-            <image>
-            <url><?= $img ?></url>
-            <title><?= $post->judul ?></title>
-            <link><?= $posturl ?></link>
-          </image>
-            <author><?= $namalengkap ?></author>
           <guid><?php echo $posturl ?></guid>
         </item>
  
