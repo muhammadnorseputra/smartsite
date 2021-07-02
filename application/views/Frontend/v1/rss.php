@@ -7,7 +7,7 @@
     xmlns:content="http://purl.org/rss/1.0/modules/content/">
  
     <channel>
-     
+    <atom:link rel="self" type="application/rss+xml" href="<?php echo $feed_url; ?>"/>
     <title><?php echo $feed_name; ?></title>
  
     <link><?php echo $feed_url; ?></link>
