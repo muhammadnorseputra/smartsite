@@ -1,5 +1,5 @@
 <?php  echo '<?xml version="1.0" encoding="' . $encoding . '"?>' . "\n"; ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
  
     <channel>
     <title><?php echo $feed_name; ?></title>
@@ -7,10 +7,9 @@
     <link><?php echo $feed_url; ?></link>
     <description><?php echo $page_description; ?></description>
     <language><?php echo $page_language; ?></language>
-    <creator><?php echo $creator_email; ?></creator>
+    <author><?php echo $creator_email; ?></author>
  
-    <rights>Copyright <?php echo gmdate("Y", time()); ?></rights>
-    <admin:generatorAgent rdf:resource="http://www.codeigniter.com/" />
+    <copyright>Copyright <?php echo gmdate("Y", time()); ?></copyright>
  
     <?php 
       foreach($posts->result() as $post):
@@ -39,10 +38,10 @@
           <title><?php echo xml_convert($post->judul); ?></title>
           <link><?php echo $posturl ?></link>
             <description>
-              <img src="<?= $img ?>" class="img-fluid" alt="<?= $post->judul ?>" />
               <?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>  
             </description>
-          <guid><?php echo $posturl ?></guid>
+            <g:image_link><?= $img ?></g:image_link> 
+          <g:id><?php echo $posturl ?></g:id>
         </item>
  
          
