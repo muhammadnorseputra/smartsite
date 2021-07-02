@@ -35,6 +35,20 @@ if(! function_exists('curPageURL')){
       return $url;
     }
 }
+if(! function_exists('strip_only_tags')){
+    function strip_only_tags($str, $stripped_tags = null) {
+      // Tidak ada tag yang dihapus
+      if ($stripped_tags == null) {
+        return $str;
+      }
+      // Dapatkan daftar tag
+      // Misal: <b><i><u> menjadi array('b','i','u')
+      $tags = explode('>', str_replace('<', '', $stripped_tags));
+      $result = preg_replace('#</?(' . implode('|', $tags) . ').*?>#is', '', $str);
+      return $result;
+    }
+
+}
 if(! function_exists('meta_tags')){
     function meta_tags($enable = array('general' => true, 'og'=> true, 'twitter'=> true, 'robot'=> true), 
         $title = '', $desc = '', $imgUrl ='', $url = '', $keyWords = '', $type = ''){

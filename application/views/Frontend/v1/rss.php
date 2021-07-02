@@ -47,7 +47,7 @@
           <title><?php echo xml_convert($post->judul); ?></title>
           <link><?php echo $posturl ?></link>
             <description>
-              <?= $isi ?>  
+              <?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>  
             </description>
           <guid><?php echo $posturl ?></guid>
         </item>
