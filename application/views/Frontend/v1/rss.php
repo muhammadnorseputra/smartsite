@@ -37,7 +37,7 @@
           $img = '<img align="left" src="'.base_url('assets/images/noimage.gif').'" alt="'.$post->judul.'">';
       endif;
 
-      $isi_berita = strip_tags($post->content); // membuat paragraf pada isi berita dan mengabaikan tag html
+      $isi_berita = $post->content; // membuat paragraf pada isi berita dan mengabaikan tag html
       $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
       $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
     ?>
