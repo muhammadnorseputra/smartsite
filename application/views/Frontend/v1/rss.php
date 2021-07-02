@@ -44,7 +44,6 @@
           <link><?php echo $posturl ?></link>
           <guid><?php echo $posturl ?></guid>
             <description>
-              <?= $img ?>
               <?php echo character_limiter(strip_tags($post->content, 200)); ?>  
             </description>
             <pubDate><?php echo longdate_indo($post->tgl_posting); ?></pubDate>
