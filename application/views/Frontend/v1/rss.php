@@ -7,7 +7,7 @@
     <link><?php echo $feed_url; ?></link>
     <description><?php echo $page_description; ?></description>
     <language><?php echo $page_language; ?></language>
-    <author><?php echo $creator_email; ?></author>
+    <g:author><?php echo $creator_email; ?></g:author>
  
     <copyright>Copyright <?php echo gmdate("Y", time()); ?></copyright>
  
