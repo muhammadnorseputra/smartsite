@@ -250,7 +250,7 @@ class Post extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img class="card-img-top rounded border-light" src="'.base_url('files/file_berita/'.$row->img).'" alt="'.$row->img.'">';
+                        $img = '<img class="card-img-top rounded border-light" src="'.base_url('files/file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     elseif(!empty($row->img_blob)):
                         $img = '<img class="card-img-top rounded border-light" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                     else:

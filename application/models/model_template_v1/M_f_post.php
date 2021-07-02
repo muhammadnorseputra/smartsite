@@ -281,6 +281,12 @@ class M_f_post extends CI_Model {
         $q = $this->db->get()->row();
         return $q->img;
     }
+
+    // get all postings
+    function getPosts($limit = NULL)
+    {
+        return $this->db->limit($limit)->get_where('t_berita', ['type' => 'BERITA']);
+    }
 }
 
 /* End of file M_f_post.php */
