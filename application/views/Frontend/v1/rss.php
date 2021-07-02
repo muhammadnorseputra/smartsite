@@ -46,6 +46,7 @@
           <title><?php echo xml_convert($post->judul); ?></title>
           <link><?php echo $posturl ?></link>
             <description>
+              <img src="<?= $img ?>" class="img-fluid" alt="<?= $post->judul ?>" />
               <?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>  
             </description>
           <guid><?php echo $posturl ?></guid>
