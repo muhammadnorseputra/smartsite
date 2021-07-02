@@ -118,6 +118,8 @@ $route['ikm'] = 'frontend/skm/skmIndex/ikm';
 $route['survei'] = 'frontend/skm/skmIndex/survei';
 $route['finish/(:any)'] = 'frontend/skm/skmProses/selesai/$1';
 
+// RSS
+$route['rss.xml'] = 'frontend/v1/rssFeed';
 
 /*
 * @BAWAAN CODEIGNITER
