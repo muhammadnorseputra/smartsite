@@ -18,6 +18,7 @@
  
     <dc:rights>Copyright <?php echo gmdate("Y", time()); ?></dc:rights>
     <admin:generatorAgent rdf:resource="http://www.codeigniter.com/" />
+    <copyright>(c) <?= date('Y') ?></copyright>
  
     <?php 
       foreach($posts->result() as $post):
@@ -31,11 +32,9 @@
       $posturl = base_url("post/{$postby}/{$id}/".url_title($judul)); 
 
       if(!empty($post->img)):
-          $img = '<img align="left" src="'.base_url('files/file_berita/'.$post->img).'" alt="'.$post->judul.'">';
-      elseif(!empty($post->img_blob)):
-          $img = '<img align="left" src="data:image/jpeg;base64,'.base64_encode( $post->img_blob ).'"/>';
+          $img = base_url('files/file_berita/'.$post->img);
       else:
-          $img = '<img align="left" src="'.base_url('assets/images/noimage.gif').'" alt="'.$post->judul.'">';
+          $img = base_url('assets/images/noimage.gif');
       endif;
 
       $isi_berita = $post->content; // membuat paragraf pada isi berita dan mengabaikan tag html
@@ -50,6 +49,12 @@
             <description>
               <?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>  
             </description>
+            <image>
+            <url><?= $img ?></url>
+            <title><?= $post->judul ?></title>
+            <link><?= $posturl ?></link>
+          </image>
+            <author><?= $ namalengkap ?></author>
           <guid><?php echo $posturl ?></guid>
         </item>
  
