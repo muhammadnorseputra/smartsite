@@ -29,6 +29,16 @@
         ?>
         
         <?= $h->content ?>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-format="fluid"
+        data-ad-layout-key="-f9+4v+7r-fc+65"
+        data-ad-client="ca-pub-1099792537777374"
+        data-ad-slot="5769488115"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         <?php else : ?>
         <img class="d-block mx-auto mb-2 mt-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/page-not-found.svg') ?>">
         <p>

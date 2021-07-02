@@ -214,7 +214,7 @@ if (count($pecah) > 0) {
 							<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 							<!-- ads -->
 							<ins class="adsbygoogle"
-							     style="display:inline-block"
+							     style="display:block"
 							     data-ad-client="ca-pub-1099792537777374"
 							     data-ad-slot="6508565159"
 							     data-ad-format="auto"
