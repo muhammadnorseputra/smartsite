@@ -54,7 +54,7 @@
             <title><?= $post->judul ?></title>
             <link><?= $posturl ?></link>
           </image>
-            <author><?= $ namalengkap ?></author>
+            <author><?= $namalengkap ?></author>
           <guid><?php echo $posturl ?></guid>
         </item>
  
