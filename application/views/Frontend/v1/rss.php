@@ -36,17 +36,20 @@
       else:
           $img = '<img align="left" src="'.base_url('assets/images/noimage.gif').'" alt="'.$post->judul.'">';
       endif;
+
+      $isi_berita = strip_tags($post->content); // membuat paragraf pada isi berita dan mengabaikan tag html
+      $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
+      $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
     ?>
      
         <item>
  
           <title><?php echo xml_convert($post->judul); ?></title>
           <link><?php echo $posturl ?></link>
-          <guid><?php echo $posturl ?></guid>
             <description>
-              <?php echo character_limiter(strip_tags($post->content, 200)); ?>  
+              <?= $isi ?>  
             </description>
-            <pubDate><?php echo longdate_indo($post->tgl_posting); ?></pubDate>
+          <guid><?php echo $posturl ?></guid>
         </item>
  
          
