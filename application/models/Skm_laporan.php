@@ -19,10 +19,21 @@ class Skm_laporan extends CI_Model {
     }	
     public function tahun_list()
     {
-    	$this->db->select('tahun');
+    	$this->db->select('id,tahun,tgl_mulai,tgl_selesai');
     	$this->db->from('skm_periode');
-    	$this->db->order_by('id', 'desc');
+    	// $this->db->order_by('id', 'desc');
     	$this->db->limit('3');
+    	$this->db->group_by('tahun');
+    	$q = $this->db->get();
+    	return $q;
+    }
+
+    public function rekap_by_tahun($tahun)
+    {
+    	$this->db->select('r.*, p.tahun');
+    	$this->db->from('skm_rekap AS r');
+    	$this->db->join('skm_periode AS p', 'r.fid_periode = p.id');
+    	$this->db->where('p.tahun', $tahun);
     	$q = $this->db->get();
     	return $q;
     }
@@ -37,7 +48,7 @@ class Skm_laporan extends CI_Model {
     }
     public function responden_by_tahun_periode($tahun,$periode=null)
     {
-    	$this->db->select('s.id,s.nama_lengkap,s.jawaban_responden,p.target');
+    	$this->db->select('s.id,s.nama_lengkap,s.jawaban_responden,p.target,p.tahun');
 		$this->db->from('skm AS s');
 		$this->db->join('skm_periode AS p', 's.fid_periode = p.id');
 		$this->db->where('p.tahun', $tahun);
@@ -61,8 +72,28 @@ class Skm_laporan extends CI_Model {
 		$q = $this->db->get();
 		return $q;
     }
+    public function responden_by_tahun($tahun,$periode) {
+    	$this->db->select('p.tahun,s.id');
+		$this->db->from('skm AS s');
+		$this->db->join('skm_periode AS p', 's.fid_periode = p.id');
+		$this->db->where('p.tahun', $tahun);
+		$this->db->where('p.id', $periode);
+		// $this->db->group_by('p.tahun');
+		$q = $this->db->get();
+		return $q;
+    }
+    public function total_responden_by_tahun($tahun,$periode) {
+    	$this->db->select('p.tahun');
+		$this->db->from('skm AS s');
+		$this->db->join('skm_periode AS p', 's.fid_periode = p.id');
+		$this->db->where('p.tahun', $tahun);
+		$this->db->where('p.id', $periode);
+		// $this->db->group_by('p.tahun');
+		$q = $this->db->get();
+		return $q->num_rows();
+    }
 	public function total_responden_by_tahun_periode($tahun, $periode=null) {
-		$this->db->select('tahun');
+		$this->db->select('p.tahun');
 		$this->db->from('skm AS s');
 		$this->db->join('skm_periode AS p', 's.fid_periode = p.id');
 		$this->db->where('p.tahun', $tahun);

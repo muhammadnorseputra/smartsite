@@ -1,21 +1,21 @@
 <section class="hero">
-	<div class="p-md-5 py-3 px-2 bg-light bg-gradient">
+	<div class="p-md-4 py-3 px-2 bg-primary">
 		<div class="container py-md-3">
 			<div class="d-flex justify-content-between align-items-md-center align-items-start flex-lg-row flex-column">
 				<div>
-					<h1 class="display-3 fw-bold text-secondary">Selamat Datang</h1>
-					<p class="fs-4 text-secondary">Di Survei IKM BKPPD Balangan</p>
+					<h1 class="display-3 fw-bold text-white">Selamat Datang</h1>
+					<p class="fs-4 text-white">Di Survei IKM BKPPD Balangan</p>
 					
-					<a href="<?= base_url('survei') ?>" class="btn btn-danger btn-lg px-4 shadow">
+					<a href="<?= base_url('survei') ?>" class="btn btn-info btn-lg px-4 shadow">
 					Isi Survei Sekarang
 					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 20 20">
 						<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
 					</svg>
 					</a>
 					<div class="mt-4">
-						<span class="display-1 fw-bold text-info countTo" data-from="0" data-to="<?= nominal($total_responden) ?>"
+						<span class="display-1 fw-bold text-warning countTo" data-from="0" data-to="<?= nominal($total_responden) ?>"
       data-speed="300" data-refresh-interval="50">0</span>
-						<p class="text-muted">Total Responden sampai saat ini.</p>
+						<p class="text-light">Total Responden sampai saat ini.</p>
 					</div>
 				</div>
 				<div>
@@ -27,7 +27,7 @@
 			</div>
 		</div>
 	</div>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#F8F9FA" fill-opacity="1" d="M0,192L26.7,165.3C53.3,139,107,85,160,53.3C213.3,21,267,11,320,10.7C373.3,11,427,21,480,42.7C533.3,64,587,96,640,106.7C693.3,117,747,107,800,90.7C853.3,75,907,53,960,58.7C1013.3,64,1067,96,1120,122.7C1173.3,149,1227,171,1280,176C1333.3,181,1387,171,1413,165.3L1440,160L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="#0D6EFD" fill-opacity="1" d="M0,192L26.7,165.3C53.3,139,107,85,160,53.3C213.3,21,267,11,320,10.7C373.3,11,427,21,480,42.7C533.3,64,587,96,640,106.7C693.3,117,747,107,800,90.7C853.3,75,907,53,960,58.7C1013.3,64,1067,96,1120,122.7C1173.3,149,1227,171,1280,176C1333.3,181,1387,171,1413,165.3L1440,160L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
 </section>
 <section class="apa-ikm" id="apa-itu-ikm">
 <div class="container">

@@ -181,6 +181,7 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 							$nrr_tertimbang = @number_format($nrr_unsur[$u->id], 2);
 							$nrr_tertimbang_sum[] = ($nrr_unsur[$u->id] * $bobot_nilai);
 							$ikm_unsur = @number_format($nrr_tertimbang * 25, 2);
+							$ikm_unsur_arr[] = @number_format($nrr_tertimbang * 25, 2);
 							// $ikm_unsur_sum[] = $nrr_tertimbang * $bobot_nilai;
 							// var_dump($nrr_tertimbang)
 						?>
@@ -196,6 +197,8 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 							<?php
 							$ikm_konversi = (array_sum($nrr_tertimbang_sum) * 25);
 							$total_ikm = $ikm_konversi;
+
+							// var_dump($total_ikm);
 							?>
 							<td colspan="2" class="text-end fw-bold align-middle">IKM</td>
 							<td colspan="3" class="text-center fw-bold fs-3"><?= number_format($total_ikm, 2); ?></td>
@@ -242,10 +245,10 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 								foreach($responden->result() as $r):
 									$get_jawaban = $this->skm->_get_jawaban_responden($r->id);
 									$poin = [];
-						foreach($get_jawaban as $j):
-						$poin[] = $this->skm->_get_poin_responden_per_unsur($j);
-						endforeach;
-						$total_poin_responden[] = array_sum($poin);
+									foreach($get_jawaban as $j):
+									$poin[] = $this->skm->_get_poin_responden_per_unsur($j);
+									endforeach;
+									$total_poin_responden[] = array_sum($poin);
 								endforeach;
 							endif;
 							$total_persepsi = array_sum($total_poin_responden);
@@ -435,80 +438,80 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 					<thead>
 						<tr>
 							<th scope="col" rowspan="2" class="align-middle text-center">Tahun</th>
-							<th scope="col" rowspan="2"class="align-middle text-center">Responden</th>
-							<th scope="col" colspan="<?= $total_unsur_tahun ?>" class="text-center">IKM Unsur Layanan</th>
+							<th scope="col" rowspan="2" class="align-middle text-center">Responden</th>
+							<th scope="col" rowspan="2" class="align-middle text-center">Periode</th>
+							<th scope="col" colspan="<?= $total_unsur_tahun + 1 ?>" class="text-center">IKM Unsur Layanan</th>
 							<tr>
 								<?php foreach($unsur_tahun->result() as $r): ?>
 									<th class="text-center">U<?= $r->id ?></th>
 								<?php endforeach; ?>
+								<th scope="col" class="text-center">Total</th>
 							</tr>
 						</tr>
 					</thead>
 					<tbody>
-						<?php 
-						foreach($result_tahun as $t): 
-							$total_responden_tahun =$this->lap->total_responden_by_tahun_periode($t->tahun);
-							$responden_unsur_tahun = $this->lap->responden_by_tahun_periode($t->tahun);
-							foreach($responden_unsur_tahun->result() as $r):
-								$get_jawaban = $this->skm->_get_jawaban_responden($r->id);
-									$poin_tahun = [];
-									foreach($get_jawaban as $j):
-									$poin_tahun[] = $this->skm->_get_poin_responden_per_unsur($j);
-									endforeach;
-									// POIN PER UNSUR
-									$u1_tahun[] = $poin_tahun[0];
-									$u2_tahun[] = $poin_tahun[1];
-									$u3_tahun[] = $poin_tahun[2];
-									$u4_tahun[] = $poin_tahun[3];
-									$u5_tahun[] = $poin_tahun[4];
-									$u6_tahun[] = $poin_tahun[5];
-									$u7_tahun[] = $poin_tahun[6];
-									$u8_tahun[] = $poin_tahun[7];
-									$u9_tahun[] = $poin_tahun[8];
-									
-									// TOTAL NI PER UNSUR
-									$total_u1_tahun = array_sum($u1_tahun)/$total_responden_tahun;
-									$total_u2_tahun = array_sum($u2_tahun)/$total_responden_tahun;
-									$total_u3_tahun = array_sum($u3_tahun)/$total_responden_tahun;
-									$total_u4_tahun = array_sum($u4_tahun)/$total_responden_tahun;
-									$total_u5_tahun = array_sum($u5_tahun)/$total_responden_tahun;
-									$total_u6_tahun = array_sum($u6_tahun)/$total_responden_tahun;
-									$total_u7_tahun = array_sum($u7_tahun)/$total_responden_tahun;
-									$total_u8_tahun = array_sum($u8_tahun)/$total_responden_tahun;
-									$total_u9_tahun = array_sum($u9_tahun)/$total_responden_tahun;
-							endforeach; 
-							$nnr_unsur_tahun = ['1' => @$total_u1_tahun, '2' => @$total_u2_tahun, '3' => @$total_u3_tahun, '4' => @$total_u4_tahun,'5' => @$total_u5_tahun,'6' => @$total_u6_tahun,'7' => @$total_u7_tahun,'8' => @$total_u8_tahun,'9' => @$total_u9_tahun];
-							
-						?>			
-						<tr>
-							<td class="text-center" scope="row"><?= $t->tahun ?></td>
-							<th class="text-center"><?= $total_responden_tahun ?></th>
-							<?php
-								$nrr_tertimbang_sum_tahun = [];  
-								foreach ($unsur_tahun->result() as $u):
-								$nrr_tertimbang_tahun = @number_format($nnr_unsur_tahun[$u->id], 2);
-								$nrr_tertimbang_sum_tahun[] = ($nnr_unsur_tahun[$u->id] * $bobot_nilai);
-								$ikm_unsur_tahun = @number_format($nrr_tertimbang_tahun * 25, 2);
-							?>
-							<td class="text-center"><?= $ikm_unsur_tahun ?></td>
-							<?php 
-								endforeach;
-							?>
-						</tr>
-						<tr class="table-info">
-							<?php
-							// var_dump(array_sum($nrr_tertimbang_sum_tahun) * 25);
-							$ikm_konversi_tahun = (array_sum($nrr_tertimbang_sum_tahun) * 25);
-							$total_ikm_tahun = $ikm_konversi_tahun;
-							?>
-							<td class="text-end fw-bold align-middle" colspan="2">Total</td>
-							<td colspan="<?= $total_unsur_tahun + 1 ?>" class="text-center fw-bold fs-4"><?= number_format($total_ikm_tahun, 2); ?></td>
-						</tr>
 						<?php  
-						endforeach; 
+							$bobot_nilai_tahun = $this->skm->skm_bobot_nilai();
+							foreach($result_tahun as $t):
+							$responden_unsur_tahun = $this->lap->responden_by_tahun($t->tahun, $t->id);
+							foreach($responden_unsur_tahun->result() as $s):
+								
+								$get_jawaban_tahun = $this->skm->_get_jawaban_responden($s->id);
+								
+								$poin_tahun = [];
+								foreach($get_jawaban_tahun as $q):
+									$poin_tahun[] = $this->skm->_get_poin_responden_per_unsur($q);
+								endforeach;
+								
+								$total_responden_by_tahun = $this->lap->total_responden_by_tahun($t->tahun, $t->id);
+								// POIN PER UNSUR
+								$u1_tahun[] = $poin_tahun[0];
+								$u2_tahun[] = $poin_tahun[1];
+								$u3_tahun[] = $poin_tahun[2];
+								$u4_tahun[] = $poin_tahun[3];
+								$u5_tahun[] = $poin_tahun[4];
+								$u6_tahun[] = $poin_tahun[5];
+								$u7_tahun[] = $poin_tahun[6];
+								$u8_tahun[] = $poin_tahun[7];
+								$u9_tahun[] = $poin_tahun[8];
+								
+								// TOTAL NI PER UNSUR
+								$total_u1_tahun = array_sum($u1_tahun)/$total_responden_by_tahun;
+								$total_u2_tahun = array_sum($u2_tahun)/$total_responden_by_tahun;
+								$total_u3_tahun = array_sum($u3_tahun)/$total_responden_by_tahun;
+								$total_u4_tahun = array_sum($u4_tahun)/$total_responden_by_tahun;
+								$total_u5_tahun = array_sum($u5_tahun)/$total_responden_by_tahun;
+								$total_u6_tahun = array_sum($u6_tahun)/$total_responden_by_tahun;
+								$total_u7_tahun = array_sum($u7_tahun)/$total_responden_by_tahun;
+								$total_u8_tahun = array_sum($u8_tahun)/$total_responden_by_tahun;
+								$total_u9_tahun = array_sum($u9_tahun)/$total_responden_by_tahun;
+							endforeach;
+							var_dump($poin_tahun[0]);
 						?>
+						<tr>
+							<td class="fw-bold text-center"><?= $t->tahun ?></td>
+							<td class="fw-bold text-center"><?= $total_responden_by_tahun ?></td>
+							<td class="fw-bold text-center"><?= $t->id ?></td>
+							<?php 
+								$nrr_unsur_tahun = ['1' => @$total_u1_tahun, '2' => @$total_u2_tahun, '3' => @$total_u3_tahun, '4' => @$total_u4_tahun,'5' => @$total_u5_tahun,'6' => @$total_u6_tahun,'7' => @$total_u7_tahun,'8' => @$total_u8_tahun,'9' => @$total_u9_tahun];
+								$nrr_tertimbang_sum_tahun = [];
+								foreach($unsur_tahun->result() as $u):
+									$nrr_tertimbang_tahun = @number_format($nrr_unsur_tahun[$u->id], 2);
+									$nrr_tertimbang_sum_tahun[] = ($nrr_unsur_tahun[$u->id] * $bobot_nilai);
+									$ikm_unsur_tahun = @number_format($nrr_tertimbang_tahun * 25, 2);
+									// $ikm_unsur_arr[] = @number_format($nrr_tertimbang * 25, 2);
+							?>
+								<td class="text-end"><?= $ikm_unsur_tahun; ?></td>
+							<?php 
+								endforeach; 
+								// var_dump($nrr_tertimbang_sum_tahun);
+								$ikm_tahunan = array_sum($nrr_tertimbang_sum_tahun) * 25;
+							?>
+							<td class="fw-bold text-center"><?= number_format($ikm_tahunan,2) ?></td>
+						</tr>
+						<?php endforeach; ?>
 					</tbody>
-				</table>
+				</table>	
 			</div>
 		</div>
 	</div>
@@ -540,6 +543,7 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 			<div class="form-floating">
 				<select class="form-select mb-3" name="periode" aria-label=".form-select-lg" id="example_periode" required>
 					<option value="">Pilih Periode</option>
+					<option value="null">Tanpa Periode</option>
 					<?php foreach($this->skm->skm_all_periode()->result() as $jl): ?>
 					<?php $selected = $periode === $jl->id ? 'selected' : ''; ?>
 					<option value="<?= $jl->id ?>" <?= $selected ?>><?= mediumdate_indo($jl->tgl_mulai) ?> - <?= mediumdate_indo($jl->tgl_selesai) ?></option>

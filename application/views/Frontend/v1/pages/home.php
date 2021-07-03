@@ -83,7 +83,7 @@
                 <div class="text-center">
                     <button id="load_more" class="btn p-2 btn-primary btn-block rounded-lg px-4"><i class="fas fa-newspaper mr-2"></i> Loadmore</button>
                 </div>
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <ins class="adsbygoogle"
                 style="display:block"
                 data-ad-format="fluid"
@@ -92,7 +92,7 @@
                 data-ad-slot="5769488115"></ins>
                 <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                </script> -->
             </div>
         </div>
     </div>
