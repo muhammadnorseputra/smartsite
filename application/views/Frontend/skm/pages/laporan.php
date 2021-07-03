@@ -5,7 +5,7 @@ $tahun = isset($_GET['tahun']) ? $_GET['tahun'] : $tahun_skr;
 $periode = isset($_GET['periode']) ? $_GET['periode'] : $periode_skr;
 // ARGS = tahun,periode
 $total_responden =$this->lap->total_responden_by_tahun_periode($tahun,$periode);
-$total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
+$total_responden_tahun =$this->lap->total_responden_by_tahun($tahun);
 ?>
 <section>
 	<div class="container my-3">
@@ -175,6 +175,7 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 									$total_u8 = array_sum($u8)/$total_responden;
 									$total_u9 = array_sum($u9)/$total_responden;
 								endforeach;
+								// var_dump($u1);
 								$nrr_unsur = ['1' => @$total_u1, '2' => @$total_u2, '3' => @$total_u3, '4' => @$total_u4,'5' => @$total_u5,'6' => @$total_u6,'7' => @$total_u7,'8' => @$total_u8,'9' => @$total_u9];
 							// endif;
 							foreach ($unsur->result() as $u):
@@ -439,7 +440,6 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 						<tr>
 							<th scope="col" rowspan="2" class="align-middle text-center">Tahun</th>
 							<th scope="col" rowspan="2" class="align-middle text-center">Responden</th>
-							<th scope="col" rowspan="2" class="align-middle text-center">Periode</th>
 							<th scope="col" colspan="<?= $total_unsur_tahun + 1 ?>" class="text-center">IKM Unsur Layanan</th>
 							<tr>
 								<?php foreach($unsur_tahun->result() as $r): ?>
@@ -453,7 +453,9 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 						<?php  
 							$bobot_nilai_tahun = $this->skm->skm_bobot_nilai();
 							foreach($result_tahun as $t):
-							$responden_unsur_tahun = $this->lap->responden_by_tahun($t->tahun, $t->id);
+							$responden_unsur_tahun = $this->lap->responden_by_tahun($t->tahun);
+							$u1_tahun = []; $u2_tahun = []; $u3_tahun = []; $u4_tahun = []; $u5_tahun = [];
+							$u6_tahun = []; $u7_tahun = []; $u8_tahun = []; $u9_tahun = [];
 							foreach($responden_unsur_tahun->result() as $s):
 								
 								$get_jawaban_tahun = $this->skm->_get_jawaban_responden($s->id);
@@ -462,8 +464,7 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 								foreach($get_jawaban_tahun as $q):
 									$poin_tahun[] = $this->skm->_get_poin_responden_per_unsur($q);
 								endforeach;
-								
-								$total_responden_by_tahun = $this->lap->total_responden_by_tahun($t->tahun, $t->id);
+								$total_responden_by_tahun = $this->lap->total_responden_by_tahun($t->tahun);
 								// POIN PER UNSUR
 								$u1_tahun[] = $poin_tahun[0];
 								$u2_tahun[] = $poin_tahun[1];
@@ -486,12 +487,10 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 								$total_u8_tahun = array_sum($u8_tahun)/$total_responden_by_tahun;
 								$total_u9_tahun = array_sum($u9_tahun)/$total_responden_by_tahun;
 							endforeach;
-							var_dump($poin_tahun[0]);
 						?>
 						<tr>
 							<td class="fw-bold text-center"><?= $t->tahun ?></td>
 							<td class="fw-bold text-center"><?= $total_responden_by_tahun ?></td>
-							<td class="fw-bold text-center"><?= $t->id ?></td>
 							<?php 
 								$nrr_unsur_tahun = ['1' => @$total_u1_tahun, '2' => @$total_u2_tahun, '3' => @$total_u3_tahun, '4' => @$total_u4_tahun,'5' => @$total_u5_tahun,'6' => @$total_u6_tahun,'7' => @$total_u7_tahun,'8' => @$total_u8_tahun,'9' => @$total_u9_tahun];
 								$nrr_tertimbang_sum_tahun = [];
@@ -541,9 +540,8 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun_periode($tahun);
 		<hr>
 		<div>
 			<div class="form-floating">
-				<select class="form-select mb-3" name="periode" aria-label=".form-select-lg" id="example_periode" required>
+				<select class="form-select mb-3" name="periode" aria-label=".form-select-lg" id="example_periode">
 					<option value="">Pilih Periode</option>
-					<option value="null">Tanpa Periode</option>
 					<?php foreach($this->skm->skm_all_periode()->result() as $jl): ?>
 					<?php $selected = $periode === $jl->id ? 'selected' : ''; ?>
 					<option value="<?= $jl->id ?>" <?= $selected ?>><?= mediumdate_indo($jl->tgl_mulai) ?> - <?= mediumdate_indo($jl->tgl_selesai) ?></option>

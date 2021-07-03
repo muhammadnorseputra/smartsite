@@ -18,6 +18,7 @@ class SkmProses extends CI_Controller
         if(!empty($token) && ($token === $token_verify)):
             $jawab = implode(',', $post['jawaban_id']);
             $data = [
+                'tahun' => date('Y'),
                 'fid_periode' => decrypt_url($post['periode']),
                 'fid_jenis_layanan' => $post['jns_layanan'],
                 'nomor' => decrypt_url($post['nomor']),
