@@ -491,7 +491,7 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun($tahun);
 						?>
 						<tr>
 							<td class="fw-bold text-center"><?= $t->tahun ?></td>
-							<td class="fw-bold text-center"><?= $total_responden_by_tahun ?></td>
+							<td class="fw-bold text-center"><?= !empty($total_responden_by_tahun) ? $total_responden_by_tahun : 0; ?></td>
 							<?php 
 								$nrr_unsur_tahun = ['1' => @$total_u1_tahun, '2' => @$total_u2_tahun, '3' => @$total_u3_tahun, '4' => @$total_u4_tahun,'5' => @$total_u5_tahun,'6' => @$total_u6_tahun,'7' => @$total_u7_tahun,'8' => @$total_u8_tahun,'9' => @$total_u9_tahun];
 								$nrr_tertimbang_sum_tahun = [];
