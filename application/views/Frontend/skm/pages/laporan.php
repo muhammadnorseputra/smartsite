@@ -395,7 +395,7 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun($tahun);
 						</tr>
 						<?php endforeach; ?>
 						<?php
-						$jenis_akun = $this->lap->responden_by_jenis_akun($tahun);
+						$jenis_akun = $this->lap->responden_by_jenis_akun($tahun,$periode);
 						$total_jenis_akun = $jenis_akun->num_rows() + 1;
 						?>
 						<tr>
@@ -439,13 +439,14 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun($tahun);
 					<thead>
 						<tr>
 							<th scope="col" rowspan="2" class="align-middle text-center">Tahun</th>
-							<th scope="col" rowspan="2" class="align-middle text-center">Responden</th>
-							<th scope="col" colspan="<?= $total_unsur_tahun + 1 ?>" class="text-center">IKM Unsur Layanan</th>
+							<th scope="col" rowspan="2" class="align-middle text-center">Total <br>Responden</th>
+							<th scope="col" colspan="<?= $total_unsur_tahun ?>" class="text-center">IKM Unsur Layanan</th>
+							<th rowspan="2" class="align-middle text-center">IKM</th>
+							<th rowspan="2" class="align-middle text-center">MUTU</th>
 							<tr>
 								<?php foreach($unsur_tahun->result() as $r): ?>
-									<th class="text-center">U<?= $r->id ?></th>
+									<th class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="<?= $r->jdl_unsur ?>">U<?= $r->id ?></th>
 								<?php endforeach; ?>
-								<th scope="col" class="text-center">Total</th>
 							</tr>
 						</tr>
 					</thead>
@@ -505,8 +506,10 @@ $total_responden_tahun =$this->lap->total_responden_by_tahun($tahun);
 								endforeach; 
 								// var_dump($nrr_tertimbang_sum_tahun);
 								$ikm_tahunan = array_sum($nrr_tertimbang_sum_tahun) * 25;
+								$ikm_tahunan_konversi = number_format($ikm_tahunan,2);
 							?>
-							<td class="fw-bold text-center"><?= number_format($ikm_tahunan,2) ?></td>
+							<td class="fw-bold text-center"><?= $ikm_tahunan_konversi ?></td>
+							<td class="fw-bold text-center"><?= $this->skm->nilai_predikat($ikm_tahunan_konversi)['x'] ?></td>
 						</tr>
 						<?php endforeach; ?>
 					</tbody>
