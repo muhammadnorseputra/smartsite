@@ -1,0 +1,87 @@
+/* Alerts ====================================== */
+.alert {
+	border-radius: 4px;
+	-webkit-box-shadow: none;
+	-ms-box-shadow: none;
+	box-shadow: none;
+	border: none;
+	color: #fff !important;
+}
+
+.alert-message {
+	padding: 8px;
+	background-color: #f5f5f5;
+	color: #333 !important;
+}
+
+.alert-message-info {
+	background: #e8f0fe;
+}
+
+.alert-message-warning {
+	background: #ffecb3;
+}
+
+.alert-message-danger {
+	background: #ffcdd2;
+}
+
+.alert-message i {
+	margin-right: 20px;
+	float: left;
+	margin-bottom: 15px !important;
+	color: #888;
+}
+.alert .alert-link {
+	color: #fff;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.alert-success {
+	background-color: #2b982b;
+}
+
+.alert-info {
+	background-color: #00b0e4;
+}
+
+.alert-warning {
+	background-color: #ff9600 !important;
+}
+
+.alert-danger {
+	background-color: #fb483a !important;
+}
+
+.alert-dismissible .close {
+	color: #fff;
+	opacity: 1;
+	border: none;
+	text-shadow: none;
+}
+
+/* Dialogs (SweetAlert) ======================== */
+.sweet-alert {
+	border-radius: 5px !important;
+}
+
+.sweet-alert p {
+	font-size: 14px !important;
+}
+
+.sweet-alert .sa-input-error {
+	top: 23px !important;
+	right: 13px !important;
+}
+
+.sweet-alert h2 {
+	font-size: 18px !important;
+	margin: 0 0 5px 0 !important;
+}
+
+.sweet-alert button {
+	font-size: 15px !important;
+	border-radius: 3px !important;
+	padding: 5px 20px !important;
+}
