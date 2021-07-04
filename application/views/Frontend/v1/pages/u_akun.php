@@ -45,6 +45,8 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
           </div>
           <a id="module" href="<?= base_url('frontend/v1/users/komentar/'); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="far fa-comment-alt mr-3 float-right" aria-hidden="true"></i> Komentar</a>
           <a id="module" href="<?= base_url('frontend/v1/users/kotak_saran/'); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-box mr-3 float-right" aria-hidden="true"></i> Kotak Saran</a>
+          <?php elseif($d->role == 'KONTRIBUTOR'): ?>
+            <a id="module" href="<?= base_url('frontend/v1/users/post/'.encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded-0 mb-2 list-group-item list-group-item-action text-muted"><i class="fas fa-newspaper mr-3 float-right" aria-hidden="true"></i> Postingan</a>
           <?php endif; ?>
           <!-- <a id="module" href="#" class="border-0  rounded-0 list-group-item list-group-item-action"><i class="fas fa-cogs mr-3 float-right" aria-hidden="true"></i> Pengaturan</a> -->
           <div class="list-group-item text-primary border-0 rounded-0 mb-2">
