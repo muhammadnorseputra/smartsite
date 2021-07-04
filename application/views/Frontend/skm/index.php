@@ -2,7 +2,7 @@
 	<div class="p-md-4 py-3 px-2 bg-primary">
 		<div class="container py-md-3">
 			<div class="d-flex justify-content-between align-items-md-center align-items-start flex-lg-row flex-column">
-				<div>
+				<div class="order-last order-md-first">
 					<h1 class="display-3 fw-bold text-white">Selamat Datang</h1>
 					<p class="fs-4 text-white">Di Survei IKM BKPPD Balangan</p>
 					
@@ -32,7 +32,7 @@
 <section class="apa-ikm" id="apa-itu-ikm">
 <div class="container">
 	<div class="row align-items-center">
-		<div class="col-12 col-md-6 order-last order-md-first">
+		<div class="col-12 col-md-6 order-first">
 			<img src="<?= base_url('assets/images/bg/bg-hero-responden.webp') ?>" class="animated bounce img-responsive w-100" alt="Survey BKPPD">
 		</div>
 		<div class="col-12 col-md-6">
@@ -74,12 +74,12 @@
 	</div>
 	<div class="row">
 		<div class="col my-4">
-			<img  class="animated bounce w-50 shadow-lg rounded mb-4" src="<?= base_url('assets/images/bg/bg-hero-function-1.png') ?>"  alt="Survei BKPPD">
+			<img  class="animated bounce img-fluid shadow-lg rounded mb-4" src="<?= base_url('assets/images/bg/bg-hero-function-1.png') ?>"  alt="Survei BKPPD">
 			<h4 class="d-flex"><span class="text-danger me-3">&bull;</span> Sebagai Indikator Untuk Meningkatkan Layanan</h4>
 			<h4 class="d-flex"><span class="text-danger me-3">&bull;</span> Cara yang efektif dan efisien untuk melakukan sebuah pengamatan atau observasi terhadap suatu kegiatan.</h4>
 		</div>
 		<div class="col my-4">
-			<img class="animated bounce w-50 shadow-lg rounded mb-4" src="<?= base_url('assets/images/bg/bg-hero-function-2.png') ?>" alt="Survei BKPPD">
+			<img class="animated bounce img-fluid shadow-lg rounded mb-4" src="<?= base_url('assets/images/bg/bg-hero-function-2.png') ?>" alt="Survei BKPPD">
 			<h4 class="d-flex"><span class="text-danger me-3">&bull;</span> Motivasi Kami Untuk Lebih Maju Lagi</h4>
 			<h4 class="d-flex"><span class="text-danger me-3">&bull;</span> Sebagai indikator dalam mengetahui Kualitas dan Kuantitas suatu layanan. </h4>
 		</div>
