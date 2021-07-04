@@ -3,7 +3,7 @@ $(document).ready(function() {
         // let value = $("input[name='cek_nipnik']").val();
         let value = $(this).val();
         $("#msg-asn-data").removeClass('text-success text-danger');
-        $.getJSON(`http://192.168.1.4/api/filternipnik/${value}`, function(res) {
+        $.getJSON(`http://silka.bkppd-balangankab.info/api/filternipnik/${value}`, function(res) {
             let r = res[0];
             console.log(res);
             if (value != '') {
@@ -57,8 +57,8 @@ $(document).ready(function() {
         modules: 'date, security, html5, sanitize',
         showErrorDialogs: true,
         // disabledFormFilter: 'form.toggle-disabled',
-        // reCaptchaSiteKey: '6LfiM08bAAAAAJkf5geIEBau6f9-kMOEzxkxw06_',
-        // reCaptchaTheme: 'light',
+        reCaptchaSiteKey: '6LfiM08bAAAAAJkf5geIEBau6f9-kMOEzxkxw06_',
+        reCaptchaTheme: 'light',
         onError: function($form) {
             $.notify({
                 icon: `fas fa-times`,
