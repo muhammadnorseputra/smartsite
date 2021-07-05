@@ -103,9 +103,9 @@ $card = isset($_GET['card']) ? $_GET['card'] : '';
 						<p class="fw-bold user-select-none"><?= ucwords($p->jdl_pertanyaan) ?> ?</p>
 						<?php foreach($this->skm->skm_jawaban_pertanyaan($p->id)->result() as $j):  ?>
 						<div class="badge border-start border-danger rounded-0" id="msg-check-<?= $j->fid_pertanyaan  ?>"></div>
-						<div class="d-flex justify-content-start gap-3 align-items-center">
-							<input class="shadow" type="radio" name="jawaban_id[<?= $j->fid_pertanyaan ?>]" id="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>" value="<?= $j->id ?>" data-validation="required" data-validation-error-msg-container="#msg-check-<?= $j->fid_pertanyaan ?>" data-validation-error-msg="Silahkan pilih salahsatu jawaban yang tersedia!">
-							<label class="form-check-label text-muted" for="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>">
+						<div class="d-flex justify-content-start gap-3 my-2 align-items-center">
+							<input class="shadow-sm" type="radio" name="jawaban_id[<?= $j->fid_pertanyaan ?>]" id="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>" value="<?= $j->id ?>" data-validation="required" data-validation-error-msg-container="#msg-check-<?= $j->fid_pertanyaan ?>" data-validation-error-msg="Silahkan pilih salahsatu jawaban yang tersedia!">
+							<label class="form-check-label text-muted user-select-all" for="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>">
 								<?= $j->jdl_jawaban ?> 
 							</label>
 						</div>
@@ -118,6 +118,15 @@ $card = isset($_GET['card']) ? $_GET['card'] : '';
 				    <input data-validation="recaptcha" data-validation-recaptcha-sitekey="6LfiM08bAAAAAJkf5geIEBau6f9-kMOEzxkxw06_">
 				</p>
 				<button type="submit" class="btn btn-primary btn-lg px-5">Kirim Survei</button>
+			</div>
+		</div>
+		<div class="card mb-3 bg-dark text-light">
+			<div class="card-body">
+				<div class="alert alert-default" role="alert">
+  <strong>Perhatian!</strong> <br>Jika terjadi kendala dalam pengisian survei, silahkan hubungi developer (Wa: <a href="https://wa.me/+6282151815132" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontak Developer">
+        0821-5181-5132
+      </a>) dengan menyertakan hasil capture/screenshoot.
+</div>
 			</div>
 		</div>
 	</div>

@@ -7,27 +7,47 @@
 					<p class="fs-4 text-white">Di Survei IKM BKPPD Balangan</p>
 					
 					<a href="<?= base_url('survei') ?>" class="btn btn-warning btn-lg px-4 shadow">
-					Isi Survei Sekarang
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 20 20">
-						<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-					</svg>
+						Isi Survei Sekarang
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+						</svg>
 					</a>
 					<div class="mt-4">
 						<span class="display-1 fw-bold text-warning countTo" data-from="0" data-to="<?= nominal($total_responden) ?>"
-      data-speed="300" data-refresh-interval="50">0</span>
+						data-speed="300" data-refresh-interval="50">0</span>
 						<p class="text-light">Total Responden sampai saat ini.</p>
 					</div>
 				</div>
 				<div>
-						<div>
-							<img src="<?= base_url('assets/images/bg/hero-img.png') ?>" class="animated bounce img-fluid" alt="Survey BKPPD">
-						</div>
-
+					<div>
+						<img src="<?= base_url('assets/images/bg/hero-img.png') ?>" class="animated bounce img-fluid" alt="Survey BKPPD">
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="#0D6EFD" fill-opacity="1" d="M0,192L26.7,165.3C53.3,139,107,85,160,53.3C213.3,21,267,11,320,10.7C373.3,11,427,21,480,42.7C533.3,64,587,96,640,106.7C693.3,117,747,107,800,90.7C853.3,75,907,53,960,58.7C1013.3,64,1067,96,1120,122.7C1173.3,149,1227,171,1280,176C1333.3,181,1387,171,1413,165.3L1440,160L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
+</section>
+<section class="pedoman-ikm">
+<div class="container">
+	<div class="row align-items-center mb-5">
+		<div class="col-12 shadow-lg p-3 rounded-3">
+			<div class="d-flex justify-content-between align-items-start flex-lg-row flex-column gap-3">
+				<div>
+					<img src="<?= base_url('assets/images/skm_menpan.png') ?>" alt="SKM - BKPPD BALANGAN" class="w-auto img-fluid">
+				</div>
+				<div class="ps-md-4">
+					<div class="fw-bold fs-4">Pedoman Penyusunan Survei IKM</div>
+					<p>
+						Peraturan MENPAN Nomor 14 Tahun 2017 merupakan pedoman dalam penysunan SKM (Survei Kepuasan Masyarakat) untuk Unit Penyelenggara Pelayanan Publik. <br>
+						Detail :
+						<a href="https://peraturan.bpk.go.id/Home/Details/132600/permen-pan-rb-no-14-tahun-2017" target="_blank">Permenpan RB NO.14 Tahun 2017</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </section>
 <section class="apa-ikm" id="apa-itu-ikm">
 <div class="container">
@@ -51,10 +71,10 @@
 							Dengan adanya survey IKM ini diharapkan kami dapat selalu meningkatkan layanan kami terhadap masyarakat.
 						</p>
 						<a  class="btn btn-danger btn-lg px-4 shadow" href="<?= base_url('survei') ?>">
-						Isi Survei Sekarang
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-						</svg>
+							Isi Survei Sekarang
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+							</svg>
 						</a>
 					</div>
 				</div>
@@ -87,22 +107,22 @@
 </div>
 </div>
 </section>
-<footer class="bg-dark py-4"> 
-	<div class="container">
-		<div class="row gap-4">
-			<div class="col-12 col-md-2 offset-md-2">
-				<img src="<?= base_url('assets/images/qr-code-ikm.png') ?>" class="img-fluid" alt="qr-code-ikm-bkppd-balangan">
-			</div>
-			<div class="col-12 col-md-6">
-				<div class="fs-4 fw-bold text-light">Tinjau Perkembangan IKM</div>
-				<p class="text-muted">
-					Silahkan pindai QR-Code untuk meninjau secara langsung hasil dari penilaian Indeks Kepuasan Masyarakat (IKM) atau dengan mengunjungi alamat url (<code>https://qrco.de/ikm-bkppd-balangan</code>)
-				</p>
-				<p class="text-muted">
-					Kami selaku unit pelayanan mengucapkan terimakasih atas partisipasi anda dalam pelaksanaan penilaian IKM secara Online maupun Offline.
-				</p>
-			</div>
-		</div>
+<footer class="bg-dark py-4">
+<div class="container">
+<div class="row gap-4">
+	<div class="col-12 col-md-2 offset-md-2">
+		<img src="<?= base_url('assets/images/qr-code-ikm.png') ?>" class="img-fluid" alt="qr-code-ikm-bkppd-balangan">
 	</div>
+	<div class="col-12 col-md-6">
+		<div class="fs-4 fw-bold text-light">Tinjau Perkembangan IKM</div>
+		<p class="text-muted">
+			Silahkan pindai QR-Code untuk meninjau secara langsung hasil dari penilaian Indeks Kepuasan Masyarakat (IKM) atau dengan mengunjungi alamat url (<code>https://qrco.de/ikm-bkppd-balangan</code>)
+		</p>
+		<p class="text-muted">
+			Kami selaku unit pelayanan mengucapkan terimakasih atas partisipasi anda dalam pelaksanaan penilaian IKM secara Online maupun Offline.
+		</p>
+	</div>
+</div>
+</div>
 </footer>
 <?php $this->load->view('Frontend/skm/pages/print_modal'); ?>
