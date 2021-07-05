@@ -305,7 +305,12 @@ class Users extends CI_Controller {
 			return $this->load->view('Frontend/v1/pages/ikm/ikm_periode', $data);
 		}
 		public function ikm_responden() {
-			return $this->load->view('Frontend/v1/pages/ikm/ikm_responden');
+			$data = [
+				'ikm_tahun' => $this->ikm->filter_tahun()->result(),
+				'ikm_periode' => $this->ikm->filter_periode()->result(),
+				'ikm_form' => $this->ikm->filter_form()->result()
+			];
+			return $this->load->view('Frontend/v1/pages/ikm/ikm_responden', $data);
 		}
 
 		public function submenu() {
