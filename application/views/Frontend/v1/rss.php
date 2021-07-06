@@ -9,7 +9,6 @@
     xmlns:g="http://base.google.com/ns/1.0">
  
     <channel>
-    <atom:link rel="self" type="application/rss+xml" href="<?php echo $feed_url; ?>"/>
     <title><?php echo $feed_name; ?></title>
  
     <link><?php echo $feed_url; ?></link>
@@ -19,6 +18,7 @@
  
     <dc:rights>Copyright <?php echo gmdate("Y", time()); ?></dc:rights>
     <admin:generatorAgent rdf:resource="http://www.codeigniter.com/" />
+    <atom:link rel="self" type="application/rss+xml" href="<?php echo $feed_url; ?>"/>
      <?php 
       foreach($posts->result() as $post):
       // USER POST
@@ -43,16 +43,17 @@
     ?>
      
         <item>
- 
           <title><?php echo xml_convert($post->judul); ?></title>
+          <dc:creator><?= $creator_email ?></dc:creator>
           <link><?php echo $posturl ?></link>
-            <description>
-              <?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>  
-            </description>
+          <description>
+            <![CDATA[<?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>]]>
+          </description>
+          <enclosure url="<?= $img ?>"></enclosure>
           <g:image_link><?= $img ?></g:image_link>
           <g:condition><?= $conditional ?></g:condition>
-          <g:id><?php echo $posturl ?></g:id>
-          <guid><?php echo $posturl ?></guid>
+          <g:id><?php echo $id ?></g:id>
+          <guid isPermalink="false"><?= $id ?></guid>
         </item>
  
          

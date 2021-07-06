@@ -47,6 +47,10 @@ class Album extends CI_Controller {
 
 	public function detail($id)
 	{
+		if(empty($id):
+			return redirect(base_url('album'),'refresh');
+		endif;
+
 		$id_album = decrypt_url($id);
 		$data = [
 			'title' => url_title($this->album->judul_album_by_id($id_album), '-', true),

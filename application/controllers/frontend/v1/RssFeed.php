@@ -17,7 +17,7 @@ class RssFeed extends CI_Controller {
           $data['encoding'] = 'utf-8'; // the encoding
           $data['feed_url'] = base_url('rss.xml'); // the url to your feed
           $data['page_description'] = $profile->meta_desc; // some description
-          $data['page_language'] = 'id-ID'; // the language
+          $data['page_language'] = 'en-us'; // the language
           $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
           $data['posts'] = $this->posts->getPosts(10);  
           header("Content-Type: application/rss+xml"); // important!
