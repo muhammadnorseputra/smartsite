@@ -40,6 +40,7 @@
       $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
       $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
       $conditional = $post->tgl_posting === date('Y-m-d') ? 'New' : mediumdate_indo($post->tgl_posting);
+      $newDateTime= new DateTime($post->tgl_posting, new DateTimeZone('Asia/Jakarta'));;
     ?>
         <item>
           <title><?php echo xml_convert($post->judul); ?></title>
@@ -55,6 +56,7 @@
           <g:id><?= $id ?></g:id>
           <guid isPermaLink="false"><?= $posturl ?></guid>
           <enclosure length="25000" type="image/jpeg" url="<?= $img ?>"/>
+          <pubDate><?= $newDateTime->format('D, d M Y G:i:sP') ?></pubDate>
         </item>
     <?php endforeach; ?>
      
