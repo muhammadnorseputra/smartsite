@@ -39,7 +39,7 @@
       $isi_berita = $post->content; // membuat paragraf pada isi berita dan mengabaikan tag html
       $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
       $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
-      $conditional = $post->tgl_posting === date('Y-m-d') ? 'New' : $post->tgl_posting;
+      $conditional = $post->tgl_posting === date('Y-m-d') ? 'New' : mediumdate_indo($post->tgl_posting);
     ?>
         <item>
           <title><?php echo xml_convert($post->judul); ?></title>
