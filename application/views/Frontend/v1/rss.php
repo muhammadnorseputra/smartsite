@@ -46,12 +46,15 @@
           <dc:creator><?= $creator_email ?></dc:creator>
           <link><?php echo $posturl ?></link>
           <description>
+            <img src="<?= $img ?>" align="left" border="0" />
             <![CDATA[<?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>]]>
           </description>
+          <content:encoded><?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?></content:encoded>
           <g:image_link><?= $img ?></g:image_link>
           <g:condition><?= $conditional ?></g:condition>
           <g:id><?= $id ?></g:id>
           <guid><?= $posturl ?></guid>
+          <enclosure length="25000" type="image/jpeg" url="<?= $img ?>"/>
         </item>
     <?php endforeach; ?>
      
