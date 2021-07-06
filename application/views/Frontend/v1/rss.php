@@ -50,8 +50,8 @@
           </description>
           <g:image_link><?= $img ?></g:image_link>
           <g:condition><?= $conditional ?></g:condition>
-          <g:id><?php echo $id ?></g:id>
-          <guid isPermaLink="false"><?= $id ?></guid>
+          <g:id><?= $id ?></g:id>
+          <guid><?= $posturl ?></guid>
         </item>
     <?php endforeach; ?>
      
