@@ -1,9 +1,9 @@
 <section class="hero">
 	<div class="p-md-4 py-3 px-2 bg-primary">
-		<div class="container py-md-3">
+		<div class="container py-md-5">
 			<div class="d-flex justify-content-between align-items-md-center align-items-start flex-lg-row flex-column">
-				<div class="order-last order-md-first">
-					<h1 class="display-3 fw-bold text-white">Selamat Datang</h1>
+				<div class="order-last order-md-first col-md-6">
+					<h1 class="display-4 fw-bold text-white">Selamat Datang</h1>
 					<p class="fs-4 text-white">Di Survei IKM BKPPD Balangan</p>
 					
 					<a href="<?= base_url('survei') ?>" class="btn btn-warning btn-lg px-4 shadow">
@@ -20,7 +20,7 @@
 				</div>
 				<div>
 					<div>
-						<img src="<?= base_url('assets/images/bg/hero-img.png') ?>" class="animated bounce img-fluid" alt="Survey BKPPD">
+						<img src="<?= base_url('assets/images/bg/illustration_hero_banner.svg') ?>" class="animated bounce img-fluid" alt="Survey BKPPD">
 					</div>
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 						<p>
 							Dengan adanya survey IKM ini diharapkan kami dapat selalu meningkatkan layanan kami terhadap masyarakat.
 						</p>
-						<a  class="btn btn-danger btn-lg px-4 shadow" href="<?= base_url('survei') ?>">
+						<a  class="btn btn-primary btn-lg px-4 shadow" href="<?= base_url('survei') ?>">
 							Isi Survei Sekarang
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 20 20">
 								<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
