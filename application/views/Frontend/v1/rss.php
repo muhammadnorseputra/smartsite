@@ -7,7 +7,7 @@
     xmlns:content="http://purl.org/rss/1.0/modules/content/"
     xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:g="http://base.google.com/ns/1.0"
-    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    xmlns:image="http://purl.org/rss/1.0/modules/image/">
  
     <channel>
     <title><?php echo $feed_name; ?></title>
