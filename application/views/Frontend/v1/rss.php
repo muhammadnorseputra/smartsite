@@ -37,7 +37,7 @@
       endif;
 
       $isi_berita = $post->content; // membuat paragraf pada isi berita dan mengabaikan tag html
-      $isi = substr($isi_berita, 0, 200); // ambil sebanyak 80 karakter
+      $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
       $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
       $conditional = $post->tgl_posting === date('Y-m-d') ? 'Terbaru' : 'Lama';
       $newDateTime= new DateTime($post->created_at, new DateTimeZone('Asia/Jakarta'));;
@@ -56,7 +56,7 @@
           <g:id><?= $id ?></g:id>
           <guid isPermaLink="false"><?= $posturl ?></guid>
           <enclosure length="25000" type="image/jpeg" url="<?= $img ?>"/>
-          <pubDate><?= $newDateTime->format('D, d M Y G:i:s P') ?></pubDate>
+          <pubDate><?= $newDateTime->format('D, d M Y G:i:s O') ?></pubDate>
         </item>
     <?php endforeach; ?>
      
