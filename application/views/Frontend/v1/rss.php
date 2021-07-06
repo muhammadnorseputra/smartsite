@@ -6,7 +6,8 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:content="http://purl.org/rss/1.0/modules/content/"
     xmlns:atom="http://www.w3.org/2005/Atom"
-    xmlns:g="http://base.google.com/ns/1.0">
+    xmlns:g="http://base.google.com/ns/1.0"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
  
     <channel>
     <title><?php echo $feed_name; ?></title>
@@ -45,6 +46,9 @@
           <title><?php echo xml_convert($post->judul); ?></title>
           <dc:creator><?= $creator_email ?></dc:creator>
           <link><?php echo $posturl ?></link>
+          <image:image>
+            <image:loc><?= $img ?></image:loc>
+          </image:image>
           <description>
             <![CDATA[<?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>]]>
           </description>
