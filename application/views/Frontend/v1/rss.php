@@ -46,7 +46,6 @@
           <dc:creator><?= $creator_email ?></dc:creator>
           <link><?php echo $posturl ?></link>
           <description>
-            <?php echo '<img src="'.$img.'" align="left" border="0" />' ?>
             <![CDATA[<?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>]]>
           </description>
           <content:encoded><?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?></content:encoded>
