@@ -121,6 +121,11 @@ $route['finish/(:any)'] = 'frontend/skm/skmProses/selesai/$1';
 // RSS
 $route['rss.xml'] = 'frontend/v1/rssFeed';
 
+// API SKM
+$route['api-skm'] = 'frontend/v1/apiSkm';
+$route['api-skm/(:any)'] = 'frontend/v1/apiSkm/$1';
+
+
 /*
 * @BAWAAN CODEIGNITER
 */

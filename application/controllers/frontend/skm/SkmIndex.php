@@ -1,5 +1,4 @@
 <?php
-
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class SkmIndex extends CI_Controller
@@ -172,7 +171,13 @@ class SkmIndex extends CI_Controller
             // var_dump($konversi);
             $j = ['nilai_ikm' => $ikm, 'nilai_konversi' => $konversi, 'presentase' => @$presentase_predikat];
             // var_dump($j);
+            // echo json_encode($j);
             return $j;
+    }
+
+    public function hasil_ikm()
+    {
+        echo json_encode($this->hitung());
     }
 
     public function index()

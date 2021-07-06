@@ -40,8 +40,8 @@ IKM - Responden
 				<label class="input-group-text" for="filter-form"><i class="far fa-calendar-alt"></i></label>
 			</div>
 			<input type="text" class="input-sm form-control" placeholder="From" size="5" name="start" />
-			<span class="input-group-addon"></span>
 			<input type="text" class="input-sm form-control" placeholder="To" size="5" name="end" />
+			<span class="input-group-addon"></span>
 		</div>
 	</div>
 	<hr>

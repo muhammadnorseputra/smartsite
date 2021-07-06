@@ -71,11 +71,21 @@ class Skm extends CI_Model {
 	}
 	public function skm_total_responden_l($periode=null)
 	{
-		return $this->db->get_where('skm', ['jns_kelamin' => 'L', 'fid_periode' => $periode]); //Laki-laki
+		// return $this->db->get_where('skm', ['jns_kelamin' => 'L', 'fid_periode' => $periode]); //Laki-laki
+		if(!empty($periode)):
+			$this->db->where('fid_periode', $periode);
+		endif;
+		$this->db->where('jns_kelamin', 'L');
+		return $this->db->get('skm');
 	}
 	public function skm_total_responden_p($periode=null)
 	{
-		return $this->db->get_where('skm', ['jns_kelamin' => 'P', 'fid_periode' => $periode]); //Perempuan
+		// return $this->db->get_where('skm', ['jns_kelamin' => 'P', 'fid_periode' => $periode]); //Perempuan
+		if(!empty($periode)):
+			$this->db->where('fid_periode', $periode);
+		endif;
+		$this->db->where('jns_kelamin', 'P');
+		return $this->db->get('skm');
 	}
 	public function skm_total_layanan()
 	{
