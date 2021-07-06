@@ -44,7 +44,7 @@
     ?>
         <item>
           <title><?php echo xml_convert($post->judul); ?></title>
-          <dc:creator><?= $creator_email ?></dc:creator>
+          <dc:creator><?= $creator_name ?></dc:creator>
           <link><?php echo $posturl ?></link>
           <description>
             <?= htmlentities('<img src="'.$img.'" align="left" hspace="7" width="100">'); ?>

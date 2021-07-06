@@ -19,6 +19,7 @@ class RssFeed extends CI_Controller {
           $data['page_description'] = $profile->meta_desc; // some description
           $data['page_language'] = 'en-us'; // the language
           $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
+          $data['creator_name'] = 'M. Nor Seputra'; // your email
           $data['posts'] = $this->posts->getPosts(10);  
           header("Content-Type: application/rss+xml"); // important!
 
