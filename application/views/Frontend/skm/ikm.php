@@ -15,15 +15,15 @@
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
-				<div class="d-flex justify-content-around align-items-start my-md-5 my-2 gap-4">
+				<div class="d-flex justify-content-around align-items-center my-md-5 my-2 gap-4">
 					<div class="text-center">
 						<p class="fw-bold text-light">Nilai IKM</p>
 						<div class="display-1 text-<?= $hasil['nilai_konversi']['c'] ?> countTo" data-from="0" data-to="<?= $hasil['nilai_ikm'] ?>" data-decimals="2" data-speed="300" data-refresh-interval="50">
 							0
 						</div>
 					</div>
-					<div class="text-center">
-						<p class="fw-bold text-light">Kategori Mutu Unit Pelayanan</p>
+					<div class="text-center bg-light p-3 rounded-3 shadow-lg">
+						<p class="fw-bold text-dark">Mutu Unit Pelayanan</p>
 						<div class="display-1 text-<?= $hasil['nilai_konversi']['c'] ?>">
 							<?= $hasil['nilai_konversi']['x'] ?>
 						</div>
@@ -45,13 +45,13 @@
 				<path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
 				<path d="M7.066 4.76A1.665 1.665 0 0 0 4 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112zm4 0A1.665 1.665 0 0 0 8 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112z"/>
 			</svg>
-			<h3 id="tx"></h3>
+			<h4 id="tx"></h4>
 		</div>
 	</div>
 	<hr>
 	<div class="row">
 		<div class="col">
-			<div class="card mb-5 bg-light me-n3 shadow">
+			<div class="card mb-5 bg-light me-n3 shadow-sm">
 				<div class="d-flex justify-content-center justify-content-lg-around align-items-center gap-3">
 					<div>
 						<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-person-circle text-danger" viewBox="0 0 16 16">
@@ -72,7 +72,7 @@
 			</div>
 		</div>
 		<div class="col">
-			<div class="card mb-5 bg-light me-n3 shadow">
+			<div class="card mb-5 bg-light me-n3 shadow-sm">
 				<div class="d-flex justify-content-center justify-content-lg-around align-items-center gap-3">
 					<div>
 						<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-journal-check text-warning" viewBox="0 0 16 16">
@@ -92,7 +92,7 @@
 			</div>
 		</div>
 		<div class="col">
-			<div class="card mb-5 bg-light me-n3 shadow">
+			<div class="card mb-5 bg-light me-n3 shadow-sm">
 				<div class="d-flex justify-content-center justify-content-lg-around align-items-center gap-3">
 					<div>
 						<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-journals text-info" viewBox="0 0 16 16">
