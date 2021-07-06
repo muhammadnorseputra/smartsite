@@ -49,11 +49,10 @@
           <description>
             <![CDATA[<?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>]]>
           </description>
-          <enclosure url="<?= $img ?>"></enclosure>
           <g:image_link><?= $img ?></g:image_link>
           <g:condition><?= $conditional ?></g:condition>
           <g:id><?php echo $id ?></g:id>
-          <guid isPermalink="false"><?= $id ?></guid>
+          <guid><?= $id ?></guid>
         </item>
  
          
