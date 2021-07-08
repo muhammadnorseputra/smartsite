@@ -114,9 +114,9 @@ $card = isset($_GET['card']) ? $_GET['card'] : '';
 					<?php endforeach; ?>
 				</ul>
 				<hr>
-				<!-- <p>
+				<p>
 				    <input data-validation="recaptcha" data-validation-recaptcha-sitekey="6LfiM08bAAAAAJkf5geIEBau6f9-kMOEzxkxw06_">
-				</p> -->
+				</p>
 				<button type="submit" class="btn btn-primary btn-lg px-5">Kirim Survei</button>
 			</div>
 		</div>
