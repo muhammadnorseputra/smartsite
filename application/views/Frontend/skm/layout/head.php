@@ -10,13 +10,13 @@
 		<meta property="og:title" content="IKM - BKPPD BALANGAN">
 		<meta property="og:description" content="Indeks Kepuasan Masyarakat (IKM) BKPPD Balangan">
 		<meta property="og:type" content="web">
-		<meta property="og:image" content="<?= base_url('assets/images/qr-code-ikm.png') ?>">
+		<meta property="og:image" content="<?= base_url('assets/images/qr-code-ikm-small.png') ?>">
 		<meta property="og:url" content="<?= base_url('ikm') ?>">
 		<!-- Meta Properti Twitter -->
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:description" content="Indeks Kepuasan Masyarakat (IKM) BKPPD Balangan">
 		<meta name="twitter:type" content="web">
-		<meta name="twitter:image" content="<?= base_url('assets/images/qr-code-ikm.png') ?>">
+		<meta name="twitter:image" content="<?= base_url('assets/images/qr-code-ikm-small.png') ?>">
 		<meta name="twitter:url" content="<?= base_url('ikm') ?>">
 
 		<title><?= $title ?></title>
