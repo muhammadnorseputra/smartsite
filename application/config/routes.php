@@ -117,6 +117,7 @@ $route['cetak'] = 'frontend/skm/skmIndex/cetakFormulir/$1';
 $route['ikm'] = 'frontend/skm/skmIndex/ikm';
 $route['survei'] = 'frontend/skm/skmIndex/survei';
 $route['finish/(:any)'] = 'frontend/skm/skmProses/selesai/$1';
+$route['invalid/(:any)'] = 'frontend/skm/skmProses/invalid/$1';
 
 // RSS
 $route['rss.xml'] = 'frontend/v1/rssFeed';

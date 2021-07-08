@@ -90,8 +90,22 @@ $(document).ready(function() {
                 },
                 dataType: 'json',
                 success: function(response) {
+                    if(response.status == false) {
+                        return setTimeout(() => {
+                            $.notify({
+                                icon: 'fas fa-times',
+                                title: '<strong>Invalid!</strong>',
+                                message: response.msg,
+                            }, {
+                                type: 'danger'
+                            });
+                            if(response.redirectTo) {
+                                window.location.replace(response.redirectTo);
+                            }
+                        }, 5000);
+                    }
                     if (response.status == true) {
-                        setTimeout(function() {
+                        return setTimeout(function() {
                             // window.location.replace("<?= base_url('frontend/v1/daftar/') ?>");
                             $.notify({
                                 'icon': 'far fa-check-circle',
@@ -118,7 +132,7 @@ $(document).ready(function() {
                             $('button[type=submit]').prop('disabled', true).html(`<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Loading...`);
                         }, 5000);
-                    }
+                    } 
                 },
                 error: function(error) {
                     $('button[type=submit]').prop('disabled', false).html('Kirim Survei');
