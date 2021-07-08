@@ -82,7 +82,13 @@ $(document).ready(function() {
                     }, {
                         type: 'warning',
                         allow_dismiss: false,
-                        showProgressbar: true
+                        showProgressbar: true,
+                        position: 'fixed',
+                        offset: 0,
+                        placement: {
+                            from: "top",
+                            align: "center"
+                        },
                     });
                     $('.main').addClass('blured');
                     $('button[type=submit]').prop('disabled', true).html(`<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -97,7 +103,12 @@ $(document).ready(function() {
                                 title: '<strong>Invalid!</strong>',
                                 message: response.msg,
                             }, {
-                                type: 'danger'
+                                type: 'danger',
+                                position: 'fixed',
+                                placement: {
+                                    from: "top",
+                                    align: "center"
+                                },
                             });
                             if(response.redirectTo) {
                                 window.location.replace(response.redirectTo);
@@ -113,6 +124,10 @@ $(document).ready(function() {
                             }, {
                                 type: 'success',
                                 allow_dismiss: false,
+                                placement: {
+                                    from: "top",
+                                    align: "center"
+                                },
                                 onClose: function() {
                                     window.location.replace(response.redirectTo);
                                     $('.main').removeClass('blured');
@@ -127,6 +142,10 @@ $(document).ready(function() {
                             }, {
                                 type: 'info',
                                 allow_dismiss: false,
+                                placement: {
+                                    from: "top",
+                                    align: "center"
+                                },
                             });
                             $form.get(0).reset();
                             $('button[type=submit]').prop('disabled', true).html(`<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>

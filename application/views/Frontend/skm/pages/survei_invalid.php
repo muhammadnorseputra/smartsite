@@ -10,7 +10,7 @@
 					Hal ini disebabkan untuk menghindari traffic survei yang tidak wajar, menghindari spamming  request ke server.
 				</p>
 				<p class="lead mt-4">
-					Silahkan isi kembali 1 jam mendatang. <br>
+					<span class="text-success">Silahkan isi kembali 1 jam mendatang.</span> <br>
 					-- Trimakasih --
 				</p>
 			</div>

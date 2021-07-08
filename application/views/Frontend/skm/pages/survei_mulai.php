@@ -105,7 +105,7 @@ $card = isset($_GET['card']) ? $_GET['card'] : '';
 						<div class="badge border-start border-danger rounded-0" id="msg-check-<?= $j->fid_pertanyaan  ?>"></div>
 						<div class="d-flex justify-content-start gap-3 my-2 align-items-center">
 							<input class="shadow-sm" type="radio" name="jawaban_id[<?= $j->fid_pertanyaan ?>]" id="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>" value="<?= $j->id ?>" data-validation="required" data-validation-error-msg-container="#msg-check-<?= $j->fid_pertanyaan ?>" data-validation-error-msg="Silahkan pilih salahsatu jawaban yang tersedia!">
-							<label class="form-check-label text-muted user-select-all" for="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>">
+							<label class="form-check-label text-muted" for="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>">
 								<?= $j->jdl_jawaban ?> 
 							</label>
 						</div>
