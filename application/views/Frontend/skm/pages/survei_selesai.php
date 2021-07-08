@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row justify-content-md-center flex-column flex-lg-row">
 			<div class="col col-md-3">
-				<h3 class="display-6">Horray!</h3>
+				<h3 class="display-6">Berhasil!</h3>
 				<p class="lead">
 					Terimakasih atas parisipasi anda dalam survei layanan kami.
 				</p>
