@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<div class="text-light py-md-5 py-2">
+				<div class="text-light py-md-5 pt-5 text-center text-md-start">
 					<div class="display-3">IKM</div>
 					<div class="fs-3">(Indeks Kepuasan Masyarakat)</div>
 					<?php
@@ -15,14 +15,14 @@
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
-				<div class="d-flex justify-content-around align-items-center my-md-5 my-2 gap-4">
+				<div class="d-flex justify-content-around align-items-center my-5 my-2 gap-4">
 					<div class="text-center">
 						<p class="fw-bold text-light">Nilai IKM</p>
 						<div class="display-1 text-<?= $hasil['nilai_konversi']['c'] ?> countTo" data-from="0" data-to="<?= $hasil['nilai_ikm'] ?>" data-decimals="2" data-speed="300" data-refresh-interval="50">
 							0
 						</div>
 					</div>
-					<div class="text-center bg-light p-3 rounded-3 shadow-lg">
+					<div class="text-center bg-light p-3 rounded-3 shadow-lg border border-secondary">
 						<p class="fw-bold text-dark">Mutu Unit Pelayanan</p>
 						<div class="display-1 text-<?= $hasil['nilai_konversi']['c'] ?>">
 							<?= $hasil['nilai_konversi']['x'] ?>
