@@ -34,13 +34,13 @@
 		</div>
 	</div>
 </section>
-<div>
+<!-- <div>
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 190"><path fill="#212529" fill-opacity="1" d="M0,192L26.7,165.3C53.3,139,107,85,160,53.3C213.3,21,267,11,320,10.7C373.3,11,427,21,480,42.7C533.3,64,587,96,640,106.7C693.3,117,747,107,800,90.7C853.3,75,907,53,960,58.7C1013.3,64,1067,96,1120,122.7C1173.3,149,1227,171,1280,176C1333.3,181,1387,171,1413,165.3L1440,160L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
-</div>
+</div> -->
 <section>
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 py-3 d-flex justify-content-start gap-3">
+		<div class="col-md-8 py-4 d-flex justify-content-start gap-3">
 			<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-chat-left-quote" viewBox="0 0 16 16">
 				<path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
 				<path d="M7.066 4.76A1.665 1.665 0 0 0 4 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112zm4 0A1.665 1.665 0 0 0 8 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112z"/>
@@ -118,44 +118,3 @@
 	</div>
 </div>
 </section>
-<?php
-// var_dump($hasil);die();
-$values = []; 
-$labels= [];
-if(!$hasil['presentase'] === 0):
-foreach($hasil['presentase'] as $k => $v): 
-	$labels[] = $k; 
-	$values[$k] = intval(round($v)); 
-endforeach;
-	$label = json_encode($labels);
-	$value = $values;
-?>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['A','B'],
-          ['P.4', 1],
-          ['P.3', 33],
-          ['P.2', 30],
-          ['P.1', 1]
-        ]);
-
-        var options = {
-          title: 'Persentase persepsi (p) responden pada unsur layanan',
-          is3D: true,
-          slices: {
-            0: { color: 'teal' },
-            1: { color: 'green' },
-            2: { color: 'yellow' },
-            3: { color: 'red' },
-          }
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-      }
-    </script>
-<?php endif; ?>

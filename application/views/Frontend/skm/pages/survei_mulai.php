@@ -1,8 +1,8 @@
 <?php  
 $card = isset($_GET['card']) ? $_GET['card'] : '';
 ?>
-<section class="survei-non-asn">
-	<div class="py-3 px-2 bg-secondary bg-gradient text-center">
+<section class="survei-non-asn bg-light">
+	<div class="py-3 px-2 bg-primary bg-gradient text-center">
 		<h3 class="text-light">Formulir Survei IKM</h3>
 	</div>
 	<?php  
@@ -10,12 +10,12 @@ $card = isset($_GET['card']) ? $_GET['card'] : '';
 	echo form_open(base_url('frontend/skm/skmProses'), ['id' => 'f-survei', 'class' => 'toggle-disabled', 'autocomplete' => 'off'], $hidden);
 	?>
 	<div class="container">
-		<div class="card my-3 bg-light shadow-sm">
+		<div class="card mt-3 bg-light border-0">
 			<div class="card-body">
 				<div class="d-flex justify-content-between align-items-center">
 					<div>
 						<h5 class="card-title fw-bold">I. Data Responden</h5>
-						<h6 class="card-subtitle mb-2 text-muted">Sebelum memulai survei, silahkan isi data diri responden</h6>
+						<p class="card-subtitle text-muted">Sebelum memulai survei, silahkan isi data diri responden</p>
 					</div>
 					<div>
 						<h5 class="text-muted d-none d-md-block"><abbr title="Ini adalah kode formulir anda.">F-<?= strtoupper($nomor) ?></abbr></h5>
@@ -95,14 +95,14 @@ $card = isset($_GET['card']) ? $_GET['card'] : '';
 					</div>
 				</div>
 				<h5 class="card-title fw-bold">II. Pendapat Responden Tentang Pelayanan</h5>
-				<h6 class="card-subtitle mb-2 text-muted">Silahkan pilih jawaban yang tersedia.</h6>
+				<p class="card-subtitle text-muted">Silahkan pilih jawaban yang tersedia.</p>
 				<hr>
 				<ul class="list-group list-group-flush rounded-3">
 					<?php foreach($pertanyaan->result() as $p): ?>
 					<li class="list-group-item py-4  border-light">
 						<p class="fw-bold user-select-none"><?= ucwords($p->jdl_pertanyaan) ?> ?</p>
 						<?php foreach($this->skm->skm_jawaban_pertanyaan($p->id)->result() as $j):  ?>
-						<div class="badge border-start border-danger rounded-0" id="msg-check-<?= $j->fid_pertanyaan  ?>"></div>
+						<div id="msg-check-<?= $j->fid_pertanyaan  ?>"></div>
 						<div class="d-flex justify-content-start gap-3 my-2 align-items-center">
 							<input class="shadow-sm" type="radio" name="jawaban_id[<?= $j->fid_pertanyaan ?>]" id="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>" value="<?= $j->id ?>" data-validation="required" data-validation-error-msg-container="#msg-check-<?= $j->fid_pertanyaan ?>" data-validation-error-msg="Silahkan pilih salahsatu jawaban yang tersedia!">
 							<label class="form-check-label text-muted" for="<?= $j->fid_pertanyaan ?>-<?= $j->id ?>">
@@ -117,10 +117,15 @@ $card = isset($_GET['card']) ? $_GET['card'] : '';
 				<p>
 				    <input data-validation="recaptcha" data-validation-recaptcha-sitekey="6LfiM08bAAAAAJkf5geIEBau6f9-kMOEzxkxw06_">
 				</p>
+				<div class="form-group form-check mb-3">
+				    <input type="checkbox" class="form-check-input" data-validation="required" name="disclimer" id="exampleCheck1">
+				    <label class="form-check-label" for="exampleCheck1">Penilaian yang saya berikan, merupakan benar-benar hasil dari pelayanan BKPPD Balangan.</label>
+				 </div>
+				
 				<button type="submit" class="btn btn-primary btn-lg px-5">Kirim Survei</button>
 			</div>
 		</div>
-		<div class="card mb-3 bg-light">
+		<!-- <div class="card mb-3 bg-light border-top border-danger">
 			<div class="card-body">
 				<div class="alert alert-default d-flex align-items-start gap-3" role="alert">
 				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-exclamation-circle-fill text-warning" viewBox="0 0 16 16">
@@ -136,7 +141,7 @@ $card = isset($_GET['card']) ? $_GET['card'] : '';
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<?= form_close(); ?>
 </section>
