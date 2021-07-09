@@ -194,46 +194,50 @@ class SkmIndex extends CI_Controller
     {
         $card = $this->input->get('card');
         $title = 'Survei - BKPPD Balangan';
-        if($card === 'asn_balangan'):
-        $data = [
-            'title' => $title,
-            'content' => 'Frontend/skm/pages/survei_mulai',
-            'periode' => $this->skm->skm_periode()->row(),
-            'pertanyaan' => $this->skm->skm_pertanyaan(),
-            'jenis_layanan' => $this->skm->skm_jenis_layanan(),
-            'pendidikan' => $this->skm->skm_pendidikan(),
-            'pekerjaan' => $this->skm->skm_pekerjaan(),
-            'nomor' => generateRandomString(7)
-        ];  
-        elseif($card === 'non_asn_balangan'):
-        $data = [
-            'title' => $title,
-            'content' => 'Frontend/skm/pages/survei_mulai',
-            'periode' => $this->skm->skm_periode()->row(),
-            'pertanyaan' => $this->skm->skm_pertanyaan(),
-            'jenis_layanan' => $this->skm->skm_jenis_layanan(),
-            'pendidikan' => $this->skm->skm_pendidikan(),
-            'pekerjaan' => $this->skm->skm_pekerjaan(),
-            'nomor' => generateRandomString(7)
-        ];  
-    elseif($card === 'demo'):
-        $data = [
-            'title' => $title,
-            'content' => 'Frontend/skm/pages/survei_mulai',
-            'periode' => $this->skm->skm_periode()->row(),
-            'pertanyaan' => $this->skm->skm_pertanyaan(),
-            'jenis_layanan' => $this->skm->skm_jenis_layanan(),
-            'pendidikan' => $this->skm->skm_pendidikan(),
-            'pekerjaan' => $this->skm->skm_pekerjaan(),
-            'nomor' => generateRandomString(7)
-        ];  
-        else:
-        $data = [
-            'title' => $title,
-            'content' => 'Frontend/skm/pages/survei',
-        ];  
-        endif;
-        $this->load->view('Frontend/skm/layout/app', $data);
+        if($this->skm->skm_periode()->row()->status === 'ON'){
+            if($card === 'asn_balangan'):
+                $data = [
+                    'title' => $title,
+                    'content' => 'Frontend/skm/pages/survei_mulai',
+                    'periode' => $this->skm->skm_periode()->row(),
+                    'pertanyaan' => $this->skm->skm_pertanyaan(),
+                    'jenis_layanan' => $this->skm->skm_jenis_layanan(),
+                    'pendidikan' => $this->skm->skm_pendidikan(),
+                    'pekerjaan' => $this->skm->skm_pekerjaan(),
+                    'nomor' => generateRandomString(7)
+                ];  
+            elseif($card === 'non_asn_balangan'):
+                $data = [
+                    'title' => $title,
+                    'content' => 'Frontend/skm/pages/survei_mulai',
+                    'periode' => $this->skm->skm_periode()->row(),
+                    'pertanyaan' => $this->skm->skm_pertanyaan(),
+                    'jenis_layanan' => $this->skm->skm_jenis_layanan(),
+                    'pendidikan' => $this->skm->skm_pendidikan(),
+                    'pekerjaan' => $this->skm->skm_pekerjaan(),
+                    'nomor' => generateRandomString(7)
+                ];  
+            elseif($card === 'demo'):
+                $data = [
+                    'title' => $title,
+                    'content' => 'Frontend/skm/pages/survei_mulai',
+                    'periode' => $this->skm->skm_periode()->row(),
+                    'pertanyaan' => $this->skm->skm_pertanyaan(),
+                    'jenis_layanan' => $this->skm->skm_jenis_layanan(),
+                    'pendidikan' => $this->skm->skm_pendidikan(),
+                    'pekerjaan' => $this->skm->skm_pekerjaan(),
+                    'nomor' => generateRandomString(7)
+                ];  
+            else:
+                $data = [
+                    'title' => $title,
+                    'content' => 'Frontend/skm/pages/survei',
+                ];  
+            endif;
+            $this->load->view('Frontend/skm/layout/app', $data);
+        } else {
+            exit(redirect(base_url('closed')));
+        }
     }
     public function ikm()
     {

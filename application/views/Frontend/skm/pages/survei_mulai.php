@@ -119,7 +119,7 @@ $card = isset($_GET['card']) ? $_GET['card'] : '';
 				</p>
 				<div class="form-group form-check mb-3">
 				    <input type="checkbox" class="form-check-input" data-validation="required" name="disclimer" id="exampleCheck1">
-				    <label class="form-check-label" for="exampleCheck1">Penilaian yang saya berikan, merupakan benar-benar hasil dari pelayanan BKPPD Balangan.</label>
+				    <label class="form-check-label" for="exampleCheck1">Penilaian yang saya berikan merupakan benar-benar hasil dari pelayanan BKPPD Balangan.</label>
 				 </div>
 				
 				<button type="submit" class="btn btn-primary btn-lg px-5">Kirim Survei</button>

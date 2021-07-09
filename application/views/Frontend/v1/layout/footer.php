@@ -54,7 +54,7 @@
 				<h6 class="text-white-50 pb-3 border-bottom">Ikuti Juga</h6>
 				<ul class="list-unstyled">
 					<li>
-						<a href="<?= base_url('survey') ?>"><span><i class="fas fa-external-link-alt text-white mr-2"></i></span>Survey Kepegawaian</a>
+						<a href="<?= base_url('skm') ?>"><span><i class="fas fa-external-link-alt text-white mr-2"></i></span>Survey Kepegawaian</a>
 					</li>
 					<li>
 						<a href="<?= base_url('kotak_saran') ?>"><span><i class="fas fa-external-link-alt text-white mr-2"></i></span>Kirim Saran / Laporkan BUG</a>

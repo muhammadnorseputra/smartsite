@@ -94,7 +94,6 @@ $route['download'] = 'frontend/v1/download';
 $route['bannerlist'] = 'frontend/v1/banner/listimage';
 $route['kotak_saran'] = 'frontend/v1/halaman/saran';
 $route['kirim_saran'] = 'frontend/v1/halaman/simpan_saran';
-$route['survey'] = 'frontend/v1/halaman/survey';
 $route['album/(:any)'] = 'frontend/v1/album/detail/$1';
 $route['post/(:any)/(:any)/(:any)'] = 'frontend/v1/post/detail/$1/$2/$3';
 $route['user/(:any)/(:any)'] = 'frontend/v1/users/profile/$1/$2';
@@ -118,6 +117,7 @@ $route['ikm'] = 'frontend/skm/skmIndex/ikm';
 $route['survei'] = 'frontend/skm/skmIndex/survei';
 $route['finish/(:any)'] = 'frontend/skm/skmProses/selesai/$1';
 $route['invalid/(:any)'] = 'frontend/skm/skmProses/invalid/$1';
+$route['closed'] = 'frontend/v1/halaman/closed';
 
 // RSS
 $route['rss.xml'] = 'frontend/v1/rssFeed';

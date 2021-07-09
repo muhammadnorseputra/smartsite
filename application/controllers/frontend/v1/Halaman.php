@@ -9,6 +9,7 @@ class Halaman extends CI_Controller
     //Do your magic here
     $this->load->model('M_f_users','users');
     $this->load->model('model_template_v1/M_f_halaman', 'halaman');
+    $this->load->model('skm');
     //Check maintenance website
     if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
           // redirect(base_url('frontend/v1/beranda'),'refresh');
@@ -227,13 +228,16 @@ class Halaman extends CI_Controller
     echo json_encode($msg);
   }
   
-  public function survey() {
-    $data = [
-      'title' => 'BKPPD | Kotak Survey Kepuasan',
-      'mf_beranda' => $this->mf_beranda->get_identitas()
-    ];
-
-    $this->load->view('Frontend/v1/pages/h_survey', $data);
+  public function closed() {
+    if($this->skm->skm_periode()->row()->status === 'ON'):
+      redirect(base_url('survei'));
+    else:
+      $data = [
+        'title' => 'BKPPD Balangan - Kotak Survey Kepuasan Masyarakat',
+        'mf_beranda' => $this->mf_beranda->get_identitas()
+      ];
+      $this->load->view('Frontend/v1/pages/h_survei_closed', $data);
+    endif;
   }
 
   public function saran() {
