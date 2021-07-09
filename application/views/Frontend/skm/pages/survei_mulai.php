@@ -2,7 +2,7 @@
 $card = isset($_GET['card']) ? $_GET['card'] : '';
 ?>
 <section class="survei-non-asn bg-light">
-	<div class="py-3 px-2 bg-primary bg-gradient text-center">
+	<div class="py-3 px-2 bg-success bg-gradient text-center">
 		<h3 class="text-light">Formulir Survei IKM</h3>
 	</div>
 	<?php  
@@ -99,7 +99,7 @@ $card = isset($_GET['card']) ? $_GET['card'] : '';
 				<hr>
 				<ul class="list-group list-group-flush rounded-3">
 					<?php foreach($pertanyaan->result() as $p): ?>
-					<li class="list-group-item py-4  border-light">
+					<li class="list-group-item py-4">
 						<p class="fw-bold user-select-none"><?= ucwords($p->jdl_pertanyaan) ?> ?</p>
 						<?php foreach($this->skm->skm_jawaban_pertanyaan($p->id)->result() as $j):  ?>
 						<div id="msg-check-<?= $j->fid_pertanyaan  ?>"></div>
