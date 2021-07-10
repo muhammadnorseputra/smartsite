@@ -32,7 +32,7 @@
                   data: _data,
                   dataType: 'json',
                   beforeSend: function() {
-                      $('button[type="submit"]').html('Loading ...');
+                      $('button[type="submit"]').html('<i class="fa fa-spin fa-spinner"></i> Loading ...');
                   },
                   success: suksesLogin,
                   error: errorLogin,

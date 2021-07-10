@@ -1,4 +1,4 @@
-<h4 class="px-3 py-4 m-0 border-bottom border-light animated fadeIn">Tabel Galeri <a href="<?php echo base_url('frontend/v1/album/new_album') ?>" title="Buat Album Baru" data-toggle="tooltip" class="btn btn-sm btn-primary rounded-circle float-right"><i class="fas fa-plus"></i></a></h4>
+<h4 class="px-3 py-4 m-0 border-bottom border-light animated fadeIn">Tabel Galeri <a href="<?php echo base_url('frontend/v1/album/new_album') ?>" title="Buat Album Baru" data-toggle="tooltip" class="btn btn-sm btn-primary rounded-circle border-0 shadow float-right"><i class="fas fa-plus"></i></a></h4>
 <div class="table-responsive animated fadeIn">
 	<table data-id="<?= $username ?>" class="table table-borderless table-condensed display" id="table-postingan">
 		<thead class="thead-light">

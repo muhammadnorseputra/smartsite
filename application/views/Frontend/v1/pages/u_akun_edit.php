@@ -1,7 +1,9 @@
-<section class="hero">
+<section class="hero py-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 my-5 pt-4 text-left pb-3">
+      <div class="col-md-8 offset-md-1 my-5 pt-4 text-left pb-3">
+      	<h3>Edit Profile</h3>
+      	<div class="text-white">Edit your profile identity</div>
       </div>
     </div>
   </div>

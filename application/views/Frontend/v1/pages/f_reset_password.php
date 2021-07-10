@@ -7,7 +7,7 @@
 		<link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
 		<!-- Custome -->
 		<link rel="stylesheet" href="<?= base_url('assets/css/f_login.css') ?>">
-		<title>Portal | Reset Password</title>
+		<title>Portal - Reset Password</title>
 	</head>
 	<body>
 		<div id="content2">
@@ -44,7 +44,6 @@
 							
 						</div>
 					</div>
-					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content"></div>
 				</div>
 			</div>
 		</section>

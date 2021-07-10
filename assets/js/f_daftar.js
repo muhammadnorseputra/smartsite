@@ -15,10 +15,10 @@ $(document).ready(function() {
     $.validate({
         form: '#form_daftar',
         lang: 'en',
-        modules: 'toggleDisabled, date, security, html5, file, sanitize',
-        disabledFormFilter: 'form.toggle-disabled',
+        modules: 'date, security, html5, file, sanitize',
+        // disabledFormFilter: 'form.toggle-disabled',
         showErrorDialogs: true,
-        validateOnEvent: true,
+        // validateOnEvent: true,
         onError: function($form) {
             $('#content2').notifyModal({
                 duration: 2500,

@@ -37,10 +37,10 @@
 							</div>
 							<div class="form-group my-4">
 								<label class="mb-2 d-block" for="password">
-									Password  <a href="<?= base_url('lupa_password') ?>" class="small float-right">(Lupa sandi?)</a>
+									Password
 								</label>
 								<input type="password" autocomplete="off" class="form-control form-control-lg" name="password" id="password-field" placeholder="Password"  required="required">
-								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+								<span toggle="#password-field" class="fas fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 							
 								<?php
@@ -67,6 +67,7 @@
 									</div>
 								</div>
 							<button type="submit" class="btn btn-success btn-block shadow-lg btn-lg mb-4"><i class="fas fa-lock mr-2"></i> Log In</button>
+							<a href="<?= base_url('lupa_password') ?>" class="text-primary">Saya lupa password?</a>
 							<?= form_close(); ?>
 							<div class="d-block d-md-none">
 								<a href="<?= base_url() ?>" class="btn btn-block btn-default text-muted"><i class="fas fa-arrow-left mr-4"></i>Back to beranda</a>
@@ -86,8 +87,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content">
-						<div class="d-flex justify-content-end mt-md-2" id="navSimple">
+					<div class="col-7 d-none d-sm-block d-md-block shadow-sm d-xl-block bg-light">
+						<div class="d-flex justify-content-end mt-md-2 shadow bg-success rounded-left" id="navSimple">
 							<div>
 								<a href="<?= base_url('beranda') ?>" class="btn text-white btn-link">
 									<i class="fas fa-home"></i> <br> Beranda
@@ -103,7 +104,17 @@
 								</a>
 							</div>
 						</div>
-						
+						<div class="text-center h-100 d-flex justify-content-center align-items-center">
+								<div>
+									<img class="img-fluid w-75" src="<?= base_url('assets/images/bg/example-1.svg') ?>" alt="Registered Userportal - BKPPD BALANGAN">
+									<div class="my-3">
+										<h3 class="text-success mb-3">Masukan Kredensial Akun Yang Terdaftar</h3>
+										<p class="text-muted lead">
+											Silahkan masukan Email & Password yang telah kamu daftarkan sebelumnya.
+										</p>
+									</div>
+								</div>
+						</div>
 					</div>
 				</div>
 			</div>

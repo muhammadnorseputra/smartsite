@@ -1,5 +1,5 @@
 <h5 class="px-3 py-4 border-bottom border-light">
-	<a id="btn-add" href="<?= base_url('frontend/v1/submenu/add') ?>" title="Buat submenu baru" data-toggle="tooltip" class="btn btn-sm btn-primary rounded-circle float-right"><i class="fas fa-plus"></i></a>
+	<a id="btn-add" href="<?= base_url('frontend/v1/submenu/add') ?>" title="Buat submenu baru" data-toggle="tooltip" class="btn btn-sm btn-primary shadow rounded-circle rounded-circle float-right"><i class="fas fa-plus"></i></a>
 Submenu 
 </h5>
 <div class="table-responsive px-3 pb-3">

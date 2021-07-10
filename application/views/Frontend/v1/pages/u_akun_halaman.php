@@ -1,7 +1,7 @@
-<h5 class="px-3 py-4 border-bottom border-light">
-	<a href="<?= base_url('frontend/v1/halaman/halamanstatis/add') ?>" title="Buat Halaman Statis" data-toggle="tooltip" class="btn btn-sm btn-primary rounded-circle float-right"><i class="fas fa-plus"></i></a>
+<h4 class="px-3 py-4 border-bottom border-light animated fadeIn">
+	<a href="<?= base_url('frontend/v1/halaman/halamanstatis/add') ?>" title="Buat Halaman Statis" data-toggle="tooltip" class="btn btn-sm btn-primary border-0 shadow rounded-circle float-right"><i class="fas fa-plus"></i></a>
 Tabel Halaman 
-</h5>
+</h4>
 
 <div class="table-responsive my-2 p-3">
 	<table data-id="<?= $id_user ?>" class="table table-condensed table-borderless table-striped display" id="table-halamanstatis">

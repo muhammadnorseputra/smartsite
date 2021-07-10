@@ -26,13 +26,13 @@
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="210"/>'; ?>
 							</div>
 							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Registered</h3> <?= $this->session->userdata('user_portal_log')['nama_panggilan'] ?>
-							<?= form_open_multipart(base_url('frontend/v1/daftar/send'), ['id' => 'form_daftar', 'class' => 'toggle-disabled'], ['session_register' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
+							<?= form_open_multipart(base_url('frontend/v1/daftar/send'), ['id' => 'form_daftar'], ['session_register' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
 							<div class="form-group my-5 d-flex justify-content-around align-items-center flex-column flex-lg-row">
 								<img src="<?= base_url('assets/images/no-profile-picture.jpg'); ?>" alt="pic" width="140" height="140" class="rounded-circle d-block border border-secondary p-1 photo_pic mx-auto">
 								<div class="ml-5">
 								<input name="photo_pic"
 								type="file"
-								data-validation-event="blur"
+								data-validation-event="change"
 								data-validation="dimension mime size"
 								data-validation-allowing="jpg,png"
 								data-validation-max-size="1M"
@@ -138,8 +138,9 @@
 								data-validation-length="11-12"
 								required="required">
 							</div>
-							<div class="form-group border-top">
-
+							<div class="p-3 bg-light rounded shadow border-top border-bottom border-danger">
+							<span class="small text-info">Isi Email & Password sebagai kredinsial akun anda, digunakan untuk masuk ke sistem userportal.</span> <br>
+							<div class="form-group">
 								<label for="email" class="font-weight-bold pt-3">Email</label>
 								<div class="input-group my-3">
 									<div class="input-group-prepend">
@@ -172,8 +173,9 @@
 									data-validation-allowing="@_"
 									required="required">
 								</div>
-								<!-- <span class="small text-danger">Isi Email & Password sebagai kredinsial akun anda, digunakan untuk masuk ke sistem userportal.</span> <br> -->
+								
 							</div>
+						</div>
 							<div class="form-group">
 								<div class="row">
 									<div class="col">
@@ -227,15 +229,27 @@
 							<?= form_close(); ?>
 						</div>
 					</div>
-					<div class="col-7 d-none d-sm-block d-md-block d-xl-block" id="content">
-						<div class="d-flex justify-content-end mt-md-2" id="navSimple">
-							<div><a href="<?= base_url('beranda') ?>" class="btn btn-link text-white"><i class="fas fa-home"></i> <br> Beranda</a></div>
-							<div class="mx-3"><a href="<?= base_url('login_web'); ?>" class="btn btn-link text-white"><i class="fas fa-lock"></i> <br> Log in </a></div>
+					<div class="col-7 d-none shadow-sm d-sm-block d-md-block d-xl-block bg-primary">
+						<div class="d-flex justify-content-end mt-md-2 shadow bg-light rounded-left" id="navSimple">
+							<div><a href="<?= base_url('beranda') ?>" class="btn btn-link text-secondary"><i class="fas fa-home"></i> <br> Beranda</a></div>
+							<div class="mx-3"><a href="<?= base_url('login_web'); ?>" class="btn btn-link text-secondary"><i class="fas fa-lock"></i> <br> Log in </a></div>
 							<div class="text-center">
-								<a href="<?= base_url('userguide') ?>" class="btn btn-link text-white">
+								<a href="<?= base_url('userguide') ?>" class="btn btn-link text-secondary">
 									<i class="fas fa-book"></i> <br> User Guide
 								</a>
 							</div>
+						</div>
+						<div class="d-flex fixed-bottom justify-content-end mb-5 mr-5">
+						<div class="text-center">
+							<img class="img-fluid" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Registered Userportal - BKPPD BALANGAN">
+							<div class="my-3">
+								<h3 class="text-warning mb-3">Bergabung bersama kami !</h3>
+								<p class="text-white lead">
+									Anda akan mendapat bebrapa keuntungan dari layanan website kami.
+								</p>
+							</div>
+						</div>
+
 						</div>
 					</div>
 				</div>
