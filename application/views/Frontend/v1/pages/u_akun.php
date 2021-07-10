@@ -2,9 +2,17 @@
 <?php
 $d = $this->users->detail_user(encrypt_url($this->session->userdata('user_portal_log')['email']));
 $cek_verify = $d->email_verifikasi == 'Y' ? '<i class="fas text-success fa-check-circle"></i>' : '<br><span class="badge badge-warning">Belum verify</span>';
-$cek_role = $d->role === 'EDITOR' ? '<span class="badge badge-warning">Editor</span' : '<span class="badge badge-info">Tamu</span>';
+
 $desc = $d->deskripsi == '' ? '<button class="btn btn-default text-left text-secondary"><i class="fas fa-plus mr-2"></i> Tambahkan deskripsi tentang kamu disini.</button>' : $d->deskripsi;
 $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($d->id_user_portal)->photo_pic) . '';
+
+if($d->role === 'EDITOR'):
+    $cek_role = '<span class="badge badge-warning">Editor</span';
+  elseif($d->role === 'KONTRIBUTOR'):
+    $cek_role = '<span class="badge badge-info">Konstributor</span>';
+  else:
+    $cek_role = '<span class="badge badge-dark">Tamu</span>';
+endif;
 ?>
 <section class="hero mt-md-5">
   <div class="container py-2 py-md-5">
@@ -38,21 +46,25 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
                 <b class="d-block">Menu</b>
               </div>
             </div>
-            
             <div id="collapseOne" class="panel-collapse collapse show">
               <div class="panel-body">
               <a id="module" href="<?= base_url('frontend/v1/users/akunProfile'); ?>" class="border-0 rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light">
                 <i class="fas fa-tachometer-alt float-right" aria-hidden="true"></i> Dashboard
               </a>
+              <?php if($d->role == 'EDITOR'): ?>
               <a id="module" href="<?= base_url('frontend/v1/users/post/'.encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-newspaper float-right" aria-hidden="true"></i> Posts</a>
               <a id="module" href="<?= base_url('frontend/v1/users/halamanstatis/' . encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-pager float-right" aria-hidden="true"></i> Pages</a>
               <a id="module" href="<?= base_url('frontend/v1/users/halamanlink/'); ?>" class="border-0  rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-link float-right" aria-hidden="true"></i> Page Link</a>
               <a id="module" href="<?= base_url('frontend/v1/users/galeri/'); ?>" class="border-0  rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-images float-right" aria-hidden="true"></i> Photo Gallery</a>
               <a id="module" href="<?= base_url('frontend/v1/users/banner/'); ?>" class="border-0  rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-image float-right" aria-hidden="true"></i> Banner</a>
               <a id="module" href="<?= base_url('frontend/v1/users/submenu/'); ?>" class="border-0  rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-leaf float-right" aria-hidden="true"></i> Submenu</a>
+              <?php elseif($d->role == 'KONTRIBUTOR'): ?>
+              <a id="module" href="<?= base_url('frontend/v1/users/post/'.encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-newspaper float-right" aria-hidden="true"></i> Posts</a>
+              <?php endif; ?>
               </div>
             </div>
           </div>
+          <?php if($d->role == 'EDITOR'): ?>
           <!-- IKM -->
           <div class="panel panel-default mb-2">
             <div class="panel-heading">
@@ -83,6 +95,8 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
               </div>
             </div>
           </div>
+          <?php endif; ?>
+          <?php if(($d->email_verifikasi === 'Y') && ($d->role !== 'TAMU')): ?>
           <!-- LAINNYA -->
           <div class="panel panel-default mb-2">
             <div class="panel-heading">
@@ -98,6 +112,7 @@ $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userport
               </div>
             </div>
           </div>
+          <?php endif; ?>
         </div>
        
       </div>

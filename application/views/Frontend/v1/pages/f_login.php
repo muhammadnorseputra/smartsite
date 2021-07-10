@@ -6,10 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="keywords" content="LOGIN - BKPPD BALANGAN">
 		<meta name="description" content="LOGIN USERPORTAL - BKPPD BALANGAN">
+		
 		<link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
 		<!-- Custome -->
 		<link rel="stylesheet" href="<?= base_url('assets/css/f_login.css') ?>">
-		<link rel="stylesheet" href="<?= base_url('bower_components/jquery-form-validator/form-validator/theme-default.min.css') ?>">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/><link rel="stylesheet" href="<?= base_url('bower_components/jquery-form-validator/form-validator/theme-default.min.css') ?>">
 		<title>Portal - Log In</title>
 	</head>
 	<body>
