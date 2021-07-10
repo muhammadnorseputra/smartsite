@@ -18,6 +18,7 @@ $(document).ready(function() {
         modules: 'toggleDisabled, date, security, html5, file, sanitize',
         disabledFormFilter: 'form.toggle-disabled',
         showErrorDialogs: true,
+        validateOnEvent: true,
         onError: function($form) {
             $('#content2').notifyModal({
                 duration: 2500,

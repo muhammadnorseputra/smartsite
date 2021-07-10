@@ -5,9 +5,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
+		<meta name="keywords" content="Registered - BKPPD BALANGAN">
+		<meta name="description" content="Registered Userportal - BKPPD BALANGAN">
 		<!-- Custome -->
 		<link rel="stylesheet" href="<?= base_url('assets/css/f_daftar.css') ?>">
-		<title>Portal | Registered</title>
+		<link rel="stylesheet" href="<?= base_url('bower_components/jquery-form-validator/form-validator/theme-default.min.css') ?>">
+		<link rel="stylesheet" href="<?= base_url('assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.css') ?>">
+		<title>Portal - Registered</title>
 	</head>
 	<body>
 		<div id="content2">
@@ -23,25 +27,29 @@
 							</div>
 							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Registered</h3> <?= $this->session->userdata('user_portal_log')['nama_panggilan'] ?>
 							<?= form_open_multipart(base_url('frontend/v1/daftar/send'), ['id' => 'form_daftar', 'class' => 'toggle-disabled'], ['session_register' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
-							<div class="form-group my-5 text-center">
-								<img src="<?= base_url('assets/images/no-profile-picture.jpg'); ?>" alt="pic" width="160" height="160" class="rounded-circle d-block border border-info p-1 mb-3 photo_pic mx-auto">
+							<div class="form-group my-5 d-flex justify-content-around align-items-center flex-column flex-lg-row">
+								<img src="<?= base_url('assets/images/no-profile-picture.jpg'); ?>" alt="pic" width="140" height="140" class="rounded-circle d-block border border-secondary p-1 photo_pic mx-auto">
+								<div class="ml-5">
 								<input name="photo_pic"
 								type="file"
-								data-validation="mime size"
-								data-validation-allowing="jpg"
-								data-validation-max-size="2M"
+								data-validation-event="blur"
+								data-validation="dimension mime size"
+								data-validation-allowing="jpg,png"
+								data-validation-max-size="1M"
+								data-validation-dimension="200x217-300x326"
 								required="required">
 								
-								<small id="customFile" class="form-text text-muted">
-								Upload file photo.
-								</small>
+								<span id="customFile" class="form-text text-muted small">
+								Upload photo profile.<br> min: 200x217 (px) | max: 300x326 (px)  
+								</span>
+								</div>
 							</div>
 							<div class="form-group">
 								<label for="email" class="font-weight-bold">Nama Lengkap</label>
 								<input name="nama_lengkap"
 								id="nama_lengkap"
 								type="text"
-								class="form-control my-3"
+								class="form-control  form-control-lg my-3"
 								placeholder="Nama Lengkap"
 								data-validation="alphanumeric"
 								data-validation-allowing=". '"
@@ -54,7 +62,7 @@
 								<input name="nama_pangilan"
 								id="nama_pangilan"
 								type="text"
-								class="form-control my-3"
+								class="form-control  form-control-lg my-3"
 								placeholder="Nama panggilan kamu"
 								data-validation="custom,length"
 								data-sanitize="trim lower strip"
@@ -69,7 +77,7 @@
 									<input name="tanggal_lahir"
 									id="tl"
 									type="text"
-									class="form-control my-3"
+									class="form-control  form-control-lg my-3"
 									placeholder="Tanggal lahir"
 									data-validation="date"
 									data-validation-format="dd/mm/yyyy"
@@ -83,7 +91,7 @@
 								</label>
 								<textarea name="alamat"
 								placeholder="Alamat sekarang ..."
-								class="form-control my-3"
+								class="form-control  form-control-lg my-3"
 								id="alamat"
 								data-validation="length"
 								data-validation-length="min5"
@@ -93,7 +101,7 @@
 							<div class="form-group">
 								<label for="pekerjaan" class="font-weight-bold">Pekerjaan <br> <span class="small text-secondary">Deskripsikan pekerjaan anda</span></label>
 								<textarea name="pekerjaan"
-								class="form-control my-3"
+								class="form-control  form-control-lg my-3"
 								id="pekerjaan"
 								data-validation="length"
 								data-validation-length="min5"
@@ -102,7 +110,7 @@
 							</div>
 							<div class="form-group">
 								<label for="pendidikan" class="font-weight-bold">Pendidikan Terkahir</label>
-								<select class="custom-select my-3" name="pendidikan" id="pendidikan" required="required">
+								<select class="custom-select form-control-lg my-3" name="pendidikan" id="pendidikan" required="required">
 									<option value="" selected>-- Pilih Pendidikan --</option>
 									<option value="SD">SD</option>
 									<option value="SMP">SMP</option>
@@ -123,7 +131,7 @@
 								<input name="nohp"
 								type="text"
 								id="nohp"
-								class="form-control my-3"
+								class="form-control  form-control-lg my-3"
 								aria-describedby="nohpHelpBlock"
 								data-validation-help="Masukan nohp / wa tanpa mengunakan +62.&nbsp; Contoh: 08215181****"
 								data-validation="number length"
@@ -131,6 +139,7 @@
 								required="required">
 							</div>
 							<div class="form-group border-top">
+
 								<label for="email" class="font-weight-bold pt-3">Email</label>
 								<div class="input-group my-3">
 									<div class="input-group-prepend">
@@ -139,7 +148,7 @@
 									<input name="email"
 									id="email"
 									type="email"
-									class="form-control"
+									class="form-control  form-control-lg"
 									data-validation="email,server"
 									data-sanitize="trim lower"
 									placeholder="mail@website.com"
@@ -157,18 +166,19 @@
 									<input name="password"
 									id="password"
 									type="password"
-									class="form-control"
+									class="form-control  form-control-lg"
 									placeholder="Password"
 									data-validation="alphanumeric"
 									data-validation-allowing="@_"
 									required="required">
 								</div>
+								<!-- <span class="small text-danger">Isi Email & Password sebagai kredinsial akun anda, digunakan untuk masuk ke sistem userportal.</span> <br> -->
 							</div>
 							<div class="form-group">
 								<div class="row">
 									<div class="col">
-										<label class="font-weight-bold pb-3 pt-3 border-top">Upload KTP
-											<br> <span class="small text-danger">dengan menupload file KTP, menyatakan bahwah anda bersetuju berkontribusi dengan kami serta tunduk dengan aturan yang telah ditetapkan.</span>
+										<label class="font-weight-bold pb-3 pt-3 border-top">Upload Kartu Identitas
+											<br> <span class="small text-danger">Silahkan Upload file kartu identitas anda seperti KTP/SIM/PASPORT/Sejenisnya sebagai validasi identity user.</span>
 										</label>
 										<img src="<?= base_url('assets/images/noimage.gif'); ?>" alt="pic" width="100%" class="photo_ktp d-block mx-auto border border-info p-1 mb-3">
 										<input name="photo_ktp"
@@ -178,7 +188,7 @@
 										data-validation-max-size="2M"
 										required="required">
 										<small id="customFile" class="form-text text-muted">
-										Upload file KTP.
+										Upload Kartu Identitas.
 										</small>
 									</div>
 								</div>
@@ -194,17 +204,25 @@
 							<p class="mb-2">
 								Berapa hasil penjumlahan dari <strong><?= $val_1 ?> + <?= $val_2 ?></strong> ?
 							</p>
+							<span id="check-capcha"></span>
 							<div class="row">
-								<div class="form-group col-6">
+								<div class="form-group col-4">
 									<div class="input-group mb-2">
 										<div class="input-group-prepend">
 											<div class="input-group-text"><i class="fas fa-key"></i></div>
 										</div>
-										<input class="form-control" name="captcha" data-validation="spamcheck"
+										<input class="form-control  form-control-lg" name="captcha" data-validation-error-msg-container="#check-capcha" data-validation="spamcheck"
 										data-validation-captcha="<?= ($val_1 + $val_2) ?>"/>
 									</div>
 								</div>
 							</div>
+							<div class="form-group">
+								<div class="form-check form-check-inline align-items-start custom-control custom-checkbox">
+								  <input class="form-check-input mt-1 mr-2 custom-control-input" name="disclimer" type="checkbox" id="inlineCheckbox1" required="required" data-validation-error-msg-container="#check-disclimer">
+								  <label class="form-check-label custom-control-label small" for="inlineCheckbox1">Saya benar-benar memberikan data yang valid dan mematuhi segala peraturan dan ketentuan yang diberikan.</label>
+								</div>
+								<span id="check-disclimer"></span>
+							</div>	
 							<button type="submit" class="btn btn-lg btn-success btn-block mb-5"><i class="fas fa-check mr-2"></i> Daftar</button>
 							<?= form_close(); ?>
 						</div>

@@ -4,10 +4,13 @@
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="keywords" content="LOGIN - BKPPD BALANGAN">
+		<meta name="description" content="LOGIN USERPORTAL - BKPPD BALANGAN">
 		<link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
 		<!-- Custome -->
 		<link rel="stylesheet" href="<?= base_url('assets/css/f_login.css') ?>">
-		<title>Portal | Log In</title>
+		<link rel="stylesheet" href="<?= base_url('bower_components/jquery-form-validator/form-validator/theme-default.min.css') ?>">
+		<title>Portal - Log In</title>
 	</head>
 	<body>
 		<div id="content2">
@@ -30,13 +33,13 @@
 							<?= form_open(base_url('frontend/v1/users/cek_akun'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="email">Email</label>
-								<input type="email" data-sanitize="trim,lower" class="form-control form-control-lg mb-2 shadow-sm rounded-0" name="email" id="email" placeholder="mail@website.com" required="required">
+								<input type="email" data-sanitize="trim,lower" class="form-control form-control-lg mb-2" name="email" id="email" placeholder="mail@website.com" required="required">
 							</div>
 							<div class="form-group my-4">
 								<label class="mb-2 d-block" for="password">
 									Password  <a href="<?= base_url('lupa_password') ?>" class="small float-right">(Lupa sandi?)</a>
 								</label>
-								<input type="password" autocomplete="off" class="form-control form-control-lg mb-2 shadow-sm  rounded-0" name="password" id="password-field" placeholder="Password"  required="required">
+								<input type="password" autocomplete="off" class="form-control form-control-lg" name="password" id="password-field" placeholder="Password"  required="required">
 								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 							
@@ -50,18 +53,20 @@
 								<p class="mb-2">
 									Berapa hasil penjumlahan dari <strong><?= $val_1 ?> + <?= $val_2 ?></strong> ?
 								</p>
+								<span id="check-capcha"></span>
 								<div class="row">
-									<div class="form-group col-8">
+									<div class="form-group col-4">
 										<div class="input-group mb-2">
 											<div class="input-group-prepend">
 												<div class="input-group-text rounded-0"><i class="fas fa-key"></i></div>
 											</div>
 											<input class="form-control shadow-sm rounded-0" name="captcha" data-validation="spamcheck"
+											data-validation-error-msg-container="#check-capcha"
 											data-validation-captcha="<?= ($val_1 + $val_2) ?>"/>
 										</div>
 									</div>
 								</div>
-							<button type="submit" class="btn btn-success btn-block shadow-lg btn-lg rounded-0 mb-4"><i class="fas fa-lock mr-2"></i> Log In</button>
+							<button type="submit" class="btn btn-success btn-block shadow-lg btn-lg mb-4"><i class="fas fa-lock mr-2"></i> Log In</button>
 							<?= form_close(); ?>
 							<div class="d-block d-md-none">
 								<a href="<?= base_url() ?>" class="btn btn-block btn-default text-muted"><i class="fas fa-arrow-left mr-4"></i>Back to beranda</a>
