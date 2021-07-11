@@ -18,6 +18,7 @@ class Users extends CI_Controller {
         } else {
             redirect(base_url('under-construction'),'refresh');
         }
+
 	}
 	
 	public function user_terdaftar()
@@ -63,6 +64,8 @@ class Users extends CI_Controller {
 		];
         if($this->session->userdata('user_portal_log')['online'] == 'OFF' || empty($this->session->userdata('user_portal_log')['online'])) {
         	$this->load->view('Frontend/v1/pages/f_login', $data);
+        	$this->users->status_online('t_users_portal', 
+    		['email' => encrypt_url($this->session->userdata('user_portal_log')['email'])],['online' => 'OFF']);
         } else {
     		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('user_portal_log')['nama_panggilan'].'/'.encrypt_url($this->session->userdata('user_portal_log')['nohp'])),'refresh');
     	}
@@ -166,7 +169,7 @@ class Users extends CI_Controller {
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'data' => ['id_user' => $iduserportal, 'token' => decrypt_url($tglnow)]
 		];
-		if($this->session->userdata('user_portal_log')['online'] == 'OFF' || empty($this->session->set_userdata	('user_portal_log')['online'])) {
+		if($this->session->userdata('user_portal_log')['online'] == 'OFF' || empty($this->session->userdata('user_portal_log')['online'])) {
         	$this->load->view('Frontend/v1/pages/f_reset_password', $data);
         } else {
     		redirect(base_url("frontend/v1/users/akun/".$this->session->userdata('user_portal_log')['nama_panggilan'].'/'.encrypt_url($this->session->userdata('user_portal_log')['nohp'])),'refresh');
@@ -208,7 +211,7 @@ class Users extends CI_Controller {
 			$cek = $this->users->cek_login("t_users_portal", $where);
 			if($cek->num_rows() > 0){
 				
-				if($this->users->getuserportalbyemail($where['email'])->row()->online === 'OFF') {
+				if($this->users->getuserportalbyemail($where['email'])->row()->online === 'OFF' && empty($this->session->userdata('user_portal_log')['email'])) {
 				$q = $cek->row();
 				$data_session = array(
 					'nama_lengkap' => decrypt_url($q->nama_lengkap),
@@ -227,7 +230,7 @@ class Users extends CI_Controller {
 					'pesan' => "<div class='d-block mx-auto text-center'>Login berhasil, akun ditemukan ...</div>", 
 					'redirect' => base_url("frontend/v1/users/akun/".decrypt_url($q->nama_panggilan)).'/'.$q->nohp);
 				} else {
-					$msg = array('valid' => false, 'pesan' => 'Satu akun hanya untuk satu browser.', 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
+					$msg = array('valid' => false, 'pesan' => 'Akun juga login di device lain.', 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
 					$this->users->status_online('t_users_portal', ['email' => $where['email']], ['online' => 'OFF']);
 					$this->session->unset_userdata('user_portal_log');
 				}
@@ -720,7 +723,7 @@ class Users extends CI_Controller {
     		['email' => encrypt_url($this->session->userdata('user_portal_log')['email'])],['online' => 'OFF']);
 		$this->session->unset_userdata('user_portal_log');
     	// $this->session->sess_destroy('user_portal_log');
-		redirect(base_url('beranda'));
+		redirect(base_url('login_web'));
     }
 }
 
