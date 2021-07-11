@@ -15,9 +15,10 @@ if($d->role === 'EDITOR'):
 endif;
 ?>
 <section class="hero mt-md-5">
-  <div class="container py-2 py-md-5">
-    <div class="col-md-8 pt-md-5">
-      <div class="d-flex justify-content-start align-items-center">
+  <div class="container pb-5 py-md-5">
+    <div class="row">
+    <div class="col-10 col-md-8 my-3 my-md-0 pt-md-5">
+      <div class="d-flex justify-content-start align-items-md-center align-items-start">
         <img src="<?= $photo ?>" class="img-fluid rounded-circle shadow-sm w-10">
         <div class="ml-3 font-weight-bold text-dark">
           <h4>Halo, <?= $this->session->userdata('user_portal_log')['nama_panggilan']; ?> welcome back.</h4>
@@ -25,13 +26,20 @@ endif;
             <?= $this->session->userdata('user_portal_log')['email']." ".$cek_verify ?>
           </div>
           <!-- <div class="small text-white">Joined On: <?= longdate_indo($d->tanggal_bergabung); ?></div> -->
-          <div><?= $cek_role ?></div>
+          <span><?= $cek_role ?></span>
         </div>
       </div>
+    </div>
+    <div class="col-2 col-md-4">
+      <div class="h-100 d-flex justify-content-end align-items-end">
+          <a class="mb-4 animated pulse infinite" href="<?= base_url('kotak_saran') ?>" data-toggle="tooltip" data-placement="top" title="Bantu kami dalam menupdate UI & UX dengan memberikan saran kamu."><i class="fas fa-bell fa-2x"></i></a>
+      </div>
+    </div>
     </div>
   </div>
 </div>
 </section>
+
 <section>
 <div class="container bg-white mb-4">
   <div class="row">
@@ -118,7 +126,7 @@ endif;
       </div>
     </div>
     <div class="col-md-9 px-md-0 order-first order-md-last mt--7 bg-white rounded shadow">
-      <div class="alert alert-warning alert-dismissible fade show mb-0 rounded-top" role="alert">
+      <div class="alert alert-warning alert-dismissible fade show mb-0 rounded-top mt-3 mt-md-0" role="alert">
         <strong>For Userportal</strong>, mulai tanggal 10 juli 2021 kami akan terus mengupdate UI & UX Website
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>

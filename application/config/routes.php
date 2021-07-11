@@ -126,6 +126,7 @@ $route['rss.xml'] = 'frontend/v1/rssFeed';
 $route['api-skm'] = 'frontend/v1/apiSkm';
 $route['api-skm/(:any)'] = 'frontend/v1/apiSkm/$1';
 
+// USERPORTAL
 
 /*
 * @BAWAAN CODEIGNITER

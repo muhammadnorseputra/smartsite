@@ -81,13 +81,13 @@ content: "";
 .subline{
   position:absolute;
   background:$green;
-  height:4.5px; 
+  height:3.5px; 
 }
 .inc{
-  animation: increase 2.5s infinite;
+  animation: increase 1.5s infinite;
 }
 .dec{
-  animation: decrease 2.5s 0.5s infinite;
+  animation: decrease 1.5s 0.5s infinite;
 }
 .logo-loading {
 	position: fixed;

@@ -10,7 +10,7 @@
 		<link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
 		<!-- Custome -->
 		<link rel="stylesheet" href="<?= base_url('assets/css/f_login.css') ?>">
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/><link rel="stylesheet" href="<?= base_url('bower_components/jquery-form-validator/form-validator/theme-default.min.css') ?>">
+		<link rel="stylesheet" href="<?= base_url('bower_components/jquery-form-validator/form-validator/theme-default.min.css') ?>">
 		<title>Portal - Log In</title>
 	</head>
 	<body>

@@ -285,7 +285,7 @@ class M_f_post extends CI_Model {
     // get all postings
     function getPosts($limit = NULL)
     {
-        return $this->db->limit($limit)->get_where('t_berita', ['type' => 'BERITA']);
+        return $this->db->order_by('id_berita', 'desc')->limit($limit)->get_where('t_berita', ['type' => 'BERITA']);
     }
 }
 

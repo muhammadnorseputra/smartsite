@@ -25,6 +25,7 @@
 						<label for="category">Ketegori Saran <span class="text-danger">*</span></label>
 						<select class="rounded-0 shadow-sm form-control-lg form-control" name="category" id="category">
 							<option value="">-- Pilih Kategori --</option>
+							<option value="fitur">Update UI & UX</option>
 							<option value="fitur">Fitur Website</option>
 							<option value="layanan">Layanan Website</option>
 							<option value="peforma">Peforma</option>
