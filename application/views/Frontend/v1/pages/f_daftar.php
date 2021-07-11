@@ -229,7 +229,7 @@
 							<?= form_close(); ?>
 						</div>
 					</div>
-					<div class="col-7 d-none shadow-sm d-sm-block d-md-block d-xl-block bg-primary">
+					<div class="col-7 d-none shadow-sm d-sm-block d-md-block d-xl-block bg-light">
 						<div class="d-flex justify-content-end mt-md-2 shadow bg-light rounded-left" id="navSimple">
 							<div><a href="<?= base_url('beranda') ?>" class="btn btn-link text-secondary"><i class="fas fa-home"></i> <br> Beranda</a></div>
 							<div class="mx-3"><a href="<?= base_url('login_web'); ?>" class="btn btn-link text-secondary"><i class="fas fa-lock"></i> <br> Log in </a></div>
@@ -239,17 +239,15 @@
 								</a>
 							</div>
 						</div>
-						<div class="d-flex fixed-bottom justify-content-end mb-5 mr-5">
-						<div class="text-center">
+
+						<div class="position-fixed mt-5 text-center">
 							<img class="img-fluid" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Registered Userportal - BKPPD BALANGAN">
 							<div class="my-3">
-								<h3 class="text-warning mb-3">Bergabung bersama kami !</h3>
-								<p class="text-white lead">
+								<h3 class="text-dark mb-3">Bergabung bersama kami !</h3>
+								<p class="text-muted lead">
 									Anda akan mendapat bebrapa keuntungan dari layanan website kami.
 								</p>
 							</div>
-						</div>
-
 						</div>
 					</div>
 				</div>

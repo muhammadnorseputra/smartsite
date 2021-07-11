@@ -382,8 +382,8 @@ $config['encryption_key'] = sha1('bkppd_balangan');
 */
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
-$config['sess_expiration'] = 5000;
-$config['sess_expire_on_close'] = false;
+$config['sess_expiration'] = 1500;
+$config['sess_expire_on_close'] = true;
 $config['sess_save_path'] = null;
 $config['sess_match_ip'] = false;
 $config['sess_time_to_update'] = 300;

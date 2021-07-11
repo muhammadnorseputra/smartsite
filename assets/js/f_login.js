@@ -32,7 +32,7 @@
                   data: _data,
                   dataType: 'json',
                   beforeSend: function() {
-                      $('button[type="submit"]').html('<i class="fas fa-spin fa-spinner"></i> Loading ...');
+                      $('button[type="submit"]').html('<i class="fas fa-spin fa-spinner animated rotate infinite"></i> Loading ...');
                   },
                   success: suksesLogin,
                   error: errorLogin,
@@ -46,14 +46,14 @@
 
   function suksesLogin(response) {
       $('#content2').notifyModal({
-          duration: 1800,
-          placement: 'center',
+          duration: 2800,
+          placement: 'centerTop',
           overlay: true,
           type: 'success',
           icon: false,
           onLoad: function(el) {
               if (response.valid == true) {
-                  el.find(".content_inner").html(response.pesan);
+                  el.find(".content_inner").html(`${response.pesan}`);
               } else {
                   error_msg(response);
               }
@@ -72,7 +72,7 @@
           duration: 2500,
           placement: 'center',
           overlay: true,
-          type: 'dark',
+          type: 'notify',
           icon: false,
           onLoad: function(el) {
               el.find(".content_inner").html("Oppss! sepertinya ada kesalaah nih, coba reload browser kamu");
@@ -85,11 +85,11 @@
 
   function error_msg(msg) {
       $('#content2').notifyModal({
-          duration: 3500,
-          placement: 'center',
+          duration: 4500,
+          placement: 'centerTop',
           overlay: true,
-          type: 'danger',
-          icon: false,
+          type: 'alert',
+          icon: true,
           onLoad: function(el) {
               el.find(".content_inner").html(msg.pesan);
           },
