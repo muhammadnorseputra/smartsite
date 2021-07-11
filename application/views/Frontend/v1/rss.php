@@ -48,9 +48,9 @@
           <link><?php echo $posturl ?></link>
           <description>
             <?= htmlentities('<img src="'.$img.'" align="left" hspace="7" width="100">'); ?>
-            <![CDATA[<?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?>]]>
+            <![CDATA[<?= strip_only_tags(html_entity_decode($isi), '<p><b><img><code><label><i>') ?>]]>
           </description>
-          <content:encoded><?= strip_only_tags($isi, '<p><b><img><code><label><i>') ?></content:encoded>
+          <content:encoded><?= strip_only_tags(html_entity_decode($isi), '<p><b><img><code><label><i>') ?></content:encoded>
           <g:image_link><?= $img ?></g:image_link>
           <g:condition><?= $conditional ?></g:condition>
           <g:id><?= $id ?></g:id>
