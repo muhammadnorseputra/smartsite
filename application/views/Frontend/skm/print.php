@@ -31,7 +31,7 @@
           <td></td>
         </td>
         <td class="center" rowspan="6" width="150">
-          <img src="<?= base_url('assets/images/qr-code-ikm.png') ?>" alt="ikm-bkppd-balangan" width="100%">
+          <img src="<?= base_url('assets/images/ikm-bkppd-balangan.png') ?>" alt="ikm-bkppd-balangan" width="100%">
         </td>
       </tr>
       <tr>

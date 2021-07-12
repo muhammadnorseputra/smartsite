@@ -111,7 +111,7 @@
 <div class="container">
 <div class="row gap-5 py-5">
 	<div class="col-12 col-md-2 offset-md-2">
-		<img src="<?= base_url('assets/images/qr-code-ikm.png') ?>" class="img-fluid" alt="qr-code-ikm-bkppd-balangan">
+		<img src="<?= base_url('assets/images/ikm-bkppd-balangan.png') ?>" class="img-fluid" alt="qr-code-ikm-bkppd-balangan">
 	</div>
 	<div class="col-12 col-md-6">
 		<div class="fs-4 fw-bold text-success mb-2">Tinjau Perkembangan IKM</div>
