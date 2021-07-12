@@ -87,7 +87,7 @@ class Daftar extends CI_Controller
                     'tanggal_bergabung' => date('Y-m-d')
                 ];
                 // Configurasi Email
-                $from_email = 'muhammadnorseputra@gmail.com';
+                $from_email = 'bkppdbalangan@gmail.com';
                 $to_email = $this->input->post('email');
 
                 $config = array(
@@ -95,7 +95,7 @@ class Daftar extends CI_Controller
                         'smtp_host' => 'ssl://smtp.googlemail.com',
                         'smtp_port' => 465,
                         'smtp_user' => $from_email,
-                        'smtp_pass' => '@putrabungsu6',
+                        'smtp_pass' => 'rembulan123',
                         'mailtype' => 'html',
                         'charset' => 'iso-8859-1',
                 );

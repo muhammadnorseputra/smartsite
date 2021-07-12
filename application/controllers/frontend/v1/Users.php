@@ -95,7 +95,7 @@ class Users extends CI_Controller {
 		$db = $this->users->update_token('t_users_portal', ['token_verifikasi' => $num], ['email' => $email]);
 		// var_dump($data);
 		// Configurasi Email
-        $from_email = 'muhammadnorseputra@gmail.com';
+        $from_email = 'bkppdbalangan@gmail.com';
         $to_email = decrypt_url($email);
 
         $config = array(
@@ -103,7 +103,7 @@ class Users extends CI_Controller {
                 'smtp_host' => 'ssl://smtp.googlemail.com',
                 'smtp_port' => 465,
                 'smtp_user' => $from_email,
-                'smtp_pass' => '@putrabungsu6',
+                'smtp_pass' => 'rembulan123',
                 'mailtype' => 'html',
                 'charset' => 'iso-8859-1',
         );
