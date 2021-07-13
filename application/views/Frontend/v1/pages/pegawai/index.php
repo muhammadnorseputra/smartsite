@@ -66,6 +66,8 @@
 <script src="<?= base_url('bower_components/highcharts/highcharts-3d.js') ?>"></script>
 <script src="<?= base_url('bower_components/highcharts/modules/cylinder.js') ?>"></script>
 <script>
+$("#data_asn, #data_pns, #data_nonpns, #data_pensiun").html(`<div class="d-flex justify-content-center align-items-center"><div class="loader_small" style="width: 30px; height:30px"></div></div>`);
+
 $("#chart-jenkel, #chart-golru, #chart-tingpen, #chart-jenjab, #chart-eselon").html(`<div style="min-height: 50vh;" class="d-flex justify-content-center align-items-center"><div class="loader_small" style="width: 40px; height:40px"></div></div>`);
 
 $(document).ready(function () {
