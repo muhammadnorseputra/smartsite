@@ -2,23 +2,29 @@ $(document).ready(function() {
 
     $.typeahead({
         input: '.js-nipnama',
-        minLength: 12,
-        maxLength: false,
+        minLength: 16,
+        maxLength: 18,
         order: "asc",
         maxItem: 1,
-        cache: false,
+        cache: true,
         offset: false,
         hint: true,
         searchOnFocus: true,
         dynamic: true,
-        delay: 500,
+        delay: 300,
         backdrop: {
             "background-color": "#000"
         },
         emptyTemplate: "Data PNS \"<b>{{query}}</b>\" tidak ditemukan ",
         debug: true,
         template: function(item) {
-            return `<span class='mr-3 pull-left'><img class='img-rounded' src='{{photo}}' width='30' alt='{{nama}}'></span> {{nama}} - {{nip}}`;
+            return `<div class='d-flex justify-content-start align-items-center'>
+                    <img class='rounded' src='{{photo}}' width='35' alt='{{nama}}'>
+                    <div class="small text-muted ml-3">
+                        {{nama}} <br> {{nip}}
+                    </div>
+                    </div> 
+                    `;
             // return `{{nip}} - {{nama}}`;
         },
         href: `${_uri}/frontend/v1/pegawai/detail?filter[query]={{nip}}`,

@@ -1,4 +1,4 @@
-<div class="px-3 pb-3 pt-2 shadow-lg mt--8 mb-5 bg-white rounded">
+<div class="px-3 pb-3 pt-2 shadow mt--8 mb-5 bg-white rounded">
     
 <div class="separator">
     <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-user-alt text-secondary mr-2"></i> Search PNS</span>
