@@ -3,7 +3,7 @@ $(document).ready(function() {
         // let value = $("input[name='cek_nipnik']").val();
         let value = $(this).val();
         $("#msg-asn-data").removeClass('text-success text-danger');
-        $.getJSON(`http://silka.bkppd-balangankab.info/api/filternipnik/${value}`, function(res) {
+        $.getJSON(`${_uri}/frontend/skm/skmIndex/getAsn/${value}`, function(res) {
             let r = res[0];
             console.log(res);
             if (value != '') {

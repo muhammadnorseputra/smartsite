@@ -12,6 +12,12 @@ class SkmIndex extends CI_Controller
         $this->periode_skr = $this->skm->skm_periode()->row()->id;
     }
 
+    public function getAsn($value)
+    {
+        $url = 'http://silka.bkppd-balangankab.info/api/filternipnik';
+        $api = api_client($url.'/'.$value);
+        echo json_encode($api);
+    }
     public function cekNipNik()
     {
         $response = array(
