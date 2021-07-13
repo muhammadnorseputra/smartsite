@@ -30,7 +30,7 @@
 				<div class="font-weight-bold py-2 pl-3 bg-warning text-dark rounded-top border">Non PNS</div>
 				<div class="m-3">
 					<h1 id="data_nonpns">0</h1>
-					<div class="text-muted small my-3">Non Jumlah PNS</div>
+					<div class="text-muted small my-3">Jumlah Non PNS</div>
 				</div>
 			</div>
 			<div class="col-6 col-md-4 col-lg-3 border px-0 rounded">
