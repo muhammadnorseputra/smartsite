@@ -28,7 +28,7 @@ $(document).ready(function() {
                 ajax: function(query) {
                     return {
                         type: "POST",
-                        url: "http://silka.bkppd-balangankab.info/api/filternipnama",
+                        url: `${_uri}/frontend/v1/pegawai/search`,
                         dataType: "json",
                         data: {
                             q: "{{query}}",

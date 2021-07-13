@@ -23,6 +23,12 @@ class Pegawai extends CI_Controller {
 
 		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
+	public function search(){
+		$q = $this->input->post('q');
+		$url = 'http://silka.bkppd-balangankab.info/api/filternipnama';
+		$api = api_client($url);
+		echo json_encode($api);
+	}
 	public function detail()
 	{
 		$data = [
