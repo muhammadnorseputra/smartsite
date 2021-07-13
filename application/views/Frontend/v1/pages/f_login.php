@@ -13,15 +13,33 @@
 		<link rel="stylesheet" href="<?= base_url('bower_components/jquery-form-validator/form-validator/theme-default.min.css') ?>">
 		<title>Portal - Log In</title>
 	</head>
-	<body>
+	<body class="overflow-hidden">
 		<div id="content2">
 		  <div class="content_inner"></div>
 		</div>
+		<nav class="mb-5">
+			<div class="d-flex justify-content-center border-bottom bg-white fixed-top">
+							<div>
+								<a href="<?= base_url('beranda') ?>" class="btn text-secondary btn-link">
+									<i class="fas fa-home"></i> <br> Beranda
+								</a>
+							</div>
+							<div class="mx-2">
+								<a href="<?= base_url('daftar'); ?>" class="btn text-secondary btn-link">
+									<i class="fas fa-user"></i> <br> Kontribusi/Mendaftar</a>
+							</div>
+							<div class="text-center">
+								<a href="<?= base_url('userguide') ?>" class="btn btn-link text-secondary">
+									<i class="fas fa-book"></i> <br> User Guide
+								</a>
+							</div>
+						</div>
+		</nav>
 		<section class="login">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-xs-12 col-md-4 offset-md-1" id="sidebar">
-						<div class="px-2 px-md-5 pt-4">
+					<div class="col-xs-12 col-md-4 offset-md-1 mt-3" id="sidebar">
+						<div class="px-3 px-md-5 py-2">
 							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="210"/>'; ?>
 							</div>
@@ -70,41 +88,9 @@
 							<button type="submit" class="btn btn-success btn-block shadow-lg btn-lg mb-4"><i class="fas fa-lock mr-2"></i> Log In</button>
 							<a href="<?= base_url('lupa_password') ?>" class="text-primary">Saya lupa password?</a>
 							<?= form_close(); ?>
-							<div class="d-block d-md-none">
-								<a href="<?= base_url() ?>" class="btn btn-block btn-default text-muted"><i class="fas fa-arrow-left mr-4"></i>Back to beranda</a>
-								<p class="py-1 bg-secondary my-3 text-center"></p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div>
-										<a href="<?= base_url('daftar'); ?>" class="btn btn-default text-primary">
-											<i class="fas fa-user"></i> <br> Mendaftar
-										</a>
-									</div>
-									<div>
-										<a href="<?= base_url('userguide') ?>" class="btn btn-default text-primary">
-											<i class="fas fa-book"></i> <br> User Guide
-										</a>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
-					<div class="col-7 d-none d-sm-block d-md-block shadow-sm d-xl-block bg-light">
-						<div class="d-flex justify-content-end mt-md-2 shadow bg-success rounded-left" id="navSimple">
-							<div>
-								<a href="<?= base_url('beranda') ?>" class="btn text-white btn-link">
-									<i class="fas fa-home"></i> <br> Beranda
-								</a>
-							</div>
-							<div class="mx-2">
-								<a href="<?= base_url('daftar'); ?>" class="btn text-white btn-link">
-									<i class="fas fa-user"></i> <br> Kontribusi/Mendaftar</a>
-							</div>
-							<div class="text-center">
-								<a href="<?= base_url('userguide') ?>" class="btn btn-link text-white">
-									<i class="fas fa-book"></i> <br> User Guide
-								</a>
-							</div>
-						</div>
+					<div class="col-7 d-none d-sm-block d-md-block border-left d-xl-block bg-light">
 						<div class="text-center h-100 d-flex justify-content-center align-items-center">
 								<div>
 									<img class="img-fluid w-75" src="<?= base_url('assets/images/bg/example-1.svg') ?>" alt="Registered Userportal - BKPPD BALANGAN">

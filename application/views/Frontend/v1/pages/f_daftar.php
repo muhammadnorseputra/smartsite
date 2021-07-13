@@ -13,14 +13,26 @@
 		<link rel="stylesheet" href="<?= base_url('assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.css') ?>">
 		<title>Portal - Registered</title>
 	</head>
-	<body>
+	<body class="overflow-hidden">
 		<div id="content2">
 			<div class="content_inner"></div>
 		</div>
+		<nav class="mb-5">
+			<div class="d-flex justify-content-center border-bottom bg-white fixed-top">
+							<div>
+								<a href="<?= base_url('beranda') ?>" class="btn btn-link text-secondary"><i class="fas fa-home"></i> <br> Beranda</a></div>
+							<div class="mx-3"><a href="<?= base_url('login_web'); ?>" class="btn btn-link text-secondary"><i class="fas fa-lock"></i> <br> Log in </a></div>
+							<div class="text-center">
+								<a href="<?= base_url('userguide') ?>" class="btn btn-link text-secondary">
+									<i class="fas fa-book"></i> <br> User Guide
+								</a>
+							</div>
+						</div>
+		</nav>
 		<section class="login">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-xs-12 col-md-4 offset-md-1" id="sidebar">
+					<div class="col-xs-12 col-md-5 offset-md-1 mt-3" id="sidebar">
 						<div class="px-2 px-md-5 pt-4">
 							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="210"/>'; ?>
@@ -229,18 +241,8 @@
 							<?= form_close(); ?>
 						</div>
 					</div>
-					<div class="col-7 d-none shadow-sm d-sm-block d-md-block d-xl-block bg-light">
-						<div class="d-flex justify-content-end mt-md-2 shadow bg-light rounded-left" id="navSimple">
-							<div><a href="<?= base_url('beranda') ?>" class="btn btn-link text-secondary"><i class="fas fa-home"></i> <br> Beranda</a></div>
-							<div class="mx-3"><a href="<?= base_url('login_web'); ?>" class="btn btn-link text-secondary"><i class="fas fa-lock"></i> <br> Log in </a></div>
-							<div class="text-center">
-								<a href="<?= base_url('userguide') ?>" class="btn btn-link text-secondary">
-									<i class="fas fa-book"></i> <br> User Guide
-								</a>
-							</div>
-						</div>
-
-						<div class="position-fixed mt-5 text-center">
+					<div class="col-6 d-none d-sm-block d-md-block d-xl-block border-left bg-white">
+						<div class="text-center d-flex justify-content-center align-items-center flex-column">
 							<img class="img-fluid" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Registered Userportal - BKPPD BALANGAN">
 							<div class="my-3">
 								<h3 class="text-dark mb-3">Bergabung bersama kami !</h3>

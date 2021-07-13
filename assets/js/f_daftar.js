@@ -45,7 +45,7 @@ $(document).ready(function() {
                 processData: false,
                 cache: false,
                 beforeSend: function() {
-                    $('button[type=submit]').text('Loading ...');
+                    $('button[type=submit]').text('<div class="d-flex justify-content-center align-items-center"><div style="width: 30px; height:30px;" class="loader_small"></div></div>');
                 },
                 dataType: 'json',
                 success: function(response) {

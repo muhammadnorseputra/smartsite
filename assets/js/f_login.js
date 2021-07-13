@@ -32,7 +32,7 @@
                   data: _data,
                   dataType: 'json',
                   beforeSend: function() {
-                      $('button[type="submit"]').html('<i class="fas fa-spin fa-spinner animated rotate infinite"></i> Loading ...');
+                      $('button[type="submit"]').html('<div class="d-flex justify-content-center align-items-center"><div style="width: 30px; height:30px;" class="loader_small"></div></div>');
                   },
                   success: suksesLogin,
                   error: errorLogin,
@@ -57,11 +57,11 @@
               } else {
                   error_msg(response);
               }
-              $('button[type="submit"]').html(`<i class="fas fa-lock mr-2"></i> Log In`);
           },
           onClose: function(el) {
               if (response.valid == true) {
                   window.location.href = response.redirect;
+                  $('button[type="submit"]').html(`<i class="fas fa-lock mr-2"></i> Log In`);
               }
           }
       });

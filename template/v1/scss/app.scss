@@ -42,6 +42,28 @@ section.hero {
 	// background-position: right top; 
 	// background-image: url('../../../assets/images/bg/bg-light.svg');
 }
+// Loading Small
+.loader_small {
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid teal;
+  
+/* Safari */
+width: 20px;
+  height: 20px;
+  -webkit-animation: spinIn 0.6s linear infinite; /* Safari */
+  animation: spinIn 0.6s linear infinite;
+}
+@-webkit-keyframes spinIn {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spinIn {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 // Loading Screen
 .page-slider {
 content: "";
