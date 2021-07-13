@@ -46,7 +46,7 @@
 						  <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
 						</svg>
 						<div class="small">Total Pengunjung</div>
-						<h3><span class="text-warning"><?= $this->mf_visitor->visitor_count()['jml_total_pengunjung']  ?></span> <span class="d-none d-md-block">Orang</span></h3>
+						<h3><span class="text-warning"><?= nominal($this->mf_visitor->visitor_count()['jml_total_pengunjung'])  ?></span> <span class="d-none d-md-block">Orang</span></h3>
 					</div>
 				</div>
 			</div>
@@ -77,6 +77,10 @@
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-white mr-2"></i></span>
+						<a target="_blank" href="https://sscasn.bkn.go.id/">SSCASN BKN</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-white mr-2"></i></span>
 						<a target="_blank" href="https://www.kemendagri.go.id/">Kementerian Dalam Negeri</a>
 					</li>
 					<li class="d-flex">
@@ -85,11 +89,11 @@
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-white mr-2"></i></span>
-						<a target="_blank" href="https://bkd.kalselprov.go.id/">BKD Provinsi Kalimantan Selatan</a>
+						<a target="_blank" href="https://bpsdm.kalselprov.go.id/">BPSDM Provinsi Kalimantan Selatan</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-white mr-2"></i></span>
-						<a target="_blank" href="https://bpsdm.kalselprov.go.id/">BPSDM Provinsi Kalimantan Selatan</a>
+						<a target="_blank" href="https://bkd.kalselprov.go.id/">BKD Provinsi Kalimantan Selatan</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-white mr-2"></i></span>

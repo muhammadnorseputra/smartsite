@@ -1,7 +1,7 @@
 <section class="hero py-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 offset-md-1 my-5 pt-4 text-left pb-3">
+      <div class="col-md-8 offset-md-1 my-md-5 pt-md-4 text-left pb-md-3 pb-5">
       	<h3>Edit Profile</h3>
       	<div class="text-white">Edit your profile identity</div>
       </div>
@@ -12,7 +12,7 @@
 	<div class="container mb-5">
 		<div class="row">
 			<div class="col-md-10 offset-md-1">
-				<div class="card mt-5 bg-white">
+				<div class="card mt-4 bg-white shadow border-0">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Identitas</h5>
 					</div>
@@ -39,7 +39,7 @@
 				</div>
 				<?= form_open_multipart(base_url('frontend/v1/users/update/'), ['id' => 'form_edit']); ?>
 				<input type="hidden" name="id" value="<?= encrypt_url($profile->id_user_portal) ?>">
-				<div class="card mt-3 bg-white">
+				<div class="card mt-5 bg-white shadow border-0">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Edit Profile</h5>
 					</div>
@@ -108,7 +108,7 @@
 					</div>
 				</div>
 
-				<div class="card my-3 bg-white">
+				<div class="card my-5 bg-white shadow border-0">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Deskripsi</h5>
 					</div>
@@ -120,7 +120,7 @@
 					</div>
 				</div>
 
-				<div class="card mb-3 bg-light">
+				<div class="card mb-3 border-0 shadow">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Informasi masuk</h5>
 					</div>
@@ -149,16 +149,26 @@
 						</div>
 					</div>
 				</div>
+
 				<button type="submit" id="save" class="btn btn-lg btn-primary">
 					<i class="fas fa-save mr-2"></i> Simpan perubahan
 				</button>
 				<button onclick="window.history.back(-1)" type="button" class="btn btn-link btn-lg">Batalkan</button>
 
-				<a href="<?= base_url('frontend/v1/users/hapus_akun/'.$id) ?>" onclick="return confirm('Apakah anda yakin akan menghapus akun?')" id="hapus_akun" type="button" class="btn btn-link btn-lg float-right text-danger">
-					<i class="fas fa-trash mr-2"></i> Hapus akun saya!</a>
-
-
+				
 				<?= form_close(); ?>
+				<div class="card mt-5 border-danger">
+					<div class="card-header border-danger bg-transparent p-4">
+						<h5 class="p-0 m-0 text-danger">Hapus Akun</h5>
+					</div>
+					<div class="card-body p-4">
+						<p class="text-muted">
+							Saya ingin menghapus akun, semua data yang saya buat akan ikut terhapus secara permanen.
+						</p>
+						<a href="<?= base_url('frontend/v1/users/hapus_akun/'.$id) ?>" onclick="return confirm('Apakah anda yakin akan menghapus akun?')" id="hapus_akun" type="button" class="btn btn-danger">
+						<i class="fas fa-trash mr-2"></i> Hapus akun saya!</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

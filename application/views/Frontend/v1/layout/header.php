@@ -1,5 +1,5 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar fixed-top navbar-expand-sm bg-white navbar-light d-none d-md-block d-lg-block">
+<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light d-none d-md-block d-lg-block">
 	<div class="container">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
 			<?php echo '<img src="data:image/jpeg;base64,' .base64_encode($mf_beranda->site_logo) . '" alt="BKPPD Kab. Balangan" width="150"/>'; ?>
@@ -15,6 +15,7 @@
 					$submenu = $this->mf_beranda->get_submenu($m->id_menu);
 					$submenu_jml = $this->mf_beranda->get_submenu_jml($m->id_menu);
 					if ($submenu_jml > 0) {
+					$skr = date('Y-m-d');
 				?>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle px-3 mx-1" href="#" id="navbarDropdown" role="button" style="background-color: <?= $m->color ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,26 +23,45 @@
 						<?= $m->nama_menu; ?>
 					</a>
 					<ul class="dropdown-menu animate slideIn" aria-labelledby="navbarDropdown">
-						<?php foreach ($submenu as $s) : ?>
+						<?php 
+							foreach ($submenu as $s) :
+							$create_submenu = substr($s->created_at,0,10); 
+							// $besok = date($create_submenu, strtotime("+1 day", strtotime(date('Y-m-d'))));
+						?>
 						<!-- Level 1 -->
 						<li>
-							<a class="dropdown-item py-md-2" href="<?= base_url($s->link_sub); ?>"><?= $s->nama_sub; ?>
+							<a class="dropdown-item py-md-2" href="<?= base_url($s->link_sub); ?>">
+								<?= $s->nama_sub; ?>
+								<?php if(($create_submenu === $skr)): ?>
+								<span class="badge badge-danger animated fadeIn infinite">
+									<span class="small">New</span>
+								</span>
+								<?php endif; ?>
 								<?php
 									if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0):
 								?>
-								<i class="float-right text-light font-weight-bold animated fadeIn fas fa-caret-right mt-1"></i>
+								<i class="float-right text-secondary font-weight-bold animated fadeIn fas fa-caret-right mt-1"></i>
 								<?php endif; ?>
 							</a>
 							<?php if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0): ?>
 							<!-- Level 2 -->
 							<ul class="submenu dropdown-menu animate slideIn">
-								<?php foreach ($this->mf_beranda->sub_submenu($s->idsub) as $key):?>
+								<?php 
+									foreach ($this->mf_beranda->sub_submenu($s->idsub) as $key):
+									$create_sub_submenu = substr($key->created_at,0,10); 
+								?>
 								<li>
-									<a class="dropdown-item py-md-2 px-2" href="<?= base_url($key->link_sub); ?>"> <?= $key->nama_sub ?>
+									<a class="dropdown-item py-md-2 px-2" href="<?= base_url($key->link_sub); ?>"> 
+										<?= $key->nama_sub ?>
+										<?php if(($create_sub_submenu == $skr)): ?>
+										<span class="badge badge-danger animated fadeIn infinite">
+											<span class="small">New</span>
+										</span>
+										<?php endif; ?>
 										<?php
 											if($this->mf_beranda->parent_submenu($key->idsub)->num_rows() > 0):
 										?>
-										<i class="float-right text-light font-weight-bold animated fadeIn fas fa-caret-right mt-1"></i>
+										<i class="float-right text-secondary font-weight-bold animated fadeIn fas fa-caret-right mt-1"></i>
 										<?php endif; ?>
 									</a>
 									<?php if($this->mf_beranda->parent_submenu($key->idsub)->num_rows() > 0): ?>
@@ -137,7 +157,7 @@
 			<a  class="btn shadow-sm btn-dark rounded border-0 py-2 px-4" href="<?= base_url('login_web'); ?>">
 				<i class="fas fa-lock mr-2"></i> Login
 			</a>
-			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-outline-none bg-white border-0 rounded ml-2" href="<?= base_url('daftar'); ?>">
+			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-outline-none border-0 rounded ml-2" href="<?= base_url('daftar'); ?>">
 				<i class="fas fa-user"></i>
 			</a>
 			<?php } ?>

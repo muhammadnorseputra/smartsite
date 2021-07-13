@@ -33,6 +33,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="waves"></div>
 </section>
 <!-- <div>
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 190"><path fill="#212529" fill-opacity="1" d="M0,192L26.7,165.3C53.3,139,107,85,160,53.3C213.3,21,267,11,320,10.7C373.3,11,427,21,480,42.7C533.3,64,587,96,640,106.7C693.3,117,747,107,800,90.7C853.3,75,907,53,960,58.7C1013.3,64,1067,96,1120,122.7C1173.3,149,1227,171,1280,176C1333.3,181,1387,171,1413,165.3L1440,160L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
@@ -52,7 +53,7 @@
 	<div class="row">
 		<div class="col">
 			<div class="card mb-5 bg-light me-n3 shadow-sm">
-				<div class="d-flex justify-content-center justify-content-lg-around align-items-center gap-3">
+				<div class="d-flex justify-content-center justify-content-start align-items-center gap-3">
 					<div>
 						<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-person-circle text-danger" viewBox="0 0 16 16">
 							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -73,7 +74,7 @@
 		</div>
 		<div class="col">
 			<div class="card mb-5 bg-light me-n3 shadow-sm">
-				<div class="d-flex justify-content-center justify-content-lg-around align-items-center gap-3">
+				<div class="d-flex justify-content-center justify-content-start align-items-center gap-3">
 					<div>
 						<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-journal-check text-warning" viewBox="0 0 16 16">
 							<path fill-rule="evenodd" d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
@@ -93,7 +94,7 @@
 		</div>
 		<div class="col">
 			<div class="card mb-5 bg-light me-n3 shadow-sm">
-				<div class="d-flex justify-content-center justify-content-lg-around align-items-center gap-3">
+				<div class="d-flex justify-content-center justify-content-start align-items-center gap-3">
 					<div>
 						<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-journals text-info" viewBox="0 0 16 16">
 							<path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2z"/>

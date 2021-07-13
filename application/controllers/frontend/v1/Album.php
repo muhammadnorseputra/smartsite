@@ -47,7 +47,7 @@ class Album extends CI_Controller {
 
 	public function detail($id)
 	{
-		if(empty($id):
+		if(empty($id)):
 			return redirect(base_url('album'),'refresh');
 		endif;
 

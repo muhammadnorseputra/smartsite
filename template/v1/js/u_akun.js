@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("a#module").on("click", function(e) {
+    $("a#module").unbind().bind("click", function(e) {
         e.preventDefault();
         let $this = $(this);
         let $url = $this.attr('href');

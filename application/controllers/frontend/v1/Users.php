@@ -211,7 +211,7 @@ class Users extends CI_Controller {
 			$cek = $this->users->cek_login("t_users_portal", $where);
 			if($cek->num_rows() > 0){
 				
-				if($this->users->getuserportalbyemail($where['email'])->row()->online === 'OFF' && empty($this->session->userdata('user_portal_log')['email'])) {
+				// if($this->users->getuserportalbyemail($where['email'])->row()->online === 'OFF' && empty($this->session->userdata('user_portal_log')['email'])) {
 				$q = $cek->row();
 				$data_session = array(
 					'nama_lengkap' => decrypt_url($q->nama_lengkap),
@@ -229,11 +229,11 @@ class Users extends CI_Controller {
 					$msg = array('valid' => true, 
 					'pesan' => "<div class='d-block mx-auto text-center'>Login berhasil, akun ditemukan ...</div>", 
 					'redirect' => base_url("frontend/v1/users/akun/".decrypt_url($q->nama_panggilan)).'/'.$q->nohp);
-				} else {
-					$msg = array('valid' => false, 'pesan' => 'Akun juga login di device lain.', 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
-					$this->users->status_online('t_users_portal', ['email' => $where['email']], ['online' => 'OFF']);
-					$this->session->unset_userdata('user_portal_log');
-				}
+				// } else {
+					// $msg = array('valid' => true, 'pesan' => 'Login Berhasil, akun juga login di device lain.', 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
+					// $this->users->status_online('t_users_portal', ['email' => $where['email']], ['online' => 'OFF']);
+					// $this->session->unset_userdata('user_portal_log');
+				// }
 			}else{
 				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar");
 			}
@@ -303,7 +303,7 @@ class Users extends CI_Controller {
 
 		public function ikm_periode() {
 			$data = [
-				'ikm_periode' => $this->ikm->ikm_periode()->result()
+				'ikm_tahun' => $this->ikm->ikm_tahun()->result()
 			];
 			return $this->load->view('Frontend/v1/pages/ikm/ikm_periode', $data);
 		}

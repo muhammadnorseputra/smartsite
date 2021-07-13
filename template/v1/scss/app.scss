@@ -48,7 +48,7 @@ content: "";
   position:fixed;
   min-width: 100%;
   min-height: 100vh;
-  background-color: #eee;
+  // background-color: #eee;
   left:0;
   top: 0;
   z-index: 9999;
@@ -58,7 +58,6 @@ content: "";
   position:fixed;
   height:4.5px;
   overflow-x: hidden;
-
   // ditengah layar
   // width:30%;
   // left: 50%;
@@ -97,7 +96,7 @@ content: "";
 	text-align: center;
 	vertical-align: middle;
 	z-index: 9999;
-	// opacity: 0.5;
+	opacity: 0.5;
 }
 .page-slider p {
 position: fixed;
@@ -974,3 +973,4 @@ i.likes:hover {
   top: 10px;
   right: 15px;
 }
+

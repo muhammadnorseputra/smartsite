@@ -1,4 +1,4 @@
-<section class="hero py-md-3 mt-md-5 py-4">
+<section class="hero py-5">
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-start flex-lg-row flex-column">
 			<div>
@@ -9,7 +9,7 @@
 	</div>
 </div>
 </section>
-<section class="mb-md-3 mt--4">
+<section class="mb-md-3 mt--6">
 <div class="container bg-white py-4 rounded shadow-sm">
 	<div class="table-responsive-md">
 		<table class="table table-condensed display" id="table-download">

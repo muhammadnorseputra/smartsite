@@ -739,13 +739,13 @@ $(function () {
 $(document).ready(function () {
   // make it as accordion for smaller screens
   $(document).scroll(function () {
-    if ($(document).scrollTop() > 10) {
-      $("nav#navbar").css("transition", ".5s ease-in-out").addClass("shadow py-0");
+    if ($(document).scrollTop() > 30) {
+      $("nav#navbar").css("transition", ".5s ease-in-out").addClass("shadow bg-white");
       $("button#caripost").addClass('btn-outline-light');
     } else {
       $("button#caripost").removeClass('btn-outline-light'); // $("button#caripost").toggleClass('');
 
-      $("nav#navbar").removeClass("shadow py-0");
+      $("nav#navbar").removeClass("shadow bg-white");
     }
   }); // var prevScrollpos = window.pageYOffset;
   // window.onscroll = function() {
@@ -1013,7 +1013,7 @@ $(document).ready(function () {
 "use strict";
 
 $(document).ready(function () {
-  $("a#module").on("click", function (e) {
+  $("a#module").unbind().bind("click", function (e) {
     e.preventDefault();
     var $this = $(this);
     var $url = $this.attr('href');

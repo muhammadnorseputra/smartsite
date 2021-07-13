@@ -127,8 +127,12 @@ class M_f_ikm extends CI_Model
 	  	$q = $this->db->get();
 	  	return $q;
 	  }
-	public function ikm_periode()
+  public function ikm_tahun()
+  {
+    return $this->db->select('tahun')->order_by('id','asc')->get('skm_periode');
+  }
+	public function ikm_periode($tahun)
 	{
-		return $this->db->get('skm_periode');
+		return $this->db->get_where('skm_periode', ['tahun' => $tahun]);
 	}
 }

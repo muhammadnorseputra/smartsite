@@ -14,10 +14,10 @@ if($d->role === 'EDITOR'):
     $cek_role = '<span class="badge badge-dark">Tamu</span>';
 endif;
 ?>
-<section class="hero mt-md-5">
+<section class="hero">
   <div class="container pb-5 py-md-5">
     <div class="row">
-    <div class="col-10 col-md-8 my-3 my-md-0 pt-md-5">
+    <div class="col-12 col-md-8 my-3 my-md-0 pt-md-5">
       <div class="d-flex justify-content-start align-items-md-center align-items-start">
         <img src="<?= $photo ?>" class="img-fluid rounded-circle shadow-sm w-10">
         <div class="ml-3 font-weight-bold text-dark">
@@ -30,9 +30,10 @@ endif;
         </div>
       </div>
     </div>
-    <div class="col-2 col-md-4">
-      <div class="h-100 d-flex justify-content-end align-items-end">
-          <a class="mb-4 animated pulse infinite" href="<?= base_url('kotak_saran') ?>" data-toggle="tooltip" data-placement="top" title="Bantu kami dalam menupdate UI & UX dengan memberikan saran kamu."><i class="fas fa-bell fa-2x"></i></a>
+    <div class="col-12 col-md-4">
+      <div class="h-100 d-flex justify-content-center justify-content-lg-end align-items-end">
+          <a class="mb-4 animated pulse infinite" href="<?= base_url('kotak_saran') ?>" data-toggle="tooltip" data-placement="top" title="Bantu kami dalam menupdate UI & UX dengan memberikan saran kamu."><i class="fas fa-envelope-open-text fa-2x"></i></a>
+          <a class="mb-4 pl-3 ml-3 border-left border-primary" href="<?= base_url('frontend/v1/users/edit/'.encrypt_url($this->session->userdata('user_portal_log')['id'])); ?>" data-toggle="tooltip" data-placement="top" title="Edit Profile"><i class="fas fa-cog fa-2x"></i></a>
       </div>
     </div>
     </div>
@@ -43,7 +44,7 @@ endif;
 <section>
 <div class="container bg-white mb-4">
   <div class="row">
-    <div class="col-md-3 no-gutters">
+    <div class="col-md-3 no-gutters mt-5 mt-md-0">
       
       <div class="list-group border-0">
         <div class="panel-group" id="accordion">
@@ -72,7 +73,7 @@ endif;
               </div>
             </div>
           </div>
-          <?php if($d->role == 'EDITOR'): ?>
+          <?php if(($d->role == 'EDITOR') || ($d->role == 'SEKRETARIAT')): ?>
           <!-- IKM -->
           <div class="panel panel-default mb-2">
             <div class="panel-heading">
@@ -83,11 +84,13 @@ endif;
             
             <div id="collapseTwo" class="panel-collapse collapse">
               <div class="panel-body">
-              <a id="module" href="<?= base_url('frontend/v1/users/ikm_periode/'); ?>" class="border-0  rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-check-circle float-right" aria-hidden="true"></i> Periode</a>
+              <a id="module" href="<?= base_url('frontend/v1/users/ikm_periode/'); ?>" class="border-0  rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-poll float-right" aria-hidden="true"></i> Periode</a>
                <a id="module" href="<?= base_url('frontend/v1/users/ikm_responden/'); ?>" class="border-0  rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-user-circle float-right" aria-hidden="true"></i> Responden</a>
               </div>
             </div>
           </div>
+          <?php endif; ?>
+          <?php if($d->role == 'EDITOR'): ?>
           <!-- INTERAKSI -->
           <div class="panel panel-default mb-2">
             <div class="panel-heading">

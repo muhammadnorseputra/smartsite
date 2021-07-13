@@ -1,7 +1,7 @@
 <section class="py-md-5 hero">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 pt-md-5 text-left pb-3 pb-md-0">
+      <div class="col-md-12 pt-md-5 text-left pb-5 pb-md-3">
         <?php
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
@@ -19,10 +19,10 @@
     </div>
   </div>
 </section>
-<section class="h-statis-detail">
+<section class="h-statis-detail mt--6 mb-3">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 bg-white p-3 p-md-4">
+      <div class="col-md-8 bg-white p-3 p-md-3 rounded order-last order-md-first">
         <?php
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
@@ -49,7 +49,7 @@
         </p>
         <?php endif; ?>
       </div>
-      <div class="col-md-4 bg-white p-md-4">
+      <div class="col-md-4 rounded">
       <?php
       if(!empty($h->file)):
       $path = !empty($h->filename) ? $h->filename : '';
@@ -60,7 +60,7 @@
         ?>
         <object class="rounded-lg border mb-3" data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:350px; width: 100%;"></object>
         <?php else: ?>
-        <img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block">
+        <img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded w-100">
         <?php endif; ?>
       <?php endif; ?>
       </div>
