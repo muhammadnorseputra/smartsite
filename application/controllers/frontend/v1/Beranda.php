@@ -240,7 +240,7 @@ class Beranda extends CI_Controller
                 endif;
 
                 $output .= '
-                <div data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
+                <div>
 					<div class="card mb-4 border bg-white shadow-sm">
 					<div class="card-body px-2 mt-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>

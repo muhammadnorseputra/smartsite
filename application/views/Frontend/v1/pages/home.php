@@ -1,11 +1,18 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider2') ?>
-<section class="content-home hero py-md-3">
+<section class="content-home hero py-md-4">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <?php $this->load->view('Frontend/v1/function/count_peg_home'); ?>
+        <div class="row d-flex align-items-center">
+            <div class="col-md-4">
+                <img class="img-fluid w-100" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="">
+            </div>
+            <div class="col-md-8">
+                <h1>Grafik Pegawai</h1>
+                <p>
+                    Kini website tersedia grafik pegawai terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan. 
+                </p>
+                <a href="<?= base_url('api/grafik') ?>" class="btn btn-primary">Lihat Grafik</a>
             </div>
         </div>
     </div>
