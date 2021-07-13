@@ -50,6 +50,17 @@ class Api extends CI_Controller {
 		endif;
 		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
+	public function silka_get_grap($type) {
+		$url = 'http://silka.bkppd-balangankab.info';
+		$api = api_curl_get($url.'/api/get_grap/'.$type);
+		echo json_encode($api);
+	}
+	public function silka_get_grap_pns($type)
+	{
+		$url = 'http://silka.bkppd-balangankab.info';
+		$api = api_client($url.'/api/get_grap_pns/'.$type);
+		echo json_encode($api);
+	}
 	public function grafik()
 	{
 		$data = [

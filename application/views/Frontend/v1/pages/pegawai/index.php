@@ -1,36 +1,60 @@
-<section class="hero pt-md-5 pt-3">
+<section class="hero pt-md-5 py-5">
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-start flex-lg-row flex-column">
 			<div>
 				<h3 class="font-weight-bold text-responsive">Grafik Pegawai </h3>
 				<p class="text-muted small">Resources <code>SILKa Online</code> &bull; Uptodate <?= date('Y-m-d H:i:s') ?></p>
 			</div>
-			<div class="pb-3 pb-pd-0">
-				<div class="btn-group" role="group" aria-label="Basic example">
-				  <button type="button" class="btn btn-warning" disabled><i class="fas fa-print"></i></button>
-				  <a role="button" href="<?= base_url('pegawai/report') ?>" class="btn btn-warning">Views Report</a>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>
 </section>
-<section>
-	<div class="container py-3 my-3">
+<section class="bg-dark">
+	<div class="container py-3">
+		<div class="row mt--7 mb-3 bg-white p-3 rounded">
+			<div class="col-6 col-md-4 col-lg-3 border px-0 rounded">
+				<div class="font-weight-bold py-2 pl-3 bg-info text-white rounded-top border">ASN</div>
+				<div class="m-3">
+					<h1 id="data_asn">0</h1>
+					<div class="text-muted small my-3">PNS + CPNS + NON PNS</div>
+				</div>
+			</div>
+			<div class="col-6 col-md-4 col-lg-3 border px-0 rounded">
+				<div class="font-weight-bold py-2 pl-3 bg-success text-white rounded-top border">PNS</div>
+				<div class="m-3">
+					<h1 id="data_pns">0</h1>
+					<div class="text-muted small my-3">Jumlah PNS</div>
+				</div>
+			</div>
+			<div class="col-6 col-md-4 col-lg-3 border px-0 rounded">
+				<div class="font-weight-bold py-2 pl-3 bg-warning text-dark rounded-top border">Non PNS</div>
+				<div class="m-3">
+					<h1 id="data_nonpns">0</h1>
+					<div class="text-muted small my-3">Non Jumlah PNS</div>
+				</div>
+			</div>
+			<div class="col-6 col-md-4 col-lg-3 border px-0 rounded">
+				<div class="font-weight-bold py-2 pl-3 bg-dark text-white rounded-top border">Pensiunan</div>
+				<div class="m-3">
+					<h1 id="data_pensiun">0</h1>
+					<div class="text-muted small my-3">Pensiunan <?= date('Y') ?></div>
+				</div>
+			</div>
+		</div>
 		<div class="row">
-				<div class="col-12 col-md-6">
+				<div class="col-12 col-md-6 border-right p-4 bg-white rounded-top">
 				  		<div id="chart-jenkel"></div>
 				</div>
-				<div class="col-12 col-md-6">
+				<div class="col-12 col-md-6 p-4 bg-white rounded-top">
 				  		<div id="chart-golru"></div>
 				</div>
-				<div class="col-12 col-md-6">
+				<div class="col-12 col-md-6 p-4 bg-white border-top border-bottom border-right">
 				  		<div id="chart-tingpen"></div>
 				</div>
-				<div class="col-12 col-md-6">
+				<div class="col-12 col-md-6 p-4 bg-white border-top border-bottom">
 				  		<div id="chart-jenjab"></div>
 				</div>
-				<div class="col-12">
+				<div class="col-12 p-4 bg-white rounded-bottom">
 				  		<div id="chart-eselon"></div>
 				</div>
 		</div>
@@ -42,10 +66,22 @@
 <script src="<?= base_url('bower_components/highcharts/highcharts-3d.js') ?>"></script>
 <script src="<?= base_url('bower_components/highcharts/modules/cylinder.js') ?>"></script>
 <script>
-let url = _silka;
+$("#chart-jenkel, #chart-golru, #chart-tingpen, #chart-jenjab, #chart-eselon").html(`<div style="min-height: 50vh;" class="d-flex justify-content-center align-items-center"><div class="loader_small" style="width: 40px; height:40px"></div></div>`);
+
 $(document).ready(function () {
+
+	function _jmlContainer(id, data) {
+		return $(id).html(data);
+	}
+
+// JML ASN
+$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/asn`, response => _jmlContainer("#data_asn", response));
+$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/pns`, response => _jmlContainer("#data_pns", response));
+$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/nonpns`, response => _jmlContainer("#data_nonpns", response));
+$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/pensiun`, response => _jmlContainer("#data_pensiun", response));
+
 // Jenis Kelamin
-$.getJSON(`${url}/api/get_grap_pns/jenkel`, function (response) {
+$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/jenkel`, function (response) {
 	Highcharts.chart('chart-jenkel', {
 		chart: {
 			plotBackgroundColor: null,
@@ -76,7 +112,7 @@ $.getJSON(`${url}/api/get_grap_pns/jenkel`, function (response) {
 });
 
 // Golru
-$.getJSON(`${url}/api/get_grap_pns/golru`, function (response) {
+$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/golru`, function (response) {
 	Highcharts.chart('chart-golru', {
 		chart: {
 			type: 'bar',
@@ -119,7 +155,7 @@ $.getJSON(`${url}/api/get_grap_pns/golru`, function (response) {
 });
 
 // Tingkat Pendidikan
-$.getJSON(`${url}/api/get_grap_pns/tingpen`, function (response) {
+$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/tingpen`, function (response) {
 			Highcharts.chart('chart-tingpen', {
 				chart: {
 					type: 'line',
@@ -156,19 +192,18 @@ $.getJSON(`${url}/api/get_grap_pns/tingpen`, function (response) {
 					}
 				},
 				series: [{
-					name: 'Line Chart',
+					name: 'Tingkat Pendidikan',
 					data: response.jml
 				}]
 			});
 		});
-});
 
 // Jenis Jabatan
-$.getJSON(`${url}/api/get_grap_pns/jenjab`, function (response) {
+$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/jenjab`, function (response) {
 	Highcharts.chart('chart-jenjab', {
 		chart: {
 			options3d: {
-		      enabled: true,
+		      enabled: false,
 		      alpha: 55,
 		      beta: 0
 		    },
@@ -197,7 +232,7 @@ $.getJSON(`${url}/api/get_grap_pns/jenjab`, function (response) {
 });
 
 // Eselon
-$.getJSON(`${url}/api/get_grap_pns/eselon`, function (response) {
+$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/eselon`, function (response) {
 	Highcharts.chart('chart-eselon', {
 		chart: {
 			type: 'cylinder',
@@ -271,5 +306,7 @@ $.getJSON(`${url}/api/get_grap_pns/eselon`, function (response) {
 			}]
 		}
 	});
+});
+
 });
 </script>
