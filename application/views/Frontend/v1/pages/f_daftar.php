@@ -32,19 +32,21 @@
 		<section class="login">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-xs-12 col-md-5 offset-md-1 mt-3" id="sidebar">
+					<div class="col-xs-12 col-md-4 offset-md-1 mt-3" id="sidebar">
 						<div class="px-2 px-md-5 pt-4">
 							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="210"/>'; ?>
 							</div>
 							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Registered</h3> <?= $this->session->userdata('user_portal_log')['nama_panggilan'] ?>
-							<?= form_open_multipart(base_url('frontend/v1/daftar/send'), ['id' => 'form_daftar'], ['session_register' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
-							<div class="form-group my-5 d-flex justify-content-around align-items-center flex-column flex-lg-row">
-								<img src="<?= base_url('assets/images/no-profile-picture.jpg'); ?>" alt="pic" width="140" height="140" class="rounded-circle d-block border border-secondary p-1 photo_pic mx-auto">
-								<div class="ml-5">
+							<?php $token = encrypt_url('bkppd_balangan@'.date('dmY')); ?>
+							<?= form_open_multipart(base_url('frontend/v1/daftar/send'), ['id' => 'form_daftar'], ['tokenRegister' => $token]); ?>
+							<div class="my-5 d-flex justify-content-center align-items-center flex-column flex-lg-row">
+								<div class="mr-3">
+									<img src="<?= base_url('assets/images/no-profile-picture.jpg'); ?>" alt="pic" width="140" height="140" class="rounded-circle d-block border border-secondary p-1 photo_pic mx-auto">
+								</div>
+								<div>
 								<input name="photo_pic"
 								type="file"
-								data-validation-event="change"
 								data-validation="dimension mime size"
 								data-validation-allowing="jpg,png"
 								data-validation-max-size="1M"
@@ -220,7 +222,7 @@
 							</p>
 							<span id="check-capcha"></span>
 							<div class="row">
-								<div class="form-group col-4">
+								<div class="form-group col-6">
 									<div class="input-group mb-2">
 										<div class="input-group-prepend">
 											<div class="input-group-text"><i class="fas fa-key"></i></div>
@@ -241,14 +243,16 @@
 							<?= form_close(); ?>
 						</div>
 					</div>
-					<div class="col-6 d-none d-sm-block d-md-block d-xl-block border-left bg-white">
-						<div class="text-center d-flex justify-content-center align-items-center flex-column">
+					<div class="col-7 d-none d-sm-block d-md-block d-xl-block border-left bg-white">
+						<div class="text-center h-100 d-flex justify-content-center align-items-center">
+							<div>
 							<img class="img-fluid" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Registered Userportal - BKPPD BALANGAN">
 							<div class="my-3">
 								<h3 class="text-dark mb-3">Bergabung bersama kami !</h3>
-								<p class="text-muted lead">
+								<p class="text-muted">
 									Anda akan mendapat bebrapa keuntungan dari layanan website kami.
 								</p>
+							</div>
 							</div>
 						</div>
 					</div>

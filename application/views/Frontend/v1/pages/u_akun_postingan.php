@@ -7,6 +7,7 @@
 				<th class="text-center"></th>
 				<th>Postingan</th>
 				<th>Komentar</th>
+				<th>Views</th>
 			</tr>
 		</thead>
 	</table>
@@ -58,6 +59,11 @@
 			{
 				"targets": [3],
 				"orderable": false,
+			},
+			{
+				"targets": [4],
+				"orderable": false,
+				"width": '18%'
 			}
 		],
 		"language": {

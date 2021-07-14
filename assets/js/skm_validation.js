@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $("input[name='nama_lengkap'], input[name='umur'], select[name='jns_kelamin']").prop('disabled', true);
     $("input[name='cek_nipnik']").on('blur', function() {
         // let value = $("input[name='cek_nipnik']").val();
         let value = $(this).val();
@@ -8,6 +9,7 @@ $(document).ready(function() {
             console.log(res);
             if (value != '') {
                 if (r.kind == true) {
+                    $("input[name='nama_lengkap'], input[name='umur'], select[name='jns_kelamin']").prop('disabled', false);
                     $("input[name='nama_lengkap']").val(r.nama)
                         .removeClass('error')
                         .addClass('valid')
@@ -33,11 +35,13 @@ $(document).ready(function() {
                     $("input[name='nama_lengkap']").val('').addClass('error').removeClass('valid');
                     $("select[name='jns_kelamin']").val('').addClass('error').removeClass('valid');
                     // $("#msg-asn-data").html(`${r.message}`).addClass('text-danger');
+                    $("input[name='nama_lengkap'], input[name='umur'], select[name='jns_kelamin']").prop('disabled', false);
                 }
             } else {
                 $("input[name='nama_lengkap']").val('').addClass('error').removeClass('valid');
                 $("input[name='umur']").val('').addClass('error').removeClass('valid');
                 $("select[name='jns_kelamin']").val('').addClass('error').removeClass('valid');
+                $("input[name='nama_lengkap'], input[name='umur'], select[name='jns_kelamin']").prop('disabled', true);
                 // $("#msg-asn-data").html('');
             }
         });

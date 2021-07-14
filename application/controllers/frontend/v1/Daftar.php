@@ -43,26 +43,9 @@ class Daftar extends CI_Controller
     public function send()
     {
         $captcha = $this->input->post('captcha');
-        $sess_captcha = $this->session->userdata('captcha');
-        $sess_register = $this->input->post('session_register');
-        if (isset($captcha)
-            && isset($sess_captcha)
-            && isset($sess_register)
-            && ('bkppd_balangan'.date('d') == decrypt_url($sess_register))
-        ) {
-            if ($captcha != ($sess_captcha[0] + $sess_captcha[1])) {
-                $msg = array('valid' => false, 'msg' => 'Invalid captcha answer');
-                $this->session->set_flashdata('msg', $msg);
-            // client does not have javascript enabled
-            } else {
-                // Save photo pic
-                // $namafile = $this->input->post('nama_pangilan');
-                // $config['upload_path']          = './assets/images/users/';
-                // $config['allowed_types']        = 'jpg|jpeg|png';
-                // $config['file_ext_tolower'] = true;
-                // $config['file_name'] = strtolower($namafile); //nama yang terupload
-                // $this->load->library('upload', $config);
-
+        $sess_register = $this->input->post('tokenRegister');
+        $key = 'bkppd_balangan@'.date('dmY');
+        if($key == decrypt_url($sess_register)) {
                 // Get data post
                 $photo_pic = file_get_contents($_FILES['photo_pic']['tmp_name']);
                 $photo_ktp = file_get_contents($_FILES['photo_ktp']['tmp_name']);
@@ -116,27 +99,18 @@ class Daftar extends CI_Controller
                 //Send mail 
                 $this->daftar->send_akun('t_users_portal', $data);
                 if($this->email->send()){
-                    $this->session->set_flashdata("notif","Akun kamu telah aktif, untuk mendapatkan fitur lengkap kami silahakan verifikasi email kamu."); 
-                    // daftarkan akun ke database
-                    // Simpan gambar di website
-                    // if ( ! $this->upload->do_upload('photo_pic')){
-                    //     $msg = $this->upload->display_errors();
-                    // }else{
-                    //     $this->upload->data();
-                    // }
-                    // $this->session->set_flashdata('photo_msg', $msg);
-                }else {
-                    $this->session->set_flashdata("notif","Akun kamu telah aktif, untuk mendapatkan fitur kami silahakan verifikasi email kamu.");  
+                    $msg = ['valid' => true, 'msg' => 'Akun telah diproses', 'redirect' => base_url('frontend/v1/daftar/register_status')];
+                } else {
+                    $msg = ['valid' => true, 'msg' => 'Akun telah diproses', 'redirect' => base_url('frontend/v1/daftar/register_status')];
                 } 
                 // Message success regitered
-                $msg = array('valid' => true, 'msg' => 'Register Berhasil', 'data' => $data);
+                $msg = array('valid' => true, 'msg' => 'Register Berhasil', 'redirect' => base_url('frontend/v1/daftar/register_status'));
                 $this->session->set_flashdata('msg', $msg);
-            }
         } else {
             $msg = array('valid' => false, 'msg' => 'Register is invalid');
             $this->session->set_flashdata('msg', $msg);
         }
-        redirect(base_url('frontend/v1/daftar/register_status'));
+        echo json_encode($msg);
     }
 
     public function register_status()

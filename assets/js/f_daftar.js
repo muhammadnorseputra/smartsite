@@ -16,6 +16,9 @@ $(document).ready(function() {
         form: '#form_daftar',
         lang: 'en',
         modules: 'date, security, html5, file, sanitize',
+        onModulesLoaded: function() {
+            $('#alamat').restrictLength($('#maxlength'));
+        },
         // disabledFormFilter: 'form.toggle-disabled',
         showErrorDialogs: true,
         // validateOnEvent: true,
@@ -29,44 +32,50 @@ $(document).ready(function() {
                 onLoad: function(el) {
                     el.find(".content_inner").html('Validation of form ' + $form.attr('id') + ' failed!');
                 },
-                onClose: function(el) {
-                    $form.get(0).reset();
-                }
+                // onClose: function(el) {
+                //     $form.get(0).reset();
+                // }
             });
         },
         onSuccess: function($form) {
             var _action = $form.attr('action');
             var _method = $form.attr('method');
-            //   var _data   = $form.serialize();
+            var _data = new FormData($form.get(0));
             $.ajax({
                 url: _action,
                 method: _method,
-                data: new FormData($form),
+                data: _data,
                 processData: false,
                 cache: false,
                 beforeSend: function() {
-                    $('button[type=submit]').text('<div class="d-flex justify-content-center align-items-center"><div style="width: 30px; height:30px;" class="loader_small"></div></div>');
+                    $('button[type=submit]').prop('disabled', true).html('<div class="d-flex justify-content-center align-items-center"><div style="width: 30px; height:30px;" class="loader_small"></div></div>');
                 },
                 dataType: 'json',
                 success: function(response) {
+                    $('#content2').notifyModal({
+                        duration: 2500,
+                        placement: 'center',
+                        overlay: true,
+                        type: 'simple', //simple, dark
+                        icon: false,
+                        onLoad: function(el) {
+                            el.find(".content_inner").html(response.msg);
+                        }
+                    });
+                    $('button[type=submit]').prop('disabled', true).html(`<div class="d-flex justify-content-center align-items-center"><div style="width: 30px; height:30px;" class="loader_small"></div></div>`);
                     if (response.valid == true) {
                         // window.location.replace("<?= base_url('frontend/v1/daftar/') ?>");
                         $form.get(0).reset();
-                        $('button[type=submit]').html(`<i class="fas fa-check mr-2"></i> Daftar`);
-                        $('#content2').notifyModal({
-                            duration: 2500,
-                            placement: 'center',
-                            overlay: true,
-                            type: 'simple', //simple, dark
-                            icon: false,
-                            onLoad: function(el) {
-                                el.find(".content_inner").html(response.msg);
-                            }
-                        });
+                        setTimeout(() => {
+                        $('button[type=submit]').prop('disabled', false).html(`<i class="fas fa-check mr-2"></i> Daftar`);
+                        }, 3000);
+                        window.location.replace(response.redirect);
+                    } else {
+                        $('button[type=submit]').prop('disabled', false).html(`<i class="fas fa-check mr-2"></i> Daftar`);
                     }
                 },
                 error: function(_error) {
-                    $('button[type=submit]').html(`<i class="fas fa-check mr-2"></i> Daftar`);
+                    $('button[type=submit]').prop('disabled', false).html(`<i class="fas fa-check mr-2"></i> Daftar`);
                     $('#content2').notifyModal({
                         duration: 2500,
                         placement: 'center',
@@ -80,9 +89,6 @@ $(document).ready(function() {
                 }
             });
             return false; // Will stop the submission of the form
-        },
-        onModulesLoaded: function() {
-            $('#alamat').restrictLength($('#maxlength'));
         }
     });
     // Callendar Event

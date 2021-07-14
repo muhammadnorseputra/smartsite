@@ -60,7 +60,15 @@ if (count($pecah) > 0) {
 	}
 }
 ?>
-
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1099792537777374"
+     data-ad-slot="6818392621"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 <section class="pt-md-5 mt-md-5">
 	<div class="container">
 		<div class="row">
@@ -211,7 +219,6 @@ if (count($pecah) > 0) {
 						<div class="card-body p-0">
                     		<?php $this->load->view('Frontend/v1/function/populer_post'); ?>
 							<!--<div id="gpr-kominfo-widget-container"></div>-->
-							<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 							<!-- ads -->
 							<ins class="adsbygoogle"
 							     style="display:block"
@@ -231,4 +238,6 @@ if (count($pecah) > 0) {
 			</div>
 		</div>
 	</section>
+	
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!--<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>-->

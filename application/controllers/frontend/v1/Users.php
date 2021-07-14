@@ -430,6 +430,7 @@ class Users extends CI_Controller {
 
 					$countKomentar = $this->komentar->jml_komentarbyidberita($p->id_berita);
 					$komentar = $countKomentar != 0 ? '<b>'.$countKomentar.'</b>' : $countKomentar;
+					$views = nominal($p->views);
 
 					if($p->type === 'BERITA'):
 					$btnPublish = $p->publish == 0 ? '<a href="' . base_url('frontend/v1/post/postDetail/' . encrypt_url($p->id_berita)) . '" title="Belum Dipublish" class="btn btn-default border-left ml-4 px-3">Publish</a>' : '';
@@ -444,6 +445,7 @@ class Users extends CI_Controller {
 		            $row[] = $btnAksi;
 		            $row[] = $p->judul. $btnPublish.$btnHapus;
 		            $row[] = '<i class="far fa-comment-alt mx-2"></i>'.$komentar;
+		            $row[] = '<i class="fas fa-eye mx-2"></i>'.$views;
 		            $data[] = $row;
 		        }
 		 
