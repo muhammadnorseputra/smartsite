@@ -271,6 +271,68 @@ class M_f_users extends CI_Model
         $this->db->select('photo_pic,nama_lengkap,nama_panggilan,role,id_user_portal,online,tanggal_bergabung');
         return $this->db->get('t_users_portal');
     }
+
+    var $table_userportal = 't_users_portal'; //nama tabel dari database
+    var $column_order_userportal = array('id_user_portal', null); 
+    var $column_search_userportal = array('nama_lengkap','nama_panggilan');
+    var $order_userportal = array('id_user_portal' => 'desc'); 
+
+    private function _get_datatables_query_userlist()
+    {
+        $this->db->select('*');
+        $this->db->from($this->table_userportal);
+        $i = 0;
+
+        foreach ($this->column_search_userportal as $item) // looping awal
+        {
+            if ($_POST['search']['value']) // jika datatable mengirimkan pencarian dengan metode POST
+            {
+
+                if ($i === 0) // looping awal
+                {
+                    $this->db->group_start();
+                    $this->db->like($item, $_POST['search']['value']);
+                } else {
+                    $this->db->or_like($item, $_POST['search']['value']);
+                }
+
+                if (count($this->column_search_userportal) - 1 == $i)
+                    $this->db->group_end();
+            }
+            $i++;
+        }
+
+        if (isset($_POST['order'])) {
+            $this->db->order_by($this->column_order_userportal[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+        } else if (isset($this->order_userportal)) {
+            $order = $this->order_userportal;
+            $this->db->order_by(key($order), $order[key($order)]);
+        }
+    }
+
+    function get_datatables_userlist()
+    {
+        $this->_get_datatables_query_userlist();
+        if ($_POST['length'] != -1)
+        $this->db->limit($_POST['length'], $_POST['start']);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function count_filtered_userlist()
+    {
+        $this->_get_datatables_query_userlist();
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function count_all_userlist()
+    {
+        $this->db->select('*');
+        $this->db->from($this->table_userportal);
+        return $this->db->count_all_results();
+    }
+
 }
 
 /* End of file M_f_users.php */

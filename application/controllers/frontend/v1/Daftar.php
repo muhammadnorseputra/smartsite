@@ -47,16 +47,6 @@ class Daftar extends CI_Controller
         $isKey = 'bkppd_balangan@'.date('dmY');
         // var_dump($i);die();
         if($validKey === $isKey) {
-
-                $img_pic = base_url('assets/images/no-profile-picture.jpg');
-                $img_ktp = base_url('assets/images/noimage.gif');
-
-                $photo_pic = file_get_contents($img_pic);
-                $photo_ktp = file_get_contents($img_ktp);
-
-                // $photo_pic = tmpfile($img_pic);
-                // $photo_ktp = tmpfile($img_ktp);
-                
                 // Get data post
                 $tgl_full = $this->input->post('tanggal_lahir');
                 $tgl_pecah = explode("/", $tgl_full);
@@ -73,8 +63,6 @@ class Daftar extends CI_Controller
                     'email' => encrypt_url($this->input->post('email')),
                     'password' => "$".sha1('bkppd_balangan')."$".encrypt_url($this->input->post('password')),
                     'email_verifikasi' => 'N',
-                    'photo_pic' => @$photo_pic,
-                    'photo_ktp' => @$photo_ktp,
                     'tanggal_bergabung' => date('Y-m-d')
                 ];
                 // Configurasi Email
@@ -111,6 +99,21 @@ class Daftar extends CI_Controller
                     $msg = ['valid' => true, 'msg' => 'Akun telah diproses'];
                     $msg = array('valid' => true, 'msg' => 'Register berhasil, silahkan validasi identitas anda!', 'data' => $data, 'redirect' => base_url('register-status'));
                     $this->session->set_flashdata('msg', $msg);
+                    
+                    $img_pic = base_url('assets/images/no-profile-picture.jpg');
+                    $img_ktp = base_url('assets/images/noimage.gif');
+
+                    $photo_pic = file_get_contents($img_pic);
+                    $photo_ktp = file_get_contents($img_ktp);
+
+                    $data_indentity = [
+                            'photo_pic' => $photo_pic,
+                            'photo_ktp' => $photo_ktp,
+                        ];
+                    $whr = [
+                        'email' => encrypt_url($this->input->post('email'))
+                    ];
+                    $this->daftar->update_akun('t_users_portal', $data_indentity, $whr);
                 } else {
                     $msg = ['valid' => false, 'msg' => 'Galat, terjadi kesalahan saat pengiriman data'];
                     $this->session->set_flashdata('msg', $msg);
@@ -137,7 +140,7 @@ class Daftar extends CI_Controller
             ];
             $db = $this->daftar->update_akun('t_users_portal', $data, $whr);
             if($db):
-                $msg = ['valid' => true, 'msg' => 'Success Updated', 'redirect' => base_url('login_web')];
+                $msg = ['valid' => true, 'msg' => 'Success Updated', 'redirect' => base_url('login_web?msg=sukses')];
             else:
                 $msg = ['valid' => false, 'msg' => 'Gagal Updated, silahkan upload ulang'];
             endif;

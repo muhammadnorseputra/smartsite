@@ -43,6 +43,15 @@
 							<div class="logo text-center text-md-left">
 								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="210"/>'; ?>
 							</div>
+							<?php  
+								if(isset($_GET['msg']) == 'sukses'):
+							?>
+							<div class="alert alert-default alert-dismissible border rounded bg-success text-white small" role="alert">
+							  <strong class="text-warning">Sukses</strong> <br> Akun kamu sudah terdaftar.
+							</div>
+							<?php
+								endif;
+							?>
 							<h3 class="font-weight-bold mb-3 mt-3 text-center text-md-left">Log In</h3> 
 							<?php if($this->session->flashdata('notif') <> ''): ?>
 								<div class="alert border alert-light" role="alert">

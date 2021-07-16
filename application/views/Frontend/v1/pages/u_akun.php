@@ -39,7 +39,7 @@ endif;
     </div>
     <div class="col-12 col-md-4">
       <div class="h-100 d-flex justify-content-center justify-content-lg-end align-items-end">
-          <a class="mb-4 animated pulse infinite" href="<?= base_url('kotak_saran') ?>" data-toggle="tooltip" data-placement="top" title="Bantu kami dalam menupdate UI & UX dengan memberikan saran kamu."><i class="fas fa-envelope-open-text fa-2x"></i></a>
+          <a class="mb-4 animated text-info pulse infinite" href="<?= base_url('kotak_saran') ?>" data-toggle="tooltip" data-placement="top" title="Ajukan Verifikasi Email"><i class="fas fa-envelope-open-text fa-2x"></i></a>
           <a class="mb-4 pl-3 ml-3 border-left border-primary" href="<?= base_url('frontend/v1/users/edit/'.encrypt_url($this->session->userdata('user_portal_log')['id'])); ?>" data-toggle="tooltip" data-placement="top" title="Edit Profile"><i class="fas fa-cog fa-2x"></i></a>
       </div>
     </div>

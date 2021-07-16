@@ -14,28 +14,31 @@
     </head>
     <body>
 <?php 
-if($this->session->flashdata('msg')['valid'] == false) {
+if($this->session->flashdata('msg')['valid'] == true) {
      $jhon = "Woihh, tinggal sedikit lagi nih <b>".decrypt_url( $this->session->flashdata('msg')['data']['nama_lengkap'])."</b>"; 
     $msg = $this->session->flashdata('msg')['msg'];
     $bg_status = 'bg-light';
+    $icon = '';
 } else {
-    $jhon = "Kamu sudah melakukan register, silahkan login dengan akun tersebut dan lengkapi profile mu.";
-    $msg = 'Oops!';
-    $bg_status = 'bg-warning';
+    $jhon = "TOKEN validasi berobah, silahkan login dan lengkapi profile mu.";
+    $msg = 'Oops :)';
+    $bg_status = 'bg-white';
+    $icon = '<i class="fas fa-exclamation-circle fa-4x text-warning"></i>';
 }
 ?>
-<section class="<?= $bg_status ?> border-bottom">
-	<div class="container">
+<section class="<?= $bg_status ?> shadow-sm">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12 py-5 text-dark text-center">
-				<h1><?= $msg ?></h1>
-				<p class="font-weight-light lead"><?= $jhon ?> </p>
-                <a href="<?= base_url('login_web') ?>" class="btn btn-outline-dark"><i class="fas fa-arrow-left mr-2"></i>Skip lanjutkan login</a>
+                <?= $icon ?>
+				<h2 class="my-3"><?= $msg ?></h2>
+				<p class="font-weight-light lead mb-3"><?= $jhon ?> </p>
+                <a href="<?= base_url('login_web?msg=sukses') ?>" class="btn btn-outline-dark"><i class="fas fa-arrow-left mr-2"></i>Skip lanjutkan login</a>
 			</div>
 		</div>
 	</div>
 </section>
-<?php if($this->session->flashdata('msg')['valid'] == false): ?>
+<?php if($this->session->flashdata('msg')['valid'] == true): ?>
 <section class="mt-5 mb-5">
 	<div class="container">
 		<div class="row">
@@ -46,9 +49,10 @@ if($this->session->flashdata('msg')['valid'] == false) {
                             <?= $this->session->flashdata('notif');  ?>
                         </p>
                         
-                        $this->session->flashdata('msg')['data']['email']]
                         <h5 class="font-weight-bold"><?= decrypt_url($this->session->flashdata('msg')['data']['email']) ?></h5> -->
-                        <?= form_open_multipart(base_url('frontend/v1/daftar/register_update'), ['id' => 'form_indentity'], ['emailId' => 'UElleUR2ejJ2NEFMYmFZeXN2N3ZjZDFpWVNEN2hpTWRvMkxaK0JjUVZ2TT0=']); ?>
+                        <?= form_open_multipart(base_url('frontend/v1/daftar/register_update'), 
+                        ['id' => 'form_indentity'], 
+                        ['emailId' => $this->session->flashdata('msg')['data']['email']]); ?>
                         <div class="my-5 d-flex justify-content-center align-items-center flex-column flex-lg-row">
                                 <div class="mr-3">
                                     <img src="<?= base_url('assets/images/no-profile-picture.jpg'); ?>" alt="pic" width="140" height="140" class="rounded-circle d-block border border-secondary p-1 photo_pic mx-auto">
@@ -102,7 +106,9 @@ if($this->session->flashdata('msg')['valid'] == false) {
 <?php endif; ?>
         <script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
         <script src="<?= base_url('assets/plugins/bootstrap-4/js/bootstrap.min.js') ?>"></script>
+        <script src="<?= base_url('assets/plugins/blockUI/jquery.blockUI.js') ?>"></script>
         <script src="<?= base_url('bower_components/jquery-form-validator/form-validator/jquery.form-validator.min.js'); ?>"></script>
+
         <script src="<?= base_url('assets/js/f_indentity.js') ?>"></script>
     </body>
 </html>

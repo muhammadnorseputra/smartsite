@@ -17,29 +17,35 @@
                 method: _method,
                 data: _data,
                 processData: false,
-                // contentType: false,
+                contentType: false,
                 cache: false,
                 dataType: 'json',
                 beforeSend: function() {
                     $('button[type=submit]').prop('disabled', true).html('Processing...');
+                    $.blockUI({ message: '<h2> Processing ...</h2>', css: { backgroundColor: '#000', color: '#fff'} });
                 },
                 success: function(response) {
-                    alert(response.msg);
                     $('button[type=submit]').prop('disabled', true).html(`Processing...`);
+                    $.blockUI({ message: '<h2> Uploading Indentity ...</h2>', css: { backgroundColor: '#000', color: '#fff'} });
                     if (response.valid == true) {
-                        $form.get(0).reset();
+                        // $form.get(0).reset();
                         setTimeout(() => {
                         $('button[type=submit]').prop('disabled', false).html(`<i class="fas fa-mail-bulk"></i> Simpan & Lanjutkan Login`);
-                        window.location.replace(response.redirect);
+                        $.blockUI({ message: '<h2> Success ...</h2>',
+                                    timeout: 2500, 
+                                    onUnblock: function(){ window.location.replace(response.redirect); $.unblockUI(); },
+                                    css: { backgroundColor: '#000', color: '#fff'} });
                         }, 2500);
                     } else {
+                        $.unblockUI();
                         $('button[type=submit]').prop('disabled', false).html(`<i class="fas fa-mail-bulk"></i> Simpan & Lanjutkan Login`);
                     }
                 },
                 error: function(err) {
                     $('button[type=submit]').prop('disabled', false).html(`<i class="fas fa-mail-bulk"></i> Simpan & Lanjutkan Login`);
                     alert('Terjadi kesalahan dalam pengiriman data');
-                    console.log(err.responseText);
+                    console.log(err);
+                    $.unblockUI();
                 }
             });
             return false; // Will stop the submission of the form

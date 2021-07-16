@@ -6,7 +6,7 @@
 				<div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold text-dark"><i class="fas fa-box text-dark mr-2"></i>Kotak Saran</span>
                 </div>
-					<p class="font-weight-bold text-secondary">Silahkan masukan saran anda terkait layanan atau maupun fitur yang kami berikan di website.</p>
+					<p class="text-muted">Silahkan masukan saran anda terkait layanan atau maupun fitur yang kami berikan di website.</p>
 				</div>
 			<?php if($this->session->flashdata('captcha_salah') <> ''): ?>
 			<div class="alert alert-danger" role="alert">
@@ -25,7 +25,8 @@
 						<label for="category">Ketegori Saran <span class="text-danger">*</span></label>
 						<select class="rounded-0 shadow-sm form-control-lg form-control" name="category" id="category">
 							<option value="">-- Pilih Kategori --</option>
-							<option value="fitur">Update UI & UX</option>
+							<option value="email_verify">Verifikasi Email</option>
+							<option value="update">Update Tampilan (UI&UX)</option>
 							<option value="fitur">Fitur Website</option>
 							<option value="layanan">Layanan Website</option>
 							<option value="peforma">Peforma</option>
@@ -70,8 +71,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-5 d-none d-md-block d-lg-block d-xl-block mt-4 p-md-5">
+		<div class="col-md-5 d-none d-md-block d-lg-block d-xl-block">
+			<div class=" d-flex justify-content-center align-items-center h-100">
+				
 			<img src="<?= base_url('assets/images/bg/Gak Pusying.235aa0ce.png') ?>" alt="saran-buat-website-bkppd-nih-bagai-mana-ya" class="img-fluid">
+			</div>
 		</div>
 	</div>
 </div>

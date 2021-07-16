@@ -2,7 +2,7 @@ $(document).ready(function() {
     $.validate({
         form: '#form_daftar',
         lang: 'en',
-        modules: 'date, security, html5, sanitize, file',
+        modules: 'date, security, html5, sanitize',
         onModulesLoaded: function() {
             $('#alamat').restrictLength($('#maxlength'));
         },
@@ -33,9 +33,6 @@ $(document).ready(function() {
                 url: _action,
                 method: _method,
                 data: _data,
-                // processData: false,
-                // contentType: false,
-                // cache: false,
                 dataType: 'json',
                 beforeSend: function() {
                     $('button[type=submit]').prop('disabled', true).html('<div class="d-flex justify-content-center align-items-center"><div style="width: 30px; height:30px;" class="loader_small"></div></div>');

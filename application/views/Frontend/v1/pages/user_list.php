@@ -1,54 +1,81 @@
-
 <section class="pt-md-5">
 	<div class="container">
-		<div class="row mt-lg-5 mt-md-5">
-			<table class="table table-borderless table-condensed table-striped table-light">
-				<thead>
-					<tr>
-						<th>Detail</th>
-						<th>Photo</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php $no=1; foreach ($userlist as $u): ?>
-					<?php  
-						$role = $u->role === 'EDITOR' ? '<span class="badge badge-primary">EDITOR</span>' : '<span class="badge badge-light">TAMU</span>'; 
-						$online = $u->online === 'ON' ? '<span class="text-success animated fadeIn infinite"> Online</span> ' : '<span class="text-secondary"> Offline</span>';
-					?>
-						<tr>
-							<td>
-								<div class="small text-muted">Tanggal Bergabung</div> 
-								<?= longdate_indo($u->tanggal_bergabung) ?>
-								<br>
-								<div class="small text-muted">Nama</div> 
-								<?= decrypt_url($u->nama_lengkap) ?>
-								<div class="small text-muted">Status</div> 
-								<?= $online ?>
-
-							</td>
-							<td><img width="90" src="<?= img_blob($u->photo_pic) ?>" alt="<?= $u->nama_lengkap ?>"></td>
-						</tr>
-						<tr>
-							
-							<td colspan="2">
-								<a href="<?= base_url('user/'.decrypt_url($u->nama_panggilan).'/'.encrypt_url($u->id_user_portal)) ?>" class="btn btn-outline-light btn-sm btn-block mt-2">View profile</a>
-							</td>
-						</tr>
-		        	<?php $no++; endforeach; ?>
-				</tbody>
-			</table>
-			
-			<!-- <div class="col-12 col-md-3 mb-3">
-				<div class="card">
-                    <div class="card-body bg-white text-center rounded px-0">
-                    	
-                        <img class="w-25 h-25 rounded" src="<?= img_blob($u->photo_pic) ?>" alt="<?= $u->nama_lengkap ?>">
-                        <br> <?= $online ?>
-                        <a href="<?= base_url('user/'.decrypt_url($u->nama_panggilan).'/'.encrypt_url($u->id_user_portal)) ?>" class="btn btn-outline-light btn-sm mx-auto mt-2">Profile</a>
-                        <div class="border-top border-light my-2 py-2"><?= decrypt_url($u->nama_lengkap) ?></div> <?= $role ?> 
-                    </div>
-                </div>
-            </div> -->
-        </div>
-    </div>
+		<div class="row mt-3 mt-lg-5 mt-md-5">
+			<div class="col-12 col-md-4">
+				<h3 class="text-uppercase">userportal</h3>
+				<p class="text-muted lead">
+					List Userportal yang telah berhasil bergabung.
+				</p>
+			</div>
+			<div class="col-12 col-md-8">
+				
+				<div class="table-responsive">
+					<table class="table table-borderless table-condensed table-striped table-light" id="userportal">
+						<thead>
+							<tr>
+								<th>Detail</th>
+								<th>Photo</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
+<link rel="stylesheet" href="<?= base_url('assets/plugins/datatable/datatables2.min.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/plugins/datatable/inc_tablesold.css') ?>">
+<script src="<?= base_url('bower_components/jquery/dist/jquery.min.js') ?>"></script>
+<script src="<?= base_url('assets/plugins/datatable/datatables-save.min.js') ?>"></script>
+<script src="<?= base_url('template/v1/js/route.js') ?>"></script>
+<script>
+var table = $("#userportal").DataTable({
+    "processing": true,
+    "serverSide": true,
+    "paging": true,
+    "ordering": true,
+    "info": false,
+    "searching": false,
+    "pagingType": "full_numbers",
+    "responsive": true,
+    "datatype": "json",
+    "fixedHeader": {
+      headerOffset: 0,
+      header: false,
+      footer: false
+    },
+    "lengthMenu": [
+      [2, 6, 10, 25, 50, -1],
+      [2, 6, 10, 25, 50, "All"]
+    ],
+    "order": [0, 'desc'],
+    "ajax": {
+      "url": _uri+'/frontend/v1/users/ajax_user_terdaftar',
+      "type": "POST"
+    },
+    "columnDefs": [{
+      "targets": [0],
+      "orderable": true,
+      // "className": "text-center",
+    }, {
+      "targets": [1],
+      "orderable": false,
+      // "className": "text-center",
+      // "width": "15%"
+    }],
+    "language": {
+      "lengthMenu": "_MENU_ Data per halaman",
+      "zeroRecords": "Userportal tidak ditemukan",
+      "info": "Showing page _PAGE_ of _PAGES_",
+      "infoEmpty": "Userportal tidak ada",
+      "infoFiltered": "(filtered from _MAX_ total records)",
+      "search": "Pencarian",
+      "processing": `
+      <div class="d-flex justify-content-center align-items-center">
+      	<div class="loader_small" style="width:30px; height: 30px;"></div>
+      </div> 
+      `
+    }
+  });
+
+</script>

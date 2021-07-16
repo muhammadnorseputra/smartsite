@@ -20,11 +20,10 @@ class Users extends CI_Controller {
         }
 
 	}
-	
 	public function user_terdaftar()
 	{
 		$data = [
-            'title' => 'BKPPD &bull; User terdaftar',
+            'title' => 'Userportal - BKPPD Balangan',
             'isi' => 'Frontend/v1/pages/user_list',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
@@ -32,7 +31,49 @@ class Users extends CI_Controller {
         ];
         $this->load->view('Frontend/v1/layout/wrapper', $data);
 	}
+	
+	public function ajax_user_terdaftar() 
+	{
 
+		$list = $this->users->get_datatables_userlist();
+		$data = array();
+		$no = $_POST['start'];
+		foreach ($list as $u):
+			$role = $u->role === 'EDITOR' ? '<span class="badge badge-primary">EDITOR</span>' : '<span class="badge badge-light">TAMU</span>'; 
+			$online = $u->online === 'ON' ? '<span class="text-success animated fadeIn infinite"> Online</span> ' : '<span class="text-secondary"> Offline</span>';
+			$pic = !empty($u->photo_pic) ? img_blob($u->photo_pic) : base_url('assets/images/no-profile-picture.jpg');
+			$no++;
+			$row = array();
+			$row[] = '<tr>
+							<td>
+								<div class="small text-muted">Tanggal Bergabung</div> 
+								'.longdate_indo($u->tanggal_bergabung).'
+								<br>
+								<div class="small text-muted">Nama</div> 
+								'.decrypt_url($u->nama_lengkap).'
+								<div class="small text-muted">Status</div> 
+								'.$online.'
+							</td>
+							</tr>
+						';
+			$row[] = '<tr>
+						<td><img width="90" src="'.$pic.'" alt="'.$u->nama_lengkap.'"></td>
+							<td colspan="2">
+								<a href="'.base_url("user/".decrypt_url($u->nama_panggilan)."/".encrypt_url($u->id_user_portal)).'" class="btn btn-outline-primary btn-sm btn-block mt-2">View profile</a>
+							</td>
+						</tr>';
+			$data[] = $row;
+		endforeach;
+		$output = array(
+			"draw" => $_POST['draw'],
+			"recordsTotal" => $this->users->count_all_userlist(),
+			"recordsFiltered" => $this->users->count_filtered_userlist(),
+			"data" => $data,
+		);
+		//output dalam format JSON
+		echo json_encode($output);
+	}
+	
 	public function verify($nohp) {
 		if(isset($nohp)) {
 			$db = $this->users->verify_email($nohp);
@@ -396,8 +437,8 @@ class Users extends CI_Controller {
 
 		$output = array(
 				"draw" => $_POST['draw'],
-				"recordsTotal" => $this->halaman->count_all($idAkun),
-				"recordsFiltered" => $this->halaman->count_filtered($idAkun),
+				"recordsTotal" => $this->halaman->count_all_userlist($idAkun),
+				"recordsFiltered" => $this->halaman->count_filtered_userlist($idAkun),
 				"data" => $data,
 			);
 		//output to json format
