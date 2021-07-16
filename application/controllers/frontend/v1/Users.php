@@ -1,5 +1,4 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Users extends CI_Controller {
 
 	public function __construct()
@@ -34,7 +33,6 @@ class Users extends CI_Controller {
 	
 	public function ajax_user_terdaftar() 
 	{
-
 		$list = $this->users->get_datatables_userlist();
 		$data = array();
 		$no = $_POST['start'];
