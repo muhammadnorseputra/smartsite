@@ -1,5 +1,5 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light d-none d-md-block d-lg-block">
+<nav id="navbar" class="navbar fixed-top navbar-expand-sm border-bottom border-light navbar-light d-none d-md-block d-lg-block">
 	<div class="container">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
 			<?php echo '<img src="data:image/jpeg;base64,' .base64_encode($mf_beranda->site_logo) . '" alt="BKPPD Kab. Balangan" width="150"/>'; ?>

@@ -86,8 +86,10 @@
 									</div>
 								</div>
 							<button type="submit" class="btn btn-success btn-block shadow-lg btn-lg mb-4"><i class="fas fa-lock mr-2"></i> Log In</button>
-							<a href="<?= base_url('lupa_password') ?>" class="text-primary">Saya lupa password?</a>
 							<?= form_close(); ?>
+							<a href="<?= base_url('lupa_password') ?>" class="text-primary">Saya lupa password?</a>
+							<br>
+							<a href="<?= base_url('kebijakan-privacy-policy') ?>" class="text-danger">Kebijakan Privacy & Policy</a>
 						</div>
 					</div>
 					<div class="col-7 d-none d-sm-block d-md-block border-left d-xl-block bg-light">

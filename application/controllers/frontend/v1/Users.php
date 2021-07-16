@@ -78,6 +78,19 @@ class Users extends CI_Controller {
 		$this->load->view('Frontend/v1/pages/userguide', $data);
 	}
 
+	public function kebijakan()
+	{
+		$data = [
+            'title' => 'Kebijakan Privacy & Policy - BKPPD Balangan',
+            'isi' => 'Frontend/v1/kebijakan_privacy_policy',
+            'mf_beranda' => $this->mf_beranda->get_identitas(),
+            'mf_menu' => $this->mf_beranda->get_menu()
+		];
+		// 
+		$this->load->view('Frontend/v1/layout/wrapper', $data);
+		
+	}
+
 	public function lupa_password() {
 		$data = [
             'mf_beranda' => $this->mf_beranda->get_identitas()

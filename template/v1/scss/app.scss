@@ -61,17 +61,32 @@ section.hero {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
+.bg-blur {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
 // Loading Screen
 .page-slider {
 content: "";
   position:fixed;
   min-width: 100%;
   min-height: 100vh;
-  // background-color: #eee;
   left:0;
   top: 0;
   z-index: 9999;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+.page-slider::before {
+content: "";
+  position:fixed;
+  min-width: 100%;
+  min-height: 100vh;
+  left:0;
+  top: 0;
+  z-index: 8888;
+  background-color: #fff;
+  opacity: 0.7;
 }
 .slider{
   z-index: 9999;
@@ -116,7 +131,7 @@ content: "";
 	text-align: center;
 	vertical-align: middle;
 	z-index: 9999;
-	opacity: 0.5;
+	// opacity: 0.5;
 }
 .page-slider p {
 position: fixed;
@@ -259,13 +274,13 @@ h5.title-sidebar {
 	font-weight: 700;
 }
 .navbar li.nav-item a {
-	color: #000 !important;
-	transition: background .1s ease-in;
+	color: #222 !important;
+	transition: background .1s ease;
 	font-family: 'Rubik', sans-serif;
 	font-size: 16px;
 	font-weight: 500;
 	border-radius: 8px !important;
-	padding-top: .5rem .3rem;
+	padding-top: .5rem .2rem;
 	border: 1px solid transparent;
 }
 .navbar li.nav-item a:hover {
@@ -276,7 +291,7 @@ h5.title-sidebar {
 	background: inherit !important;
 }
 .dropdown-menu {
-	top: 40px;
+	top: 43px;
 	// left: 0px;
 	padding: .5rem;
 	border: 0px;
@@ -526,15 +541,15 @@ img.lazy {
 	display: block;
 	background-color: transparent;
 	/* optional way, set loading as background */
-	// background-image: url("../../../assets/images/loader/rolling-2.gif");
-	background-size: cover;
-	background-image: url("https://via.placeholder.com/300.png?text=BKPPD");
+	background-image: url("../../../assets/images/loader/rolling-2.gif");
+	background-size: auto;
+	// background-image: url("https://via.placeholder.com/300.png?text=BKPPD");
 	background-repeat: no-repeat;
 	background-position: center center;
 }
 
 img.isLoaded {
-	transition: all .3s ease-in;
+	transition: all .1s ease-in;
 }
 
 i.likes {

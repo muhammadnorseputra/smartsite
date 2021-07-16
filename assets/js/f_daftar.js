@@ -1,21 +1,8 @@
-// Image Preview
-function readURL(input, $element) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function(e) {
-            $($element).attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(input.files[0]); // convert to base64 string
-    }
-}
-
 $(document).ready(function() {
     $.validate({
         form: '#form_daftar',
         lang: 'en',
-        modules: 'date, security, html5, file, sanitize',
+        modules: 'date, security, html5, sanitize',
         onModulesLoaded: function() {
             $('#alamat').restrictLength($('#maxlength'));
         },
@@ -40,17 +27,19 @@ $(document).ready(function() {
         onSuccess: function($form) {
             var _action = $form.attr('action');
             var _method = $form.attr('method');
-            var _data = new FormData($form.get(0));
+            // var _data = new FormData($form);
+            var _data = $form.serialize();
             $.ajax({
                 url: _action,
                 method: _method,
                 data: _data,
-                processData: false,
-                cache: false,
+                // processData: false,
+                // contentType: false,
+                // cache: false,
+                dataType: 'json',
                 beforeSend: function() {
                     $('button[type=submit]').prop('disabled', true).html('<div class="d-flex justify-content-center align-items-center"><div style="width: 30px; height:30px;" class="loader_small"></div></div>');
                 },
-                dataType: 'json',
                 success: function(response) {
                     $('#content2').notifyModal({
                         duration: 2500,
@@ -68,8 +57,8 @@ $(document).ready(function() {
                         $form.get(0).reset();
                         setTimeout(() => {
                         $('button[type=submit]').prop('disabled', false).html(`<i class="fas fa-check mr-2"></i> Daftar`);
-                        }, 3000);
                         window.location.replace(response.redirect);
+                        }, 2500);
                     } else {
                         $('button[type=submit]').prop('disabled', false).html(`<i class="fas fa-check mr-2"></i> Daftar`);
                     }
@@ -94,11 +83,11 @@ $(document).ready(function() {
     // Callendar Event
     $('#tl-container input#tl').datepicker({
         clearBtn: true,
-        forceParse: false,
+        forceParse: true,
         calendarWeeks: true,
         autoclose: true,
         format: 'dd/mm/yyyy',
-        todayHighlight: true,
+        todayHighlight: false,
         toggleActive: true,
     });
     // API 
@@ -108,12 +97,5 @@ $(document).ready(function() {
     });
     $('#tl').mask('00/00/0000', {
         placeholder: "__/__/____"
-    });
-
-    $("input[name='photo_pic']").change(function() {
-        readURL(this, $('img.photo_pic'));
-    });
-    $("input[name='photo_ktp']").change(function() {
-        readURL(this, $('img.photo_ktp'));
     });
 });

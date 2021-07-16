@@ -39,25 +39,7 @@
 							</div>
 							<h3 class="font-weight-bold mb-5 mt-5 text-center text-md-left">Registered</h3> <?= $this->session->userdata('user_portal_log')['nama_panggilan'] ?>
 							<?php $token = encrypt_url('bkppd_balangan@'.date('dmY')); ?>
-							<?= form_open_multipart(base_url('frontend/v1/daftar/send'), ['id' => 'form_daftar'], ['tokenRegister' => $token]); ?>
-							<div class="my-5 d-flex justify-content-center align-items-center flex-column flex-lg-row">
-								<div class="mr-3">
-									<img src="<?= base_url('assets/images/no-profile-picture.jpg'); ?>" alt="pic" width="140" height="140" class="rounded-circle d-block border border-secondary p-1 photo_pic mx-auto">
-								</div>
-								<div>
-								<input name="photo_pic"
-								type="file"
-								data-validation="dimension mime size"
-								data-validation-allowing="jpg,png"
-								data-validation-max-size="1M"
-								data-validation-dimension="200x217-300x326"
-								required="required">
-								
-								<span id="customFile" class="form-text text-muted small">
-								Upload photo profile.<br> min: 200x217 (px) | max: 300x326 (px)  
-								</span>
-								</div>
-							</div>
+							<?= form_open(base_url('frontend/v1/daftar/send'), ['id' => 'form_daftar'], ['tokenRegister' => $token]); ?>
 							<div class="form-group">
 								<label for="email" class="font-weight-bold">Nama Lengkap</label>
 								<input name="nama_lengkap"
@@ -190,26 +172,6 @@
 								
 							</div>
 						</div>
-							<div class="form-group">
-								<div class="row">
-									<div class="col">
-										<label class="font-weight-bold pb-3 pt-3 border-top">Upload Kartu Identitas
-											<br> <span class="small text-danger">Silahkan Upload file kartu identitas anda seperti KTP/SIM/PASPORT/Sejenisnya sebagai validasi identity user.</span>
-										</label>
-										<img src="<?= base_url('assets/images/noimage.gif'); ?>" alt="pic" width="100%" class="photo_ktp d-block mx-auto border border-info p-1 mb-3">
-										<input name="photo_ktp"
-										type="file"
-										data-validation="mime size"
-										data-validation-allowing="jpg, png"
-										data-validation-max-size="2M"
-										required="required">
-										<small id="customFile" class="form-text text-muted">
-										Upload Kartu Identitas.
-										</small>
-									</div>
-								</div>
-							</div>
-							
 							<?php
 							$this->session->set_userdata('captcha', array(mt_rand(0,9), mt_rand(1, 9)));
 							?>
@@ -217,13 +179,13 @@
 							$val_1 = $this->session->userdata('captcha')[0];
 							$val_2 = $this->session->userdata('captcha')[1];
 							?>
-							<p class="mb-2">
-								Berapa hasil penjumlahan dari <strong><?= $val_1 ?> + <?= $val_2 ?></strong> ?
+							<p class="mb-2 mt-4 small">
+								<strong>KEY</strong>: Berapa hasil penjumlahan dari <strong><?= $val_1 ?> + <?= $val_2 ?></strong> ?
 							</p>
 							<span id="check-capcha"></span>
 							<div class="row">
 								<div class="form-group col-6">
-									<div class="input-group mb-2">
+									<div class="input-group">
 										<div class="input-group-prepend">
 											<div class="input-group-text"><i class="fas fa-key"></i></div>
 										</div>
@@ -235,7 +197,7 @@
 							<div class="form-group">
 								<div class="form-check form-check-inline align-items-start custom-control custom-checkbox">
 								  <input class="form-check-input mt-1 mr-2 custom-control-input" name="disclimer" type="checkbox" id="inlineCheckbox1" required="required" data-validation-error-msg-container="#check-disclimer">
-								  <label class="form-check-label custom-control-label small" for="inlineCheckbox1">Saya benar-benar memberikan data yang valid dan mematuhi segala peraturan dan ketentuan yang diberikan.</label>
+								  <label class="form-check-label custom-control-label small" for="inlineCheckbox1">Saya benar-benar memberikan data yang valid dan mematuhi segala peraturan dan ketentuan yang berlaku.</label>
 								</div>
 								<span id="check-disclimer"></span>
 							</div>	
@@ -265,8 +227,8 @@
 		<script src="<?= base_url('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') ?>"></script>
 		<script src="<?= base_url('assets/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js') ?>"></script>
 		
-		<script src="<?php echo base_url('bower_components/jquery-form-validator/form-validator/jquery.form-validator.min.js'); ?>"></script>
-		<script src="<?php echo base_url('bower_components/jquery-mask-plugin/dist/jquery.mask.min.js'); ?>"></script>
+		<script src="<?= base_url('bower_components/jquery-form-validator/form-validator/jquery.form-validator.min.js'); ?>"></script>
+		<script src="<?= base_url('bower_components/jquery-mask-plugin/dist/jquery.mask.min.js'); ?>"></script>
 		<script src="<?= base_url('assets/js/f_daftar.js') ?>"></script>
 	</body>
 </html>

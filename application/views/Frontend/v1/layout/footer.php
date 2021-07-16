@@ -105,9 +105,9 @@
 	</div>
 </section>
 <section class="bg-dark">
-	<div class="container border-top border-light">
-		<div class="row text-center pb-5 mb-5 mb-md-0 py-3 pb-md-3">
-			<div class="col-md-12 d-flex align-items-center justify-content-between flex-lg-row flex-column">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center pb-5 mb-5 mb-md-0 py-3 pb-md-3 d-flex align-items-center justify-content-between flex-lg-row flex-column border-top border-light">
 				<div class="text-left text-white">
 					<div class="small">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</div>
 				</div>
@@ -115,8 +115,11 @@
 					<a target="_blank" href="<?= $mf_beranda->fb; ?>" class="btn py-3 btn-primary-old my-2 ml-2 my-sm-0 animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Join group facebook">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a target="_blank" href="https://www.instagram.com/<?= $mf_beranda->ig; ?>" class="btn  py-3 btn-danger my-2 my-sm-0 mx-2 btn-instagram animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Follow Our Instagram" data-username="<?= $mf_beranda->ig; ?>">
+                    <a target="_blank" href="https://www.instagram.com/<?= $mf_beranda->ig; ?>" class="btn  py-3 btn-warning my-2 my-sm-0 mx-2 btn-instagram animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Follow Our Instagram" data-username="<?= $mf_beranda->ig; ?>">
                         <i class="fab fa-instagram"></i>
+                    </a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCFDRHqqNeuYql8O7y5sHgmw" class="btn py-3 btn-danger my-2 my-sm-0 btn-instagram animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Subscribe Channel Youtube">
+                        <i class="fab fa-youtube"></i>
                     </a>
 				</div>
 			</div>

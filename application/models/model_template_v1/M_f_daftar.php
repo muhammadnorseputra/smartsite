@@ -12,7 +12,13 @@ public function check_email($email){
                         
 public function send_akun($tbl, $data) {
 	return $this->db->insert($tbl, $data);
-}                         
+}
+
+public function update_akun($tbl, $data, $whr) {
+    $this->db->where($whr);
+    $this->db->update($tbl,$data);
+    return true;
+}
                         
 }
                         

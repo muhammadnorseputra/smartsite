@@ -6,7 +6,6 @@ class Daftar extends CI_Controller
     {
         parent::__construct();
         $this->load->model('model_template_v1/M_f_daftar', 'daftar');
-        $this->load->helper('blob');
         //Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
             // redirect(base_url('frontend/v1/beranda'),'refresh');
@@ -42,14 +41,13 @@ class Daftar extends CI_Controller
 
     public function send()
     {
-        $captcha = $this->input->post('captcha');
-        $sess_register = $this->input->post('tokenRegister');
-        $key = 'bkppd_balangan@'.date('dmY');
-        if($key == decrypt_url($sess_register)) {
+        $i = $this->input->post();
+        $sess_register = $i['tokenRegister'];
+        $validKey = decrypt_url($sess_register);
+        $isKey = 'bkppd_balangan@'.date('dmY');
+        // var_dump($i);die();
+        if($validKey === $isKey) {
                 // Get data post
-                $photo_pic = file_get_contents($_FILES['photo_pic']['tmp_name']);
-                $photo_ktp = file_get_contents($_FILES['photo_ktp']['tmp_name']);
-
                 $tgl_full = $this->input->post('tanggal_lahir');
                 $tgl_pecah = explode("/", $tgl_full);
                 $tgl_lahir = $tgl_pecah[2].'-'.$tgl_pecah[1].'-'.$tgl_pecah[0];
@@ -65,47 +63,47 @@ class Daftar extends CI_Controller
                     'email' => encrypt_url($this->input->post('email')),
                     'password' => "$".sha1('bkppd_balangan')."$".encrypt_url($this->input->post('password')),
                     'email_verifikasi' => 'N',
-                    'photo_pic' => $photo_pic,
-                    'photo_ktp' => $photo_ktp,
+                    // 'photo_pic' => $photo_pic,
+                    // 'photo_ktp' => $photo_ktp,
                     'tanggal_bergabung' => date('Y-m-d')
                 ];
                 // Configurasi Email
-                $from_email = 'bkppdbalangan@gmail.com';
-                $to_email = $this->input->post('email');
+                // $from_email = 'bkppdbalangan@gmail.com';
+                // $to_email = $this->input->post('email');
 
-                $config = array(
-                        'protocol' => 'smtp',
-                        'smtp_host' => 'ssl://smtp.googlemail.com',
-                        'smtp_port' => 465,
-                        'smtp_user' => $from_email,
-                        'smtp_pass' => 'rembulan123',
-                        'mailtype' => 'html',
-                        'charset' => 'iso-8859-1',
-                );
+                // $config = array(
+                //         'protocol' => 'smtp',
+                //         'smtp_host' => 'ssl://smtp.googlemail.com',
+                //         'smtp_port' => 465,
+                //         'smtp_user' => $from_email,
+                //         'smtp_pass' => 'rembulan123',
+                //         'mailtype' => 'html',
+                //         'charset' => 'iso-8859-1',
+                // );
 
-                $this->load->library('email', $config);
-                $this->email->set_newline("\r\n");
+                // $this->load->library('email', $config);
+                // $this->email->set_newline("\r\n");
 
-                $this->email->from($from_email, 'BKPPD Kab. Balangan'); 
-                $this->email->to($to_email);
-                $this->email->subject('Email Verification!');
+                // $this->email->from($from_email, 'BKPPD Kab. Balangan'); 
+                // $this->email->to($to_email);
+                // $this->email->subject('Email Verification!');
 
-                $message = '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
-                $message .= '<p> Konfirmasi email kamu untuk mengakses fitur dari web sites kami.  <a class="btn btn-warning" target="_blank" href="' . base_url().'frontend/v1/users/verify/'.$data['nohp'].'">Klik Disini</a></p>';
-                $message .= '<p> Terimakasih. </p>';
+                // $message = '<p> Dear ' . decrypt_url($data['nama_lengkap']).',</p>';
+                // $message .= '<p> Konfirmasi email kamu untuk mengakses fitur dari web sites kami.  <a class="btn btn-warning" target="_blank" href="' . base_url().'frontend/v1/users/verify/'.$data['nohp'].'">Klik Disini</a></p>';
+                // $message .= '<p> Terimakasih. </p>';
                 
-                $this->email->message($message); 
+                // $this->email->message($message); 
                 
                 //Send mail 
-                $this->daftar->send_akun('t_users_portal', $data);
-                if($this->email->send()){
-                    $msg = ['valid' => true, 'msg' => 'Akun telah diproses', 'redirect' => base_url('frontend/v1/daftar/register_status')];
+                $db = $this->daftar->send_akun('t_users_portal', $data);
+                if($db){
+                    // Message success regitered
+                    $msg = ['valid' => true, 'msg' => 'Akun telah diproses'];
+                    $msg = array('valid' => true, 'msg' => 'Register berhasil, silahkan validasi identitas anda!', 'data' => $data, 'redirect' => base_url('register-status'));
+                    $this->session->set_flashdata('msg', $msg);
                 } else {
-                    $msg = ['valid' => true, 'msg' => 'Akun telah diproses', 'redirect' => base_url('frontend/v1/daftar/register_status')];
+                    $msg = ['valid' => false, 'msg' => 'Galat, terjadi kesalahan saat pengiriman data'];
                 } 
-                // Message success regitered
-                $msg = array('valid' => true, 'msg' => 'Register Berhasil', 'redirect' => base_url('frontend/v1/daftar/register_status'));
-                $this->session->set_flashdata('msg', $msg);
         } else {
             $msg = array('valid' => false, 'msg' => 'Register is invalid');
             $this->session->set_flashdata('msg', $msg);
@@ -113,13 +111,35 @@ class Daftar extends CI_Controller
         echo json_encode($msg);
     }
 
+    public function register_update()
+    {
+        $id = $this->input->post('emailId');
+        if(!empty($id)):
+            $photo_pic = file_get_contents($_FILES['photo_pic']['tmp_name']);
+            $photo_ktp = file_get_contents($_FILES['photo_ktp']['tmp_name']);
+            $data = [
+                    'photo_pic' => $photo_pic,
+                    'photo_ktp' => $photo_ktp,
+                ];
+            $whr = [
+                'email' => $id
+            ];
+            $db = $this->daftar->update_akun('t_users_portal', $data, $whr);
+            if($db):
+                $msg = ['valid' => true, 'msg' => 'Success Updated', 'redirect' => base_url('login_web')];
+            else:
+                $msg = ['valid' => false, 'msg' => 'Gagal Updated, silahkan upload ulang'];
+            endif;
+            echo json_encode($msg);
+        endif;
+    }
+
     public function register_status()
     {
         $data = [
-            'title' => 'Portal | Status Registered',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
         ];
-        $this->load->view('Frontend/v1/pages/reg_status', $data, false);
+        $this->load->view('Frontend/v1/pages/f_daftar_status', $data);
     }
 }
 

@@ -82,12 +82,6 @@ $route['pegawai/(:any)'] = 'frontend/v1/pegawai/$1';
 $route['under-construction'] = 'theme/maintenance_site';
 $route['page/(:num)/(:any)'] = 'frontend/v1/halaman/statis/$1/$2';
 $route['beranda'] = 'frontend/v1/beranda';
-$route['login_web'] = 'frontend/v1/users/login';
-$route['userguide'] = 'frontend/v1/users/userguide';
-$route['daftar'] = 'frontend/v1/daftar';
-$route['lupa_password'] = 'frontend/v1/users/lupa_password';
-$route['cek-token/(:any)'] = 'frontend/v1/users/cek_token/$1';
-$route['reset-pass/(:any)/(:any)'] = 'frontend/v1/users/reset_pass/$1/$2';
 $route['album'] = 'frontend/v1/album';
 $route['video'] = 'frontend/v1/video';
 $route['download'] = 'frontend/v1/download';
@@ -104,6 +98,17 @@ $route['tag/(:any)'] = 'frontend/v1/post_list/tags/$1';
 $route['kategori/(:any)/(:any)'] = 'frontend/v1/post_list/views/$1/$2';
 $route['banner/(:any)/(:any)'] = 'frontend/v1/banner/detail/$1/$2';
 
+// Akun Login, Register
+$route['login_web'] = 'frontend/v1/users/login';
+$route['userguide'] = 'frontend/v1/users/userguide';
+$route['daftar'] = 'frontend/v1/daftar';
+$route['register-status'] = 'frontend/v1/daftar/register_status';
+$route['lupa_password'] = 'frontend/v1/users/lupa_password';
+$route['kebijakan-privacy-policy'] = 'frontend/v1/users/kebijakan';
+$route['cek-token/(:any)'] = 'frontend/v1/users/cek_token/$1';
+$route['reset-pass/(:any)/(:any)'] = 'frontend/v1/users/reset_pass/$1/$2';
+
+// Lainnya
 $route['testing'] = 'frontend/v1/beranda/testing';
 $route['d/(:any)/(:any)'] = 'frontend/v1/download/d/$1/$2';
 $route['leave'] = 'frontend/v1/api/leave';
