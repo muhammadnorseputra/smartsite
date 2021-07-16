@@ -6,6 +6,10 @@
 				<p class="text-muted lead">
 					List Userportal yang telah berhasil bergabung.
 				</p>
+				<p class="text-dark font-weight-bold">Total Userportal</p>
+				<p class="display-1">
+					<?= $total_userlist ?>
+				</p>
 			</div>
 			<div class="col-12 col-md-8">
 				

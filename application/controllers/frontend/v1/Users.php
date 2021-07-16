@@ -27,7 +27,7 @@ class Users extends CI_Controller {
             'isi' => 'Frontend/v1/pages/user_list',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
-            'userlist' => $this->users->userlist()->result(),
+            'total_userlist' => $this->users->userlist()->num_rows(),
         ];
         $this->load->view('Frontend/v1/layout/wrapper', $data);
 	}
