@@ -47,6 +47,16 @@ class Daftar extends CI_Controller
         $isKey = 'bkppd_balangan@'.date('dmY');
         // var_dump($i);die();
         if($validKey === $isKey) {
+
+                $img_pic = base_url('assets/images/no-profile-picture.jpg');
+                $img_ktp = base_url('assets/images/noimage.gif');
+
+                $photo_pic = file_get_contents($img_pic);
+                $photo_ktp = file_get_contents($img_ktp);
+
+                // $photo_pic = tmpfile($img_pic);
+                // $photo_ktp = tmpfile($img_ktp);
+                
                 // Get data post
                 $tgl_full = $this->input->post('tanggal_lahir');
                 $tgl_pecah = explode("/", $tgl_full);
@@ -63,8 +73,8 @@ class Daftar extends CI_Controller
                     'email' => encrypt_url($this->input->post('email')),
                     'password' => "$".sha1('bkppd_balangan')."$".encrypt_url($this->input->post('password')),
                     'email_verifikasi' => 'N',
-                    // 'photo_pic' => $photo_pic,
-                    // 'photo_ktp' => $photo_ktp,
+                    'photo_pic' => @$photo_pic,
+                    'photo_ktp' => @$photo_ktp,
                     'tanggal_bergabung' => date('Y-m-d')
                 ];
                 // Configurasi Email
@@ -103,6 +113,7 @@ class Daftar extends CI_Controller
                     $this->session->set_flashdata('msg', $msg);
                 } else {
                     $msg = ['valid' => false, 'msg' => 'Galat, terjadi kesalahan saat pengiriman data'];
+                    $this->session->set_flashdata('msg', $msg);
                 } 
         } else {
             $msg = array('valid' => false, 'msg' => 'Register is invalid');

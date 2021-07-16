@@ -2,7 +2,7 @@ $(document).ready(function() {
     $.validate({
         form: '#form_daftar',
         lang: 'en',
-        modules: 'date, security, html5, sanitize',
+        modules: 'date, security, html5, sanitize, file',
         onModulesLoaded: function() {
             $('#alamat').restrictLength($('#maxlength'));
         },

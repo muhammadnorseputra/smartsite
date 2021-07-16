@@ -62,10 +62,17 @@ section.hero {
   100% { transform: rotate(360deg); }
 }
 .bg-blur {
-  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, .9);
+}
+/* if backdrop support: very transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))) {
+  .bg-blur {
+    background-color: rgba(255, 255, 255, .5);
+    -webkit-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
   -o-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  }
 }
 // Loading Screen
 .page-slider {
