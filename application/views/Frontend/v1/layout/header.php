@@ -144,7 +144,12 @@
 			<?php
 			$idSes = $this->session->userdata('user_portal_log')['id'];
 			$getImg = $this->mf_users->get_userportal_byid($idSes)->photo_pic;
-			$img = '<img class="rounded mr-1 shadow-sm" width="23" src="data:image/jpeg;base64,'.base64_encode( $getImg ).'" alt="Userportal"/>';
+			if(!empty($getImg)):
+				$photo = 'data:image/jpeg;base64,' . base64_encode($getImg) . '';
+			else:
+			  	$photo = base_url('assets/images/no-profile-picture.jpg');
+			endif;
+			$img = '<img class="rounded mr-1 shadow-sm" width="23" src="'.$photo.'" alt="Userportal"/>';
 			?>
 			<div class="dropdown">
 				<button type="button" class="btn btn-outline-light border-0 text-muted my-sm-0 mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

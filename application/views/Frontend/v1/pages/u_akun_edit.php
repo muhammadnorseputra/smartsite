@@ -8,6 +8,20 @@
     </div>
   </div>
 </section>
+<?php  
+if(!empty($profile->photo_pic)):
+	$photo_pic = 'data:image/jpeg;base64,'.base64_encode($profile->photo_pic);
+else:
+	$photo_pic = base_url('assets/images/no-profile-picture.jpg');
+endif;
+
+if(!empty($profile->photo_ktp)):
+	$photo_ktp = 'data:image/jpeg;base64,'.base64_encode($profile->photo_ktp);
+else:
+	$photo_ktp = base_url('assets/images/noimage.gif');
+endif;
+
+?>
 <section class="mt--9">
 	<div class="container mb-5">
 		<div class="row">
@@ -20,14 +34,14 @@
 						<div class="form-group m-0">
 							<div class="row">
 								<div class="col text-center py-5">
-									<img src="data:image/jpeg;base64,<?= base64_encode($profile->photo_pic); ?>" alt="pic" width="160" height="160" class="rounded-circle d-block mx-auto border border-light p-1 mb-3 photo_pic">
+									<img src="<?= $photo_pic ?>" alt="pic" width="160" height="160" class="rounded-circle d-block mx-auto border border-light p-1 mb-3 photo_pic">
 									<input name="photo_pic" id="file" type="file" required="required" data-jenis="photo_pic">
 									<small id="customFile" class="form-text text-muted msg-pic">
 										Photo Profile.
 									</small>
 								</div>
 								<div class="col text-center border-left border-light py-5">
-									<img src="data:image/jpeg;base64,<?= base64_encode($profile->photo_ktp); ?>" alt="pic" width="260" height="160" class="photo_ktp d-block mx-auto border border-light p-1 mb-3">
+									<img src="<?= $photo_ktp ?>" alt="pic" width="260" height="160" class="photo_ktp d-block mx-auto border border-light p-1 mb-3">
 									<input name="photo_ktp" id="file" type="file" required="required" data-jenis="photo_ktp">
 									<small id="customFile" class="form-text text-muted msg-ktp">
 										Photo KTP.

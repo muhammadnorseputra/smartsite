@@ -4,12 +4,19 @@ $d = $this->users->detail_user(encrypt_url($this->session->userdata('user_portal
 $cek_verify = $d->email_verifikasi == 'Y' ? '<i class="fas text-success fa-check-circle"></i>' : '<br><span class="badge badge-warning">Belum verify</span>';
 
 $desc = $d->deskripsi == '' ? '<button class="btn btn-default text-left text-secondary"><i class="fas fa-plus mr-2"></i> Tambahkan deskripsi tentang kamu disini.</button>' : $d->deskripsi;
+
+if(!empty($d->photo_pic)):
 $photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($d->id_user_portal)->photo_pic) . '';
+else:
+  $photo = base_url('assets/images/no-profile-picture.jpg');
+endif;
 
 if($d->role === 'EDITOR'):
     $cek_role = '<span class="badge badge-warning">Editor</span';
   elseif($d->role === 'KONTRIBUTOR'):
     $cek_role = '<span class="badge badge-info">Konstributor</span>';
+  elseif($d->role === 'MUTASI'):
+    $cek_role = '<span class="badge badge-info">Bidang Mutasi</span>';
   else:
     $cek_role = '<span class="badge badge-dark">Tamu</span>';
 endif;
@@ -73,6 +80,12 @@ endif;
               </div>
             </div>
           </div>
+          <?php if($d->role == 'MUTASI'): ?>
+            <a id="module" href="<?= base_url('frontend/v1/users/post/'.encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-newspaper float-right" aria-hidden="true"></i> Posts</a>
+              <a id="module" href="<?= base_url('frontend/v1/users/halamanstatis/' . encrypt_url($d->id_user_portal)); ?>" class="border-0 rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-pager float-right" aria-hidden="true"></i> Pages</a>
+              <a id="module" href="<?= base_url('frontend/v1/users/halamanlink/'); ?>" class="border-0  rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-link float-right" aria-hidden="true"></i> Page Link</a>
+              <a id="module" href="<?= base_url('frontend/v1/users/submenu/'); ?>" class="border-0  rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-leaf float-right" aria-hidden="true"></i> Submenu</a>
+          <?php endif; ?>
           <?php if(($d->role == 'EDITOR') || ($d->role == 'SEKRETARIAT')): ?>
           <!-- IKM -->
           <div class="panel panel-default mb-2">
