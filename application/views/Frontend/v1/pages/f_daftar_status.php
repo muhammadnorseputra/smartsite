@@ -42,7 +42,7 @@ if($this->session->flashdata('msg')['valid'] == true) {
 		</div>
 	</div>
 </section>
-<?php if($this->session->flashdata('msg')['valid'] == false): ?>
+<?php if($this->session->flashdata('msg')['valid'] === true): ?>
 <section class="mt-5 mb-5">
 	<div class="container">
 		<div class="row">
