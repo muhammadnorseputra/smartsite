@@ -5,7 +5,7 @@
         modules: 'security, html5, file',
         showErrorDialogs: true,
         onError: function($form) {
-            alert('Form Error!');
+            alert('File tidak sesuai ketentuan, cek lagi !');
         },
         onSuccess: function($form) {
             var _action = $form.attr('action');
