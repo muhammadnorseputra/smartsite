@@ -8,7 +8,7 @@ function explore() {
 $(document).ready(function() {
 
     // get all berita
-    var limit = 6;
+    var limit = 4;
     var start = 0;
     var action = "inactive";
     console.log(_uriSegment);
@@ -74,7 +74,7 @@ $(document).ready(function() {
                     type: urlParams.get('type'),
                     sort: urlParams.get('sort')
                 },
-                cache: false,
+                cache: true,
                 dataType: "json",
                 success: function(data) {
                     if (data.html == "") {
@@ -82,7 +82,7 @@ $(document).ready(function() {
                         $("button#load_more").hide();
                         action = "active";
                     } else {
-                        if (data.count < 6) {
+                        if (data.count < 4) {
                             $("button#load_more").hide();
                             load_data_message();
                         } else {

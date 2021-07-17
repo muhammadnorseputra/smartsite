@@ -25,7 +25,6 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-md-0 mt-4">
                 <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
-                <?php $this->load->view('Frontend/v1/function/youtube_sidebar'); ?>
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
                 <?php $this->load->view('Frontend/v1/function/banner_sidebar'); ?>

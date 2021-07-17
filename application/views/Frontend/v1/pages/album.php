@@ -11,27 +11,25 @@
 </section>
 <section class="mb-3 mt--7">
 <div class="container">
-	<div class="row">
+	<div class="card-columns">
 		<?php if($album->num_rows() > 0): ?>
 		<?php foreach($album->result() as $a): ?>
-		<div class="col-6 col-sm-6 col-md-4 col-lg-4">
-		<a href="<?= base_url('album/'.encrypt_url($a->id_album_foto)) ?>" class="w-100 bg-white mx-md-3 h-100">
-			<div class="card bg-white border-0 w-100 p-5 mx-auto  shadow-lg">
-				<div class="overflow-hidden">
-				<?php if(!empty($a->gambar)): ?>
-				<img class="rounded lazy img-fluid w-100" data-src="<?= base_url('files/file_album/'.$a->gambar) ?>" alt="Card image">
-				<?php else: ?>
-				<img class="rounded lazy img-fluid w-100" data-src="data:image/jpeg;base64,<?= base64_encode($a->gambar_blob) ?>" alt="Card image">
-				<?php endif; ?>
-				</div>
-				<div class="card-body bg-transparent px-0">
-					<?php if($a->tgl_publish === date('Y-m-d')): ?><span class="badge badge-pill badge-warning float-right">New!</span> <?php endif; ?>
-					<div><?= $a->judul ?></div>
-					<span class="text-secondary label"><?= $this->album->jml_photo_in_album($a->id_album_foto) ?> Photo</span>
-				</div>
-			</div>
-		</a>
-		</div>
+			<a href="<?= base_url('album/'.encrypt_url($a->id_album_foto)) ?>">
+					<div class="card bg-white border-0 p-3 shadow-sm">
+						<div class="overflow-hidden">
+							<?php if(!empty($a->gambar)): ?>
+							<img class="rounded lazy img-fluid w-50" data-src="<?= base_url('files/file_album/'.$a->gambar) ?>" alt="Card image">
+							<?php else: ?>
+							<img class="rounded lazy img-fluid w-50" data-src="data:image/jpeg;base64,<?= base64_encode($a->gambar_blob) ?>" alt="Card image">
+							<?php endif; ?>
+						</div>
+						<div class="card-body bg-transparent px-0">
+							<?php if($a->tgl_publish === date('Y-m-d')): ?><span class="badge badge-pill badge-warning float-right">New!</span> <?php endif; ?>
+							<div><?= $a->judul ?></div>
+							<span class="text-secondary label"><?= $this->album->jml_photo_in_album($a->id_album_foto) ?> Photo</span>
+						</div>
+					</div>
+			</a>
 		<?php endforeach; ?>
 		<?php else: ?>
 		<div class="jumbotron bg-transparent text-center">

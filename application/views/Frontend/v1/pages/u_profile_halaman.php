@@ -42,7 +42,7 @@ $link_profile_public =
             <?php endif; ?>
           </div>
         </div>
-        <div class="row grid" data-target=".item">
+        <div class="row grid">
           <?php if ($halaman->num_rows() > 0) : ?>
             <?php foreach ($halaman->result() as $h) : ?>
               <?php
@@ -95,18 +95,10 @@ $link_profile_public =
     </div>
   </div>
 </section>
-<script src="<?= base_url('bower_components/masonry-layout/dist/masonry.pkgd.min.js'); ?>"></script>
 
 <style>
   .card:hover {
     border: 1px solid lightgreen !important;
+    transition: all .3s ease;
   }
 </style>
-
-<script>
-  $(function() {
-    $(".grid").masonry({
-      transitionDuration: '0.8s',
-    });
-  });
-</script>
