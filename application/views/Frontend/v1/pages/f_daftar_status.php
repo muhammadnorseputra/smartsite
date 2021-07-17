@@ -20,7 +20,7 @@ if($this->session->flashdata('msg')['valid'] == true) {
     $bg_status = 'bg-light';
     $icon = '';
 } else {
-    $jhon = "TOKEN validasi berobah, silahkan login dan lengkapi profile mu.";
+    $jhon = "TOKEN validasi berobah, silahkan login terlebih dahulu.";
     $msg = 'Oops :)';
     $bg_status = 'bg-white';
     $icon = '<i class="fas fa-exclamation-circle fa-4x text-warning"></i>';
@@ -33,7 +33,11 @@ if($this->session->flashdata('msg')['valid'] == true) {
                 <?= $icon ?>
 				<h2 class="my-3"><?= $msg ?></h2>
 				<p class="font-weight-light lead mb-3"><?= $jhon ?> </p>
-                <a href="<?= base_url('login_web?msg=sukses') ?>" class="btn btn-outline-dark"><i class="fas fa-arrow-left mr-2"></i>Skip lanjutkan login</a>
+                <?php  
+                    if($this->session->flashdata('msg')['valid'] === false) {
+                ?>
+                <a href="<?= base_url('login_web?msg=sukses') ?>" class="btn btn-outline-dark"><i class="fas fa-arrow-left mr-2"></i>Kembali ke halaman login</a>
+                <?php } ?>
 			</div>
 		</div>
 	</div>
