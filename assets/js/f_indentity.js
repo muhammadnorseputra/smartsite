@@ -28,7 +28,7 @@
                     $('button[type=submit]').prop('disabled', true).html(`Processing...`);
                     $.blockUI({ message: '<h2> Uploading Indentity ...</h2>', css: { backgroundColor: '#000', color: '#fff'} });
                     if (response.valid == true) {
-                        // $form.get(0).reset();
+                        $form.get(0).reset();
                         setTimeout(() => {
                         $('button[type=submit]').prop('disabled', false).html(`<i class="fas fa-mail-bulk"></i> Simpan & Lanjutkan Login`);
                         $.blockUI({ message: '<h2> Success ...</h2>',
