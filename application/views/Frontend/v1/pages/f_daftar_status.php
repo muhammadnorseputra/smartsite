@@ -42,7 +42,7 @@ if($this->session->flashdata('msg')['valid'] == true) {
 		</div>
 	</div>
 </section>
-<?php if($this->session->flashdata('msg')['valid'] == true): ?>
+<?php if($this->session->flashdata('msg')['valid'] == false): ?>
 <section class="mt-5 mb-5">
 	<div class="container">
 		<div class="row">
@@ -66,12 +66,12 @@ if($this->session->flashdata('msg')['valid'] == true) {
                                 type="file"
                                 data-validation="dimension mime size"
                                 data-validation-allowing="jpg,png"
-                                data-validation-max-size="1M"
-                                data-validation-dimension="200x217-300x326"
+                                data-validation-max-size="2M"
+                                data-validation-dimension="354x472-472x710"
                                 required="required">
                                 
-                                <span id="customFile" class="form-text text-muted small">
-                                Upload photo profile.<br> min: 200x217 (px) | max: 300x326 (px)  
+                                <span id="customFile" class="form-text text-muted small text-left">
+                                Upload photo profile.<br> min: 3x4 (cm) - max: 4x6 (cm)   
                                 </span>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@ if($this->session->flashdata('msg')['valid'] == true) {
                         <button type="submit" class="d-block btn-block mx-auto my-3 btn btn-warning"><i class="fas fa-mail-bulk"></i> Simpan & Lanjutkan Login</button>
                         <?= form_close(); ?>
                         <a href="<?= base_url('login_web') ?>" class="d-block mx-auto my-3 text-secondary btn btn-link"> Skip <i class="fas fa-arrow-right ml-2"></i></a>
-                        <p class="font-weight-light">
+                        <p class="font-weight-light small">
                             Silahkan pilih skip, jika anda ingin nanti saja melengkapinya. <br>
                             Sistem akan otomatis mengisikan secara default.
                         </p>
