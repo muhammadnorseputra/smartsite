@@ -1,4 +1,4 @@
-<div class="px-3 pb-3 pt-2 mb-3 bg-white rounded border">
+<div class="px-3 pt-2 bg-white rounded border">
     
 <div class="separator">
     <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-user-alt text-secondary mr-2"></i> Search PNS</span>
@@ -18,5 +18,5 @@
         </div>
     </div>
 </form>
-
 </div>
+<div class="devider-line" style="height:25px;"></div>

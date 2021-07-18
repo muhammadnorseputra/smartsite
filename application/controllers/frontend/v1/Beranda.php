@@ -239,7 +239,7 @@ class Beranda extends CI_Controller
 
                 $output .= '
                 <div>
-					<div class="card border-0 bg-white">
+					<div class="card border border-light bg-white">
 					<div class="card-body px-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded ml-3 lazy">
@@ -268,7 +268,7 @@ class Beranda extends CI_Controller
 					</div>
                     </div>
 				</div>
-                <hr>
+                <div class="devider-line"></div>
 				';
                 $no++;
             }

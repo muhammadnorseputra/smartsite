@@ -1,18 +1,20 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider2') ?>
-<section class="content-home hero py-4">
+<section class="content-home border-bottom rounded-bottom bg-light">
     <div class="container">
-        <div class="row d-flex align-items-center">
+        <div class="row">
+            <div class="d-flex align-items-center py-4">
             <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
                 <img class="img-fluid w-100" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="">
             </div>
             <div class="col-12 col-md-8">
-                <h1>Grafik Pegawai Negeri Sipil <?= date('Y') ?></h1>
+                <h1>Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?></h1>
                 <p>
-                    Kini website telah tersedia grafik pegawai negeri sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
+                    Kini website telah tersedia grafik Pegawai Negeri Sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
                 </p>
                 <a href="<?= base_url('api/grafik') ?>" class="btn btn-primary">Lihat Grafik</a>
+            </div>
             </div>
         </div>
     </div>
