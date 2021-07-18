@@ -84,7 +84,6 @@
                         </div>
                     </div>
                 </div>
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <ins class="adsbygoogle"
                     style="display:block"
                     data-ad-format="fluid"
@@ -103,3 +102,4 @@
         </div>
     </div>
 </section>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

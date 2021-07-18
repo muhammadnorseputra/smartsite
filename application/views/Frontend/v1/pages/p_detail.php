@@ -239,6 +239,6 @@ if (count($pecah) > 0) {
 			</div>
 		</div>
 	</section>
-
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!--<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>-->

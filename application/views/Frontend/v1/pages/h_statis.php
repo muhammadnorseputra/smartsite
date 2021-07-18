@@ -29,7 +29,6 @@
         ?>
         
         <?= $h->content ?>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle"
           style="display:block"
           data-ad-format="fluid"
@@ -67,15 +66,16 @@
     </div>
   </div>
 </section>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script src="<?= base_url('bower_components/jquery/dist/jquery.min.js') ?>"></script>
 <script>
 $(function() {
-$("#share").jsSocials({
-shares: ["email", "twitter", "facebook", "telegram", "whatsapp"],
-text: "",
-shareIn: "blank",
-showCount: "inside",
-showLabel: false,
-});
+  $("#share").jsSocials({
+    shares: ["email", "twitter", "facebook", "telegram", "whatsapp"],
+    text: "",
+    shareIn: "blank",
+    showCount: "inside",
+    showLabel: false,
+  });
 })
 </script>

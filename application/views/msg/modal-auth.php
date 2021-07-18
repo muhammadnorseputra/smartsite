@@ -15,7 +15,7 @@
 							<img src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/undraw_access_account_99n5.svg') ?>" alt="" class="d-block align-middle img-fluid mx-auto my-auto" alt="Authentication">
 						</div>
 						<div class="col-md-6">
-							<h3>Login dulu ya</h3>
+							<h2>Login dulu ya</h2>
 							<p class="text-muted">
 								Kamu harus login dahulu sebelum menggunakan fitur :
 							</p>
