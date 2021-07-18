@@ -28,11 +28,15 @@ RewriteRule ^(.*)$ index.php/$1 [L]
                                   application/xhtml+xml \
                                   application/xml \
                                   font/opentype \
+                                  image/jpeg \
+                                  image/jpg \
+                                  image/png \
                                   image/svg+xml \
                                   image/x-icon \
                                   text/css \
                                   text/html \
                                   text/plain \
+                                  text/php \
                                   text/x-component \
                                   text/xml
 </IfModule>

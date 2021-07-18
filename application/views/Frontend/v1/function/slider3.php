@@ -1,18 +1,30 @@
+<section>
 <div class="container">
-    <div class="row align-items-center">
-        <div class="col-md-5 border-bottom border-primary py-3 align-self-center order-last order-md-first">
-            <div data-aos="fade-up" data-aos-duration="100" data-aos-once="true">
-                <b class="display-4 animated text-warning">Hari baru jadi <span class="text-white bg-warning">semangat baru.</span></b>
-            </div>
-            <div data-aos="fade-up" data-aos-duration="200" data-aos-once="true">
-                <p class="lead my-3 text-secondary text-justify pr-md-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tempore totam dignissimos eum sequi provident</p>
+    <div class="row d-flex align-items-center">
+        <div class="col-md-5 py-3 py-md-5 mt-md-5 order-last order-md-first">
+            <div>
+                <h2 class="text-dark">Portal Web BKPPD Balangan</h2>
+                <p class="text-muted lead">Selamat Datang Pada Portal Web Resmi BKPPD Kabupaten Balangan</p>
             </div>
             <div class="animated fadeInUp">
-                <button class="btn btn-primary btn-block font-weight-lighter btn-lg">Lihat selengkapnya</button>
+                <a href="#content-page" class="btn btn-info btn-block font-weight-lighter btn-lg">Explore <i class="fas fa-arrow-down ml-3"></i></a>
+                <p class="mt-3 font-weight-bold">Follow Our Media Social</p>
+                <div class="d-flex justify-content-start align-items-center">
+                    <a target="_blank" href="<?= $mf_beranda->fb; ?>" class="btn py-3 btn-primary-old my-2 ml-2 my-sm-0 animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Join group facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/<?= $mf_beranda->ig; ?>" class="btn  py-3 btn-warning my-2 my-sm-0 mx-2 btn-instagram animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Follow Our Instagram" data-username="<?= $mf_beranda->ig; ?>">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCFDRHqqNeuYql8O7y5sHgmw" class="btn py-3 btn-danger my-2 my-sm-0 btn-instagram animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Subscribe Channel Youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-md-7 order-first order-md-last">
-            <img class="img-fluid animated pulse faster" src="<?php echo base_url('bower_components/SVG-Loaders/svg-loaders/undraw_celebration_0jvk.svg') ?>" alt="">
+        <div class="col-md-7 order-first order-md-last py-md-5 mt-md-5">
+            <img class="img-fluid animated pulse faster" src="<?php echo base_url('assets/images/bg/bg-hero.svg') ?>" alt="">
         </div>
     </div>
 </div>
+</section>

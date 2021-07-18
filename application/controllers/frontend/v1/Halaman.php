@@ -320,6 +320,16 @@ class Halaman extends CI_Controller
 
     echo json_encode($msg);
   }
+  public function koran_online()
+  {
+    $data = [
+        'title' => 'Koran Online Hari Ini - Magazine-ID',
+        'isi'  => 'Frontend/v1/pages/koran/index',
+        'mf_beranda' => $this->mf_beranda->get_identitas(),
+        'mf_menu' => $this->mf_beranda->get_menu()
+      ];
+    $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+  }
 }
 
 /* End of file Halaman.php */

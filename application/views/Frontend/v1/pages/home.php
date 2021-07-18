@@ -1,6 +1,6 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
-<?php $this->load->view('Frontend/v1/function/slider2') ?>
+<?php $this->load->view('Frontend/v1/function/slider3') ?>
 <section class="content-home border-bottom rounded-bottom bg-light">
     <div class="container">
         <div class="row">
@@ -21,11 +21,19 @@
 </section>
 <?php endif; ?>
 <?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-5 pt-md-5' : 'my-4' ?>
-<section class="mb-5 <?= $my ?>">
+<section class="mb-5 <?= $my ?>" id="content-page">
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-md-0 mt-4">
+                <a href="<?= base_url('koran-online'); ?>" class="btn btn-outline-light btn-light py-3 mb-3 btn-block">
+                <div class="d-flex justify-content-between align-items-center text-primary">
+                    <i class="fas fa-newspaper mr-3 fa-2x"></i>
+                    <span>
+                        Baca Koran Online Hari Ini <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
+                </div>
+                </a>
                 <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>

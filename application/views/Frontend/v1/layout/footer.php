@@ -111,17 +111,9 @@
 				<div class="text-left text-white">
 					<div class="small">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</div>
 				</div>
-				<div class="text-right text-white d-none d-md-block d-lg-block">
-					<a target="_blank" href="<?= $mf_beranda->fb; ?>" class="btn py-3 btn-primary-old my-2 ml-2 my-sm-0 animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Join group facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a target="_blank" href="https://www.instagram.com/<?= $mf_beranda->ig; ?>" class="btn  py-3 btn-warning my-2 my-sm-0 mx-2 btn-instagram animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Follow Our Instagram" data-username="<?= $mf_beranda->ig; ?>">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a target="_blank" href="https://www.youtube.com/channel/UCFDRHqqNeuYql8O7y5sHgmw" class="btn py-3 btn-danger my-2 my-sm-0 btn-instagram animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Subscribe Channel Youtube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-				</div>
+				<!-- <div class="text-right text-white d-none d-md-block d-lg-block">
+					
+				</div> -->
 			</div>
 		</div>
 	</div>

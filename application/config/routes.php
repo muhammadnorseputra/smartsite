@@ -96,6 +96,7 @@ $route['disukai/(:any)/(:any)'] = 'frontend/v1/users/disukai/$1/$2';
 $route['halaman/(:any)/(:any)'] = 'frontend/v1/users/halaman/$1/$2';
 $route['tag/(:any)'] = 'frontend/v1/post_list/tags/$1';
 $route['kategori/(:any)/(:any)'] = 'frontend/v1/post_list/views/$1/$2';
+$route['koran-online'] = 'frontend/v1/halaman/koran_online';
 $route['banner/(:any)/(:any)'] = 'frontend/v1/banner/detail/$1/$2';
 
 // Akun Login, Register
