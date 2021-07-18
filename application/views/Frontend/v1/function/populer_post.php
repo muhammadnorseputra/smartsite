@@ -48,7 +48,7 @@
         if(!empty($b->img)):
             $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('files/file_berita/'.$b->img).'" alt="'.$b->judul.'">';
         elseif(!empty($b->img_blob)):
-            $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
+            $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'" alt="'.$b->judul.'"/>';
         else:
             $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->judul.'">';
         endif;
