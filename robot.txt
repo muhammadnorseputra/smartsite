@@ -1,0 +1,11 @@
+User-agent: Mediapartners-Google
+Disallow: 
+
+User-agent: *
+Disallow: /adminpanel/
+Disallow: /assets/
+Disallow: /api/
+Disallow: /frontend/v1/
+Allow: /
+
+Sitemap: https://web.bkppd-balangankab.info/sitemap_temp.xml

@@ -36,11 +36,11 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
-$img = '<img class="img-fluid card-img-top rounded lazy" data-src="'.base_url('files/file_berita/'.$post_detail->img).'">';
+$img = '<img class="w-100 rounded lazy" data-src="'.base_url('files/file_berita/'.$post_detail->img).'">';
 elseif($post_detail->type === 'YOUTUBE'):
 $img = $yt_player;
 else:
-$img = '<img class="img-fluid card-img-top rounded lazy" data-src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
+$img = '<img class="w-100 rounded lazy" data-src="data:image/jpeg;base64,'.base64_encode( $post_detail->img_blob ).'"/>';
 endif;
 
 // Content
@@ -64,9 +64,9 @@ if (count($pecah) > 0) {
 <section class="pt-md-5 mt-md-5">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 mb-md-5 pb-md-5 px-0 mx-md-0 mx-3">
+			<div class="col-md-8 mb-md-5 pb-md-5 px-3 px-md-0">
 				<div class="card rounded-lg shadow-none bg-white rounded border-0">
-					<div class="card bg-transparent border-0 px-md-3 pt-md-0 p-0">
+					<div class="card bg-transparent border-0 px-md-2 pt-md-0 p-0">
 						<div class="card-body px-0 px-md-2 pt-md-0">
 							<img data-src="<?= $photo; ?>" width="60" height="60" class="float-left mr-md-4 mr-3 lazy rounded shadow-sm">
 							<h5 class="card-title"><a href="<?= $link_profile_public ?>"><?= $namalengkap ?></a></h5>
@@ -75,7 +75,7 @@ if (count($pecah) > 0) {
 							</p>
 						</div>
 						</div>
-						<div class="px-0 px-md-4 media_youtube">
+						<div class="px-0 media_youtube">
 							<?= $img ?>
 							<?php  if($post_detail->type === 'YOUTUBE'): ?>
 								<div class="pl-3 border-left border-light">
@@ -93,12 +93,11 @@ if (count($pecah) > 0) {
 								</div>
 							<?php endif; ?>
 						</div>
-						<div class="card-body px-0 px-md-4">
+						<div class="card-body px-0">
 							<?php  if($post_detail->type === 'YOUTUBE'): ?>
 								<div class="g-ytsubscribe mt-md-0 mt-4" data-channelid="<?= $yt_channel ?>" data-layout="full" data-theme="light" data-count="default"></div>
 							<?php endif; ?>
-							<h2 class="font-weight-bold text-responsive"><?php echo $post_detail->judul; ?></h2>
-							<p class="card-text font-weight-normal"><?php echo $content; ?></p>
+							<h1 class="text-responsive"><?php echo $post_detail->judul; ?></h1>
 							<ins class="adsbygoogle"
 							     style="display:block; text-align:center;"
 							     data-ad-layout="in-article"
@@ -108,6 +107,7 @@ if (count($pecah) > 0) {
 							<script>
 							     (adsbygoogle = window.adsbygoogle || []).push({});
 							</script>
+							<p class="card-text font-weight-normal"><?php echo $content; ?></p>
 							<?= $tag; ?>
 						</div>
 						<div class="card-footer bg-transparent p-2 border-top rounded-lg d-flex justify-content-around">

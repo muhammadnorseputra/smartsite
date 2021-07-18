@@ -152,7 +152,7 @@ class Beranda extends CI_Controller
                 // Headline
                 if ($row->headline == '1') {
                     $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
-                    $isi = substr($isi_berita, 0, 160); // ambil sebanyak 80 karakter
+                    $isi = substr($isi_berita, 0, 195); // ambil sebanyak 80 karakter
                     $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
                 } else {
                     $isi = $row->content;
@@ -190,18 +190,18 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('files/file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:260px; object-fit: cover;" class="w-100 lazy rounded border-light" data-src="'.base_url('files/file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     elseif(!empty($row->img_blob)):
-                        $img = '<img class="w-100 lazy rounded border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
+                        $img = '<img style="height:260px; object-fit: cover;" class="w-100 lazy rounded border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
-                        $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:260px; object-fit: cover;" class="w-100 lazy rounded border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                     endif;
                 elseif($row->type === 'YOUTUBE'):
-                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:260px; object-fit: cover;" class="w-100 lazy rounded border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'">';
                 elseif($row->type === 'LINK'):
-                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:260px; object-fit: cover;" class="w-100 lazy rounded border-light" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
                 else:
-                    $img = '<img class="w-100 lazy rounded border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:260px; object-fit: cover;" class="w-100 lazy rounded border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                 endif;
 
                 // Kategori
@@ -216,7 +216,6 @@ class Beranda extends CI_Controller
 
                 if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'LINK'):
                 $content_body = '<div class="row">
-
                                     <div class="canvas col-12 col-md-6">
                                         <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info px-3 pl-md-4" title="'.$row->judul.'">
                                           '.$img.'
@@ -232,7 +231,6 @@ class Beranda extends CI_Controller
                                         <div class="mx-3 mx-md-0 pr-md-4">
                                         <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 6).'&nbsp;'.$pilihan.'</a></h4>
                                         <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
-                                        <hr>
                                         <p>'.$tag. '</p>
                                         </div>
                                     </div>
@@ -241,8 +239,8 @@ class Beranda extends CI_Controller
 
                 $output .= '
                 <div>
-					<div class="card mb-5 border bg-white">
-					<div class="card-body px-2 mt-2">
+					<div class="card border-0 bg-white">
+					<div class="card-body px-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded ml-3 lazy">
 						<h5 class="card-title mb-0 pb-1"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
@@ -270,6 +268,7 @@ class Beranda extends CI_Controller
 					</div>
                     </div>
 				</div>
+                <hr>
 				';
                 $no++;
             }

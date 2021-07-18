@@ -7,9 +7,10 @@
     <meta name="google-site-verification" content="nD_7kuRJfZNmViXXCEKPsajSAG_US0grvhqG0bqpO6g" />
     <title><?= $title; ?></title>
     <?= 
-        !empty($meta) ? $meta : '<meta name="author" content="M. Nor Saputra"/>
+        !empty($meta) ? $meta : '<meta name="author" content="muhamamdnorseputra@gmail.com"/>
                                  <meta name="description" content="'.$mf_beranda->meta_desc.'"/>
-                                 <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>';  
+                                 <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>
+                                 <meta name="robots" content="index,follow"/>';  
     ?>
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
     <link rel="apple-touch-icon" href="<?= base_url('assets/images/logo.png'); ?>">
@@ -23,7 +24,6 @@
 
       gtag('config', 'UA-199508931-1');
     </script>
-
 </head>
 
 <body>

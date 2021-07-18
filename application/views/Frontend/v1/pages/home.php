@@ -8,9 +8,9 @@
                 <img class="img-fluid w-100" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="">
             </div>
             <div class="col-12 col-md-8">
-                <h1>Grafik Pegawai</h1>
+                <h1>Grafik Pegawai Negeri Sipil <?= date('Y') ?></h1>
                 <p>
-                    Kini website tersedia grafik pegawai terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan. 
+                    Kini website telah tersedia grafik pegawai negeri sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
                 </p>
                 <a href="<?= base_url('api/grafik') ?>" class="btn btn-primary">Lihat Grafik</a>
             </div>
@@ -18,7 +18,7 @@
     </div>
 </section>
 <?php endif; ?>
-<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-4 pt-md-5' : 'my-4' ?>
+<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-5 pt-md-5' : 'my-4' ?>
 <section class="mb-5 <?= $my ?>">
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
@@ -84,11 +84,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="load_data"></div>
-                <div id="load_data_message"></div>
-                <div class="text-center">
-                    <button id="load_more" class="btn p-2 btn-primary btn-block rounded-lg px-4"><i class="fas fa-newspaper mr-2"></i> Loadmore</button>
-                </div>
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <ins class="adsbygoogle"
                     style="display:block"
@@ -99,6 +94,11 @@
                 <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
+                <div id="load_data"></div>
+                <div id="load_data_message"></div>
+                <div class="text-center">
+                    <button id="load_more" class="btn p-2 btn-primary btn-block rounded-lg px-4"><i class="fas fa-newspaper mr-2"></i> Loadmore</button>
+                </div>
             </div>
         </div>
     </div>
