@@ -9,7 +9,7 @@ if ($by == 'admin') {
 }
 
 $id = encrypt_url($detail->id_berita);
-$postby = strtolower($namalengkap);
+$postby = strtolower($namapanggilan);
 $judul = strtolower($detail->judul);
 $posturl = "post/{$postby}/{$id}/" . url_title($judul) . '';
 
@@ -63,6 +63,8 @@ $sumber = parse_url($url_sumber, PHP_URL_HOST);
         showCount: true,
         showCount: "inside",
         shareIn: "popup",
+        via: '<?= $namapanggilan ?>',
+        hashtags: '<?= $detail->tags ?>',
         on: {
             click: function(e) {
                 data_count++;
