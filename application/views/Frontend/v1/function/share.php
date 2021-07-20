@@ -58,7 +58,7 @@ $sumber = parse_url($url_sumber, PHP_URL_HOST);
     $("#share").jsSocials({
         url: "<?= base_url($posturl) ?>",
         shares: ["email", "twitter", "facebook", "whatsapp", 'telegram'],
-        text: "<?= ucwords($detail->judul) ?>",
+        text: "",
         showLabel: false,
         showCount: true,
         showCount: "inside",
