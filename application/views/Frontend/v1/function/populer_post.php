@@ -1,3 +1,4 @@
+<div class="px-3 pt-2 mt-5 bg-white rounded border">
 <div class="separator ml-3 d-flex justify-content-between align-items-center">
     <div>
         <span class="separator-text text-uppercase font-weight-bold">
@@ -85,3 +86,5 @@
     <?php $nolist++; endforeach; ?>
     </div>
 </div>
+</div>
+<div class="devider-line" style="height:25px;"></div>
