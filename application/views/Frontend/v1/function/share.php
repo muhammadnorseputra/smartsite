@@ -56,7 +56,7 @@ $sumber = parse_url($url_sumber, PHP_URL_HOST);
 <script>
     var data_count = <?= $detail->share_count; ?>;
     $("#share").jsSocials({
-        url: "<?= base_url($posturl) ?>",
+        url: "<?= base_url('post/'.$postby.'/'.$id.'/'.ucwords($detail->judul)) ?>",
         shares: ["email", "twitter", "facebook", "whatsapp", 'telegram'],
         text: "",
         showLabel: false,
