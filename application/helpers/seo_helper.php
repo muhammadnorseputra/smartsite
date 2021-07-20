@@ -54,8 +54,15 @@ if(! function_exists('meta_tags')){
     // $default = ;
     // $options = ;
 
-    function meta_tags($enable = ['general' => true, 'og'=> true, 'twitter'=> true, 'robot'=> true], $option = ['title' => '', 'desc' => '', 'imgUrl' => '', 'url' => '', 'keyWords' => '', 
-                'type' => '', 'canonical' => '']){
+    function meta_tags($enable = ['general' => true, 'og'=> true, 'twitter'=> true, 'robot'=> true], 
+        $title = '', 
+        $desc = '', 
+        $imgUrl = '', 
+        $url = '', 
+        $keyWords = '', 
+        $type = '', 
+        $canonical = ''){
+
         $CI =& get_instance();
         $CI->config->load('seo_config');
         $CI->load->model('M_f_beranda');
@@ -65,13 +72,13 @@ if(! function_exists('meta_tags')){
         $app_id = '165462475462282';
         
         //uses default set in seo_config.php
-        $title = empty($option['title']) ? $CI->config->item('seo_title') : $option['title'];
-        $desc = empty($option['desc']) ? $id->meta_desc : $option['desc'];
-        $imgUrl = empty($option['imgUrl']) ? $CI->config->item('seo_imgurl') : $option['imgUrl'];
-        $url = empty($option['url']) ? base_url('beranda') : $option['url'];
-        $keyWords = empty($option['keyWords']) ? $id->meta_seo : $option['keyWords'];
-        $type = empty($option['type']) ? $CI->config->item('seo_type') : $option['type'];
-        $canonical = empty($option['canonical']) ? base_url('beranda') : $option['canonical'];
+        $title      = $title == '' ? $CI->config->item('seo_title') : $title;
+        $desc       = $desc == '' ? $id->meta_desc : $desc;
+        $imgUrl     = $imgUrl == '' ? $CI->config->item('seo_imgurl') : $imgUrl;
+        $url        = $url == '' ? base_url('beranda') : $url;
+        $keyWords   = $keyWords == '' ? $id->meta_seo : $keyWords;
+        $type       = $type == '' ? $CI->config->item('seo_type') : $type;
+        $canonical  = $canonical == '' ? base_url('beranda') : $canonical;
 
         if($enable['general']){
             $output .= '<link rel="canonical" href="'.$canonical.'" />';

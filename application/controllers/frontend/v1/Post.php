@@ -22,8 +22,8 @@ class Post extends CI_Controller
     }
     
     public function detail($username, $id,  $judul) {
-        $judul = ucwords($judul);
         $detail = $this->post->detail(decrypt_url($id))->row();
+        $judul_seo = ucwords($detail->judul);
         // Youtube Data
         if($detail->type === 'YOUTUBE'):
             $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
@@ -54,10 +54,11 @@ class Post extends CI_Controller
           'twitter'=> true,
           'robot'=> true
         );
-        $meta_tag = meta_tags($e, $title = str_replace('-', ' ', $judul), $desc=$content,$imgUrl = $imgurl,$url = curPageURL(),$keyWords=$detail->tags,$type='article', $canonical = curPageURL());
+        $meta_tag = meta_tags($e, $title = $judul, $desc=$content,$imgUrl = $imgurl,
+                            $url = curPageURL(), $keyWords=$detail->tags, $type='article', $canonical=curPageURL());
 
     	$data = [
-    		'title' => $judul,
+    		'title' => $judul_seo,
     		'isi' => 'Frontend/v1/pages/p_detail',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),

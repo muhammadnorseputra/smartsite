@@ -36,7 +36,7 @@ class Beranda extends CI_Controller
         );
         $meta_tag = meta_tags($e, $desc=$id->meta_desc,$imgUrl = base_url('assets/images/logo.png'),$url = base_url('beranda'),$keyWords=$id->meta_seo,$type='web');
         $data = [
-                    'title' => "Beranda &dash; BKPPD Kab. Balangan",
+                    'title' => "Homepage - BKPPD Balangan, tahun ". date('Y'),
                     'isi' => 'Frontend/v1/pages/home',
                     'mf_beranda' => $id,
                     'mf_menu' => $this->mf_beranda->get_menu(),
