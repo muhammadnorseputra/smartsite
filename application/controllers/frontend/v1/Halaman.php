@@ -29,7 +29,7 @@ class Halaman extends CI_Controller
       'robot'=> true
     );
     // Meta SEO
-    $title = $this->halaman->get_namahalaman($token_halaman).' &bull; BKPPD Kabupaten Balangan';
+    $title = $this->halaman->get_namahalaman($token_halaman).' - BKPPD Balangan';
     $detail = $this->halaman->get_detail_halaman($token_halaman);
     $keywords = str_replace('-',',',url_title(strtolower($title)));
     // jika ada gambar
@@ -45,7 +45,8 @@ class Halaman extends CI_Controller
                           $imgUrl = $imgurl, 
                           $url = base_url('page/'.$token_halaman.'/'.url_title($judul)), 
                           $keyWords = $keywords,
-                          $type = 'article'
+                          $type = 'article',
+                          $canonical = curPageURL()
                         );
     else:
       $meta_tag = '';

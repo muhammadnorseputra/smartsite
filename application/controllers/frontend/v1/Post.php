@@ -54,7 +54,7 @@ class Post extends CI_Controller
           'twitter'=> true,
           'robot'=> true
         );
-        $meta_tag = meta_tags($e, $title = str_replace('-', ' ', $judul), $desc=$content,$imgUrl = $imgurl,$url = curPageURL(),$keyWords=$detail->tags,$type='article');
+        $meta_tag = meta_tags($e, $title = str_replace('-', ' ', $judul), $desc=$content,$imgUrl = $imgurl,$url = curPageURL(),$keyWords=$detail->tags,$type='article', $canonical = curPageURL());
 
     	$data = [
     		'title' => $judul,

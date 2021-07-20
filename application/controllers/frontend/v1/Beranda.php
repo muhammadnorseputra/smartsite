@@ -230,7 +230,7 @@ class Beranda extends CI_Controller
                                         <div class="mx-3 mx-md-0 pr-md-3">
                                         <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 8).'&nbsp;'.$pilihan.'</a></h4>
                                         <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
-                                        <p>'.$tag. '</p>
+                                        <p class="text-secondary">'.$tag. '</p>
                                         </div>
                                     </div>
                                 </div>';
@@ -250,7 +250,7 @@ class Beranda extends CI_Controller
                     
                     '.$content_body.'
 
-					<div class="card-footer bg-transparent p-2 border-0 d-flex justify-content-start">
+					<div class="card-footer bg-transparent p-2 border-top d-flex justify-content-start">
                     <div class="w-100">
 					<button type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
                     </div>
