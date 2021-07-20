@@ -24,7 +24,7 @@
 <section class="<?= $my ?>" id="content-page">
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
-        <div class="row">
+        <div class="row d-flex justify-content-around">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-md-0 mt-4">
                 <a href="<?= base_url('koran-online'); ?>" class="btn btn-outline-light btn-light py-3 mb-3 btn-block">
                 <div class="d-flex justify-content-between align-items-center text-primary">
@@ -40,7 +40,7 @@
                 <?php $this->load->view('Frontend/v1/function/banner_sidebar'); ?>
                 <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 offset-md-1 mr-md-3">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7">
                 <!-- Banenr slide horizontal -->
                 <!-- <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/banner_horizontal_home') ?>">
                     <span class="content-placeholder my-3" style="width: 100%; height: 230px;"></span>

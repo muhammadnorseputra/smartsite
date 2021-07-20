@@ -216,8 +216,8 @@ class Beranda extends CI_Controller
 
                 if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'LINK'):
                 $content_body = '<div class="row">
-                                    <div class="col-12 col-md-10 offset-md-2">
-                                        <div class="canvas pr-md-3 pl-md-0 pr-3 pl-3 mb-3">
+                                    <div class="col-12 col-md-10 offset-md-2 pl-md-0">
+                                        <div class="canvas pr-md-4 pl-md-0 pr-3 pl-3 mb-2">
                                         <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
                                           '.$img.'
                                         </a>
@@ -227,10 +227,10 @@ class Beranda extends CI_Controller
                                             <a href="'.$post_list_url.'" class="btn btn-sm '.$rand.'">'.$namakategori.'</a>
                                         </div>
                                         '.$sumber.'
-                                        <div class="mx-3 mx-md-0 pr-md-3">
-                                        <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 8).'&nbsp;'.$pilihan.'</a></h4>
-                                        <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
-                                        <p class="text-secondary">'.$tag. '</p>
+                                        <div class="mx-3 mx-md-0 pr-md-4 mt-md-3">
+                                            <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 8).'&nbsp;'.$pilihan.'</a></h4>
+                                            <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
+                                            <p class="text-secondary">'.$tag. '</p>
                                         </div>
                                     </div>
                                 </div>';
