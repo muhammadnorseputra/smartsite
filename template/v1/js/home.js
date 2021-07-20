@@ -8,7 +8,7 @@ function explore() {
 $(document).ready(function() {
 
     // get all berita
-    var limit = 4;
+    var limit = 3;
     var start = 0;
     var action = "inactive";
     console.log(_uriSegment);
@@ -82,7 +82,7 @@ $(document).ready(function() {
                         $("button#load_more").hide();
                         action = "active";
                     } else {
-                        if (data.count < 4) {
+                        if (data.count < 3) {
                             $("button#load_more").hide();
                             load_data_message();
                         } else {

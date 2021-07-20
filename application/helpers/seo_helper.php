@@ -50,34 +50,33 @@ if(! function_exists('strip_only_tags')){
 
 }
 if(! function_exists('meta_tags')){
-    function meta_tags($enable = array('general' => true, 'og'=> true, 'twitter'=> true, 'robot'=> true), 
-        $title = '', $desc = '', $imgUrl ='', $url = '', $keyWords = '', $type = ''){
+
+    // $default = ;
+    // $options = ;
+
+    function meta_tags($enable = ['general' => true, 'og'=> true, 'twitter'=> true, 'robot'=> true], $option = ['title' => '', 'desc' => '', 'imgUrl' => '', 'url' => '', 'keyWords' => '', 
+                'type' => '', 'canonical' => '']){
         $CI =& get_instance();
         $CI->config->load('seo_config');
         $CI->load->model('M_f_beranda');
         $id = $CI->M_f_beranda->get_identitas();
         $output = '';
 
+        $app_id = '165462475462282';
+        
         //uses default set in seo_config.php
-        if($title == ''){
-            $title = $CI->config->item('seo_title');
-        }
-        if($desc == ''){
-            $desc = $id->meta_desc;
-        }
-        if($imgUrl == ''){
-            $imgUrl = $CI->config->item('seo_imgurl');
-        }
-        if($url == ''){
-            $url = base_url();
-        }
-        if($keyWords == '') {
-            $keyWords = $id->meta_seo;
-        }
-        if($type == '') {
-            $type = $CI->config->item('seo_type');
-        }
+        $title = empty($option['title']) ? $CI->config->item('seo_title') : $option['title'];
+        $desc = empty($option['desc']) ? $id->meta_desc : $option['desc'];
+        $imgUrl = empty($option['imgUrl']) ? $CI->config->item('seo_imgurl') : $option['imgUrl'];
+        $url = empty($option['url']) ? base_url('beranda') : $option['url'];
+        $keyWords = empty($option['keyWords']) ? $id->meta_seo : $option['keyWords'];
+        $type = empty($option['type']) ? $CI->config->item('seo_type') : $option['type'];
+        $canonical = empty($option['canonical']) ? base_url('beranda') : $option['canonical'];
+
         if($enable['general']){
+            $output .= '<link rel="canonical" href="'.$canonical.'" />';
+            $output .= '<link rel="apple-touch-icon" href="'.base_url('assets/images/logo.png').'" />';
+            $output .= '<link rel="shortcut icon" href="'.base_url('assets/images/logo.png').'" />';
             $output .= '<meta  name="Rating" content="General"/>';
             $output .= '<meta name="Distribution" content="Global" />';
             $output .= '<meta name="audience" content="all" />';
@@ -89,25 +88,26 @@ if(! function_exists('meta_tags')){
             $output .= '<meta name="keywords" content="'.$keyWords.'" />';
             $output .= '<meta name="description" content="'.$desc.'" />';
         }
+
         if($enable['robot']){
             $output .= '<meta name="robots" content="index,follow"/>';
         } else {
             $output .= '<meta name="robots" content="noindex,nofollow"/>';
         }
 
-
         //open graph
         if($enable['og']){
-            $output .= '<meta property="og:title" content="'.$title.'"/>'
-                .'<meta property="og:description" content="'.$desc.'"/>'
-                .'<meta property="og:type" content="'.$type.'"/>'
-                .'<meta property="og:image" content="'.$imgUrl.'"/>'
-                .'<meta property="og:url" content="'.$url.'"/>';
+            $output .= '<meta property="og:type" content="'.$type.'" />'
+                .'<meta property="og:url" content="'.$url.'" />'
+                .'<meta property="og:title" content="'.$title.'" />'
+                .'<meta property="og:description" content="'.$desc.'" />'
+                .'<meta property="og:image" content="'.$imgUrl.'" />'
+                .'<meta property="fb:page_id" content="'.$app_id.'" />';
         }
 
         //twitter card
         if($enable['twitter']){
-            $output .= '<meta name="twitter:card" content="summary"/>'
+            $output .= '<meta name="twitter:card" content="summary_large_image"/>'
                 .'<meta name="twitter:title" content="'.$title.'"/>'
                 .'<meta name="twitter:url" content="'.$url.'"/>'
                 .'<meta name="twitter:description" content="'.$desc.'"/>'

@@ -34,7 +34,7 @@ class Beranda extends CI_Controller
           'twitter'=> true,
           'robot'=> true
         );
-        $meta_tag = meta_tags($e, $title = '', $desc=$id->meta_desc,$imgUrl = base_url('assets/images/logo.png'),$url = base_url('beranda'),$keyWords=$id->meta_seo,$type='web');
+        $meta_tag = meta_tags($e, $desc=$id->meta_desc,$imgUrl = base_url('assets/images/logo.png'),$url = base_url('beranda'),$keyWords=$id->meta_seo,$type='web');
         $data = [
                     'title' => "Beranda &dash; BKPPD Kab. Balangan",
                     'isi' => 'Frontend/v1/pages/home',
@@ -216,20 +216,19 @@ class Beranda extends CI_Controller
 
                 if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'LINK'):
                 $content_body = '<div class="row">
-                                    <div class="canvas col-12 col-md-6">
-                                        <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info px-3 pl-md-4" title="'.$row->judul.'">
+                                    <div class="col-12 col-md-10 offset-md-2">
+                                        <div class="canvas pr-md-3 pl-md-0 pr-3 pl-3 mb-3">
+                                        <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
                                           '.$img.'
                                         </a>
-                                    </div>
-                                
-                                    <div class="col-12 col-md-6 pl-md-0 mt-md-0 mt-2">
+                                        </div>
                                         <div class="btn-group btn-group-sm mb-2 ml-3 ml-md-0" role="group" aria-label="button">
                                             <button type="button" class="btn btn-sm btn-light" disabled><i class="fas fa-tag"></i></button>
                                             <a href="'.$post_list_url.'" class="btn btn-sm '.$rand.'">'.$namakategori.'</a>
                                         </div>
                                         '.$sumber.'
-                                        <div class="mx-3 mx-md-0 pr-md-4">
-                                        <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 6).'&nbsp;'.$pilihan.'</a></h4>
+                                        <div class="mx-3 mx-md-0 pr-md-3">
+                                        <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 8).'&nbsp;'.$pilihan.'</a></h4>
                                         <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
                                         <p>'.$tag. '</p>
                                         </div>
@@ -242,8 +241,8 @@ class Beranda extends CI_Controller
 					<div class="card border border-light bg-white">
 					<div class="card-body px-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
-                        <img data-src="'.$gravatar.'" alt="photo_pic" width="50" height="50" class="float-left mr-3 d-inline-block rounded ml-3 lazy">
-						<h5 class="card-title mb-0 pb-1"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h5>
+                        <img data-src="'.$gravatar.'" alt="photo_pic" width="55" height="55" class="float-left mr-3 d-inline-block rounded ml-3 lazy">
+						<h6 class="card-title mb-0 pb-1"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h6>
                         <p class="card-text">
                             <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
                         </p>
@@ -252,7 +251,6 @@ class Beranda extends CI_Controller
                     '.$content_body.'
 
 					<div class="card-footer bg-transparent p-2 border-0 d-flex justify-content-start">
-					
                     <div class="w-100">
 					<button type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
                     </div>

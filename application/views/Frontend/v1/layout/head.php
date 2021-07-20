@@ -9,11 +9,8 @@
     <?= 
         !empty($meta) ? $meta : '<meta name="author" content="muhamamdnorseputra@gmail.com"/>
                                  <meta name="description" content="'.$mf_beranda->meta_desc.'"/>
-                                 <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>
-                                 <meta name="robots" content="index,follow"/>';  
+                                 <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>';  
     ?>
-    <link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
-    <link rel="apple-touch-icon" href="<?= base_url('assets/images/logo.png'); ?>">
     <link href="<?= base_url('template/v1/prod/app.css'); ?>" rel="stylesheet" type="text/css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199508931-1"></script>

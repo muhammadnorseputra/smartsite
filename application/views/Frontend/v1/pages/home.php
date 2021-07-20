@@ -21,7 +21,7 @@
 </section>
 <?php endif; ?>
 <?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-5 pt-md-5' : 'my-4' ?>
-<section class="mb-5 <?= $my ?>" id="content-page">
+<section class="<?= $my ?>" id="content-page">
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
         <div class="row">
@@ -40,7 +40,7 @@
                 <?php $this->load->view('Frontend/v1/function/banner_sidebar'); ?>
                 <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 offset-md-1 mr-md-3">
                 <!-- Banenr slide horizontal -->
                 <!-- <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/banner_horizontal_home') ?>">
                     <span class="content-placeholder my-3" style="width: 100%; height: 230px;"></span>

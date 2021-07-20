@@ -66,13 +66,13 @@
                 <span class="font-weight-lighter text-primary"><?= character_limiter($b->judul, 35); ?></span>
                 <div class="mt-2 align-middle text-left small text-secondary d-flex justify-content-between">
                     <span>
-                        <i class="far fa-thumbs-up mr-2"></i> <?= $b->like_count ?> Likes
+                        <i class="far fa-thumbs-up mr-2"></i> <?= $b->like_count ?>
                     </span>
                     <span>
-                        <i class="fas fa-share mr-2"></i> <?= $b->share_count ?> Share
+                        <i class="fas fa-share mr-2"></i> <?= $b->share_count ?>
                     </span>
                     <span>
-                        <i class="fas fa-eye mr-2"></i> <?= $b->views ?> Views
+                        <i class="fas fa-eye mr-2"></i> <?= $b->views ?>
                     </span>
                 </div>
             </div>
