@@ -343,19 +343,18 @@ $(document).ready(function () {
       before: false,
       after: false
     }
-  });
-  $('.headline-ticker').easyTicker({
-    visible: 1,
-    interval: 4000,
-    direction: 'up',
-    controls: {
-      up: '.btn-up',
-      down: '.btn-down',
-      toggle: '.btn-toggle',
-      playText: '<i class="fas fa-play-circle"></i>',
-      stopText: '<i class="fas fa-pause-circle"></i>'
-    }
-  });
+  }); // $('.headline-ticker').easyTicker({
+  //     visible: 1,
+  //     interval: 4000,
+  //     direction: 'up',
+  //     controls: {
+  //         up: '.btn-up',
+  //         down: '.btn-down',
+  //         toggle: '.btn-toggle',
+  //         playText: '<i class="fas fa-play-circle"></i>',
+  //         stopText: '<i class="fas fa-pause-circle"></i>'
+  //     },
+  // });
 });
 // $(document).ready(function () {
 // 	$.validate({
@@ -537,7 +536,7 @@ $(document).ready(function () {
 
   if ($url == 'beranda') {
     var load_data_message = function load_data_message() {
-      $("#load_data_message").html("<div class=\"card border-0 bg-transparent shadow-none mb-5\">\n                        <div class=\"card-body text-danger text-center\">\n                        <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                            <h5 class=\"card-title\">Yahhh! abis</h5>  \n                            <p class=\"font-weight-light text-secondary\"> Berita yang anda load mungkin telah berakhir.</p>\n                        </div>\n                    </div>"));
+      $("#load_data_message").html("<div class=\"card border-0 bg-transparent shadow-none mb-5\">\n                        <div class=\"card-body text-danger text-center\">\n                        <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                            <h5 class=\"card-title\">Yahhh! abis</h5>  \n                            <p class=\"font-weight-light text-secondary\"> Berita telah berakhir.</p>\n                        </div>\n                    </div>"));
     };
 
     var lazzy_loader = function lazzy_loader(limit) {
@@ -548,7 +547,7 @@ $(document).ready(function () {
       }
 
       $("#load_data_message").html(output);
-      $("button#load_more").text('Loading...').prop('disabled', true);
+      $("button#load_more").html("<div class=\"d-flex justify-content-center align-items-center\">\n        <div class=\"loader_small\" style=\"width:20px; height: 20px;\"></div>\n      </div> ").prop('disabled', true);
     };
 
     var load_data = function load_data(limit, start) {
@@ -577,7 +576,7 @@ $(document).ready(function () {
             }
 
             $("#load_data").append(data.html);
-            $("button#load_more").html("<i class=\"fas fa-newspaper mr-2\"></i> Loadmore").prop('disabled', false);
+            $("button#load_more").html("<i class=\"fas fa-newspaper mr-2\"></i> Berita Sebelumnya").prop('disabled', false);
             action = "inactive";
             $(".lazy").lazy({
               beforeLoad: function beforeLoad(element) {

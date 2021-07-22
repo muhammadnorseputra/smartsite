@@ -106,7 +106,7 @@
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
                 <div class="text-center">
-                    <button id="load_more" class="btn p-2 btn-primary btn-block rounded-lg px-4"><i class="fas fa-newspaper mr-2"></i> Loadmore</button>
+                    <button id="load_more" class="btn p-2 btn-outline-primary btn-block rounded-lg px-4"><i class="fas fa-newspaper mr-2"></i> Berita Sebelumnya</button>
                 </div>
             </div>
         </div>

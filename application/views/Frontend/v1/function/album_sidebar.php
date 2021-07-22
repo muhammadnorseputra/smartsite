@@ -8,14 +8,16 @@
         ?>
             <div>
                 <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
+                    
                     <?php if(!empty($a->gambar)): ?>
-                    <img src="<?= base_url('files/file_album/'.$album->gambar) ?>" class="w-100 rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
+                    <img  style="height: 250px; object-fit: cover;" src="<?= base_url('files/file_album/'.$album->gambar) ?>" class="w-100 rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
                     <?php else: ?>
-                    <img src="<?= img_blob($album->gambar_blob) ?>" class="w-100 rounded shadow-sm border" alt="<?= url_title($album->judul, '-', true) ?>">
+                    <img  style="height: 250px; object-fit: cover;" src="<?= img_blob($album->gambar_blob) ?>" class="w-100 rounded shadow-sm border" alt="<?= url_title($album->judul, '-', true) ?>">
                     <?php endif; ?>
+                    
+                </a>
                     <div class="text-secondary text-center badge-light p-2 rounded mt-2"><?= $this->album->jml_photo_in_album($album->id_album_foto) ?> Photo</div> 
                     <p class="text-muted mt-3"><?= word_limiter($album->judul, 5) ?></p>
-                </a>
             </div>
         <?php endforeach; ?>
     </div>

@@ -23,7 +23,7 @@ $(document).ready(function() {
                         <div class="card-body text-danger text-center">
                         <img src="${_uri}/template/v1/img/humaaans-3.png" alt="croods" class="img-fluid rounded">
                             <h5 class="card-title">Yahhh! abis</h5>  
-                            <p class="font-weight-light text-secondary"> Berita yang anda load mungkin telah berakhir.</p>
+                            <p class="font-weight-light text-secondary"> Berita telah berakhir.</p>
                         </div>
                     </div>`
             );
@@ -59,7 +59,9 @@ $(document).ready(function() {
             `;
             }
             $("#load_data_message").html(output);
-            $("button#load_more").text('Loading...').prop('disabled', true);
+            $("button#load_more").html(`<div class="d-flex justify-content-center align-items-center">
+        <div class="loader_small" style="width:20px; height: 20px;"></div>
+      </div> `).prop('disabled', true);
         }
 
         lazzy_loader(limit);
@@ -89,7 +91,7 @@ $(document).ready(function() {
                             $("#load_data_message").html("");
                         }
                         $("#load_data").append(data.html);
-                        $("button#load_more").html(`<i class="fas fa-newspaper mr-2"></i> Loadmore`).prop('disabled', false);
+                        $("button#load_more").html(`<i class="fas fa-newspaper mr-2"></i> Berita Sebelumnya`).prop('disabled', false);
                         action = "inactive";
                         $(".lazy").lazy({
                             beforeLoad: function(element) {

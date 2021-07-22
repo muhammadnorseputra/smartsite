@@ -37,11 +37,18 @@ section.hero-beranda::before {
 	z-index: -1;
 }
 section.hero {
-	background-color: #C6EBC9; 
-	// background-size: cover; 
-	// background-position: right top; 
-	// background-image: url('../../../assets/images/bg/bg-light.svg');
+	background-color: #C6EBC9;
+	background-position: bottom center;
+	background-repeat: repeat; 
+	background-image: url('../../../assets/images/bg/bg.png');
 }
+.bg-footer {
+	background-image: url('../../../assets/images/bg/bg-home.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;	
+}
+
 // Loading Small
 .loader_small {
   border: 3px solid #f3f3f3;
@@ -1033,4 +1040,3 @@ i.likes:hover {
   top: 10px;
   right: 15px;
 }
-
