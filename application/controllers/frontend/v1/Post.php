@@ -341,17 +341,17 @@ class Post extends CI_Controller
         echo json_encode(['html' => $output, 'status' => 'is_loaded']);
     }
 
-        public function judul()
-        {
-            $data = [
-                'title' => 'BUAT POSTINGAN',
-                'isi' => 'Frontend/v1/pages/p_baru_judul',
-                'mf_beranda' => $this->mf_beranda->get_identitas(),
-                'mf_menu' => $this->mf_beranda->get_menu(),
-                'kategori' => $this->postlist->get_all_kategori()->result()
-            ];
-            $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
-        }
+    public function judul()
+    {
+        $data = [
+            'title' => 'BUAT POSTINGAN',
+            'isi' => 'Frontend/v1/pages/p_baru_judul',
+            'mf_beranda' => $this->mf_beranda->get_identitas(),
+            'mf_menu' => $this->mf_beranda->get_menu(),
+            'kategori' => $this->postlist->get_all_kategori()->result()
+        ];
+        $this->load->view('Frontend/v1/layout/wrapper', $data);
+    }
 
         public function baru_detail()
         {
