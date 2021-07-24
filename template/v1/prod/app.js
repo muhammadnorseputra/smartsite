@@ -526,7 +526,7 @@ function explore() {
 
 $(document).ready(function () {
   // get all berita
-  var limit = 3;
+  var limit = 5;
   var start = 0;
   var action = "inactive";
   console.log(_uriSegment);
@@ -566,7 +566,7 @@ $(document).ready(function () {
             $("button#load_more").hide();
             action = "active";
           } else {
-            if (data.count < 3) {
+            if (data.count < 5) {
               $("button#load_more").hide();
               load_data_message();
             } else {
