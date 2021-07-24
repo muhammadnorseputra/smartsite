@@ -11,6 +11,7 @@ Tabel Halaman
 				<th class="text-center"></th>
 				<th>Judul Halaman</th>
 				<th>Token</th>
+				<th>Views</th>
 			</tr>
 		</thead>
 	</table>
@@ -55,6 +56,10 @@ Tabel Halaman
 		}, {
 			"targets": [3],
 			"orderable": false,
+		}, {
+			"targets": [4],
+			"orderable": false,
+			"className": "text-left"
 		}],
 		"language": {
 			"lengthMenu": "_MENU_ Data per halaman",

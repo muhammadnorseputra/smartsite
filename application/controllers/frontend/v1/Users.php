@@ -428,15 +428,16 @@ class Users extends CI_Controller {
 			$row[] = $no;
 			$row[] = $btnAksi;
 			$row[] = $h->title;
-			$row[] = $h->token_halaman;
+			$row[] = "<code>".$h->token_halaman."</code>";
+			$row[] = "<i class='mr-2 fas fa-eye'></i>".$h->views;
 
 			$data[] = $row;
 		}
 
 		$output = array(
 				"draw" => $_POST['draw'],
-				"recordsTotal" => $this->halaman->count_all_userlist($idAkun),
-				"recordsFiltered" => $this->halaman->count_filtered_userlist($idAkun),
+				"recordsTotal" => $this->halaman->count_all($idAkun),
+				"recordsFiltered" => $this->halaman->count_filtered($idAkun),
 				"data" => $data,
 			);
 		//output to json format

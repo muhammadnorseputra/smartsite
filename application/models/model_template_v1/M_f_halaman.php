@@ -70,6 +70,7 @@ class M_f_halaman extends CI_Model
     $this->db->where('fid_users_portal', $idAkun);
     return $this->db->count_all_results();
   }
+
   // -------------------------------- end-datatable --------------------------//
 
   public function get_namahalaman($token)
