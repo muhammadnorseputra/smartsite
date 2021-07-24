@@ -35,11 +35,13 @@ class Post extends CI_Controller
 
         if(!empty($detail->img) && $detail->type === 'BERITA'):
             $img = base_url('files/file_berita/'.$detail->img.'');
+        elseif($detail->type === 'SLIDE'):
+            $img = img_blob($this->post->photo_terkait(decrypt_url($id),1)->row()->photo);
         else:
             $img = base_url('assets/images/logo.png');
         endif;
-        
-        if($detail->type === 'YOUTUBE'):
+
+         if($detail->type === 'YOUTUBE'):
             $imgurl = $yt_thumb;
             $content = $yt_desc;
         else:
@@ -564,8 +566,8 @@ class Post extends CI_Controller
                 $html .= '<div class="col-md-6">
                                         <div class="position-relative">
                                             <img class="img-fluid w-100 border p-2" style="object-fit:cover; max-height:120px;" src="'.img_blob($p->photo).'" alt="'.$p->judul.'">
-                                            <div class="position-absolute" style="right: 10px;top: 10px;">
-                            <a class="text-danger" id="delete_photo_terkait" href="'.base_url('frontend/v1/post/delete_photo_terkait/'.$id_berita.'/'.$p->id_berita_photo).'" data-toggle="tooltip" title="Hapus"><i class="far fa-times-circle"></i></a>
+                                            <div class="position-absolute" style="right: 15px;top: 10px;">
+                            <a class="text-danger" id="delete_photo_terkait" href="'.base_url('frontend/v1/post/delete_photo_terkait/'.$id_berita.'/'.$p->id_berita_photo).'" data-toggle="tooltip" title="Hapus"><i class="far fa-times-circle shadow bg-white rounded-circle"></i></a>
                         </div>
                                         </div>
                                     </div>';

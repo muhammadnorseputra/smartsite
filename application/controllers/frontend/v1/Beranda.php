@@ -128,12 +128,12 @@ class Beranda extends CI_Controller
                 }
 
                 // Post Link Detail
-                if($row->type === 'YOUTUBE' || $row->type === 'BERITA'):
+                if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'SLIDE'):
                     $id = encrypt_url($row->id_berita);
                     $postby = strtolower(url_title($namalengkap));
                     $judul = strtolower($row->judul);
                     $posturl = "post/{$postby}/{$id}/".url_title($judul).'';
-                else:
+                elseif($row->type === 'LINK'):
                     $posturl = base_url('leave?go='.encrypt_url($row->content));
                 endif;
                 
@@ -272,7 +272,6 @@ class Beranda extends CI_Controller
                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
                     <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
                         <ul class="d-flex flex-wrap list-unstyled rounded overflow-hidden border ml-3 mr-3 ml-md-0 mr-md-4">
-                            
                                 '.$photo_t.'
                         </ul>
                             </a>

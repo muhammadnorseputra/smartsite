@@ -20,7 +20,7 @@
     </div>
 </section>
 <?php endif; ?>
-<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-5 pt-md-5' : 'my-4' ?>
+<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-3 mt-md-5 pt-md-5' : 'my-4' ?>
 <section class="<?= $my ?>" id="content-page">
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
@@ -80,8 +80,6 @@
                     </div>
                     <div>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <!-- <button type="button" class="btn btn-secondary">Left</button> -->
-                            
                             <?php
                             for($x=0; $x<count($dataType); $x++):
                             $active_item = ($dataType[$x] === $type) ? 'active disabled' : '';
@@ -94,22 +92,12 @@
                         </div>
                     </div>
                 </div>
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-format="fluid"
-                    data-ad-layout-key="-f9+4v+7r-fc+65"
-                    data-ad-client="ca-pub-1099792537777374"
-                    data-ad-slot="5769488115"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
-                <div class="text-center mb-md-3">
-                    <button id="load_more" class="btn p-2 btn-outline-primary btn-block rounded-lg px-4"><i class="fas fa-newspaper mr-2"></i> Berita Sebelumnya</button>
+                <div class="text-center mb-md-4">
+                    <button id="load_more" class="btn p-2 btn-outline-primary btn-block rounded-lg px-4"><i class="fas fa-newspaper mr-3"></i> Berita Sebelumnya</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

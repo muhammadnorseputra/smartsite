@@ -106,10 +106,6 @@
       <?= form_open_multipart(base_url('frontend/v1/post/upload_single_photo_terkait/'.$id_berita), ['class' => 'dropzone']) ?>
       <?= form_close(); ?>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <!-- <button type="submit" class="btn btn-primary">Upload</button> -->
-      </div>
     </div>
   </div>
 </div>
@@ -320,7 +316,10 @@
 		$("#list_photo_terkait").html(`<div class="d-flex justify-content-center align-items-center w-100 h-100">
 				<div class="loader_small" style="width:30px; height:30px;"></div>
 			</div>`);
-		let id_berita = _uriSegment[6];
+		let $online = _uriSegment[5];
+    let $local = _uriSegment[6];
+    let $id = $host ? $local : $online;
+		let id_berita = $id;
 		$.getJSON(`${_uri}/frontend/v1/post/list_photo_terkait`, {id: id_berita}, function(result) {
 			$("#list_photo_terkait").html(result);
 			console.log(result);
