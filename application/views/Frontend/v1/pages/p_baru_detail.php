@@ -1,3 +1,4 @@
+<?php $id_berita = $this->uri->segment(5) ?>
 <section class="my-5">
 	<div class="container">
 		<?= form_open_multipart(base_url('frontend/v1/post/update_post/1'), ['id' => 'f_post', 'data-id' => $post->id_berita]) ?>
@@ -17,6 +18,7 @@
 			<div class="col-md-4 mt-md-4">
 
 				<div id="accordionExample" class="accordion mt-3">
+					<?php if($post->type !== 'SLIDE'): ?>
 					<!-- Accordion item 1 -->
 					<div class="card rounded-0">
 						<div class="card-header shadow-sm border-0">
@@ -39,34 +41,18 @@
 							</div>
 						</div>
 					</div>
-
+					<?php endif; ?>
 					<?php if($post->type === 'SLIDE'): ?>
 					<!-- Accordion item 3 -->
 					<div class="card rounded-0">
-						<div class="card-header shadow-sm border-0">
+						<div class="card-header shadow-sm border-0 d-flex justify-content-between align-items-center">
 							<h6 class="mb-0 font-weight-bold">
 								<a href="#" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree" class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Photo terkait</a>
 							</h6>
+							<button type="button" data-toggle="modal" data-target="#uploadPhoto" id="upload" class="btn btn-sm btn-outline-primary rounded-circle"><i class="fas fa-plus"></i></button>
 						</div>
-						<div id="collapseTree" aria-labelledby="headingTree" data-parent="#accordionExample" class="collapse">
-							<?php if($photo_terkait->num_rows() > 0): ?>
-								<?php foreach ($photo_terkait->result() as $p):?>
-									<div class="card bg-dark text-white">
-									  <img class="card-img" src="<?= base_url('files/file_berita/photo_terkait/'.$this->uri->segment(5).'/'.$p->photo) ?>" alt="photo terkait">
-									  <div class="card-img-overlay">
-									    <h5 class="card-title"><?= $p->judul ?></h5>
-									    <p class="card-text"><?= $p->keterangan ?></p>
-									  </div>
-									</div>
-								<?php endforeach; ?>
-								<button type="button" data-toggle="modal" data-target="#uploadPhoto" id="upload" class="btn btn-sm mx-auto d-block btn-outline-primary my-2"><i class="fas fa-plus mr-3"></i> Add new photo</button>
-							<?php else: ?>
-								<p class="d-block text-center my-5 text-secondary">
-									Belum ada photo terkait <br>
-								<button type="button" data-toggle="modal" data-target="#uploadPhoto" id="upload" class="btn btn-sm btn-outline-primary mt-2"><i class="fas fa-plus mr-2"></i> Add photo</button>
-								</p>
-
-							<?php endif; ?>
+						<div id="collapseTree" aria-labelledby="headingTree" data-parent="#accordionExample" class="collapse show">
+								<div class="row no-gutters" id="list_photo_terkait"></div>
 						</div>
 					</div>
 					<?php endif ?>
@@ -110,40 +96,31 @@
 <div class="modal" id="uploadPhoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <?= form_open_multipart(base_url(), ['id' => 'f_photo_terkait']) ?>
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Single Upload</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Upload Gambar</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-          <div class="form-group">
-						  <label for="file_foto">Pilih file</label>
-						  <input type="file" id="file_foto" class="form-control">
-          </div>	
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Judul:</label>
-            <input type="text" class="form-control" name="judul_photo" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Keterangan:</label>
-            <textarea class="form-control" name="keterangan_photo" id="message-text"></textarea>
-          </div>
+      <?= form_open_multipart(base_url('frontend/v1/post/upload_single_photo_terkait/'.$id_berita), ['class' => 'dropzone']) ?>
+      <?= form_close(); ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Upload</button>
+        <!-- <button type="submit" class="btn btn-primary">Upload</button> -->
       </div>
-      <?= form_close(); ?>
     </div>
   </div>
 </div>
 
 <link rel="stylesheet" href="<?= base_url('assets/plugins/select2/css/select2-materialize.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/plugins/dropzone/min/dropzone.min.css') ?>">
 <script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
 <script src="<?= base_url('assets/plugins/select2/js/select2.full.min.js'); ?>"></script>
 <script src="<?= base_url('files/tinymce/js/tinymce.min.js'); ?>"></script>
+<script src="<?= base_url('assets/plugins/dropzone/min/dropzone.min.js'); ?>"></script>
+<script src="<?= base_url('template/v1/js/route.js') ?>"></script>
 <script>
 	// select tags
 	var label = $("select#tags").select2({
@@ -186,7 +163,7 @@
 				"table contextmenu directionality emoticons paste textcolor code fullscreen"
 			],
 			content_css: [
-				'<?= base_url("vendor/twbs/bootstrap/dist/css/bootstrap.min.css") ?>',
+				'<?= base_url("bower_components/bootstrap/dist/css/bootstrap.min.css") ?>',
 			],
 			content_style: "body{padding: 20px}",
 			relative_urls: false,
@@ -201,46 +178,7 @@
 				"filemanager": "<?= base_url('files/filemanager-v2/filemanager/plugin.min.js') ?>"
 			}
 		});
-
-		/* upload single photo terkait */
-		var upload_photo = $("#file_foto");
-		var judul_photo = $("input[name='judul_photo']");
-		upload_photo.change(function() {
-				var fileName = $(this).val().split('\\')[$(this).val().split('\\').length - 1];
-				judul_photo.val(fileName.split('.').slice(0, -1).join('.'));
-		    
-
-				// var oFReader = new FileReader();
-				// oFReader.readAsDataURL(this.files[0]);
-			$("form#f_photo_terkait").on("submit", function(e) {
-				e.preventDefault();
-		    var form_data = new FormData();
-				form_data.append("file", this[1].files[0]);
-				form_data.append("judul_photo", judul_photo.val());
-				form_data.append("keterangan_photo", this[3].value);
-				// console.log($(this).reset);
-				// let $online = _uriSegment[5];
-		  //   let $local = _uriSegment[6];
-		  //   let $id = $host ? $local : $online;
-
-		  //   $.ajax({
-				// 	url: _uri + "/frontend/v1/post/upload_single_photo_terkait/" + $id,
-				// 	method: "POST",
-				// 	data: form_data,
-				// 	contentType: false,
-				// 	cache: false,
-				// 	dataType: 'json',
-				// 	processData: false,
-				// 	success: function(data) {
-				// 		if (data == true) {
-				// 			message('Photo Uploaded', 'success');
-				// 		}
-				// 	}
-				// });
-			})
-	  });
-
-		
+				
 		/* upload single photo berita */
 		var fileupload = $("#FileUpload");
 		var filePath = $("p#FilePath");
@@ -327,7 +265,6 @@
 			);
 		});
 
-
 		/* publish */
 		$(document).on("submit", "form#f_post", function(e) {
 			e.preventDefault();
@@ -374,5 +311,49 @@
 				}
 			});
 		});
+	});
+
+	// Photo Terkait
+	list_photo_terkait();
+	function list_photo_terkait()
+	{
+		$("#list_photo_terkait").html(`<div class="d-flex justify-content-center align-items-center w-100 h-100">
+				<div class="loader_small" style="width:30px; height:30px;"></div>
+			</div>`);
+		let id_berita = _uriSegment[6];
+		$.getJSON(`${_uri}/frontend/v1/post/list_photo_terkait`, {id: id_berita}, function(result) {
+			$("#list_photo_terkait").html(result);
+			console.log(result);
+		});
+	}
+
+	$(document).on("click", "a#delete_photo_terkait", function(e) {
+		e.preventDefault();
+		let $this = $(this);
+		let $Url = $this.attr('href');
+		$.post(`${$Url}`, function(res) {
+			list_photo_terkait();
+			notif({
+				msg: res,
+				type: "info",
+				position: "bottom",
+				// offset: -10,
+			});
+		}, 'json');
+	})
+	
+	Dropzone.autoDiscover = false;
+	$(".dropzone").dropzone({  
+			paramName: "file", // The name that will be used to transfer the file
+  		maxFilesize: 1, // MB
+  		resizeWidth: 300,
+  		resizeHeight: 300,
+  		resizeMethod: 'crop', 
+  		resizeQuality: 0.8,
+  		acceptedFiles: '.jpeg,.jpg,.png',
+  		addRemoveLinks: true,
+  		init: function() {
+		    this.on("complete", function(file) { list_photo_terkait(); });
+		  }
 	});
 </script>

@@ -462,12 +462,14 @@ class Users extends CI_Controller {
 		        $no = $_POST['start'];
 		        foreach ($list as $p) {
 
-		        	if($p->type === 'BERITA'):
+		        	if($p->type === 'BERITA' || $p->type === 'SLIDE'):
 		        		$type = 'postDetail';
 		        	elseif($p->type === 'LINK'):
 		        		$type = 'postDetailLink';
-		        	else:
+		        	elseif($p->type === 'YOUTUBE'):
 		        		$type = 'postDetailYoutube';
+		        	else:
+		        		$type = 'postDetail';
 		        	endif;
 		        	
 		        	$btnAksi = $p->publish != 0 ? '<div class="dropdown dropright">
@@ -484,7 +486,7 @@ class Users extends CI_Controller {
 					$komentar = $countKomentar != 0 ? '<b>'.$countKomentar.'</b>' : $countKomentar;
 					$views = nominal($p->views);
 
-					if($p->type === 'BERITA'):
+					if($p->type === 'BERITA' || $p->type === 'SLIDE'):
 					$btnPublish = $p->publish == 0 ? '<a href="' . base_url('frontend/v1/post/postDetail/' . encrypt_url($p->id_berita)) . '" title="Belum Dipublish" class="btn btn-default border-left ml-4 px-3">Publish</a>' : '';
 					else:
 					$btnPublish = $p->publish == 0 ? '<a href="' . base_url('frontend/v1/post/postDetailYoutube/' . encrypt_url($p->id_berita)) . '" title="Belum Dipublish" class="btn btn-dark border-left ml-4 px-3">Publish</a>' : '';	

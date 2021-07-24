@@ -75,9 +75,16 @@ class M_f_post extends CI_Model {
         return $this->db->count_all_results();
     }
     // -------------------------------- end-datatable --------------------------//
-    public function photo_terkait($id)
+    public function photo_terkait($id,$limit=null)
     {
+        $this->db->limit($limit);
         return $this->db->get_where('t_berita_photo', ['fid_berita' => $id]);
+    }
+
+    public function doDeletePhotoTerkait($tbl,$whr)
+    {
+        $this->db->where($whr);
+        return $this->db->delete($tbl);
     }
 
 	public function detail($id) {

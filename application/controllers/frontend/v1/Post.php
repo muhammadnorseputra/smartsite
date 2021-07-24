@@ -395,8 +395,7 @@ class Post extends CI_Controller
                 'mf_beranda' => $this->mf_beranda->get_identitas(),
                 'mf_menu' => $this->mf_beranda->get_menu(),
                 'post' => $this->post->detail($idb)->row(),
-                'tags' => $this->postlist->get_all_tag()->result(),
-                'photo_terkait' => $this->post->photo_terkait($idb)
+                'tags' => $this->postlist->get_all_tag()->result()
             ];
             $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
         }
@@ -555,23 +554,48 @@ class Post extends CI_Controller
             }
             echo json_encode($msg);
         }
+        public function list_photo_terkait() {
+            $id_berita = $this->input->get('id');
+            $id=decrypt_url($id_berita);
+            $data = $this->post->photo_terkait($id);
+            if($data->num_rows() > 0):
+                $html = '';
+                foreach($data->result() as $p):
+                $html .= '<div class="col-md-6">
+                                        <div class="position-relative">
+                                            <img class="img-fluid w-100 border p-2" style="object-fit:cover; max-height:120px;" src="'.img_blob($p->photo).'" alt="'.$p->judul.'">
+                                            <div class="position-absolute" style="right: 10px;top: 10px;">
+                            <a class="text-danger" id="delete_photo_terkait" href="'.base_url('frontend/v1/post/delete_photo_terkait/'.$id_berita.'/'.$p->id_berita_photo).'" data-toggle="tooltip" title="Hapus"><i class="far fa-times-circle"></i></a>
+                        </div>
+                                        </div>
+                                    </div>';
+                endforeach;
+            else:
+                $html = '<div class="col-md-12"><p class="d-block text-center my-5 text-secondary">
+                            Belum ada photo terkait <br>
+                            <button type="button" data-toggle="modal" data-target="#uploadPhoto" id="upload" class="btn btn-sm btn-outline-primary mt-2"><i class="fas fa-plus mr-2"></i> Add photo</button>
+                        </p></div>';
+            endif;
+            echo json_encode($html);
+        }
         public function upload_single_photo_terkait($id_berita)
         {
             $id = decrypt_url($id_berita);
-            $path_dir = 'files/file_berita/photo_terkait/'.$id_berita;
-            if (!is_dir($path_dir)) {
-                @mkdir('files/file_berita/photo_terkait/'.$id_berita, 0777, TRUE);
-            }
-            $filename = strtolower($_FILES['file']['name']);
-            $path = 'files/file_berita/photo_terkait/'.$id_berita.'/';
+            // $path_dir = 'files/file_berita/photo_terkait/'.$id_berita;
+            // if (!is_dir($path_dir)) {
+            //     @mkdir('files/file_berita/photo_terkait/'.$id_berita, 0777, TRUE);
+            // }
+            $realname = $_FILES['file']['name'];
+            $filename = strtolower($realname);
+            // $path = 'files/file_berita/photo_terkait/'.$id_berita.'/';
             
 
             $blob = @file_get_contents($_FILES['file']['tmp_name']);
             $data = [
                 'fid_berita' => $id,
-                'judul' => $this->input->post('judul_photo'),
-                'keterangan' => $this->input->post('keterangan_photo'),
-                'photo' => $filename,
+                'judul' => $realname,
+                'keterangan' => $realname,
+                'photo' => $blob,
                 'created_at' => date('Y-m-d'),
                 'created_by' => $this->session->userdata('user_portal_log')['id']
             ];
@@ -579,10 +603,26 @@ class Post extends CI_Controller
             if($upload == true)
             {
                 $msg = true;
-                @file_put_contents($path.$filename,$blob);
+                // @file_put_contents($path.$filename,$blob);
             } else {
                 $msg = false;
             }
+            echo json_encode($msg);
+        }
+        public function delete_photo_terkait($id_berita,$id_photo)
+        {
+            $tbl = 't_berita_photo';
+            $whr = [
+                'id_berita_photo' => $id_photo    
+            ];
+            $db = $this->post->doDeletePhotoTerkait($tbl, $whr);
+            if($db)
+            {
+                $msg= "Photo Berhasil Dihapus.";
+            } else {
+                $msg= "Photo Gagal Dihapus.";
+            }
+            // redirect(base_url('frontend/v1/post/postDetail/'.$id_berita), 'refresh');
             echo json_encode($msg);
         }
         public function deletePost()
