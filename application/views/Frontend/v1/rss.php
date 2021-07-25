@@ -17,7 +17,7 @@
     <dc:creator><?php echo $creator_email; ?></dc:creator>
  
     <dc:rights>Copyright <?php echo gmdate("Y", time()); ?></dc:rights>
-    <admin:generatorAgent rdf:resource="http://www.codeigniter.com/" />
+    <admin:generatorAgent rdf:resource="https://web.bkppd-balangankab.info/" />
     <atom:link rel="self" type="application/rss+xml" href="<?php echo $feed_url; ?>"/>
      <?php 
       foreach($posts->result() as $post):
@@ -30,10 +30,17 @@
       $judul = strtolower($post->judul);
       $posturl = base_url("post/{$postby}/{$id}/".url_title($judul)); 
 
-      if(!empty($post->img)):
-          $img = base_url('files/file_berita/'.$post->img);
-      else:
-          $img = base_url('assets/images/noimage.gif');
+      if($post->type === 'BERITA'):
+        if(!empty($post->img)):
+            $img = base_url('files/file_berita/'.$post->img);
+        else:
+            $img = base_url('assets/images/noimage.gif');
+        endif;
+      elseif($post->type === 'SLIDE'):
+        $img_terkait = $this->posts->getImageTerkaitThumb($post->id_berita, 'desc');
+        if($img_terkait != NULL):
+          $img = $img_terkait;
+        endif;
       endif;
 
       $isi_berita = $post->content; // membuat paragraf pada isi berita dan mengabaikan tag html

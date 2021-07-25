@@ -563,9 +563,10 @@ class Post extends CI_Controller
             if($data->num_rows() > 0):
                 $html = '';
                 foreach($data->result() as $p):
+                $img_src = img_blob($p->photo);
                 $html .= '<div class="col-md-6">
                                         <div class="position-relative">
-                                            <img class="img-fluid w-100 border p-2" style="object-fit:cover; max-height:120px;" src="'.img_blob($p->photo).'" alt="'.$p->judul.'">
+                                            <img class="img-fluid w-100 border p-2" style="object-fit:cover; max-height:120px;" src="'.$img_src.'" alt="'.$p->judul.'">
                                             <div class="position-absolute" style="right: 15px;top: 10px;">
                             <a class="text-danger" id="delete_photo_terkait" href="'.base_url('frontend/v1/post/delete_photo_terkait/'.$id_berita.'/'.$p->id_berita_photo).'" data-toggle="tooltip" title="Hapus"><i class="far fa-times-circle shadow bg-white rounded-circle"></i></a>
                         </div>

@@ -80,7 +80,18 @@ class M_f_post extends CI_Model {
         $this->db->limit($limit);
         return $this->db->get_where('t_berita_photo', ['fid_berita' => $id]);
     }
-
+    public function getImageTerkaitThumb($id_berita, $sort)
+    {
+        $this->db->where('fid_berita', $id_berita);
+        $this->db->limit(1);
+        $this->db->order_by('id_berita_photo', $sort);
+        $q = $this->db->get('t_berita_photo');
+        if($q->num_rows() > 0) {
+            $r = $q->row();
+            return img_blob($r->photo);
+        }
+        return null;
+    }
     public function doDeletePhotoTerkait($tbl,$whr)
     {
         $this->db->where($whr);
@@ -290,9 +301,15 @@ class M_f_post extends CI_Model {
     }
 
     // get all postings
-    function getPosts($limit = NULL)
+    function getPosts($limit = NULL, $kategori = NULL)
     {
-        return $this->db->order_by('id_berita', 'desc')->limit($limit)->get_where('t_berita', ['type' => 'BERITA', 'publish' => '1']);
+        $this->db->where('type', 'BERITA');
+        $this->db->or_where('type', 'SLIDE');
+        $this->db->where('publish', '1');
+        if(!empty($kategori)) {
+            $this->db->where('fid_kategori', $kategori);
+        }
+        return $this->db->order_by('id_berita', 'desc')->limit($limit)->get('t_berita');
     }
 }
 

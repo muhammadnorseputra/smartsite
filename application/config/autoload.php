@@ -94,7 +94,8 @@ $autoload['helper'] = array('url','form','number','security','string',
                             'file','html','inflector','tgl_indo',
                             'rand_helper','script_tag','blob', 
                             'directory', 'login', 'apiclient', 
-                            'nominal', 'cookie', 'getmeta', 'seo', 'cek_internet');
+                            'nominal', 'cookie', 'getmeta', 'seo', 'cek_internet',
+                        	'media');
 
 /*
 | -------------------------------------------------------------------

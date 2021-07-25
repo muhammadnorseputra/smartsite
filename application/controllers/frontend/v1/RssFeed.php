@@ -12,15 +12,16 @@ class RssFeed extends CI_Controller {
 
       public function index()
       {
+          $kategori=$this->input->get('category');
           $profile = $this->mf_beranda->get_identitas();
           $data['feed_name'] = 'bkppd-balangankab.info'; // your website
           $data['encoding'] = 'utf-8'; // the encoding
-          $data['feed_url'] = base_url('rss.xml'); // the url to your feed
+          $data['feed_url'] = base_url('rss'); // the url to your feed
           $data['page_description'] = $profile->meta_desc; // some description
-          $data['page_language'] = 'en-us'; // the language
+          $data['page_language'] = 'id-ID'; // the language
           $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
-          $data['creator_name'] = 'M. Nor Seputra'; // your email
-          $data['posts'] = $this->posts->getPosts(10);  
+          $data['creator_name'] = 'BKPPD Balangan'; // your email
+          $data['posts'] = $this->posts->getPosts(10,$kategori);  
           header("Content-Type: application/rss+xml"); // important!
 
           $this->load->view('Frontend/v1/rss', $data);

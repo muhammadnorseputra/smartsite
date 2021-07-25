@@ -58,7 +58,7 @@
                     $sort = $this->input->get('sort');
                     $type = $this->input->get('type');
                     $dataSort = ['newest','populer'];
-                    $dataType = ['all', 'berita', 'youtube', 'link'];
+                    $dataType = ['all', 'berita', 'slide', 'youtube', 'link'];
                     ?>
                     <div>
                         <div class="btn-group">

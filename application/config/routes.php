@@ -126,7 +126,7 @@ $route['invalid/(:any)'] = 'frontend/skm/skmProses/invalid/$1';
 $route['closed'] = 'frontend/v1/halaman/closed';
 
 // RSS
-$route['rss.xml'] = 'frontend/v1/rssFeed';
+$route['rss'] = 'frontend/v1/rssFeed';
 
 // API SKM
 $route['api-skm'] = 'frontend/v1/apiSkm';

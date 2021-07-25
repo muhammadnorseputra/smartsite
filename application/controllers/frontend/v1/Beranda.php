@@ -202,7 +202,7 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img style="height:260px; object-fit: cover;" class="w-100 lazy rounded border-light" data-src="'.base_url('files/file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:260px; object-fit: cover;" class="w-100 lazy rounded border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     elseif(!empty($row->img_blob)):
                         $img = '<img style="height:260px; object-fit: cover;" class="w-100 lazy rounded border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
