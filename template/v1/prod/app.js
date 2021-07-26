@@ -629,7 +629,7 @@ $(document).ready(function () {
         action = "active";
         start = start + limit;
         setTimeout(function () {
-          load_data(limit, start);
+          load_data(limit, start); // localStorage.removeItem(`${_uri}/frontend/v1/beranda/get_all_berita`);
         }, 300);
       }
     });

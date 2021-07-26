@@ -145,11 +145,11 @@ $(document).ready(function() {
                 start = start + limit;
                 setTimeout(function() {
                     load_data(limit, start);
+                    // localStorage.removeItem(`${_uri}/frontend/v1/beranda/get_all_berita`);
                 }, 300);
             }
         })
     } else {
         console.log('Semua berita tidak ditampilkan, karna bukan halaman beranda');
     }
-
 });

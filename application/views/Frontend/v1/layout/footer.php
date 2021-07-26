@@ -19,7 +19,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 text-left">
-				<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="210"/>'; ?>
+				<?php echo '<img src="'.img_blob($mf_beranda->site_logo).'" width="210" alt="BKPPD Balangan"/>'; ?>
 				<p class="my-4 text-dark">
 					<?= $mf_beranda->meta_desc ?>
 				</p>
@@ -119,7 +119,7 @@
 	</div>
 </section>
 <!-- jQuery -->
-<script src="<?= base_url('template/v1/prod/vendor-min.js'); ?>"></script>
-<script src="<?= base_url('template/v1/prod/app-min.js'); ?>"></script>
+<script defer src="<?= base_url('template/v1/prod/vendor-min.js'); ?>"></script>
+<script defer src="<?= base_url('template/v1/prod/app-min.js'); ?>"></script>
 </body>
 </html>
