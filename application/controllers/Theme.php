@@ -6,7 +6,7 @@ class Theme extends CI_Controller {
 	public function index()
 	{
 		if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
-			redirect(base_url('beranda'),'refresh');
+			redirect(base_url('beranda'));
 		} else {
 			redirect(base_url('under-construction'),'refresh');
 		}

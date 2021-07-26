@@ -2,8 +2,6 @@
 <section class="my-3 mx-3">
 	<div class="container">
 			<div class="row">
-				
-			
 	<?php 
 	// var_dump($datas);
 	foreach ($datas as $data) {
@@ -12,13 +10,14 @@
 	    $judul = strtolower($data->judul);
 	    $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
 
-		echo '<div class="col-md-3 mb-3 pb-3 border-bottom"><a href="'.$posturl.'">';
+		echo '<div class="col-md-3 mb-3 pb-3 border-bottom">
+		<a href="'.$posturl.'">';
 		if(!empty($data->img_blob)):
-			echo '<img class="img-fluid img-thumbnail" src="data:image/jpeg;base64,'.base64_encode( $data->img_blob ).'"/>';
+			echo '<img style="object-fit: cover; height:110px;" class="img-fluid img-thumbnail" src="data:image/jpeg;base64,'.base64_encode( $data->img_blob ).'"/>';
 		else:
-			echo '<img class="img-fluid img-thumbnail" src="'.$data->path.'">';
+			echo '<img style="object-fit: cover; height:110px;" class="img-fluid img-thumbnail" src="'.$data->path.'">';
 		endif;
-		echo "<span class='small'>".word_limiter($data->judul, 7)."</span>";
+		echo "<div>".word_limiter($data->judul, 5)."</div>";
 		echo '</a></div>'; 
 	}
 	

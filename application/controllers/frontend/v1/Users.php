@@ -429,7 +429,7 @@ class Users extends CI_Controller {
 			$row[] = $btnAksi;
 			$row[] = $h->title;
 			$row[] = "<code>".$h->token_halaman."</code>";
-			$row[] = "<i class='mr-2 fas fa-eye'></i>".$h->views;
+			$row[] = "<i class='mr-2 fas fa-eye'></i>".nominal($h->views);
 
 			$data[] = $row;
 		}
