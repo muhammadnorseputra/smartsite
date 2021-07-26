@@ -25,6 +25,9 @@
     <link rel="prerender" href="<?= base_url('template/v1/prod/vendor-min.js'); ?>" as="script" crossorigin>
     <link rel="prerender" href="<?= base_url('template/v1/prod/app-min.js'); ?>" as="script" crossorigin>
     <link rel="prefetch" href="<?= base_url('bower_components/jquery/dist/jquery.min.js'); ?>" as="script" crossorigin>
+    <link rel="subresource" href="<?= base_url('assets/images/logo.png'); ?>">
+    <link rel="subresource" href="<?= base_url('assets/images/bg/bg.png'); ?>">
+    <link rel="subresource" href="<?= base_url('assets/images/bg/bg-home.png'); ?>">
     <!-- <link rel="stylesheet" href="<?= base_url('template/v1/prod/app.css'); ?>"  type="text/css"> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199508931-1"></script>
