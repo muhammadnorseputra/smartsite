@@ -6,7 +6,7 @@
         <div class="row">
             <div class="d-flex align-items-center py-4">
             <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
-                <img class="img-fluid w-100" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="">
+                <img class="img-fluid w-100" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
             </div>
             <div class="col-12 col-md-8">
                 <h1>Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?></h1>

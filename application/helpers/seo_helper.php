@@ -82,6 +82,7 @@ if(! function_exists('meta_tags')){
 
         if($enable['general']){
             $output .= '<link rel="canonical" href="'.$canonical.'" />';
+            $output .= '<link rel="subresource" href="'.base_url('assets/images/logo.png').'">';
             $output .= '<link rel="apple-touch-icon" href="'.base_url('assets/images/logo.png').'" />';
             $output .= '<link rel="shortcut icon" href="'.base_url('assets/images/logo.png').'" />';
             $output .= '<meta  name="Rating" content="General"/>';
