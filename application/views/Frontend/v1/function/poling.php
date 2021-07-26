@@ -1,3 +1,4 @@
+<div id="stickMe">
 <div class="separator">
     <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-check-circle text-secondary mr-2"></i> Data Poling</span>
 </div>
@@ -40,4 +41,5 @@
 	<?php else: ?>
 	<button type="button" data-toggle="modal" data-target="#modalVote" class="btn btn-primary btn-block text-uppercase"><i class="far fa-check-circle mr-2"></i> ISI POLING</button>
 	<?php endif; ?>
+</div>
 </div>

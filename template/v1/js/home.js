@@ -8,7 +8,7 @@ function explore() {
 $(document).ready(function() {
 
     // get all berita
-    var limit = 5;
+    var limit = 6;
     var start = 0;
     var action = "inactive";
     console.log(_uriSegment);
@@ -84,7 +84,7 @@ $(document).ready(function() {
                         $("button#load_more").hide();
                         action = "active";
                     } else {
-                        if (data.count < 5) {
+                        if (data.count < 6) {
                             $("button#load_more").hide();
                             load_data_message();
                         } else {
@@ -145,7 +145,6 @@ $(document).ready(function() {
                 start = start + limit;
                 setTimeout(function() {
                     load_data(limit, start);
-                    // localStorage.removeItem(`${_uri}/frontend/v1/beranda/get_all_berita`);
                 }, 300);
             }
         })

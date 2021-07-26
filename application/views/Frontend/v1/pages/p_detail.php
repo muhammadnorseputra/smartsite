@@ -61,7 +61,7 @@ if (count($pecah) > 0) {
 <section class="pt-md-5 mt-md-5">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 mb-5 pb-md-5 px-3 px-md-0">
+			<div class="col-md-8 mb-5 pb-md-5 px-3 px-md-0" id="main-content">
 				<div class="card rounded-lg shadow-none bg-white rounded border-0">
 					<div class="card bg-transparent border-0 px-md-2 pt-md-0 p-0">
 						<div class="card-body px-0 px-md-2 pt-md-0">
@@ -237,6 +237,7 @@ if (count($pecah) > 0) {
 			
 		</div>
 		<div class="col-md-4 d-none d-md-block">
+			<div id="sidebar">
 			<?php if(cek_internet() == true): ?>
 			<div class="card border-0">
 				<div class="card-body p-0">
@@ -257,6 +258,7 @@ if (count($pecah) > 0) {
 			<?php else: ?>
 			<?php $this->load->view('msg/lose-connection'); ?>
 			<?php endif; ?>
+			</div>
 		</div>
 	</div>
 </div>

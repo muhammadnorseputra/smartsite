@@ -526,7 +526,7 @@ function explore() {
 
 $(document).ready(function () {
   // get all berita
-  var limit = 5;
+  var limit = 6;
   var start = 0;
   var action = "inactive";
   console.log(_uriSegment);
@@ -566,7 +566,7 @@ $(document).ready(function () {
             $("button#load_more").hide();
             action = "active";
           } else {
-            if (data.count < 5) {
+            if (data.count < 6) {
               $("button#load_more").hide();
               load_data_message();
             } else {
@@ -629,7 +629,7 @@ $(document).ready(function () {
         action = "active";
         start = start + limit;
         setTimeout(function () {
-          load_data(limit, start); // localStorage.removeItem(`${_uri}/frontend/v1/beranda/get_all_berita`);
+          load_data(limit, start);
         }, 300);
       }
     });
@@ -902,19 +902,24 @@ $(document).ready(function () {
     adaptiveHeight: true
   });
 });
-// $(document).ready(function() {
-//     if ($(window).width() < 320) {
-//         $('.sidebar').on('sticky-bottom-unreached', function() {
-//             console.log("Bottom unreached");
-//         });
-//     } else {
-//         $(".sidebar").sticky({
-//             topSpacing: 30,
-//             bottomSpacing: 100,
-//         });
-//     }
-// });
 "use strict";
+
+$(document).ready(function () {
+  var $sticky = $('#sidebar');
+  $sticky.hcSticky({
+    stickTo: $('#main-content'),
+    // innerSticker: '#stickMe',
+    top: 75,
+    // followScroll: true,
+    // mobileFirst: false,
+    queries: {
+      980: {
+        disable: true,
+        stickTo: 'body'
+      }
+    }
+  });
+});
 // $(document).ready(function () {
 //   $(".titleModal").titleModal({});
 // });
