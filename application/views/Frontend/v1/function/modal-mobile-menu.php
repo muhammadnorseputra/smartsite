@@ -1,9 +1,9 @@
 <!-- Modal Menus Mobile-->
 <div class="modal bd-example-modal-lg" id="mobileMenu" tabindex="-1" role="dialog" aria-labelledby="mobileMenuLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content border-0 shadow-none bg-transparent">
+		<div class="modal-content border-0 shadow-none bg-dark">
 			<div class="modal-body">
-				<!-- <div class="text-light text-center font-weight-bold">Menu Navigasi</div> -->
+				<div class="text-light text-left font-weight-bold">Navigation Menus</div>
 				<!-- Body -->
 				<div id="accordionParent" class="accordion">
 					<?php

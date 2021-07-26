@@ -47,16 +47,16 @@
     // Gambar
     if($b->type === 'BERITA'):
         if(!empty($b->img)):
-            $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.files('file_berita/'.$b->img).'" alt="'.$b->id_berita.'">';
+            $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.files('file_berita/'.$b->img).'" alt="'.$b->tgl_posting.'">';
         elseif(!empty($b->img_blob)):
-            $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'" alt="'.$b->id_berita.'"/>';
+            $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'" alt="'.$b->tgl_posting.'"/>';
         else:
-            $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->id_berita.'">';
+            $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->tgl_posting.'">';
         endif;
     elseif($b->type === 'YOUTUBE' || $b->type === 'LINK'):
-        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.$img.'" alt="'.$b->id_berita.'">';
+        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.$img.'" alt="'.$b->tgl_posting.'">';
     else:
-        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->id_berita.'">';
+        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->tgl_posting.'">';
     endif;
     ?>
         <?php if(cek_internet() == true): ?>

@@ -60,7 +60,7 @@
                     $dataSort = ['newest','populer'];
                     $dataType = ['all', 'berita', 'slide', 'youtube', 'link'];
                     ?>
-                    <div>
+                    <div class="d-none d-md-block d-lg-block">
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline-light text-muted dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= isset($sort) ? ucwords($sort) : 'Newest'; ?>
