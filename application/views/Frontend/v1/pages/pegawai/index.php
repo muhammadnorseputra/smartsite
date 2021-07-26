@@ -76,239 +76,239 @@ $(document).ready(function () {
 		return $(id).html(data);
 	}
 
-// JML ASN
-$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/asn`, response => _jmlContainer("#data_asn", response));
-$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/pns`, response => _jmlContainer("#data_pns", response));
-$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/nonpns`, response => _jmlContainer("#data_nonpns", response));
-$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/pensiun`, response => _jmlContainer("#data_pensiun", response));
+	// JML ASN
+	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/asn`, response => _jmlContainer("#data_asn", response));
+	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/pns`, response => _jmlContainer("#data_pns", response));
+	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/nonpns`, response => _jmlContainer("#data_nonpns", response));
+	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/pensiun`, response => _jmlContainer("#data_pensiun", response));
 
-// Jenis Kelamin
-$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/jenkel`, function (response) {
-	Highcharts.chart('chart-jenkel', {
-		chart: {
-			plotBackgroundColor: null,
-			plotBorderWidth: null,
-			plotShadow: false,
-			type: 'pie'
-		},
-		title: {
-			text: 'Jumlah PNS Berdasarkan Jenis Kelamin'
-		},
-		tooltip: {
-			pointFormat: 'Jumlah: {point.y:f} <br> <b>{point.percentage:.1f}%</b>'
-		},
-		plotOptions: {
-			pie: {
-				allowPointSelect: true,
-				cursor: 'pointer',
-				dataLabels: {
-					enabled: true,
-					format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-				}
-			}
-		},
-		series: [{
-			data: response.jml
-		}]
-	});
-});
-
-// Golru
-$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/golru`, function (response) {
-	Highcharts.chart('chart-golru', {
-		chart: {
-			type: 'bar',
-			spacingBottom: 15,
-			spacingTop: 10,
-			spacingLeft: 10,
-			spacingRight: 10
-		},
-		title: {
-			text: 'Jumlah PNS Berdasarkan Golongan Ruang'
-		},
-		xAxis: {
-			categories: response.nama
-		},
-		yAxis: {
-			min: 0,
-			title: {
-				text: 'Jumlah',
-				align: 'high'
+	// Jenis Kelamin
+	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/jenkel`, function (response) {
+		Highcharts.chart('chart-jenkel', {
+			chart: {
+				plotBackgroundColor: null,
+				plotBorderWidth: null,
+				plotShadow: false,
+				type: 'pie'
 			},
-			labels: {
-				overflow: 'justify'
-			}
-		},
-		tooltip: {
-			pointFormat: 'Jumlah : <b>{point.y:f}</b> orang'
-		},
-		plotOptions: {
-			bar: {
-				dataLabels: {
-					enabled: true
-				},
-				showInLegend: false
-			}
-		},
-		series: [{
-			data: response.jml
-		}]
-	});
-});
-
-// Tingkat Pendidikan
-$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/tingpen`, function (response) {
-			Highcharts.chart('chart-tingpen', {
-				chart: {
-					type: 'line',
-					spacingBottom: 15,
-					spacingTop: 10,
-					spacingLeft: 10,
-					spacingRight: 10
-				},
-				title: {
-					text: 'Jumlah PNS Berdasarkan Tingkat Pendidikan'
-				},
-				xAxis: {
-					categories: response.nama
-				},
-				yAxis: {
-					min: 0,
-					title: {
-						text: 'Jumlah',
-						align: 'high'
-					},
-					labels: {
-						overflow: 'justify'
-					}
-				},
-				tooltip: {
-					pointFormat: 'Jumlah : <b>{point.y:f}</b> orang'
-				},
-				plotOptions: {
-					bar: {
-						dataLabels: {
-							enabled: true
-						},
-						showInLegend: false
-					}
-				},
-				series: [{
-					name: 'Tingkat Pendidikan',
-					data: response.jml
-				}]
-			});
-		});
-
-// Jenis Jabatan
-$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/jenjab`, function (response) {
-	Highcharts.chart('chart-jenjab', {
-		chart: {
-			options3d: {
-		      enabled: false,
-		      alpha: 55,
-		      beta: 0
-		    },
-			type: 'pie'
-		},
-		title: {
-			text: 'Jumlah PNS Berdasarkan Jenis Jabatan'
-		},
-		tooltip: {
-			pointFormat: 'Jumlah: {point.y:f} <br> <b>{point.percentage:.1f}%</b>'
-		},
-		plotOptions: {
-			pie: {
-				allowPointSelect: true,
-				cursor: 'pointer',
-				dataLabels: {
-					enabled: true,
-					format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-				}
-			}
-		},
-		series: [{
-			data: response.jml
-		}]
-	});
-});
-
-// Eselon
-$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/eselon`, function (response) {
-	Highcharts.chart('chart-eselon', {
-		chart: {
-			type: 'cylinder',
-		    options3d: {
-	            enabled: true,
-	            alpha: 15,
-	            beta: 15,
-	            depth: 50,
-	            viewDistance: 25
-	        }
-		},
-
-		title: {
-			text: 'Jumlah PNS Berdasarkan Eselonering'
-		},
-
-		subtitle: {
-			text: 'Pilih Label untuk seleksi eselon'
-		},
-
-		legend: {
-			align: 'right',
-			verticalAlign: 'middle',
-			layout: 'vertical'
-		},
-
-		xAxis: {
-			categories: ['Eselonering'],
-			labels: {
-				x: -10
-			}
-		},
-
-		yAxis: {
-			allowDecimals: false,
 			title: {
-				text: 'Jumlah'
-			}
-		},
+				text: 'Jumlah PNS Berdasarkan Jenis Kelamin'
+			},
+			tooltip: {
+				pointFormat: 'Jumlah: {point.y:f} <br> <b>{point.percentage:.1f}%</b>'
+			},
+			plotOptions: {
+				pie: {
+					allowPointSelect: true,
+					cursor: 'pointer',
+					dataLabels: {
+						enabled: true,
+						format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+					}
+				}
+			},
+			series: [{
+				data: response.jml
+			}]
+		});
+	});
 
-		series: response.jml,
-
-		responsive: {
-			rules: [{
-				condition: {
-					maxWidth: 500
+	// Golru
+	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/golru`, function (response) {
+		Highcharts.chart('chart-golru', {
+			chart: {
+				type: 'bar',
+				spacingBottom: 15,
+				spacingTop: 10,
+				spacingLeft: 10,
+				spacingRight: 10
+			},
+			title: {
+				text: 'Jumlah PNS Berdasarkan Golongan Ruang'
+			},
+			xAxis: {
+				categories: response.nama
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					text: 'Jumlah',
+					align: 'high'
 				},
-				chartOptions: {
-					legend: {
-						align: 'center',
-						verticalAlign: 'bottom',
-						layout: 'horizontal'
+				labels: {
+					overflow: 'justify'
+				}
+			},
+			tooltip: {
+				pointFormat: 'Jumlah : <b>{point.y:f}</b> orang'
+			},
+			plotOptions: {
+				bar: {
+					dataLabels: {
+						enabled: true
+					},
+					showInLegend: false
+				}
+			},
+			series: [{
+				data: response.jml
+			}]
+		});
+	});
+
+	// Tingkat Pendidikan
+	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/tingpen`, function (response) {
+				Highcharts.chart('chart-tingpen', {
+					chart: {
+						type: 'line',
+						spacingBottom: 15,
+						spacingTop: 10,
+						spacingLeft: 10,
+						spacingRight: 10
+					},
+					title: {
+						text: 'Jumlah PNS Berdasarkan Tingkat Pendidikan'
+					},
+					xAxis: {
+						categories: response.nama
 					},
 					yAxis: {
-						labels: {
-							align: 'left',
-							x: 0,
-							y: -5
-						},
+						min: 0,
 						title: {
-							text: null
+							text: 'Jumlah',
+							align: 'high'
+						},
+						labels: {
+							overflow: 'justify'
 						}
 					},
-					subtitle: {
-						text: null
+					tooltip: {
+						pointFormat: 'Jumlah : <b>{point.y:f}</b> orang'
 					},
-					credits: {
-						enabled: false
+					plotOptions: {
+						bar: {
+							dataLabels: {
+								enabled: true
+							},
+							showInLegend: false
+						}
+					},
+					series: [{
+						name: 'Tingkat Pendidikan',
+						data: response.jml
+					}]
+				});
+			});
+
+	// Jenis Jabatan
+	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/jenjab`, function (response) {
+		Highcharts.chart('chart-jenjab', {
+			chart: {
+				options3d: {
+			      enabled: false,
+			      alpha: 55,
+			      beta: 0
+			    },
+				type: 'pie'
+			},
+			title: {
+				text: 'Jumlah PNS Berdasarkan Jenis Jabatan'
+			},
+			tooltip: {
+				pointFormat: 'Jumlah: {point.y:f} <br> <b>{point.percentage:.1f}%</b>'
+			},
+			plotOptions: {
+				pie: {
+					allowPointSelect: true,
+					cursor: 'pointer',
+					dataLabels: {
+						enabled: true,
+						format: '<b>{point.name}</b>: {point.percentage:.1f} %'
 					}
 				}
+			},
+			series: [{
+				data: response.jml
 			}]
-		}
+		});
 	});
-});
+
+	// Eselon
+	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/eselon`, function (response) {
+		Highcharts.chart('chart-eselon', {
+			chart: {
+				type: 'cylinder',
+			    options3d: {
+		            enabled: true,
+		            alpha: 15,
+		            beta: 15,
+		            depth: 50,
+		            viewDistance: 25
+		        }
+			},
+
+			title: {
+				text: 'Jumlah PNS Berdasarkan Eselonering'
+			},
+
+			subtitle: {
+				text: 'Pilih Label untuk seleksi eselon'
+			},
+
+			legend: {
+				align: 'right',
+				verticalAlign: 'middle',
+				layout: 'vertical'
+			},
+
+			xAxis: {
+				categories: ['Eselonering'],
+				labels: {
+					x: -10
+				}
+			},
+
+			yAxis: {
+				allowDecimals: false,
+				title: {
+					text: 'Jumlah'
+				}
+			},
+
+			series: response.jml,
+
+			responsive: {
+				rules: [{
+					condition: {
+						maxWidth: 500
+					},
+					chartOptions: {
+						legend: {
+							align: 'center',
+							verticalAlign: 'bottom',
+							layout: 'horizontal'
+						},
+						yAxis: {
+							labels: {
+								align: 'left',
+								x: 0,
+								y: -5
+							},
+							title: {
+								text: null
+							}
+						},
+						subtitle: {
+							text: null
+						},
+						credits: {
+							enabled: false
+						}
+					}
+				}]
+			}
+		});
+	});
 
 });
 </script>

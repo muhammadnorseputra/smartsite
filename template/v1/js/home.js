@@ -2,11 +2,10 @@ function explore() {
     document.querySelector('#').scrollIntoView({
         behavior: 'smooth',
         block: "start"
-    })
+    });
 }
 
 $(document).ready(function() {
-
     // get all berita
     var limit = 6;
     var start = 0;

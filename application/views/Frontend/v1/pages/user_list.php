@@ -81,5 +81,4 @@ var table = $("#userportal").DataTable({
       `
     }
   });
-
 </script>
