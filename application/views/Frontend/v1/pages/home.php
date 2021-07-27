@@ -1,14 +1,14 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider3') ?>
-<section class="content-home my-md-5">
+<section class="content-home">
     <div class="container">
         <div class="row">
-            <div class="d-flex align-items-center border bg-light shadow-sm" style="border-radius:15px;">
+            <div class="d-flex align-items-center border bg-light shadow-sm p-4" style="border-radius:15px;">
                 <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
-                    <img style="transform: scale(1.4);" class="img-fluid" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
+                    <img class="img-fluid" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
                 </div>
-                <div class="col-12 col-md-8 pl-md-5 py-4 py-md-0">
+                <div class="col-12 col-md-8">
                     <h1>Grafik Pegawai Negeri Sipil <br> Tahun <?= date('Y') ?></h1>
                     <p>
                         Kini website telah tersedia grafik Pegawai Negeri Sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
