@@ -118,12 +118,12 @@ class Post extends CI_Controller
 
             if($row->type === 'BERITA'):
                 if(!empty($row->img)):
-                    $img = '<img width="120" height="120" style="object-fit:cover;" class="img-fluid rounded-left" src="'.base_url('files/file_berita/'.$row->img).'">';
+                    $img = '<img width="120" style="object-fit:cover;" class="img-fluid h-100 rounded-left" src="'.base_url('files/file_berita/'.$row->img).'">';
                 else:
-                    $img = '<img width="120" height="120" style="object-fit:cover;" class="img-fluid rounded-left" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img width="120" style="object-fit:cover;" class="img-fluid h-100 rounded-left" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 endif;
             else:
-                $img = '<img width="120" height="120" style="object-fit:cover;" class="img-fluid rounded-left" src="'.base_url('assets/images/noimage.gif').'">';
+                $img = '<img width="120" style="object-fit:cover;" class="img-fluid h-100 rounded-left" src="'.base_url('assets/images/noimage.gif').'">';
             endif; 
 
             $output .= '<a href="'.$posturl.'" class="list-group-item border shadow-sm my-2 list-group-item-action rounded p-3 p-md-0">
