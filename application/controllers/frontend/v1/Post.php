@@ -118,12 +118,12 @@ class Post extends CI_Controller
 
             if($row->type === 'BERITA'):
                 if(!empty($row->img)):
-                    $img = '<img class="img-fluid rounded-left" src="'.base_url('files/file_berita/'.$row->img).'">';
+                    $img = '<img width="120" height="120" style="object-fit:cover;" class="img-fluid rounded-left" src="'.base_url('files/file_berita/'.$row->img).'">';
                 else:
-                    $img = '<img class="img-fluid rounded-left" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img width="120" height="120" style="object-fit:cover;" class="img-fluid rounded-left" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 endif;
             else:
-                $img = '<img class="img-fluid rounded-left" src="'.base_url('assets/images/noimage.gif').'">';
+                $img = '<img width="120" height="120" style="object-fit:cover;" class="img-fluid rounded-left" src="'.base_url('assets/images/noimage.gif').'">';
             endif; 
 
             $output .= '<a href="'.$posturl.'" class="list-group-item border shadow-sm my-2 list-group-item-action rounded p-3 p-md-0">
@@ -132,7 +132,7 @@ class Post extends CI_Controller
                                 '.$img.'
                             </div>
                             <div class="pt-md-3">
-                              <h5>'.character_limiter($row->judul, 25).'</h5>
+                              <h6>'.character_limiter($row->judul, 25).'</h6>
                               <span class="small">'.longdate_indo($row->tgl_posting).'</span>
                               <p class="mb-2 text-muted small">'.$isi.'...</p>
                                 <small class="text-primary">Posted by '.decrypt_url($this->mf_users->get_userportal_namalengkap($row->created_by)).'</small>
