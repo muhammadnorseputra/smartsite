@@ -1,20 +1,20 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider3') ?>
-<section class="content-home border-bottom rounded-bottom bg-light">
+<section class="content-home my-md-5">
     <div class="container">
         <div class="row">
-            <div class="d-flex align-items-center py-4">
-            <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
-                <img class="img-fluid" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
-            </div>
-            <div class="col-12 col-md-8">
-                <h1>Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?></h1>
-                <p>
-                    Kini website telah tersedia grafik Pegawai Negeri Sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
-                </p>
-                <a href="<?= base_url('api/grafik') ?>" class="btn btn-primary">Lihat Grafik</a>
-            </div>
+            <div class="d-flex align-items-center border bg-light shadow-sm" style="border-radius:15px;">
+                <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
+                    <img style="transform: scale(1.4);" class="img-fluid" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
+                </div>
+                <div class="col-12 col-md-8 pl-md-5 py-4 py-md-0">
+                    <h1>Grafik Pegawai Negeri Sipil <br> Tahun <?= date('Y') ?></h1>
+                    <p>
+                        Kini website telah tersedia grafik Pegawai Negeri Sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
+                    </p>
+                    <a href="<?= base_url('api/grafik') ?>" class="btn btn-primary">Lihat Grafik</a>
+                </div>
             </div>
         </div>
     </div>
@@ -64,14 +64,14 @@
                     </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mb-3">
+                <div  style="overflow-x: auto;" class="d-flex justify-content-between align-items-center mb-3 flex-row flex-nowrap">
                     <?php
                     $sort = $this->input->get('sort');
                     $type = $this->input->get('type');
                     $dataSort = ['newest','populer'];
                     $dataType = ['all', 'berita', 'slide', 'youtube', 'link'];
                     ?>
-                    <div class="d-none d-md-block d-lg-block">
+                    <div>
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline-light text-muted dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= isset($sort) ? ucwords($sort) : 'Newest'; ?>
