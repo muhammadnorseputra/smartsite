@@ -40,7 +40,7 @@ class M_f_beranda extends CI_Model
         if ($q->num_rows() > 0) {
             $b = $q->row();
             $namapanggilan = $this->mf_users->get_userportal_namapanggilan($b->upload_by);
-            $data = [$b->path, $b->judul, $b->url, $b->upload_by == 'admin' ? $b->upload_by : $namapanggilan, $b->gambar, encrypt_url($b->id_banner)];
+            $data = [$b->path, $b->judul, $b->url,$b->upload_by,$b->gambar, encrypt_url($b->id_banner)];
             return $data;
         }
     }
