@@ -4,7 +4,7 @@
 <section class="content-home">
     <div class="container">
         <div class="row">
-            <div class="d-flex align-items-center border bg-light shadow-sm p-4" style="border-radius:15px;">
+            <div class="d-flex align-items-center border bg-light shadow-sm py-4 px-md-5 px-0" style="border-radius:15px;">
                 <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
                     <img class="img-fluid" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
                 </div>
