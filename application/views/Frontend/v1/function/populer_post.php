@@ -47,16 +47,16 @@
     // Gambar
     if($b->type === 'BERITA'):
         if(!empty($b->img)):
-            $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.files('file_berita/'.$b->img).'" alt="'.$b->tgl_posting.'">';
+            $img = '<img style="max-height:80px; object-fit: cover;" class="rounded border align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.files('file_berita/'.$b->img).'" alt="'.$b->tgl_posting.'">';
         elseif(!empty($b->img_blob)):
-            $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'" alt="'.$b->tgl_posting.'"/>';
+            $img = '<img style="max-height:80px; object-fit: cover;" class="rounded border align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'" alt="'.$b->tgl_posting.'"/>';
         else:
-            $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->tgl_posting.'">';
+            $img = '<img style="max-height:80px; object-fit: cover;" class="rounded border align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->tgl_posting.'">';
         endif;
     elseif($b->type === 'YOUTUBE' || $b->type === 'LINK'):
-        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.$img.'" alt="'.$b->tgl_posting.'">';
+        $img = '<img style="max-height:80px; object-fit: cover;" class="rounded border align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.$img.'" alt="'.$b->tgl_posting.'">';
     else:
-        $img = '<img class="rounded align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->tgl_posting.'">';
+        $img = '<img style="max-height:80px; object-fit: cover;" class="rounded border align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->tgl_posting.'">';
     endif;
     ?>
         <?php if(cek_internet() == true): ?>
@@ -64,7 +64,7 @@
         <div class="media">
             <?= $img ?>
             <div class="media-body">
-                <span class="font-weight-lighter text-primary"><?= character_limiter($b->judul, 35); ?></span>
+                <h6 class="font-weight-lighter text-primary"><?= character_limiter($b->judul, 35); ?></h6>
                 <div class="mt-2 align-middle text-left small text-secondary d-flex justify-content-between">
                     <span>
                         <i class="far fa-thumbs-up mr-2"></i> <?= $b->like_count ?>

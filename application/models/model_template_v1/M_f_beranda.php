@@ -8,7 +8,7 @@ class M_f_beranda extends CI_Model
         return $this->db->get('t_pengaturan')->row();
     }
 
-    public function list_banner($jns_banner, $posisi)
+    public function list_banner($jns_banner, $posisi, $start=0,$limit=null)
     {
         $this->db->select('t_banner.*, ref_jns_banner.jenis');
         $this->db->from('t_banner');
@@ -17,8 +17,11 @@ class M_f_beranda extends CI_Model
                           'ref_jns_banner.jenis' => $jns_banner,
                           'ref_jns_banner.posisi' => $posisi, ]);
         $this->db->order_by('t_banner.id_banner', 'desc');
-        $q = $this->db->get();
-
+        if(!empty($start) && !empty($limit)){
+            $q = $this->db->get($limit, $start);   
+        } else {
+            $q = $this->db->get();
+        }
         return $q;
     }
 
@@ -36,7 +39,8 @@ class M_f_beranda extends CI_Model
         $q = $this->db->get();
         if ($q->num_rows() > 0) {
             $b = $q->row();
-            $data = [$b->path, $b->judul, $b->url, $b->upload_by, $b->gambar, encrypt_url($b->id_banner)];
+            $namapanggilan = $this->mf_users->get_userportal_namapanggilan($b->upload_by);
+            $data = [$b->path, $b->judul, $b->url, $namapanggilan ?? $b->upload_by, $b->gambar, encrypt_url($b->id_banner)];
             return $data;
         }
     }

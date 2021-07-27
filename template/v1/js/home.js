@@ -33,22 +33,21 @@ $(document).ready(function() {
             var output = "";
             for (var count = 0; count < 1; count++) {
                 output += `
-                <div class="card border border-light bg-white shadow-sm mb-3" style="border-radius:5px;">
+                <div class="card border-0 bg-white mb-3" style="border-radius:5px;">
                     <div class="card-header border-0 bg-white" style="border-radius:5px;">
                     <p>
-                    <span class="content-placeholder rounded-circle float-left mr-3" style="width:50px; height: 50px;">&nbsp;</span>
-
+                    <span class="content-placeholder rounded-circle float-left mr-3" style="width:40px; height: 40px;">&nbsp;</span>
                     <span class="content-placeholder rounded-lg float-left"
-                    style ="width:50%; height: 50px;"> &nbsp; </span>
+                    style ="width:40%; height: 40px; border-radius: 15px;"> &nbsp; </span>
 
                     <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
                     style ="width:40px; height: 40px;"> &nbsp; </span>
                     </p> 
                     </div> 
-                    <div class = "card-body p-0">
-                    <span class ="content-placeholder rounded-0" style="width:100%; height: 300px;"> &nbsp; </span>
+                    <div class ="card-body p-0 border-0">
+                        <span class ="content-placeholder" style="width:100%; height: 320px; border-radius:15px;"> &nbsp; </span>
                     </div> 
-                    <div class ="card-footer d-flex justify-content-bettwen p-3 bg-transparent">
+                    <div class ="card-footer d-flex justify-content-bettwen p-3 bg-transparent border-0">
                         <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
                         <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
                         <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
@@ -139,6 +138,7 @@ $(document).ready(function() {
         $("button#load_more").on("click", function(e) {
             e.preventDefault();
             if (action == "inactive") {
+                window.scrollBy(0,-250);
                 lazzy_loader(limit);
                 action = "active";
                 start = start + limit;

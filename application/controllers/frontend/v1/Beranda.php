@@ -53,6 +53,7 @@ class Beranda extends CI_Controller
                     'mf_poling_pertanyaan' => $this->mf_beranda->get_poling_a()->row(),
                     'mf_poling_jawaban' => $this->mf_beranda->get_poling_b(),
                     'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
+                    'mf_banner_home' => $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 6),
                     'meta' => $meta_tag
                 ];
          
@@ -249,7 +250,7 @@ class Beranda extends CI_Controller
                 if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'LINK'):
                 $content_body = '<div class="row">
                                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
-                                        <div class="canvas pr-md-4 pl-md-0 pr-3 pl-3 mb-2">
+                                        <div class="canvas pr-md-4 pl-md-0 pr-1 pl-1 mb-2">
                                         <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
                                           '.$img.'
                                         </a>
@@ -294,7 +295,7 @@ class Beranda extends CI_Controller
 
                 $output .= '
                 <div>
-					<div class="card border border-light bg-white">
+					<div class="card border border-light bg-white mb-3 mb-md-0">
 					<div class="card-body px-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img data-src="'.$gravatar.'" alt="Photo Userportal" width="55" height="55" class="float-left mr-3 d-inline-block rounded ml-3 lazy">
@@ -322,7 +323,7 @@ class Beranda extends CI_Controller
 					</div>
                     </div>
 				</div>
-                <div class="devider-line"></div>
+                <div class="devider-line d-none d-md-block"></div>
 				';
                 $no++;
             }

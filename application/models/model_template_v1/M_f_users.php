@@ -49,7 +49,7 @@ class M_f_users extends CI_Model
         if ($q->num_rows() > 0) :
             $lastname = $q->row();
         else :
-            $lastname = 'not found';
+            $lastname = 'admin';
         endif;
         return $lastname;
     }
