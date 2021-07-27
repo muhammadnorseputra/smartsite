@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="d-flex justify-content-between align-items-center mb-3">
+                <div style="overflow-x: auto;" class="d-flex justify-content-between align-items-center flex-row flex-nowrap mb-3">
                     <?php foreach($mf_banner_home->result() as $b): ?>
                     <div class="mx-3 flex-grow-1">
                         <a href="<?= $b->path ?>" id="xbanner" data-toggle="tooltip" data-placement="bottom" data-title="<?= $b->judul ?>" data-lightbox="BannerAside">
