@@ -6,10 +6,10 @@
         <div class="row">
             <div class="d-flex align-items-center border bg-light shadow-sm py-4 px-md-5 px-0" style="border-radius:15px;">
                 <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
-                    <img class="img-fluid" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
+                    <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
                 </div>
                 <div class="col-12 col-md-8">
-                    <h1>Grafik Pegawai Negeri Sipil <br> Tahun <?= date('Y') ?></h1>
+                    <h1>Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?></h1>
                     <p>
                         Kini website telah tersedia grafik Pegawai Negeri Sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
                     </p>

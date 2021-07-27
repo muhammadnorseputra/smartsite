@@ -1057,3 +1057,35 @@ i.likes:hover {
   top: 10px;
   right: 15px;
 }
+
+// Bounce Aniamtion
+		.animated-image {
+		-webkit-animation-duration: 2s;
+		animation-duration: 2s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+		}
+		@-webkit-keyframes bounce {
+		0%, 100% {
+		-webkit-transform: translateY(0);
+		}
+		50% {
+		-webkit-transform: translateY(-15px);
+		}
+		}
+		@keyframes  bounce {
+		0%, 100% {
+		transform: translateY(0);
+		}
+		50% {
+		transform: translateY(-15px);
+		}
+		}
+		.bounce {
+		-webkit-animation-name: bounce;
+		animation-name: bounce;
+		}
