@@ -53,7 +53,7 @@ class Beranda extends CI_Controller
                     'mf_poling_pertanyaan' => $this->mf_beranda->get_poling_a()->row(),
                     'mf_poling_jawaban' => $this->mf_beranda->get_poling_b(),
                     'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
-                    'mf_banner_home' => $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 6),
+                    'mf_banner_home' => $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 5),
                     'meta' => $meta_tag
                 ];
          

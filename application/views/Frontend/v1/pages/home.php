@@ -55,11 +55,11 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="d-flex justify-content-around align-items-center mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-3">
                     <?php foreach($mf_banner_home->result() as $b): ?>
-                    <div class="mx-4 flex-grow-1">
+                    <div class="mx-3 flex-grow-1">
                         <a href="<?= $b->path ?>" id="xbanner" data-toggle="tooltip" data-placement="bottom" data-title="<?= $b->judul ?>" data-lightbox="BannerAside">
-                        <img class="lazy rounded-circle border shadow" width="110" height="110" style="object-fit:cover;" data-src="<?= files('file_banner/'.$b->gambar) ?>" alt="<?= $b->upload_by ?>">
+                        <img class="lazy rounded-circle border shadow-sm" width="110" height="110" style="object-fit:cover;" data-src="<?= files('file_banner/'.$b->gambar) ?>" alt="<?= $b->upload_by ?>">
                         </a>
                     </div>
                     <?php endforeach; ?>
