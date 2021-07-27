@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="col-md-7 order-first order-md-last py-md-5 mt-md-5">
-            <img class="img-fluid animated pulse faster" src="<?php echo base_url('assets/images/bg/bg-hero.svg') ?>" alt="Homepage - Portal Web BKPPD Balangan">
+            <img class="img-fluid" src="<?= assets('images/bg/bg-hero.svg') ?>" alt="Homepage - Portal Web BKPPD Balangan">
         </div>
     </div>
 </div>

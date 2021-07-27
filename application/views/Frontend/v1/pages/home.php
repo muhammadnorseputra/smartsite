@@ -58,8 +58,8 @@
                 <div style="overflow-x: auto;" class="d-flex justify-content-between align-items-center flex-row flex-nowrap mb-3">
                     <?php foreach($mf_banner_home->result() as $b): ?>
                     <div class="mx-3 flex-grow-1">
-                        <a href="<?= $b->path ?>" id="xbanner" data-toggle="tooltip" data-placement="bottom" data-title="<?= $b->judul ?>" data-lightbox="BannerAside">
-                        <img class="lazy rounded-circle border shadow-sm" width="110" height="110" style="object-fit:cover;" data-src="<?= files('file_banner/'.$b->gambar) ?>" alt="<?= $b->upload_by ?>">
+                        <a href="<?= $b->path ?>" id="xbanner" data-title="<?= $b->judul ?>" data-lightbox="BannerAside">
+                        <img class="lazy rounded-circle border shadow-sm" width="110" height="110" style="object-fit:cover;" data-src="<?= files('file_banner/'.$b->gambar) ?>">
                         </a>
                     </div>
                     <?php endforeach; ?>
