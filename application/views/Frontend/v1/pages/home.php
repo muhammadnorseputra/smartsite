@@ -25,18 +25,7 @@
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
         <div class="row d-flex justify-content-around">
-            <div class="col-12 mb-4">
-                <div class="d-flex justify-content-center align-items-center">
-                    <?php foreach($mf_banner_home->result() as $b): ?>
-                    <div class="mx-2">
-                        <a href="<?= $b->path ?>" id="xbanner" data-toggle="tooltip" data-placement="bottom" data-title="<?= $b->judul ?>" data-lightbox="BannerAside">
-                        <img class="lazy rounded-circle border" width="110" height="110" style="object-fit:cover;" data-src="<?= files('file_banner/'.$b->gambar) ?>" alt="<?= $b->upload_by ?>">
-                        </a>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-4">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-4 mt-md-0">
                 <div id="sidebar">
                 <a href="<?= base_url('koran-online'); ?>" class="btn btn-outline-light btn-light py-3 mb-3 btn-block">
                 <div class="d-flex justify-content-between align-items-center text-primary">
@@ -66,6 +55,15 @@
                         </div>
                     </div>
                 </div> -->
+                <div class="d-flex justify-content-around align-items-center mb-3">
+                    <?php foreach($mf_banner_home->result() as $b): ?>
+                    <div class="mx-4 flex-grow-1">
+                        <a href="<?= $b->path ?>" id="xbanner" data-toggle="tooltip" data-placement="bottom" data-title="<?= $b->judul ?>" data-lightbox="BannerAside">
+                        <img class="lazy rounded-circle border shadow" width="110" height="110" style="object-fit:cover;" data-src="<?= files('file_banner/'.$b->gambar) ?>" alt="<?= $b->upload_by ?>">
+                        </a>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <?php
                     $sort = $this->input->get('sort');
@@ -105,6 +103,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
                 <div class="text-center mb-md-4">
