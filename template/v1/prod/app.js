@@ -18,7 +18,7 @@ $(document).ready(function () {
   $backToTop.on('click', function (e) {
     $("html, body").animate({
       scrollTop: 0
-    }, 800);
+    }, 300);
   });
 });
 // $(document).ready(function () {
@@ -517,19 +517,11 @@ $(function () {
 });
 "use strict";
 
-function explore() {
-  document.querySelector('#').scrollIntoView({
-    behavior: 'smooth',
-    block: "start"
-  });
-}
-
 $(document).ready(function () {
   // get all berita
   var limit = 6;
   var start = 0;
   var action = "inactive";
-  console.log(_uriSegment);
   var $url = $host ? _uriSegment[2] : _uriSegment[1];
 
   if ($url == 'beranda') {
@@ -541,7 +533,30 @@ $(document).ready(function () {
       var output = "";
 
       for (var count = 0; count < 1; count++) {
-        output += "\n                <div class=\"card border-0 bg-white mb-3\" style=\"border-radius:5px;\">\n                    <div class=\"card-header border-0 bg-white\" style=\"border-radius:5px;\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:40px; height: 40px;\">&nbsp;</span>\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:40%; height: 40px; border-radius: 15px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    <div class =\"card-body p-0 border-0\">\n                        <span class =\"content-placeholder\" style=\"width:100%; height: 320px; border-radius:15px;\"> &nbsp; </span>\n                    </div> \n                    <div class =\"card-footer d-flex justify-content-bettwen p-3 bg-transparent border-0\">\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 p-2\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
+        /*    output += `
+            <div class="card border-0 bg-white mb-3" style="border-radius:5px;">
+                <div class="card-header border-0 bg-white" style="border-radius:5px;">
+                <p>
+                <span class="content-placeholder rounded-circle float-left mr-3" style="width:40px; height: 40px;">&nbsp;</span>
+                <span class="content-placeholder rounded-lg float-left"
+                style ="width:40%; height: 40px; border-radius: 15px;"> &nbsp; </span>
+                  <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
+                style ="width:40px; height: 40px;"> &nbsp; </span>
+                </p> 
+                </div> 
+                <div class ="card-body p-0 border-0">
+                    <span class ="content-placeholder" style="width:100%; height: 320px; border-radius:15px;"> &nbsp; </span>
+                </div> 
+                <div class ="card-footer d-flex justify-content-bettwen p-3 bg-transparent border-0">
+                    <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
+                    <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
+                    <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
+                    <span class="content-placeholder rounded w-100 p-2"> &nbsp; </span>
+                </div> 
+            </div>
+        `;
+        */
+        output += "<div class=\"d-flex justify-content-center align-items-center my-5\">\n                            <div class=\"loader_small\" style=\"width:50px;height:50px;\"></div>\n                        </div>";
       }
 
       $("#load_data_message").html(output);
@@ -825,7 +840,8 @@ if ($host) {
 
 var _uriSegment = window.location.pathname.split('/');
 
-console.log('Location Origin', _uri); // Params
+console.log('Location Origin', _uri);
+console.log(_uriSegment); // Params
 
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
@@ -914,6 +930,17 @@ $(document).ready(function () {
     arrows: false,
     pauseOnHover: false,
     adaptiveHeight: true
+  });
+});
+"use strict";
+
+$(document).ready(function () {
+  var scrollLink = $('.scroll');
+  scrollLink.click(function (e) {
+    e.preventDefault();
+    $('body,html').animate({
+      scrollTop: $(this.hash).offset().top
+    }, 300);
   });
 });
 "use strict";

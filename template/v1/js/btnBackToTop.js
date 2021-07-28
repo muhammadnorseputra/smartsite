@@ -12,6 +12,6 @@ $(document).ready(function() {
     $backToTop.on('click', function(e) {
         $("html, body").animate({
             scrollTop: 0
-        }, 800);
+        }, 300);
     });
 });

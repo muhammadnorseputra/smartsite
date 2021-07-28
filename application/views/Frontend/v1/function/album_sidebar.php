@@ -15,8 +15,12 @@
                     <?php endif; ?>
                     
                 </a>
-                    <div class="text-secondary text-center badge-light p-2 rounded mt-2"><?= $this->album->jml_photo_in_album($album->id_album_foto) ?> Photo</div> 
-                    <p class="text-muted mt-3"><?= word_limiter($album->judul, 5) ?></p>
+                <div class="d-flex mt-3 justify-content-between align-items-center">
+                <h6 class="text-primary"><?= word_limiter($album->judul, 5) ?></h6>
+                <div class="badge badge-pill badge-light p-2 rounded">
+                    <i class="fas fa-images mr-2"></i> <?= $this->album->jml_photo_in_album($album->id_album_foto) ?> Photo
+                </div> 
+                </div>
             </div>
         <?php endforeach; ?>
     </div>

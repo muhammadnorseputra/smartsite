@@ -7,7 +7,7 @@
                 <p class="text-muted lead animated fadeInDown">Selamat Datang Pada Portal Web Resmi BKPPD Kabupaten Balangan</p>
             </div>
             <div class="">
-                <a href="#content-page" class="btn btn-info btn-block font-weight-lighter btn-lg animated fadeInDown">Explore <i class="fas fa-arrow-down ml-3"></i></a>
+                <a href="#content-page" class="btn btn-info btn-block font-weight-lighter btn-lg animated fadeInDown scroll">Explore <i class="fas fa-arrow-down ml-3"></i></a>
                 <p class="mt-3 font-weight-bold animated fadeInUp">Follow Our Media</p>
                 <div class="d-flex justify-content-start align-items-center animated fadeInUp">
                     <a target="_blank" href="<?= $mf_beranda->fb; ?>" class="btn py-3 btn-primary-old my-2  my-sm-0 animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" title="Join group facebook">

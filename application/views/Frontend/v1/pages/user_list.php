@@ -2,17 +2,18 @@
 	<div class="container">
 		<div class="row mt-3 mt-lg-5 mt-md-5">
 			<div class="col-12 col-md-4">
-				<h3 class="text-uppercase">userportal</h3>
-				<p class="text-muted lead">
-					List Userportal yang telah berhasil bergabung.
-				</p>
-				<p class="text-dark font-weight-bold">Total Userportal</p>
-				<p class="display-1">
-					<?= $total_userlist ?>
-				</p>
+        <div id="sidebar">
+  				<h3 class="text-uppercase">userportal</h3>
+  				<p class="text-muted lead">
+  					List Userportal yang telah berhasil bergabung.
+  				</p>
+  				<p class="text-dark font-weight-bold">Total Userportal</p>
+  				<p class="display-1">
+  					<?= $total_userlist ?>
+  				</p>
+        </div>
 			</div>
-			<div class="col-12 col-md-8">
-				
+			<div class="col-12 col-md-8" id="main-content">
 				<div class="table-responsive">
 					<table class="table table-borderless table-condensed table-striped table-light" id="userportal">
 						<thead>
@@ -38,19 +39,19 @@ var table = $("#userportal").DataTable({
     "serverSide": true,
     "paging": true,
     "ordering": true,
-    "info": false,
+    "info": true,
     "searching": false,
     "pagingType": "full_numbers",
     "responsive": true,
     "datatype": "json",
     "fixedHeader": {
-      headerOffset: 0,
-      header: false,
+      headerOffset: $('#navbarSupportedContent').innerHeight(),
+      header: true,
       footer: false
     },
     "lengthMenu": [
-      [2, 6, 10, 25, 50, -1],
-      [2, 6, 10, 25, 50, "All"]
+      [6, 10, 25, 50, -1],
+      [6, 10, 25, 50, "All"]
     ],
     "order": [0, 'desc'],
     "ajax": {
