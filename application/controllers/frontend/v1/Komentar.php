@@ -8,6 +8,7 @@ class Komentar extends CI_Controller {
 		//Do your magic here
 		$this->load->model('model_template_v1/M_f_komentar', 'komentar');
 		$this->load->model('model_template_v1/M_f_users', 'users'); 
+        $this->load->model('model_template_v1/M_f_post', 'post');
 		//Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
             // redirect(base_url('frontend/v1/beranda'),'refresh');
@@ -32,8 +33,9 @@ class Komentar extends CI_Controller {
 			$namalengkap = decrypt_url($this->mf_users->get_userportal_namalengkap($k->fid_users_portal));
             $id = encrypt_url($k->id_berita);
             $postby = strtolower($namalengkap);
-            $judul = strtolower(url_title($k->judul));
-            $posturl = base_url("post/$postby/$id/".url_title($judul));
+            $slug = strtolower($k->slug);
+            $kategori = url_title(strtolower($this->post->kategori_byid($k->fid_kategori)));
+            $posturl = base_url("p/".$kategori."/".$slug);
 
 			$no++;
 			$row = array();
