@@ -559,9 +559,9 @@ class Post extends CI_Controller
             if($upload == true)
             {
                 $msg = true;
-                file_put_contents($path.$filename,$blob);
                 $this->watermark($filename);
-                $this->resizeImage($filename);
+                @file_put_contents($path.$filename,$blob);
+                // $this->resizeImage($path.$filename);
             } else {
                 $msg = false;
             }

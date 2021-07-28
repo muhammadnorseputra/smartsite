@@ -51,4 +51,5 @@ if ( ! function_exists('getImage'))
     echo $new_image;
   }
 }
+
 /* End of file rand_helper.php */

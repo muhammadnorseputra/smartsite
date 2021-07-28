@@ -12,7 +12,7 @@ class RssFeed extends CI_Controller {
 
       public function index()
       {
-          $kategori=$this->input->get('category');
+          $kategori= isset($_GET['category']) ? $_GET['category'] : 0;
           $profile = $this->mf_beranda->get_identitas();
           $data['feed_name'] = 'bkppd-balangankab.info'; // your website
           $data['encoding'] = 'utf-8'; // the encoding

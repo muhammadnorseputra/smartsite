@@ -312,15 +312,19 @@ class M_f_post extends CI_Model {
     }
 
     // get all postings
-    function getPosts($limit = NULL, $kategori = NULL)
+    function getPosts($limit = NULL, $kategori)
     {
+        $this->db->select('*');
+        $this->db->from('t_berita');
         $this->db->where('type', 'BERITA');
-        $this->db->or_where('type', 'SLIDE');
         $this->db->where('publish', '1');
         if(!empty($kategori)) {
             $this->db->where('fid_kategori', $kategori);
         }
-        return $this->db->order_by('id_berita', 'desc')->limit($limit)->get('t_berita');
+        $this->db->order_by('id_berita', 'desc');
+        $this->db->limit($limit);
+        $q= $this->db->get();
+        return $q;
     }
 }
 
