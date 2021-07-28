@@ -1,4 +1,3 @@
-<?php $id = decrypt_url($this->uri->segment(2)) ?>
 <section class="hero pt-md-5">
 	<div class="container pt-md-5 pt-2">
 		<div class="d-flex justify-content-center justify-content-md-center align-items-center">
@@ -63,9 +62,9 @@
 	<?php else: ?>
 	<div class="jumbotron bg-transparent text-center">
 		<h1 class="display-4 text-danger">Opps!</h1>
-		<p class="text-secondary">Album <b><?= $this->album->judul_album_by_id($id) ?></b> belum memiliki photo, album masih kosong.</p>
+		<p class="text-light">Album <b><?= $this->album->judul_album_by_id($id) ?></b> belum memiliki photo, album masih kosong.</p>
 		<p class="lead">
-			<a class="btn btn-primary btn-sm" href="<?= base_url('frontend/v1/album') ?>" role="button"><i class="fas fa-arrow-left mr-2"></i>List album</a>
+			<a class="btn btn-primary btn-sm" href="<?= base_url('album') ?>" role="button"><i class="fas fa-arrow-left mr-2"></i>List album</a>
 		</p>
 	</div>
 	<?php endif; ?>

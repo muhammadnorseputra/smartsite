@@ -45,18 +45,20 @@ class Album extends CI_Controller {
 			$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
 
-	public function detail($id)
+	public function detail($slug)
 	{
-		if(empty($id)):
-			return redirect(base_url('album'),'refresh');
+		$id = $this->album->idAlbumBySlug($slug);
+		
+		if(intval($id) == ''):
+			return redirect(base_url('album'));
 		endif;
 
-		$id_album = decrypt_url($id);
 		$data = [
-			'title' => url_title($this->album->judul_album_by_id($id_album), '-', true),
-			'photos' => $this->album->photos($id_album),
+			'title' => $this->album->judul_album_by_id($id)." - BKPPD Balangan",
+			'photos' => $this->album->photos($id),
 			'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
+            'id' => $id,
 			'isi'	=> 'Frontend/v1/pages/album_detail',
 		];
 
@@ -143,6 +145,7 @@ class Album extends CI_Controller {
 				}
 				$values = [
 					'judul' => $jdl,
+					'slug' => url_title(strtolower($jdl)),
 					'keterangan' => $this->input->post('photo_keterangan'),
 					'gambar' => $this->upload->data('file_name'),
 					'gambar_blob' => $fileName_blob,

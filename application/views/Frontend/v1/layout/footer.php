@@ -57,12 +57,17 @@
 						<a href="https://news.google.com/publications/CAAqBwgKMLfcpwswpOe_Aw?oc=3&ceid=ID:id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>BKPPD Google News</a>
 					</li>
 					<li>
-						<a href="<?= base_url('skm') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Survey Kepegawaian</a>
+						<a href="<?= base_url('skm') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Survey Layanan Kepegawaian</a>
 					</li>
 					<li>
 						<a href="<?= base_url('kotak_saran') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Kirim Saran / Laporkan BUG</a>
 					</li>
-					
+					<li>
+						<a href="<?= base_url('koran-online') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Koran Online Gratis</a>
+					</li>					
+					<li>
+						<a href="<?= base_url('news') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Berita Seputar Indonesia</a>
+					</li>					
 					<li>
 						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Userportal</a>
 					</li>

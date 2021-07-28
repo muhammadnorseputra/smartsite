@@ -3,6 +3,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_f_album extends CI_Model
 {
+	public function idAlbumBySlug($slug)
+	{
+		$q = $this->db->select('id_album_foto')->get_where('t_album_foto', ['slug' => $slug])->row();
+		return $q->id_album_foto;
+	}
 	public function judul_album_by_id($id) {
 		$this->db->select('judul');
 		$this->db->from('t_album_foto');

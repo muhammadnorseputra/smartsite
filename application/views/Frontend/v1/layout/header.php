@@ -135,6 +135,19 @@
 									</div>
 								</div>
 							</a>
+							<a target="_blank" href="https://web.bkppd-balangankab.info/skm" class="p-4">
+								<div class="row">
+									<div class="col-4">
+										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo.png').'" alt="SKM - BKPPD Balangan"/>'; ?>
+									</div>
+									<div class="col-8">
+										<b class="font-weight-bold text-dark">SKM (Survei Kepuasan Masyarakat)</b>
+										<p class="text-muted small">
+											Survei Kepuasan Masyarakat adalah kegiatan pengukuran secara komprehensif tentang tingkat kepuasan masyarakat terhadap kualitas layanan yang diberikan oleh penyelenggara pelayanan publik
+										</p>
+									</div>
+								</div>
+							</a>
 						</div>
 					</ul>
 				</li>

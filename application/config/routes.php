@@ -78,6 +78,7 @@ $route['module/(:any)/update/(:any)'] = 'backend/module/$1/update/$2';
 * @FRONT END
 */
 $route['api/(:any)'] = 'frontend/v1/api/$1';
+$route['news'] = 'frontend/v1/api/news';
 $route['pegawai/(:any)'] = 'frontend/v1/pegawai/$1';
 $route['under-construction'] = 'theme/maintenance_site';
 $route['page/(:any)'] = 'frontend/v1/halaman/statis/$1';

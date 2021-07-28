@@ -14,19 +14,17 @@
 	<div class="card-columns">
 		<?php if($album->num_rows() > 0): ?>
 		<?php foreach($album->result() as $a): ?>
-			<a href="<?= base_url('album/'.encrypt_url($a->id_album_foto)) ?>">
-					<div class="card bg-white border-0 p-3 shadow-sm">
-						<div class="overflow-hidden">
+			<a href="<?= base_url('album/'.$a->slug) ?>">
+					<div class="card bg-white border-0 shadow-sm">
 							<?php if(!empty($a->gambar)): ?>
-							<img class="rounded lazy img-fluid w-50" data-src="<?= base_url('files/file_album/'.$a->gambar) ?>" alt="Card image">
+							<img style="object-fit:cover; height:160px; width;100%;" class="rounded-top lazy card-img-top img-fluid" data-src="<?= base_url('files/file_album/'.$a->gambar) ?>" alt="Card image">
 							<?php else: ?>
-							<img class="rounded lazy img-fluid w-50" data-src="data:image/jpeg;base64,<?= base64_encode($a->gambar_blob) ?>" alt="Card image">
+							<img style="object-fit:cover; height:160px; width;100%;" class="rounded-top lazy card-img-top img-fluid" data-src="data:image/jpeg;base64,<?= base64_encode($a->gambar_blob) ?>" alt="Card image">
 							<?php endif; ?>
-						</div>
-						<div class="card-body bg-transparent px-0">
+						<div class="card-body bg-white">
 							<?php if($a->tgl_publish === date('Y-m-d')): ?><span class="badge badge-pill badge-warning float-right">New!</span> <?php endif; ?>
-							<div><?= $a->judul ?></div>
-							<span class="text-secondary label"><?= $this->album->jml_photo_in_album($a->id_album_foto) ?> Photo</span>
+							<h6><?= $a->judul ?></h6>
+							<span class="text-secondary badge"><i class="fas fa-images mr-2"></i><?= $this->album->jml_photo_in_album($a->id_album_foto) ?> Photo</span>
 						</div>
 					</div>
 			</a>

@@ -18,7 +18,7 @@ class Api extends CI_Controller {
 	public function news()
 	{
 		$data = [
-			'title' => 'BKPPD &bull; News',
+			'title' => 'News - BKPPD Balangan',
 			'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
 			'isi'	=> 'Frontend/v1/pages/news/index',

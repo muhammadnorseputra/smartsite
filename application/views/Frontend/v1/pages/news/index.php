@@ -15,7 +15,7 @@
 				<form class="form-inline" method="get">
 					<input type="hidden" name="category" value="<?= $category ?>">
 					<input type="hidden" name="page" value="1">
-					<label class="sr-only" for="search">Username</label>
+					<label class="sr-only" for="search">Keywords</label>
 					<div class="input-group mb-2 mr-sm-2">
 						<div class="input-group-prepend">
 							<div class="input-group-text"><i class="fas fa-filter"></i></div>
@@ -33,12 +33,12 @@
 <div class="container mb-5 bg-white py-3 rounded shadow">
 	<div>
 		<b class="text-light text-uppercase mb-2 d-block">category</b>
-		<div class="d-flex justify-content-between align-items-center flex-wrap flex-md-nowrap">
+		<div style="overflow-x: auto;" class="d-flex justify-content-between align-items-center flex-nowrap">
 			<?php 
 				foreach ($category_arr as $c) :
 				$primary = $category == $c ? 'disabled' : ''; 
 			?>
-				<a href="?category=<?= $c ?>&page=<?= $page ?>&q=<?= $q ?>" class="btn btn-lg btn-primary <?= $primary ?>"><?= $c ?></a>
+				<a href="?category=<?= $c ?>&page=<?= $page ?>&q=<?= $q ?>" class="btn btn-lg btn-primary mx-2 <?= $primary ?> flex-grow-1"><?= $c ?></a>
 			<?php endforeach; ?>
 		</div>
 	</div>
@@ -61,7 +61,7 @@
 		?>
 		<div class="col-12 col-sm-6 col-md-4 col-lg-4">
 			<a href="<?= $a['url'] ?>" target="_blank" title="<?= $a['title'] ?>" class="position-relative">
-				<img src="<?= $a['urlToImage'] ?>" alt="<?= $a['description'] ?>" class="img-fluid w-100 shadow-sm rounded mb-3">
+				<img data-src="<?= $a['urlToImage'] ?>" alt="<?= $a['description'] ?>" class="img-fluid w-100 shadow-sm rounded mb-3 lazy">
 			</a>
 			<div class="small text-muted mb-2"><?= longdate_indo(substr($a['publishedAt'], 0, 10)) ?> &bull; <?= $author ?></div>
 			<a href="<?= $a['url'] ?>" target="_blank" title="<?= $a['title'] ?>">

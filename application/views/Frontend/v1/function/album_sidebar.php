@@ -7,8 +7,7 @@
         foreach ($mf_album as $album):
         ?>
             <div>
-                <a href="<?= base_url('album/'.encrypt_url($album->id_album_foto)) ?>">
-                    
+                <a href="<?= base_url('album/'.$album->slug) ?>">
                     <?php if(!empty($a->gambar)): ?>
                     <img  style="height: 250px; object-fit: cover;" src="<?= base_url('files/file_album/'.$album->gambar) ?>" class="w-100 rounded shadow-sm border " alt="<?= url_title($album->judul, '-', true) ?>">
                     <?php else: ?>
