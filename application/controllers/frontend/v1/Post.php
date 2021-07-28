@@ -72,6 +72,7 @@ class Post extends CI_Controller
             'post_detail' => $detail,
             'mf_kategori' => $this->mf_beranda->get_kategori_listing(),
             'mf_berita_populer' => $this->mf_beranda->berita_populer(),
+            'postId' => $id,
             'meta' => $meta_tag
     	];
     	$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);

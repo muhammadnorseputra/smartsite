@@ -642,6 +642,16 @@ $(document).ready(function () {
   }
 });
 "use strict";
+
+$(function () {
+  if (!$.cookie("notice-accepted")) {
+    $("a#xbanner").click();
+    $.cookie("notice-accepted", 1, {
+      expires: 60 / 1440,
+      path: '/'
+    });
+  }
+});
 // $(function() {
 //     $('h3#count_jml').countTo({
 //         refreshInterval: '50',
@@ -916,7 +926,7 @@ $(document).ready(function () {
     top: 75,
     // followScroll: true,
     // mobileFirst: false,
-    queries: {
+    responsive: {
       980: {
         disable: true,
         stickTo: 'body'

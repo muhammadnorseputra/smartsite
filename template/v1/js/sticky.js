@@ -6,7 +6,7 @@ $(document).ready(function() {
         top: 75,
         // followScroll: true,
         // mobileFirst: false,
-        queries: {
+        responsive: {
             980: {
               disable: true,
               stickTo: 'body'
