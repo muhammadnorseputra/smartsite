@@ -3,7 +3,7 @@
 // Update count view
 $count_v = $post_detail->views;
 $count = $count_v + 1;
-$this->post->update_count_post($postId), $count);
+$this->post->update_count_post($postId, $count);
 // Profile postinger
 $by = $post_detail->created_by;
 if ($by == 'admin') {
