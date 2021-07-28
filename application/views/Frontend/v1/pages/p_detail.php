@@ -1,3 +1,4 @@
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
 <?php
 // Update count view
 $count_v = $post_detail->views;
@@ -125,13 +126,13 @@ if (count($pecah) > 0) {
 					<?php endif; ?>
 					<h1 class="text-responsive"><?php echo $post_detail->judul; ?></h1>
 					<ins class="adsbygoogle"
-					style="display:block; text-align:center;"
-					data-ad-layout="in-article"
-					data-ad-format="fluid"
-					data-ad-client="ca-pub-1099792537777374"
-					data-ad-slot="6818392621"></ins>
+					     style="display:block; text-align:center;"
+					     data-ad-layout="in-article"
+					     data-ad-format="fluid"
+					     data-ad-client="ca-pub-1099792537777374"
+					     data-ad-slot="6818392621"></ins>
 					<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
+					     (adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
 					<p class="card-text font-weight-normal"><?php echo $content; ?></p>
 					<?= $tag; ?>
@@ -246,13 +247,13 @@ if (count($pecah) > 0) {
 					<!--<div id="gpr-kominfo-widget-container"></div>-->
 					<!-- ads -->
 					<ins class="adsbygoogle"
-					style="display:block"
-					data-ad-client="ca-pub-1099792537777374"
-					data-ad-slot="6508565159"
-					data-ad-format="auto"
-					data-full-width-responsive="true"></ins>
+					     style="display:block"
+					     data-ad-client="ca-pub-1099792537777374"
+					     data-ad-slot="6508565159"
+					     data-ad-format="auto"
+					     data-full-width-responsive="true"></ins>
 					<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
+					     (adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
 				</div>
 			</div>
@@ -264,6 +265,4 @@ if (count($pecah) > 0) {
 	</div>
 </div>
 </section>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!--<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>-->

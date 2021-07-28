@@ -1,3 +1,4 @@
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
 <section class="py-md-5 hero">
   <div class="container">
     <div class="row">
@@ -30,13 +31,13 @@
         
         <?= $h->content ?>
         <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-format="fluid"
-          data-ad-layout-key="-f9+4v+7r-fc+65"
-          data-ad-client="ca-pub-1099792537777374"
-          data-ad-slot="5769488115"></ins>
+             style="display:block"
+             data-ad-format="fluid"
+             data-ad-layout-key="-g7+41+d-9o+g9"
+             data-ad-client="ca-pub-1099792537777374"
+             data-ad-slot="1412915482"></ins>
         <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
+             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
         <?php else : ?>
         <img class="d-block mx-auto mb-2 mt-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/page-not-found.svg') ?>">
@@ -66,7 +67,6 @@
     </div>
   </div>
 </section>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script src="<?= base_url('bower_components/jquery/dist/jquery.min.js') ?>"></script>
 <script>
 $(function() {
