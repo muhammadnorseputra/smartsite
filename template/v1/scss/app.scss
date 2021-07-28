@@ -585,7 +585,6 @@ h5.title-sidebar {
 // 	-ms-transition: all .4s linear;
 // 	-o-transition: all .4s linear;
 // }
-
 img.lazy {
 	display: block;
 	background-color: transparent;
@@ -595,11 +594,10 @@ img.lazy {
 	// background-image: url("https://via.placeholder.com/300.png?text=BKPPD");
 	background-repeat: no-repeat;
 	background-position: center center;
-	transition: all .1s ease-in;
+	transition: all .3s ease-in;
 }
-
 img.isLoaded {
-	transition: all .1s ease-in;
+	transition: all .3s ease;
 }
 
 i.likes {

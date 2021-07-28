@@ -10,14 +10,18 @@ if ($by == 'admin') {
 
 $id = encrypt_url($detail->id_berita);
 $postby = strtolower($namapanggilan);
-$judul = strtolower($detail->judul);
-$posturl = "post/{$postby}/{$id}/" . url_title($judul) . '';
+$slug = strtolower($detail->slug);
+$kategori = url_title(strtolower($this->post->kategori_byid($detail->fid_kategori)));
+$posturl = base_url("p/".$kategori."/".$slug);
 
 if($detail->type === 'YOUTUBE'):
     $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
     $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$detail->content.'&key='.$key;
     $yt     = api_client($url);
     $imgSrc = $yt['items'][0]['snippet']['thumbnails']['medium']['url'];
+endif;
+if($detail->type === 'SLIDE'):
+    $imgSrc = img_blob($this->post->photo_terkait($id,1)->row()->photo);
 endif;
 if($detail->type === 'LINK'):
     $url = $detail->content;
@@ -33,7 +37,7 @@ $sumber = parse_url($url_sumber, PHP_URL_HOST);
         <div class="col-12 col-md-6 order-last order-md-first">
             <div class="p-2">
                 <div class="text-muted small ml-md-0 mb-2 text-center text-md-left"><?= $sumber ?></div> 
-                <b class="small text-dark text-left d-block"> <?= word_limiter($detail->judul, 8); ?> </b>
+                <h6 class="small text-dark text-left d-block"> <?= word_limiter($detail->judul, 15); ?> </h6>
             </div>
         </div>
         <div class="col-12 col-md-6">
@@ -56,7 +60,7 @@ $sumber = parse_url($url_sumber, PHP_URL_HOST);
 <script>
     var data_count = <?= $detail->share_count; ?>;
     $("#share").jsSocials({
-        url: "<?= base_url('post/'.$postby.'/'.$id.'/'.ucwords($detail->judul)) ?>",
+        url: "<?= $posturl ?>",
         shares: ["email", "twitter", "facebook", "whatsapp", 'telegram'],
         text: "",
         showLabel: false,
