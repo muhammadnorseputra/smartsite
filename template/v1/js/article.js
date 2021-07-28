@@ -1,6 +1,6 @@
 $(function() {
     // get all berita
-    var limit = 6;
+    var limit = 3;
     var start = 0;
     var action = "inactive";
     let $url = $host ? _uriSegment[2] : _uriSegment[1];
