@@ -33,7 +33,7 @@ class Komentar extends CI_Controller {
 			$namalengkap = decrypt_url($this->mf_users->get_userportal_namalengkap($k->fid_users_portal));
             $id = encrypt_url($k->id_berita);
             $postby = strtolower($namalengkap);
-            $slug = strtolower($k->slug);
+            $slug = $this->post->slugByIdBerita($k->fid_berita);
             $kategori = url_title(strtolower($this->post->kategori_byid($k->fid_kategori)));
             $posturl = base_url("p/".$kategori."/".$slug);
 
