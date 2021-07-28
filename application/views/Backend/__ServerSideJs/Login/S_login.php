@@ -1,7 +1,7 @@
 <script type="text/javascript">
-    var $root = location.protocol; //http: or https
-    var $hostname = location.hostname //putra.com
-    var $origin = location.origin; //http://sub.domain.com
+    var $root = location.protocol; 
+    var $hostname = location.hostname;
+    var $origin = location.origin;
 
     function focus() {
         return $("[name='username']").focus();
@@ -34,7 +34,7 @@
             $(input).parents('.input-group .form-line').removeClass('error');
         },
         errorPlacement: function(error, element) {
-            // $(element).parents('.input-group .form-line').append(error);
+            /* $(element).parents('.input-group .form-line').append(error); */
             showNotification('bg-greadient-redpurple', error[0].innerText, 'bottom', 'left', 'animated slideInDown', 'animated fadeOut');
         },
         messages: {
@@ -52,7 +52,7 @@
         onsubmit: true,
         focusCleanup: false
     });
-    //Animasi Notifikasi
+    /* Animasi Notifikasi */
     $.fn.extend({
         animateCss: function(animationName) {
             var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -68,15 +68,15 @@
     function audioVolumeIn(q) {
         if (q.volume) {
             var InT = 0;
-            var setVolume = 0.2; // Target volume level for new song
-            var speed = 0.005; // Rate of increase
+            var setVolume = 0.2; /* Target volume level for new song */
+            var speed = 0.005; /* Rate of increase */
             q.volume = InT;
             var eAudio = setInterval(function() {
                 InT += speed;
                 q.volume = InT.toFixed(1);
                 if (InT.toFixed(1) >= setVolume) {
                     clearInterval(eAudio);
-                    //alert('clearInterval eAudio'+ InT.toFixed(1));
+                    /* alert('clearInterval eAudio'+ InT.toFixed(1)); */
                 };
             }, 50);
         };
@@ -87,15 +87,15 @@
     function audioVolumeOut(q) {
         if (q.volume) {
             var InT = 0.2;
-            var setVolume = 0; // Target volume level for old song 
-            var speed = 0.005; // Rate of volume decrease
+            var setVolume = 0; /* Target volume level for old song */ 
+            var speed = 0.005; /* Rate of volume decrease */
             q.volume = InT;
             var fAudio = setInterval(function() {
                 InT -= speed;
                 q.volume = InT.toFixed(1);
                 if (InT.toFixed(1) <= setVolume) {
                     clearInterval(fAudio);
-                    //alert('clearInterval fAudio'+ InT.toFixed(1));
+                    /*alert('clearInterval fAudio'+ InT.toFixed(1));*/
                 };
             }, 50);
         };
@@ -151,14 +151,15 @@
                         
                         showNotification('bg-teal', 'Login berhasil !!! Pengalihan halaman mohon tunggu.', 'top', 'center', 'none', 'none');
 
-                        // setTimeout(function(){ 
-                        //     window.location.replace('backend/c_admin?module='+response.home+'&?user=' + response.user_access[0].user_access);
-                        //     jQuery.Mprog.starts(3, 'body', false).end(true);
-                        // }, 3000);
+                        /* setTimeout(function(){ 
+                             window.location.replace('backend/c_admin?module='+response.home+'&?user=' + response.user_access[0].user_access);
+                             jQuery.Mprog.starts(3, 'body', false).end(true);
+                         }, 3000);
+                        */
                         $.unblockUI({
                             onUnblock: function() {
                                 window.location.replace($origin + '/backend/c_admin?module=' + response.home + '&?user=' + response.user_access[0].user_access);
-                                // showNotification('bg-greadient-greenlightgreen', 'Login berhasil !!! Pengalihan halaman mohon tunggu.', 'top', 'center', 'none', 'animated bounceOutUp');
+                                /* showNotification('bg-greadient-greenlightgreen', 'Login berhasil !!! Pengalihan halaman mohon tunggu.', 'top', 'center', 'none', 'animated bounceOutUp'); */
                             }
                         });
 
@@ -171,7 +172,7 @@
                         showNotification('bg-greadient-redpurple', '<b><b>Sorry!</b> Username & Password Salah</b>', 'top', 'center', 'animated fadeIn', 'animated fadeOut');
                         $("button#login").html(`<em class="glyphicon glyphicon-send m-r-10"></em> MASUK`);
                         $("input[type='password'],input[type='text']").val('');
-                        // jQuery.Mprog.starts(3, 'body', false).end(true);
+                        /* jQuery.Mprog.starts(3, 'body', false).end(true); */
                         $.unblockUI();
                     }
                 },
@@ -190,10 +191,10 @@
 
     });
 
-    // SHOW AND HIDE PASSWORD
+    /* SHOW AND HIDE PASSWORD */
     $(".toggle-password").click(function() {
         $(".icon").toggleClass("glyphicon-eye-close");
-        var input = $(jQuery(this).attr("toggle"));
+        var input = $($(this).attr("toggle"));
         if (input.attr("type") == "password") {
             input.attr("type", "text");
         } else {
@@ -201,18 +202,18 @@
         }
     });
 
-    // FUNGSI VALIDASI PENJUMLAHAN ANGKA
+    /* FUNGSI VALIDASI PENJUMLAHAN ANGKA */
     acak_angka();
 
     function acak_angka() {
         var rand_pertama = Math.floor(Math.random() * 20) + 1;
         var rand_kedua = Math.floor(Math.random() * 30) + 1;
 
-        jQuery("#angak_pertama").html("<b>" + rand_pertama + "</b>");
-        jQuery("#angak_kedua").html("<b>" + rand_kedua + "</b>");
+        $("span#angak_pertama").html("<b>" + rand_pertama + "</b>");
+        $("span#angak_kedua").html("<b>" + rand_kedua + "</b>");
 
         var hasil = parseInt(rand_pertama) + parseInt(rand_kedua);
-        jQuery("[name='validasi_hidden']").val(hasil);
+        $("[name='validasi_hidden']").val(hasil);
     }
 
     function repeat() {

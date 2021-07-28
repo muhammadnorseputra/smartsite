@@ -243,8 +243,8 @@ $(document).ready(function () {
     filtersPosition: "top",
     recentEmojis: false
   });
-  var $online = _uriSegment[1] == 'post';
-  var $local = _uriSegment[2] == 'post';
+  var $online = _uriSegment[1] == 'p';
+  var $local = _uriSegment[2] == 'p';
   var $url = $host ? $local : $online;
 
   if ($url) {
