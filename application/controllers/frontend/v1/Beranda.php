@@ -132,8 +132,9 @@ class Beranda extends CI_Controller
                 if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'SLIDE'):
                     $id = encrypt_url($row->id_berita);
                     $postby = strtolower(url_title($namalengkap));
-                    $judul = strtolower($row->judul);
-                    $posturl = "post/{$postby}/{$id}/".url_title($judul).'';
+                    $slug = strtolower($row->slug);
+                    $kategori = url_title(strtolower($this->post->kategori_byid($row->fid_kategori)));
+                    $posturl = base_url("p/".$kategori."/".$slug);
                 elseif($row->type === 'LINK'):
                     $posturl = base_url('leave?go='.encrypt_url($row->content));
                 endif;

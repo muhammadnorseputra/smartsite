@@ -77,6 +77,12 @@ class M_b_halaman extends CI_Model {
     }
   }
 
+  public function get_slug_halaman($token)
+  {
+    $q = $this->db->select('slug')->get_where('t_halaman', array('token_halaman' => $token))->row();
+    return $q->slug;
+  }
+
   public function opendataeditor($token) {
 	$this->db->select('id_halaman,title,content,token_halaman');
 	$this->db->from('t_halaman');

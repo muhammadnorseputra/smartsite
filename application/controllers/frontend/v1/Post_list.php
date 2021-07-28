@@ -7,6 +7,7 @@ class Post_list extends CI_Controller
     {
         parent::__construct();
         $this->load->model('model_template_v1/M_f_post_list', 'post_list');
+        $this->load->model('model_template_v1/M_f_post', 'post');
 
         $this->load->library('pagination');
         //Check maintenance website
@@ -17,9 +18,10 @@ class Post_list extends CI_Controller
         }
     }
 
-    public function views($id_kategori, $nama_kategori)
+    public function views($nama_kategori)
     {
-        $order = ($_GET['order']) ? $_GET['order'] : 'desc';
+        $id_kategori = $this->post_list->idKategoriByNamaKategori($nama_kategori);
+        $order = isset($_GET['order']) ? $_GET['order'] : 'desc';
 
         //konfigurasi pagination
         $config['base_url'] = base_url('frontend/v1/post_list/views/'.$id_kategori.'/'.$nama_kategori.'?order='.$order);
@@ -55,14 +57,14 @@ class Post_list extends CI_Controller
         $data['start'] = isset($_GET['page']) ? $_GET['page'] : 0;
 
         $data = [
-            'title' => 'Berita: '.$this->post_list->get_namakategori(decrypt_url($id_kategori)),
+            'title' => 'Berita: '.$this->post_list->get_namakategori($id_kategori),
             'isi' => 'Frontend/v1/pages/p_list',
-            'uri_id' => decrypt_url($id_kategori),
+            'uri_id' => $id_kategori,
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
             'kategoris' => $this->post_list->get_all_kategori(),
             'tags' => $this->post_list->get_all_tag(),
-            'posts_by_kategori' => $this->post_list->get_all_berita_by_kategori(decrypt_url($id_kategori), $order, $config['per_page'], $data['start']),
+            'posts_by_kategori' => $this->post_list->get_all_berita_by_kategori($id_kategori, $order, $config['per_page'], $data['start']),
             'pagination' => $this->pagination->create_links(),
             'total' => $this->post_list->count_all_berita_by_kategori($id_kategori),
         ];

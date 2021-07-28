@@ -39,7 +39,9 @@
         $id = encrypt_url($b->id_berita);
         $postby = strtolower(url_title($this->mf_users->get_namalengkap($b->created_by)));
         $judul = strtolower($b->judul);
-        $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '.html');
+        $slug = strtolower($b->slug);
+        $kategori = url_title(strtolower($this->post->kategori_byid($b->fid_kategori)));
+        $posturl = base_url("p/".$kategori."/".$slug);
     else:
         $posturl = base_url('leave?go='.encrypt_url($b->content));
     endif;

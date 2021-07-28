@@ -26,16 +26,20 @@ class Banner extends CI_Controller {
 
 		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
-	public function detail($id, $judul) 
+	public function detail($slug) 
 	{
+		$id = $this->banner->idBannerBySlug($slug);
+		if(intval($id) == ''):
+			return redirect(base_url('404'));
+		endif;
 		$data = [
-			'title' => 'views: '.$this->banner->get_namabanner(decrypt_url($id)),
+			'title' => 'views: '.$this->banner->get_namabanner($id),
 			'isi'	=> 'Frontend/v1/pages/b_detail',
-			'uri_id' => decrypt_url($id),
+			'uri_id' => $id,
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
-            'banner' => $this->banner->get_detail_banner(decrypt_url($id))->row(),
-            'banner_all' => $this->banner->get_all_banner(decrypt_url($id))->result(),
+            'banner' => $this->banner->get_detail_banner($id)->row(),
+            'banner_all' => $this->banner->get_all_banner($id)->result(),
 		];
 
 		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
@@ -161,7 +165,8 @@ class Banner extends CI_Controller {
 						}
 						$values = [
 							'fid_jns_banner' => $idJenisBanner,
-							'judul' => $judul,
+							'judul' => ucwords($judul),
+							'slug' => url_title(strtolower($judul)),
 							'gambar' => $this->upload->data('file_name'),
 							'url' => $url,
 							'keterangan' => $keterangan,
@@ -218,7 +223,8 @@ class Banner extends CI_Controller {
 					}
 					$values = [
 						'fid_jns_banner' => $id_jns,
-						'judul' => $judul,
+						'judul' => ucwords($judul),
+						'slug' => url_title(strtolower($judul)),
 						'url' => $url,
 						'gambar' => $this->upload->data('file_name'),
 						'path' => $path_now,
@@ -238,7 +244,8 @@ class Banner extends CI_Controller {
 		} else {
 			$set = [
 				'fid_jns_banner' => $id_jns,
-				'judul' => $judul,
+				'judul' => ucwords($judul),
+				'slug' => url_title(strtolower($judul)),
 				'url' => $url,
 				'publish' => $publish,
 				'tgl_publish' => date('Y-m-d'),

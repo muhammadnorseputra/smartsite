@@ -16,7 +16,7 @@
 				<?= form_close() ?>
 				<hr>
 				<div id="recent-words"></div>
-				<div id="search-result">
+				<div id="search-result" style="max-height:450px; overflow-y: auto; overflow-x:hidden;">
 		            	<div class="pl-3 pl-md-0 rounded d-flex justify-content-around align-items-center">
 		            		<div class="d-none d-md-block">
 		            			<i class="fas fa-search fa-2x"></i>

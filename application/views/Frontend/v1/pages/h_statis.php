@@ -6,14 +6,14 @@
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
         ?>
-        <span class="font-weight-light small d-block text-dark my-3">Created by <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= $h->views ?>x Diakses</span>
+        <span class="font-weight-light small d-block text-dark my-3">Created by <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= nominal($h->views) ?>x Diakses</span>
         <h1 class="font-weight-bold mb-0 pb-0">
         <span class="d-block font-weight-bold text-dark"><?= $h->title; ?></span>
         </h1>
         <div id="share"></div>
         <?php else : ?>
         <h3 class="font-weight-bold text-dark">not found</h3>
-        <small class="font-weight-light d-block text-light pb-4">PagesID: <?= $this->uri->segment(5) ?> | Halaman ini ditampilkan dalam waktu <strong>{elapsed_time}</strong> detik.</small>
+        <small class="font-weight-light d-block text-white pb-4">PagesID: <?= encrypt_url($uri_token_halaman) ?> | Halaman ini ditampilkan dalam waktu <strong>{elapsed_time}</strong> detik.</small>
         <?php endif; ?>
       </div>
     </div>

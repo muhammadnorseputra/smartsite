@@ -68,6 +68,7 @@ $(document).ready(function() {
             $.ajax({
                 url: _uri + '/frontend/v1/beranda/get_all_berita',
                 method: "POST",
+                headers: {'X-Requested-With': 'XMLHttpRequest'},
                 data: {
                     limit: limit,
                     start: start,

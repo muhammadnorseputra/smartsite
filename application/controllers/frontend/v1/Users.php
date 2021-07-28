@@ -5,7 +5,7 @@ class Users extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('M_f_users','users');
-		$this->load->model('model_template_v1/M_f_post','posts');
+		$this->load->model('model_template_v1/M_f_post','post');
 		$this->load->model('model_template_v1/M_f_halaman', 'halaman');
 		$this->load->model('model_template_v1/M_f_ikm', 'ikm');
 		$this->load->model('model_template_v1/M_f_album', 'album');
@@ -318,14 +318,14 @@ class Users extends CI_Controller {
 		public function postDisukai($iduserportal) 
 		{
 			$id 	= decrypt_url($iduserportal);
-			$data 	= $this->posts->disukai($id)->result();
+			$data 	= $this->post->disukai($id)->result();
 			return $this->load->view('Frontend/v1/pages/u_akun_postingan_disukai', ['id' => $id, 'datas' => $data]);
 		}
 
 		public function postDisimpan($iduserportal) 
 		{
 			$id 	= decrypt_url($iduserportal);
-			$data 	= $this->posts->disimpan($id)->result();
+			$data 	= $this->post->disimpan($id)->result();
 			return $this->load->view('Frontend/v1/pages/u_akun_postingan_disimpan', ['id' => $id, 'datas' => $data]);
 		}
 
@@ -390,7 +390,7 @@ class Users extends CI_Controller {
 				$getlinkbyid = $this->users->getlinkbyid($id)->row();
 				$pecah = explode("/", $getlinkbyid->link_sub);
 				// $getTokenLink = $pecah[2];
-				$newLink = $pecah[0].'/'.$token.'/'.$title;
+				$newLink = $pecah[0].'/'.strtolower($title);
 				$msg = ['newtoken' => $token, 'newlink' => $newLink];
 				$this->users->updatelinkhalaman('t_submenu', ['link_sub' => $newLink], ['idsub' => $id]);
 			} else {
@@ -458,7 +458,7 @@ class Users extends CI_Controller {
 				// parameter
 				$idAkun = decrypt_url($this->input->post('id_a'));
 
-				$list = $this->posts->get_datatables($idAkun);
+				$list = $this->post->get_datatables($idAkun);
 		        $data = array();
 		        $no = $_POST['start'];
 		        foreach ($list as $p) {
@@ -506,8 +506,8 @@ class Users extends CI_Controller {
 		 
 		        $output = array(
 		                        "draw" => $_POST['draw'],
-		                        "recordsTotal" => $this->posts->count_all($idAkun),
-		                        "recordsFiltered" => $this->posts->count_filtered($idAkun),
+		                        "recordsTotal" => $this->post->count_all($idAkun),
+		                        "recordsFiltered" => $this->post->count_filtered($idAkun),
 		                        "data" => $data,
 		                );
 		        //output to json format

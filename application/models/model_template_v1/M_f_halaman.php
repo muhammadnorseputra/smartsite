@@ -123,6 +123,7 @@ class M_f_halaman extends CI_Model
     $this->db->update($tbl, $data);
     return true;
   }
+
   public function get_viewshalaman($id) {
     $this->db->select('views');
     $this->db->from('t_halaman');
@@ -145,6 +146,17 @@ class M_f_halaman extends CI_Model
     $q = $this->db->get()->row();
     return $q->filename;
   }
+  public function tokenHalamanBySlug($slug) {
+    $q = $this->db->select('token_halaman')->get_where('t_halaman', ['slug' => $slug])->row();
+    return $q->token_halaman;
+  }
+
+  public function get_slug_halaman($token)
+  {
+    $q = $this->db->select('slug')->get_where('t_halaman', array('token_halaman' => $token))->row();
+    return $q->slug;
+  }
+
 }
 
 /* End of file M_f_halaman.php */

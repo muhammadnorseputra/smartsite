@@ -2,7 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_f_banner extends CI_Model {
-
+	public function idBannerBySlug($slug)
+	{
+		$q = $this->db->select('id_banner')->get_where('t_banner', ['slug' => $slug])->row();
+		return $q->id_banner;
+	}
 	public function get_namabanner($id)
 	{
 		$this->db->select('judul');

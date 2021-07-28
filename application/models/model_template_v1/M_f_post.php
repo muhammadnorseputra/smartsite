@@ -98,6 +98,12 @@ class M_f_post extends CI_Model {
         return $this->db->delete($tbl);
     }
 
+    public function detailIdBySlug($slug)
+    {
+        $this->db->select('id_berita');
+        $q = $this->db->get_where('t_berita', ['slug' => $slug])->row();
+        return $q->id_berita;
+    }
 	public function detail($id) {
 		return $this->db->get_where('t_berita', ['id_berita' => $id]);
     }

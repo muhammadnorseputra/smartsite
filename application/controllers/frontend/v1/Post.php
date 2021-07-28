@@ -21,9 +21,13 @@ class Post extends CI_Controller
         }
     }
     
-    public function detail($username, $id,  $judul) {
-        $detail = $this->post->detail(decrypt_url($id))->row();
+    public function detail($kategori, $slug) {
+        $id = $this->post->detailIdBySlug($slug);
+        $detail = $this->post->detail($id)->row();
         $judul_seo = ucwords($detail->judul);
+        if(intval($id) == '') {
+            return redirect(base_url('404'));
+        }
         // Youtube Data
         if($detail->type === 'YOUTUBE'):
             $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
@@ -36,7 +40,7 @@ class Post extends CI_Controller
         if(!empty($detail->img) && $detail->type === 'BERITA'):
             $img = base_url('files/file_berita/'.$detail->img.'');
         elseif($detail->type === 'SLIDE'):
-            $img = img_blob($this->post->photo_terkait(decrypt_url($id),1)->row()->photo);
+            $img = img_blob($this->post->photo_terkait($id,1)->row()->photo);
         else:
             $img = base_url('assets/images/logo.png');
         endif;
@@ -98,7 +102,7 @@ class Post extends CI_Controller
             // endif;
 
             $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
-            $isi = substr($isi_berita, 0, 100); // ambil sebanyak 80 karakter
+            $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
             $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
 
             // Content
@@ -114,28 +118,29 @@ class Post extends CI_Controller
             $id = encrypt_url($row->id_berita);
             $postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($row->created_by))));
             $judul = strtolower($row->judul);
-            $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
+            $slug = $row->slug;
+            $kategori = url_title(strtolower($this->post->kategori_byid($row->fid_kategori)));
+            $posturl = base_url("p/".$kategori."/".$slug);
 
             if($row->type === 'BERITA'):
                 if(!empty($row->img)):
-                    $img = '<img style="object-fit:cover;" class="img-fluid h-100 rounded-left" src="'.base_url('files/file_berita/'.$row->img).'">';
+                    $img = '<img style="object-fit:cover; width:360px; height:210px;" class="img-fluid rounded-left" src="'.base_url('files/file_berita/'.$row->img).'">';
                 else:
-                    $img = '<img style="object-fit:cover;" class="img-fluid h-100 rounded-left" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img style="object-fit:cover; width:360px; height:210px;" class="img-fluid rounded-left" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 endif;
             else:
-                $img = '<img style="object-fit:cover;" class="img-fluid h-100 rounded-left" src="'.base_url('assets/images/noimage.gif').'">';
+                $img = '<img style="object-fit:cover; width:360px; height:210px;" class="img-fluid rounded-left" src="'.base_url('assets/images/noimage.gif').'">';
             endif; 
 
-            $output .= '<a href="'.$posturl.'" class="list-group-item border shadow-sm my-2 list-group-item-action rounded p-3 p-md-0">
+            $output .= '<a href="'.$posturl.'" class="list-group-item border my-2 list-group-item-action rounded p-3 p-md-0">
                         <div class="d-flex justify-content-start align-items-start">
-                            <div class="w-50 mr-4 d-none d-md-block">
+                            <div class="mr-4 d-none d-md-block">
                                 '.$img.'
                             </div>
                             <div class="pt-md-3">
-                              <h6>'.character_limiter($row->judul, 25).'</h6>
+                              <h6>'.word_limiter($row->judul, 10).'</h6>
                               <span class="small">'.longdate_indo($row->tgl_posting).'</span>
-                              <p class="mb-2 text-muted small">'.$isi.'...</p>
-                                <small class="text-primary">Posted by '.decrypt_url($this->mf_users->get_userportal_namalengkap($row->created_by)).'</small>
+                              <p class="text-muted small pr-md-4">'.$isi.'...</p>
                             </div>
                         </div>
                       </a>';
@@ -222,8 +227,9 @@ class Post extends CI_Controller
                 if($row->type === 'YOUTUBE' || $row->type === 'BERITA'):
                     $id = encrypt_url($row->id_berita);
                     $postby = strtolower(url_title($namalengkap));
-                    $judul = strtolower($row->judul);
-                    $posturl = "post/{$postby}/{$id}/".url_title($judul).'';
+                    $slug = strtolower($row->slug);
+                    $kategori = url_title(strtolower($this->post->kategori_byid($row->fid_kategori)));
+                    $posturl = base_url("p/".$kategori."/".$slug);
                 else:
                     $posturl = base_url('leave?go='.encrypt_url($row->content));
                 endif;
@@ -253,18 +259,18 @@ class Post extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img class="card-img-top rounded border-light" src="'.base_url('files/file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img class="card-img-top rounded-top border-light" src="'.base_url('files/file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     elseif(!empty($row->img_blob)):
-                        $img = '<img class="card-img-top rounded border-light" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                        $img = '<img class="card-img-top rounded-top border-light" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                     else:
-                        $img = '<img class="card-img-top rounded border-light" src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                        $img = '<img class="card-img-top rounded-top border-light" src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                     endif;
                 elseif($row->type === 'YOUTUBE'):
-                    $img = '<img class="card-img-top rounded border-light" src="'.$yt_thumb.'" alt="'.$row->judul.'">';
+                    $img = '<img class="card-img-top rounded-top border-light" src="'.$yt_thumb.'" alt="'.$row->judul.'">';
                 elseif($row->type === 'LINK'):
-                    $img = '<img class="card-img-top rounded border-light" src="'.$linker['image'].'" alt="'.$row->judul.'">';
+                    $img = '<img class="card-img-top rounded-top border-light" src="'.$linker['image'].'" alt="'.$row->judul.'">';
                 else:
-                    $img = '<img class="card-img-top rounded border-light" src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                    $img = '<img class="card-img-top rounded-top border-light" src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                 endif;
 
                 // Sumber
@@ -304,18 +310,18 @@ class Post extends CI_Controller
                 // Hasil render html
                 $output .= '
                     <div class="grid-item w-100">
-                        <div class="card border shadow-sm bg-white mb-4" style="border-radius:10px;">
-                            <div class="card-header bg-white border-0 mt-2" style="border-radius:10px;">
+                        <div class="card border rounded bg-white mb-3">
+                            <a href="'.$posturl.'" class="rounded-top">
+                                '.$img.'
+                            </a>
+                            <div class="card-header bg-white border-0" style="border-radius:10px;">
                                 <img src="'.$gravatar. '" width="50" height="50" class="float-left mt-1 mr-4 d-inline-block rounded">
                                 <h5 class="card-title d-block">' . $namalengkap . '</h5>
                                 <small>'.longdate_indo($row->tgl_posting).'</small>
                             </div>
-                            <a href="'.$posturl.'" class="p-3">
-                                '.$img.'
-                            </a>
                             <div class="card-body py-2">
-                                '.$sumber.'
                                 <h3 class="card-title font-weight-bold"><a href="'.$posturl.'"><span class="font-weight-bold">'.character_limiter($row->judul, 40).'</span></a></h3>
+                                '.$sumber.'
                                 <p>
                                     '.$content. '
                                 </p>
@@ -363,6 +369,7 @@ class Post extends CI_Controller
         
             $data = [
                 'judul' => $judul,
+                'slug' => url_title(strtolower($judul)),
                 'type' => $type,
                 'fid_kategori' => $kategori,
                 'headline' => '1',
@@ -446,6 +453,7 @@ class Post extends CI_Controller
             $tags = @implode(',', $this->input->post('tags'));
             $data = [
                 'judul' => $judul,
+                'slug' => url_title(strtolower($judul)),
                 'content' => $content,
                 'tags' => $tags,
                 'publish' => $publish,
@@ -479,6 +487,7 @@ class Post extends CI_Controller
             $tags = @implode(',', $this->input->post('tags'));
             $data = [
                 'judul' => $judul,
+                'slug' => url_title(strtolower($judul)),
                 'content' => $content,
                 'tags' => $tags,
                 'publish' => $publish,
@@ -505,6 +514,7 @@ class Post extends CI_Controller
             $tags = @implode(',', $this->input->post('tags'));
             $data = [
                 'judul' => $judul,
+                'slug' => url_title(strtolower($judul)),
                 'content' => $content,
                 'tags' => $tags,
                 'publish' => $publish,

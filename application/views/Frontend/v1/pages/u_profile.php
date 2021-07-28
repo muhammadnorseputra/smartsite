@@ -27,7 +27,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
             <div class="col-xs-9 col-sm-9 col-md-9">
               <div class="row">
                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 py-3">
-                  <img class="img-fluid rounded" src="<?= $photo ?>">
+                  <img class="img-fluid rounded" style="object-fit:cotain; max-height:150px;" src="<?= $photo ?>">
                 </div>
                 <div class="col-md-10 py-3">
                   <h3 class="font-weight-bold"><?= $namalengkap ?> <?= $online ?></h3>
@@ -43,7 +43,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                     <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
                   </div>
                 </div>
-                <div class="col-md-8 order-last order-md-2">
+                <div class="col-md-8 order-last order-md-2" id="main-content">
                   <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-secondary mr-2"></i>Postingan Terbaru</span></span>
                         </div>
@@ -54,8 +54,6 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
             </div>
             <div class="col-md-3 order-first order-md-last">
               <div id="sidebar">
-                <div class="my-auto mx-auto">
-                  
                     <!-- <h5 class="my-3 font-weight-bold title-sidebar">Menu</h5> -->
                     <div class="list-group">
                       <div class="separator">
@@ -72,12 +70,11 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                         </div>
                                 <?php
                                 foreach ($mf_kategori as $k) :
-                                $post_list_url = base_url('kategori/' . encrypt_url($k->id_kategori) . '/' . url_title($k->nama_kategori) . '?order=desc');
+                                $post_list_url = base_url('k/'.url_title($k->nama_kategori).'?order=desc');
                                 ?>
                                 <a href="<?php echo $post_list_url ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default my-1">#<?= $k->nama_kategori; ?> <span class="badge badge-dark float-right"><?= $this->mf_beranda->count_kategori_berita($k->id_kategori); ?></span> </a>
                                 <?php endforeach; ?>
                             </div>
-                </div>
               </div>
             </div>
           </div>
@@ -115,6 +112,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
           $.ajax({
               url: "<?= base_url('frontend/v1/post/get_all_post_by_user/' . $public_profile->id_user_portal); ?>",
               method: "POST",
+              headers: {'X-Requested-With': 'XMLHttpRequest'},
               data: {
                   limit: limit,
                   start: start,

@@ -15,7 +15,7 @@
 		<div class="col-12">
 			<ul class="list-group list-group-flush shadow rounded" style="max-height: 540px; overflow-y: scroll;">
 				<?php foreach ($banner as $b): ?>
-				<a href="<?= base_url('banner/'.encrypt_url($b->id_banner).'/'.url_title($b->judul)); ?>" class="list-group-item list-group-item-action">
+				<a href="<?= base_url('b/'.$b->slug); ?>" class="list-group-item list-group-item-action">
 					<div class="d-flex justify-content-lg-start align-items-center flex-lg-row flex-column">
 						<div class="w-25">
 							<img data-src="<?= $b->path; ?>" class="lazy rounded img-fluid">

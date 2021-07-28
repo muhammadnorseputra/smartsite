@@ -62,7 +62,7 @@ class Submenu extends CI_Controller {
 		$p = $this->input->post();
 		//UNTUK ID CEK PADA DATABASE TABLE `t_module` 
 		$module = !empty($p['module']) ? '27' : '0';
-		$link = $module == '27' ? 'page/'.$p['link_sub'].'/'.$this->halaman->get_title_halaman($p['link_sub']) : $p['link_sub'];
+		$link = $module == '27' ? 'page/'.$this->halaman->get_slug_halaman($p['link_sub']) : $p['link_sub'];
 		$parent = $p['parentsub'] === '0' ? null : $p['parentsub'];
 
 		$value = [
@@ -96,7 +96,7 @@ class Submenu extends CI_Controller {
 		$p = $this->input->post();
 		//UNTUK ID CEK PADA DATABASE TABLE `t_module` 
 		$module = !empty($p['e_module']) ? '27' : '0';
-		$link = $module == '27' ? 'page/'.$p['e_link_sub'].'/'.$this->halaman->get_title_halaman($p['e_link_sub']) : $p['e_link_sub'];
+		$link = $module == '27' ? 'page/'.$this->halaman->get_slug_halaman($p['e_link_sub']) : $p['e_link_sub'];
 		$parent = $p['e_parentsub'] === '0' ? null : $p['e_parentsub'];
 
 		$whr = [

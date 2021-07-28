@@ -16,7 +16,7 @@
 				<div class="banner-list">
 				<ul class="list-group list-group-flush shadow-sm" style="max-height: 540px; overflow-y: scroll;">
 				  <?php foreach ($banner_all as $b): ?>
-				  	<a href="<?= base_url('banner/'.encrypt_url($b->id_banner).'/'.url_title($b->judul)); ?>" class="list-group-item list-group-item-action">
+				  	<a href="<?= base_url('b/'.$b->slug); ?>" class="list-group-item list-group-item-action">
 				  	<img data-src="<?= $b->path; ?>" class="lazy rounded img-fluid">		
 				  	<b>#<?php echo $b->judul; ?></b>
 					</a>

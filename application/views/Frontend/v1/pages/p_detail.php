@@ -159,8 +159,9 @@ if (count($pecah) > 0) {
 					$by = $b->created_by;
 					$id = encrypt_url($b->id_berita);
 					$postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($by))));
-					$judul = strtolower($b->judul);
-					$posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
+					$slug = strtolower($b->slug);
+                    $kategori = url_title(strtolower($this->post->kategori_byid($b->fid_kategori)));
+                    $posturl = base_url("p/".$kategori."/".$slug);
 					if ($by == 'admin') {
 					$namapanggilan = $by;
 					} else {

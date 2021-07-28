@@ -80,7 +80,7 @@ $route['module/(:any)/update/(:any)'] = 'backend/module/$1/update/$2';
 $route['api/(:any)'] = 'frontend/v1/api/$1';
 $route['pegawai/(:any)'] = 'frontend/v1/pegawai/$1';
 $route['under-construction'] = 'theme/maintenance_site';
-$route['page/(:num)/(:any)'] = 'frontend/v1/halaman/statis/$1/$2';
+$route['page/(:any)'] = 'frontend/v1/halaman/statis/$1';
 $route['beranda'] = 'frontend/v1/beranda';
 $route['album'] = 'frontend/v1/album';
 $route['video'] = 'frontend/v1/video';
@@ -89,15 +89,15 @@ $route['bannerlist'] = 'frontend/v1/banner/listimage';
 $route['kotak_saran'] = 'frontend/v1/halaman/saran';
 $route['kirim_saran'] = 'frontend/v1/halaman/simpan_saran';
 $route['album/(:any)'] = 'frontend/v1/album/detail/$1';
-$route['post/(:any)/(:any)/(:any)'] = 'frontend/v1/post/detail/$1/$2/$3';
+$route['p/(:any)/(:any)'] = 'frontend/v1/post/detail/$1/$2';
 $route['user/(:any)/(:any)'] = 'frontend/v1/users/profile/$1/$2';
 $route['userlist'] = 'frontend/v1/users/user_terdaftar';
 $route['disukai/(:any)/(:any)'] = 'frontend/v1/users/disukai/$1/$2';
 $route['halaman/(:any)/(:any)'] = 'frontend/v1/users/halaman/$1/$2';
 $route['tag/(:any)'] = 'frontend/v1/post_list/tags/$1';
-$route['kategori/(:any)/(:any)'] = 'frontend/v1/post_list/views/$1/$2';
+$route['k/(:any)'] = 'frontend/v1/post_list/views/$1';
 $route['koran-online'] = 'frontend/v1/halaman/koran_online';
-$route['banner/(:any)/(:any)'] = 'frontend/v1/banner/detail/$1/$2';
+$route['b/(:any)'] = 'frontend/v1/banner/detail/$1/$2';
 
 // Akun Login, Register
 $route['login_web'] = 'frontend/v1/users/login';
@@ -137,5 +137,5 @@ $route['api-skm/(:any)'] = 'frontend/v1/apiSkm/$1';
 /*
 * @BAWAAN CODEIGNITER
 */
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = false;
+$route['404'] = 'ErrorRequest';
+$route['translate_uri_dashes'] = true;

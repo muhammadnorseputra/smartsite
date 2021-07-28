@@ -14,7 +14,12 @@ class M_f_post_list extends CI_Model
 
         return ucwords($r->nama_kategori);
     }
-
+    public function idKategoriByNamaKategori($name)
+    {
+        $this->db->select('id_kategori');
+        $q = $this->db->get_where('t_kategori', ['nama_kategori' => $name])->row();
+        return $q->id_kategori;
+    }
     public function get_all_kategori()
     {
         return $this->db->get_where('t_kategori', ['aktif' => 'Y']);

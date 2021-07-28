@@ -9,8 +9,8 @@
           <button class="btn py-3 px-3 btn-outline-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Urutkan berdasarkan?
           </button>
-          <?php $desc = $_GET['order'] == 'desc' ? 'active' : ''; ?>
-          <?php $asc = $_GET['order'] == 'asc' ? 'active' : ''; ?>
+          <?php $desc = isset($_GET['order']) && $_GET['order'] == 'desc' ? 'active' : ''; ?>
+          <?php $asc = isset($_GET['order']) && $_GET['order'] == 'asc' ? 'active' : ''; ?>
           <div class="dropdown-menu">
             <h6 class="dropdown-header">Urutkan berdasarkan</h6>
             <a class="dropdown-item <?= $desc; ?>" href="?order=desc">Terbaru</a>
@@ -26,7 +26,7 @@
               <?php
               foreach ($kategoris->result() as $kategori) :
               $active = $kategori->id_kategori == $uri_id ? 'active' : '';
-              $post_list_url = base_url('kategori/' . encrypt_url($kategori->id_kategori) . '/' . url_title($kategori->nama_kategori) . '?order=desc');
+              $post_list_url = base_url('k/'.url_title($kategori->nama_kategori). '?order=desc');
               ?>
               <a class="dropdown-item rounded-pill my-1 py-2 <?= $active; ?>" href="<?php echo $post_list_url; ?>"><span class="badge badge-primary px-3 mr-2 badge-pill"><?= $this->mf_beranda->count_kategori_berita($kategori->id_kategori); ?></span> <?php echo trim($kategori->nama_kategori); ?> </a>
               <?php endforeach; ?>
@@ -77,11 +77,12 @@
               endif;
 
               // Post Link Detail
-              if($posts->type === 'YOUTUBE' || $posts->type === 'BERITA'):
+              if($posts->type === 'YOUTUBE' || $posts->type === 'BERITA' || $posts->type === 'SLIDE'):
                   $id = encrypt_url($posts->id_berita);
                   $postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($posts->created_by))));
-                  $judul = strtolower($posts->judul);
-                  $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
+                  $slug = strtolower($posts->slug);
+                  $kategori = url_title(strtolower($this->post->kategori_byid($posts->fid_kategori)));
+                  $posturl = base_url("p/".$kategori."/".$slug);
               else:
                   $posturl = base_url('leave?go='.encrypt_url($posts->content));
               endif;

@@ -20,8 +20,12 @@ class Halaman extends CI_Controller
   public function index()
   {
   }
-  public function statis($token_halaman, $judul)
+  public function statis($slug)
   {
+    $token_halaman = $this->halaman->tokenHalamanBySlug($slug);
+    if(intval($token_halaman) == '') {
+      return redirect(base_url('404'));
+    }
     $e = array(
       'general' => true, //description, keywords
       'og' => true,
@@ -30,6 +34,7 @@ class Halaman extends CI_Controller
     );
     // Meta SEO
     $title = $this->halaman->get_namahalaman($token_halaman).' - BKPPD Balangan';
+    $slug = $this->halaman->get_slug_halaman($token_halaman);
     $detail = $this->halaman->get_detail_halaman($token_halaman);
     $keywords = str_replace('-',',',url_title(strtolower($title)));
     // jika ada gambar
@@ -43,7 +48,7 @@ class Halaman extends CI_Controller
                           $title = $title, 
                           $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 10))), 
                           $imgUrl = $imgurl, 
-                          $url = base_url('page/'.$token_halaman.'/'.url_title($judul)), 
+                          $url = base_url('page/'.url_title($slug)), 
                           $keyWords = $keywords,
                           $type = 'article',
                           $canonical = curPageURL()
@@ -107,6 +112,7 @@ class Halaman extends CI_Controller
         'token_halaman' => $token,
         'tgl_created' => date('Y-m-d'),
         'title' => $title,
+        'slug' => url_title(strtolower($title)),
         'content' => $isi,
         'filename' => $filename,
         'file' => $file,
@@ -118,6 +124,7 @@ class Halaman extends CI_Controller
         'token_halaman' => $token,
         'tgl_created' => date('Y-m-d'),
         'title' => $title,
+        'slug' => url_title(strtolower($title)),
         'content' => $isi,
         'publish' => 'Y' 
       ];
@@ -157,6 +164,7 @@ class Halaman extends CI_Controller
         $data = [
           'token_halaman' => $newtoken,
           'title' => $title,
+          'slug' => url_title(strtolower($title)),
           'content' => $isi,
           'filename' => $filename,
           'file' => $file,
@@ -166,6 +174,7 @@ class Halaman extends CI_Controller
         $data = [
           'token_halaman' => $newtoken,
           'title' => $title,
+          'slug' => url_title(strtolower($title)),
           'content' => $isi,
           'publish' => 'Y' 
         ];
@@ -185,6 +194,7 @@ class Halaman extends CI_Controller
         file_put_contents($path.$filename,$file);
         $data = [
           'title' => $title,
+          'slug' => url_title(strtolower($title)),
           'content' => $isi,
           'filename' => $filename,
           'file' => $file,
@@ -193,6 +203,7 @@ class Halaman extends CI_Controller
       } else {
         $data = [
           'title' => $title,
+          'slug' => url_title(strtolower($title)),
           'content' => $isi,
           'publish' => 'Y' 
         ];
@@ -234,7 +245,7 @@ class Halaman extends CI_Controller
       redirect(base_url('survei'));
     else:
       $data = [
-        'title' => 'BKPPD Balangan - Kotak Survey Kepuasan Masyarakat',
+        'title' => 'Survey Kepuasan Masyarakat - BKPPD Balangan',
         'mf_beranda' => $this->mf_beranda->get_identitas()
       ];
       $this->load->view('Frontend/v1/pages/h_survei_closed', $data);
@@ -243,7 +254,7 @@ class Halaman extends CI_Controller
 
   public function saran() {
     $data = [
-      'title' => 'BKPPD | Kotak Saran',
+      'title' => 'Kotak Saran - BKPPD Balangan',
       'isi'  => 'Frontend/v1/pages/h_saran',
       'mf_beranda' => $this->mf_beranda->get_identitas(),
       'mf_menu' => $this->mf_beranda->get_menu()
@@ -254,7 +265,7 @@ class Halaman extends CI_Controller
 
   public function saran_status() {
     $data = [
-      'title' => 'BKPPD | Kotak Saran',
+      'title' => 'Kotak Saran - BKPPD Balangan',
       'isi'  => 'Frontend/v1/pages/h_saran_status',
       'mf_beranda' => $this->mf_beranda->get_identitas(),
       'mf_menu' => $this->mf_beranda->get_menu()
