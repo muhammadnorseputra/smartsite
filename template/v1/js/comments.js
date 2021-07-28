@@ -8,8 +8,8 @@ $(document).ready(function() {
         filtersPosition: "top",
         recentEmojis: false,
     });
-    let $online = _uriSegment[1] == 'post';
-    let $local = _uriSegment[2] == 'post';
+    let $online = _uriSegment[1] == 'p';
+    let $local = _uriSegment[2] == 'p';
     let $url = $host ? $local : $online;
 
     if ($url) {
