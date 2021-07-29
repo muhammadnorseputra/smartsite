@@ -68,7 +68,7 @@ class Post extends CI_Controller
     		'isi' => 'Frontend/v1/pages/p_detail',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
-            'berita_selanjutnya' => $this->mf_beranda->berita_selanjutnya(decrypt_url($id)),
+            'berita_selanjutnya' => $this->mf_beranda->berita_selanjutnya($id),
             'post_detail' => $detail,
             'mf_kategori' => $this->mf_beranda->get_kategori_listing(),
             'mf_berita_populer' => $this->mf_beranda->berita_populer(),

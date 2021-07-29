@@ -66,7 +66,7 @@ if (count($pecah) > 0) {
 				<div class="card rounded-lg shadow-none bg-white rounded border-0">
 					<div class="card bg-transparent border-0 px-md-2 pt-md-0 p-0">
 						<div class="card-body px-0 px-md-2 pt-md-0">
-							<img data-src="<?= $photo; ?>" width="60" height="60" class="float-left mr-md-4 mr-3 lazy rounded shadow-sm">
+							<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top;" width="60" height="60" class="float-left mr-md-4 mr-3 lazy rounded shadow-sm">
 							<h5 class="card-title"><a href="<?= $link_profile_public ?>"><?= $namalengkap ?></a></h5>
 							<p class="card-text">
 								<span class="badge badge-default px-0 text-light">Posted by <?= ucwords($namapanggilan); ?> &#8226;  <?php echo longdate_indo($post_detail->tgl_posting); ?></span>
@@ -164,43 +164,55 @@ if (count($pecah) > 0) {
                     $kategori = url_title(strtolower($this->post->kategori_byid($b->fid_kategori)));
                     $posturl = base_url("p/".$kategori."/".$slug);
 					if ($by == 'admin') {
-					$namapanggilan = $by;
+						$namapanggilan = $by;
 					} else {
 					$namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
 					}
-					if(!empty($b->img)):
-					$img = '<img class="img-fluid rounded lazy p-0 m-0" data-src="'.base_url('files/file_berita/'.$b->img).'">';
+
+					if($b->type === 'YOUTUBE'):
+						$key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
+					    $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$b->content.'&key='.$key;
+					    $yt     = api_client($url);
+					    $img = $yt['items'][0]['snippet']['thumbnails']['medium']['url'];
+					endif;
+
+					if($b->type === 'LINK'):
+						$url = $b->content;
+					    $linker = getSiteOG($url);
+					    $img = $linker['image'];
+					endif;
+
+					if($b->type === 'SLIDE'):
+						$img = img_blob($this->post->photo_terkait($b->id_berita,1)->row()->photo);
+					endif;
+
+					if(!empty($b->img) && $b->type === 'BERITA'):
+						$img = files('file_berita/'.$b->img);
 					else:
-					$img = '<img class="img-fluid rounded lazy p-0 m-0" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'"/>';
+						$img = img_blob($b->img_blob);
 					endif;
 					?>
 					<?php if($berita_selanjutnya->num_rows() > 0): ?>
 					<a href="<?= $posturl ?>" class="text-link">
 						<div class="media">
 							<span class="rippler rippler-img rippler-bs-danger mr-3 w-25">
-								<?= $img ?>
+								<img style="object-fit:cover;" width="100%" height="50" class="rounded lazy" data-src="<?= $img ?>">
 							</span>
 							<div class="media-body px-2">
-								<p class="mb-0"><?= word_limiter($b->judul, 4); ?></p>
-								<span class="text-muted small">
-									<?= word_limiter($b->content, 6) ?>
-								</span>
+								<h6 class="mb-0"><?= word_limiter($b->judul, 8); ?></h6>
 							</div>
 						</div>
 					</a>
 					<?php endif; ?>
 					<?php endforeach; ?>
 				</div>
-				<div class="py-1 bg-light"></div>
 			</div>
 			<?php if($post_detail->komentar_status == 0): ?>
-			<div class="card my-4 border-0 bg-white">
-				<div class="card-body" style="max-height: 480px; overflow-y: auto;">
-					<div id="tracking">
-						<div class="tracking-list">
-						</div>
+			<div class="card my-4 border bg-white">
+				<div class="card-body py-0" style="max-height: 480px; overflow-y: auto;">
+					<div id="tracking" data-postid="<?= encrypt_url($postId) ?>">
+						<div class="tracking-list"></div>
 					</div>
-					
 				</div>
 			</div>
 			<div class="card border-top-light bg-light">

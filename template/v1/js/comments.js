@@ -4,10 +4,11 @@ $(document).ready(function() {
         pickerPosition: "top",
         tonesStyle: "bullet",
         placeholder: "Masukan komentar kamu disini.",
-        search: false,
+        search: true,
         filtersPosition: "top",
-        recentEmojis: false,
+        recentEmojis: true,
     });
+    let $id = $("#tracking").attr('data-postid');
     let $online = _uriSegment[1] == 'p';
     let $local = _uriSegment[2] == 'p';
     let $url = $host ? $local : $online;
@@ -17,9 +18,13 @@ $(document).ready(function() {
     } else {
         console.log('Komentar tidak ditampilkan dikarnakan anda belum login atau bukan halaman detail berita');
     }
-
+    $(".tracking-list").html(` 
+            <div class="d-flex justify-content-center align-items-center p-3 text-light">
+            <h3>Memuat Komentar ...</h3>
+        </div>
+    `);
     function displayComments() {
-        $.getJSON(`${_uri}/frontend/v1/post/displayKomentar/${$host ? _uriSegment[4] : _uriSegment[3]}`, function(response) {
+        $.getJSON(`${_uri}/frontend/v1/post/displayKomentar/${$id}`, function(response) {
             $(".tracking-list").html(response);
         });
     }

@@ -362,10 +362,11 @@ $(document).ready(function () {
     pickerPosition: "top",
     tonesStyle: "bullet",
     placeholder: "Masukan komentar kamu disini.",
-    search: false,
+    search: true,
     filtersPosition: "top",
-    recentEmojis: false
+    recentEmojis: true
   });
+  var $id = $("#tracking").attr('data-postid');
   var $online = _uriSegment[1] == 'p';
   var $local = _uriSegment[2] == 'p';
   var $url = $host ? $local : $online;
@@ -376,8 +377,10 @@ $(document).ready(function () {
     console.log('Komentar tidak ditampilkan dikarnakan anda belum login atau bukan halaman detail berita');
   }
 
+  $(".tracking-list").html(" \n            <div class=\"d-flex justify-content-center align-items-center p-3 text-light\">\n            <h3>Memuat Komentar ...</h3>\n        </div>\n    ");
+
   function displayComments() {
-    $.getJSON("".concat(_uri, "/frontend/v1/post/displayKomentar/").concat($host ? _uriSegment[4] : _uriSegment[3]), function (response) {
+    $.getJSON("".concat(_uri, "/frontend/v1/post/displayKomentar/").concat($id), function (response) {
       $(".tracking-list").html(response);
     });
   } // Reply komentar
