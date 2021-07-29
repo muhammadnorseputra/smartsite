@@ -28,9 +28,9 @@ if(! function_exists('curPageURL')){
       }  else {
         $url =  'http://'.$_SERVER["SERVER_NAME"];//http url
       }
-      if(( $_SERVER["SERVER_PORT"] != 80 )) {
-         $url .= ":".$_SERVER["SERVER_PORT"];
-      }
+      // if(( $_SERVER["SERVER_PORT"] != 80 )) {
+      //    $url .= ":".$_SERVER["SERVER_PORT"];
+      // }
       $url .= $_SERVER["REQUEST_URI"];
       return $url;
     }
