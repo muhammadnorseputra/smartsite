@@ -23,7 +23,7 @@
  */
 if(! function_exists('curPageURL')){
     function curPageURL() {
-      if(isset($_SERVER["HTTPS"]) && !empty($_SERVER["HTTPS"]) && ($_SERVER["HTTPS"] != 'on' )) {
+      if(isset($_SERVER["HTTPS"]) && !empty($_SERVER["HTTPS"]) && ($_SERVER["HTTPS"] != 'off' )) {
             $url = 'https://'.$_SERVER["SERVER_NAME"];//https url
       }  else {
         $url =  'http://'.$_SERVER["SERVER_NAME"];//http url
