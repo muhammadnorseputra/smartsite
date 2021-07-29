@@ -272,6 +272,28 @@ class M_f_users extends CI_Model
         return $this->db->get('t_users_portal');
     }
 
+    public function userpopuler()
+    {
+        $this->db->select('count(b.created_by) as jml_post, u.id_user_portal, u.nama_lengkap, u.photo_pic');
+        $this->db->from('t_users_portal AS u');
+        $this->db->join('t_berita AS b', 'b.created_by = u.id_user_portal');
+        $this->db->order_by('jml_post', 'desc');
+        $q = $this->db->get();
+        return $q;
+    }
+
+    public function total_berita_by_user($id)
+    {
+        return $this->db->get_where('t_berita', ['created_by' => $id]);
+    }
+    public function total_comment_by_user($id)
+    {
+        return $this->db->get_where('t_komentar', ['fid_users_portal' => $id]);
+    }
+    public function total_statis_by_user($id)
+    {
+        return $this->db->get_where('t_halaman', ['fid_users_portal' => $id]);
+    }
     var $table_userportal = 't_users_portal'; //nama tabel dari database
     var $column_order_userportal = array('id_user_portal', null); 
     var $column_search_userportal = array('nama_lengkap','nama_panggilan');

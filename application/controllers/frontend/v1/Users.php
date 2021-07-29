@@ -27,6 +27,7 @@ class Users extends CI_Controller {
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
             'total_userlist' => $this->users->userlist()->num_rows(),
+            'user_populer' => $this->users->userpopuler(),
         ];
         $this->load->view('Frontend/v1/layout/wrapper', $data);
 	}
