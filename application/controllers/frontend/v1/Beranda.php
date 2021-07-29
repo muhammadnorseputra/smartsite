@@ -166,7 +166,7 @@ class Beranda extends CI_Controller
                 // Headline
                 if ($row->headline == '1') {
                     $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
-                    $isi = substr($isi_berita, 0, 195); // ambil sebanyak 80 karakter
+                    $isi = substr($isi_berita, 0, 250); // ambil sebanyak 80 karakter
                     $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
                 } else {
                     $isi = $row->content;
