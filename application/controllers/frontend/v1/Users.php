@@ -246,6 +246,7 @@ class Users extends CI_Controller {
 	}
 
     public function cek_akun() {
+    		$urlRef = isset($_GET['urlRef']) ? $_GET['urlRef'] : '';
     		$captcha = $this->input->post('captcha');
 	        $sess_captcha = $this->session->userdata('captcha');
 	        $sess_login = $this->input->post('session_login');
@@ -281,7 +282,7 @@ class Users extends CI_Controller {
 											['online' => 'ON']);
 					$msg = array('valid' => true, 
 					'pesan' => "<div class='d-block mx-auto text-center'>Login berhasil, akun ditemukan ...</div>", 
-					'redirect' => base_url("frontend/v1/users/akun/".decrypt_url($q->nama_panggilan)).'/'.$q->nohp);
+					'redirect' => $urlRef);
 				// } else {
 					// $msg = array('valid' => true, 'pesan' => 'Login Berhasil, akun juga login di device lain.', 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
 					// $this->users->status_online('t_users_portal', ['email' => $where['email']], ['online' => 'OFF']);
@@ -777,11 +778,12 @@ class Users extends CI_Controller {
 
     public function logout()
     {
+    	$urlRef = isset($_GET['urlRef']) ? $_GET['urlRef'] : ''; 
     	$this->users->status_online('t_users_portal', 
     		['email' => encrypt_url($this->session->userdata('user_portal_log')['email'])],['online' => 'OFF']);
 		$this->session->unset_userdata('user_portal_log');
     	// $this->session->sess_destroy('user_portal_log');
-		redirect(base_url('login_web'));
+		redirect($urlRef);
     }
 }
 

@@ -1,6 +1,6 @@
 <?php  
 	$title = !empty($d['title']) ? $d['title'] : 'Untitle';
-	$desc  = !empty($d['description']) ? word_limiter($d['description'], 15) : 'Undescriotion';
+	$desc  = !empty($d['description']) ? word_limiter($d['description'], 30) : 'Tanpa Deskripsi';
 	$type = !empty($d['type']) ? $d['type'] : '-';
 	$site_name = !empty($d['site_name']) ? $d['site_name'] : $type;
 	$img = !empty($d['image']) ? $d['image'] : base_url('assets/images/noimage.gif');
@@ -20,9 +20,9 @@
 							</div>
 							<div class="p-3">
 								<?php $domain = parse_url($url_decode, PHP_URL_HOST); ?>
-								<p class="small font-weight-bold pl-3 border-left border-warning">
+								<h6 class="small font-weight-bold pl-3 border-left border-primary">
 									<span class="text-muted"><?= $site_name ?></span> <br> <?= $title ?>
-								</p>
+								</h6>
 								<p class="small text-muted">
 									<?= $desc ?>
 								</p>
@@ -37,18 +37,6 @@
 								<a href="<?= $url_decode ?>?ref=bkppd_balangan" class="btn btn-block btn-primary">Lanjutkan <i class="fas fa-arrow-right ml-3"></i></a>
 							</div>
 						</div>
-						<hr>
-						<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- ads-display -->
-						<ins class="adsbygoogle"
-						     style="display:block"
-						     data-ad-client="ca-pub-1099792537777374"
-						     data-ad-slot="8859326512"
-						     data-ad-format="auto"
-						     data-full-width-responsive="true"></ins>
-						<script>
-						     (adsbygoogle = window.adsbygoogle || []).push({});
-						</script>
 					</div>
 				</div>
 			</div>

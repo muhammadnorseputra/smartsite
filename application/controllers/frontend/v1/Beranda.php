@@ -299,7 +299,7 @@ class Beranda extends CI_Controller
 					<div class="card border border-light bg-white mb-3 mb-md-0">
 					<div class="card-body px-2">
                         <button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
-                        <img data-src="'.$gravatar.'" alt="Photo Userportal" width="55" height="55" class="float-left mr-3 d-inline-block rounded ml-3 lazy">
+                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="55" height="55" class="float-left mr-3 d-inline-block rounded-circle ml-3 lazy">
 						<h6 class="card-title mb-0 pb-2"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h6>
                         <p class="card-text">
                             <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>

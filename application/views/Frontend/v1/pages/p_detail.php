@@ -196,7 +196,7 @@ if (count($pecah) > 0) {
 					<a href="<?= $posturl ?>" class="text-link">
 						<div class="media">
 							<span class="rippler rippler-img rippler-bs-danger mr-3 w-25">
-								<img style="object-fit:cover;" width="100%" height="50" class="rounded lazy" data-src="<?= $img ?>">
+								<img style="object-fit:cover;" width="110" height="60" class="rounded-left lazy" data-src="<?= $img ?>">
 							</span>
 							<div class="media-body px-2">
 								<h6 class="mb-0"><?= word_limiter($b->judul, 8); ?></h6>
@@ -231,7 +231,7 @@ if (count($pecah) > 0) {
 					<p class=" text-center text-muted px-md-5 px-0">Mau ikutan diskusi? Untuk ikutan diskusi kamu harus punya identitas, maka dari itu login dulu.</p>
 					<div class="d-flex justify-content-center flex-wrap-reverse">
 						<div>
-							<a href="<?php echo base_url('login_web') ?>" class="btn btn-dark btn-md btn-block"><i class="fas fa-lock mr-3"></i> Login</a>
+							<a href="<?php echo base_url('login_web?urlRef='.curPageURL()) ?>" class="btn btn-dark btn-md btn-block"><i class="fas fa-lock mr-3"></i> Login</a>
 						</div>
 						<div class="ml-2">
 							<a href="<?php echo base_url('daftar') ?>" class="btn btn-success btn-md btn-block"><i class="fas fa-user-plus mr-3"></i> Daftar</a>
