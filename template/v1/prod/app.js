@@ -713,12 +713,12 @@ $(document).ready(function () {
 "use strict";
 
 lightbox.option({
-  'resizeDuration': 300,
+  'resizeDuration': 250,
   'wrapAround': false,
-  'fadeDuration': 400,
-  'imageFadeDuration': 400,
+  'fadeDuration': 500,
+  'imageFadeDuration': 500,
   'disableScrolling': true,
-  'albumLabel': "Gambar %1 dari %2"
+  'albumLabel': "Story Web %1 dari %2"
 });
 "use strict";
 
@@ -732,7 +732,7 @@ document.onreadystatechange = function () {
     body.style.cursor = 'progress';
   } else {
     body.style.cursor = 'auto';
-    document.querySelector(".page-slider").style.transition = "0.5s";
+    document.querySelector(".page-slider").style.transition = "0.8s";
     document.querySelector(".page-slider").style.opacity = 0;
     document.querySelector(".page-slider").style.visibility = "hidden"; // document.querySelector("html").style.visibility = "visible";
   }

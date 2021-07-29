@@ -32,7 +32,7 @@ class Api extends CI_Controller {
 		$url = decrypt_url($go);
         $dataLink = getSiteOG($url);
 		$data = [
-			'title' => 'BKPPD &bull; Lanjutkan Link',
+			'title' => 'Lanjutkan Link - '.$url,
 			'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
 			'isi'	=> 'Frontend/v1/pages/leave',
