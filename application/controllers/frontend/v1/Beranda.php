@@ -34,7 +34,7 @@ class Beranda extends CI_Controller
           'twitter'=> true,
           'robot'=> true
         );
-        $meta_tag = meta_tags($e, $desc=$id->meta_desc,$imgUrl = base_url('assets/images/logo.png'),$url = base_url('beranda'),$keyWords=$id->meta_seo,$type='web');
+        $meta_tag = meta_tags($e, null, null, $imgUrl = base_url('assets/images/logo.png'),$url = base_url('beranda'),$keyWords=$id->meta_seo,$type='web');
         $data = [
                     'title' => "Homepage - BKPPD Balangan ". date('Y'),
                     'isi' => 'Frontend/v1/pages/home',

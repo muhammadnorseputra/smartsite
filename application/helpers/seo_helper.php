@@ -56,7 +56,7 @@ if(! function_exists('meta_tags')){
 
     function meta_tags($enable = ['general' => true, 'og'=> true, 'twitter'=> true, 'robot'=> true], 
         $title = '', 
-        $desc = '', 
+        $metadesc = '', 
         $imgUrl = '', 
         $url = '', 
         $keyWords = '', 
@@ -73,7 +73,7 @@ if(! function_exists('meta_tags')){
         
         //uses default set in seo_config.php
         $title      = $title == '' ? $CI->config->item('seo_title') : $title;
-        $desc       = $desc == '' ? $id->meta_desc : $desc;
+        $desc       = $metadesc == '' ? $id->meta_desc : $metadesc;
         $imgUrl     = $imgUrl == '' ? $CI->config->item('seo_imgurl') : $imgUrl;
         $url        = $url == '' ? base_url('beranda') : $url;
         $keyWords   = $keyWords == '' ? $id->meta_seo : $keyWords;

@@ -14,23 +14,22 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
     <link rel="dns-prefetch" href="https://web.bkppd-balangankab.info/">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
-    <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/">
-    <link rel="preconnect" href="https://googleads.g.doubleclick.net/" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
-    <link rel="preconnect" href="https://web.bkppd-balangankab.info/" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin>
-    <link rel="prerender" href="<?= base_url('template/v1/prod/app.css'); ?>" as="style" crossorigin>
-    <link rel="prefetch" href="<?= base_url('template/v1/prod/app.css'); ?>" as="style" crossorigin>
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net/" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="anonymous">
+    <link rel="preconnect" href="https://web.bkppd-balangankab.info/" crossorigin="anonymous">
+    <link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin="anonymous">
+    <link rel="prerender" href="<?= base_url('template/v1/prod/app.css'); ?>" as="style" crossorigin="anonymous">
+    <link rel="prefetch" href="<?= base_url('template/v1/prod/app.css'); ?>" as="style" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url('template/v1/prod/app.css'); ?>" type="text/css">
-    <link rel="prerender" href="<?= base_url('template/v1/prod/vendor-min.js'); ?>" as="script" crossorigin>
-    <link rel="prerender" href="<?= base_url('template/v1/prod/app-min.js'); ?>" as="script" crossorigin>
-    <link rel="prefetch" href="<?= base_url('bower_components/jquery/dist/jquery.min.js'); ?>" as="script" crossorigin>
+    <link rel="prerender" href="<?= base_url('template/v1/prod/vendor-min.js'); ?>" as="script" crossorigin="anonymous">
+    <link rel="prerender" href="<?= base_url('template/v1/prod/app-min.js'); ?>" as="script" crossorigin="anonymous">
+    <link rel="prefetch" href="<?= base_url('bower_components/jquery/dist/jquery.min.js'); ?>" as="script" crossorigin="anonymous">
     <link rel="subresource" href="<?= base_url('assets/images/logo.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg-home.png'); ?>">
     <!-- <link rel="stylesheet" href="<?= base_url('template/v1/prod/app.css'); ?>"  type="text/css"> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199508931-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199508931-1" crossorigin="anonymous"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
