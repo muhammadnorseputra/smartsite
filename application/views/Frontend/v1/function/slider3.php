@@ -4,7 +4,7 @@
         <div class="col-md-5 py-3 py-md-5 mt-md-5 order-last order-md-first">
             <div>
                 <h2 class="text-dark animated fadeInDown">Homepage - BKPPD Balangan 2021</h2>
-                <p class="text-muted lead animated fadeInDown">Selamat Datang Pada Portal Web Resmi BKPPD Kabupaten Balangan</p>
+                <p class="text-muted lead animated fadeInDown">Selamat Datang Pada Portal Web Resmi BKPPD Kabupaten Balangan. Pelayanan Terpadu Satu Pintu</p>
             </div>
             <div class="">
                 <a href="#content-page" class="btn btn-info btn-block font-weight-lighter btn-lg animated fadeInDown scroll">Explore <i class="fas fa-arrow-down ml-3"></i></a>

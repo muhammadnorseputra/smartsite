@@ -14,7 +14,6 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
     <link rel="dns-prefetch" href="https://web.bkppd-balangankab.info/">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
-    <link rel="preconnect" href="https://googleads.g.doubleclick.net/" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="anonymous">
     <link rel="preconnect" href="https://web.bkppd-balangankab.info/" crossorigin="anonymous">
     <link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin="anonymous">

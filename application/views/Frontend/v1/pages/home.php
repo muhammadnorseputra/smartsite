@@ -38,7 +38,6 @@
                 <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
-                <?php $this->load->view('Frontend/v1/function/banner_sidebar'); ?>
                 <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>
                 </div>
             </div>
