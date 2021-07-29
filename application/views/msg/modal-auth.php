@@ -12,7 +12,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-6 p-0 my-auto d-none d-md-block">
-							<img src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/undraw_access_account_99n5.svg') ?>" alt="" class="d-block align-middle img-fluid mx-auto my-auto" alt="Authentication">
+							<img src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/undraw_access_account_99n5.svg') ?>" class="d-block align-middle img-fluid mx-auto my-auto" alt="Authentication">
 						</div>
 						<div class="col-md-6">
 							<h2>Login dulu ya</h2>

@@ -4,7 +4,7 @@
 </div>
 <div class="border-0 shadow-none p-3 bg-light rounded">
 	<?php $poling_q = $mf_poling_pertanyaan; ?>
-	<p class="text-uppercase font-weight-bold"><?= $poling_q->label ?> ?</p>
+	<h4 class="text-uppercase font-weight-bold small"><?= $poling_q->label ?> ?</h4>
 	<?php  
 		$poling_j = $mf_poling_jawaban;
 		foreach ($poling_j->result() as $j):
@@ -37,7 +37,7 @@
 	if($cookie === '1'):
 	?>
 	<button type="button" disabled="" class="btn btn-outline-success btn-block text-uppercase"><i class="fas fa-check-circle mr-2"></i> Thank for you vote !</button>
-	<p class="text-muted small text-center">Votes hanya dapat dilakukan 1x dalam 1 jam (60 menit) <br> <b>Total Votes: <?= $total_seluruh_vote ?></b></p>
+	<p class="text-muted small text-center">Votes hanya dapat dilakukan 1x dalam (60 menit) <br> <b>Total Votes: <?= $total_seluruh_vote ?></b></p>
 	<?php else: ?>
 	<button type="button" data-toggle="modal" data-target="#modalVote" class="btn btn-primary btn-block text-uppercase"><i class="far fa-check-circle mr-2"></i> ISI POLING</button>
 	<?php endif; ?>
