@@ -173,7 +173,7 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a  class="btn shadow-sm btn-dark rounded border-0 py-2 px-4" href="<?= base_url('login_web'); ?>">
+			<a  class="btn shadow-sm btn-dark rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.curPageURL()); ?>">
 				<i class="fas fa-lock mr-2"></i> Login 
 			</a>
 			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-outline-none border-0 rounded ml-2" href="<?= base_url('daftar'); ?>">

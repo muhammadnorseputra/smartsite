@@ -246,10 +246,10 @@ class Users extends CI_Controller {
 	}
 
     public function cek_akun() {
-    		$urlRef = isset($_GET['urlRef']) ? $_GET['urlRef'] : '';
     		$captcha = $this->input->post('captcha');
 	        $sess_captcha = $this->session->userdata('captcha');
 	        $sess_login = $this->input->post('session_login');
+			$urlRef = !empty($this->input->post('urlRef')) ? $this->input->post('urlRef') : '';
 	        if (isset($captcha)
             && isset($sess_captcha)
             && isset($sess_login)
@@ -264,7 +264,6 @@ class Users extends CI_Controller {
 			);
 			$cek = $this->users->cek_login("t_users_portal", $where);
 			if($cek->num_rows() > 0){
-				
 				// if($this->users->getuserportalbyemail($where['email'])->row()->online === 'OFF' && empty($this->session->userdata('user_portal_log')['email'])) {
 				$q = $cek->row();
 				$data_session = array(
@@ -778,7 +777,7 @@ class Users extends CI_Controller {
 
     public function logout()
     {
-    	$urlRef = isset($_GET['urlRef']) ? $_GET['urlRef'] : ''; 
+    	$urlRef = isset($_GET['urlRef']) ? $_GET['urlRef'] : base_url('login_web'); 
     	$this->users->status_online('t_users_portal', 
     		['email' => encrypt_url($this->session->userdata('user_portal_log')['email'])],['online' => 'OFF']);
 		$this->session->unset_userdata('user_portal_log');

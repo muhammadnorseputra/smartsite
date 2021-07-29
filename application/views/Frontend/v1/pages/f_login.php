@@ -58,7 +58,10 @@
 								 <?= $this->session->flashdata('notif') ?>
 								</div>
 							<?php endif; ?>
-							<?= form_open(base_url('frontend/v1/users/cek_akun'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d'))]); ?>
+							<?php  
+								$urlRef = isset($_GET['urlRef']) ? $_GET['urlRef'] : ''; 
+							?>
+							<?= form_open(base_url('frontend/v1/users/cek_akun'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d')), 'urlRef' => $urlRef]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="email">Email</label>
 								<input type="email" data-sanitize="trim,lower" class="form-control form-control-lg mb-2" name="email" id="email" placeholder="mail@website.com" required="required">
