@@ -2,43 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
+  <loc>https://web.bkppd-balangankab.info/beranda</loc>
+  <lastmod>2021-07-28</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+</url>
+
+<url>
+  <loc>https://web.bkppd-balangankab.info/page/visi-misi</loc>
+  <changefreq>never</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://web.bkppd-balangankab.info/page/pengumuman-penerimaan-cpns-pppk-tahun-2021</loc>
+  <changefreq>never</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
   <loc>https://web.bkppd-balangankab.info/login_web</loc>
-  <lastmod>2021-06-18T02:31:28+00:00</lastmod>
-  <priority>0.1</priority>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
 </url>
+
 <url>
   <loc>https://web.bkppd-balangankab.info/daftar</loc>
-  <lastmod>2021-06-18T02:31:28+00:00</lastmod>
-  <priority>0.1</priority>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
 </url>
+
+
 <url>
-  <loc>https://web.bkppd-balangankab.info/daftar</loc>
-  <lastmod>2021-06-18T02:31:28+00:00</lastmod>
-  <priority>0.1</priority>
+  <loc>https://web.bkppd-balangankab.info/page/struktur-organisasi-bkppd-kabupaten-balangan</loc>
 </url>
-<url>
-  <loc>https://web.bkppd-balangankab.info/page/522339452/visi-misi</loc>
-  <lastmod>2021-06-18T02:31:28+00:00</lastmod>
-  <priority>0.1</priority>
-</url>
-<url>
-  <loc>https://web.bkppd-balangankab.info/page/280708216/struktur-organisasi-bkppd-kabupaten-balangan</loc>
-  <lastmod>2021-06-18T02:31:28+00:00</lastmod>
-   <priority>0.1</priority>
-</url>
-<url>
-  <loc>https://web.bkppd-balangankab.info/page/883037077/pengumuman-penerimaan-cpns-pppk-tahun-2021</loc>
-  <lastmod>2021-06-18T02:31:28+00:00</lastmod>
-  <priority>0.1</priority>
-</url>
+
 <url>
   <loc>https://web.bkppd-balangankab.info/kotak_saran</loc>
-  <lastmod>2021-06-18T02:31:28+00:00</lastmod>
-  <priority>0.1</priority>
 </url>
+
 <url>
   <loc>https://web.bkppd-balangankab.info/userlist</loc>
-  <lastmod>2021-06-18T02:31:28+00:00</lastmod>
-  <priority>0.1</priority>
 </url>
+
 </urlset>

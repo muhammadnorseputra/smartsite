@@ -4,14 +4,14 @@
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="keywords" content="LOGIN - BKPPD BALANGAN">
-		<meta name="description" content="LOGIN USERPORTAL - BKPPD BALANGAN">
+		<title>Login</title>
+		<meta name="keywords" content="Login - BKPPD Balangan">
+		<meta name="description" content="Silahkan isikan kredensial anda untuk masuk ke-sistem userportal bkppd balangan sebagai tamu/konstributor/editor dengan memberikan konten dan fitur yang lebih banyak">
 		
 		<link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
 		<!-- Custome -->
 		<link rel="stylesheet" href="<?= base_url('assets/css/f_login.css') ?>">
 		<link rel="stylesheet" href="<?= base_url('bower_components/jquery-form-validator/form-validator/theme-default.min.css') ?>">
-		<title>Portal - Log In</title>
 	</head>
 	<body class="overflow-hidden">
 		<div id="content2">

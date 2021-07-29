@@ -5,13 +5,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
-		<meta name="keywords" content="Registered - BKPPD BALANGAN">
-		<meta name="description" content="Registered Userportal - BKPPD BALANGAN">
+		<title>Daftar</title>
+		<meta name="keywords" content="Daftar - BKPPD Balangan">
+		<meta name="description" content="Ayoo lakukan register dengan mudah, dan dapatkan banyak fitur yang akan kami berikan salah satunya adalah kamu dapat membuat halaman postingan kamu sendiri">
 		<!-- Custome -->
 		<link rel="stylesheet" href="<?= base_url('assets/css/f_daftar.css') ?>">
 		<link rel="stylesheet" href="<?= base_url('bower_components/jquery-form-validator/form-validator/theme-default.min.css') ?>">
 		<link rel="stylesheet" href="<?= base_url('assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.css') ?>">
-		<title>Portal - Registered</title>
 	</head>
 	<body class="overflow-hidden">
 		<div id="content2">
