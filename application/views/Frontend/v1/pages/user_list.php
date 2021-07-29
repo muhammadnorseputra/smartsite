@@ -17,7 +17,7 @@
               <div class="col-md-12">
                 <div class="d-flex justify-content-start justify-content-lg-between align-items-center  border-bottom pb-3">
                   <div class="flex-grow-1">
-                    <img width="65" height="65" class="img-fluid rounded-circle border p-1" style="object-fit:cover;"  alt="Userportal - <?= decrypt_url($u->nama_lengkap) ?>" src="<?= img_blob($u->photo_pic) ?>">
+                    <img width="80" height="80" class="rounded-circle border p-1" style="object-fit:cover; object-position: top;"  alt="Userportal - <?= decrypt_url($u->nama_lengkap) ?>" src="<?= img_blob($u->photo_pic) ?>">
                   </div>
                   <div class="flex-grow-1 font-weight-bold">
                     <p class="border-bottom py-2"><?= ucwords(decrypt_url($u->nama_lengkap)) ?></p>

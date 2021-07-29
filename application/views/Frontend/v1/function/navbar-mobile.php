@@ -40,7 +40,7 @@
 				<?php
 				$idSes = $this->session->userdata('user_portal_log')['id'];
 				$getImg = $this->mf_users->get_userportal_byid($idSes)->photo_pic;
-				$img = '<img class="rounded mr-1 shadow-sm" width="25" src="data:image/jpeg;base64,'.base64_encode( $getImg ).'"/>';
+				$img = '<img style="object-fit:cover; object-position: top;" class="rounded mr-1 shadow-sm" width="25" height="25" src="data:image/jpeg;base64,'.base64_encode( $getImg ).'"/>';
 				?>
 				<li class="nav-item dropup left">
 					<a href="#" class="nav-link text-center" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >

@@ -274,10 +274,10 @@ class M_f_users extends CI_Model
 
     public function userpopuler()
     {
-        $this->db->select('count(b.created_by) as jml_post, u.id_user_portal, u.nama_lengkap, u.photo_pic');
+        $this->db->select('u.id_user_portal, u.nama_lengkap, u.photo_pic');
         $this->db->from('t_users_portal AS u');
         $this->db->join('t_berita AS b', 'b.created_by = u.id_user_portal');
-        $this->db->order_by('jml_post', 'desc');
+        $this->db->group_by('u.id_user_portal');
         $q = $this->db->get();
         return $q;
     }

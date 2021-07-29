@@ -26,7 +26,7 @@ endif;
     <div class="row">
     <div class="col-12 col-md-8 my-3 my-md-0 pt-md-5">
       <div class="d-flex justify-content-start align-items-md-center align-items-start">
-        <img src="<?= $photo ?>" class="img-fluid rounded-circle shadow-sm w-10">
+        <img width="85" height="85" src="<?= $photo ?>" class="rounded-circle shadow-sm" style="object-fit:cover; object-position: top;">
         <div class="ml-3 font-weight-bold text-dark">
           <h4>Halo, <?= $this->session->userdata('user_portal_log')['nama_panggilan']; ?> welcome back.</h4>
           <div class="text-white font-weight-light">

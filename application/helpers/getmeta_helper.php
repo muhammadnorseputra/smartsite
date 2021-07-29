@@ -15,7 +15,7 @@ if (! function_exists('getSiteOG'))
 	{
 	    $doc = new DOMDocument();
 	    @$doc->loadHTML(file_get_contents($url));
-	    $res['title'] = $doc->getElementsByTagName('title')->item(0)->nodeValue;
+	    $res['title'] = $doc->getElementsByTagName('title')->item(0);
 
 	    foreach ($doc->getElementsByTagName('meta') as $m){
 	        $tag = $m->getAttribute('name') ?: $m->getAttribute('property');

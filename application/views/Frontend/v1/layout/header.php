@@ -157,16 +157,17 @@
 			<?php
 			$idSes = $this->session->userdata('user_portal_log')['id'];
 			$getImg = $this->mf_users->get_userportal_byid($idSes)->photo_pic;
+			$u_name = ucfirst($this->session->userdata('user_portal_log')['nama_panggilan']);
 			if(!empty($getImg)):
 				$photo = 'data:image/jpeg;base64,' . base64_encode($getImg) . '';
 			else:
 			  	$photo = base_url('assets/images/no-profile-picture.jpg');
 			endif;
-			$img = '<img class="rounded mr-1 shadow-sm" width="23" src="'.$photo.'" alt="Userportal"/>';
+			$img = '<img style="object-fit:cover; object-position: top;" class="rounded-circle mr-1 shadow-sm" width="40" height="40" src="'.$photo.'" alt="Userportal - '.$u_name.'"/>';
 			?>
 			<div class="dropdown">
 				<button type="button" class="btn btn-outline-light border-0 text-muted my-sm-0 mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<?= $img ?> <?= ucfirst($this->session->userdata('user_portal_log')['nama_panggilan']) ?>
+				<?= $img ?> <?= $u_name ?>
 				<i class="fas fa-angle-down mx-2"></i>
 				</button>
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
