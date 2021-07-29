@@ -56,13 +56,13 @@
                     </div>
                 </div> -->
                 <div style="overflow-x: auto;" class="d-flex justify-content-between align-items-center flex-row flex-nowrap mb-3">
-                    <?php foreach($mf_banner_home->result() as $b): ?>
+                    <?php $no=1; foreach($mf_banner_home->result() as $b): ?>
                     <div class="mx-3 flex-grow-1">
-                        <a href="<?= $b->path ?>" id="xbanner" data-title="<?= $b->judul ?>" data-lightbox="BannerAside">
-                        <img class="lazy rounded-circle border shadow-sm" width="110" height="110" style="object-fit:cover;" data-src="<?= files('file_banner/'.$b->gambar) ?>">
+                        <a href="<?= $b->path ?>" id="xbanner-<?= $no ?>" data-title="<?= $b->judul ?>" data-lightbox="BannerAside">
+                        <img class="lazy rounded-circle border shadow-sm" width="110" height="110" style="object-fit:cover;" alt="<?= $no ?>" data-src="<?= files('file_banner/'.$b->gambar) ?>">
                         </a>
                     </div>
-                    <?php endforeach; ?>
+                    <?php $no++; endforeach; ?>
                 </div>
                 <div  style="overflow-x: auto;" class="d-flex justify-content-between align-items-center mb-3 flex-row flex-nowrap">
                     <?php

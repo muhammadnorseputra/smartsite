@@ -24,7 +24,7 @@ $(function() {
         function lazzy_loader(limit) {
             var output = "";
             for (var count = 0; count < 1; count++) {
-            /*    output += `
+            output += `
                 <div class="card border-0 bg-white mb-3" style="border-radius:5px;">
                     <div class="card-header border-0 bg-white" style="border-radius:5px;">
                     <p>
@@ -47,10 +47,12 @@ $(function() {
                     </div> 
                 </div>
             `;
-            */
+            
+            /*
             output += `<div class="d-flex justify-content-center align-items-center my-5">
                             <div class="loader_small" style="width:50px;height:50px;"></div>
                         </div>`;
+            */
             }
             $("#load_data_message").html(output);
             $("button#load_more").html(`<div class="d-flex justify-content-center align-items-center">
