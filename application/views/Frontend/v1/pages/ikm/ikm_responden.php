@@ -68,13 +68,13 @@ IKM - Responden
 <script src="<?= base_url('assets/plugins/datatable/datatables-save.min.js') ?>"></script>
 <script src="<?= base_url('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') ?>"></script>
 <script>
-	// Date Range
+	/*Date Range*/
 	$('.input-daterange').datepicker({
 		    todayBtn: "linked",
 		    format: "yyyy-mm-dd",
     		clearBtn: true
 	});
-	// Tooltips
+	/*Tooltips*/
 	$('[data-toggle="tooltip"]').tooltip();
 	var tableResponden = $("#table-responden").DataTable({
 		"processing": true,
@@ -86,8 +86,8 @@ IKM - Responden
 		"pagingType": "full_numbers",
 		"responsive": true,
 		"datatype": "json",
-		// "scrollY": "200px",
-		//  "scrollCollapse": true,
+		/*"scrollY": "200px",
+		 "scrollCollapse": true,*/
 		"lengthMenu": [
 			[10, 25, 50, -1],
 			[10, 25, 50, "All"]

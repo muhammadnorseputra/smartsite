@@ -46,12 +46,11 @@
 <div class="container">
 	<div class="row">
 		<?php
-		$key = $this->config->item('NEWS_KEY'); // TOKEN
+		$key = $this->config->item('NEWS_KEY'); 
 		$source = 'id';
 		$limit = 6;
 		$url = 'https://newsapi.org/v2/top-headlines?q='.$q.'&category='.$category.'&country='.$source.'&apiKey='.$key.'&page='.$page.'&pageSize='.$limit;
 		$data = api_client($url);
-		// var_dump($data);
 		if($data['status'] === 'error'):
 			echo $data['message'];
 		else:

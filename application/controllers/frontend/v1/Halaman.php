@@ -15,9 +15,6 @@ class Halaman extends CI_Controller
           redirect(base_url('under-construction'),'refresh');
       }
   }
-  public function index()
-  {
-  }
   public function statis($slug)
   {
     $token_halaman = $this->halaman->tokenHalamanBySlug($slug);
@@ -44,9 +41,9 @@ class Halaman extends CI_Controller
     
     $meta_tag = meta_tags($e, 
                           $title = $title, 
-                          $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 10))), 
+                          $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 250))), 
                           $imgUrl = $imgurl, 
-                          $url = base_url('page/'.url_title($slug)), 
+                          $url = base_url('page/'.$slug), 
                           $keyWords = $keywords,
                           $type = 'article',
                           $canonical = curPageURL()

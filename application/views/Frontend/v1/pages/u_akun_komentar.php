@@ -58,7 +58,7 @@
 <link rel="stylesheet" href="<?= base_url('assets/plugins/datatable/inc_tablesold.css') ?>">
 <script src="<?= base_url('assets/plugins/datatable/datatables-save.min.js') ?>"></script>
 <script>
-	// Tooltips
+	/*Tooltips*/
 	$('[data-toggle="tooltip"]').tooltip();
 	var table5 = $("#table-komentar").DataTable({
 		"processing": true,
@@ -70,8 +70,8 @@
 		"pagingType": "full_numbers",
 		"responsive": true,
 		"datatype": "json",
-		// "scrollY": "200px",
-		//  "scrollCollapse": true,
+		/*"scrollY": "200px",
+		 "scrollCollapse": true,*/
 		"lengthMenu": [
 			[10, 25, 50, -1],
 			[10, 25, 50, "All"]
@@ -167,7 +167,7 @@
 		let id_parent = $(this).attr('id_parent');
 		let id_user = $(this).attr('id_user');
 		$.getJSON(`${_uri}/frontend/v1/komentar/detail`, {id_b: id_berita, id_p: id_parent, id_u: id_user}, function(res) {
-			// console.log(res);
+			/*console.log(res);*/
 			$("#block-komentar").attr('id_komentar', id_parent);
 			$(".nama_lengkap").text(res.user);
 			$(".berita").text(res.judul);
@@ -185,7 +185,7 @@
 						msg: "Reply comments invalid",
 						type: "error",
 						position: "center",
-						// offset: -10,
+						/*offset: -10,*/
 					});
 		        },
 		        onModulesLoaded: function() {
@@ -209,14 +209,14 @@
 								msg: "Success, Your Reply Is Sended",
 								type: "success",
 								position: "center",
-								// offset: -10,
+								/*offset: -10,*/
 							});
 	                  	} else {
 	                  		notif({
 								msg: "Gagal, terjadi kesalahan saat memproses data",
 								type: "warning",
 								position: "center",
-								// offset: -10,
+								/*offset: -10,*/
 							});
 	                  	}
 						$('button[type="submit"]').html('Kirim').prop('disabled', false);
@@ -224,7 +224,7 @@
 						table5.ajax.reload();
 	                  }
 	              });
-	              return false; // Will stop the submission of the form
+	              return false; /*Will stop the submission of the form*/
 		        }
 		    });
 		});

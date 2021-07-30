@@ -92,5 +92,3 @@
 		</div>
 	</div>
 </section>
-
-<?php //var_dump(json_decode($response)); ?>

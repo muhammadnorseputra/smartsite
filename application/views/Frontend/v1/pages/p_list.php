@@ -50,7 +50,7 @@
               if ($count > 0) {
               foreach ($posts_by_kategori->result() as $posts) :
 
-              // Header userpost
+              /*Header userpost*/
               $by = $posts->created_by;
               if ($by == 'admin') {
                 $namalengkap = $this->mf_users->get_namalengkap($by);
@@ -60,23 +60,23 @@
                 $gravatar = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic) . '';
               }
 
-              // Data Post Youtube
+              /*Data Post Youtube*/
               if($posts->type === 'YOUTUBE'):
-                  $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
+                  $key      = $this->config->item('YOUTUBE_KEY'); /*TOKEN goole developer*/
                   $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id='.$posts->content.'&key='.$key;
                   $yt     = api_client($url);
                   $img = $yt['items'][0]['snippet']['thumbnails']['high']['url'];
                   $yt_desc = $yt['items'][0]['snippet']['description'];
               endif;
 
-              // Data Post Link
+              /*Data Post Link*/
               if($posts->type === 'LINK'):
                   $url = $posts->content;
                   $linker = getSiteOG($url);
                   $img = $linker['image'];
               endif;
 
-              // Post Link Detail
+              /*Post Link Detail*/
               if($posts->type === 'YOUTUBE' || $posts->type === 'BERITA' || $posts->type === 'SLIDE'):
                   $id = encrypt_url($posts->id_berita);
                   $postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($posts->created_by))));
@@ -87,11 +87,11 @@
                   $posturl = base_url('leave?go='.encrypt_url($posts->content));
               endif;
 
-              // Button Bookmark
+              /*Button Bookmark*/
               $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $posts->id_berita) == 'on' ? 'btn-bookmark' : '';
               $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $posts->id_berita) == 'on' ? 'fas text-primary' : 'far';
 
-              // Gambar
+              /*Gambar*/
               if($posts->type === 'BERITA'):
                 if(!empty($posts->img)):
                   $img = '<img class="card-img-top rounded-top-lg" src="'.base_url('files/file_berita/'.$posts->img).'">';
@@ -104,7 +104,7 @@
                   $img = '<img class="card-img-top rounded-top-lg" src="'.base_url('assets/images/noimage.gif').'" alt="'.$posts->judul.'">';
               endif;
 
-              // Content
+              /*Content*/
               if($posts->type === 'YOUTUBE'):
                   $content = word_limiter($yt_desc,12);
               elseif($posts->type === 'LINK'):
@@ -113,7 +113,7 @@
                   $isi_berita = strip_tags($posts->content);
                   $isi = substr($isi_berita, 0, 80); 
                   $isi = substr($isi_berita, 0, strrpos($isi, ' '));
-                  $content = $isi."... [".strlen($isi_berita)."+]"; // potong per spasi kalimat
+                  $content = $isi."... [".strlen($isi_berita)."+]"; /*potong per spasi kalimat*/
               endif;
 
               ?>
@@ -154,7 +154,7 @@
               <?php
               endforeach;
               echo "<div class='col-md-12 d-flex'>{$pagination}</div>";
-              // var_dump($pagination);
+              /*var_dump($pagination);*/
               } else {
               ?>
               

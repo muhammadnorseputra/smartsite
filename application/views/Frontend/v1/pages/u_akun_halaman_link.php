@@ -50,7 +50,7 @@
 	$("select[name='submenu']").on("change", function() {
 		if($(this).val() != '') {
 			$.getJSON(_uri+'/frontend/v1/users/getsubmenubyid', {id: $(this).val()}, function(res) {
-				// console.log(res);
+				/*console.log(res);*/
 				let link = res.link_sub;
 				let slice = link.split("/");
 				if(typeof slice[1] == 'undefined') {
@@ -72,7 +72,7 @@
 	$("button#save-token").unbind().bind("click", function() {
 		let val = $("input[name='f_token']").val();
 		let id  = $("select[name='submenu']").val();
-		// alert(id);
+		/*alert(id)*/;
 		$.post(`${_uri}/frontend/v1/users/updatelinkhalaman/${id}`, {txt: val}, function(res) {
 			if(res != false){
 				notif({

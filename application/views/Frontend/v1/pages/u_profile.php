@@ -92,7 +92,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
   </style>
   <script>
   $(function() {
-      // get all post by user
+      /*get all post by user*/
       var limit = 4;
       var start = 0;
       var action = "inactive";
@@ -141,7 +141,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                               transitionDuration: '0.8s',
                           });
                       });
-                      // Tooltips
+                      /*Tooltips*/
                       $('[data-toggle="tooltip"]').tooltip();
                   }
               },

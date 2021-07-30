@@ -95,7 +95,7 @@
 			remove_script_host : false,
 			convert_urls : true,
 			toolbar: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor",
-			//  filemanager_crossdomain: true,
+			/* filemanager_crossdomain: true,*/
 			image_advtab: true ,
 			external_filemanager_path:"<?= base_url('files/filemanager-v2/filemanager/') ?>",
 			filemanager_title:"Filemanager",
@@ -164,10 +164,10 @@
 			if(result != '') {
 				var str = result;
 				window.history.pushState({},"",`?token=${Number(str)}`);
-				// $("input[name='etoken']").prop('checked', false);
+				/*$("input[name='etoken']").prop('checked', false);*/
 				window.location.reload();
 			}
-			// console.log(str);
+			/*console.log(str);*/
 			$("button[type='submit']#saveHalaman").html(`<i class="fas fa-save mr-2"></i> Update`).prop("disabled", false);
 		}
 	});

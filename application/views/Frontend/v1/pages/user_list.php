@@ -88,12 +88,12 @@ var table = $("#userportal").DataTable({
     "columnDefs": [{
       "targets": [0],
       "orderable": true,
-      // "className": "text-center",
+      /* "className": "text-center", /*
     }, {
       "targets": [1],
       "orderable": false,
-      // "className": "text-center",
-      // "width": "15%"
+      /* "className": "text-center",
+       "width": "15%" */
     }],
     "language": {
       "lengthMenu": "_MENU_ Data per halaman",

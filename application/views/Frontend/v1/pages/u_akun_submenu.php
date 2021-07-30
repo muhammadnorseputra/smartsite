@@ -186,7 +186,7 @@ Submenu
 <script src="<?= base_url('assets/plugins/datatable/datatables-save.min.js') ?>"></script>
 <script>
   $(document).ready(function() {
-	// Tooltips
+	/*Tooltips*/
 	$('[data-toggle="tooltip"]').tooltip();
 	var table4 = $("#table-submenu").DataTable({
 		"processing": true,
@@ -198,8 +198,8 @@ Submenu
 		"pagingType": "full_numbers",
 		"responsive": true,
 		"datatype": "json",
-		// "scrollY": "200px",
-		//  "scrollCollapse": true,
+		/*"scrollY": "200px",
+		 "scrollCollapse": true,*/
 		"lengthMenu": [
 			[10, 25, 50, -1],
 			[10, 25, 50, "All"]
@@ -247,7 +247,7 @@ Submenu
 				msg: "Validation form invalid",
 				type: "error",
 				position: "center",
-				// offset: -10,
+				/*offset: -10,*/
 			});
         },
         onSuccess: function($form) {
@@ -268,14 +268,14 @@ Submenu
 							msg: "Success, submenu berhasil ditambahkan",
 							type: "success",
 							position: "center",
-							// offset: -10,
+							/*offset: -10,*/
 						});
                   	} else {
                   		notif({
 							msg: "Gagal, terjadi kesalahan saat memproses data",
 							type: "warning",
 							position: "center",
-							// offset: -10,
+							/*offset: -10,*/
 						});
                   	}
 					$('button[type="submit"]').html('Simpan').prop('disabled', false);
@@ -283,7 +283,7 @@ Submenu
 					table4.ajax.reload();
                   }
               });
-              return false; // Will stop the submission of the form
+              return false; /*Will stop the submission of the form*/
         }
     });
 
@@ -324,7 +324,7 @@ Submenu
 						msg: "Validation form invalid",
 						type: "error",
 						position: "center",
-						// offset: -10,
+						/*offset: -10,*/
 					});
 		        },
 		        onSuccess: function($form) {
@@ -345,14 +345,14 @@ Submenu
 							msg: "Success, submenu updated",
 							type: "success",
 							position: "center",
-							// offset: -10,
+							/*offset: -10,*/
 						});
                   	} else {
                   		notif({
 							msg: "Gagal, terjadi kesalahan saat memproses data",
 							type: "warning",
 							position: "center",
-							// offset: -10,
+							/*offset: -10,*/
 						});
                   	}
 					$('button[type="submit"]').html('Simpan Perubahan').prop('disabled', false);
@@ -360,7 +360,7 @@ Submenu
 					table4.ajax.reload();
                   }
               });
-              return false; // Will stop the submission of the form
+              return false; /*Will stop the submission of the form*/
 		        }
 		    });
 		});

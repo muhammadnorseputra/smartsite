@@ -91,6 +91,6 @@
 	</table>
 </div>
 <script>
-	// Tooltips
+	/*Tooltips*/
 	$('[data-toggle="tooltip"]').tooltip();
 </script>

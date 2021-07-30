@@ -76,13 +76,13 @@ $(document).ready(function () {
 		return $(id).html(data);
 	}
 
-	// JML ASN
+	/*JML ASN*/
 	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/asn`, response => _jmlContainer("#data_asn", response));
 	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/pns`, response => _jmlContainer("#data_pns", response));
 	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/nonpns`, response => _jmlContainer("#data_nonpns", response));
 	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap/pensiun`, response => _jmlContainer("#data_pensiun", response));
 
-	// Jenis Kelamin
+	/*Jenis Kelamin*/
 	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/jenkel`, function (response) {
 		Highcharts.chart('chart-jenkel', {
 			chart: {
@@ -113,7 +113,7 @@ $(document).ready(function () {
 		});
 	});
 
-	// Golru
+	/*Golru*/
 	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/golru`, function (response) {
 		Highcharts.chart('chart-golru', {
 			chart: {
@@ -156,7 +156,7 @@ $(document).ready(function () {
 		});
 	});
 
-	// Tingkat Pendidikan
+	/*Tingkat Pendidikan*/
 	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/tingpen`, function (response) {
 				Highcharts.chart('chart-tingpen', {
 					chart: {
@@ -200,7 +200,7 @@ $(document).ready(function () {
 				});
 			});
 
-	// Jenis Jabatan
+	/*Jenis Jabatan*/
 	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/jenjab`, function (response) {
 		Highcharts.chart('chart-jenjab', {
 			chart: {
@@ -233,7 +233,7 @@ $(document).ready(function () {
 		});
 	});
 
-	// Eselon
+	/*Eselon*/
 	$.getJSON(`${_uri}/frontend/v1/api/silka_get_grap_pns/eselon`, function (response) {
 		Highcharts.chart('chart-eselon', {
 			chart: {

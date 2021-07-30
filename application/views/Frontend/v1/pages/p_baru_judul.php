@@ -12,7 +12,6 @@
 				<?= form_open(base_url('frontend/v1/post/baru_detail'), ['autocomplete' => 'off', 'class' => 'toggle-disabled form_horizontal', 'id' => 'f_buatjudul']) ?>
 				<div class="card bg-white border-0">
 					<div class="card-header rounded border-0 shadow-sm d-flex justify-content-between">
-						<!-- <a href="#" onclick="window.history.back(-1)" class="btn btn-inline-block text-muted btn-link rounded-0"><i class="fas fa-2x fa-times-circle"></i></a> -->
 						<div class="font-weight-bold text-uppercase">buat postingan baru</div>
 						<div><i class="fas fa-times-circle"></i></div>
 					</div>
@@ -64,63 +63,4 @@
 	</div>
 </section>
 <script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
-<script>
-	$("input[name='judul']").focus();
-	$(function () {
-		$.validate({
-          form: '#f_buatjudul',
-          lang: 'en',
-          showErrorDialogs: true,
-          modules: 'toggleDisabled, security, html5, sanitize',
-          disabledFormFilter: 'form.toggle-disabled',
-          onError: function($form) {
-             notif({
-				msg: "Form Error, silahkan lengkapi formulir",
-				type: "error",
-				position: "bottom",
-				offset: -10,
-			}); 
-          },
-          onSuccess: function($form) {
-              var _this = $form;
-			var method = _this.attr('action');
-			var act = _this.attr('action');
-			var data = _this.serialize();
-			$.post(act, data, function(response) {
-
-				if (response.valid == true) {
-					notif({
-						msg: response.pesan,
-						type: "success",
-						position: "bottom",
-						offset: -10,
-					});
-					if(response.type == 'BERITA' || response.type == 'SLIDE') {
-						window.location.href = _uri + '/frontend/v1/post/postDetail/' + response.id;
-					} else if(response.type == 'YOUTUBE') {
-						window.location.href = _uri + '/frontend/v1/post/postDetailYoutube/' + response.id;
-					} else if(response.type == 'LINK') {
-						window.location.href = _uri + '/frontend/v1/post/postDetailLink/' + response.id;
-					}
-				} else {
-					notif({
-						msg: response.pesan,
-						type: "error",
-						position: "bottom",
-						offset: -10,
-					});
-				}
-			}, 'json')
-              return false; // Will stop the submission of the form
-              $form.removeClass('toggle-disabled');
-              $form.get(0).reset();
-          }
-      });
-	});
-	function slug() {
-		var x = document.getElementById("judul");
-		var y = document.getElementById("judul_slug");
-		y.innerHTML = x.value.toLowerCase().replace(/\s/g, "-");
-	}
-	
-</script>
+<script src="<?= base_url('template/v1/js_userportal/p_judul.js') ?>"></script>

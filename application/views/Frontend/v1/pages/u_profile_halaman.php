@@ -1,5 +1,4 @@
 <?php
-// error_reporting(0);
 $by = $public_profile->id_user_portal;
 $namalengkap = decrypt_url($public_profile->nama_lengkap);
 $namapanggilan = decrypt_url($public_profile->nama_panggilan);

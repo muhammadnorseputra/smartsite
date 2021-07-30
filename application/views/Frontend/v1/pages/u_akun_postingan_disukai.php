@@ -3,7 +3,7 @@
 	<div class="container">
 			<div class="row">
 	<?php 
-	// var_dump($datas);
+	/*var_dump($datas);*/
 	foreach ($datas as $data) {
 		$id = encrypt_url($data->id_berita);
 	    $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($data->created_by))));

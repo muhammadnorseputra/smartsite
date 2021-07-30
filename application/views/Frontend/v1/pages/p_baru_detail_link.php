@@ -50,7 +50,7 @@
 <script src="<?= base_url('assets/plugins/select2/js/select2.full.min.js'); ?>"></script>
 <script src="<?= base_url('template/v1/js/route.js') ?>"></script>
 <script>
-// select tags
+/*select tags*/
 var label = $("select#tags").select2({
 	placeholder: 'Pilih tags',
 	tags: true,

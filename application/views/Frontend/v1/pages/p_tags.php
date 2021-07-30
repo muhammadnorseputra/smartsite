@@ -24,7 +24,7 @@
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-5">
 				<div class="row grid" data-target=".item">
 					<?php
-					// var_dump($posts_by_tag->result()); die;
+					/*var_dump($posts_by_tag->result()); die;*/
 					$count = $posts_by_tag->num_rows();
 					if ($count > 0) {
 						$s = 1;

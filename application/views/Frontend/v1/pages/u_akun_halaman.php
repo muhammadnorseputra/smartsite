@@ -20,7 +20,7 @@ Tabel Halaman
 <link rel="stylesheet" href="<?= base_url('assets/plugins/datatable/inc_tablesold.css') ?>">
 <script src="<?= base_url('assets/plugins/datatable/datatables-save.min.js') ?>"></script>
 <script>
-	// Tooltips
+	/*Tooltips*/
 	$('[data-toggle="tooltip"]').tooltip();
 	var table3 = $("#table-halamanstatis").DataTable({
 		"processing": true,
@@ -32,8 +32,8 @@ Tabel Halaman
 		"pagingType": "full_numbers",
 		"responsive": true,
 		"datatype": "json",
-		// "scrollY": "200px",
-		//  "scrollCollapse": true,
+		/*"scrollY": "200px",
+		 "scrollCollapse": true,*/
 		"lengthMenu": [
 			[10, 25, 50, -1],
 			[10, 25, 50, "All"]

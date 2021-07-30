@@ -118,7 +118,7 @@
 <script src="<?= base_url('assets/plugins/dropzone/min/dropzone.min.js'); ?>"></script>
 <script src="<?= base_url('template/v1/js/route.js') ?>"></script>
 <script>
-	// select tags
+	/*select tags*/
 	var label = $("select#tags").select2({
 		placeholder: 'Pilih tags',
 		tags: true,
@@ -127,7 +127,7 @@
 	});
 
 	$(document).ready(function() {
-		// Message
+		/*Message*/
 		function message(x,y) {
 			notif({
 				msg: `<i class='fas fa-info-circle mr-2'></i> ${x}`,
@@ -136,7 +136,7 @@
 			});
 		}
 
-		// Image Preview
+		/*Image Preview*/
 		function readURL(input, $element) {
 			if (input.files && input.files[0]) {
 				var reader = new FileReader();
@@ -145,10 +145,10 @@
 					$($element).attr('src', e.target.result);
 				}
 
-				reader.readAsDataURL(input.files[0]); // convert to base64 string
+				reader.readAsDataURL(input.files[0]); /*convert to base64 string*/
 			}
 		}
-		// inisialisasi tinymce content editor
+		/*inisialisasi tinymce content editor*/
 		var tiny = tinymce.init({
 			selector: "#content",
 			theme: "silver",
@@ -166,7 +166,7 @@
 			remove_script_host: false,
 			convert_urls: true,
 			toolbar: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor",
-			//  filemanager_crossdomain: true,
+			/* filemanager_crossdomain: true,*/
 			image_advtab: true,
 			external_filemanager_path: "<?= base_url('files/filemanager-v2/filemanager/') ?>",
 			filemanager_title: "Filemanager",
@@ -241,7 +241,7 @@
 			let isi = tinymce.get("content").getContent();
 			let tags = $('select[name="tags[]"]').val();
 
-			// console.log(img_blob);
+			/*console.log(img_blob)*/;
 			$.post('<?= base_url("frontend/v1/post/update_post/0") ?>', {
 					id: id,
 					judul: judul,
@@ -309,7 +309,7 @@
 		});
 	});
 
-	// Photo Terkait
+	/*Photo Terkait*/
 	list_photo_terkait();
 	function list_photo_terkait()
 	{
@@ -336,15 +336,15 @@
 				msg: res,
 				type: "info",
 				position: "bottom",
-				// offset: -10,
+				/*offset: -10,*/
 			});
 		}, 'json');
 	})
 	
 	Dropzone.autoDiscover = false;
 	$(".dropzone").dropzone({  
-			paramName: "file", // The name that will be used to transfer the file
-  		maxFilesize: 1, // MB
+			paramName: "file", /*The name that will be used to transfer the file*/
+  		maxFilesize: 1, /*MB*/
   		resizeWidth: 300,
   		resizeHeight: 300,
   		resizeMethod: 'crop', 

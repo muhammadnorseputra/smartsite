@@ -1,10 +1,10 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
 <?php
-// Update count view
+/*Update count view*/
 $count_v = $post_detail->views;
 $count = $count_v + 1;
 $this->post->update_count_post($postId, $count);
-// Profile postinger
+/*Profile postinger*/
 $by = $post_detail->created_by;
 if ($by == 'admin') {
 	$namalengkap = $this->mf_users->get_namalengkap($post_detail->created_by);
@@ -17,9 +17,9 @@ if ($by == 'admin') {
 	$photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic) . '';
 	$link_profile_public = base_url("user/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan) . "/" . encrypt_url($by));
 }
-// Youtube Data
+/*Youtube Data*/
 if($post_detail->type === 'YOUTUBE'):
-$key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
+$key      = $this->config->item('YOUTUBE_KEY'); /*TOKEN goole developer*/
 $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,status,player&id='.$post_detail->content.'&key='.$key;
 $yt     = api_client($url);
 $yt_id     = $yt['items'][0]['id'];
@@ -40,9 +40,9 @@ $img = $yt_player;
 else:
 $img = '<img style="object-fit: contain; max-height:350px;" class="w-100 rounded border lazy" data-src="'.img_blob($post_detail->img_blob).'"/>';
 endif;
-// Image Carosel
+/*Image Carosel*/
 $photo_slide = $this->post->photo_terkait($post_detail->id_berita);
-// Content
+/*Content*/
 if($post_detail->type === 'YOUTUBE'):
 $content = nl2br($yt_desc);
 else:
@@ -170,7 +170,7 @@ if (count($pecah) > 0) {
 					}
 
 					if($b->type === 'YOUTUBE'):
-						$key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
+						$key      = $this->config->item('YOUTUBE_KEY'); /*TOKEN goole developer*/
 					    $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$b->content.'&key='.$key;
 					    $yt     = api_client($url);
 					    $img = $yt['items'][0]['snippet']['thumbnails']['medium']['url'];
