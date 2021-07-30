@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e20eacb86786e1aa796bfe9de4e65e794a01bd99',
+    'reference' => '7c480cfe55f32d707da63e7a8b11366c4ba47c72',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e20eacb86786e1aa796bfe9de4e65e794a01bd99',
+      'reference' => '7c480cfe55f32d707da63e7a8b11366c4ba47c72',
     ),
     'chriskacerguis/codeigniter-restserver' => 
     array (

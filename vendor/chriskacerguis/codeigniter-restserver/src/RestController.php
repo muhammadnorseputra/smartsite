@@ -15,7 +15,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  * @version         4.0.0
  */
-const HTTP_FORBIDDEN = 403;
 class RestController extends \CI_Controller
 {
     /**
@@ -241,13 +240,6 @@ class RestController extends \CI_Controller
     {
     }
 
-    /**
-    * @var Http Status Code
-    */
-    private $http_status = [
-    'METHOD_NOT_ALLOWED' => 405,
-    'UNAUTHORIZED' => 401
-    ];
     /**
      * Constructor for the REST API.
      *
