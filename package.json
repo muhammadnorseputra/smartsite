@@ -127,7 +127,7 @@
     "get-intrinsic": "^1.1.1",
     "get-value": "^2.0.6",
     "glob": "^7.1.7",
-    "glob-parent": "^3.1.0",
+    "glob-parent": "^5.1.2",
     "glob-stream": "^6.1.0",
     "global-prefix": "^1.0.2",
     "glob-watcher": "^5.0.5",
