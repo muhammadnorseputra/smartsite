@@ -595,10 +595,7 @@ img.lazy {
 	// background-image: url("https://via.placeholder.com/300.png?text=BKPPD");
 	background-repeat: no-repeat;
 	background-position: center center;
-	transition: all .3s ease-in;
-}
-img.isLoaded {
-	transition: all .3s ease;
+	// transition: all .3s ease-in;
 }
 
 i.likes {

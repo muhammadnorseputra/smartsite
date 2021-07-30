@@ -312,7 +312,7 @@ class M_f_post extends CI_Model {
     }
 
     // get all postings
-    function getPosts($limit = NULL, $kategori)
+    function getPosts($limit, $kategori)
     {
         $this->db->select('*');
         $this->db->from('t_berita');

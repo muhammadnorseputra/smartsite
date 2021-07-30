@@ -34,11 +34,11 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
-$img = '<img style="object-fit: contain; max-height:350px;" class="w-100 rounded lazy" data-src="'.base_url('files/file_berita/'.$post_detail->img).'">';
+$img = '<img style="object-fit: contain; max-height:350px;" class="w-100 rounded border lazy" data-src="'.base_url('files/file_berita/'.$post_detail->img).'">';
 elseif($post_detail->type === 'YOUTUBE'):
 $img = $yt_player;
 else:
-$img = '<img style="object-fit: contain; max-height:350px;" class="w-100 rounded lazy" data-src="'.img_blob($post_detail->img_blob).'"/>';
+$img = '<img style="object-fit: contain; max-height:350px;" class="w-100 rounded border lazy" data-src="'.img_blob($post_detail->img_blob).'"/>';
 endif;
 // Image Carosel
 $photo_slide = $this->post->photo_terkait($post_detail->id_berita);
@@ -102,7 +102,7 @@ if (count($pecah) > 0) {
 							</a>
 						</div>
 						<?php else: ?>
-						<?= $img ?>
+							<?= $img ?>
 						<?php endif; ?>
 						<?php  if($post_detail->type === 'YOUTUBE'): ?>
 						<div class="pl-3 border-left border-light">
@@ -194,7 +194,7 @@ if (count($pecah) > 0) {
 					?>
 					<?php if($berita_selanjutnya->num_rows() > 0): ?>
 					<a href="<?= $posturl ?>" class="text-link">
-						<div class="media">
+						<div class="media  mb-3">
 							<span class="rippler rippler-img rippler-bs-danger mr-3 w-25">
 								<img style="object-fit:cover;" width="110" height="60" class="rounded-left lazy" data-src="<?= $img ?>">
 							</span>

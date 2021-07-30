@@ -65,11 +65,13 @@ $(function () {
             $("button#load_more").html("<i class=\"fas fa-newspaper mr-2\"></i> Berita Sebelumnya").prop('disabled', false);
             action = "inactive";
             $(".lazy").lazy({
-              beforeLoad: function beforeLoad(element) {
-                element.addClass('beforeLoaded');
-              },
-              afterLoad: function afterLoad(element) {
-                element.addClass('isLoaded').removeClass('lazy beforeLoaded');
+              effect: 'fadeIn',
+              effectTime: 2000,
+              threshold: 0,
+              // called whenever an element could not be handled
+              onError: function onError(element) {
+                var imageSrc = element.data('src');
+                element.attr('src', "".concat(_uri, "/assets/images/noimage.gif"));
               }
             }); // Ripple
 
@@ -699,14 +701,13 @@ $(function () {
 
 $(document).ready(function () {
   $(".lazy").lazy({
-    threshold: 300,
-    beforeLoad: function beforeLoad(element) {
-      // var imageSrc = element.data('src');
-      element.addClass('lazy');
-    },
-    afterLoad: function afterLoad(element) {
-      // var imageSrc = element.data('src');
-      element.addClass('isLoaded').removeClass('lazy');
+    effect: 'fadeIn',
+    effectTime: 2000,
+    threshold: 0,
+    // called whenever an element could not be handled
+    onError: function onError(element) {
+      var imageSrc = element.data('src');
+      element.attr('src', "".concat(_uri, "/assets/images/noimage.gif"));
     }
   });
 });

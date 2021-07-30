@@ -92,13 +92,16 @@ $(function() {
                         action = "inactive";
 
                         $(".lazy").lazy({
-                            beforeLoad: function(element) {
-                                element.addClass('beforeLoaded');
-                            },
-                            afterLoad: function(element) {
-                                element.addClass('isLoaded').removeClass('lazy beforeLoaded');
+                            effect: 'fadeIn',
+                            effectTime: 2000,
+                            threshold: 0,
+                            // called whenever an element could not be handled
+                            onError: function(element) {
+                                var imageSrc = element.data('src');
+                                element.attr('src', `${_uri}/assets/images/noimage.gif`)
                             }
                         });
+
                         // Ripple
                         $(".rippler").rippler({
                             effectClass: 'rippler-effect'
