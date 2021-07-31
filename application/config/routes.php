@@ -134,8 +134,8 @@ $route['api-skm'] = 'frontend/v1/apiSkm';
 $route['api-skm/(:any)'] = 'frontend/v1/apiSkm/$1';
 
 // USERPORTAL
-$route['sign-out'] = 'frontend/v1/api/google_logout';
-$route['google_auth'] = 'frontend/v1/api/google_client';
+$route['facebook'] = 'frontend/v1/facebook';
+$route['facebook_outh'] = 'frontend/v1/facebook/facebook_outh';
 
 /*
 * @BAWAAN CODEIGNITER

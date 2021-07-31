@@ -1,9 +1,9 @@
 <?php $id_berita = $this->uri->segment(5) ?>
-<section class="my-5">
-	<div class="container">
+<section class="mt-md-5">
+	<div class="container-fluid">
 		<?= form_open_multipart(base_url('frontend/v1/post/update_post/1'), ['id' => 'f_post', 'data-id' => $post->id_berita]) ?>
 		<div class="row">
-			<div class="col-md-8 mt-5">
+			<div class="col-md-8 mt-md-5 mt-3">
 				<div class="d-flex mb-3">
 					<div class="w-100">
 						<label for="judul">Judul</label>
@@ -15,7 +15,7 @@
 					<textarea class="form-control border-light " name="content" id="content" rows="3"><?= $post->content ?></textarea>
 				</div>
 			</div>
-			<div class="col-md-4 mt-md-4">
+			<div class="col-md-4 mt-md-4 pb-4 border-left bg-light">
 
 				<div id="accordionExample" class="accordion mt-3">
 					<?php if($post->type !== 'SLIDE'): ?>
@@ -53,6 +53,31 @@
 						</div>
 						<div id="collapseTree" aria-labelledby="headingTree" data-parent="#accordionExample" class="collapse show">
 								<div class="row no-gutters" id="list_photo_terkait"></div>
+						</div>
+					</div>
+					<?php endif ?>
+					<?php if($post->type === 'BERITA'): ?>
+					<!-- Accordion item 4 -->
+					<div class="card rounded-0">
+						<div class="card-header shadow-sm border-0 d-flex justify-content-between align-items-center">
+							<h6 class="mb-0 font-weight-bold">
+								<a href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Seo</a>
+							</h6>
+						</div>
+						<div id="collapseFour" aria-labelledby="headingFour" data-parent="#accordionExample" class="collapse p-3 show">
+								<div class="input-group input-group-sm">
+								  <div class="input-group-prepend">
+								    <span class="input-group-text">Keywords</span>
+								  </div>
+								  <textarea class="form-control" name="keywords" aria-label="Keywords"><?= $post->keywords ?></textarea>
+								</div>
+								<hr>
+								<div class="input-group input-group-sm">
+								  <div class="input-group-prepend">
+								    <span class="input-group-text">Description</span>
+								  </div>
+								  <textarea class="form-control" name="description" aria-label="Description"><?= $post->deskripsi ?></textarea>
+								</div>
 						</div>
 					</div>
 					<?php endif ?>
@@ -117,242 +142,4 @@
 <script src="<?= base_url('files/tinymce/js/tinymce.min.js'); ?>"></script>
 <script src="<?= base_url('assets/plugins/dropzone/min/dropzone.min.js'); ?>"></script>
 <script src="<?= base_url('template/v1/js/route.js') ?>"></script>
-<script>
-	/*select tags*/
-	var label = $("select#tags").select2({
-		placeholder: 'Pilih tags',
-		tags: true,
-		tokenSeparators: [',', ' '],
-		width: 'resolve',
-	});
-
-	$(document).ready(function() {
-		/*Message*/
-		function message(x,y) {
-			notif({
-				msg: `<i class='fas fa-info-circle mr-2'></i> ${x}`,
-				type: y,
-				position: "bottom",
-			});
-		}
-
-		/*Image Preview*/
-		function readURL(input, $element) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
-
-				reader.onload = function(e) {
-					$($element).attr('src', e.target.result);
-				}
-
-				reader.readAsDataURL(input.files[0]); /*convert to base64 string*/
-			}
-		}
-		/*inisialisasi tinymce content editor*/
-		var tiny = tinymce.init({
-			selector: "#content",
-			theme: "silver",
-			height: 500,
-			plugins: [
-				"advlist autolink link image lists charmap print preview hr anchor pagebreak tabfocus searchreplace codesample help",
-				"searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
-				"table contextmenu directionality emoticons paste textcolor code fullscreen"
-			],
-			content_css: [
-				'<?= base_url("bower_components/bootstrap/dist/css/bootstrap.min.css") ?>',
-			],
-			content_style: "body{padding: 20px}",
-			relative_urls: false,
-			remove_script_host: false,
-			convert_urls: true,
-			toolbar: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor",
-			/* filemanager_crossdomain: true,*/
-			image_advtab: true,
-			external_filemanager_path: "<?= base_url('files/filemanager-v2/filemanager/') ?>",
-			filemanager_title: "Filemanager",
-			external_plugins: {
-				"filemanager": "<?= base_url('files/filemanager-v2/filemanager/plugin.min.js') ?>"
-			}
-		});
-				
-		/* upload single photo berita */
-		var fileupload = $("#FileUpload");
-		var filePath = $("p#FilePath");
-		var button = $("#upload-img");
-		button.click(function() {
-			fileupload.click();
-		});
-
-		fileupload.change(function() {
-			var fileName = $(this).val().split('\\')[$(this).val().split('\\').length - 1];
-			filePath.html("<b>Filename: </b>" + fileName);
-			readURL(this, $('img#single-photo'));
-
-			var form_data = new FormData();
-			form_data.append("file", this.files[0]);
-
-			var oFReader = new FileReader();
-			oFReader.readAsDataURL(this.files[0]);
-
-			let $online = _uriSegment[5];
-	    let $local = _uriSegment[6];
-	    let $id = $host ? $local : $online;
-			
-			$.ajax({
-				url: _uri + "/frontend/v1/post/upload_single_photo/" + $id,
-				method: "POST",
-				data: form_data,
-				contentType: false,
-				cache: false,
-				dataType: 'json',
-				processData: false,
-				beforeSend: function() {
-					button.html("<img class='mx-auto d-block py-1' src='" + _uri + "/bower_components/SVG-Loaders/svg-loaders/oval-datatable.svg'>");
-					$('img#single-photo').css({
-						opacity: 0.3
-					})
-				},
-				success: function(data) {
-					if (data == true) {
-						notif({
-							msg: "<i class='fas fa-check-circle'></i> Photo terpengaruh.",
-							type: "warning",
-							position: "bottom",
-							offset: -10,
-						});
-						$('img#single-photo').css({
-							opacity: 1
-						})
-					}
-					button.html('<i class="fas fa-upload mr-2"></i> Ganti gambar');
-				}
-			});
-		});
-
-		$(document).on("click", "button#batal", function() {
-			window.history.back(-1);
-		});
-
-		/* draf */
-		$(document).on("click", "button#draf", function() {
-
-			var id = $(this).attr('data-id');
-			let judul = $("input[name='judul']").val();
-			let isi = tinymce.get("content").getContent();
-			let tags = $('select[name="tags[]"]').val();
-
-			/*console.log(img_blob)*/;
-			$.post('<?= base_url("frontend/v1/post/update_post/0") ?>', {
-					id: id,
-					judul: judul,
-					content: isi,
-					tags: tags
-				},
-				function(response) {
-					if (response.valid == true) {
-						notif({
-							msg: "<i class='fas fa-check-circle'></i> Postingan disimpan sementara!",
-							type: "info",
-							position: "bottom",
-							offset: -10,
-						});
-					}
-				}, 'json'
-			);
-		});
-
-		/* publish */
-		$(document).on("submit", "form#f_post", function(e) {
-			e.preventDefault();
-
-			let Url = $(this).attr('action');
-			let Method = $(this).attr('method');
-
-			let id = $(this).attr('data-id');
-			let judul = $("input[name='judul']").val();
-			let isi = tinymce.get("content").getContent();
-			let tags = $('select[name="tags[]"]').val();
-
-			notif_confirm({
-				'textaccept': 'Publish',
-				'textcancel': 'Batal',
-				'fullscreen': true,
-				'message': 'Apakah anda yakin akan mempublish postingan tersebut?',
-				'callback': function(choice) {
-					if (choice) {
-						$.ajax({
-							url: Url,
-							method: Method,
-							data: {
-								id: id,
-								judul: judul,
-								content: isi,
-								tags: tags
-							},
-							dataType: 'json',
-							success: function(res) {
-								if (res.valid == true) {
-									notif({
-										msg: "<i class='fas fa-check-circle'></i> Postingan Published",
-										position: "bottom",
-										offset: -10,
-										bgcolor: "#000",
-										color: "#fff",
-										timeout: 2500,
-									});
-								}
-							}
-						});
-					}
-				}
-			});
-		});
-	});
-
-	/*Photo Terkait*/
-	list_photo_terkait();
-	function list_photo_terkait()
-	{
-		$("#list_photo_terkait").html(`<div class="d-flex justify-content-center align-items-center w-100 h-100">
-				<div class="loader_small" style="width:30px; height:30px;"></div>
-			</div>`);
-		let $online = _uriSegment[5];
-    let $local = _uriSegment[6];
-    let $id = $host ? $local : $online;
-		let id_berita = $id;
-		$.getJSON(`${_uri}/frontend/v1/post/list_photo_terkait`, {id: id_berita}, function(result) {
-			$("#list_photo_terkait").html(result);
-			console.log(result);
-		});
-	}
-
-	$(document).on("click", "a#delete_photo_terkait", function(e) {
-		e.preventDefault();
-		let $this = $(this);
-		let $Url = $this.attr('href');
-		$.post(`${$Url}`, function(res) {
-			list_photo_terkait();
-			notif({
-				msg: res,
-				type: "info",
-				position: "bottom",
-				/*offset: -10,*/
-			});
-		}, 'json');
-	})
-	
-	Dropzone.autoDiscover = false;
-	$(".dropzone").dropzone({  
-			paramName: "file", /*The name that will be used to transfer the file*/
-  		maxFilesize: 1, /*MB*/
-  		resizeWidth: 300,
-  		resizeHeight: 300,
-  		resizeMethod: 'crop', 
-  		resizeQuality: 0.8,
-  		acceptedFiles: '.jpeg,.jpg,.png',
-  		addRemoveLinks: true,
-  		init: function() {
-		    this.on("complete", function(file) { list_photo_terkait(); });
-		  }
-	});
-</script>
+<script src="<?= base_url('template/v1/js_userportal/p_baru_detail.js') ?>"></script>

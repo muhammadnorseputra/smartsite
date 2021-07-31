@@ -766,12 +766,12 @@ $(document).ready(function () {
   // make it as accordion for smaller screens
   $(document).scroll(function () {
     if ($(document).scrollTop() > 30) {
-      $("nav#navbar").css("transition", ".5s ease-in-out").addClass("bg-blur py-0");
+      $("nav#navbar").css("transition", ".5s ease-in-out").addClass("bg-blur");
       $("button#caripost").addClass('btn-outline-light');
     } else {
       $("button#caripost").removeClass('btn-outline-light'); // $("button#caripost").toggleClass('');
 
-      $("nav#navbar").removeClass("bg-blur py-0");
+      $("nav#navbar").removeClass("bg-blur");
     }
   }); // var prevScrollpos = window.pageYOffset;
   // window.onscroll = function() {
@@ -950,7 +950,7 @@ $(document).ready(function () {
   $sticky.hcSticky({
     stickTo: $('#main-content'),
     // innerSticker: '#stickMe',
-    top: 75,
+    top: 85,
     // followScroll: true,
     // mobileFirst: false,
     responsive: {

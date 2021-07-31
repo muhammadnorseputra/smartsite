@@ -47,12 +47,13 @@ class Post extends CI_Controller
 
          if($detail->type === 'YOUTUBE'):
             $imgurl = $yt_thumb;
-            $content = $yt_desc;
+            $content = !empty($detail->deskripsi) ? $detail->deskripsi : $yt_desc;
         else:
             $imgurl = $img;
-            $content = strip_tags(str_replace('"', '', word_limiter($detail->content, 35)));
+            $meta_desc = strip_tags(str_replace('"', '', word_limiter($detail->content, 120)));
+            $content = !empty($detail->deskripsi) ? $detail->deskripsi : $meta_desc;
         endif;
-
+        $meta_keywords = !empty($detail->keywords) ? $detail->keywords : $detail->tags;
         // Meta SEO
         $e = array(
           'general' => true, //description, keywords
@@ -61,7 +62,7 @@ class Post extends CI_Controller
           'robot'=> true
         );
         $meta_tag = meta_tags($e, $title = $judul_seo, $desc=$content,$imgUrl = $imgurl,
-                            $url = curPageURL(), $keyWords=$detail->tags, $type='article', $canonical=curPageURL());
+                            $url = curPageURL(), $keyWords=$meta_keywords, $type='article', $canonical=curPageURL());
 
     	$data = [
     		'title' => $judul_seo,
@@ -367,10 +368,14 @@ class Post extends CI_Controller
             $judul = $this->input->post('judul');
             $kategori = $this->input->post('kategori');
             $type = $this->input->post('type');
+            $deskripsi = $this->input->post('description');
+            $keywords = $this->input->post('keywords');
         
             $data = [
                 'judul' => $judul,
                 'slug' => url_title(strtolower($judul)),
+                'deskripsi' => $deskripsi,
+                'keywords' => $keywords,
                 'type' => $type,
                 'fid_kategori' => $kategori,
                 'headline' => '1',
@@ -511,11 +516,15 @@ class Post extends CI_Controller
         {
             $id = $this->input->post('id');
             $judul = $this->input->post('judul');
+            $deskripsi = $this->input->post('description');
+            $keywords = $this->input->post('keywords');
             $content = $this->input->post('content');
             $tags = @implode(',', $this->input->post('tags'));
             $data = [
                 'judul' => $judul,
                 'slug' => url_title(strtolower($judul)),
+                'keywords' => $keywords,
+                'deskripsi' => $deskripsi,
                 'content' => $content,
                 'tags' => $tags,
                 'publish' => $publish,
