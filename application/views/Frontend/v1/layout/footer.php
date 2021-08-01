@@ -117,7 +117,7 @@
 					<div class="small">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</div>
 				</div>
 				<div class="text-right text-white d-none d-md-block d-lg-block">
-					<a id="ruppe" href="https://rupee4click.com/4sbjb" target="_blank" class="d-none">#</a>
+					<a id="ruppe" href="https://rupee4click.com/4sbjb" target="_blank">#</a>
 				</div>
 			</div>
 		</div>
