@@ -27,7 +27,7 @@
 	?>
 	<div>
 		<div class="progress">
-		  <div class="progress-bar progress-bar-striped progress-bar-animated <?= $bg ?>" id="poll" role="progressbar" style="width: <?= $persentase_vote ?>%;" aria-valuenow="<?= $total_vote_peropsi ?>" aria-valuemin="0" aria-valuemax="100"><?= $persentase_vote ?>%</div>
+		  <div class="progress-bar progress-bar-striped progress-bar-animated <?= $bg ?>" id="poll" role="progressbar" aria-label="progress" style="width: <?= $persentase_vote ?>%;" aria-valuenow="<?= $total_vote_peropsi ?>" aria-valuemin="0" aria-valuemax="100"><?= $persentase_vote ?>%</div>
 		</div>
 		<label for="poll"><?= $j->label ?></label>
 	</div>

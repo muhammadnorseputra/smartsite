@@ -96,7 +96,7 @@
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 400px; max-height: 400px; overflow-y: auto;">
 						<div class="d-flex flex-lg-column justify-content-start align-items-center ">
-							<a target="_blank" href="https://ekinerja.bkppd-balangankab.info/" class="p-4">
+							<a rel="noreferrer" target="_blank" href="https://ekinerja.bkppd-balangankab.info/" class="p-4">
 								<div class="row">
 									<div class="col-4">
 										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-ekinerja.png').'" alt="e-Kinerja"/>' ; ?>
@@ -109,7 +109,7 @@
 									</div>
 								</div>
 							</a>
-							<a target="_blank" href="http://silka.bkppd-balangankab.info/" class="p-4">
+							<a  rel="noreferrer" target="_blank" href="http://silka.bkppd-balangankab.info/" class="p-4">
 								<div class="row">
 									<div class="col-4">
 										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-silka.png').'" alt="SILKa Online"/>'; ?>
@@ -122,7 +122,7 @@
 									</div>
 								</div>
 							</a>
-							<a target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4">
+							<a  rel="noreferrer" target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4">
 								<div class="row">
 									<div class="col-4">
 										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-eprilaku.png').'" alt="e-Prilaku"/>'; ?>
@@ -135,7 +135,7 @@
 									</div>
 								</div>
 							</a>
-							<a target="_blank" href="https://web.bkppd-balangankab.info/skm" class="p-4">
+							<a  rel="noreferrer" target="_blank" href="https://web.bkppd-balangankab.info/skm" class="p-4">
 								<div class="row">
 									<div class="col-4">
 										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo.png').'" alt="SKM - BKPPD Balangan"/>'; ?>

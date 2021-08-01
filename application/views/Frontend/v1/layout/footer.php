@@ -54,7 +54,7 @@
 				<h6 class="text-secondary pb-3 border-bottom">Ikuti Juga</h6>
 				<ul class="list-unstyled">
 					<li>
-						<a href="https://news.google.com/publications/CAAqBwgKMLfcpwswpOe_Aw?oc=3&ceid=ID:id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>BKPPD Google News</a>
+						<a  rel="noreferrer" href="https://news.google.com/publications/CAAqBwgKMLfcpwswpOe_Aw?oc=3&ceid=ID:id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>BKPPD Google News</a>
 					</li>
 					<li>
 						<a href="<?= base_url('skm') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Survey Layanan Kepegawaian</a>
@@ -78,31 +78,31 @@
 				<ul class="list-unstyled text-light">
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a target="_blank" href="https://www.bkn.go.id/">BKN Pusat</a>
+						<a  rel="noreferrer" target="_blank" href="https://www.bkn.go.id/">BKN Pusat</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a target="_blank" href="https://sscasn.bkn.go.id/">SSCASN BKN</a>
+						<a  rel="noreferrer" target="_blank" href="https://sscasn.bkn.go.id/">SSCASN BKN</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a target="_blank" href="https://www.kemendagri.go.id/">Kementerian Dalam Negeri</a>
+						<a  rel="noreferrer" target="_blank" href="https://www.kemendagri.go.id/">Kementerian Dalam Negeri</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a target="_blank" href="https://www.menpan.go.id/site/">Kementrian Pemberdayagunaan Aparatur Negara</a>
+						<a  rel="noreferrer" target="_blank" href="https://www.menpan.go.id/site/">Kementrian Pemberdayagunaan Aparatur Negara</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a target="_blank" href="https://bpsdm.kalselprov.go.id/">BPSDM Provinsi Kalimantan Selatan</a>
+						<a  rel="noreferrer" target="_blank" href="https://bpsdm.kalselprov.go.id/">BPSDM Provinsi Kalimantan Selatan</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a target="_blank" href="https://bkd.kalselprov.go.id/">BKD Provinsi Kalimantan Selatan</a>
+						<a  rel="noreferrer" target="_blank" href="https://bkd.kalselprov.go.id/">BKD Provinsi Kalimantan Selatan</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a target="_blank" href="https://balangankab.go.id/">Pemerintah Kabupaten Balangan</a>
+						<a  rel="noreferrer" target="_blank" href="https://balangankab.go.id/">Pemerintah Kabupaten Balangan</a>
 					</li>
 				</ul>
 			</div>
@@ -117,7 +117,7 @@
 					<div class="small">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</div>
 				</div>
 				<div class="text-right text-white d-none d-md-block d-lg-block">
-					<a id="ruppe" href="https://rupee4click.com/4sbjb" target="_blank"></a>
+					<a  rel="noreferrer" id="ruppe" href="https://rupee4click.com/4sbjb" target="_blank"></a>
 				</div>
 			</div>
 		</div>
