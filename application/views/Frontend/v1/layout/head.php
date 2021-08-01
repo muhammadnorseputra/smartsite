@@ -13,6 +13,9 @@
                                  <meta name="description" content="'.$mf_beranda->meta_desc.'"/>
                                  <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>';  
     ?>
+    <link rel="preload" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-solid-900.woff2') ?>">
+    <link rel="preload" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-brands-400.woff2') ?>">
+    <link rel="preload" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-regular-400.woff2') ?>">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
     <link rel="dns-prefetch" href="https://web.bkppd-balangankab.info/">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
@@ -28,6 +31,7 @@
     <link rel="subresource" href="<?= base_url('assets/images/logo.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg-home.png'); ?>">
+    <link rel="subresource" href="<?= files('file_banner/*'); ?>">
     <!-- <link rel="stylesheet" href="<?= base_url('template/v1/prod/app.css'); ?>"  type="text/css"> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199508931-1" crossorigin="anonymous"></script>
