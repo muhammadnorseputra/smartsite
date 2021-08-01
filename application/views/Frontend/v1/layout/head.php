@@ -13,9 +13,9 @@
                                  <meta name="description" content="'.$mf_beranda->meta_desc.'"/>
                                  <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>';  
     ?>
-    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts/fa-solid-900.woff2') ?>">
-    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts/fa-brands-400.woff2') ?>">
-    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts/fa-regular-400.woff2') ?>">
+    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-solid-900.woff2') ?>">
+    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-brands-400.woff2') ?>">
+    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-regular-400.woff2') ?>">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
     <link rel="dns-prefetch" href="https://web.bkppd-balangankab.info/">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
