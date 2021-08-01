@@ -10,7 +10,7 @@
 				<span class="text-primary">Kalimantan Selatan - Indonesia</span>
 			</div>
 			<div class="ml-md-auto my-auto">
-				<a target="_blank" href="https://www.google.com/maps/dir//-2.364905,115.470992" class="btn btn-sm btn-light">Buka pada maps <i class="fas fa-link"></i></a>
+				<a rel="noreferrer" target="_blank" href="https://www.google.com/maps/dir//-2.364905,115.470992" class="btn btn-sm btn-light">Buka pada maps <i class="fas fa-link"></i></a>
 			</div>
 		</div>
 	</div>
