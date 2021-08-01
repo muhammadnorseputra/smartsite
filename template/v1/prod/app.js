@@ -658,6 +658,16 @@ $(function () {
       path: '/'
     });
   }
+
+  if (!$.cookie("ruppe")) {
+    $("a#ruppe").click();
+    var date = new Date();
+    date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
+    $.cookie("ruppe", 1, {
+      expires: date,
+      path: '/'
+    });
+  }
 });
 // $(function() {
 //     $('h3#count_jml').countTo({
