@@ -1,10 +1,10 @@
 $(function() {
-    $("button#caripost").on("click", function() {
+    $("button.post-search").on("click", function() {
         $("#mpostseacrh").modal('show');
         $("input[name='q']").focus();
     });
 
-    $("a#caripost").on("click", function() {
+    $("a.post-search").on("click", function() {
         $("#mpostseacrh").modal('show');
         $("input[name='q']").focus();
     });

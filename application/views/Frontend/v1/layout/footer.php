@@ -1,4 +1,4 @@
-<section class="py-4 border-top border-light hero">
+<section class="py-4 border-top border-light">
 	<div class="container">
 		<div class="d-flex justify-content-lg-start align-content-center text-dark flex-column flex-lg-row">
 			<div class="mr-3 d-none d-md-block d-lg-block">
@@ -67,6 +67,9 @@
 					</li>					
 					<li>
 						<a href="<?= base_url('news') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Berita Seputar Indonesia</a>
+					</li>
+					<li>
+						<a rel="noreferrer" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Buy me a coffee</a>
 					</li>					
 					<li>
 						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Userportal</a>

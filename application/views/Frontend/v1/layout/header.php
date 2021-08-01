@@ -181,8 +181,8 @@
 			</a>
 			<?php } ?>
 			<span class="text-light ml-2">|</span>
-			<button class="btn btn-outline-none rounded-pill bg-white py-2 ml-2" id="caripost">
-			<i class="fas fa-search"></i>
+			<button class="btn btn-outline-none rounded-pill bg-white py-2 ml-2 post-search">
+				<i class="fas fa-search"></i>
 			</button>
 			<!-- <label class="switch mt-2">
 							<input type="checkbox" id="darkSwitch">

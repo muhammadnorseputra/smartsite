@@ -35,6 +35,17 @@
                     </span>
                 </div>
                 </a>
+                <a rel="noreferrer" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6" class="btn btn-outline-primary py-2 mb-3 btn-block">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span>
+                        <img style="object-fit: cover;" class="rounded-circle" width="45" height="45" src="<?= assets('images/putrabungsu6.jpg') ?>" alt="putrabungsu6">
+                    </span>
+                    <span>
+                        Buy me a coffee <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
+                </div>
+                </a>
+
                 <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>

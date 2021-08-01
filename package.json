@@ -2,7 +2,6 @@
   "devDependencies": {
     "@babel/preset-env": "^7.14.8",
     "babel": "^6.23.0",
-    "glob-parent": "^6.0.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
@@ -16,7 +15,8 @@
   "version": "1.0.0",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx npm-force-resolutions"
   },
   "repository": {
     "type": "git",
