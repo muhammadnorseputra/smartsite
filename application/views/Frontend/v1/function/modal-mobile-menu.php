@@ -14,11 +14,11 @@
 						if ($submenu_jml > 0) {
 					?>
 					<!-- Accordion -->
-					<div id="heading1">
+					<div id="heading<?= $m->id_menu ?>">
 						<a href="<?= base_url($m->link); ?>" data-toggle="collapse" data-target="#collapse-<?= $m->id_menu ?>" aria-expanded="false" aria-controls="collapse-<?= $m->id_menu ?>" class="btn btn-block btn-light border text-left rounded collapsible-link px-2 my-1 py-2"><?= $m->nama_menu; ?> <i class="fas fa-folder float-right text-white"></i></a>
 					</div>
 					
-					<div id="collapse-<?= $m->id_menu ?>" aria-labelledby="heading1" data-parent="#accordionParent" class="collapse">
+					<div id="collapse-<?= $m->id_menu ?>" aria-labelledby="heading<?= $m->id_menu ?>" data-parent="#accordionParent" class="collapse">
 						<?php foreach ($submenu as $s) : ?>
 						<?php if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0): ?>
 						<div id="accordionSub" class="accordion">
