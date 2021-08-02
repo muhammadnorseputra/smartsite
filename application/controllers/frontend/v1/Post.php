@@ -130,12 +130,12 @@ class Post extends CI_Controller
 
             if($row->type === 'BERITA'):
                 if(!empty($row->img)):
-                    $img = '<img style="object-fit:cover; width:320px; height:220px;" class="rounded-left" src="'.base_url('files/file_berita/'.$row->img).'">';
+                    $img = '<img style="object-fit:cover; width:320px; height:220px;" class="rounded-left" alt="'.ucwords($row->judul).'" src="'.base_url('files/file_berita/'.$row->img).'">';
                 else:
-                    $img = '<img style="object-fit:cover; width:320px; height:220px;" class="rounded-left" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img style="object-fit:cover; width:320px; height:220px;" class="rounded-left" alt="'.ucwords($row->judul).'" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 endif;
             else:
-                $img = '<img style="object-fit:cover; width:320px; height:220px;" class="rounded-left" src="'.base_url('assets/images/noimage.gif').'">';
+                $img = '<img style="object-fit:cover; width:320px; height:220px;" class="rounded-left" alt="'.ucwords($row->judul).'" src="'.base_url('assets/images/noimage.gif').'">';
             endif; 
 
             $output .= '<a href="'.$posturl.'" class="list-group-item border my-2 list-group-item-action rounded p-3 p-md-0">
