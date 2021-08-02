@@ -81,8 +81,8 @@
                   $id = encrypt_url($posts->id_berita);
                   $postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($posts->created_by))));
                   $slug = strtolower($posts->slug);
-                  $kategori = url_title(strtolower($this->post->kategori_byid($posts->fid_kategori)));
-                  $posturl = base_url("p/".$kategori."/".$slug);
+                  // $kategori = url_title(strtolower($this->post->kategori_byid($posts->fid_kategori)));
+                  $posturl = base_url("blog/".$slug);
               else:
                   $posturl = base_url('leave?go='.encrypt_url($posts->content));
               endif;

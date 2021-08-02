@@ -8,7 +8,8 @@
 		$id = encrypt_url($data->id_berita);
 	    $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($data->created_by))));
 	    $judul = strtolower($data->judul);
-	    $posturl = base_url("post/{$postby}/{$id}/" . url_title($judul) . '');
+	    $slug = $data->slug;
+	    $posturl = base_url("blog/{$slug}");
 
 		echo '<div class="col-md-3 mb-3 pb-3 border-bottom">
 		<a href="'.$posturl.'">';

@@ -21,7 +21,7 @@ class Post extends CI_Controller
         }
     }
     
-    public function detail($kategori, $slug) {
+    public function detail($slug) {
         $id = $this->post->detailIdBySlug($slug);
         $detail = $this->post->detail($id)->row();
         $judul_seo = ucwords($detail->judul);
@@ -125,8 +125,8 @@ class Post extends CI_Controller
             $postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($row->created_by))));
             $judul = strtolower($row->judul);
             $slug = $row->slug;
-            $kategori = url_title(strtolower($this->post->kategori_byid($row->fid_kategori)));
-            $posturl = base_url("p/".$kategori."/".$slug);
+            // $kategori = url_title(strtolower($this->post->kategori_byid($row->fid_kategori)));
+            $posturl = base_url("blog/".$slug);
 
             if($row->type === 'BERITA'):
                 if(!empty($row->img)):
@@ -234,8 +234,8 @@ class Post extends CI_Controller
                     $id = encrypt_url($row->id_berita);
                     $postby = strtolower(url_title($namalengkap));
                     $slug = strtolower($row->slug);
-                    $kategori = url_title(strtolower($this->post->kategori_byid($row->fid_kategori)));
-                    $posturl = base_url("p/".$kategori."/".$slug);
+                    // $kategori = url_title(strtolower($this->post->kategori_byid($row->fid_kategori)));
+                    $posturl = base_url("blog/".$slug);
                 else:
                     $posturl = base_url('leave?go='.encrypt_url($row->content));
                 endif;

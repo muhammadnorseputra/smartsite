@@ -32,8 +32,8 @@
 							$id = encrypt_url($posts->id_berita);
 							$postby = strtolower(url_title($this->mf_users->get_namalengkap(trim($posts->created_by))));
 							$slug = strtolower($posts->slug);
-              $kategori = url_title(strtolower($this->post->kategori_byid($posts->fid_kategori)));
-              $posturl = base_url("p/".$kategori."/".$slug);
+              // $kategori = url_title(strtolower($this->post->kategori_byid($posts->fid_kategori)));
+              $posturl = base_url("blog/".$slug);
 							$status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $posts->id_berita) == 'on' ? 'fas' : 'far';
 					if(!empty($posts->img_blob)):
                     	$img = '<img class="img-fluid border-0 rounded-top" src="data:image/jpeg;base64,'.base64_encode( $posts->img_blob ).'"/>';

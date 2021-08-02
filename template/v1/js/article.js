@@ -94,7 +94,7 @@ $(function() {
 
                         $(".lazy").lazy({
                             effect: 'fadeIn',
-                            effectTime: 300,
+                            effectTime: 250,
                             threshold: 0,
                             // enableThrottle: true,
                             // throttle: 550,
@@ -108,16 +108,15 @@ $(function() {
                                 element.attr('src', `${_uri}/assets/images/noimage.gif`)
                             }
                         });
-
                         // Ripple
                         $(".rippler").rippler({
                             effectClass: 'rippler-effect'
                         });
                         // Tooltips
                         $('[data-toggle="tooltip"]').tooltip({
-                            delay: 300,
-                            offset: '0,10px',
-                            padding: 10
+                            delay: 250,
+                            offset: '0, 12px',
+                            padding: 15
                         });
                     }
                 },
@@ -148,13 +147,11 @@ $(function() {
         $("button#load_more").on("click", function(e) {
             e.preventDefault();
             if (action == "inactive") {
-                window.scrollBy(0,-250);
+                window.scrollBy(0,-350);
                 lazzy_loader(limit);
                 action = "active";
                 start = start + limit;
-                // setTimeout(function() {
-                    load_data(limit, start);
-                // }, 300);
+                load_data(limit, start);
             }
         })
     } else {

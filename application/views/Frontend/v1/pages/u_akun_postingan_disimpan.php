@@ -11,7 +11,8 @@
 		$id = encrypt_url($data->id_berita);
 	    $postby = strtolower($this->mf_users->get_namalengkap(trim(url_title($data->created_by))));
 	    $judul = strtolower($data->judul);
-	    $posturl = base_url("frontend/v1/post/detail/{$postby}/{$id}/" . url_title($judul) . '');
+	    $slug = $data->slug;
+	    $posturl = base_url("blog/{$slug}");
 	    echo '
 	    	<tr>
 	    		<td>'.$no.'</td>

@@ -98,6 +98,7 @@ class Beranda extends CI_Controller
         $data = $this->mf_beranda->get_all_berita($limit,$start,$type,$sort);
         if ($data->num_rows() > 0) {
             $no=1;
+            $this->db->cache_delete('dbfrontend', 'v1');
             foreach ($data->result() as $row) {
 
                 // Tags
@@ -133,8 +134,8 @@ class Beranda extends CI_Controller
                     $id = encrypt_url($row->id_berita);
                     $postby = strtolower(url_title($namalengkap));
                     $slug = strtolower($row->slug);
-                    $kategori = url_title(strtolower($this->post->kategori_byid($row->fid_kategori)));
-                    $posturl = base_url("p/".$kategori."/".$slug);
+                    // $kategori = url_title(strtolower($this->post->kategori_byid($row->fid_kategori)));
+                    $posturl = base_url("blog/".$slug);
                 elseif($row->type === 'LINK'):
                     $posturl = base_url('leave?go='.encrypt_url($row->content));
                 endif;

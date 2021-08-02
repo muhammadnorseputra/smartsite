@@ -11,8 +11,8 @@ if ($by == 'admin') {
 $id = encrypt_url($detail->id_berita);
 $postby = strtolower($namapanggilan);
 $slug = strtolower($detail->slug);
-$kategori = url_title(strtolower($this->post->kategori_byid($detail->fid_kategori)));
-$posturl = base_url("p/".$kategori."/".$slug);
+// $kategori = url_title(strtolower($this->post->kategori_byid($detail->fid_kategori)));
+$posturl = base_url("blog/".$slug);
 
 if($detail->type === 'YOUTUBE'):
     $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer

@@ -34,8 +34,8 @@ class Komentar extends CI_Controller {
             $id = encrypt_url($k->id_berita);
             $postby = strtolower($namalengkap);
             $slug = $this->post->slugByIdBerita($k->fid_berita);
-            $kategori = url_title(strtolower($this->post->kategori_byid($k->fid_kategori)));
-            $posturl = base_url("p/".$kategori."/".$slug);
+            // $kategori = url_title(strtolower($this->post->kategori_byid($k->fid_kategori)));
+            $posturl = base_url("blog/".$slug);
 
 			$no++;
 			$row = array();

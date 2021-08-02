@@ -39,8 +39,8 @@
         $postby = strtolower(url_title($this->mf_users->get_namalengkap($b->created_by)));
         $judul = strtolower($b->judul);
         $slug = strtolower($b->slug);
-        $kategori = url_title(strtolower($this->post->kategori_byid($b->fid_kategori)));
-        $posturl = base_url("p/".$kategori."/".$slug);
+        // $kategori = url_title(strtolower($this->post->kategori_byid($b->fid_kategori)));
+        $posturl = base_url("blog/".$slug);
     else:
         $posturl = base_url('leave?go='.encrypt_url($b->content));
     endif;
