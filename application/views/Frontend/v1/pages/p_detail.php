@@ -34,11 +34,11 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
-$img = '<img style="object-fit: contain; min-height: 350px; max-height:350px;" class="w-100 rounded border lazy" data-src="'.files('file_berita/'.$post_detail->img).'" alt="'.$title.'">';
+$img = '<img style="object-fit: contain; min-height: 350px; max-height:350px;" class="w-100 rounded lazy" data-src="'.files('file_berita/'.$post_detail->img).'" alt="'.$title.'">';
 elseif($post_detail->type === 'YOUTUBE'):
 $img = $yt_player;
 else:
-$img = '<img style="object-fit: contain; min-height: 350px; max-height:350px;" class="w-100 rounded border lazy" data-src="'.img_blob($post_detail->img_blob).'"  alt="'.$title.'"/>';
+$img = '<img style="object-fit: contain; min-height: 350px; max-height:350px;" class="w-100 rounded lazy" data-src="'.img_blob($post_detail->img_blob).'"  alt="'.$title.'"/>';
 endif;
 /*Image Carosel*/
 $photo_slide = $this->post->photo_terkait($post_detail->id_berita);
@@ -63,7 +63,7 @@ if (count($pecah) > 0) {
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 mb-5 pb-md-5 px-3 px-md-0" id="main-content">
-				<div class="card rounded-lg shadow-none bg-white rounded border-0">
+				<div class="card rounded-lg shadow-none bg-transparent rounded border-0">
 					<div class="card bg-transparent border-0 px-md-2 pt-md-0 p-0">
 						<div class="card-body px-0 px-md-2 pt-md-0">
 							<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top;" width="60" height="60" class="float-left mr-md-4 mr-3 lazy rounded shadow-sm">
@@ -253,7 +253,7 @@ if (count($pecah) > 0) {
 		<div class="col-md-4 d-none d-md-block">
 			<div id="sidebar">
 			<?php if(cek_internet() == true): ?>
-			<div class="card border-0">
+			<div class="card border-0 bg-transparent">
 				<div class="card-body p-0">
 					<?php $this->load->view('Frontend/v1/function/populer_post'); ?>
 					<!--<div id="gpr-kominfo-widget-container"></div>-->

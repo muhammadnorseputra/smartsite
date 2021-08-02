@@ -69,9 +69,9 @@ class Beranda extends CI_Controller
     }
 
     function template_sumber($text, $icon) {
-        $html = '<div class="btn-group btn-group-sm mb-3 ml-1 ml-md-0" role="group" aria-label="button">
-                    <button aria-hidden="true" type="button" class="btn btn-sm btn-light" disabled>'.$icon.'</button>
-                    <button aria-hidden="true" type="button" class="btn btn-sm btn-light"  disabled>'.$text.'</button>
+        $html = '<div class="btn-group btn-group-sm mb-3 ml-3 ml-md-0" role="group" aria-label="button">
+                    <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent border-right" disabled>'.$icon.'</button>
+                    <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent"  disabled>'.$text.'</button>
                 </div>';
         return $html;
     }
@@ -204,23 +204,23 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img style="height:260px; object-fit: cover;" class="w-100 border lazy rounded border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:260px; object-fit: cover;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     elseif(!empty($row->img_blob)):
-                        $img = '<img style="height:260px; object-fit: cover;" class="w-100 border lazy rounded border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
+                        $img = '<img style="height:260px; object-fit: cover;" class="card-img-top w-100 lazy rounded-top border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
-                        $img = '<img style="height:260px; object-fit: cover;" class="w-100 border lazy rounded border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:260px; object-fit: cover;" class="w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="height:260px; object-fit: cover;" class="w-100 border lazy rounded border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="height:260px; object-fit: cover;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-4x bg-primary rounded-circle"></i>
                         </div>
                         </div>';
                 elseif($row->type === 'LINK'):
-                    $img = '<img style="height:260px; object-fit: cover;" class="w-100 border lazy rounded border-light" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:260px; object-fit: cover;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
                 else:
-                    $img = '<img style="height:260px; object-fit: cover;" class="w-100 border lazy rounded border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:260px; object-fit: cover;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                 endif;
 
                 // gambar terkait
@@ -251,17 +251,12 @@ class Beranda extends CI_Controller
                 if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'LINK'):
                 $content_body = '<div class="row">
                                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
-                                        <div class="canvas pr-md-4 pl-md-0 mb-1">
-                                        <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
-                                          '.$img.'
-                                        </a>
-                                        </div>
                                         '.$sumber.'
                                         <div class="btn-group btn-group-sm mb-3 ml-1 ml-md-0" role="group" aria-label="button">
-                                            <button aria-hidden="true" type="button" class="btn btn-sm btn-light" disabled><i class="fas fa-tag"></i></button>
-                                            <a href="'.$post_list_url.'" class="btn btn-sm btn-light '.$rand.'">'.$namakategori.'</a>
+                                            <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent border-right" disabled><i class="fas fa-tag"></i></button>
+                                            <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent '.$rand.'">'.$namakategori.'</a>
                                         </div>
-                                        <div class="mx-4 mx-md-0 pr-md-4 mt-md-3">
+                                        <div class="mx-4 mx-md-0 pr-md-4">
                                             <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 8).'&nbsp;'.$pilihan.'</a></h4>
                                             <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
                                             <p class="text-secondary">'.$tag. '</p>
@@ -296,7 +291,12 @@ class Beranda extends CI_Controller
 
                 $output .= '
                 <div>
-					<div class="card border border-light bg-white mb-3 mb-md-0">
+					<div class="card border-0 bg-white mb-3 mb-md-0 shadow-sm">
+                    <div class="canvas">
+                    <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
+                      '.$img.'
+                    </a>
+                    </div>
 					<div class="card-body px-2">
                         <button type="button"  aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
                         <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="55" height="55" class="float-left mr-3 d-inline-block rounded-circle ml-1 ml-md-3 lazy">
@@ -308,18 +308,18 @@ class Beranda extends CI_Controller
                     
                     '.$content_body.'
 
-					<div class="card-footer bg-transparent p-2 border-top d-flex justify-content-start">
+					<div class="card-footer bg-transparent p-2 border-top d-flex justify-content-start border-light">
                     <div class="w-100">
-					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.$row->views. '</button>
+					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.nominal($row->views). '</button>
                     </div>
                     <div class="w-100">
-					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Komentar" class="btn btn-transparent border-0 rounded p-2 w-100 text-info"><i class="far fa-comment-alt mr-2"></i> '.$this->komentar->jml_komentarbyidberita($row->id_berita). '</button>
+					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Komentar" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-info"><i class="far fa-comment-alt mr-2"></i> '.$this->komentar->jml_komentarbyidberita($row->id_berita). '</button>
                     </div>
                     <div class="w-100">
-                    <button aria-hidden="true" type="button" data-toggle="tooltip" title="Bagikan juga postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent  border-0 rounded p-2 w-100 text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
+                    <button aria-hidden="true" type="button" data-toggle="tooltip" title="Bagikan juga postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent  border-0 rounded-pill p-2 w-100 text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
                     </div>
                     <div class="w-100">
-                    <button aria-hidden="true" type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded p-2 w-100 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
+                    <button aria-hidden="true" type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
                     </div>
 					</div>
                     </div>

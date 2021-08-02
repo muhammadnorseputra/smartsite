@@ -99,7 +99,7 @@
 							<a rel="noreferrer" target="_blank" href="https://ekinerja.bkppd-balangankab.info/" class="p-4">
 								<div class="row">
 									<div class="col-4">
-										<?php echo '<img class="rounded w-100 lazy" data-src="'.base_url('assets/images/logo-ekinerja.png').'" alt="e-Kinerja"/>' ; ?>
+										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-ekinerja.png').'" alt="e-Kinerja"/>' ; ?>
 									</div>
 									<div class="col-8">
 										<b class="font-weight-bold text-dark">e-Kinerja</b>
@@ -112,7 +112,7 @@
 							<a  rel="noreferrer" target="_blank" href="http://silka.bkppd-balangankab.info/" class="p-4">
 								<div class="row">
 									<div class="col-4">
-										<?php echo '<img class="rounded w-100 lazy" data-src="'.base_url('assets/images/logo-silka.png').'" alt="SILKa Online"/>'; ?>
+										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-silka.png').'" alt="SILKa Online"/>'; ?>
 									</div>
 									<div class="col-8">
 										<b class="font-weight-bold text-dark">SILKa Online</b>
@@ -125,7 +125,7 @@
 							<a  rel="noreferrer" target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4">
 								<div class="row">
 									<div class="col-4">
-										<?php echo '<img class="rounded w-100 lazy" data-src="'.base_url('assets/images/logo-eprilaku.png').'" alt="e-Prilaku"/>'; ?>
+										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-eprilaku.png').'" alt="e-Prilaku"/>'; ?>
 									</div>
 									<div class="col-8">
 										<b class="font-weight-bold text-dark">e-Prilaku (360)</b>
@@ -138,7 +138,7 @@
 							<a  rel="noreferrer" target="_blank" href="https://web.bkppd-balangankab.info/skm" class="p-4">
 								<div class="row">
 									<div class="col-4">
-										<?php echo '<img class="rounded w-100 lazy" data-src="'.base_url('assets/images/logo.png').'" alt="SKM - BKPPD Balangan"/>'; ?>
+										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo.png').'" alt="SKM - BKPPD Balangan"/>'; ?>
 									</div>
 									<div class="col-8">
 										<b class="font-weight-bold text-dark">SKM (Survei Kepuasan Masyarakat)</b>

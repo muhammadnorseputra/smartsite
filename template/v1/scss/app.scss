@@ -259,7 +259,7 @@ position: fixed;
 	position: relative;
 }
 body {	
-	background: #fff;
+	background: #FCFCFC;
 	font-family: 'Rubik', sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -351,17 +351,17 @@ h5.title-sidebar {
 }
 .separator {
     margin: 30px 0;
-    border-top: 1px solid #d8e2dc;
+    border-top: 3px solid #d8e2dc;
     position: relative;
     .separator-text {
 	    display: block;
 	    position: absolute;
-	    top: -12px;
+	    top: -13px;
 	    left: 0;
 	    padding: 0px 10px 0px 0px;
 	    font-family: inherit;
 	    font-weight: 600;
-	    background: #fff;
+	    background: #FCFCFC;
 	    color: #8a8a8a;
 	}
 }

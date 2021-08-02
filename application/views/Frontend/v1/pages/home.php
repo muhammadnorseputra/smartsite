@@ -35,8 +35,8 @@
                     </span>
                 </div>
                 </a>
-                <a rel="noreferrer" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6" class="btn btn-outline-primary py-2 mb-3 btn-block">
-                <div class="d-flex justify-content-between align-items-center">
+                <a rel="noreferrer" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6" class="btn btn-outline-light btn-light py-2 mb-3 btn-block">
+                <div class="d-flex justify-content-between align-items-center  text-primary">
                     <span>
                         <img style="object-fit: cover;" class="rounded-circle" width="45" height="45" src="<?= assets('images/putrabungsu6.jpg') ?>" alt="putrabungsu6">
                     </span>

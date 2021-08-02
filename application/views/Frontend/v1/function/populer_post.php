@@ -1,5 +1,4 @@
-<div class="bg-white">
-<div class="separator ml-3 d-flex justify-content-between align-items-center">
+<div class="separator d-flex justify-content-between align-items-center">
     <div>
         <span class="separator-text text-uppercase font-weight-bold">
             <i class="fas fa-heart text-secondary mr-2"></i> Populer Post
@@ -13,7 +12,7 @@
         </div>
     </div>
 </div>
-<div class="list-group border-0 shadow-none p-0 mb-3 mt--4 controler-ticker">
+<div class="list-group border-0 shadow-sm p-0 mb-3 mt--5 rounded controler-ticker">
     <div>
     <?php
     $nolist = 1;
@@ -88,5 +87,3 @@
     <?php $nolist++; endforeach; ?>
     </div>
 </div>
-</div>
-<div class="devider-line" style="height:25px;"></div>
