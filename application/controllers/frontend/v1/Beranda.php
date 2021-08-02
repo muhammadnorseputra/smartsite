@@ -69,7 +69,7 @@ class Beranda extends CI_Controller
     }
 
     function template_sumber($text, $icon) {
-        $html = '<div class="btn-group btn-group-sm mb-3 ml-3 ml-md-0" role="group" aria-label="button">
+        $html = '<div class="btn-group btn-group-sm ml-md-0" role="group" aria-label="button">
                     <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent border-right" disabled>'.$icon.'</button>
                     <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent"  disabled>'.$text.'</button>
                 </div>';
@@ -251,13 +251,14 @@ class Beranda extends CI_Controller
                 if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'LINK'):
                 $content_body = '<div class="row">
                                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
-                                        '.$sumber.'
-                                        <div class="btn-group btn-group-sm mb-3 ml-1 ml-md-0" role="group" aria-label="button">
-                                            <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent border-right" disabled><i class="fas fa-tag"></i></button>
-                                            <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent '.$rand.'">'.$namakategori.'</a>
-                                        </div>
                                         <div class="mx-4 mx-md-0 pr-md-4">
                                             <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 8).'&nbsp;'.$pilihan.'</a></h4>
+                                                '.$sumber.'
+                                                <div class="btn-group btn-group-sm ml-1 ml-md-0" role="group" aria-label="button">
+                                                    <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent border-right" disabled><i class="fas fa-tag"></i></button>
+                                                    <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent '.$rand.'">'.$namakategori.'</a>
+                                                </div>
+
                                             <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
                                             <p class="text-secondary">'.$tag. '</p>
                                         </div>

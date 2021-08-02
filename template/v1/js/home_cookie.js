@@ -1,11 +1,15 @@
 $(function() {
-    if (!$.cookie("notice-accepted")) {
-        $("a#xbanner-1").click();
-        $.cookie("notice-accepted", 1, {
-            expires: 60 / 1440,
-            path: '/'
-        });
-    }
+    $(document).scroll(function() {
+        if ($(document).scrollTop() > 650) {
+            if (!$.cookie("notice-accepted")) {
+                $("a#xbanner-1").click();
+                $.cookie("notice-accepted", 1, {
+                    expires: 60 / 1440,
+                    path: '/'
+                });
+            }
+        }
+    });
     // if (!$.cookie("ruppe")) {
     //     $("a#ruppe").get(0).click();
     //     var date = new Date();
