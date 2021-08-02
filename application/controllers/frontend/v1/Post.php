@@ -25,6 +25,10 @@ class Post extends CI_Controller
         $id = $this->post->detailIdBySlug($slug);
         $detail = $this->post->detail($id)->row();
         $judul_seo = ucwords($detail->judul);
+
+        if($detail->publish == 0) {
+            return redirect(base_url('404'));
+        }
         if(intval($id) == '') {
             return redirect(base_url('404'));
         }
