@@ -60,14 +60,14 @@
         ?>
         <object class="rounded-lg border mb-3" data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:350px; width: 100%;"></object>
         <?php else: ?>
-        <img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded w-100">
+        <img style="object-fit:cotain;" data-src="<?= img_blob($h->file) ?>" width="100%" height="350" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded lazy">
         <?php endif; ?>
       <?php endif; ?>
       </div>
     </div>
   </div>
 </section>
-<script src="<?= base_url('bower_components/jquery/dist/jquery.min.js') ?>"></script>
+<script defer src="<?= base_url('bower_components/jquery/dist/jquery.min.js') ?>" crossorigin="anonymous"></script>
 <script>
 $(function() {
   $("#share").jsSocials({
