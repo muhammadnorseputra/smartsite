@@ -75,7 +75,7 @@
                         <i class="fas fa-share mr-2"></i> <?= $b->share_count ?>
                     </span>
                     <span>
-                        <i class="fas fa-eye mr-2"></i> <?= $b->views ?>
+                        <i class="fas fa-eye mr-2"></i> <?= nominal($b->views) ?>
                     </span>
                 </div>
             </div>
