@@ -49,7 +49,7 @@
 	</div>
 </section>
 <link rel="stylesheet" href="<?= base_url('assets/plugins/select2/css/select2-materialize.css') ?>">
-<script defer src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>" crossorigin="anonymous"></script>
-<script defer src="<?= base_url('assets/plugins/select2/js/select2.full.min.js'); ?>"  crossorigin="anonymous"></script>
-<script defer src="<?= base_url('template/v1/js/route.js') ?>" crossorigin="anonymous"></script>
-<script defer src="<?= base_url('template/v1/js_userportal/p_baru_youtube.js') ?>" crossorigin="anonymous"></script>
+<script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>" crossorigin="anonymous"></script>
+<script src="<?= base_url('assets/plugins/select2/js/select2.full.min.js'); ?>"  crossorigin="anonymous"></script>
+<script src="<?= base_url('template/v1/js/route.js') ?>" crossorigin="anonymous"></script>
+<script src="<?= base_url('template/v1/js_userportal/p_baru_youtube.js') ?>" crossorigin="anonymous"></script>
