@@ -299,9 +299,10 @@ class M_f_post extends CI_Model {
            $this->db->like('judul', $query);
            $this->db->or_like('tags', $query);
           }
-          $this->db->where('publish', '1');
+          $this->db->where('publish', 1);
           $this->db->order_by('id_berita', 'DESC');
-          return $this->db->get();
+          $q = $this->db->get();
+          return $q;
     }
 
     public function getFileNameById($id) {
