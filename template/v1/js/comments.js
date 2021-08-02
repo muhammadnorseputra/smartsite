@@ -9,8 +9,8 @@ $(document).ready(function() {
         recentEmojis: true,
     });
     let $id = $("#tracking").attr('data-postid');
-    let $online = _uriSegment[1] == 'p';
-    let $local = _uriSegment[2] == 'p';
+    let $online = _uriSegment[1] == 'blog';
+    let $local = _uriSegment[2] == 'blog';
     let $url = $host ? $local : $online;
 
     if ($url) {

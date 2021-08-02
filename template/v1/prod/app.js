@@ -66,7 +66,7 @@ $(function () {
             action = "inactive";
             $(".lazy").lazy({
               effect: 'fadeIn',
-              effectTime: 300,
+              effectTime: 250,
               threshold: 0,
               // enableThrottle: true,
               // throttle: 550,
@@ -85,9 +85,9 @@ $(function () {
             }); // Tooltips
 
             $('[data-toggle="tooltip"]').tooltip({
-              delay: 300,
-              offset: '0,10px',
-              padding: 10
+              delay: 250,
+              offset: '0, 12px',
+              padding: 15
             });
           }
         },
@@ -121,12 +121,11 @@ $(function () {
       e.preventDefault();
 
       if (action == "inactive") {
-        window.scrollBy(0, -250);
+        window.scrollBy(0, -350);
         lazzy_loader(limit);
         action = "active";
-        start = start + limit; // setTimeout(function() {
-
-        load_data(limit, start); // }, 300);
+        start = start + limit;
+        load_data(limit, start);
       }
     });
   } else {
@@ -374,8 +373,8 @@ $(document).ready(function () {
     recentEmojis: true
   });
   var $id = $("#tracking").attr('data-postid');
-  var $online = _uriSegment[1] == 'p';
-  var $local = _uriSegment[2] == 'p';
+  var $online = _uriSegment[1] == 'blog';
+  var $local = _uriSegment[2] == 'blog';
   var $url = $host ? $local : $online;
 
   if ($url) {
