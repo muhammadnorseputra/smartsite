@@ -777,7 +777,8 @@ class Users extends CI_Controller {
 
     public function logout()
     {
-    	$urlRef = isset($_GET['urlRef']) ? $_GET['urlRef'] : base_url('login_web'); 
+    	$uri_frontend = $this->uri->segment(1);
+    	$urlRef = isset($_GET['urlRef']) && $uri_frontend != 'frontend' ? $_GET['urlRef'] : base_url('login_web'); 
     	$this->users->status_online('t_users_portal', 
     		['email' => encrypt_url($this->session->userdata('user_portal_log')['email'])],['online' => 'OFF']);
 		$this->session->unset_userdata('user_portal_log');
