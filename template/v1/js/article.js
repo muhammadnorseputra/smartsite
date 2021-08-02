@@ -27,7 +27,7 @@ $(function() {
             output += `
                 <div class="card border-0 bg-white mb-3" style="border-radius:5px;">
                     <div class ="card-body p-0 border-0">
-                        <span class ="content-placeholder" style="width:100%; height: 320px; border-radius:8px;"> &nbsp; </span>
+                        <span class ="content-placeholder" style="width:100%; height: 250px; border-radius:8px;"> &nbsp; </span>
                     </div> 
                     <div class="card-header border-0 bg-white" style="border-radius:5px;">
                     <p>

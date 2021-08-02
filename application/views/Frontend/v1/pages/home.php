@@ -4,7 +4,7 @@
 <section class="content-home">
     <div class="container">
         <div class="row">
-            <div class="d-flex align-items-center border bg-light shadow-sm py-4 px-md-5 px-0" style="border-radius:15px;">
+            <div class="d-flex align-items-center bg-white shadow-sm py-4 px-md-5 px-0" style="border-radius:15px;">
                 <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
                     <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
                 </div>
@@ -13,7 +13,7 @@
                     <p>
                         Kini website telah tersedia grafik Pegawai Negeri Sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
                     </p>
-                    <a href="<?= base_url('api/grafik') ?>" class="btn btn-primary">Lihat Grafik</a>
+                    <a href="<?= base_url('api/grafik') ?>" class="btn btn-secondary">Lihat Grafik</a>
                 </div>
             </div>
         </div>
@@ -27,7 +27,10 @@
         <div class="row d-flex justify-content-around">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-4 mt-md-0">
                 <div id="sidebar">
-                <a href="<?= base_url('koran-online'); ?>" class="btn btn-outline-light btn-light py-3 mb-3 btn-block">
+                
+                <a rel="noreferrer" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6"><img class="w-100" src="https://img.buymeacoffee.com/button-api/?text=Support My Developer&emoji=&slug=putrabungsu6&button_colour=40DCA5&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" alt="putrabungsu6"></a>
+
+                <a href="<?= base_url('koran-online'); ?>" class="btn btn-outline-light btn-light py-3 my-3 btn-block">
                 <div class="d-flex justify-content-between align-items-center text-primary">
                     <i class="fas fa-newspaper mr-3 fa-2x"></i>
                     <span>
@@ -35,7 +38,9 @@
                     </span>
                 </div>
                 </a>
-                <a rel="noreferrer" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6" class="btn btn-outline-light btn-light py-2 mb-3 btn-block">
+                
+
+<!--                 <a rel="noreferrer" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6" class="btn btn-outline-light btn-light py-2 mb-3 btn-block">
                 <div class="d-flex justify-content-between align-items-center  text-primary">
                     <span>
                         <img style="object-fit: cover;" class="rounded-circle" width="45" height="45" src="<?= assets('images/putrabungsu6.jpg') ?>" alt="putrabungsu6">
@@ -45,7 +50,7 @@
                     </span>
                 </div>
                 </a>
-
+ -->
                 <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>

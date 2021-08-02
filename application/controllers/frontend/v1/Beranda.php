@@ -309,7 +309,7 @@ class Beranda extends CI_Controller
                     
                     '.$content_body.'
 
-					<div class="card-footer bg-transparent p-2 border-top d-flex justify-content-start border-light">
+					<div class="card-footer bg-transparent p-2 d-flex justify-content-start border-light border-top">
                     <div class="w-100">
 					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.nominal($row->views). '</button>
                     </div>
