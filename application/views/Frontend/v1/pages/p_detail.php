@@ -255,7 +255,6 @@ if (count($pecah) > 0) {
 			<?php if(cek_internet() == true): ?>
 			<div class="card border-0 bg-transparent">
 				<div class="card-body p-0">
-					<?php $this->load->view('Frontend/v1/function/populer_post'); ?>
 					<!--<div id="gpr-kominfo-widget-container"></div>-->
 					<!-- ads -->
 					<ins class="adsbygoogle"
@@ -267,6 +266,7 @@ if (count($pecah) > 0) {
 					<script>
 					     (adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
+					<?php $this->load->view('Frontend/v1/function/populer_post'); ?>
 				</div>
 			</div>
 			<?php else: ?>
