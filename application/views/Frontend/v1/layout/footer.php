@@ -1,4 +1,4 @@
-<section class="py-4 border-top border-light">
+<section class="py-4 border-top border-light bg-white">
 	<div class="container">
 		<div class="d-flex justify-content-lg-start align-content-center text-dark flex-column flex-lg-row">
 			<div class="mr-3 d-none d-md-block d-lg-block">

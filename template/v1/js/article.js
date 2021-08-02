@@ -26,6 +26,9 @@ $(function() {
             for (var count = 0; count < 1; count++) {
             output += `
                 <div class="card border-0 bg-white mb-3" style="border-radius:5px;">
+                    <div class ="card-body p-0 border-0">
+                        <span class ="content-placeholder" style="width:100%; height: 320px; border-radius:8px;"> &nbsp; </span>
+                    </div> 
                     <div class="card-header border-0 bg-white" style="border-radius:5px;">
                     <p>
                     <span class="content-placeholder rounded-circle float-left mr-3" style="width:40px; height: 40px;">&nbsp;</span>
@@ -36,9 +39,7 @@ $(function() {
                     style ="width:40px; height: 40px;"> &nbsp; </span>
                     </p> 
                     </div> 
-                    <div class ="card-body p-0 border-0">
-                        <span class ="content-placeholder" style="width:100%; height: 320px; border-radius:15px;"> &nbsp; </span>
-                    </div> 
+                    
                     <div class ="card-footer d-flex justify-content-bettwen p-3 bg-transparent border-0">
                         <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
                         <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
