@@ -124,10 +124,10 @@
 				</div> -->
 			</div>
 		</div>
-	</div>
+	</div> 
 </section>
 <!-- jQuery -->
-<script defer src="<?= base_url('template/v1/prod/vendor-min.js'); ?>"></script>
-<script defer src="<?= base_url('template/v1/prod/app-min.js'); ?>"></script>
+<script defer src="<?= base_url('template/v1/prod/vendor-min.js'); ?>" crossorigin="anonymous"></script>
+<script defer src="<?= base_url('template/v1/prod/app-min.js'); ?>" crossorigin="anonymous"></script>
 </body>
 </html>
