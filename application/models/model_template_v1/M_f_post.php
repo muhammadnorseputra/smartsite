@@ -298,7 +298,6 @@ class M_f_post extends CI_Model {
           if($query != '')
           {
            $this->db->like('judul', $query);
-           $this->db->or_like('tags', $query);
           }
           $this->db->order_by('id_berita', 'DESC');
           $q = $this->db->get();
