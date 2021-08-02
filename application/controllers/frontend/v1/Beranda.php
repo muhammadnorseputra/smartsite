@@ -69,7 +69,7 @@ class Beranda extends CI_Controller
     }
 
     function template_sumber($text, $icon) {
-        $html = '<div class="btn-group btn-group-sm mb-2 ml-3 ml-md-0" role="group" aria-label="button">
+        $html = '<div class="btn-group btn-group-sm mb-3 ml-1 ml-md-0" role="group" aria-label="button">
                     <button aria-hidden="true" type="button" class="btn btn-sm btn-light" disabled>'.$icon.'</button>
                     <button aria-hidden="true" type="button" class="btn btn-sm btn-light"  disabled>'.$text.'</button>
                 </div>';
@@ -251,17 +251,17 @@ class Beranda extends CI_Controller
                 if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'LINK'):
                 $content_body = '<div class="row">
                                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
-                                        <div class="canvas pr-md-4 pl-md-0 pr-1 pl-1 mb-2">
+                                        <div class="canvas pr-md-4 pl-md-0 mb-1">
                                         <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
                                           '.$img.'
                                         </a>
                                         </div>
                                         '.$sumber.'
-                                        <div class="btn-group btn-group-sm mb-2 ml-3 ml-md-0" role="group" aria-label="button">
+                                        <div class="btn-group btn-group-sm mb-3 ml-1 ml-md-0" role="group" aria-label="button">
                                             <button aria-hidden="true" type="button" class="btn btn-sm btn-light" disabled><i class="fas fa-tag"></i></button>
                                             <a href="'.$post_list_url.'" class="btn btn-sm btn-light '.$rand.'">'.$namakategori.'</a>
                                         </div>
-                                        <div class="mx-3 mx-md-0 pr-md-4 mt-md-3">
+                                        <div class="mx-4 mx-md-0 pr-md-4 mt-md-3">
                                             <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 8).'&nbsp;'.$pilihan.'</a></h4>
                                             <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
                                             <p class="text-secondary">'.$tag. '</p>
@@ -299,8 +299,8 @@ class Beranda extends CI_Controller
 					<div class="card border border-light bg-white mb-3 mb-md-0">
 					<div class="card-body px-2">
                         <button type="button"  aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
-                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="55" height="55" class="float-left mr-3 d-inline-block rounded-circle ml-3 lazy">
-						<h6 class="card-title mb-0 pb-2"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h6>
+                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="55" height="55" class="float-left mr-3 d-inline-block rounded-circle ml-1 ml-md-3 lazy">
+						<h6 class="mb-0 pb-2"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h6>
                         <p class="card-text">
                             <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
                         </p>
