@@ -84,7 +84,7 @@ class Post extends CI_Controller
           $query = $this->input->post('q');
           $data = $this->post->fetch_data_search($query);
           $output .= '<div class="list-group list-group-flush">';
-          if($data->num_rows() > 0 && !empty($query))
+          if($data->num_rows() > 0)
           {
            foreach($data->result() as $row)
            {
@@ -126,12 +126,12 @@ class Post extends CI_Controller
 
             if($row->type === 'BERITA'):
                 if(!empty($row->img)):
-                    $img = '<img style="object-fit:cover; width:360px; height:210px;" class="img-fluid rounded-left" src="'.base_url('files/file_berita/'.$row->img).'">';
+                    $img = '<img style="object-fit:cover; width:360px; height:210px;" class="rounded-left" src="'.base_url('files/file_berita/'.$row->img).'">';
                 else:
-                    $img = '<img style="object-fit:cover; width:360px; height:210px;" class="img-fluid rounded-left" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img style="object-fit:cover; width:360px; height:210px;" class="rounded-left" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 endif;
             else:
-                $img = '<img style="object-fit:cover; width:360px; height:210px;" class="img-fluid rounded-left" src="'.base_url('assets/images/noimage.gif').'">';
+                $img = '<img style="object-fit:cover; width:360px; height:210px;" class="rounded-left" src="'.base_url('assets/images/noimage.gif').'">';
             endif; 
 
             $output .= '<a href="'.$posturl.'" class="list-group-item border my-2 list-group-item-action rounded p-3 p-md-0">
