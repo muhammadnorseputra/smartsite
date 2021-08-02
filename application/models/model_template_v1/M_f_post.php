@@ -294,12 +294,12 @@ class M_f_post extends CI_Model {
     public function fetch_data_search($query) {
           $this->db->select("*");
           $this->db->from("t_berita");
+          $this->db->where('publish !=', '0');
           if($query != '')
           {
            $this->db->like('judul', $query);
            $this->db->or_like('tags', $query);
           }
-          $this->db->where('publish !=', '0');
           $this->db->order_by('id_berita', 'DESC');
           $q = $this->db->get();
           return $q;
