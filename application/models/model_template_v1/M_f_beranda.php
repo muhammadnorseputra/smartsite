@@ -152,6 +152,7 @@ class M_f_beranda extends CI_Model
     public function berita_populer()
     {
         $this->db->where('views !=', '0');
+        $this->db->where('publish', '1');
         $this->db->order_by('views', 'desc');
         $this->db->order_by('like_count', 'desc');
         $this->db->order_by('share_count', 'desc');
