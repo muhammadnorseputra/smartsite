@@ -27,8 +27,8 @@
       // POST DETAIL
       $id = encrypt_url($post->id_berita);
       $postby = strtolower(url_title($namalengkap));
-      $judul = strtolower($post->judul);
-      $posturl = base_url("post/{$postby}/{$id}/".url_title($judul)); 
+      $slug = strtolower($post->slug);
+      $posturl = base_url("blog/{$slug}/"); 
 
       if($post->type === 'BERITA'):
         if(!empty($post->img)):
