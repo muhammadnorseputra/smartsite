@@ -1,4 +1,3 @@
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
 <section class="py-md-5 hero">
   <div class="container">
     <div class="row">
@@ -30,6 +29,7 @@
         ?>
         
         <?= $h->content ?>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-format="fluid"
