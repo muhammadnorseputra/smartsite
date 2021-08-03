@@ -22,7 +22,6 @@ class Post extends CI_Controller
     }
     
     public function detail($slug) {
-        $this->db->cache_on();
         $id = $this->post->detailIdBySlug($slug);
         $detail = $this->post->detail($id)->row();
         $judul_seo = ucwords($detail->judul);
