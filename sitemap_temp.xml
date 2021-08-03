@@ -2,47 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-  <loc>https://web.bkppd-balangankab.info/beranda</loc>
+  <loc>https://web.bkppd-balangankab.info/beranda/</loc>
   <lastmod>2021-07-28</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.1</priority>
 </url>
 
 <url>
-  <loc>https://web.bkppd-balangankab.info/page/visi-misi</loc>
+  <loc>https://web.bkppd-balangankab.info/blog/pengumuman-hasil-seleksi-administrasi-cpns-tahun-2021-pemerintah-kab-balangan/</loc>
   <changefreq>never</changefreq>
-  <priority>0.2</priority>
+  <priority>0.1</priority>
 </url>
 
 <url>
-  <loc>https://web.bkppd-balangankab.info/page/pengumuman-penerimaan-cpns-pppk-tahun-2021</loc>
+  <loc>https://web.bkppd-balangankab.info/page/pengumuman-penerimaan-cpns-pppk-tahun-2021/</loc>
   <changefreq>never</changefreq>
-  <priority>0.2</priority>
-</url>
-
-<url>
-  <loc>https://web.bkppd-balangankab.info/login_web</loc>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
-</url>
-
-<url>
-  <loc>https://web.bkppd-balangankab.info/daftar</loc>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
-</url>
-
-
-<url>
-  <loc>https://web.bkppd-balangankab.info/page/struktur-organisasi-bkppd-kabupaten-balangan</loc>
-</url>
-
-<url>
-  <loc>https://web.bkppd-balangankab.info/kotak_saran</loc>
-</url>
-
-<url>
-  <loc>https://web.bkppd-balangankab.info/userlist</loc>
+  <priority>0.1</priority>
 </url>
 
 </urlset>
