@@ -69,14 +69,14 @@ class ApiPublic extends RestController {
 
                 // Content
                 if($r->type === 'YOUTUBE'):
-                    $content = word_limiter($yt_desc,12);
+                    $content = word_limiter($yt_desc,25);
                     $by = $yt_src;
                 elseif($r->type === 'LINK'):
-                    $content = word_limiter($linker['description'],12);
+                    $content = word_limiter($linker['description'],25);
                     $domain = parse_url($r->content, PHP_URL_HOST);
                     $by = $domain;
                 else:
-                    $content = word_limiter($r->content, 12);
+                    $content = word_limiter($r->content, 25);
                     $by=$namapanggilan;
                 endif;
 
@@ -84,8 +84,8 @@ class ApiPublic extends RestController {
                 if($r->type === 'YOUTUBE' || $r->type === 'BERITA'):
                     $id = encrypt_url($r->id_berita);
                     $postby = strtolower(url_title($namalengkap));
-                    $judul = strtolower($r->judul);
-                    $posturl = base_url("post/{$postby}/{$id}/".url_title($judul).'');
+                    $slug = strtolower($r->slug);
+                    $posturl = base_url("blog/{$slug}/");
                 else:
                     $posturl = base_url('leave?go='.encrypt_url($r->content));
                 endif;
