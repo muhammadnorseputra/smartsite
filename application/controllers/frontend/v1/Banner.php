@@ -144,7 +144,7 @@ class Banner extends CI_Controller {
 		//INIT LIBRARY UPLOAD
 		$config['upload_path']      = './files/file_banner/';
 		$path_now 					= site_url('/files/file_banner/'.str_replace("/","",$files).'.'.pathinfo($fileBanner, PATHINFO_EXTENSION));
-		$config['allowed_types']    = 'jpg|jpeg|png';
+		$config['allowed_types']    = 'jpg|jpeg|png|webp';
 		$config['max_size'] 				= '5120'; // MAKSIMUM UKURAN FILE 5M
 		// $config['max_width'] 				= '900'; 	// MAKSUMIM LEBAL GAMBAR
 		// $config['max_height'] 			= '350';  // MAKSUMIM TINGGI GAMBAR
@@ -208,7 +208,7 @@ class Banner extends CI_Controller {
 		//init library upload
 		$config['upload_path']      = './files/file_banner/';
 		$path_now 								  = site_url('/files/file_banner/'.str_replace("/","",$files).'.'.pathinfo($fileName, PATHINFO_EXTENSION));
-		$config['allowed_types']    = 'jpg|jpeg|png';
+		$config['allowed_types']    = 'jpg|jpeg|png|webp';
 		$config['max_size'] 				= '5120';
 		$config['overwrite']				= true;
 		$config['file_ext_tolower'] = true;
