@@ -27,6 +27,12 @@ class Beranda extends CI_Controller
     }
     public function index()
     {
+        $cookie = get_cookie('cache_beranda'); 
+        if($cookie === '1'):
+            $this->db->cache_delete_all();
+        else:
+            $this->db->cache_on();
+        endif;
         $id = $this->mf_beranda->get_identitas();
         $e = array(
           'general' => true, //description, keywords
@@ -98,9 +104,7 @@ class Beranda extends CI_Controller
         $data = $this->mf_beranda->get_all_berita($limit,$start,$type,$sort);
         if ($data->num_rows() > 0) {
             $no=1;
-            $this->db->cache_delete_all();
             foreach ($data->result() as $row) {
-
                 // Tags
                 $tags = $row->tags;
                 $pecah = explode(',', $tags);

@@ -660,15 +660,14 @@ $(function () {
         });
       }
     }
-  }); // if (!$.cookie("ruppe")) {
-  //     $("a#ruppe").get(0).click();
-  //     var date = new Date();
-  //     date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
-  //     $.cookie("ruppe", 1, {
-  //         expires: date,
-  //         path: '/'
-  //     });
-  // }
+  });
+
+  if (!$.cookie("cache_beranda")) {
+    $.cookie("cache_beranda", 1, {
+      expires: 60 / 1440,
+      path: '/'
+    });
+  }
 });
 // $(function() {
 //     $('h3#count_jml').countTo({

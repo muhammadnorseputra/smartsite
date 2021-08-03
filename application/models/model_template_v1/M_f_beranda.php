@@ -162,7 +162,6 @@ class M_f_beranda extends CI_Model
 
     public function get_all_berita($limit, $start, $type, $sort)
     {
-        $this->db->cache_on();
         $this->db->select('*');
         $this->db->from('t_berita');
         $this->db->where('publish', '1');
@@ -181,7 +180,6 @@ class M_f_beranda extends CI_Model
         endif;
         $this->db->limit($limit, $start);
         $query = $this->db->get();
-
         return $query;
     }
 
