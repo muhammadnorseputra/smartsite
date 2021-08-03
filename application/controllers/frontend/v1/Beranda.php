@@ -296,7 +296,7 @@ class Beranda extends CI_Controller
                 endif;
 
                 $output .= '
-                <div>
+                <div class="ps-scroll">
 					<div class="card border-0 bg-white mb-3 mb-md-0 shadow-sm">
                     <div class="canvas">
                     <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">

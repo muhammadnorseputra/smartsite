@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 
-                <div id="load_data"></div>
+                <div id="load_data" class="d-block w-100"></div>
                 <div id="load_data_message"></div>
                 <div class="text-center mb-md-4">
                     <button id="load_more" class="btn p-2 btn-outline-primary btn-block rounded-lg px-4"><i class="fas fa-newspaper mr-3"></i> Berita Sebelumnya</button>
