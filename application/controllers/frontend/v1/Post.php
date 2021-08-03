@@ -552,7 +552,7 @@ class Post extends CI_Controller
         {
             $idb = decrypt_url($id);
             
-            $filename = "blob_".strtolower($_FILES['file']['name']);
+            $filename = "blob_".strtolower(url_title($_FILES['file']['name']));
             $path = 'files/file_berita/';
 
             $file_old = $this->post->getFileNameById($idb);
