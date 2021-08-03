@@ -67,7 +67,7 @@
     </div>
   </div>
 </section>
-<script defer src="<?= base_url('bower_components/jquery/dist/jquery.min.js') ?>" crossorigin="anonymous"></script>
+<script src="<?= base_url('bower_components/jquery/dist/jquery.min.js') ?>"></script>
 <script>
 $(function() {
   $("#share").jsSocials({
