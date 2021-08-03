@@ -98,7 +98,7 @@ class Beranda extends CI_Controller
         $data = $this->mf_beranda->get_all_berita($limit,$start,$type,$sort);
         if ($data->num_rows() > 0) {
             $no=1;
-            $this->db->cache_delete('dbfrontend', 'v1');
+            $this->db->cache_delete_all();
             foreach ($data->result() as $row) {
 
                 // Tags

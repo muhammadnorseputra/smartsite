@@ -39,7 +39,7 @@
 						  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
 						</svg>
 						<div class="small">Total Hari Ini</div>
-						<h3><span class="text-info"><?= $this->mf_visitor->visitor_count()['jml_hariini']  ?></span> <span class="d-none d-md-block">Orang</span></h3>
+						<h3><span class="text-info"><?= nominal($this->mf_visitor->visitor_count()['jml_hariini'])  ?></span> <span class="d-none d-md-block">Orang</span></h3>
 					</div>
 					<div>
 						<svg xmlns="http://www.w3.org/2000/svg" width="1.8em" height="1.8em" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
