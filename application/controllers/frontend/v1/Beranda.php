@@ -29,9 +29,9 @@ class Beranda extends CI_Controller
     {
         $cookie = get_cookie('cache_beranda'); 
         if($cookie === '1'):
-            $this->db->cache_delete_all();
-        else:
             $this->db->cache_on();
+        else:
+            $this->db->cache_delete_all();
         endif;
         $id = $this->mf_beranda->get_identitas();
         $e = array(

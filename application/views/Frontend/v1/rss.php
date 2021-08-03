@@ -1,3 +1,4 @@
+<?php header("Content-Type: application/rss+xml"); ?>
 <?php  echo '<?xml version="1.0" encoding="' . $encoding . '"?>' . "\n"; ?>
 <rss version="2.0"
     xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -7,7 +8,6 @@
     xmlns:content="http://purl.org/rss/1.0/modules/content/"
     xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:g="http://base.google.com/ns/1.0">
- 
     <channel>
     <title><?php echo $feed_name; ?></title>
  
@@ -55,15 +55,15 @@
           <link><?php echo $posturl ?></link>
           <description>
             <?= htmlentities('<img src="'.$img.'" align="left" hspace="7" width="100">'); ?>
-            <![CDATA[<?= strip_only_tags(html_entity_decode($isi), '<p><b><img><code><label><i>') ?>]]>
+            <![CDATA[<?= xml_convert($isi) ?>]]>
           </description>
-          <content:encoded><![CDATA[<?= strip_only_tags(html_entity_decode($isi), '<p><b><img><code><label><i>') ?>]]></content:encoded>
+          <content:encoded><![CDATA[<?= xml_convert($isi) ?>]]></content:encoded>
           <g:image_link><?= $img ?></g:image_link>
           <g:condition><?= $conditional ?></g:condition>
           <g:id><?= $id ?></g:id>
           <guid isPermaLink="false"><?= $posturl ?></guid>
           <enclosure length="25000" type="image/jpeg" url="<?= $img ?>"/>
-          <pubDate><?= $newDateTime->format('D, d M Y G:i:s O') ?></pubDate>
+          <pubDate><?= $newDateTime->format('D, d M Y H:i:s O') ?></pubDate>
         </item>
     <?php endforeach; ?>
      

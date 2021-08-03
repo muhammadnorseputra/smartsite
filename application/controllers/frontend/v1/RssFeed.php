@@ -21,9 +21,8 @@ class RssFeed extends CI_Controller {
           $data['page_language'] = 'id-ID'; // the language
           $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
           $data['creator_name'] = 'BKPPD Balangan'; // your email
-          $data['posts'] = $this->posts->getPosts(10,$kategori);  
-          header("Content-Type: application/rss+xml"); // important!
-
+          $data['posts'] = $this->posts->getPosts(12,$kategori);  
+          $this->output->set_content_type('application/rss+xml');
           $this->load->view('Frontend/v1/rss', $data);
       }
 }
