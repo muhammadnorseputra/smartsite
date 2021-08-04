@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Index extends CI_Controller {
+class Blog extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();	
@@ -9,7 +9,7 @@ class Index extends CI_Controller {
 	}
 
 	// Site AMP
-	public function site($slugPost)
+	public function post($slugPost)
 	{		
 			// $slugPost = $_GET['title'];
 			$slug = isset($slugPost) ? $slugPost : '';
