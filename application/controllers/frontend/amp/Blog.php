@@ -8,6 +8,11 @@ class Blog extends CI_Controller {
         $this->load->model('model_template_v1/M_f_users', 'users'); 
 	}
 
+	public function index()
+	{
+
+	}
+	
 	// Site AMP
 	public function post($slugPost)
 	{		
@@ -71,7 +76,8 @@ class Blog extends CI_Controller {
 				'postView' => $count,
 				'postComment' => $commentCount,
 				'keywords' => $keywords,
-				'description' => $description
+				'description' => $description,
+				'category' => $this->mf_beranda->get_kategori_listing(),
 			];
 			return $this->load->view('Frontend/amp/post/detail', $data);
 	}
