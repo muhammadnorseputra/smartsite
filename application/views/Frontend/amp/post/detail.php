@@ -1969,7 +1969,7 @@ limitations under the License.
           </div> -->
         </section>
         <section class="mb4 px3">
-          <b>Link versi desktop</b>
+          <b>Link Versi Non-AMP</b>
           <a href="<?= base_url("blog/{$postSlug}") ?>">
             <?= base_url("blog/{$postSlug}") ?>
           </a>

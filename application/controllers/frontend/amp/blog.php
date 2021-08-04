@@ -73,7 +73,7 @@ class Blog extends CI_Controller {
 				'keywords' => $keywords,
 				'description' => $description
 			];
-			return $this->load->view('Frontend/amp/post/index', $data);
+			return $this->load->view('Frontend/amp/post/detail', $data);
 	}
 
 }
