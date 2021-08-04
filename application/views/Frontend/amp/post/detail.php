@@ -16,7 +16,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<html ⚡="">
+<html amp="amp">
   <head>
     <meta charset="utf-8" />
     <title><?= $title ?></title>
