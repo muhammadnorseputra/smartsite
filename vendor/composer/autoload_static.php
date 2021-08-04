@@ -6,18 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitf57d80892b9eda248217e8be194dfbac
 {
-    public static $files = array (
-        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
         'c' => 
         array (
             'chriskacerguis\\RestServer\\' => 26,
-        ),
-        'F' => 
-        array (
-            'Facebook\\' => 9,
         ),
     );
 
@@ -25,10 +17,6 @@ class ComposerStaticInitf57d80892b9eda248217e8be194dfbac
         'chriskacerguis\\RestServer\\' => 
         array (
             0 => __DIR__ . '/..' . '/chriskacerguis/codeigniter-restserver/src',
-        ),
-        'Facebook\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
         ),
     );
 

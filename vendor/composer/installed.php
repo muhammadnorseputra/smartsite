@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '13c3537fe495c7cf9a30a93ce2c1869edd52ed6a',
+    'reference' => '4902da8ec37c92277fdbf2ff948b1e8bd7f2345c',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '13c3537fe495c7cf9a30a93ce2c1869edd52ed6a',
+      'reference' => '4902da8ec37c92277fdbf2ff948b1e8bd7f2345c',
     ),
     'chriskacerguis/codeigniter-restserver' => 
     array (
@@ -28,15 +28,6 @@
       array (
       ),
       'reference' => '6ced70d12c7e8d207eaded3f208a201330950b57',
-    ),
-    'facebook/graph-sdk' => 
-    array (
-      'pretty_version' => '5.7.0',
-      'version' => '5.7.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2d8250638b33d73e7a87add65f47fabf91f8ad9b',
     ),
   ),
 );
