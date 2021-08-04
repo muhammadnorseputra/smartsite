@@ -34,11 +34,11 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
-$img = '<img style="object-fit: contain; min-height: 350px; max-height:350px;" class="w-100 rounded lazy" data-src="'.files('file_berita/'.$post_detail->img).'" alt="'.$title.'">';
+$img = '<img style="object-fit: cover; min-height: 350px;" class="w-100 rounded border lazy" data-src="'.files('file_berita/'.$post_detail->img).'" alt="'.$title.'">';
 elseif($post_detail->type === 'YOUTUBE'):
 $img = $yt_player;
 else:
-$img = '<img style="object-fit: contain; min-height: 350px; max-height:350px;" class="w-100 rounded lazy" data-src="'.img_blob($post_detail->img_blob).'"  alt="'.$title.'"/>';
+$img = '<img style="object-fit: cover; min-height: 350px;" class="w-100 rounded border lazy" data-src="'.img_blob($post_detail->img_blob).'"  alt="'.$title.'"/>';
 endif;
 /*Image Carosel*/
 $photo_slide = $this->post->photo_terkait($post_detail->id_berita);
@@ -55,7 +55,7 @@ $pecah = explode(',', $tags);
 if (count($pecah) > 0) {
 	$tag = '';
 	for ($i = 0; $i < count($pecah); ++$i) {
-		$tag .= '<a href="' . base_url('tag/' . $pecah[$i]) . '" class="btn btn-sm btn-outline-light mr-2">#' . $pecah[$i] . '</a>';
+		$tag .= '<a href="' . base_url('tag/' . $pecah[$i]) . '" class="btn btn-sm btn-outline-light mr-2 text-secondary">#' . $pecah[$i] . '</a>';
 	}
 }
 ?>
@@ -63,16 +63,7 @@ if (count($pecah) > 0) {
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 mb-5 pb-md-5 px-3 px-md-0" id="main-content">
-				<div class="card rounded-lg shadow-none bg-transparent rounded border-0">
-					<div class="card bg-transparent border-0 px-md-2 pt-md-0 p-0">
-						<div class="card-body px-0 px-md-2 pt-md-0">
-							<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top;" width="60" height="60" class="float-left mr-md-4 mr-3 lazy rounded shadow-sm">
-							<h5 class="card-title"><a href="<?= $link_profile_public ?>"><?= $namalengkap ?></a></h5>
-							<p class="card-text">
-								<span class="badge badge-default px-0 text-light">Posted by <?= ucwords($namapanggilan); ?> &#8226;  <?php echo longdate_indo($post_detail->tgl_posting); ?></span>
-							</p>
-						</div>
-					</div>
+				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
 					<div class="px-0 media_youtube">
 						<?php if($post_detail->type === 'SLIDE'): ?>
 						<div id="carouselExampleIndicators" class="carousel slide shadow-lg" data-ride="carousel">
@@ -120,11 +111,21 @@ if (count($pecah) > 0) {
 					</div>
 					<?php endif; ?>
 				</div>
+				<div class="card bg-transparent border-0 px-md-2 pt-md-0 p-0 m-0">
+					<div class="card-body px-3 px-md-0 px-md-2 pt-md-0 py-0">
+						<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top; border: 4px solid #FCFCFC;" width="60" height="60" class="mr-md-4 mr-3 lazy rounded-circle shadow-sm mt--6 bg-white">
+						<h5 class="card-title pb-0"></h5>
+					</div>
+				</div>
 				<div class="card-body px-0">
 					<?php  if($post_detail->type === 'YOUTUBE'): ?>
 					<div class="g-ytsubscribe mt-md-0 mt-4" data-channelid="<?= $yt_channel ?>" data-layout="full" data-theme="light" data-count="default"></div>
 					<?php endif; ?>
 					<h1 class="text-responsive"><?php echo $post_detail->judul; ?></h1>
+					<p>
+						<a href="<?= $link_profile_public ?>"><?= $namalengkap ?></a> -
+							<span class="badge badge-default px-0 text-secondary">Posted by <?= ucwords($namapanggilan); ?> &#8226;  <?php echo longdate_indo($post_detail->tgl_posting); ?></span>
+					</p>
 					<ins class="adsbygoogle"
 					     style="display:block; text-align:center;"
 					     data-ad-layout="in-article"
@@ -208,14 +209,14 @@ if (count($pecah) > 0) {
 				</div>
 			</div>
 			<?php if($post_detail->komentar_status == 0): ?>
-			<div class="card my-4 border bg-white">
+			<div class="card my-4 border-0 bg-white shadow-sm">
 				<div class="card-body py-0" style="max-height: 480px; overflow-y: auto;">
 					<div id="tracking" data-postid="<?= encrypt_url($postId) ?>">
 						<div class="tracking-list"></div>
 					</div>
 				</div>
 			</div>
-			<div class="card border-top-light bg-light">
+			<div class="card border-0 bg-light shadow-sm">
 				<div class="card-body">
 					<?php if ($this->session->userdata('user_portal_log')['online'] == 'ON') { ?>
 					<b class="reply_username float-right"></b>
@@ -227,8 +228,8 @@ if (count($pecah) > 0) {
 					<button type="submit" class="btn btn-light btn-outline-primary">Kirim</button>
 					<?= form_close() ?>
 					<?php } else { ?>
-					<p class="text-center text-responsive"><b>Login Dulu, Ya!</b></p>
-					<p class=" text-center text-muted px-md-5 px-0">Mau ikutan diskusi? Untuk ikutan diskusi kamu harus punya identitas, maka dari itu login dulu.</p>
+					<h4 class="text-center text-responsive"><b>Login Dulu, Ya!</b></h4>
+					<p class=" text-center text-muted small px-md-5 px-0">Mau ikutan diskusi? Untuk ikutan diskusi kamu harus punya identitas, maka dari itu login dulu.</p>
 					<div class="d-flex justify-content-center flex-wrap-reverse">
 						<div>
 							<a href="<?php echo base_url('login_web?urlRef='.curPageURL()) ?>" class="btn btn-dark btn-md btn-block"><i class="fas fa-lock mr-3"></i> Login</a>

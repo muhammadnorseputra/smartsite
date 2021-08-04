@@ -88,6 +88,8 @@ $(function() {
                         } else {
                             $("#load_data_message").html("");
                         }
+                        /*var hg = $(".ps-scroll:last").height() * 3;
+                        window.scrollBy(0, -hg);*/
                         $("#load_data").append(data.html);
                         $("button#load_more").html(`<i class="fas fa-newspaper mr-2"></i> Berita Sebelumnya`).prop('disabled', false);
                         action = "inactive";
@@ -141,7 +143,8 @@ $(function() {
                  start = start + limit;
                  load_data(limit, start);
              }
-         });*/
+         });
+         */
         $("button#load_more").on("click", function(e) {
             e.preventDefault();
                 if ($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == "inactive") {
