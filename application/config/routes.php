@@ -130,6 +130,9 @@ $route['closed'] = 'frontend/v1/halaman/closed';
 // RSS
 $route['rss'] = 'frontend/v1/rssFeed';
 
+// AMP
+$route['amp/(:any)'] = 'frontend/amp/index/site/$1';
+
 // API SKM
 $route['api-skm'] = 'frontend/v1/apiSkm';
 $route['api-skm/(:any)'] = 'frontend/v1/apiSkm/$1';

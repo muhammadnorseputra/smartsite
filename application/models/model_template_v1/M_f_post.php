@@ -225,6 +225,15 @@ class M_f_post extends CI_Model {
         return $this->db->insert($tbl, $data);
     }
 
+    public function jml_komentar_by_id_berita($id)
+    {
+        $this->db->select('id_komentar');
+        $this->db->from('t_komentar');
+        $this->db->where('fid_berita', $id);
+        $q = $this->db->get();
+        return $q->num_rows();
+
+    }
     public function displayKomentar($tbl, $whr)
     {
         $this->db->select('*');
@@ -240,7 +249,7 @@ class M_f_post extends CI_Model {
         $this->db->select('id_komentar, parent_id');
         $this->db->from('t_komentar');
         $this->db->where('parent_id !=', NULL);
-       $this->db->where('parent_id', $parentId);
+        $this->db->where('parent_id', $parentId);
         $q = $this->db->get();
         return $q->num_rows();
     }
