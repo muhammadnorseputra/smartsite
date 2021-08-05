@@ -1,4 +1,7 @@
 <?php  
+if (!ini_get('allow_url_fopen')) {
+    ini_set('allow_url_fopen', '1');
+}
 /**
  * Function Name
  *
@@ -15,7 +18,7 @@ if (! function_exists('api_client'))
 	{
 		 $api_url = $url;
 		 $json_data = file_get_contents($api_url);
-	 	return json_decode($json_data);
+	 	return json_decode($json_data, TRUE);
 	}
 }
 if (! function_exists('file_get_contents_curl'))

@@ -24,12 +24,12 @@ $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 				// Playlsit
 				$urlPlaylist = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId='.$playlistId.'&key='.$key;
 				$playlist  	  = api_client($urlPlaylist);
-				foreach($playlist->items as $v):
-				$videoID		= $v->snippet->resourceId->videoId;
-				$title_video    = $v->snippet->title;
-				$desc_video     = $v->snippet->description;
-				$thumb_video    = $v->snippet->thumbnails->medium->url;
-				$publish_video    = $v->snippet->publishedAt;
+				foreach($playlist['items'] as $v):
+				$videoID		= $v['snippet']['resourceId']['videoId'];
+				$title_video    = $v['snippet']['title'];
+				$desc_video     = $v['snippet']['description'];
+				$thumb_video    = $v['snippet']['thumbnails']['medium']['url'];
+				$publish_video    = $v['snippet']['publishedAt'];
 			?>
 				<div class="col-12 col-sm-6 col-md-4 col-lg-4">
 					<a href="<?= $videoID ?>" id="btn-view-video" title="<?= $title_video ?>" class="position-relative">
