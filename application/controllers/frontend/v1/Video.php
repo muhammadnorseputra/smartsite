@@ -16,7 +16,7 @@ class Video extends CI_Controller {
 	public function index() 
 	{
 		$data = [
-			'title' => 'BKPPD &bull; Video',
+			'title' => 'Video - BKPPD Balangan',
 			'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
 			'isi'	=> 'Frontend/v1/pages/video/video_list',
