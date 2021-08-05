@@ -1,7 +1,5 @@
 <?php  
-if (!ini_get('allow_url_fopen')) {
     ini_set('allow_url_fopen', '1');
-}
 /**
  * Function Name
  *
