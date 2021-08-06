@@ -257,7 +257,7 @@ class Beranda extends CI_Controller
                 $content_body = '<div class="row">
                                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
                                         <div class="mx-4 mx-md-0 pr-md-4">
-                                            <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 8).'&nbsp;'.$pilihan.'</a></h4>
+                                            <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h4>
                                                 '.$sumber.'
                                                 <div class="btn-group btn-group-sm ml-1 ml-md-0" role="group" aria-label="button">
                                                     <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent border-right" disabled><i class="fas fa-tag"></i></button>
@@ -286,7 +286,7 @@ class Beranda extends CI_Controller
                         </div>
                         
                         <div class="mx-3 mx-md-0 pr-md-4 mt-md-3">
-                            <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 8).'&nbsp;'.$pilihan.'</a></h4>
+                            <h3 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h3>
                             <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
                             <p class="text-secondary">'.$tag. '</p>
                         </div>

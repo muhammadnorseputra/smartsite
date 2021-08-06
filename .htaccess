@@ -3,7 +3,9 @@ RewriteCond $1 !^(index\.php|images|assets|files|robots\.txt)
 RewriteCond %{REQUEST_URI} !\.(?:css|js)$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{HTTP_HOST} ^web.bkppd-balangankab\.info [NC]
 RewriteRule ^(.*)$ index.php/$1 [L] 
+#RewriteRule ^(.*)$ https://web.bkppd-balangankab.info/$1 [R,L]
 
 # Force compression for mangled headers.
 # http://developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping

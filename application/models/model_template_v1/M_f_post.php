@@ -279,7 +279,7 @@ class M_f_post extends CI_Model {
 
     public function disukai($id) 
     {
-        $this->db->select('b.img_blob, b.img, b.path, b.judul, b.id_berita, b.created_by');
+        $this->db->select('b.img_blob, b.img, b.path, b.judul, b.id_berita, b.created_by, b.slug');
         $this->db->from('t_berita_like AS a');
         $this->db->join('t_berita AS b', 'a.fid_berita = b.id_berita');
         $this->db->join('t_users_portal AS c', 'b.created_by = c.id_user_portal');
@@ -290,7 +290,7 @@ class M_f_post extends CI_Model {
 
     public function disimpan($id) 
     {
-        $this->db->select('b.judul, b.id_berita, b.created_by');
+        $this->db->select('b.judul, b.id_berita, b.created_by, b.slug');
         $this->db->from('t_berita_save AS a');
         $this->db->join('t_berita AS b', 'a.fid_berita = b.id_berita');
         $this->db->join('t_users_portal AS c', 'b.created_by = c.id_user_portal');

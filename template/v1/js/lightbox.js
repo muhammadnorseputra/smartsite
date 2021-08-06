@@ -3,6 +3,6 @@ lightbox.option({
     'wrapAround': false,
     'fadeDuration': 500,
     'imageFadeDuration': 500,
-    'disableScrolling': true,
+    'disableScrolling': false,
     'albumLabel': "Story Web %1 dari %2"
 });

@@ -10,10 +10,4 @@ $(function() {
             }
         }
     });
-    if (!$.cookie("cache_beranda")) {
-         $.cookie("cache_beranda", 1, {
-            expires: 60 / 1440,
-            path: '/'
-         });
-    }
 });

@@ -10,7 +10,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Set to force the use of HTTPS for REST API calls
 |
 */
-$config['force_https'] = false;
+$config['force_https'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -602,7 +602,7 @@ $config['allow_any_cors_domain'] = true;
 | e.g. $config['allowed_origins'] = ['http://www.example.com', 'https://spa.example.com']
 |
 */
-$config['allowed_cors_origins'] = ['https://www.bkppd-balangankab.info/intro/', 'https://www.bkppd-balangankab.info'];
+$config['allowed_cors_origins'] = ['https://bkppd-balangankab.info', 'https://www.bkppd-balangankab.info'];
 
 /*
 |--------------------------------------------------------------------------

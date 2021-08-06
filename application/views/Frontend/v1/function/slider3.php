@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-7 order-first order-md-last py-md-5 mt-md-5">
+        <div class="col-md-7 order-first order-md-last py-md-5 mt-md-5 d-none d-md-block">
             <img class="img-fluid animated-image bounce" src="<?= assets('images/bg/bg-hero.svg') ?>" alt="Homepage - Portal Web BKPPD Balangan">
         </div>
     </div>
