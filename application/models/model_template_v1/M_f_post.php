@@ -336,6 +336,28 @@ class M_f_post extends CI_Model {
         $q= $this->db->get();
         return $q;
     }
+    public function get_kategori()
+    {
+        $this->db->where('aktif', 'Y');
+        return $this->db->get('t_kategori')->result();
+    }
+
+    public function postList($start, $limit)
+    {
+        return $this->db->order_by('id_berita', 'desc')->get_where('t_berita', ['publish' => '1'], $limit, $start);
+    }
+    public function postListByCategory($start, $limit)
+    {
+        return $this->db->order_by('id_kategori', 'desc')->join('t_berita', 't_berita.fid_kategori=t_kategori.id_kategori')->group_by('id_kategori')->get_where('t_kategori', ['aktif' => 'Y'], $limit, $start);        
+    }
+    public function postListByCategoryId($start,$limit,$categoryId)
+    {
+        return $this->db->order_by('id_berita', 'desc')->get_where('t_berita', ['publish' => '1', 'fid_kategori' => $categoryId], $limit, $start);   
+    }
+    public function postCategoryByTitle($slug)
+    {
+        return $this->db->select('id_kategori')->get_where('t_kategori', ['nama_kategori' => $slug]);
+    }
 }
 
 /* End of file M_f_post.php */

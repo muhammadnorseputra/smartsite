@@ -6,11 +6,49 @@ class Blog extends CI_Controller {
 		parent::__construct();	
         $this->load->model('model_template_v1/M_f_post', 'posts');
         $this->load->model('model_template_v1/M_f_users', 'users'); 
+		$this->site = $this->mf_beranda->get_identitas();
 	}
 
 	public function index()
 	{
+		$data = [
+			'page' => 'home',
+			'title' => $this->site->site_title,
+			'content' => 'Frontend/amp/blog/index',
+			'postNew' => $this->posts->postList(0,1)->row(),
+			'postCategory' => $this->posts->postListByCategory(0,3),
+			'keywords' => $this->site->meta_seo,
+			'description' => $this->site->meta_desc
+		];
+		$this->load->view('Frontend/amp/layout/index', $data);
+	}
 
+	public function blogList()
+	{
+		$data = [
+			'page' => 'home',
+			'title' => $this->site->site_title,
+			'content' => 'Frontend/amp/blog/list',
+			'blogList' =>  $this->posts->get_kategori(),
+			'keywords' => $this->site->meta_seo,
+			'description' => $this->site->meta_desc
+		];
+		$this->load->view('Frontend/amp/layout/index', $data);
+	}
+
+	public function category($slug)
+	{
+		$id = $this->posts->postCategoryByTitle($slug)->row()->id_kategori;
+		if(empty($id)):
+			return redirect(base_url('amp/404'));
+		endif;
+		$data = [
+			'page' => 'category',
+			'title' => $this->site->site_title,
+			'content' => 'Frontend/amp/blog/post/category',
+			'postCategory' => $this->posts->postListByCategoryId(0,6,$id)
+		];
+		$this->load->view('Frontend/amp/layout/index', $data);		
 	}
 	
 	// Site AMP
@@ -21,7 +59,9 @@ class Blog extends CI_Controller {
 			$id = $this->posts->detailIdBySlug($slug);
         	$detail = $this->posts->detail($id)->row();
         	$judul_seo = ucwords($detail->judul);
-
+        	if(empty($id)):
+				return redirect(base_url('amp/404'));
+			endif;
 	        // Youtube Data
 	        if($detail->type === 'YOUTUBE'):
 	            $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
@@ -31,8 +71,17 @@ class Blog extends CI_Controller {
 	            $yt_desc = $yt['items'][0]['snippet']['description'];
 	        endif;
 
+	        // Link
+	        if($detail->type === 'LINK'):
+	        	$linker = getSiteOG($detail->content);
+	        endif;
+
 	        if(!empty($detail->img) && $detail->type === 'BERITA'):
 	            $img = base_url('files/file_berita/'.$detail->img.'');
+	        elseif($detail->type === 'YOUTUBE'):
+	        	$img = $yt_thumb;
+	       	elseif($detail->type === 'LINK'):
+			    $img = $linker['image'];
 	        elseif($detail->type === 'SLIDE'):
 	            $img = img_blob($this->post->photo_terkait($id,1)->row()->photo);
 	        else:
@@ -41,12 +90,16 @@ class Blog extends CI_Controller {
 
 	        if($detail->type === 'YOUTUBE'):
 				$content = nl2br($yt_desc);
+			elseif($detail->type === 'LINK'):
+				$content = $linker['description'];
 			else:
 				$content = $detail->content;
 			endif;
 			// Meta
 			if($detail->type === 'YOUTUBE'):
 	            $description = !empty($detail->deskripsi) ? $detail->deskripsi : $yt_desc;
+            elseif($detail->type === 'LINK'):
+				$description = $linker['description'];
 	        else:
 	            $meta_desc = strip_tags(str_replace('"', '', word_limiter($detail->content, 120)));
 	            $description = !empty($detail->deskripsi) ? $detail->deskripsi : $meta_desc;
@@ -61,13 +114,16 @@ class Blog extends CI_Controller {
 	        $author = $this->users->get_userportal_namapanggilan($detail->created_by)->nama_panggilan;
 	        $photo = img_blob($this->users->get_userportal_byid($detail->created_by)->photo_pic);
 	        $commentCount = $this->posts->jml_komentar_by_id_berita($id);
+	        $categoryTitle = $this->posts->kategori_byid($detail->fid_kategori);
 			$data = [
-				'site' => $this->mf_beranda->get_identitas(),
+				'page' => 'detail',
+				'content' => 'Frontend/amp/blog/post/detail',
 				'title' => $judul_seo,
 				'post' => $detail,
 				'postId' => $id,
 				'postSlug' => $slug,
 				'postCategory' => $this->posts->kategori_byid($detail->fid_kategori),
+				'postCategoryLink' => base_url("amp/blog/{$categoryTitle}"),
 				'postDatetime' => longdate_indo($detail->tgl_posting),
 				'postImage' => $img,
 				'postContent' => $content,
@@ -77,9 +133,8 @@ class Blog extends CI_Controller {
 				'postComment' => $commentCount,
 				'keywords' => $keywords,
 				'description' => $description,
-				'category' => $this->mf_beranda->get_kategori_listing(),
 			];
-			return $this->load->view('Frontend/amp/post/detail', $data);
+			return $this->load->view('Frontend/amp/layout/index', $data);
 	}
 
 }

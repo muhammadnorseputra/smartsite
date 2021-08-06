@@ -131,7 +131,11 @@ $route['closed'] = 'frontend/v1/halaman/closed';
 $route['rss'] = 'frontend/v1/rssFeed';
 
 // AMP
+$route['amp'] = 'frontend/amp/blog';
+$route['amp/blog'] = 'frontend/amp/blog/blogList';
+$route['amp/404'] = 'frontend/amp/errors/error_404';
 $route['amp/(:any)'] = 'frontend/amp/blog/post/$1';
+$route['amp/blog/(:any)'] = 'frontend/amp/blog/category/$1';
 
 // API SKM
 $route['api-skm'] = 'frontend/v1/apiSkm';
