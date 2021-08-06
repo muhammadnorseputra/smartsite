@@ -56,10 +56,12 @@ Tabel Halaman
 		}, {
 			"targets": [3],
 			"orderable": false,
+			"width": '18%'
 		}, {
 			"targets": [4],
 			"orderable": false,
-			"className": "text-left"
+			"className": "text-left",
+			"width": '18%'
 		}],
 		"language": {
 			"lengthMenu": "_MENU_ Data per halaman",
