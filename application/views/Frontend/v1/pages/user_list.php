@@ -68,7 +68,7 @@ var table = $("#userportal").DataTable({
     "ordering": true,
     "info": true,
     "searching": false,
-    "pagingType": "full_numbers",
+    /*"pagingType": "full_numbers",*/
     "responsive": true,
     "datatype": "json",
     "fixedHeader": {
