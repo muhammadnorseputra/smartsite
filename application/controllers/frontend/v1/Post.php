@@ -720,6 +720,8 @@ class Post extends CI_Controller
                                         <i class="fas fa-trash"></i> Hapus</button>
                                 </div>
                             </div>';
+                }   else {
+                    $button_more = '';
                 }
             }  else {
                 $button_more = '';
