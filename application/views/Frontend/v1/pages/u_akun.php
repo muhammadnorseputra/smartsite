@@ -47,9 +47,9 @@ endif;
   </div>
 </div>
 </section>
-
+  
 <section>
-<div class="container bg-white mb-4">
+<div class="container bg-white mb-md-0 mb-3">
   <div class="row">
     <div class="col-md-3 no-gutters mt-5 mt-md-0">
       
@@ -141,7 +141,7 @@ endif;
        
       </div>
     </div>
-    <div class="col-md-9 px-md-0 order-first order-md-last mt--7 bg-white rounded shadow">
+    <div class="col-md-9 px-md-0 order-first order-md-last mt--7 bg-white rounded shadow-sm">
       <div class="alert alert-warning alert-dismissible fade show mb-0 rounded-top mt-3 mt-md-0" role="alert">
         <strong>For Userportal</strong>, mulai tanggal 10 juli 2021 kami akan terus mengupdate UI & UX Website
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
