@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="google-site-verification" content="nD_7kuRJfZNmViXXCEKPsajSAG_US0grvhqG0bqpO6g" />
+    <link rel="alternate" hreflang="id" href="<?= curPageURL(); ?>"/>
     <link rel="apple-touch-icon" href="<?= base_url('assets/images/logo.png') ?>" />
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo.png') ?>" />
     <title><?= $title; ?></title>
