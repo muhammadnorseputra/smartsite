@@ -28,11 +28,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="anonymous">
     <link rel="preconnect" href="https://web.bkppd-balangankab.info/" crossorigin="anonymous">
     <link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin="anonymous">
-    <link rel="prerender" href="<?= base_url('template/v1/prod/app.css'); ?>" as="style" crossorigin="anonymous">
-    <link rel="prefetch" href="<?= base_url('template/v1/prod/app.css'); ?>" as="style" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?= base_url('template/v1/prod/app.css'); ?>" type="text/css">
-    <link rel="prerender" href="<?= base_url('template/v1/prod/vendor-min.js'); ?>" as="script" crossorigin="anonymous">
-    <link rel="prerender" href="<?= base_url('template/v1/prod/app-min.js'); ?>" as="script" crossorigin="anonymous">
+    <link rel="preload" href="<?= base_url('template/v1/prod/app.css'); ?>" as="style" crossorigin="anonymous" onload="this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('template/v1/prod/vendor-min.js'); ?>" as="script" crossorigin="anonymous">
+    <link rel="preload" href="<?= base_url('template/v1/prod/app-min.js'); ?>" as="script" crossorigin="anonymous">
     <link rel="prefetch" href="<?= base_url('bower_components/jquery/dist/jquery.min.js'); ?>" as="script" crossorigin="anonymous">
     <link rel="subresource" href="<?= base_url('assets/images/logo.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg.png'); ?>">
