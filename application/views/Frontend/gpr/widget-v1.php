@@ -1,7 +1,7 @@
-<section class="my-5">
+<section class="my-md-5 my-3">
 	<div class="container">
 		<div class="row pt-md-5">
-			<div class="col-md-8 pr-5">
+			<div class="col-md-8 pr-md-5 order-last order-md-first">
 				<h4>Tentang GPR-BKPPD Balangan</h4>
 				<hr>
 				<p>
@@ -32,7 +32,7 @@ document.head.append(jqueryScript);</code></pre>
 				<hr>
 				<div class="small">Developer by <a rel="noreferrer, nofollow" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6"> putrabungsu6</a></div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 mb-5">
 				<h4>Tampilan Widget</h4>
 				<hr>
 				<div id="widget-gpr-bkppdblg"></div>
