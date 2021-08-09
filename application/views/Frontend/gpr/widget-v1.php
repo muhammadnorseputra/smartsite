@@ -5,7 +5,7 @@
 				
 			</div>
 			<div class="col-md-4">
-				<script type="text/javascript" src="<?= assets("gpr/gpr_bkppdblg_production.js") ?>"></script>
+				<script type="text/javascript" src="<?= assets("gpr/gpr_bkppdblg_dev.js") ?>"></script>
 				<div id="widget-gpr-bkppdblg"></div>
 			</div>	
 		</div>

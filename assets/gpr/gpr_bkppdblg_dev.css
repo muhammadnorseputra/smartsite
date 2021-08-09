@@ -17,7 +17,6 @@ div#widget-gpr-bkppdblg {
     color: #FFF;
     background: teal;
     padding: 10px;
-    border-bottom: 3px solid #077507;
 }
 
 .gpr_panel_head_left {
@@ -99,11 +98,12 @@ div#widget-gpr-bkppdblg {
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 500px;
-    box-shadow: 0 0 1em #999;
+    /* box-shadow: 0 0 0.5em #ccc; */
+    border-top: 1px dotted #ccc;
 }
 	
 	.gpr_list li {
-		border-bottom:1px dotted #eee;
+		border-bottom:1px dotted #ccc;
 		padding:10px;
 		list-style:none !important;
 	}
@@ -153,9 +153,12 @@ div#widget-gpr-bkppdblg {
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
-	color: #fff;
+	color: #999;
 	font-size: 14px;
-	background-color: green;
+	background-color: #fff;
+	padding: 8px 0px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 .gpr_panel_silka > div {
 	flex-grow: 1;
@@ -164,12 +167,13 @@ div#widget-gpr-bkppdblg {
 }
 .gpr_footer {
 	padding: 8px 3px 0px 3px;
-	color: #fff;
-	text-align: center;
+	color: #fff !important;
 	background-color: teal;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    margin-bottom: 10px !important;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 15px !important;
+  display: flex;
+  justify-content: space-between;
 }
 .gpr_footer a {
 	text-decoration: none;

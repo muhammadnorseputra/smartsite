@@ -45,6 +45,16 @@ function scriptLoadHandler() {
 
 /******** Our main function ********/
 function main() { 
+	// SILKa API
+	jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/asn`, function(response) {
+		return $asn = response;
+	});
+	jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/pns`, function(response) {
+		return $pns = response;
+	});
+	jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/nonpns`, function(response){
+		return $nonpns = response;
+	});
 	// Init Load
 	jQuery('#widget-gpr-bkppdblg').html(`<div class="sk-cube-grid">
 																			  <div class="sk-cube sk-cube1"></div>
@@ -64,15 +74,6 @@ function main() {
 			href: GPR_url + "assets/gpr/gpr_bkppdblg_dev.css"
 		});
 		css_link.appendTo('head');
-		jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/asn`, function(response) {
-			return $asn = response;
-		});
-		jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/pns`, function(response) {
-			return $pns = response;
-		});
-		jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/nonpns`, function(response){
-			return $nonpns = response;
-		});
 
 		//load 
     var jsonp_url = GPR_url + "frontend/v1/apiPublic/gpr";
@@ -119,6 +120,7 @@ function main() {
 			});
 			myhtml+='</ul>';
 			myhtml+='<div class="gpr_footer">';
+				myhtml+='<span>&copy; BKPPD Balangan</span>';
 				myhtml+='<a rel="nofollow" href="https://web.bkppd-balangankab.info/beranda?type=all&sort=newest" target="_blank">More +</a>';
 			myhtml+='</div>';
 		myhtml+='</div>';
