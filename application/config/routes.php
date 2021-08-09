@@ -137,6 +137,9 @@ $route['amp/404'] = 'frontend/amp/errors/error_404';
 $route['amp/(:any)'] = 'frontend/amp/blog/post/$1';
 $route['amp/blog/(:any)'] = 'frontend/amp/blog/category/$1';
 
+// GPR
+$route['widget-gpr'] = 'frontend/gpr/widget/gpr_widget';
+
 // API SKM
 $route['api-skm'] = 'frontend/v1/apiSkm';
 $route['api-skm/(:any)'] = 'frontend/v1/apiSkm/$1';

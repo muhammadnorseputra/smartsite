@@ -51,9 +51,6 @@
                 </div>
                 </a>
  -->
-                <script type="text/javascript" src="<?= assets("gpr/gpr_bkppdblg_production.js") ?>"></script>
-                <div id="widget-gpr-bkppdblg"></div>
-
                 <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>

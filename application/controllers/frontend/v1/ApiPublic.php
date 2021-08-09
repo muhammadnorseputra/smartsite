@@ -120,11 +120,12 @@ class ApiPublic extends RestController {
     public function gpr_get()
     {
         $filter = [
-            'start'=> 0, 'limit' => 12, 'type'=>null, 'sort'=>null
+            'start'=> 0, 'limit' => 8, 'type'=>null, 'sort'=>null
         ];
         $data = $this->mf_beranda->get_all_berita($filter['limit'],$filter['start'],$filter['type'],$filter['sort']);
         if ($data->num_rows() > 0):
             $row = $data->result();
+
             foreach($row as $r):
                 $by = $r->created_by;
                 if($by == 'admin') {

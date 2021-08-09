@@ -52,7 +52,7 @@ class Api extends CI_Controller {
 	public function silka_get_grap($type) {
 		$url = 'http://silka.bkppd-balangankab.info';
 		$api = api_curl_get($url.'/api/get_grap/'.$type);
-		echo json_encode($api);
+		echo json_encode(nominal($api));
 	}
 	public function silka_get_grap_pns($type)
 	{
