@@ -61,7 +61,7 @@ function main() {
 		var css_link = $("<link>", { 
 			rel: "stylesheet",
 			type: "text/css",
-			href: GPR_url + "assets/gpr/gpr_bkppdblg_dev.css"
+			href: GPR_url + "assets/gpr/gpr_bkppdblg_production.scss"
 		});
 		css_link.appendTo('head');
 		jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/asn`, function(response) {
