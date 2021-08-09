@@ -5,8 +5,8 @@
 				<h3>Tentang GPR-BKPPD</h3>
 			</div>
 			<div class="col-md-4">
-				<h3>Tampilah Widget GPR-BKPPD</h3>
-				<script defer crossorigin="anonymous" type="text/javascript" src="https://web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js"></script>
+				<h3>Tampilan Widget GPR-BKPPD</h3>
+				<script defer crossorigin="anonymous" type="text/javascript" src="<?= assets("gpr/gpr_bkppdblg_production.js") ?>"></script>
 				<div id="widget-gpr-bkppdblg"></div>
 			</div>	
 		</div>
