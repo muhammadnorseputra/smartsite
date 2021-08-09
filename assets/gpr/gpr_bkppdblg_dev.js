@@ -61,7 +61,7 @@ function main() {
 		var css_link = $("<link>", { 
 			rel: "stylesheet",
 			type: "text/css",
-			href: GPR_url + "assets/gpr/gpr_bkppdblg_production.scss"
+			href: GPR_url + "assets/gpr/gpr_bkppdblg_dev.css"
 		});
 		css_link.appendTo('head');
 		jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/asn`, function(response) {
@@ -78,9 +78,6 @@ function main() {
     var jsonp_url = GPR_url + "frontend/v1/apiPublic/gpr";
 	  jQuery.getJSON(jsonp_url, function(data) {
 		
-  	// var silka = ['data_asn' => $asn, 'data_pns' => $pns, 'data_nonpns' => $nonpns];
-  	// var silka = {'data_asn': $asn, 'data_pns': $pns, 'data_nonpns': $nonpns};
-  	// console.log(silka);
 		var myhtml='<div class="gpr_bkppdblg">';
 				myhtml+='<div class="gpr_panel_head">';
 					myhtml+='<div class="gpr_panel_head_left">';
