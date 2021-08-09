@@ -10,7 +10,7 @@ class Widget extends CI_Controller {
 	public function gpr_widget()
 	{
 		$data = [
-			'title' => 'Widget GPR - Government Public Relations, BKPPD Balangan '.date('Y'),
+			'title' => 'GPR - Government Public Relations, BKPPD Balangan '.date('Y'),
 			'isi' => 'Frontend/gpr/widget-v1',
 			'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu()
