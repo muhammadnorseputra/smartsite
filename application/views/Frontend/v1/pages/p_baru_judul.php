@@ -17,7 +17,7 @@
 					</div>
 					<div class="card-body">
 						<div class="form-group">
-							<input type="text" data-validation-event="keyup" data-validation="required,length,alphanumeric" data-validation-length="min5" data-validation-allowing=". _'-" data-sanitize="capitalize" name="judul" class="form-control form-control-lg" id="judul" onchange="slug()" onkeyup="slug()" aria-describedby="judulBlockHelp" placeholder="Masukan judul postingan disini...">
+							<input type="text" data-validation-event="keyup" data-validation="required,length,alphanumeric" data-validation-length="min5" data-validation-allowing=". _'-,!()" data-sanitize="capitalize" name="judul" class="form-control form-control-lg" id="judul" onchange="slug()" onkeyup="slug()" aria-describedby="judulBlockHelp" placeholder="Masukan judul postingan disini...">
 							<small id="judulBlockHelp" class="form-text my-2"><i>Slug:</i> <span class="text-muted" id="judul_slug"></span></small>
 						</div>
 						<div class="form-group">
