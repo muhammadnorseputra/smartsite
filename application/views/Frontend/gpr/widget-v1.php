@@ -49,6 +49,7 @@ document.head.append(jqueryScript);</code></pre>
 			<div class="col-md-4 mb-5">
 				<h4>Tampilan Widget</h4>
 				<hr>
+				<script defer="defer" crossorigin="anonymous" type="text/javascript" src="//web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js"></script>
 				<div id="widget-gpr-bkppdblg"></div>
 			</div>	
 		</div>
