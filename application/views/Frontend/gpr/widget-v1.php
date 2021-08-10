@@ -13,7 +13,7 @@
 					Letakkan script tags dibawah ini pada widget HTML WP, Joomla dan semacamnya.
 				</p>
 				<p class="small">
-					<pre><code>&lt;script defer="defer" crossorigin="anonymous" type="text/javascript" src="//web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js"&gt;&lt;/script&gt;<br>&lt;div id="widget-gpr-bkppdblg"&gt;&lt;/div&gt;</code></pre>
+					<pre><code>&lt;script defer="defer" type="text/javascript" src="//web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js"&gt;&lt;/script&gt;<br>&lt;div id="widget-gpr-bkppdblg"&gt;&lt;/div&gt;</code></pre>
 				</p>
 				<h4>Cara Memasang Widget dengan Inline Script <span class="badge badge-pill badge-success">rekomendasi</span></h4>
 				<hr>
@@ -35,7 +35,7 @@ document.head.append(jqueryScript);</code></pre>
 					Untuk memodifikasi widget hanya berlaku untuk perubahan <abbr title="gpr-theme">Tema</abbr>, <abbr title="gpr-height">Tinggi Widget</abbr>, <abbr title="Gambar Thumbnail">Thumbnail</abbr> sebagai penyesuaian thema website/blog anda. 
 				</p>
 				<p>
-					Silahkan tambahkan Atteribute <code>gpr-theme</code> (Tema Widget), <code>gpr-height</code> (Tinggi Widget) pada script HTML, jika Atteribute tidak dipasang kami akan mengisi Tema dan Tinggi secara <code>default</code>
+					Silahkan tambahkan Atteribute <code>gpr-theme</code> (Tema Widget), <code>gpr-height</code> (Tinggi Widget), <code>gpr-thumb</code> (Thumbnail) pada script HTML, jika Atteribute tidak dipasang kami akan setting secara <code>default</code>
 				</p>
 				<p>
 					Untuk nilai value <b>tema</b> dapat diisi <span class="badge badge-pill badge-dark">nama warna / kode warna</span> (contoh: gpr-theme="<code>teal</code>") dan untuk nilai value <b>tinggi</b> dapat diisi dengan <span class="badge badge-pill badge-dark">angka</span> (contoh: gpr-height="<code>500</code>")
@@ -53,7 +53,7 @@ document.head.append(jqueryScript);</code></pre>
 				<div id="sidebar">
 					<h4>Tampilan Widget</h4>
 					<hr>
-					<script defer="defer" crossorigin="anonymous" type="text/javascript" src="//web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js"></script>
+					<script defer="defer" type="text/javascript" src="//web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js"></script>
 					<div id="widget-gpr-bkppdblg" gpr-thumb="image"></div>
 				</div>	
 			</div>	
