@@ -18,8 +18,8 @@
                         </div>
                     </div>
                 </div> -->
-                <div>
-                    <div class="d-flex align-items-center bg-white shadow-sm py-4 px-md-5 px-0" style="border-radius:15px;">
+                <div class="shadow-sm">
+                    <div class="d-flex align-items-center bg-white py-4 px-md-5 px-0" style="border-radius:15px;">
                         <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/report.svg') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
                         </div>

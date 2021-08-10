@@ -63,7 +63,9 @@ function main() {
 	var container = jQuery('#widget-gpr-bkppdblg');
 	if(container.hasAttr('gpr-theme') && container.attr('gpr-theme') != '') {container.attr('gpr-theme');} else {container.attr('gpr-theme', '#01877c');}
 	if(container.hasAttr('gpr-height') && container.attr('gpr-height') != '') {container.attr('gpr-height');} else {container.attr('gpr-height', '500');}
+	if(container.hasAttr('gpr-thumb') && container.attr('gpr-thumb') != '') {container.attr('gpr-thumb');} else {container.attr('gpr-thumb', 'icon');}
 	var theme =  container.attr('gpr-theme');
+	var thumb =  container.attr('gpr-thumb');
 	var maxHeight =  container.attr('gpr-height');
 
 	// Init Load
@@ -104,15 +106,19 @@ function main() {
 					myhtml+='</div>';			
 				myhtml+='</div>';
 			myhtml+='<div class="gpr_panel_silka">'; 
-									myhtml+='<div><h3>'+$asn+'</h3>ASN</div>';
-									myhtml+='<div><h3>'+$pns+'</h3>PNS + CPNS</div>';
-									myhtml+='<div><h3>'+$nonpns+'</h3>NON PNS</div>';
+									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn+'</h3>ASN</div>';
+									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$pns+'</h3>PNS + CPNS</div>';
+									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$nonpns+'</h3>NON PNS</div>';
 			myhtml+='</div>';
 			myhtml+='<ul class="gpr_list" style="max-height:'+maxHeight+'px;">';
 			jQuery.each(data, function(k, v) {
 				myhtml+='<li class="gpr_item">';
 					myhtml+='<div class="gpr_panel_left">';
-						myhtml+='<img class="gpr_panel_img" src="'+v.img_article+'" style="background-color:'+theme+';">';
+						if(thumb == 'image'){
+							myhtml+='<img class="gpr_panel_img" src="'+v.img_article+'" style="background-color:'+theme+';">';
+						}else if(thumb == 'icon') {
+							myhtml+='<img class="gpr_panel_img" src="'+GPR_url+'assets/images/fitur/newspaper.svg">';
+						}
 					myhtml+='</div>';
 					myhtml+='<div class="gpr_panel_right">';
 						//myhtml+='<div class="gpr_panel_news_attr">';
@@ -132,7 +138,7 @@ function main() {
 			myhtml+='</ul>';
 			myhtml+='<div class="gpr_footer" style="background-color:'+theme+';">';
 				myhtml+='<span>&copy; BKPPD Balangan</span>';
-				myhtml+='<a rel="nofollow" href="https://web.bkppd-balangankab.info/beranda?type=all&sort=newest" target="_blank">More +</a>';
+				myhtml+='<div>&bull; <a rel="nofollow" href="https://web.bkppd-balangankab.info/widget-gpr-bkppdblg" target="_blank">Pasang Widget</a><div>';
 			myhtml+='</div>';
 		myhtml+='</div>';
 			

@@ -32,16 +32,19 @@ document.head.append(jqueryScript);</code></pre>
 				<h4>Modifikasi Widget</h4>
 				<hr>
 				<p>
-					Untuk memodifikasi widget hanya berlaku untuk perubahan <abbr title="gpr-theme">Tema</abbr> dan <abbr title="gpr-height">Tinggi Widget</abbr> sebagai penyesuaian thema website/blog anda. 
+					Untuk memodifikasi widget hanya berlaku untuk perubahan <abbr title="gpr-theme">Tema</abbr>, <abbr title="gpr-height">Tinggi Widget</abbr>, <abbr title="Gambar Thumbnail">Thumbnail</abbr> sebagai penyesuaian thema website/blog anda. 
 				</p>
 				<p>
 					Silahkan tambahkan Atteribute <code>gpr-theme</code> (Tema Widget), <code>gpr-height</code> (Tinggi Widget) pada script HTML, jika Atteribute tidak dipasang kami akan mengisi Tema dan Tinggi secara <code>default</code>
 				</p>
 				<p>
-					Untuk nilai value <b>tema</b> dapat diisi <b>nama warna</b> / <b>kode warna</b> (contoh: gpr-theme="<code>teal</code>") dan untuk nilai value <b>tinggi</b> dapat diisi dengan <b>angka</b> (contoh: gpr-height="<code>500</code>")
+					Untuk nilai value <b>tema</b> dapat diisi <span class="badge badge-pill badge-dark">nama warna / kode warna</span> (contoh: gpr-theme="<code>teal</code>") dan untuk nilai value <b>tinggi</b> dapat diisi dengan <span class="badge badge-pill badge-dark">angka</span> (contoh: gpr-height="<code>500</code>")
 				</p>
 				<p>
-					<pre><code>&lt;div id="widget-gpr-bkppdblg" gpr-theme="teal" gpr-height="500"&gt;&lt;/div&gt;</code></pre>
+					Untuk tipe thumbnail bisa digunakan <code>icon</code> <span class="badge badge-pill badge-light">default</span> atau <code>image</code>
+				</p>
+				<p>
+					<pre><code>&lt;div id="widget-gpr-bkppdblg" gpr-theme="teal" gpr-height="500" gpr-thumb="image"&gt;&lt;/div&gt;</code></pre>
 				</p>
 				<hr>
 				<div class="small">Developer by <a rel="noreferrer, nofollow" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6"> putrabungsu6</a></div>
@@ -51,7 +54,7 @@ document.head.append(jqueryScript);</code></pre>
 					<h4>Tampilan Widget</h4>
 					<hr>
 					<script defer="defer" crossorigin="anonymous" type="text/javascript" src="//web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js"></script>
-					<div id="widget-gpr-bkppdblg"></div>
+					<div id="widget-gpr-bkppdblg" gpr-thumb="image"></div>
 				</div>	
 			</div>	
 		</div>
