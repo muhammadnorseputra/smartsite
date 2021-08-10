@@ -38,7 +38,7 @@ document.head.append(jqueryScript);</code></pre>
 					Silahkan tambahkan Atteribute <code>gpr-theme</code> (Tema Widget), <code>gpr-height</code> (Tinggi Widget) pada script HTML, jika Atteribute tidak dipasang kami akan mengisi Tema dan Tinggi secara <code>default</code>
 				</p>
 				<p>
-					Untuk nilai value <b>tema</b> dapat diisi <b>nama warna</b> (contoh: gpr-theme="<code>teal</code>") dan untuk nilai value <b>tinggi</b> dapat diisi dengan <b>angka</b> (contoh: gpr-height="<code>500</code>")
+					Untuk nilai value <b>tema</b> dapat diisi <b>nama warna</b> / <b>kode warna</b> (contoh: gpr-theme="<code>teal</code>") dan untuk nilai value <b>tinggi</b> dapat diisi dengan <b>angka</b> (contoh: gpr-height="<code>500</code>")
 				</p>
 				<p>
 					<pre><code>&lt;div id="widget-gpr-bkppdblg" gpr-theme="teal" gpr-height="500"&gt;&lt;/div&gt;</code></pre>

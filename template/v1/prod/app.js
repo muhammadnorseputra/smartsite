@@ -663,13 +663,6 @@ $(function () {
       }
     }
   });
-
-  if (!$.cookie("cache_beranda")) {
-    $.cookie("cache_beranda", 1, {
-      expires: 60 / 1440,
-      path: '/'
-    });
-  }
 });
 // $(function() {
 //     $('h3#count_jml').countTo({
@@ -932,6 +925,17 @@ $(function () {
 "use strict";
 
 $(document).ready(function () {
+  $('.app-slick').slick({
+    autoplay: true,
+    infinite: false,
+    dots: false,
+    autoplaySpeed: 8000,
+    // fade: true,
+    // cssEase: 'linear',
+    arrows: false,
+    pauseOnHover: true,
+    adaptiveHeight: false
+  });
   $('.album-slick').slick({
     autoplay: true,
     infinite: true,

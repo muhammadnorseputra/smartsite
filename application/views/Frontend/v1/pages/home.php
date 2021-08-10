@@ -3,19 +3,35 @@
 <?php $this->load->view('Frontend/v1/function/slider3') ?>
 <section class="content-home">
     <div class="container">
-        <div class="row">
-            <div class="d-flex align-items-center bg-white shadow-sm py-4 px-md-5 px-0" style="border-radius:15px;">
-                <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
-                    <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
+        <div class="row app-slick">
+                <div>
+                    <div class="d-flex align-items-center bg-dark shadow-sm py-4 px-md-5 px-0" style="border-radius:15px;">
+                        <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
+                            <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/hero.b8941ef4.svg') ?>" alt="GPR (Government Public Relation)">
+                        </div>
+                        <div class="col-12 col-md-8 text-white">
+                            <h1>GPR (Government Public Relation)</h1>
+                            <p>
+                                Merupakan alat bantu sosialisasi berita berupa widget yang dapat dipasang pada website/blog. Sumber berita didapatkan dari website resmi <span class="badge badge-light badge-pill" title="Official Site BKPPD Balangan"> https://web.bkppd-balangankab.info/</span> dan informasi statistik pegawai bersumber pada aplikasi SILKa (Sistem Informasi Kepegawaian) Daerah Balangan <span class="badge badge-light badge-pill" title="SILKa Online">http://silka.bkppd-balangankab.info/</span>.
+                            </p>
+                            <a href="<?= base_url('widget-gpr-bkppdblg') ?>" class="btn btn-warning">Pasang Widget</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-8">
-                    <h1>Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?></h1>
-                    <p>
-                        Kini website telah tersedia grafik Pegawai Negeri Sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
-                    </p>
-                    <a href="<?= base_url('api/grafik') ?>" class="btn btn-secondary">Lihat Grafik</a>
+                <div>
+                    <div class="d-flex align-items-center bg-white shadow-sm py-4 px-md-5 px-0" style="border-radius:15px;">
+                        <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
+                            <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/hero-img.png') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <h1>Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?></h1>
+                            <p>
+                                Kini website telah tersedia grafik Pegawai Negeri Sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
+                            </p>
+                            <a href="<?= base_url('api/grafik') ?>" class="btn btn-secondary">Lihat Grafik</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
 </section>
