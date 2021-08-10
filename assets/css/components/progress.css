@@ -1,0 +1,26 @@
+/* Progress Bars =============================== */
+.progress {
+	border-radius: 0;
+	height: 22px;
+}
+
+.progress .progress-bar {
+	line-height: 23px;
+	background-color: #1f91f3;
+}
+
+.progress .progress-bar-success {
+	background-color: #2b982b;
+}
+
+.progress .progress-bar-info {
+	background-color: #00b0e4;
+}
+
+.progress .progress-bar-warning {
+	background-color: #ff9600;
+}
+
+.progress .progress-bar-danger {
+	background-color: #fb483a;
+}

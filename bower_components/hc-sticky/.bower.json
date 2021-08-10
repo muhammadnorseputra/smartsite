@@ -1,0 +1,15 @@
+{
+  "name": "hc-sticky",
+  "homepage": "https://github.com/somewebmedia/hc-sticky",
+  "version": "2.2.7",
+  "_release": "2.2.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.2.7",
+    "commit": "b5db612e06cd79a3a766b80f44aa17d98a3b54a6"
+  },
+  "_source": "https://github.com/somewebmedia/hc-sticky.git",
+  "_target": "^2.2.7",
+  "_originalSource": "hc-sticky",
+  "_direct": true
+}

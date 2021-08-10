@@ -1,0 +1,72 @@
+﻿.theme-white .navbar {
+	background-color: rgb(255, 255, 255);
+}
+
+.theme-white .navbar-brand {
+	color: #ccc;
+}
+
+.theme-white .navbar-brand:hover {
+	color: #ccc;
+}
+
+.theme-white .navbar-brand:active {
+	color: #ccc;
+}
+
+.theme-white .navbar-brand:focus {
+	color: #ccc;
+}
+
+.theme-white .nav>li>a {
+	color: #ccc;
+}
+
+.theme-white .nav>li>a:hover {
+	background-color: transparent;
+}
+
+.theme-white .nav>li>a:focus {
+	background-color: transparent;
+}
+
+.theme-white .nav .open>a {
+	background-color: transparent;
+}
+
+.theme-white .nav .open>a:hover {
+	background-color: transparent;
+}
+
+.theme-white .nav .open>a:focus {
+	background-color: transparent;
+}
+
+.theme-white .bars {
+	color: #333;
+}
+
+.theme-white .sidebar .menu .list li.active {
+	background-color: transparent;
+}
+
+.theme-white .sidebar .menu .list li.active> :first-child i,
+.theme-white .sidebar .menu .list li.active> :first-child span {
+	color: rgb(192, 192, 192);
+}
+
+.theme-white .sidebar .menu .list .toggled {
+	background-color: transparent;
+}
+
+.theme-white .sidebar .menu .list .ml-menu {
+	background-color: transparent;
+}
+
+.theme-white .sidebar .legal {
+	background-color: #333;
+}
+
+.theme-white .sidebar .legal .copyright a {
+	color: #ccc !important;
+}
