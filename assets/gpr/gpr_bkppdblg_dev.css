@@ -8,7 +8,7 @@ div#widget-gpr-bkppdblg {
     border-radius: 7px;
     overflow: hidden;
     font-family: "Segoe UI",Arial,sans-serif !important;
-    font-size: 14px;
+    font-size: 14px !important;
     line-height: 1.5em !important;
 }
 	
