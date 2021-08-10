@@ -44,6 +44,7 @@ function scriptLoadHandler() {
 }
 
 /******** Our main function ********/
+
 function main() { 
 	// SILKa API
 	jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/asn`, function(response) {
@@ -55,6 +56,16 @@ function main() {
 	jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/nonpns`, function(response){
 		return $nonpns = response;
 	});
+	jQuery.fn.hasAttr = function(name) {  
+	   return this.attr(name) !== undefined;
+	};
+	// Modifikasi
+	var container = jQuery('#widget-gpr-bkppdblg');
+	if(container.hasAttr('gpr-theme') && container.attr('gpr-theme') != '') {container.attr('gpr-theme');} else {container.attr('gpr-theme', '#01877c');}
+	if(container.hasAttr('gpr-height') && container.attr('gpr-height') != '') {container.attr('gpr-height');} else {container.attr('gpr-height', '500');}
+	var theme =  container.attr('gpr-theme');
+	var maxHeight =  container.attr('gpr-height');
+
 	// Init Load
 	jQuery('#widget-gpr-bkppdblg').html(`<div class="sk-cube-grid">
 																			  <div class="sk-cube sk-cube1"></div>
@@ -66,7 +77,7 @@ function main() {
 																			  <div class="sk-cube sk-cube7"></div>
 																			  <div class="sk-cube sk-cube8"></div>
 																			  <div class="sk-cube sk-cube9"></div>
-																			</div>`);
+																			</div>`).css('background-color', theme);
   jQuery(document).ready(function($) {
 		var css_link = $("<link>", { 
 			rel: "stylesheet",
@@ -74,14 +85,6 @@ function main() {
 			href: GPR_url + "assets/gpr/gpr_bkppdblg_dev.css"
 		});
 		css_link.appendTo('head');
-		$.fn.hasAttr = function(name) {  
-		   return this.attr(name) !== undefined;
-		};
-		var container = jQuery('#widget-gpr-bkppdblg');
-		if(container.hasAttr('gpr-theme') && container.attr('gpr-theme') != '') {container.attr('gpr-theme');} else {container.attr('gpr-theme', '#01877c');}
-		if(container.hasAttr('gpr-height') && container.attr('gpr-height') != '') {container.attr('gpr-height');} else {container.attr('gpr-height', '500');}
-		var theme =  container.attr('gpr-theme');
-		var maxHeight =  container.attr('gpr-height');
 
 		//load 
     var jsonp_url = GPR_url + "frontend/v1/apiPublic/gpr";
