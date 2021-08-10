@@ -4,7 +4,7 @@
 <section class="content-home">
     <div class="container">
         <div class="row app-slick">
-                <div>
+                <!-- <div>
                     <div class="d-flex align-items-center bg-dark shadow-sm py-4 px-md-5 px-0" style="border-radius:15px;">
                         <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/gpr.svg') ?>" alt="GPR (Government Public Relation)">
@@ -17,7 +17,7 @@
                             <a href="<?= base_url('widget-gpr-bkppdblg') ?>" class="btn btn-warning">Pasang Widget</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div>
                     <div class="d-flex align-items-center bg-white shadow-sm py-4 px-md-5 px-0" style="border-radius:15px;">
                         <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
