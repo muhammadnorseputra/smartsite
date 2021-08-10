@@ -66,8 +66,8 @@ class Api extends CI_Controller {
 			'jml_pensiun' => nominal($pensiun)
 		];
 		$this->output->set_content_type('application/json')->set_output(json_encode($data));
-		$jsonfile = json_encode($data, JSON_PRETTY_PRINT);
-		@file_put_contents('statistik-pegawai.json', $jsonfile);
+		// $jsonfile = json_encode($data, JSON_PRETTY_PRINT);
+		// @file_put_contents('statistik-pegawai.json', $jsonfile);
 	}
 	public function silka_get_grap($type) {
 		$url = 'http://silka.bkppd-balangankab.info';
