@@ -29,6 +29,20 @@ document.head.append(jqueryScript);</code></pre>
 				<p>
 					<pre><code>&lt;div id="widget-gpr-bkppdblg"&gt;&lt;/div&gt;</code></pre>
 				</p>
+				<h4>Modifikasi Widget</h4>
+				<hr>
+				<p>
+					Untuk memodifikasi widget hanya berlaku untuk perubahan <abbr title="gpr-theme">Tema</abbr> dan <abbr title="gpr-height">Tinggi Widget</abbr> sebagai penyesuaian thema website/blog anda. 
+				</p>
+				<p>
+					Silahkan tambahkan Atteribute <code>gpr-theme</code> (Tema Widget), <code>gpr-height</code> (Tinggi Widget) pada script HTML, jika Atteribute tidak dipasang kami akan mengisi Tema dan Tinggi secara <code>default</code>
+				</p>
+				<p>
+					Untuk nilai value <b>tema</b> dapat diisi <b>nama warna</b> (contoh: gpr-theme="<code>teal</code>") dan untuk nilai value <b>tinggi</b> dapat diisi dengan <b>angka</b> (contoh: gpr-height="<code>500</code>")
+				</p>
+				<p>
+					<pre><code>&lt;div id="widget-gpr-bkppdblg" gpr-theme="teal" gpr-height="500"&gt;&lt;/div&gt;</code></pre>
+				</p>
 				<hr>
 				<div class="small">Developer by <a rel="noreferrer, nofollow" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6"> putrabungsu6</a></div>
 			</div>

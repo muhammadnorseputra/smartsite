@@ -2,7 +2,6 @@ div#widget-gpr-bkppdblg {
     border-radius: 10px;
     overflow: hidden;
     padding: 3px;
-    background: teal;
 }
 .gpr_bkppdblg {
     padding: 0px;
@@ -15,7 +14,6 @@ div#widget-gpr-bkppdblg {
 	
 .gpr_panel_head {
     color: #FFF;
-    background: teal;
     padding: 10px;
 }
 
@@ -35,10 +33,12 @@ div#widget-gpr-bkppdblg {
 .gpr_panel_head_img {
 	display: block;
 	width: 60px;
-	background: teal;
 	border-radius: 30px;
 	padding: 0px;
 	margin: 5px;
+	border: 1px solid #fff !important;
+	object-fit: cover;
+	object-position: center;
 }
 
 .gpr_panel_left {
@@ -51,7 +51,6 @@ div#widget-gpr-bkppdblg {
 .gpr_panel_img {
 	display: block;
 	width: 50px;
-	background: teal;
 	border-radius: 3px;
 	padding: 2px;
 	object-fit: cover;
@@ -72,22 +71,25 @@ div#widget-gpr-bkppdblg {
 .gpr_panel_title_main {
     font-size: 150%;
     padding: 0;
+    cursor: default;
 }
 	
 	.gpr_panel_title_sub {
 		font-size:80%;
+    cursor: default;
 	}
 	
 	.gpr_panel_title_url {
 		font-size:70%;
 		font-weight:bold;
-		background: green;
+		background-color: #28FFBF;
 		padding: 1px 6px;
 		border-radius: 6px;
+		text-align: center;
 	}
 	.gpr_panel_title_url a {
 		text-decoration:none;
-		color:#FFF;
+		color: #064420 !important;
 	}
 	
 .gpr_list {
@@ -97,7 +99,6 @@ div#widget-gpr-bkppdblg {
     background: #FFF;
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 500px;
     /* box-shadow: 0 0 0.5em #ccc; */
     border-top: 1px dotted #ccc;
 }
@@ -168,7 +169,6 @@ div#widget-gpr-bkppdblg {
 .gpr_footer {
 	padding: 8px 3px 0px 3px;
 	color: #fff !important;
-	background-color: teal;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   margin-bottom: 15px !important;
@@ -180,7 +180,7 @@ div#widget-gpr-bkppdblg {
 	color: #fff !important;
 }
 .gpr_footer a:hover,.gpr_footer a:focus,.gpr_footer a:active {
-	color: yellow !important;
+	color: #333;
 	transition: color .3s ease !important;
 }
 
