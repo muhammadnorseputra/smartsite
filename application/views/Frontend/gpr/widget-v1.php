@@ -1,7 +1,7 @@
 <section class="my-md-5 my-3">
 	<div class="container">
 		<div class="row pt-md-5">
-			<div class="col-md-8 pr-md-5 order-last order-md-first">
+			<div class="col-md-8 pr-md-5 order-last order-md-first" id="main-content">
 				<h4>Tentang GPR-BKPPD Balangan</h4>
 				<hr>
 				<p>
@@ -17,7 +17,7 @@
 				</p>
 				<h4>Cara Memasang Widget dengan Inline Script</h4>
 				<hr>
-				Tambahkan script JS dibawah ini pada sebelum penutup <code>&lt;/body&gt;</code>
+				Tambahkan script JS dibawah ini sebelum penutup <code>&lt;/body&gt;</code>
 				<p>
 					<pre><code>const jqueryScript = document.createElement('script');
 jqueryScript.src = '//web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js';
@@ -47,10 +47,12 @@ document.head.append(jqueryScript);</code></pre>
 				<div class="small">Developer by <a rel="noreferrer, nofollow" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6"> putrabungsu6</a></div>
 			</div>
 			<div class="col-md-4 mb-5">
-				<h4>Tampilan Widget</h4>
-				<hr>
-				<script defer="defer" crossorigin="anonymous" type="text/javascript" src="//web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js"></script>
-				<div id="widget-gpr-bkppdblg"></div>
+				<div id="sidebar">
+					<h4>Tampilan Widget</h4>
+					<hr>
+					<script defer="defer" crossorigin="anonymous" type="text/javascript" src="//web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js"></script>
+					<div id="widget-gpr-bkppdblg"></div>
+				</div>	
 			</div>	
 		</div>
 	</div>
