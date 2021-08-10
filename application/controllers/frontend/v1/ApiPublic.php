@@ -192,22 +192,25 @@ class ApiPublic extends RestController {
                     'id_article' => $r->id_berita,
                     'jdl_article' => $r->judul,
                     'slug_article' => url_title(strtolower($r->judul)),
-                    'isi_article' => $content, 
+                    // 'isi_article' => $content, 
                     'img_article' => $img,
                     'url_article' => $posturl,
                     'tgl_posting_article' => longdate_indo($r->tgl_posting),
-                    'jml_comments_article' => $this->komentar->jml_komentarbyidberita($r->id_berita),
+                    // 'jml_comments_article' => $this->komentar->jml_komentarbyidberita($r->id_berita),
                     'user_posting' => [
                         'user_nama' => $by,
-                        'user_image' => blob_filename($gravatar),
-                        'user_link' => $link_profile_public
+                        // 'user_image' => blob_filename($gravatar),
+                        // 'user_link' => $link_profile_public
                     ]
                 ];
 
                 $rs[] = $datas;
             endforeach;
             $json = $rs;
+            // $jsonfile = json_encode($json, JSON_PRETTY_PRINT);
+            // @file_put_contents('gpr.json', $jsonfile);
             return $this->response( $json, 200 );
+            
         else:
             return $this->response( [
                     'status' => false,

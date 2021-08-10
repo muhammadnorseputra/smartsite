@@ -47,14 +47,9 @@ function scriptLoadHandler() {
 
 function main() { 
 	// SILKa API
-	jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/asn`, function(response) {
-		return $asn = response;
-	});
-	jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/pns`, function(response) {
-		return $pns = response;
-	});
-	jQuery.getJSON(`${GPR_url}/frontend/v1/api/silka_get_grap/nonpns`, function(response){
-		return $nonpns = response;
+	var $asn = [];
+	jQuery.getJSON(`${GPR_url}frontend/v1/api/silka_file_json`, function(response) {
+		$asn.push(response);
 	});
 	jQuery.fn.hasAttr = function(name) {  
 	   return this.attr(name) !== undefined;
@@ -81,6 +76,7 @@ function main() {
 																			  <div class="sk-cube sk-cube9"></div>
 																			</div>`).css('background-color', theme);
   jQuery(document).ready(function($) {
+  	console.log($asn);
 		var css_link = $("<link>", { 
 			rel: "stylesheet",
 			type: "text/css",
@@ -106,9 +102,9 @@ function main() {
 					myhtml+='</div>';			
 				myhtml+='</div>';
 			myhtml+='<div class="gpr_panel_silka">'; 
-									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn+'</h3>ASN</div>';
-									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$pns+'</h3>PNS + CPNS</div>';
-									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$nonpns+'</h3>NON PNS</div>';
+									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_asn+'</h3>ASN</div>';
+									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_pns+'</h3>PNS + CPNS</div>';
+									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_nonpns+'</h3>NON PNS</div>';
 			myhtml+='</div>';
 			myhtml+='<ul class="gpr_list" style="max-height:'+maxHeight+'px;">';
 			jQuery.each(data, function(k, v) {
