@@ -1,8 +1,0 @@
-node_modules/*
-.sass-cache/*
-.vscode/*
-workspace.code-workspace
-old-index.php
-.editorconfig
-index-old2.php
-Api_test.http
