@@ -36,7 +36,10 @@ html::-webkit-scrollbar-thumb {
   background-color: #ddd;
   opacity: 0.6;
 }
-
+html::-webkit-scrollbar-thumb:hover {
+  opacity: 1;
+  transition: opacity .3s ease;
+}
 section.hero-beranda {
 	background: url('../../../assets/images/bg/bgheader.svg');
 	background-size: cover; 
