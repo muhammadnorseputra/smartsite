@@ -24,10 +24,10 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
       <div class="col-md-12 mt-md-5">
         <div>
           <div class="row">
-            <div class="col-xs-9 col-sm-9 col-md-9">
+            <div class="col-xs-9 col-sm-9 col-md-9" id="main-content">
               <div class="row">
                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 py-3">
-                  <img class="img-fluid rounded" style="object-fit:cotain; max-height:150px;" src="<?= $photo ?>">
+                  <img width="110" height="110" class="rounded-circle border p-2" style="object-fit:cover; object-position: center;" src="<?= $photo ?>">
                 </div>
                 <div class="col-md-10 py-3">
                   <h3 class="font-weight-bold"><?= $namalengkap ?> <?= $online ?></h3>
@@ -38,12 +38,12 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
               </div>
               <div class="w-100 my-4"></div>
               <div class="row">
-                <div class="col-md-4 order-3 order-md-first">
-                  <div id="sidebar">
-                    <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
+                <!-- <div class="col-md-4 order-3 order-md-first">
+                  <div class="separator">
+                  <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-images text-secondary mr-2"></i>Geleri</span></span>
                   </div>
-                </div>
-                <div class="col-md-8 order-last order-md-2" id="main-content">
+                </div> -->
+                <div class="col-md-8 order-last order-md-2 offset-md-2">
                   <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-secondary mr-2"></i>Postingan Terbaru</span></span>
                         </div>
@@ -52,7 +52,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                 </div>
               </div>
             </div>
-            <div class="col-md-3 order-first order-md-last">
+            <div class="col-md-3 order-first order-md-first">
               <div id="sidebar">
                     <!-- <h5 class="my-3 font-weight-bold title-sidebar">Menu</h5> -->
                     <div class="list-group">
@@ -66,13 +66,13 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                     <div class="w-100"></div>
                     <div class="list-group d-none d-md-block d-lg-block">
                       <div class="separator">
-                        <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-shapes text-secondary mr-2"></i>Kategori Terbaru</span></span>
+                        <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-shapes text-secondary mr-2"></i>Kategori</span></span>
                         </div>
                                 <?php
                                 foreach ($mf_kategori as $k) :
                                 $post_list_url = base_url('k/'.url_title($k->nama_kategori).'?order=desc');
                                 ?>
-                                <a href="<?php echo $post_list_url ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default my-1">#<?= $k->nama_kategori; ?> <span class="badge badge-dark float-right"><?= $this->mf_beranda->count_kategori_berita($k->id_kategori); ?></span> </a>
+                                <a href="<?php echo $post_list_url ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default my-1"><?= ucwords($k->nama_kategori); ?> <span class="badge badge-dark float-right"><?= $this->mf_beranda->count_kategori_berita($k->id_kategori); ?></span> </a>
                                 <?php endforeach; ?>
                             </div>
               </div>

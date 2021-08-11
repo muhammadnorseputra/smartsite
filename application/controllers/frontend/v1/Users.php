@@ -635,7 +635,7 @@ class Users extends CI_Controller {
 	public function halaman($nama_panggilan, $id)
 	{
 		$data = [
-			'title' => 'Halaman &bull; ' . ucfirst($nama_panggilan),
+			'title' => 'Halaman &bull; ' . ucfirst($nama_panggilan) . ' - BKPPD Balangan',
 			'isi' => 'Frontend/v1/pages/u_profile_halaman',
 			'mf_beranda' => $this->mf_beranda->get_identitas(),
 			'mf_menu' => $this->mf_beranda->get_menu(),

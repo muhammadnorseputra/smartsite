@@ -18,7 +18,7 @@ $link_profile_public =
           <div class="row mb-4">
             <?php if (encrypt_url($public_profile->id_user_portal) == $this->uri->segment(3)) : ?>
               <div class="col-md-2 text-center pl-md-0">
-                <img src="<?= $photo ?>" class="img-fluid rounded-circle w-50 bg-white shadow-sm p-2">
+                <img style="object-fit:cover;" width="90" height="90" src="<?= $photo ?>" class="rounded-circle border shadow-sm p-2">
               </div>
               <div class="col-md-10 px-md-0 mt-2">
 
@@ -26,7 +26,7 @@ $link_profile_public =
                 
                 <a data-toggle="tooltip" data-placement="top" title="Profile @<?= $namalengkap ?>" href="<?= $link_profile_public ?>" class="btn btn-info btn-sm rounded float-right"> Back to profile</a>
                 
-                <h5 class="mb-0 text-primary font-weight-bold">Halaman /  <small class="text-muted">Ini adalah beberapa halaman yang telah dibuat "<?= $namalengkap ?>".</small>
+                <h5 class="mb-0 text-primary font-weight-bold">Halaman /  <small class="text-muted">Beberapa halaman yang telah dibuat "<?= $namalengkap ?>".</small>
                 </h5>
                 
               </div>
@@ -46,7 +46,7 @@ $link_profile_public =
             <?php foreach ($halaman->result() as $h) : ?>
               <?php
               if ($h->publish == 'Y') :
-                $target = base_url('page/' . $h->token_halaman . '/' . url_title($h->title));
+                $target = base_url('page/'. $h->slug);
               else :
                 $target = '#';
               endif;
