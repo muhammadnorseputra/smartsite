@@ -27,7 +27,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
             <div class="col-xs-9 col-sm-9 col-md-9 mt-4" id="main-content">
               <div class="row">
                 <div class="col-12 px-0 border rounded-top">
-                  <img src="<?= $photo ?>" height="310" class="w-100 rounded-top" style="object-fit:cover; object-position: 50% 10%; filter: blur(3px);">
+                  <img src="<?= $photo ?>" height="310" class="w-100 rounded-top" style="object-fit:cover; object-position: 50% 13%; filter: blur(3px);">
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 py-3">
                   <img width="110" height="110" class="rounded-circle border p-2 mt--8 ml-3 bg-white" style="object-fit:cover; object-position: center;" src="<?= $photo ?>">
