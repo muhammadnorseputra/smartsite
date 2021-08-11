@@ -7,8 +7,8 @@ how to use :
 
 // Localize jQuery variable
 var jQuery;
-var GPR_url = 'https://web.bkppd-balangankab.info/';
-// var GPR_url = 'http://localhost/smartsite/';
+// var GPR_url = 'https://web.bkppd-balangankab.info/';
+var GPR_url = 'http://localhost/smartsite/';
 
 /******** Load jQuery if not present *********/
 if (window.jQuery === undefined || window.jQuery.fn.jquery !== '1.12.4') {
@@ -70,28 +70,29 @@ function main() {
 																			  <div class="sk-cube sk-cube8"></div>
 																			  <div class="sk-cube sk-cube9"></div>
 																			</div>`).css('background-color', theme);
-  // SILKa API
-	var jsonp_silka = GPR_url + 'frontend/v1/apiPublic/silka_jsonp';
-	var $asn = [];
-	jQuery.get(jsonp_silka, function(response) {
-		$asn.push(response);
-	}, 'jsonp');
-
   jQuery(document).ready(function($) {
-  	console.log($asn);
+  	
 		var css_link = $("<link>", { 
 			rel: "stylesheet",
 			type: "text/css",
 			href: GPR_url + "assets/gpr/gpr_bkppdblg_dev.css"
 		});
 		css_link.appendTo('head');
-		//load 
+		//Article API 
+		var jsonp_silka = GPR_url + 'frontend/v1/apiPublic/silka_jsonp';
     var jsonp_url = GPR_url + "frontend/v1/apiPublic/gpr";
-    jQuery.ajax({
+    $.ajax({
         url: jsonp_url, 
         dataType: 'jsonp',
         jsonpCallback: 'grp_article',
+        beforeSend: function() {
+					$.get(jsonp_silka, function(response) {
+						localStorage.setItem("result_silka", response);
+					}, 'jsonp');
+        },
         success: function(data) {
+        var $asn = localStorage.getItem("result_silka");
+				console.log($asn);
 				var myhtml='<div class="gpr_bkppdblg">';
 								myhtml+='<div class="gpr_panel_head" style="background-color:'+theme+';">';
 									myhtml+='<div class="gpr_panel_head_left">';
