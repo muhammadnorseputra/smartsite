@@ -117,6 +117,26 @@ class ApiPublic extends RestController {
 	            ], 404 );
 		endif;
 	}
+    public function silka_jsonp_get()
+    {
+        $url = 'http://silka.bkppd-balangankab.info';
+        $type = ['asn','pns','nonpns','pensiun'];
+        $asn = api_client($url.'/api/get_grap/'.$type[0]);
+        $pns = api_client($url.'/api/get_grap/'.$type[1]);
+        $nonpns = api_client($url.'/api/get_grap/'.$type[2]);
+        $pensiun = api_client($url.'/api/get_grap/'.$type[3]);
+
+        $data[] = [
+            'jml_asn' => nominal($asn),
+            'jml_pns' => nominal($pns),
+            'jml_nonpns' => nominal($nonpns),
+            'jml_pensiun' => nominal($pensiun)
+        ];
+        return $this->response( $data, 200 );
+        // $this->output->set_content_type('application/json')->set_output(json_encode($data));
+        // $jsonfile = json_encode($data, JSON_PRETTY_PRINT);
+        // @file_put_contents('statistik-pegawai.json', $jsonfile);
+    }
     public function gpr_get()
     {
         $filter = [

@@ -7,8 +7,8 @@ how to use :
 
 // Localize jQuery variable
 var jQuery;
-var GPR_url = 'https://web.bkppd-balangankab.info/';
-// var GPR_url = 'http://localhost/smartsite/';
+// var GPR_url = 'https://web.bkppd-balangankab.info/';
+var GPR_url = 'http://localhost/smartsite/';
 
 /******** Load jQuery if not present *********/
 if (window.jQuery === undefined || window.jQuery.fn.jquery !== '1.12.4') {
@@ -48,7 +48,7 @@ function scriptLoadHandler() {
 function main() { 
 	// SILKa API
 	var $asn = [];
-	jQuery.getJSON(`${GPR_url}frontend/v1/api/silka_file_json`, function(response) {
+	jQuery.getJSON(`${GPR_url}frontend/v1/apiPublic/silka_jsonp`, function(response) {
 		$asn.push(response);
 	});
 	jQuery.fn.hasAttr = function(name) {  

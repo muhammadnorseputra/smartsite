@@ -53,6 +53,7 @@ document.head.append(jqueryScript);</code></pre>
 				<div id="sidebar">
 					<h4>Tampilan Widget</h4>
 					<hr>
+					<!-- <script defer="defer" type="text/javascript" src="<?= assets("gpr/gpr_bkppdblg_dev.js") ?>"></script> -->
 					<script defer="defer" type="text/javascript" src="//web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js"></script>
 					<div id="widget-gpr-bkppdblg" gpr-thumb="image"></div>
 				</div>	

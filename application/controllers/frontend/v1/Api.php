@@ -72,7 +72,7 @@ class Api extends CI_Controller {
 	public function silka_get_grap($type) {
 		$url = 'http://silka.bkppd-balangankab.info';
 		$api = api_curl_get($url.'/api/get_grap/'.$type);
-		echo json_encode(nominal($api));
+		echo json_encode($api);
 	}
 	public function silka_get_grap_pns($type)
 	{
@@ -88,7 +88,6 @@ class Api extends CI_Controller {
             'mf_menu' => $this->mf_beranda->get_menu(),
 			'isi'	=> 'Frontend/v1/pages/pegawai/index',
 		];
-		$this->silka_file_json();
 		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
 
