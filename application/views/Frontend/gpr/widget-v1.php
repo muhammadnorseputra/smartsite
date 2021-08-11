@@ -34,6 +34,9 @@ document.head.append(jqueryScript);<br>&lt;/script&gt;</code></pre>
 				<p>
 					Untuk memodifikasi widget hanya berlaku untuk perubahan <abbr title="gpr-theme">Tema</abbr>, <abbr title="gpr-height">Tinggi Widget</abbr>, <abbr title="Gambar Thumbnail">Thumbnail</abbr> sebagai penyesuaian thema website/blog anda. 
 				</p>
+				<p>
+					<pre><code>&lt;div id="widget-gpr-bkppdblg" gpr-theme="teal" gpr-height="500" gpr-thumb="image"&gt;&lt;/div&gt;</code></pre>
+				</p>
 				<table class="table table-bordered table-sm">
 					<thead>
 						<tr>
@@ -77,10 +80,7 @@ document.head.append(jqueryScript);<br>&lt;/script&gt;</code></pre>
 					Untuk nilai value <b>tema</b> dapat diisi <span class="badge badge-pill badge-dark">nama warna / kode warna</span> (contoh: gpr-theme="<code>teal</code>") dan untuk nilai value <b>tinggi</b> dapat diisi dengan <span class="badge badge-pill badge-dark">angka</span> (contoh: gpr-height="<code>500</code>")
 				</p>
 				<p>
-					Untuk tipe thumbnail bisa digunakan <code>default</code> <span class="badge badge-info">tanpa thumbnail</span>, <code>icon</code>, <code>image</code>, <code>number</code>.
-				</p>
-				<p>
-					<pre><code>&lt;div id="widget-gpr-bkppdblg" gpr-theme="teal" gpr-height="500" gpr-thumb="image"&gt;&lt;/div&gt;</code></pre>
+					Untuk tipe thumbnail bisa digunakan <code>default</code>, <code>icon</code>, <code>image</code>, <code>number</code>.
 				</p>
 				<hr>
 				<div class="small">Developer by <a rel="noreferrer, nofollow" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6"> putrabungsu6</a></div>
