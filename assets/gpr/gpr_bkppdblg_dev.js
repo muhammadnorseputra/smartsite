@@ -89,7 +89,7 @@ function main() {
     jQuery.ajax({
         url: jsonp_url, 
         dataType: 'jsonp',
-        jsonpCallback: 'grp-article',
+        jsonpCallback: 'grp_article',
         success: function(data) {
 				var myhtml='<div class="gpr_bkppdblg">';
 								myhtml+='<div class="gpr_panel_head" style="background-color:'+theme+';">';
