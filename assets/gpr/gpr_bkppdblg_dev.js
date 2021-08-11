@@ -121,7 +121,7 @@ function main() {
 											}else if(thumb == 'icon') {
 												myhtml+='<img class="gpr_panel_img" src="'+GPR_url+'assets/images/fitur/newspaper.svg">';
 											} else {
-												myhtml+='<div class="gpr_panel_number"><span>'+number+'</span></div>';
+												myhtml+='<div class="gpr_panel_number" style="color:'+theme+';"><span>'+number+'</span></div>';
 											}
 										myhtml+='</div>';
 									}

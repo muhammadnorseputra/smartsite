@@ -86,10 +86,10 @@ div#widget-gpr-bkppdblg {
 	align-items: center;
 	align-content: stretch;
 	/* background-color: teal; */
-	color: teal;
+	/* color: teal; */
 	padding: 5px;
 	object-fit: cover;
-	font-size: 200% !important;
+	font-size: 150% !important;
 	font-weight: bold;
 	margin: 0;
 }
