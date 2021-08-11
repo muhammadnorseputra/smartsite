@@ -19,9 +19,9 @@
 				<hr>
 				Tambahkan script JS dibawah ini sebelum penutup <code>&lt;/body&gt;</code>
 				<p>
-					<pre><code>const jqueryScript = document.createElement('script');
+					<pre><code>&lt;script&gt;<br>const jqueryScript = document.createElement('script');
 jqueryScript.src = '//web.bkppd-balangankab.info/assets/gpr/gpr_bkppdblg_production.js';
-document.head.append(jqueryScript);</code></pre>
+document.head.append(jqueryScript);<br>&lt;/script&gt;</code></pre>
 				</p>
 				<p>
 					Kemudian tambahkan script HTML dibawah ini pada posisi yang anda ingin tampilkan widget
