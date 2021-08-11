@@ -125,7 +125,7 @@ class ApiPublic extends RestController {
         $nonpns = api_client($url.'/api/get_grap/'.$type[2]);
         $pensiun = api_client($url.'/api/get_grap/'.$type[3]);
 
-        $data[] = [
+        $data = [
             'jml_asn' => nominal($asn),
             'jml_pns' => nominal($pns),
             'jml_nonpns' => nominal($nonpns),
