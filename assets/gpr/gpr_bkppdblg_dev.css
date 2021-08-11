@@ -4,6 +4,7 @@
 
 .gpr_list::-webkit-scrollbar-track {
   background-color: transparent;
+  border-left: 1px solid #ccc;
   // border-radius: 100px;
 }
 

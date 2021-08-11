@@ -7,8 +7,8 @@ how to use :
 
 // Localize jQuery variable
 var jQuery;
-var GPR_url = 'https://web.bkppd-balangankab.info/';
-// var GPR_url = 'http://localhost/smartsite/';
+// var GPR_url = 'https://web.bkppd-balangankab.info/';
+var GPR_url = 'http://localhost/smartsite/';
 
 /******** Load jQuery if not present *********/
 if (window.jQuery === undefined || window.jQuery.fn.jquery !== '1.12.4') {
@@ -53,7 +53,7 @@ function main() {
 	var container = jQuery('#widget-gpr-bkppdblg');
 	if(container.hasAttr('gpr-theme') && container.attr('gpr-theme') != '') {container.attr('gpr-theme');} else {container.attr('gpr-theme', '#01877c');}
 	if(container.hasAttr('gpr-height') && container.attr('gpr-height') != '') {container.attr('gpr-height');} else {container.attr('gpr-height', '500');}
-	if(container.hasAttr('gpr-thumb') && container.attr('gpr-thumb') != '') {container.attr('gpr-thumb');} else {container.attr('gpr-thumb', 'icon');}
+	if(container.hasAttr('gpr-thumb') && container.attr('gpr-thumb') != '') {container.attr('gpr-thumb');} else {container.attr('gpr-thumb', 'default');}
 	var theme =  container.attr('gpr-theme');
 	var thumb =  container.attr('gpr-thumb');
 	var maxHeight =  container.attr('gpr-height');
@@ -113,13 +113,15 @@ function main() {
 							myhtml+='<ul class="gpr_list" style="max-height:'+maxHeight+'px;">';
 							jQuery.each(data, function(k, v) {
 								myhtml+='<li class="gpr_item">';
-									myhtml+='<div class="gpr_panel_left">';
-										if(thumb == 'image'){
-											myhtml+='<img class="gpr_panel_img" src="'+v.img_article+'" style="background-color:'+theme+';">';
-										}else if(thumb == 'icon') {
-											myhtml+='<img class="gpr_panel_img" src="'+GPR_url+'assets/images/fitur/newspaper.svg">';
-										}
-									myhtml+='</div>';
+									if(thumb == 'default'){
+										myhtml+='<div class="gpr_panel_left">';
+											if(thumb == 'image'){
+												myhtml+='<img class="gpr_panel_img" src="'+v.img_article+'" style="background-color:'+theme+';">';
+											}else if(thumb == 'icon') {
+												myhtml+='<img class="gpr_panel_img" src="'+GPR_url+'assets/images/fitur/newspaper.svg">';
+											} 
+										myhtml+='</div>';
+									}
 									myhtml+='<div class="gpr_panel_right">';
 										//myhtml+='<div class="gpr_panel_news_attr">';
 											//diindonesiakan ?
