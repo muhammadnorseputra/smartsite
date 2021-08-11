@@ -7,8 +7,8 @@ how to use :
 
 // Localize jQuery variable
 var jQuery;
-// var GPR_url = 'https://web.bkppd-balangankab.info/';
-var GPR_url = 'http://localhost/smartsite/';
+var GPR_url = 'https://web.bkppd-balangankab.info/';
+// var GPR_url = 'http://localhost/smartsite/';
 
 /******** Load jQuery if not present *********/
 if (window.jQuery === undefined || window.jQuery.fn.jquery !== '1.12.4') {
@@ -78,7 +78,7 @@ function main() {
 			href: GPR_url + "assets/gpr/gpr_bkppdblg_dev.css"
 		});
 		css_link.appendTo('head');
-		//Article API 
+		//JSONP API 
 		var jsonp_silka = GPR_url + 'frontend/v1/apiPublic/silka_jsonp';
     var jsonp_url = GPR_url + "frontend/v1/apiPublic/gpr";
     $.ajax({
@@ -87,12 +87,11 @@ function main() {
         jsonpCallback: 'grp_article',
         beforeSend: function() {
 					$.get(jsonp_silka, function(response) {
-						localStorage.setItem("result_silka", response);
+						localStorage.setItem("result_silka", JSON.stringify(response));
 					}, 'jsonp');
         },
         success: function(data) {
-        var $asn = localStorage.getItem("result_silka");
-				console.log($asn);
+        var $asn = JSON.parse(localStorage.getItem("result_silka"));
 				var myhtml='<div class="gpr_bkppdblg">';
 								myhtml+='<div class="gpr_panel_head" style="background-color:'+theme+';">';
 									myhtml+='<div class="gpr_panel_head_left">';
@@ -107,9 +106,9 @@ function main() {
 									myhtml+='</div>';			
 								myhtml+='</div>';
 							myhtml+='<div class="gpr_panel_silka">'; 
-													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_asn+'</h3>ASN</div>';
-													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_pns+'</h3>PNS + CPNS</div>';
-													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_nonpns+'</h3>NON PNS</div>';
+													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn.jml_asn+'</h3>ASN</div>';
+													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn.jml_pns+'</h3>PNS + CPNS</div>';
+													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn.jml_nonpns+'</h3>NON PNS</div>';
 							myhtml+='</div>';
 							myhtml+='<ul class="gpr_list" style="max-height:'+maxHeight+'px;">';
 							jQuery.each(data, function(k, v) {
