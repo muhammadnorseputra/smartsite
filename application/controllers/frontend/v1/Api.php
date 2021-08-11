@@ -65,6 +65,12 @@ class Api extends CI_Controller {
 			'jml_nonpns' => nominal($nonpns),
 			'jml_pensiun' => nominal($pensiun)
 		];
+		// $this->output->set_content_type('application/json');
+		// $json = json_encode($data);
+		// if (@$_GET['callback'])
+		//   echo @$_GET['callback'] . '(' . $json . ')';
+		// else
+		//   echo $json;
 		$this->output->set_content_type('application/json')->set_output(json_encode($data));
 		// $jsonfile = json_encode($data, JSON_PRETTY_PRINT);
 		// @file_put_contents('statistik-pegawai.json', $jsonfile);

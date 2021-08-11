@@ -48,7 +48,7 @@ function scriptLoadHandler() {
 function main() { 
 	// SILKa API
 	var $asn = [];
-	jQuery.getJSON(`${GPR_url}frontend/v1/apiPublic/silka_jsonp`, function(response) {
+	jQuery.getJSON(`${GPR_url}frontend/v1/api/silka_file_json`, function(response) {
 		$asn.push(response);
 	});
 	jQuery.fn.hasAttr = function(name) {  
