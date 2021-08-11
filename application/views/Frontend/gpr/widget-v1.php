@@ -34,6 +34,42 @@ document.head.append(jqueryScript);<br>&lt;/script&gt;</code></pre>
 				<p>
 					Untuk memodifikasi widget hanya berlaku untuk perubahan <abbr title="gpr-theme">Tema</abbr>, <abbr title="gpr-height">Tinggi Widget</abbr>, <abbr title="Gambar Thumbnail">Thumbnail</abbr> sebagai penyesuaian thema website/blog anda. 
 				</p>
+				<table class="table table-bordered table-sm">
+					<thead>
+						<tr>
+							<th class="w-25">Atteribute</th>
+							<th>Value</th>
+							<th>Default</th>
+							<th class="w-25">Keterangan</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>gpr-theme</code></td>
+							<td><span class="badge badge-light">nama warna</span> <br> <span class="badge badge-light">kode warna</span></td>
+							<td><span class="badge badge-light">teal</span> <br> <span class="badge badge-light">#01877C</span></td>
+							<td class="small text-muted">Pilih value tema dengan nama warna atau dengan kode warna, sesuaikan dengan tema situs</td>
+						</tr>
+						<tr>
+							<td><code>gpr-width</code></td>
+							<td><span class="badge badge-light">auto</span></td>
+							<td><span class="badge badge-light">auto</span></td>
+							<td class="small text-muted">Widget akan secara otomatis menyesuaikan lebar dari ukuran layar atau element (responsive)</td>
+						</tr>
+						<tr>
+							<td><code>gpr-height</code></td>
+							<td><span class="badge badge-light">number</span></td>
+							<td><span class="badge badge-light">500</span></td>
+							<td class="small text-muted">Silahkan isi dengan format angka, sesuaikan dengan tinggi widget yang akan dipasang dengan element pada situs anda</td>
+						</tr>
+						<tr>
+							<td><code>gpr-thumb</code></td>
+							<td><span class="badge badge-light">default</span> <br> <span class="badge badge-light">icon</span> <br> <span class="badge badge-light">image</span> <br> <span class="badge badge-light">number</span></td>
+							<td><span class="badge badge-light">default</span></td>
+							<td class="small text-muted">Pilih tipe thumbnail widget, sistem akan secara default menset tipe thumbnail ke <span class="badge badge-light">default</span> tanpa menampilkan gambar/icon jika atteribute tidak diset</td>
+						</tr>
+					</tbody>
+				</table>
 				<p>
 					Silahkan tambahkan Atteribute <code>gpr-theme</code> (Tema Widget), <code>gpr-height</code> (Tinggi Widget), <code>gpr-thumb</code> (Thumbnail) pada script HTML, jika Atteribute tidak dipasang kami akan setting secara <code>default</code>
 				</p>
