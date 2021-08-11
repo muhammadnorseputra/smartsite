@@ -7,8 +7,8 @@ how to use :
 
 // Localize jQuery variable
 var jQuery;
-// var GPR_url = 'https://web.bkppd-balangankab.info/';
-var GPR_url = 'http://localhost/smartsite/';
+var GPR_url = 'https://web.bkppd-balangankab.info/';
+// var GPR_url = 'http://localhost/smartsite/';
 
 /******** Load jQuery if not present *********/
 if (window.jQuery === undefined || window.jQuery.fn.jquery !== '1.12.4') {
@@ -113,7 +113,7 @@ function main() {
 							myhtml+='<ul class="gpr_list" style="max-height:'+maxHeight+'px;">';
 							jQuery.each(data, function(k, v) {
 								myhtml+='<li class="gpr_item">';
-									if(thumb == 'default'){
+									if(thumb != 'default'){
 										myhtml+='<div class="gpr_panel_left">';
 											if(thumb == 'image'){
 												myhtml+='<img class="gpr_panel_img" src="'+v.img_article+'" style="background-color:'+theme+';">';
