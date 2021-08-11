@@ -86,63 +86,67 @@ function main() {
 
 		//load 
     var jsonp_url = GPR_url + "frontend/v1/apiPublic/gpr";
-	  jQuery.getJSON(jsonp_url, function(data) {
-		
-		var myhtml='<div class="gpr_bkppdblg">';
-				myhtml+='<div class="gpr_panel_head" style="background-color:'+theme+';">';
-					myhtml+='<div class="gpr_panel_head_left">';
-						myhtml+='<img class="gpr_panel_head_img" src="'+GPR_url+'/assets/images/logo.png"  style="background-color:'+theme+';">';
-					myhtml+='</div>';
-					myhtml+='<div class="gpr_panel_head_right">';
-						myhtml+='<div class="gpr_panel_title">';
-							myhtml+='<div class="gpr_panel_title_main"><strong>GPR</strong> - BKPPD BLG </div>';
-							myhtml+='<div class="gpr_panel_title_sub"><em>Government Public Relations</em></div>';
-							myhtml+='<div class="gpr_panel_title_url"><a  rel="nofollow" href="https://web.bkppd-balangankab.info/beranda" target="_blank">web.bkppd-balangankab.info</a></div>';
+    jQuery.ajax({
+        url: jsonp_url, 
+        dataType: 'jsonp',
+        jsonpCallback: 'grp-article',
+        success: function(data) {
+				var myhtml='<div class="gpr_bkppdblg">';
+								myhtml+='<div class="gpr_panel_head" style="background-color:'+theme+';">';
+									myhtml+='<div class="gpr_panel_head_left">';
+										myhtml+='<img class="gpr_panel_head_img" src="'+GPR_url+'/assets/images/logo.png"  style="background-color:'+theme+';">';
+									myhtml+='</div>';
+									myhtml+='<div class="gpr_panel_head_right">';
+										myhtml+='<div class="gpr_panel_title">';
+											myhtml+='<div class="gpr_panel_title_main"><strong>GPR</strong> - BKPPD BLG </div>';
+											myhtml+='<div class="gpr_panel_title_sub"><em>Government Public Relations</em></div>';
+											myhtml+='<div class="gpr_panel_title_url"><a  rel="nofollow" href="https://web.bkppd-balangankab.info/beranda" target="_blank">web.bkppd-balangankab.info</a></div>';
+										myhtml+='</div>';
+									myhtml+='</div>';			
+								myhtml+='</div>';
+							myhtml+='<div class="gpr_panel_silka">'; 
+													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_asn+'</h3>ASN</div>';
+													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_pns+'</h3>PNS + CPNS</div>';
+													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_nonpns+'</h3>NON PNS</div>';
+							myhtml+='</div>';
+							myhtml+='<ul class="gpr_list" style="max-height:'+maxHeight+'px;">';
+							jQuery.each(data, function(k, v) {
+								myhtml+='<li class="gpr_item">';
+									myhtml+='<div class="gpr_panel_left">';
+										if(thumb == 'image'){
+											myhtml+='<img class="gpr_panel_img" src="'+v.img_article+'" style="background-color:'+theme+';">';
+										}else if(thumb == 'icon') {
+											myhtml+='<img class="gpr_panel_img" src="'+GPR_url+'assets/images/fitur/newspaper.svg">';
+										}
+									myhtml+='</div>';
+									myhtml+='<div class="gpr_panel_right">';
+										//myhtml+='<div class="gpr_panel_news_attr">';
+											//diindonesiakan ?
+											myhtml+='<div class="gpr_tgl">'+v.tgl_posting_article+' &bull; '+v.user_posting.user_nama+'</div>';
+											// myhtml+='<div class="gpr_kategori">Berita Terbaru</div>';
+										//myhtml+='</div>';
+										myhtml+='<br />';
+										
+										myhtml+='<a class="gpr_panel_news_title" href="'+v.url_article+'" target="_blank">';
+											myhtml+=v.jdl_article;
+										myhtml+='</a>';
+										
+									myhtml+='</div>';
+								myhtml+='</li>';
+							});
+							myhtml+='</ul>';
+							myhtml+='<div class="gpr_footer" style="background-color:'+theme+';">';
+								myhtml+='<span>&copy; BKPPD Balangan</span>';
+								myhtml+='<div>&bull; <a rel="nofollow" href="https://web.bkppd-balangankab.info/widget-gpr-bkppdblg" target="_blank">Pasang Widget</a><div>';
+							myhtml+='</div>';
 						myhtml+='</div>';
-					myhtml+='</div>';			
-				myhtml+='</div>';
-			myhtml+='<div class="gpr_panel_silka">'; 
-									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_asn+'</h3>ASN</div>';
-									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_pns+'</h3>PNS + CPNS</div>';
-									myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_nonpns+'</h3>NON PNS</div>';
-			myhtml+='</div>';
-			myhtml+='<ul class="gpr_list" style="max-height:'+maxHeight+'px;">';
-			jQuery.each(data, function(k, v) {
-				myhtml+='<li class="gpr_item">';
-					myhtml+='<div class="gpr_panel_left">';
-						if(thumb == 'image'){
-							myhtml+='<img class="gpr_panel_img" src="'+v.img_article+'" style="background-color:'+theme+';">';
-						}else if(thumb == 'icon') {
-							myhtml+='<img class="gpr_panel_img" src="'+GPR_url+'assets/images/fitur/newspaper.svg">';
-						}
-					myhtml+='</div>';
-					myhtml+='<div class="gpr_panel_right">';
-						//myhtml+='<div class="gpr_panel_news_attr">';
-							//diindonesiakan ?
-							myhtml+='<div class="gpr_tgl">'+v.tgl_posting_article+' &bull; '+v.user_posting.user_nama+'</div>';
-							// myhtml+='<div class="gpr_kategori">Berita Terbaru</div>';
-						//myhtml+='</div>';
-						myhtml+='<br />';
-						
-						myhtml+='<a class="gpr_panel_news_title" href="'+v.url_article+'" target="_blank">';
-							myhtml+=v.jdl_article;
-						myhtml+='</a>';
-						
-					myhtml+='</div>';
-				myhtml+='</li>';
-			});
-			myhtml+='</ul>';
-			myhtml+='<div class="gpr_footer" style="background-color:'+theme+';">';
-				myhtml+='<span>&copy; BKPPD Balangan</span>';
-				myhtml+='<div>&bull; <a rel="nofollow" href="https://web.bkppd-balangankab.info/widget-gpr-bkppdblg" target="_blank">Pasang Widget</a><div>';
-			myhtml+='</div>';
-		myhtml+='</div>';
-			
-			jQuery('#widget-gpr-bkppdblg').html(myhtml).css('background-color', theme);
-			
-    });
-
+							
+						jQuery('#widget-gpr-bkppdblg').html(myhtml).css('background-color', theme);          
+        },
+         error: function(xhr, status, msg) {
+          console.log('Status: ' + status + "\n" + msg);
+        }
+      })
 	});
 }
-
 })(); // We call our anonymous function immediately
