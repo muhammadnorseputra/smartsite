@@ -71,9 +71,6 @@ function main() {
 																			  <div class="sk-cube sk-cube9"></div>
 																			</div>`).css('background-color', theme);
   // SILKa API
-	function cb_silka(obj) {
-		console.log(obj);
-	}
 	var jsonp_silka = GPR_url + 'frontend/v1/apiPublic/silka_jsonp';
 	var $asn = [];
 	jQuery.get(jsonp_silka, function(response) {
@@ -109,9 +106,9 @@ function main() {
 									myhtml+='</div>';			
 								myhtml+='</div>';
 							myhtml+='<div class="gpr_panel_silka">'; 
-													// myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_asn+'</h3>ASN</div>';
-													// myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_pns+'</h3>PNS + CPNS</div>';
-													// myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_nonpns+'</h3>NON PNS</div>';
+													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_asn+'</h3>ASN</div>';
+													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_pns+'</h3>PNS + CPNS</div>';
+													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn[0].jml_nonpns+'</h3>NON PNS</div>';
 							myhtml+='</div>';
 							myhtml+='<ul class="gpr_list" style="max-height:'+maxHeight+'px;">';
 							jQuery.each(data, function(k, v) {
