@@ -75,6 +75,12 @@ $(function () {
               combined: true,
               delay: 1000,
               throttle: 550,
+              afterLoad: function afterLoad(element) {
+                element.removeClass('blured');
+              },
+              beforeLoad: function beforeLoad(element) {
+                element.addClass('blured');
+              },
               onFinishedAll: function onFinishedAll() {
                 if (!this.config("autoDestroy")) this.destroy();
               },
@@ -720,8 +726,14 @@ $(document).ready(function () {
     delay: 1000,
     enableThrottle: true,
     throttle: 250,
+    afterLoad: function afterLoad(element) {
+      element.removeClass('blured');
+    },
+    beforeLoad: function beforeLoad(element) {
+      element.addClass('blured');
+    },
     onFinishedAll: function onFinishedAll() {
-      if (!this.config("autoDestroy")) this.destroy();
+      if (!this.config("lazy")) this.destroy();
     },
     // called whenever an element could not be handled
     onError: function onError(element) {

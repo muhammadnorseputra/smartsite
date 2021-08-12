@@ -34,11 +34,11 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
-$img = '<img style="object-fit: cover; min-height: 350px;" class="w-100 rounded border lazy" data-src="'.files('file_berita/'.$post_detail->img).'" alt="'.$title.'">';
+$img = '<img style="object-fit: cover; min-height: 350px;" class="w-100 rounded border lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
 elseif($post_detail->type === 'YOUTUBE'):
 $img = $yt_player;
 else:
-$img = '<img style="object-fit: cover; min-height: 350px;" class="w-100 rounded border lazy" data-src="'.img_blob($post_detail->img_blob).'"  alt="'.$title.'"/>';
+$img = '<img style="object-fit: cover; min-height: 350px;" class="w-100 rounded border lazy" data-src="'.img_blob($post_detail->img_blob).'" data-sizes="5x"  alt="'.$title.'"/>';
 endif;
 /*Image Carosel*/
 $photo_slide = $this->post->photo_terkait($post_detail->id_berita);
