@@ -71,8 +71,10 @@ $(function () {
               effect: 'fadeIn',
               effectTime: 250,
               threshold: 0,
-              // enableThrottle: true,
-              // throttle: 550,
+              enableThrottle: true,
+              combined: true,
+              delay: 1000,
+              throttle: 550,
               onFinishedAll: function onFinishedAll() {
                 if (!this.config("autoDestroy")) this.destroy();
               },
@@ -714,8 +716,10 @@ $(document).ready(function () {
     effect: 'fadeIn',
     effectTime: 300,
     threshold: 0,
-    // enableThrottle: true,
-    // throttle: 550,
+    combined: true,
+    delay: 1000,
+    enableThrottle: true,
+    throttle: 250,
     onFinishedAll: function onFinishedAll() {
       if (!this.config("autoDestroy")) this.destroy();
     },

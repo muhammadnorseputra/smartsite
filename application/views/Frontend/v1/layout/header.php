@@ -97,56 +97,33 @@
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 400px; max-height: 400px; overflow-y: auto;">
 						<div class="d-flex flex-lg-column justify-content-start align-items-center ">
 							<a rel="noreferrer" target="_blank" href="https://ekinerja.bkppd-balangankab.info/" class="p-4">
-								<div class="row">
-									<div class="col-4">
-										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-ekinerja.png').'" alt="e-Kinerja"/>' ; ?>
-									</div>
-									<div class="col-8">
-										<b class="font-weight-bold text-dark">e-Kinerja</b>
-										<p class="text-muted small">
-											Mengukur dan memantau kinerja PNS secara periodic, <br> sebagai salah satu data acuan pemberian  tunjangan <br> kinerja yang  diterima pegawai
-										</p>
-									</div>
-								</div>
+							<?php echo '<img class="rounded w-100 rounded"  height="100" style="object-fit:scale-down;" src="'.base_url('assets/images/logo-ekinerja.png').'" alt="e-Kinerja"/>' ; ?>
+							<b class="font-weight-bold text-dark">e-Kinerja</b>
+							<p class="text-muted small text-reset">
+								Mengukur dan memantau kinerja PNS secara periodic, sebagai salah satu data acuan pemberian tunjangan kinerja yang  diterima pegawai
+							</p>
 							</a>
 							<a  rel="noreferrer" target="_blank" href="http://silka.bkppd-balangankab.info/" class="p-4">
-								<div class="row">
-									<div class="col-4">
-										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-silka.png').'" alt="SILKa Online"/>'; ?>
-									</div>
-									<div class="col-8">
+										<?php echo '<img class="rounded w-100 rounded" height="100" style="object-fit:scale-down;" src="'.base_url('assets/images/logo-silka.png').'" alt="SILKa Online"/>'; ?>
 										<b class="font-weight-bold text-dark">SILKa Online</b>
 										<p class="text-muted small">
-											SILKa Online (Sistem Informasi Layanan Kepegawaian) <br> pengelolaan data kepegawaian kabupaten balangan
+											SILKa Online (Sistem Informasi Layanan Kepegawaian) pengelolaan data kepegawaian kabupaten balangan
 										</p>
-									</div>
-								</div>
 							</a>
 							<a  rel="noreferrer" target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4">
-								<div class="row">
-									<div class="col-4">
-										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo-eprilaku.png').'" alt="e-Prilaku"/>'; ?>
-									</div>
-									<div class="col-8">
+										<?php echo '<img class="rounded w-100 rounded" height="100" style="object-fit:scale-down;" src="'.base_url('assets/images/logo-eprilaku.png').'" alt="e-Prilaku"/>'; ?>
 										<b class="font-weight-bold text-dark">e-Prilaku (360)</b>
 										<p class="text-muted small">
-											Aplikasi untuk Menilai dan Mengukur Perilaku yang dinilai<br> oleh Atasan, Teman/Peer dan Bawahan (360 Derajat) <br>dengan menggunakan survei tertutup sehingga lebih objektif.
+											Aplikasi untuk Menilai dan Mengukur Perilaku yang dinilai oleh Atasan, Teman/Peer dan Bawahan (360 Derajat) dengan menggunakan survei tertutup sehingga lebih objektif.
 										</p>
-									</div>
-								</div>
 							</a>
 							<a  rel="noreferrer" target="_blank" href="https://web.bkppd-balangankab.info/skm" class="p-4">
-								<div class="row">
-									<div class="col-4">
-										<?php echo '<img class="rounded w-100" src="'.base_url('assets/images/logo.png').'" alt="SKM - BKPPD Balangan"/>'; ?>
-									</div>
-									<div class="col-8">
+					
+										<?php echo '<img class="rounded w-100 rounded"  height="100" style="object-fit:scale-down;" src="'.base_url('assets/images/logo.png').'" alt="SKM - BKPPD Balangan"/>'; ?>
 										<b class="font-weight-bold text-dark">SKM (Survei Kepuasan Masyarakat)</b>
 										<p class="text-muted small">
 											Survei Kepuasan Masyarakat adalah kegiatan pengukuran secara komprehensif tentang tingkat kepuasan masyarakat terhadap kualitas layanan yang diberikan oleh penyelenggara pelayanan publik
 										</p>
-									</div>
-								</div>
 							</a>
 						</div>
 					</ul>

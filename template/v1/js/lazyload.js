@@ -3,8 +3,10 @@
                 effect: 'fadeIn',
                 effectTime: 300,
                 threshold: 0,
-                // enableThrottle: true,
-                // throttle: 550,
+                combined: true,
+                delay: 1000,
+                enableThrottle: true,
+                throttle: 250,
                 onFinishedAll: function() {
                     if( !this.config("autoDestroy") )
                         this.destroy();

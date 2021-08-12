@@ -98,8 +98,10 @@ $(function() {
                             effect: 'fadeIn',
                             effectTime: 250,
                             threshold: 0,
-                            // enableThrottle: true,
-                            // throttle: 550,
+                            enableThrottle: true,
+                            combined: true,
+                            delay: 1000,
+                            throttle: 550,
                             onFinishedAll: function() {
                                 if( !this.config("autoDestroy") )
                                     this.destroy();

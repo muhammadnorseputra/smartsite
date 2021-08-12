@@ -219,7 +219,22 @@ position: fixed;
     margin: auto; 
     background-color: transparent;
 } 
-
+@-webkit-keyframes loadingHold {
+    0%{
+        left: -45%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+@keyframes loadingHold {
+    0%{
+        left: -45%;
+    }
+    100%{
+        left: 100%;
+    }
+}
 // Placeholders
 @-webkit-keyframes placeHolderShimmer {
 	0% {
@@ -590,11 +605,12 @@ h5.title-sidebar {
 // 	-ms-transition: all .4s linear;
 // 	-o-transition: all .4s linear;
 // }
+// Loading Image
 img.lazy {
 	display: block;
-	background-color: transparent;
+	// background-color: transparent;
 	/* optional way, set loading as background */
-	background-image: url("../../../assets/images/loader/simple-pre-loader/loader-icons-set-2-32x64x128/32x32/Preloader_4.gif");
+	background-image: url("../../../assets/images/loader/simple-pre-loader/loader-icons-set-2-32x64x128/32x32/Preloader_1.gif");
 	background-size: auto;
 	// background-image: url("https://via.placeholder.com/300.png?text=BKPPD");
 	background-repeat: no-repeat;
