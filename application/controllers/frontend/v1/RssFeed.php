@@ -25,5 +25,21 @@ class RssFeed extends CI_Controller {
           $this->output->set_content_type('application/rss+xml');
           $this->load->view('Frontend/v1/rss', $data);
       }
+
+      public function amp()
+      {
+          $kategori= isset($_GET['category']) ? $_GET['category'] : 0;
+          $profile = $this->mf_beranda->get_identitas();
+          $data['feed_name'] = 'bkppd-balangankab.info'; // your website
+          $data['encoding'] = 'utf-8'; // the encoding
+          $data['feed_url'] = base_url('rss'); // the url to your feed
+          $data['page_description'] = $profile->meta_desc; // some description
+          $data['page_language'] = 'id-ID'; // the language
+          $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
+          $data['creator_name'] = 'BKPPD Balangan'; // your email
+          $data['posts'] = $this->posts->getPosts(12,$kategori);  
+          $this->output->set_content_type('application/rss+xml');
+          $this->load->view('Frontend/v1/rss_amp', $data);
+      }
 }
 ?>
