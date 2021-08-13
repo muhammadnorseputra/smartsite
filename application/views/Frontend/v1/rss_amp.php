@@ -18,7 +18,7 @@
  
     <dc:rights>Copyright <?php echo gmdate("Y", time()); ?></dc:rights>
     <admin:generatorAgent rdf:resource="https://web.bkppd-balangankab.info/" />
-    <atom:link type="application/rss+xml" href="<?php echo $feed_url; ?>"/>
+    <atom:link rel="self" type="application/rss+xml" href="<?php echo $feed_url; ?>" />
      <?php 
       foreach($posts->result() as $post):
       // USER POST
