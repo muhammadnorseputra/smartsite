@@ -84,7 +84,7 @@ class ApiPublic extends RestController {
                     $id = encrypt_url($r->id_berita);
                     $postby = strtolower(url_title($namalengkap));
                     $slug = strtolower($r->slug);
-                    $posturl = base_url("blog/{$slug}/");
+                    $posturl = base_url("blog/{$slug}");
                 else:
                     $posturl = base_url('leave?go='.encrypt_url($r->content));
                 endif;
@@ -202,7 +202,7 @@ class ApiPublic extends RestController {
                     $id = encrypt_url($r->id_berita);
                     $postby = strtolower(url_title($namalengkap));
                     $slug = strtolower($r->slug);
-                    $posturl = base_url("blog/{$slug}/");
+                    $posturl = base_url("blog/{$slug}");
                 else:
                     $posturl = base_url('leave?go='.encrypt_url($r->content));
                 endif;
