@@ -577,9 +577,17 @@ h5.title-sidebar {
 // 	max-height: 550px;
 // }
 
+.rippler-img img {
+	transition: all .6s ease;
+}
+.rippler-img:hover img {
+	transform: scale(1.2);
+	filter: grayscale(80%);
+}
+
 .card-text {
 	font-family: "Rubik" !important;
-	font-weight: 400;
+	font-weight: 300;
 }
 // .card img.card-img-top {
 // 	transition: all 0.4s ease;

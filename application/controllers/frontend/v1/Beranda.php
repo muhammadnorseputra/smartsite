@@ -76,7 +76,7 @@ class Beranda extends CI_Controller
 
     function template_sumber($text, $icon) {
         $html = '<div class="btn-group btn-group-sm ml-md-0" role="group" aria-label="button">
-                    <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent border-right" disabled>'.$icon.'</button>
+                    <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent" disabled>'.$icon.'</button>
                     <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent"  disabled>'.$text.'</button>
                 </div>';
         return $html;
@@ -260,7 +260,7 @@ class Beranda extends CI_Controller
                                             <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h4>
                                                 '.$sumber.'
                                                 <div class="btn-group btn-group-sm ml-1 ml-md-0" role="group" aria-label="button">
-                                                    <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent border-right" disabled><i class="fas fa-tag"></i></button>
+                                                    <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent" disabled><i class="fas fa-tag"></i></button>
                                                     <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent '.$rand.'">'.$namakategori.'</a>
                                                 </div>
 
@@ -298,7 +298,7 @@ class Beranda extends CI_Controller
                 $output .= '
                 <div class="ps-scroll">
 					<div class="card border-0 bg-white mb-3 mb-md-0 shadow-sm">
-                    <div class="canvas">
+                    <div class="canvas overflow-hidden">
                     <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
                       '.$img.'
                     </a>
