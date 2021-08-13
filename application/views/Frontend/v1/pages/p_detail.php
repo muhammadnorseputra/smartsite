@@ -74,10 +74,10 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 			     data-ad-slot="6508565159"
 			     data-ad-format="auto"
 			     data-full-width-responsive="true"></ins>
+			     <script>
+				     (adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
 		     </div>
-		     <script>
-			     (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
 		</div>
 		<div class="col-md-8 mb-5 pb-md-5 px-3 px-md-0 order-first order-md-last" id="main-content">
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
