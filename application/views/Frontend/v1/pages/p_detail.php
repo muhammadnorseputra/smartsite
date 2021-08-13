@@ -66,7 +66,17 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 <section class="pt-md-5 mt-md-5">
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 mb-5 pb-md-5 px-3 px-md-0 offset-md-2">
+		<div class="col-md-2 order-md-first order-lg-last">
+			<div class="sidebar">
+				<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-1099792537777374"
+			     data-ad-slot="6508565159"
+			     data-ad-format="auto"
+			     data-full-width-responsive="true"></ins>
+		     </div>
+		</div>
+		<div class="col-md-8 mb-5 pb-md-5 px-3 px-md-0 order-first order-md-last" id="main-content">
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1><?php echo $post_detail->judul; ?></h1>
@@ -138,16 +148,14 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					<?php  if($post_detail->type === 'YOUTUBE'): ?>
 					<div class="g-ytsubscribe mt-md-0 mt-4" data-channelid="<?= $yt_channel ?>" data-layout="full" data-theme="light" data-count="default"></div>
 					<?php endif; ?>
-					
+					<!-- ads -->
 					<ins class="adsbygoogle"
 					     style="display:block; text-align:center;"
 					     data-ad-layout="in-article"
 					     data-ad-format="fluid"
 					     data-ad-client="ca-pub-1099792537777374"
 					     data-ad-slot="6818392621"></ins>
-					<script>
-					     (adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
+					
 					<p class="card-text font-weight-normal"><?php echo $content; ?></p>
 				</div>
 				<div class="card-footer bg-transparent p-2 border-bottom rounded-lg d-flex justify-content-around mb-4">
@@ -165,8 +173,9 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 			</div>
 			<div>
 				<div class="py-1 my-3 bg-light rounded"></div>
-				<div class="d-flex justify-content-between flex-lg-row flex-column">
+				<div class="row">
 					<?php
+					$no=1;
 					foreach ($berita_selanjutnya->result() as $b):
 					$by = $b->created_by;
 					$id = encrypt_url($b->id_berita);
@@ -202,20 +211,31 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					else:
 						$img = img_blob($b->img_blob);
 					endif;
+					if($no == 1):
+						$textAlign = 'text-left';
+					else:
+						$textAlign = 'text-right';
+					endif;
 					?>
 					<?php if($berita_selanjutnya->num_rows() > 0): ?>
+							<div class="col-md-6">
 					<a href="<?= $posturl ?>" class="text-link">
-						<div class="media  mb-3">
-							<span class="rippler rippler-img rippler-bs-danger mr-3 w-25">
-								<img style="object-fit:cover;" width="110" height="60" class="rounded-left lazy" data-src="<?= $img ?>" alt="<?= ucwords($b->judul) ?>">
-							</span>
-							<div class="media-body px-2">
-								<h6 class="mb-0"><?= word_limiter($b->judul, 8); ?></h6>
-							</div>
-						</div>
+								<div class="d-flex align-items-center <?= $textAlign ?>">
+									<?php if($no == 1): ?>
+										<i class="fas fa-chevron-left text-muted mr-2"></i>
+										<img style="object-fit:cover;" width="35" src="<?= $img ?>" class="	rounded" height="35" alt="<?= $b->judul ?>">
+									<?php endif ?>
+									<h6 class="my-2 px-3"><?= word_limiter($b->judul, 8); ?></h6>
+									<?php if($no == 2): ?>
+										<img style="object-fit:cover;" width="35" src="<?= $img ?>" class="rounded" height="35" alt="<?= $b->judul ?>">
+										<i class="fas fa-chevron-right text-muted ml-2"></i>
+									<?php endif ?>
+								</div>
+								
 					</a>
+							</div>
 					<?php endif; ?>
-					<?php endforeach; ?>
+					<?php $no++; endforeach; ?>
 				</div>
 			</div>
 			<?php if($post_detail->komentar_status == 0): ?>
@@ -261,7 +281,20 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 			<?php endif; ?>
 			
 		</div>
+		<div class="col-md-2 order-md-last order-lg-last">
+			<div id="sidebar">
+				<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-1099792537777374"
+			     data-ad-slot="6508565159"
+			     data-ad-format="auto"
+			     data-full-width-responsive="true"></ins>
+		     </div>
+		</div>
 	</div>
 </div>
 </section>
 <!--<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>-->
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
