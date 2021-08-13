@@ -1,14 +1,14 @@
-<section class="bg-light mb-4">
+<section class="bg-white mb-4">
 <div class="container">
     <div class="row d-flex align-items-center">
         <div class="col-md-5 py-3 py-md-5 mt-md-5 order-last order-md-first">
             <div>
                 <h2 class="text-dark animated fadeInDown">Homepage - BKPPD Balangan 2021</h2>
-                <p class="text-muted lead animated fadeInDown">Selamat Datang Pada Portal Web Resmi BKPPD Kabupaten Balangan. Pelayanan Terpadu Satu Pintu</p>
+                <p class="text-muted lead animated fadeInDown">Selamat Datang Pada Portal Web Resmi BKPPD Kabupaten Balangan, Pelayanan Terpadu.</p>
             </div>
             <div class="">
                 <a href="#content-page" class="btn btn-info btn-block font-weight-lighter btn-lg animated fadeInDown scroll">Explore <i class="fas fa-arrow-down ml-3"></i></a>
-                <p class="mt-3 font-weight-bold animated fadeInUp">Follow Our Media</p>
+                <p class="mt-3 font-weight-bold animated fadeInUp">Ikuti Media Informasi Lainnya</p>
                 <div class="d-flex justify-content-start align-items-center animated fadeInUp">
                     <a  rel="noreferrer" target="_blank" href="<?= $mf_beranda->fb; ?>" class="btn py-3 btn-primary-old my-2 my-sm-0 animated fadeIn shadow-sm" data-toggle="tooltip" data-placement="bottom" data-title="Join group facebook" title="Join group facebook">
                         <i class="fab fa-facebook"></i>
