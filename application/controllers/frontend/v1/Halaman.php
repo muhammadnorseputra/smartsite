@@ -38,7 +38,7 @@ class Halaman extends CI_Controller
     $path = $detail->row()->filename;
     $ext = pathinfo($path, PATHINFO_EXTENSION); 
     $imgurl = $ext != 'pdf' ? base_url('files/randoms/'.$path) : base_url('assets/images/logo.png');
-    
+    $url_amp = base_url("amp/page/{$slug}");
     $meta_tag = meta_tags($e, 
                           $title = $title, 
                           $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 250))), 
@@ -46,7 +46,8 @@ class Halaman extends CI_Controller
                           $url = base_url('page/'.$slug), 
                           $keyWords = $keywords,
                           $type = 'article',
-                          $canonical = curPageURL()
+                          $canonical = curPageURL(),
+                          $urlamp = $url_amp
                         );
     else:
       $meta_tag = '';

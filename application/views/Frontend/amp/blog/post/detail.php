@@ -79,7 +79,7 @@
     </div> -->
   </section>
   <section class="pb4 px3">
-    <a href="<?= base_url("blog/{$postSlug}/") ?>" class="ampstart-accent">
+    <a href="<?= base_url("blog/{$postSlug}") ?>" class="ampstart-accent">
       Lihat versi non-AMP
     </a>
   </section>

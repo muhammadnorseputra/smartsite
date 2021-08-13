@@ -55,9 +55,9 @@
           <link><?php echo $posturl ?></link>
           <description>
             <?= htmlentities('<img src="'.$img.'" align="left" hspace="7" width="100">'); ?>
-            <![CDATA[<?= xml_convert($isi) ?>]]>
+            <![CDATA[<?= strip_tags($isi) ?>]]>
           </description>
-          <content:encoded><![CDATA[<?= xml_convert($isi) ?>]]></content:encoded>
+          <content:encoded><![CDATA[<?= strip_tags($isi) ?>]]></content:encoded>
           <g:image_link><?= $img ?></g:image_link>
           <g:condition><?= $conditional ?></g:condition>
           <g:id><?= $id ?></g:id>

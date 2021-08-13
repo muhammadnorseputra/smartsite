@@ -61,7 +61,8 @@ if(! function_exists('meta_tags')){
         $url = '', 
         $keyWords = '', 
         $type = '', 
-        $canonical = ''){
+        $canonical = '',
+        $urlamp = ''){
 
         $CI =& get_instance();
         $CI->config->load('seo_config');
@@ -79,9 +80,11 @@ if(! function_exists('meta_tags')){
         $keyWords   = $keyWords == '' ? $id->meta_seo : $keyWords;
         $type       = $type == '' ? $CI->config->item('seo_type') : $type;
         $canonical  = $canonical == '' ? base_url('beranda') : $canonical;
+        $urlamp     = $urlamp == '' ? base_url('amp') : $urlamp;
 
         if($enable['general']){
             $output .= '<link rel="canonical" href="'.$canonical.'" />';
+            $output .= '<link rel="amphtml" href="'.$urlamp.'">';
             $output .= '<meta  name="Rating" content="General"/>';
             $output .= '<meta name="Distribution" content="Global" />';
             $output .= '<meta name="audience" content="all" />';

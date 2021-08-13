@@ -54,10 +54,11 @@ class Post extends CI_Controller
             $content = !empty($detail->deskripsi) ? $detail->deskripsi : $yt_desc;
         else:
             $imgurl = $img;
-            $meta_desc = strip_tags(str_replace('"', '', word_limiter($detail->content, 60)));
+            $meta_desc = strip_tags(str_replace('"', '', word_limiter($detail->content, 100)));
             $content = !empty($detail->deskripsi) ? $detail->deskripsi : $meta_desc;
         endif;
         $meta_keywords = !empty($detail->keywords) ? $detail->keywords : $detail->tags;
+        $url_amp = base_url("amp/{$slug}");
         // Meta SEO
         $e = array(
           'general' => true, //description, keywords
@@ -66,7 +67,7 @@ class Post extends CI_Controller
           'robot'=> true
         );
         $meta_tag = meta_tags($e, $title = $judul_seo, $desc=$content,$imgUrl = $imgurl,
-                            $url = curPageURL(), $keyWords=$meta_keywords, $type='article', $canonical=curPageURL());
+                            $url = curPageURL(), $keyWords=$meta_keywords, $type='article', $canonical=curPageURL(), $urlamp=$url_amp);
 
     	$data = [
     		'title' => $judul_seo,

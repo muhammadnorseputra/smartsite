@@ -18,7 +18,7 @@
  
     <dc:rights>Copyright <?php echo gmdate("Y", time()); ?></dc:rights>
     <admin:generatorAgent rdf:resource="https://web.bkppd-balangankab.info/" />
-    <atom:link rel="self" type="application/rss+xml" href="<?php echo $feed_url; ?>"/>
+    <atom:link type="application/rss+xml" href="<?php echo $feed_url; ?>"/>
      <?php 
       foreach($posts->result() as $post):
       // USER POST
@@ -47,7 +47,7 @@
       $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
       $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
       $conditional = $post->tgl_posting === date('Y-m-d') ? 'Terbaru' : 'Lama';
-      $newDateTime= new DateTime($post->created_at, new DateTimeZone('Asia/Jakarta'));;
+      $newDateTime= new DateTime($post->created_at, new DateTimeZone('Asia/Jakarta'));
     ?>
         <item>
           <title><?php echo xml_convert($post->judul); ?></title>
@@ -55,9 +55,9 @@
           <link><?php echo $posturl ?></link>
           <description>
             <?= htmlentities('<img src="'.$img.'" align="left" hspace="7" width="100">'); ?>
-            <![CDATA[<?= xml_convert($isi) ?>]]>
+            <![CDATA[<?= strip_tags($isi) ?>]]>
           </description>
-          <content:encoded><![CDATA[<?= xml_convert($isi) ?>]]></content:encoded>
+          <content:encoded><![CDATA[<?= strip_tags($isi) ?>]]></content:encoded>
           <g:image_link><?= $img ?></g:image_link>
           <g:condition><?= $conditional ?></g:condition>
           <g:id><?= $id ?></g:id>
@@ -66,6 +66,22 @@
           <pubDate><?= $newDateTime->format('D, d M Y H:i:s O') ?></pubDate>
         </item>
     <?php endforeach; ?>
-     
+    <?php 
+      foreach($pages->result() as $p): 
+      $pageCreated= new DateTime($p->tgl_created, new DateTimeZone('Asia/Jakarta'));
+    ?>
+      <item>
+          <title><?= xml_convert($p->title); ?></title>
+          <dc:creator><?= $creator_name ?></dc:creator>
+          <link><?= base_url("amp/page/{$p->slug}") ?></link>
+          <description>
+            <![CDATA[<?= strip_tags($p->content) ?>]]>
+          </description>
+          <content:encoded><![CDATA[<?= strip_tags($p->content) ?>]]></content:encoded>
+          <g:id><?= $p->token_halaman ?></g:id>
+          <guid isPermaLink="false"><?= base_url("amp/page/{$p->slug}") ?></guid>
+          <pubDate><?= $pageCreated->format('D, d M Y H:i:s O') ?></pubDate>
+        </item>
+    <?php endforeach; ?>
     </channel>
 </rss>

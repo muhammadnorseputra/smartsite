@@ -134,9 +134,11 @@ $route['rss_amp'] = 'frontend/v1/rssFeed/amp';
 // AMP
 $route['amp'] = 'frontend/amp/blog';
 $route['amp/blog'] = 'frontend/amp/blog/blogList';
+$route['amp/page'] = 'frontend/amp/page';
 $route['amp/404'] = 'frontend/amp/errors/error_404';
 $route['amp/(:any)'] = 'frontend/amp/blog/post/$1';
 $route['amp/blog/(:any)'] = 'frontend/amp/blog/category/$1';
+$route['amp/page/(:any)'] = 'frontend/amp/page/detail/$1';
 
 // GPR
 $route['widget-gpr-bkppdblg'] = 'frontend/gpr/widget/gpr_widget';

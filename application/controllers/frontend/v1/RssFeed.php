@@ -8,6 +8,7 @@ class RssFeed extends CI_Controller {
         $this->load->helper('xml');
         $this->load->helper('text');
         $this->load->model('model_template_v1/M_f_post', 'posts');
+        $this->load->model('model_template_v1/M_f_halaman', 'pages');
       }
 
       public function index()
@@ -38,6 +39,7 @@ class RssFeed extends CI_Controller {
           $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
           $data['creator_name'] = 'BKPPD Balangan'; // your email
           $data['posts'] = $this->posts->getPosts(12,$kategori);  
+          $data['pages'] = $this->pages->pageAll();
           $this->output->set_content_type('application/rss+xml');
           $this->load->view('Frontend/v1/rss_amp', $data);
       }

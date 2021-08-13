@@ -1,6 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 class M_f_halaman extends CI_Model
 {
+
   // set table
   protected $table = 't_halaman';
   //set column field database for datatable orderable
@@ -9,6 +10,12 @@ class M_f_halaman extends CI_Model
   protected $column_search = array('title');
   // default order 
   protected $order = array('id_halaman' => 'desc');
+
+
+  public function pageAll()
+  {
+    return $this->db->get($this->table);  
+  }
 
   private function _get_datatables_query($idAkun)
   {

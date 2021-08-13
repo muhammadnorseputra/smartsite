@@ -18,7 +18,11 @@ limitations under the License.
     <link rel="canonical" href="<?= curPageURL(); ?>" />
     <meta name="viewport" content="width=device-width" />
     <meta name="amp-google-client-id-api" content="googleanalytics" />
+    <link rel="apple-touch-icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />
+    <link rel="shortcut icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />
     <meta name="robots" content="index,follow"/>
+    <meta name="googlebot-news" content="index, follow" />
+    <meta  name="googlebot" content="index, follow" />
     <meta name="keywords" content="<?= $keywords ?>" />
     <meta name="description" content="<?= $description ?>" />
     <script async="" src="https://cdn.ampproject.org/v0.js"></script>
@@ -1344,6 +1348,10 @@ limitations under the License.
     }
     .ampstart-image-fullpage-hero>amp-img {
     max-height: calc(100vh - 3.5rem)
+    }
+    .ampstart-image-contain>amp-img img {
+    -o-object-fit: contain;
+    object-fit: contain
     }
     .ampstart-image-fullpage-hero>amp-img img {
     -o-object-fit: cover;

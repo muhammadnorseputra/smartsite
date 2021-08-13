@@ -9,6 +9,7 @@ Disallow: /frontend/v1/
 Disallow: /banner/
 Disallow: /fb/
 Disallow: /login_web
+Disallow: /p/
 Allow: /
 
 Sitemap: https://web.bkppd-balangankab.info/sitemap_temp.xml
