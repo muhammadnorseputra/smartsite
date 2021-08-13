@@ -99,9 +99,9 @@ if(! function_exists('meta_tags')){
         }
 
         if($enable['robot']){
-            $output .= '<meta name="robots" content="index,follow"/>'
-                    .'<meta name="googlebot-news" content="index, follow" />'
-                    .'<meta  name="googlebot" content="index, follow" />';
+            $output .= '<meta name="robots" content="max-image-preview:large, index,follow"/>'
+                    .'<meta name="googlebot-news" content="max-image-preview:large, index, follow" />'
+                    .'<meta  name="googlebot" content="max-image-preview:large, index, follow" />';
         } else {
             $output .= '<meta name="robots" content="noindex,nofollow"/>';
         }
