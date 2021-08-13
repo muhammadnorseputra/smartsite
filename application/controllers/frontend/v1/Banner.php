@@ -17,7 +17,7 @@ class Banner extends CI_Controller {
 	public function listimage()
 	{
 		$data = [
-			'title' => 'BKPPD &bull; Banner',
+			'title' => 'Banner - BKPPD Balangan',
 			'isi'	=> 'Frontend/v1/pages/banner/banner_list',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
