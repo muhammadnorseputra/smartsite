@@ -1,4 +1,3 @@
-<script async src="<?= base_url('bower_components\list.js\dist\list.min.js') ?>"></script>
 <section class="hero py-5">
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-center">
@@ -15,7 +14,7 @@
 <section class="mb-3 mt--8">
 <div class="container">
 	<div class="row">
-		<div class="col-12" id="banner-list">
+		<div class="col-12" id="bannerList">
 			<div class="d-flex justify-content-end mb-3">
 				<div>
 					<input type="text" class="fuzzy-search form-control" placeholder="Masukan judul banner"/>
@@ -26,7 +25,7 @@
 				  </button>
 				</div>
 			</div>
-			<ul class="card-columns pl-0">
+			<ul class="card-columns pl-0 list">
 				<?php 
 					foreach ($banner as $b): 
 					if($b->fid_jns_banner === '38'):
@@ -52,9 +51,10 @@
 	</div>
 </div>
 </section>
+<script src="<?= base_url('bower_components/list.js/dist/list.min.js') ?>"></script>
 <script>
 	var options = {
 	    valueNames: [ 'title_banner' ]
 	};
-	var hackerList = new List('banner-list', options);
+	var bn = new List('bannerList', options);
 </script>
