@@ -86,7 +86,7 @@
                         </div>
                     </div>
                 </div> -->
-                <div style="overflow-x: auto;" class="d-flex justify-content-between align-items-center flex-row flex-nowrap mb-3">
+                <!-- <div style="overflow-x: auto;" class="d-flex justify-content-between align-items-center flex-row flex-nowrap mb-3">
                     <?php $no=1; foreach($mf_banner_home->result() as $b): ?>
                     <div class="mx-3 flex-grow-1">
                         <a href="<?= $b->path ?>" id="xbanner-<?= $no ?>" data-title="<?= $b->judul ?>" data-lightbox="BannerAside">
@@ -94,15 +94,15 @@
                         </a>
                     </div>
                     <?php $no++; endforeach; ?>
-                </div>
-                <div  style="overflow-x: auto;" class="d-flex justify-content-between align-items-center mb-3 flex-row flex-nowrap">
+                </div> -->
+                <div class="d-flex justify-content-between align-items-center mb-3 flex-row flex-nowrap">
                     <?php
                     $sort = $this->input->get('sort');
                     $type = $this->input->get('type');
                     $dataSort = ['newest','populer'];
                     $dataType = ['all', 'berita', 'slide', 'youtube', 'link'];
                     ?>
-                    <div>
+                    <div class="d-none d-md-block d-lg-block">
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline-light text-muted dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= isset($sort) ? ucwords($sort) : 'Newest'; ?>
