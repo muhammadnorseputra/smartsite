@@ -55,15 +55,38 @@ $pecah = explode(',', $tags);
 if (count($pecah) > 0) {
 	$tag = '';
 	for ($i = 0; $i < count($pecah); ++$i) {
-		$tag .= '<a href="' . base_url('tag/' . $pecah[$i]) . '" class="btn btn-sm btn-outline-light mr-2 text-secondary">#' . $pecah[$i] . '</a>';
+		$tag .= '<a href="' . base_url('tag/' . $pecah[$i]) . '" class="btn btn-sm btn-outline-light mr-2 text-secondary p-2">#' . $pecah[$i] . '</a>';
 	}
 }
 ?>
+<?php  
+$namakategori = $this->post->kategori_byid($post_detail->fid_kategori);
+$post_list_url = base_url('k/' . url_title($namakategori));
+?>
 <section class="pt-md-5 mt-md-5">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 mb-5 pb-md-5 px-3 px-md-0" id="main-content">
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 mb-5 pb-md-5 px-3 px-md-0 offset-md-2">
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
+					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
+					<h1><?php echo $post_detail->judul; ?></h1>
+					<div class="d-flex justify-content-between align-items-center mb-3">
+						<span class="small text-muted"><i class="fas fa-calendar-alt mr-2"></i> Editor by <?= ucwords($namapanggilan); ?> <span class="text-danger">&#8226;</span>  <?php echo longdate_indo($post_detail->tgl_posting); ?> </span>	
+						<span>
+							<div class="d-flex justify-content-end">
+								<button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-0 rounded text-muted"><i class="far fa-eye"></i> <sup><?= $count; ?></sup> </button>
+								<button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-0 rounded w-100 text-danger <?= $btn_like ?>" title="Suka / Tidak suka" data-id-berita="<?= $post_detail->id_berita ?>" data-id-user="<?= $this->session->userdata('user_portal_log')['id'] ?>"><i class="<?= $status_like ?> fa-heart"></i> <span class="count_like"><sup><?= $post_detail->like_count ?></sup></span> </button>
+							</div>
+						</span>
+					</div>
+					<div class="d-flex justify-content-start align-items-center mb-3">
+						<div>
+							<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top; border: 4px solid #FCFCFC;" width="50" height="50" class="mr-md-3 mr-3 lazy rounded-circle shadow-sm bg-white">
+						</div>
+						<div>
+							<a href="<?= $link_profile_public ?>"><?= $namalengkap ?></a>
+						</div>
+					</div>
 					<div class="px-0 media_youtube">
 						<?php if($post_detail->type === 'SLIDE'): ?>
 						<div id="carouselExampleIndicators" class="carousel slide shadow-lg" data-ride="carousel">
@@ -111,21 +134,11 @@ if (count($pecah) > 0) {
 					</div>
 					<?php endif; ?>
 				</div>
-				<div class="card bg-transparent border-0 px-md-2 pt-md-0 p-0 m-0">
-					<div class="card-body px-3 px-md-0 px-md-2 pt-md-0 py-0">
-						<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top; border: 4px solid #FCFCFC;" width="60" height="60" class="mr-md-4 mr-3 lazy rounded-circle shadow-sm mt--6 bg-white">
-						<h5 class="card-title pb-0"></h5>
-					</div>
-				</div>
 				<div class="card-body px-0">
 					<?php  if($post_detail->type === 'YOUTUBE'): ?>
 					<div class="g-ytsubscribe mt-md-0 mt-4" data-channelid="<?= $yt_channel ?>" data-layout="full" data-theme="light" data-count="default"></div>
 					<?php endif; ?>
-					<h1 class="text-responsive"><?php echo $post_detail->judul; ?></h1>
-					<p>
-						<a href="<?= $link_profile_public ?>"><?= $namalengkap ?></a> -
-							<span class="badge badge-default px-0 text-secondary">Posted by <?= ucwords($namapanggilan); ?> &#8226;  <?php echo longdate_indo($post_detail->tgl_posting); ?></span>
-					</p>
+					
 					<ins class="adsbygoogle"
 					     style="display:block; text-align:center;"
 					     data-ad-layout="in-article"
@@ -136,25 +149,22 @@ if (count($pecah) > 0) {
 					     (adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
 					<p class="card-text font-weight-normal"><?php echo $content; ?></p>
-					<?= $tag; ?>
 				</div>
-				<div class="card-footer bg-transparent p-2 border-top rounded-lg d-flex justify-content-around">
-					<div class="w-100">
-						<button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100"><i class="far fa-eye mr-2"></i> <?= $count; ?> </button>
-					</div>
-					<div class="w-100">
-						<button type="button" data-toggle="tooltip" data-placement="bottom" title="Share This" id="btn-share" data-row-id="<?= $post_detail->id_berita; ?>" class="btn btn-transparent border-0 rounded p-2 w-100 text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count"><?= $post_detail->share_count; ?></span></button>
-					</div>
-					<div class="w-100">
-						<button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-0 rounded p-2 w-100 text-danger <?= $btn_like ?>" title="Suka / Tidak suka" data-id-berita="<?= $post_detail->id_berita ?>" data-id-user="<?= $this->session->userdata('user_portal_log')['id'] ?>"><i class="<?= $status_like ?> fa-heart mr-2"></i> <span class="count_like"><?= $post_detail->like_count ?></span> </button>
+				<div class="card-footer bg-transparent p-2 border-bottom rounded-lg d-flex justify-content-around mb-4">
+					<div class="w-100 border-right">
+						<button type="button" data-toggle="tooltip" data-placement="bottom" title="Bagikan Postingan Ini" id="btn-share" data-row-id="<?= $post_detail->id_berita; ?>" class="btn btn-transparent border-0 rounded p-2 w-100 text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count"><?= $post_detail->share_count; ?></span></button>
 					</div>
 					<div class="w-100">
 						<button type="button" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-0 rounded p-2 w-100 text-info <?= $btn_bookmark ?>" title="Simpan Postingan" data-id-berita="<?= $post_detail->id_berita ?>" data-id-user="<?= $this->session->userdata('user_portal_log')['id'] ?>"><i class="<?= $status_bookmark ?> fa-bookmark"></i> </button>
 					</div>
 				</div>
+				<h4 class="mb-3">Tags Populer</h4>
+				<div class="d-flex justify-content-start align-items-center">
+					<?= $tag; ?>
+				</div>
 			</div>
 			<div>
-				<div class="py-1 mb-3 bg-light"></div>
+				<div class="py-1 my-3 bg-light rounded"></div>
 				<div class="d-flex justify-content-between flex-lg-row flex-column">
 					<?php
 					foreach ($berita_selanjutnya->result() as $b):
@@ -250,30 +260,6 @@ if (count($pecah) > 0) {
 			</div>
 			<?php endif; ?>
 			
-		</div>
-		<div class="col-md-4 d-none d-md-block">
-			<div id="sidebar">
-			<?php if(cek_internet() == true): ?>
-			<div class="card border-0 bg-transparent">
-				<div class="card-body p-0">
-					<!--<div id="gpr-kominfo-widget-container"></div>-->
-					<!-- ads -->
-					<ins class="adsbygoogle"
-					     style="display:block"
-					     data-ad-client="ca-pub-1099792537777374"
-					     data-ad-slot="6508565159"
-					     data-ad-format="auto"
-					     data-full-width-responsive="true"></ins>
-					<script>
-					     (adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
-					<?php $this->load->view('Frontend/v1/function/populer_post'); ?>
-				</div>
-			</div>
-			<?php else: ?>
-			<?php $this->load->view('msg/lose-connection'); ?>
-			<?php endif; ?>
-			</div>
 		</div>
 	</div>
 </div>
