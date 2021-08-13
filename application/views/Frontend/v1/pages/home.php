@@ -115,7 +115,7 @@
                                 $url = empty($type) ? '?sort='.$dataSort[$x] : '?sort='.$dataSort[$x].'&type='.$type;
                                 $sortTitle = ucwords($dataSort[$x]);
                                 ?>
-                                <a class="dropdown-item <?= $active ?>" href="<?= $url ?>"><?= $sortTitle; ?></a>
+                                <a rel="noindex, nofollow" class="dropdown-item <?= $active ?>" href="<?= $url ?>"><?= $sortTitle; ?></a>
                                 <?php endfor; ?>
                             </div>
                         </div>
@@ -129,7 +129,7 @@
                             $url = empty($sort) ? '?type='.$dataType[$x] : '?sort='.$sort.'&type='.$dataType[$x];
                             $typeTitle = ucwords($dataType[$x]);
                             ?>
-                            <a href="<?= $url ?>" class="btn btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
+                            <a rel="noindex, nofollow" href="<?= $url ?>" class="btn btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
                             <?php endfor; ?>
                         </div>
                     </div>

@@ -92,10 +92,13 @@ if(! function_exists('meta_tags')){
             $output .= '<meta name="google" content="translate" />';
             $output .= '<meta name="keywords" content="'.$keyWords.'" />';
             $output .= '<meta name="description" content="'.$desc.'" />';
+            $output .= '<meta http-equiv="content-language" content="In-Id" />';
         }
 
         if($enable['robot']){
-            $output .= '<meta name="robots" content="index,follow"/>';
+            $output .= '<meta name="robots" content="index,follow"/>'
+                    .'<meta name="googlebot-news" content="index, follow" />'
+                    .'<meta  name="googlebot" content="index, follow" />';
         } else {
             $output .= '<meta name="robots" content="noindex,nofollow"/>';
         }
@@ -107,6 +110,7 @@ if(! function_exists('meta_tags')){
                 .'<meta property="og:title" content="'.$title.'" />'
                 .'<meta property="og:description" content="'.$desc.'" />'
                 .'<meta property="og:image" content="'.$imgUrl.'" />'
+                .'<meta property="og:site_name" content="web.bkppd-balangnakab.info" />'
                 .'<meta property="fb:page_id" content="'.$app_id.'" />';
         }
 
@@ -114,6 +118,8 @@ if(! function_exists('meta_tags')){
         if($enable['twitter']){
             $output .= '<meta name="twitter:card" content="summary_large_image"/>'
                 .'<meta name="twitter:title" content="'.$title.'"/>'
+                .'<meta name="twitter:site" content="@norsptra" />'
+                .'<meta name="twitter:creator" content="@norsptra">'
                 .'<meta name="twitter:url" content="'.$url.'"/>'
                 .'<meta name="twitter:description" content="'.$desc.'"/>'
                 .'<meta name="twitter:image" content="'.$imgUrl.'"/>';

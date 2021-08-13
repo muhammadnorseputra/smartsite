@@ -20,24 +20,21 @@
                                  <meta name="description" content="'.$mf_beranda->meta_desc.'"/>
                                  <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>';  
     ?>
+    <link rel="preconnect" href="https://fonts.googleapis.com/"/>
     <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-solid-900.woff2') ?>" crossorigin="anonymous">
     <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-brands-400.woff2') ?>" crossorigin="anonymous">
     <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-regular-400.woff2') ?>" crossorigin="anonymous">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
-    <link rel="dns-prefetch" href="https://web.bkppd-balangankab.info/">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
-    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="anonymous">
-    <link rel="preconnect" href="https://web.bkppd-balangankab.info/" crossorigin="anonymous">
-    <link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin="anonymous">
-    <link rel="preload" href="<?= base_url('template/v1/prod/app.css'); ?>" as="style" crossorigin="anonymous" onload="this.rel='stylesheet'">
+    <link rel="preload" as="style" href="<?= base_url('template/v1/prod/app.css'); ?>" onload="this.rel='stylesheet'" crossorigin="anonymous">
     <link rel="preload" href="<?= base_url('template/v1/prod/vendor-min.js'); ?>" as="script" crossorigin="anonymous">
     <link rel="preload" href="<?= base_url('template/v1/prod/app-min.js'); ?>" as="script" crossorigin="anonymous">
     <link rel="prefetch" href="<?= base_url('bower_components/jquery/dist/jquery.min.js'); ?>" as="script" crossorigin="anonymous">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="//web.bkppd-balangankab.info/">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com/">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com/">
     <link rel="subresource" href="<?= base_url('assets/images/logo.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg-home.png'); ?>">
-    <link rel="subresource" href="<?= files('file_banner/*'); ?>">
-    <!-- <link rel="stylesheet" href="<?= base_url('template/v1/prod/app.css'); ?>"  type="text/css"> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199508931-1" crossorigin="anonymous"></script>
     <script>

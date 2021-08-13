@@ -133,7 +133,7 @@ section.hero {
 .slider{
   z-index: 9999;
   position:fixed;
-  height:4.5px;
+  height:2.5px;
   overflow-x: hidden;
   // ditengah layar
   // width:30%;
@@ -148,7 +148,7 @@ section.hero {
 }
 .line{
   position:absolute;
-  opacity: 0.4;
+  opacity: 0.3;
   background:$teal;
   width:190%;
   height:4.5px;
@@ -157,7 +157,7 @@ section.hero {
 .subline{
   position:absolute;
   background:$green;
-  height:3.5px; 
+  height:2.5px; 
 }
 .inc{
   animation: increase 1.5s infinite;

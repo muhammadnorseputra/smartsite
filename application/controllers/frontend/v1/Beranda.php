@@ -139,7 +139,7 @@ class Beranda extends CI_Controller
                     $postby = strtolower(url_title($namalengkap));
                     $slug = strtolower($row->slug);
                     // $kategori = url_title(strtolower($this->post->kategori_byid($row->fid_kategori)));
-                    $posturl = base_url("blog/".$slug);
+                    $posturl = prep_url(base_url("blog/".$slug), TRUE);
                 elseif($row->type === 'LINK'):
                     $posturl = base_url('leave?go='.encrypt_url($row->content));
                 endif;

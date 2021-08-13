@@ -54,7 +54,7 @@ class Post extends CI_Controller
             $content = !empty($detail->deskripsi) ? $detail->deskripsi : $yt_desc;
         else:
             $imgurl = $img;
-            $meta_desc = strip_tags(str_replace('"', '', word_limiter($detail->content, 120)));
+            $meta_desc = strip_tags(str_replace('"', '', word_limiter($detail->content, 60)));
             $content = !empty($detail->deskripsi) ? $detail->deskripsi : $meta_desc;
         endif;
         $meta_keywords = !empty($detail->keywords) ? $detail->keywords : $detail->tags;
@@ -144,9 +144,9 @@ class Post extends CI_Controller
                                 '.$img.'
                             </div>
                             <div class="pt-md-3">
-                              <h6>'.word_limiter($row->judul, 10).'</h6>
+                              <h6>'.highlight_phrase($row->judul, $query, '<span style="background-color:teal; color:#fff; padding:1px; border-radius:3px;">', '</span>').'</h6>
                               <span class="small">'.longdate_indo($row->tgl_posting).'</span>
-                              <p class="text-muted small pr-md-4">'.$isi.'...</p>
+                              <p class="text-muted small pr-md-4">'.highlight_phrase($isi, $query, '<span style="background-color:teal; color:#fff; padding:1px; border-radius:3px;">', '</span>').'...</p>
                             </div>
                         </div>
                       </a>';
@@ -551,8 +551,8 @@ class Post extends CI_Controller
         public function upload_single_photo($id)
         {
             $idb = decrypt_url($id);
-            
-            $filename = "blob_".strtolower(url_title($_FILES['file']['name']));
+            $real_filename = underscore(sanitize_filename($_FILES['file']['name']));
+            $filename = "blob_".strtolower($real_filename);
             $path = 'files/file_berita/';
 
             $file_old = $this->post->getFileNameById($idb);

@@ -5,9 +5,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Login</title>
+		<meta name="robots" content="noindex, nofollow">
 		<meta name="keywords" content="Login - BKPPD Balangan">
 		<meta name="description" content="Silahkan isikan kredensial anda untuk masuk ke-sistem userportal bkppd balangan sebagai tamu/konstributor/editor dengan memberikan konten dan fitur yang lebih banyak">
-		
+						
 		<link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>">
 		<!-- Custome -->
 		<link rel="stylesheet" href="<?= base_url('assets/css/f_login.css') ?>">
