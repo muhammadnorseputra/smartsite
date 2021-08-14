@@ -1,4 +1,4 @@
-<section class="bg-white mb-4">
+<section class="bg-white mb-4 border-bottom">
 <div class="container">
     <div class="row d-flex align-items-center">
         <div class="col-md-5 py-3 py-md-5 mt-md-5 order-last order-md-first">

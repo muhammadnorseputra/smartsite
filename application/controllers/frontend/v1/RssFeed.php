@@ -22,7 +22,7 @@ class RssFeed extends CI_Controller {
           $data['page_language'] = 'id-ID'; // the language
           $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
           $data['creator_name'] = 'BKPPD Balangan'; // your email
-          $data['posts'] = $this->posts->getPosts(12,$kategori);  
+          $data['posts'] = $this->posts->getPosts(null,$kategori);  
           $this->output->set_content_type('application/rss+xml');
           $this->load->view('Frontend/v1/rss', $data);
       }
@@ -38,7 +38,7 @@ class RssFeed extends CI_Controller {
           $data['page_language'] = 'id-ID'; // the language
           $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
           $data['creator_name'] = 'BKPPD Balangan'; // your email
-          $data['posts'] = $this->posts->getPosts(12,$kategori);  
+          $data['posts'] = $this->posts->getPosts(null,$kategori);  
           $data['pages'] = $this->pages->pageAll();
           $this->output->set_content_type('application/rss+xml');
           $this->load->view('Frontend/v1/rss_amp', $data);

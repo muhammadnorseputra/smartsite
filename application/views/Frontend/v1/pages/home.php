@@ -3,7 +3,8 @@
 <?php $this->load->view('Frontend/v1/function/slider3') ?>
 <section class="content-home">
     <div class="container">
-        <div class="row app-slick">
+        <div class="row">
+            <div class="col-md-12 app-slick">
                 <div>
                     <div class="d-flex align-items-center bg-success py-4 px-md-5 px-0" style="border-radius:15px;">
                         <div class="col-12 col-md-5 d-none d-md-block d-lg-block">
@@ -32,6 +33,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </section>
@@ -73,7 +75,7 @@
                 <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7" id="main-content">
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="main-content">
                 <!-- Banenr slide horizontal -->
                 <!-- <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/banner_horizontal_home') ?>">
                     <span class="content-placeholder my-3" style="width: 100%; height: 230px;"></span>
@@ -95,7 +97,7 @@
                     </div>
                     <?php $no++; endforeach; ?>
                 </div> -->
-                <div class="d-flex justify-content-between align-items-center mb-3 flex-row flex-nowrap">
+                <div class="bg-white p-2 rounded mb-3 border shadow-sm d-flex justify-content-between align-items-center flex-row flex-nowrap">
                     <?php
                     $sort = $this->input->get('sort');
                     $type = $this->input->get('type');
@@ -135,7 +137,7 @@
                     </div>
                 </div>
                 
-                <div id="load_data" class="d-block w-100"></div>
+                <div id="load_data"></div>
                 <div id="load_data_message"></div>
                 <div class="text-center mb-md-4">
                     <button id="load_more" class="btn p-2 btn-outline-primary btn-block rounded-lg px-4"><i class="fas fa-newspaper mr-3"></i> Berita Sebelumnya</button>

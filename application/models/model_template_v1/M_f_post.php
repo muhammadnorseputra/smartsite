@@ -322,7 +322,7 @@ class M_f_post extends CI_Model {
     }
 
     // get all postings
-    function getPosts($limit, $kategori)
+    function getPosts($limit=null, $kategori)
     {
         $this->db->select('*');
         $this->db->from('t_berita');
@@ -332,7 +332,9 @@ class M_f_post extends CI_Model {
             $this->db->where('fid_kategori', $kategori);
         }
         $this->db->order_by('id_berita', 'desc');
-        $this->db->limit($limit);
+        if($limit != null) {
+            $this->db->limit($limit);
+        }
         $q= $this->db->get();
         return $q;
     }

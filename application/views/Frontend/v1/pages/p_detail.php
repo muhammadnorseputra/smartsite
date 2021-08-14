@@ -63,9 +63,9 @@ if (count($pecah) > 0) {
 $namakategori = $this->post->kategori_byid($post_detail->fid_kategori);
 $post_list_url = base_url('k/' . url_title($namakategori));
 ?>
-<section class="pt-md-5 mt-md-5">
+<section class="pt-md-2 bg-white">
 <div class="container">
-	<div class="row">
+	<div class="row mt-md-5">
 		<div class="col-md-2 order-md-first order-lg-last">
 			<div id="sidebar">
 				<ins class="adsbygoogle"
@@ -79,26 +79,32 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 				</script>
 		     </div>
 		</div>
-		<div class="col-md-8 mb-5 pb-md-5 px-3 px-md-0 order-first order-md-last" id="main-content">
+		<div class="col-md-8 mb-5 pb-md-4 px-3 px-md-0 order-first order-md-last" id="main-content">
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
+					<nav aria-label="breadcrumb">
+					  <ol class="breadcrumb small">
+					    <li class="breadcrumb-item"><a href="<?= base_url("beranda") ?>">Home</a></li>
+					    <li class="breadcrumb-item"><a rel="noindex, nofollow" href="<?= base_url("blog") ?>">Blog</a></li>
+					    <li class="breadcrumb-item active text-truncate" aria-current="page"><?= $post_detail->judul ?></li>
+					  </ol>
+					</nav>
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1><?php echo $post_detail->judul; ?></h1>
 					<div class="d-flex justify-content-between align-items-center mb-3">
-						<span class="small text-muted"><i class="fas fa-calendar-alt mr-2"></i> Editor by <?= ucwords($namapanggilan); ?> <span class="text-danger">&#8226;</span>  <?php echo longdate_indo($post_detail->tgl_posting); ?> </span>	
+						<div class="d-flex justify-content-start align-items-center text-muted">
+						<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top; border: 4px solid #FCFCFC;" width="40" height="40" class="mr-md-2 mr-2 lazy rounded-circle shadow-sm bg-light"> 
+						<span>
+							Editor by <?= ucwords($namapanggilan); ?> 
+							<span class="text-danger">&#8226;</span>  
+							<?php echo longdate_indo($post_detail->tgl_posting); ?> 
+						</span>
+						</div>	
 						<span>
 							<div class="d-flex justify-content-end">
-								<button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-0 rounded text-muted"><i class="far fa-eye"></i> <sup><?= $count; ?></sup> </button>
-								<button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-0 rounded w-100 text-danger <?= $btn_like ?>" title="Suka / Tidak suka" data-id-berita="<?= $post_detail->id_berita ?>" data-id-user="<?= $this->session->userdata('user_portal_log')['id'] ?>"><i class="<?= $status_like ?> fa-heart"></i> <span class="count_like"><sup><?= $post_detail->like_count ?></sup></span> </button>
+								<button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-0 rounded text-muted"><i class="far fa-eye mr-2"></i> <?= $count; ?> </button>
+								<button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-0 rounded w-100 text-danger <?= $btn_like ?>" title="Suka / Tidak suka" data-id-berita="<?= $post_detail->id_berita ?>" data-id-user="<?= $this->session->userdata('user_portal_log')['id'] ?>"><i class="<?= $status_like ?> fa-heart mr-2"></i> <span class="count_like"><?= $post_detail->like_count ?></span> </button>
 							</div>
 						</span>
-					</div>
-					<div class="d-flex justify-content-start align-items-center mb-3">
-						<div>
-							<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top; border: 4px solid #FCFCFC;" width="50" height="50" class="mr-md-3 mr-3 lazy rounded-circle shadow-sm bg-white">
-						</div>
-						<div>
-							<a href="<?= $link_profile_public ?>"><?= $namalengkap ?></a>
-						</div>
 					</div>
 					<div class="px-0 media_youtube">
 						<?php if($post_detail->type === 'SLIDE'): ?>

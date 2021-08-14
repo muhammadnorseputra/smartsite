@@ -1,3 +1,4 @@
+<footer>
 <section class="py-4 border-top border-light bg-white">
 	<div class="container">
 		<div class="d-flex justify-content-lg-start align-content-center text-dark flex-column flex-lg-row">
@@ -125,6 +126,7 @@
 		</div>
 	</div> 
 </section>
+</footer>
 <!-- jQuery -->
 <script defer="defer" src="<?= base_url('template/v1/prod/vendor-min.js'); ?>" crossorigin="anonymous"></script>
 <script defer="defer" src="<?= base_url('template/v1/prod/app-min.js'); ?>" crossorigin="anonymous"></script>
