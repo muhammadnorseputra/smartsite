@@ -348,17 +348,16 @@ h5.title-sidebar {
 	font-weight: 700;
 }
 .navbar li.nav-item a {
-	color: #222 !important;
+	color: #555 !important;
 	transition: background .1s ease;
 	font-family: 'Rubik', sans-serif;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 400;
 	border-radius: 8px !important;
 	padding-top: .5rem .2rem;
 	border: 1px solid transparent;
 }
 .navbar li.nav-item a:hover {
-	background-color: #eff8ff !important;
 	color: #333;
 }
 .dropdown-item:hover, .dropdown-item:focus {

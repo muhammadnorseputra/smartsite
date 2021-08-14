@@ -20,11 +20,14 @@ $sizes: map-merge((5: 5%,
 	$sizes);
 
 $enable-responsive-font-sizes: true;
-$font-size-base: 1rem;
-$h2-font-size: 2rem;
-$modal-fade-transform: scale(1);
+// $font-size-base: 1rem;
+// $h2-font-size: 2rem;
+$modal-fade-transform: scale(1.2);
 $enable-rounded: true;
 $enable-shadows: true;
 $enable-gradients: true;
 $spacer: 1.05rem;
+$container-max-widths: (
+  md: 1024px
+);
 
