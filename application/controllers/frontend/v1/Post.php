@@ -552,7 +552,7 @@ class Post extends CI_Controller
         public function upload_single_photo($id)
         {
             $idb = decrypt_url($id);
-            $real_filename = underscore(sanitize_filename($_FILES['file']['name']));
+            $real_filename = underscore($_FILES['file']['name']);
             $filename = "blob_".strtolower($real_filename);
             $path = 'files/file_berita/';
 
