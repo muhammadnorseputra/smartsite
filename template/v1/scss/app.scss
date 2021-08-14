@@ -347,13 +347,15 @@ h5.title-sidebar {
 	font-family: 'Rubik', sans-serif;
 	font-weight: 700;
 }
+ul.navbar-nav {
+	display: flex;
+
+}
 .navbar li.nav-item a {
-	color: #555 !important;
-	transition: background .1s ease;
+	color: #333 !important;
 	font-family: 'Rubik', sans-serif;
 	font-size: 16px;
-	font-weight: 400;
-	border-radius: 8px !important;
+	font-weight: 600;
 	padding-top: .5rem .2rem;
 	border: 1px solid transparent;
 }
