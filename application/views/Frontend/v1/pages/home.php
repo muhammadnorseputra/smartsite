@@ -1,6 +1,17 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <section class="content-home">
     <div class="container">
+        <div class="row mt-3">
+            <div class="col-12">
+                <div style="overflow-x: auto;" class="d-flex flex-row flex-nowrap justify-content-start align-items-center">
+                <?php
+                foreach ($tags->result() as $tag) :
+                ?>
+                  <a href="<?= base_url('tag/' . $tag->nama_tag); ?>" class="btn btn-default rounded my-1 text-nowrap mx-2 p-2 btn-sm btn-outline-secondary"><?= ucwords(url_title($tag->nama_tag)); ?></a>
+                <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
         <?php $this->load->view('Frontend/v1/function/slider4'); ?>
         <div class="row">
             <div class="col-12">
@@ -68,11 +79,6 @@
                             $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
                         }
                     ?>
-                    <!-- <div class="mx-3 flex-grow-1">
-                        <a href="<?= $b->path ?>" id="xbanner-<?= $no ?>" >
-                        
-                        </a>
-                    </div> -->
                     <div class="col-md-3">
                         <div class="card bg-light text-white rounded-lg mb-2">
                             <img class="lazy card-img" height="410" style="object-fit:cover;" alt="<?= $no ?>" data-src="<?= files('file_banner/'.$b->gambar) ?>">

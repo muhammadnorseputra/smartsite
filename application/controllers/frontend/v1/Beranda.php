@@ -6,6 +6,7 @@ class Beranda extends CI_Controller
     {
         parent::__construct();
         $this->load->model('model_template_v1/M_f_users', 'mf_users');
+        $this->load->model('model_template_v1/M_f_post_list', 'post_list');
         $this->load->model('model_template_v1/M_f_post', 'post');
         $this->load->model('model_template_v1/M_f_album', 'album');
         $this->load->model('M_b_komentar', 'komentar');
@@ -60,6 +61,7 @@ class Beranda extends CI_Controller
                     'mf_poling_jawaban' => $this->mf_beranda->get_poling_b(),
                     'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
                     'mf_banner_home' => $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 5),
+                    'tags' => $this->post_list->get_all_tag(),
                     'meta' => $meta_tag
                 ];
          

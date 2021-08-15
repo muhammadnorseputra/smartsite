@@ -70,7 +70,7 @@ $komentar = $countKomentar != 0 ? $countKomentar : $countKomentar;
 $content_comments = '<i class="far fa-comment-alt mr-1 ml-3"></i>'.$komentar;
 $content_shares = '<button aria-hidden="true" type="button" data-toggle="tooltip" title="Bagikan postingan ini" data-placement="bottom" id="btn-share" data-row-id="'.$late->id_berita. '" class="btn btn-sm btn-default bg-transparent border-0 rounded-0 p-0 m-0 text-light"><i class="fas fa-ellipsis-v"></i></button>';
 ?>
-<div class="col-md-6">
+<div class="col-md-6 mb-3 md-md-0">
     <div class="card bg-light text-white">
         <?= $img ?>
         <div class="card-img-overlay d-flex flex-column justify-content-end">
