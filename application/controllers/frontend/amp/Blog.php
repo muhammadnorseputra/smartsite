@@ -88,7 +88,7 @@ class Blog extends CI_Controller {
 	            $img = base_url('assets/images/logo.png');
 	        endif;
 
-	        if($detail->type === 'YOUTUBE'):st
+	        if($detail->type === 'YOUTUBE'):
 				$content = nl2br($yt_desc);
 			elseif($detail->type === 'LINK'):
 				$content = $linker['description'];
