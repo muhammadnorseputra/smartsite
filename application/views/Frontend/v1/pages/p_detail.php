@@ -71,6 +71,7 @@ else:
 endif;
 $pubDete= new DateTime($post_detail->created_at, new DateTimeZone('Asia/Jakarta'));
 $modDete= new DateTime($post_detail->update_at, new DateTimeZone('Asia/Jakarta'));
+$imgInfo = getimagesize(files('file_berita/'.$post_detail->img));
 ?>
 <script type="application/ld+json">
   {
@@ -98,8 +99,8 @@ $modDete= new DateTime($post_detail->update_at, new DateTimeZone('Asia/Jakarta')
     "image": {
       "@type": "ImageObject",
       "url": "<?= files('file_berita/'.$post_detail->img) ?>",
-      "height": 2000,
-      "width": 800
+      "height": <?= $imgInfo[1] ?>,
+      "width": <?= $imgInfo[0] ?>
     }
   }
 </script>
