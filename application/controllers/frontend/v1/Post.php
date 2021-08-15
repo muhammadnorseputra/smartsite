@@ -13,6 +13,7 @@ class Post extends CI_Controller
         $this->load->model('M_b_komentar', 'komentar');
         $this->load->helper('time_ago');
         $this->load->library('image_lib');
+        $this->load->library('user_agent');
         //Check maintenance website
         if(($this->session->userdata('status') == 'ONLINE') && ($this->mf_beranda->get_identitas()->status_maintenance == '1') || ($this->mf_beranda->get_identitas()->status_maintenance == '0')) {
             // redirect(base_url('frontend/v1/beranda'),'refresh');

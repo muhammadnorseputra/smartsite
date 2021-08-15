@@ -1,5 +1,4 @@
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
-<?php
+<?php  
 /*Update count view*/
 $count_v = $post_detail->views;
 $count = $count_v + 1;
@@ -17,6 +16,8 @@ if ($by == 'admin') {
 	$photo = 'data:image/jpeg;base64,' . base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic) . '';
 	$link_profile_public = base_url("user/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan) . "/" . encrypt_url($by));
 }
+?>
+<?php
 /*Youtube Data*/
 if($post_detail->type === 'YOUTUBE'):
 $key      = $this->config->item('YOUTUBE_KEY'); /*TOKEN goole developer*/
@@ -62,7 +63,49 @@ if (count($pecah) > 0) {
 <?php  
 $namakategori = $this->post->kategori_byid($post_detail->fid_kategori);
 $post_list_url = base_url('k/' . url_title($namakategori));
+$mobile = $this->agent->is_mobile();
+if($mobile):
+	$baseUrl = base_url("amp/{$post_detail->slug}");
+else:
+	$baseUrl = curPageURL();
+endif;
+$pubDete= new DateTime($post_detail->created_at, new DateTimeZone('Asia/Jakarta'));
+$modDete= new DateTime($post_detail->update_at, new DateTimeZone('Asia/Jakarta'));
 ?>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": "<?= $baseUrl ?>",
+    "headline": "<?= $post_detail->judul ?>",
+    "datePublished": "<?= $pubDete->format('Y-m-d H:i:sO') ?>",
+    "dateModified": "<?= $modDete->format('Y-m-d H:i:sO') ?>",
+    "description": "<?= $post_detail->deskripsi ?>",
+    "author": {
+      "@type": "Person",
+      "name": "<?= $namalengkap ?>"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BKPPD Balangan",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "<?= assets('images/logo.png') ?>",
+        "width": 192,
+        "height": 260
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "<?= files('file_berita/'.$post_detail->img) ?>",
+      "height": 2000,
+      "width": 800
+    }
+  }
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
+
 <section class="pt-md-2 bg-white">
 <div class="container">
 	<div class="row mt-md-5">
