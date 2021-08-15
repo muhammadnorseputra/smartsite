@@ -77,7 +77,10 @@ $imgInfo = getimagesize(files('file_berita/'.$post_detail->img));
   {
     "@context": "http://schema.org",
     "@type": "NewsArticle",
-    "mainEntityOfPage": "<?= $baseUrl ?>",
+    "mainEntityOfPage": {
+    	"@type": "WebPage",
+    	"@id": "<?= $baseUrl ?>"
+    },
     "headline": "<?= $post_detail->judul ?>",
     "datePublished": "<?= $pubDete->format('Y-m-d H:i:sO') ?>",
     "dateModified": "<?= $modDete->format('Y-m-d H:i:sO') ?>",
