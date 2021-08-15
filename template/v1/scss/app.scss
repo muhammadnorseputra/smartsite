@@ -376,10 +376,11 @@ ul.navbar-nav {
     margin: 30px 0;
     border-top: 3px solid #d8e2dc;
     position: relative;
+    border-radius: 10px;
     .separator-text {
 	    display: block;
 	    position: absolute;
-	    top: -13px;
+	    top: -15px;
 	    left: 0;
 	    padding: 0px 10px 0px 0px;
 	    font-family: inherit;

@@ -25,17 +25,13 @@ $(function() {
         let _container = $("#search-result");
 
         if (_input.value == '') {
-            _container.html(`<div class="pl-3 pl-md-0 rounded d-flex justify-content-around align-items-center">
-		            		<div class="d-none d-md-block">
-		            			<i class="fas fa-search fa-2x"></i>
-		            		</div>
-		            		<div class="py-3">
-								<h2>Silahkan masukan katakunci !</h2>
-				            	<p class="text-muted pl-3 border-left border-warning">
-				            		Silahkan masukan keywords pencarian, dengan memasukan judul atau label
-				            	</p>
-		            		</div>
-		            	</div>
+            _container.html(`
+                <div class="py-3 text-center">
+                        <h6>Silahkan masukan katakunci !</h6>
+                        <p class="text-muted small">
+                            Silahkan masukan keywords pencarian, dengan memasukan judul atau label
+                        </p>
+                    </div>
             `);
         }
 
@@ -44,11 +40,12 @@ $(function() {
                 msg: `<i class='fas fa-info-circle mr-2'></i> ${x}`,
                 type: y,
                 position: "bottom",
+                offset: -10
             });
         }
 
         function lazzy() {
-            _container.html('<div id="loader" class="mx-auto my-5"></div>');
+            _container.html(`<div class="d-flex justify-content-center align-items-center"><img src="${_uri}/assets/images/loader/simple-pre-loader/loader-icons-set-2-32x64x128/64x64/Preloader_2.gif"></div>`);
         }
 
         if (_input.value.length > 3) {

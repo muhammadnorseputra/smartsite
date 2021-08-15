@@ -1,10 +1,11 @@
+<main class="mt-md-5 pt-md-5">
 <?php  
 if ($isi) {
 	# code...
 	$this->load->view($isi);
 }
 ?>
-
+</main>
 <div class="fixed-bottom ml-auto text-center w-5 mb-5 mb-md-0 pb-4 mr-4">
     <button aria-hidden="true" type="button" aria-label="button" title="Back to top" class="btn shadow btn-primary border-0 shadow-sm text-center rounded btn-backtop rippler rippler-inverse mb-3"><i class="fas fa-arrow-up px-1 py-2"></i></button>
 </div>

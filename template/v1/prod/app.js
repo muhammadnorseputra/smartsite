@@ -7,30 +7,24 @@
 
 $(function () {
   // get all berita
-  var limit = 3;
+  var limit = 6;
   var start = 0;
   var action = "inactive";
   var $url = $host ? _uriSegment[2] : _uriSegment[1];
 
   if ($url == 'beranda') {
     var load_data_message = function load_data_message() {
-      $("#load_data_message").html("<div class=\"card border-0 bg-transparent shadow-none mb-5\">\n                        <div class=\"card-body text-danger text-center\">\n                        <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                            <h5 class=\"card-title\">Yahhh! abis</h5>  \n                            <p class=\"font-weight-light text-secondary\"> Berita telah berakhir.</p>\n                        </div>\n                    </div>"));
+      $("#load_data_message").html("\n                <div class=\"p-3 bg-white rounded-bottom border-left border-top-0 border-bottom border-right\">\n                    <p class=\"font-weight-light text-muted text-center\"><i class=\"fas fa-check-circle mr-2 text-success\"></i> Postingan sudah ditampilkan semua</p>\n                </div>\n                ");
     };
 
     var lazzy_loader = function lazzy_loader(limit) {
       var output = "";
 
       for (var count = 0; count < 1; count++) {
-        output += "\n                <div class=\"card border-0 bg-white mb-3\" style=\"border-radius:5px;\">\n                    <div class =\"card-body p-0 border-0\">\n                        <span class =\"content-placeholder\" style=\"width:100%; height: 250px; border-radius:8px;\"> &nbsp; </span>\n                    </div> \n                    <div class=\"card-header border-0 bg-white\" style=\"border-radius:5px;\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:40px; height: 40px;\">&nbsp;</span>\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:40%; height: 40px; border-radius: 15px;\"> &nbsp; </span>\n\n                    <span class =\"content-placeholder rounded-circle float-right mt-1 mr-3\"\n                    style =\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </p> \n                    </div> \n                    \n                    <div class =\"card-footer d-flex justify-content-bettwen p-3 bg-transparent border-0\">\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 p-2\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
-        /*
-        output += `<div class="d-flex justify-content-center align-items-center my-5">
-                        <div class="loader_small" style="width:50px;height:50px;"></div>
-                    </div>`;
-        */
+        output += "<div class=\"d-flex justify-content-center align-items-center bg-white rounded-bottom border-left border-top-0 border-bottom border-right\">\n                        <img src=\"".concat(_uri, "/assets/images/loader/simple-pre-loader/loader-icons-set-2-32x64x128/64x64/Preloader_2.gif\">\n                    </div>");
       }
 
       $("#load_data_message").html(output);
-      $("button#load_more").html("<div class=\"d-flex justify-content-center align-items-center\">\n        <div class=\"loader_small\" style=\"width:20px; height: 20px;\"></div>\n      </div> ").prop('disabled', true);
     };
 
     var load_data = function load_data(limit, start) {
@@ -60,12 +54,8 @@ $(function () {
             } else {
               $("#load_data_message").html("");
             }
-            /*var hg = $(".ps-scroll:last").height() * 3;
-            window.scrollBy(0, -hg);*/
-
 
             $("#load_data").append(data.html);
-            $("button#load_more").html("<i class=\"fas fa-newspaper mr-2\"></i> Berita Sebelumnya").prop('disabled', false);
             action = "inactive";
             $(".lazy").lazy({
               effect: 'fadeIn',
@@ -112,32 +102,30 @@ $(function () {
 
     if (action == "inactive") {
       action = "active";
-      load_data(limit, start);
+      setTimeout(function () {
+        load_data(limit, start);
+      }, 3000);
     }
-    /*$(window).scroll(function() {
-         if (
-             $(window).scrollTop() + $(window).height() > $("#load_data").height() &&
-             action == "inactive"
-         ) {
-             lazzy_loader(limit);
-             action = "active";
-             start = start + limit;
-             load_data(limit, start);
-         }
-     });
-     */
 
-
-    $("button#load_more").on("click", function (e) {
-      e.preventDefault();
-
+    $(window).scroll(function () {
       if ($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == "inactive") {
+        lazzy_loader(limit);
         action = "active";
         start = start + limit;
-        lazzy_loader(limit);
-        load_data(limit, start);
+        setTimeout(function () {
+          load_data(limit, start);
+        }, 3000);
       }
     });
+    /*$("button#load_more").on("click", function(e) {
+        e.preventDefault();
+            if ($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == "inactive") {
+                action = "active";
+                start = start + limit;
+                lazzy_loader(limit);
+                load_data(limit, start);
+            }
+        });*/
   } else {
     console.log('Semua berita tidak ditampilkan, karna bukan halaman beranda');
   }
@@ -894,19 +882,20 @@ $(function () {
     var _container = $("#search-result");
 
     if (_input.value == '') {
-      _container.html("<div class=\"pl-3 pl-md-0 rounded d-flex justify-content-around align-items-center\">\n\t\t            \t\t<div class=\"d-none d-md-block\">\n\t\t            \t\t\t<i class=\"fas fa-search fa-2x\"></i>\n\t\t            \t\t</div>\n\t\t            \t\t<div class=\"py-3\">\n\t\t\t\t\t\t\t\t<h2>Silahkan masukan katakunci !</h2>\n\t\t\t\t            \t<p class=\"text-muted pl-3 border-left border-warning\">\n\t\t\t\t            \t\tSilahkan masukan keywords pencarian, dengan memasukan judul atau label\n\t\t\t\t            \t</p>\n\t\t            \t\t</div>\n\t\t            \t</div>\n            ");
+      _container.html("\n                <div class=\"py-3 text-center\">\n                        <h6>Silahkan masukan katakunci !</h6>\n                        <p class=\"text-muted small\">\n                            Silahkan masukan keywords pencarian, dengan memasukan judul atau label\n                        </p>\n                    </div>\n            ");
     }
 
     function message(x, y) {
       notif({
         msg: "<i class='fas fa-info-circle mr-2'></i> ".concat(x),
         type: y,
-        position: "bottom"
+        position: "bottom",
+        offset: -10
       });
     }
 
     function lazzy() {
-      _container.html('<div id="loader" class="mx-auto my-5"></div>');
+      _container.html("<div class=\"d-flex justify-content-center align-items-center\"><img src=\"".concat(_uri, "/assets/images/loader/simple-pre-loader/loader-icons-set-2-32x64x128/64x64/Preloader_2.gif\"></div>"));
     }
 
     if (_input.value.length > 3) {
@@ -981,7 +970,7 @@ $(document).ready(function () {
   $sticky.hcSticky({
     stickTo: $('#main-content'),
     // innerSticker: '#stickMe',
-    top: 85,
+    top: 115,
     // followScroll: true,
     // mobileFirst: false,
     responsive: {

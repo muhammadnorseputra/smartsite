@@ -88,7 +88,6 @@ class Post extends CI_Controller
           $output = '';
           $query = $this->input->post('q');
           $data = $this->post->fetch_data_search($query);
-          $output .= '<div class="list-group list-group-flush">';
           if($data->num_rows() > 0)
           {
            foreach($data->result() as $row)
@@ -131,41 +130,39 @@ class Post extends CI_Controller
 
             if($row->type === 'BERITA'):
                 if(!empty($row->img)):
-                    $img = '<img style="object-fit:cover; width:320px; height:220px;" class="rounded-left" alt="'.ucwords($row->judul).'" src="'.base_url('files/file_berita/'.$row->img).'">';
+                    $img = '<img style="object-fit:cover;  width:80px; height:80px;" class="rounded" alt="'.ucwords($row->judul).'" src="'.base_url('files/file_berita/'.$row->img).'">';
                 else:
-                    $img = '<img style="object-fit:cover; width:320px; height:220px;" class="rounded-left" alt="'.ucwords($row->judul).'" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
+                    $img = '<img style="object-fit:cover;  width:80px; height:80px;" class="rounded" alt="'.ucwords($row->judul).'" src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'"/>';
                 endif;
             else:
-                $img = '<img style="object-fit:cover; width:320px; height:220px;" class="rounded-left" alt="'.ucwords($row->judul).'" src="'.base_url('assets/images/noimage.gif').'">';
+                $img = '<img style="object-fit:cover; width:80px; height:80px;" class="rounded" alt="'.ucwords($row->judul).'" src="'.base_url('assets/images/noimage.gif').'">';
             endif; 
 
-            $output .= '<a href="'.$posturl.'" class="list-group-item border my-2 list-group-item-action rounded p-3 p-md-0">
-                        <div class="d-flex justify-content-start align-items-start">
-                            <div class="mr-4 d-none d-md-block">
-                                '.$img.'
-                            </div>
+            $output .= '<a href="'.$posturl.'" class="d-flex justify-content-between align-items-end rounded p-2">
+                        <div>
                             <div class="pt-md-3">
-                              <h6>'.highlight_phrase($row->judul, $query, '<span style="background-color:teal; color:#fff; padding:1px; border-radius:3px;">', '</span>').'</h6>
-                              <span class="small">'.longdate_indo($row->tgl_posting).'</span>
-                              <p class="text-muted small pr-md-4">'.highlight_phrase($isi, $query, '<span style="background-color:teal; color:#fff; padding:1px; border-radius:3px;">', '</span>').'...</p>
+                              <h6>'.highlight_phrase($row->judul, $query, '<span style="color:#ccc;">', '</span>').'</h6>
+                              <span class="small text-muted">'.longdate_indo($row->tgl_posting).'</span>
                             </div>
+                        </div>
+                        <div class="w-25 text-reset text-right">
+                            '.$img.'
                         </div>
                       </a>';
            }
           }
           else
           {
-           $output .= '<div class="d-flex justify-content-center align-items-center">
+           $output .= '<div class="d-flex justify-content-center align-items-center mt-4">
                         <div class="w-25">
                             <img src="'.base_url('assets/images/bg/undraw_empty_xct9.svg').'" class="img-fluid"/>
                         </div>
                         <div class="px-3">
-                            <h4 class="text-muted"> Keyword <b>"'.$query.'"</b> Not Found</h4>
-                            <p class="pl-3 border-left border-warning small text-muted">Sepertinya katakunci yang kamu masukan tidak ada pada database kami</p>
+                            <h6 class="text-muted"> Keyword <b>"'.$query.'"</b> Not Found</h6>
+                            <div class="pl-3 border-left border-light small text-muted">Sepertinya katakunci yang kamu masukan tidak cocok dengan apapun.</pdiv>
                         </div>
                     </div>';
           }
-          $output .= '</div>';
           echo json_encode(['data' => $output, 'count' => $data->num_rows()]);
          }
 

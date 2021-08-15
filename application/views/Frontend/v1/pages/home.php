@@ -1,6 +1,5 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
-<?php $this->load->view('Frontend/v1/function/slider3') ?>
 <section class="content-home">
     <div class="container">
         <div class="row">
@@ -38,12 +37,12 @@
     </div>
 </section>
 <?php endif; ?>
-<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-3 mt-md-5 pt-md-5' : 'my-4' ?>
+<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-3' : 'my-4' ?>
 <section class="<?= $my ?>" id="content-page">
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
-        <div class="row d-flex justify-content-around">
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-4 mt-md-0">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-first order-md-last mt-4 mt-md-0">
                 <div id="sidebar">
                 
                 <a rel="noreferrer, nofollow" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6"><img class="w-100" src="https://img.buymeacoffee.com/button-api/?text=Support My Developer&emoji=&slug=putrabungsu6&button_colour=40DCA5&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" alt="putrabungsu6"></a>
@@ -69,25 +68,21 @@
                 </div>
                 </a>
  -->
-                <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
-                <?php $this->load->view('Frontend/v1/function/poling'); ?>
-                <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
-                <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="main-content">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 order-last order-md-first" id="main-content">
                 <!-- Banenr slide horizontal -->
                 <!-- <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/banner_horizontal_home') ?>">
                     <span class="content-placeholder my-3" style="width: 100%; height: 230px;"></span>
                     <span class="content-placeholder" style="width: 40%; height: 20px;"></span>
                 </div>  -->
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col-12">
                         <div class="separator">
-                            <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-secondary mr-2"></i>Postingan Terbaru</span></span>
+                            <span class="separator-text text-capitalize font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-secondary mr-2"></i>Feeds</span></span>
                         </div>
                     </div>
-                </div> -->
+                </div> 
                 <!-- <div style="overflow-x: auto;" class="d-flex justify-content-between align-items-center flex-row flex-nowrap mb-3">
                     <?php $no=1; foreach($mf_banner_home->result() as $b): ?>
                     <div class="mx-3 flex-grow-1">
@@ -97,7 +92,7 @@
                     </div>
                     <?php $no++; endforeach; ?>
                 </div> -->
-                <div class="bg-white p-2 rounded mb-3 border shadow-sm d-flex justify-content-between align-items-center flex-row flex-nowrap">
+                <div class="bg-white p-2 rounded-top border border-light rounded-top d-flex justify-content-between align-items-center flex-row flex-nowrap">
                     <?php
                     $sort = $this->input->get('sort');
                     $type = $this->input->get('type');
@@ -117,12 +112,12 @@
                                 $url = empty($type) ? '?sort='.$dataSort[$x] : '?sort='.$dataSort[$x].'&type='.$type;
                                 $sortTitle = ucwords($dataSort[$x]);
                                 ?>
-                                <a rel="noindex, nofollow" class="dropdown-item <?= $active ?>" href="<?= $url ?>"><?= $sortTitle; ?></a>
+                                <a rel="noindex, nofollow" id="filter_feeds" class="dropdown-item <?= $active ?>" href="<?= $url ?>"><?= $sortTitle; ?></a>
                                 <?php endfor; ?>
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="mx-auto mx-md-0">
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <?php
                             for($x=0; $x<count($dataType); $x++):
@@ -131,7 +126,7 @@
                             $url = empty($sort) ? '?type='.$dataType[$x] : '?sort='.$sort.'&type='.$dataType[$x];
                             $typeTitle = ucwords($dataType[$x]);
                             ?>
-                            <a rel="noindex, nofollow" href="<?= $url ?>" class="btn btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
+                            <a rel="noindex, nofollow" id="filter_feeds" href="<?= $url ?>" class="btn btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
                             <?php endfor; ?>
                         </div>
                     </div>
@@ -139,9 +134,6 @@
                 
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
-                <div class="text-center mb-md-4">
-                    <button id="load_more" class="btn p-2 btn-outline-primary btn-block rounded-lg px-4"><i class="fas fa-newspaper mr-3"></i> Berita Sebelumnya</button>
-                </div>
             </div>
         </div>
     </div>

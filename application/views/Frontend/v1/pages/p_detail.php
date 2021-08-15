@@ -65,7 +65,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 ?>
 <section class="pt-md-2 bg-white">
 <div class="container">
-	<div class="row mt-md-5">
+	<div class="row">
 		<div class="col-md-2 order-md-first order-lg-last mt-md-3">
 			<!-- <div id="sidebar"> -->
 				<ins class="adsbygoogle"
@@ -81,13 +81,6 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 		</div>
 		<div class="col-md-8 mb-5 pb-md-4 px-3 px-md-0 order-first order-md-last" id="main-content">
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
-					<nav aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
-					  <ol class="breadcrumb small">
-					    <li class="breadcrumb-item"><a href="<?= base_url("beranda") ?>">Home</a></li>
-					    <li class="breadcrumb-item"><a rel="noindex, nofollow" href="<?= base_url("blog") ?>">Blog</a></li>
-					    <li class="breadcrumb-item active text-truncate" aria-current="page"><?= $post_detail->judul ?></li>
-					  </ol>
-					</nav>
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1><?php echo $post_detail->judul; ?></h1>
 					<div class="d-flex justify-content-between align-items-center mb-3">
