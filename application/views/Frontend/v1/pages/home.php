@@ -1,34 +1,41 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
-<?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <section class="content-home">
     <div class="container">
-        <div class="row">
+        <?php $this->load->view('Frontend/v1/function/slider4'); ?>
+         <div class="row">
+            <div class="col-12">
+                <div class="separator">
+                    <span class="separator-text text-capitalize font-weight-bold"><span class="font-weight-bold"><i class="fab fa-medapps text-secondary mr-2"></i>Yang Baru Dari Kami</span></span>
+                </div>
+            </div>
+        </div> 
+        <div class="row">     
             <div class="col-md-12 app-slick">
                 <div>
                     <div class="d-flex align-items-center bg-success py-4 px-md-5 px-0" style="border-radius:15px;">
-                        <div class="col-12 col-md-5 d-none d-md-block d-lg-block">
+                        <div class="col-12 col-md-3 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/gpr.svg') ?>" alt="GPR (Government Public Relation)">
                         </div>
-                        <div class="col-12 col-md-7 text-white">
-                            <h1>GPR (Government Public Relation)</h1>
+                        <div class="col-12 col-md-9 text-white">
+                            <h3>GPR (Government Public Relation)</h3>
                             <p>
                                 Merupakan alat bantu sosialisasi berita berupa widget yang dapat dipasang pada website/blog. Sumber berita didapatkan dari website resmi <span class="badge badge-light" title="Official Site BKPPD Balangan"> web.bkppd-balangankab.info</span> dan informasi statistik pegawai bersumber pada aplikasi SILKa (Sistem Informasi Layanan Kepegawaian) Daerah Balangan.
                             </p>
-                            <a href="<?= base_url('widget-gpr-bkppdblg') ?>" class="btn btn-lg btn-warning">Pasang Widget Sekarang <i class="fas fa-tools ml-2"></i></a>
+                            <a href="<?= base_url('widget-gpr-bkppdblg') ?>" class="btn btn-warning">Pasang Widget Sekarang <i class="fas fa-tools ml-2"></i></a>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="d-flex align-items-center bg-white py-4 px-md-5 px-0" style="border-radius:15px;">
-                        <div class="col-12 col-md-5 d-none d-md-block d-lg-block">
+                        <div class="col-12 col-md-3 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/report.svg') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
                         </div>
-                        <div class="col-12 col-md-7">
-                            <h1>Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?></h1>
+                        <div class="col-12 col-md-9">
+                            <h3>Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?></h3>
                             <p>
                                 Kini website telah tersedia grafik Pegawai Negeri Sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
                             </p>
-                            <a href="<?= base_url('api/grafik') ?>" class="btn btn-lg btn-secondary">Lihat Grafik <i class="fas fa-chart-line ml-2"></i></a>
+                            <a href="<?= base_url('api/grafik') ?>" class="btn btn-secondary">Lihat Grafik <i class="fas fa-chart-line ml-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -36,9 +43,7 @@
         </div>
     </div>
 </section>
-<?php endif; ?>
-<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-3' : 'my-4' ?>
-<section class="<?= $my ?>" id="content-page">
+<section class="my-3" id="content-page">
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
         <div class="row">
@@ -79,7 +84,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="separator">
-                            <span class="separator-text text-capitalize font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-secondary mr-2"></i>Feeds</span></span>
+                            <span class="separator-text text-capitalize font-weight-bold"><span class="font-weight-bold"><i class="fas fa-rss-square text-secondary mr-2"></i>Feeds</span></span>
                         </div>
                     </div>
                 </div> 
@@ -112,7 +117,7 @@
                                 $url = empty($type) ? '?sort='.$dataSort[$x] : '?sort='.$dataSort[$x].'&type='.$type;
                                 $sortTitle = ucwords($dataSort[$x]);
                                 ?>
-                                <a rel="noindex, nofollow" id="filter_feeds" class="dropdown-item <?= $active ?>" href="<?= $url ?>"><?= $sortTitle; ?></a>
+                                <a rel="noindex, nofollow" class="dropdown-item <?= $active ?>" href="<?= $url ?>"><?= $sortTitle; ?></a>
                                 <?php endfor; ?>
                             </div>
                         </div>
@@ -126,7 +131,7 @@
                             $url = empty($sort) ? '?type='.$dataType[$x] : '?sort='.$sort.'&type='.$dataType[$x];
                             $typeTitle = ucwords($dataType[$x]);
                             ?>
-                            <a rel="noindex, nofollow" id="filter_feeds" href="<?= $url ?>" class="btn btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
+                            <a rel="noindex, nofollow" href="<?= $url ?>" class="btn btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
                             <?php endfor; ?>
                         </div>
                     </div>

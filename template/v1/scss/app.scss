@@ -116,11 +116,12 @@ section.hero {
   left:0;
   cursor: progress;
   top: 0;
+  background-color: rgba(0, 0, 0, .5);
   z-index: 9999;
-  // -webkit-backdrop-filter: blur(5px);
-  // -moz-backdrop-filter: blur(5px);
-  // -o-backdrop-filter: blur(5px);
-  // backdrop-filter: blur(5px);
+   -webkit-backdrop-filter: blur(5px);
+   -moz-backdrop-filter: blur(5px);
+   -o-backdrop-filter: blur(5px);
+   backdrop-filter: blur(5px);
 }
 // .page-slider::before {
 // content: "";
@@ -581,7 +582,13 @@ ul.navbar-nav {
 // 	width: 100%;
 // 	max-height: 550px;
 // }
-
+.card > .card-img-overlay {
+	background: rgba(255,255,255, 0.3);
+	background: -moz-linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(80,80,80,0.5) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(80,80,80,0.5) 100%);
+	background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(80,80,80,0.5) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#505050",GradientType=1);
+}
 .rippler-img img {
 	transition: all .6s ease;
 }
@@ -622,15 +629,21 @@ ul.navbar-nav {
 	filter: blur(5px);
 }
 // Loading Image
+
 img.lazy {
 	display: block;
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 100%);
+	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#e6e6e6",GradientType=1);
 	// background-color: transparent;
 	/* optional way, set loading as background */
-	background-image: url("../../../assets/images/loader/simple-pre-loader/loader-icons-set-2-32x64x128/32x32/Preloader_1.gif");
-	background-size: auto;
+	//background-image: url("../../../assets/images/loader/simple-pre-loader/loader-icons-set-2-32x64x128/32x32/Preloader_1.gif");
+	//background-size: auto;
 	// background-image: url("https://via.placeholder.com/300.png?text=BKPPD");
-	background-repeat: no-repeat;
-	background-position: center center;
+	//background-repeat: no-repeat;
+	//background-position: center center;
 	// transition: all .3s ease-in;
 }
 

@@ -48,13 +48,13 @@
 
 <body>
 <div class="page-slider">
-    <!-- <div class="logo-loading">
-        <img class="w-50" src="<?= base_url('assets/images/logo.png'); ?>" alt="BKPPD BALANGAN">
-    </div> -->
-  <div class="slider">
+    <div class="logo-loading">
+        <img class="rounded-circle" src="<?= assets('images/loader/simple-pre-loader/loader-icons-set-2-32x64x128/64x64/Preloader_2.gif'); ?>" alt="Preloading">
+    </div>
+  <!--<div class="slider">
     <div class="line"></div>
     <div class="subline inc"></div>
     <div class="subline dec"></div>
-  </div>
+  </div>-->
   <!-- <p>loading ...</p> -->
 </div>

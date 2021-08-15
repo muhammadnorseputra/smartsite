@@ -1,10 +1,9 @@
-<div class="separator d-flex justify-content-between align-items-center">
-    <div>
-        <span class="separator-text text-uppercase font-weight-bold">
-            <i class="fas fa-heart text-secondary mr-2"></i> Populer Post
-        </span>
+<div class="rounded bg-white border">
+<div class="d-flex justify-content-between align-items-center">
+    <div class="pl-3 py-2">
+        <h5>Trending</h5>
     </div>
-    <div class="mt--4">
+    <div>
         <div class="btn-group" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-outline-none bg-white btn-up btn-sm"><i class="fas fa-angle-up"></i></button>
           <button type="button" class="btn btn-outline-none bg-white btn-toggle btn-sm">&nbsp;</button>
@@ -12,7 +11,7 @@
         </div>
     </div>
 </div>
-<div class="list-group border-0 shadow-sm p-0 mb-3 mt--5 rounded controler-ticker">
+<div class="list-group border-0 p-0 controler-ticker">
     <div>
     <?php
     $nolist = 1;
@@ -86,4 +85,5 @@
 
     <?php $nolist++; endforeach; ?>
     </div>
+</div>
 </div>

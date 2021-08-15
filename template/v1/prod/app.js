@@ -8,7 +8,7 @@
 $(function () {
   // get all berita
   var limit = 6;
-  var start = 0;
+  var start = 1;
   var action = "inactive";
   var $url = $host ? _uriSegment[2] : _uriSegment[1];
 
@@ -79,10 +79,6 @@ $(function () {
                 var imageSrc = element.data('src');
                 element.attr('src', "".concat(_uri, "/assets/images/noimage.gif"));
               }
-            }); // Ripple
-
-            $(".rippler").rippler({
-              effectClass: 'rippler-effect'
             }); // Tooltips
 
             $('[data-toggle="tooltip"]').tooltip({
@@ -457,7 +453,7 @@ $(document).ready(function () {
     easing: 'swing',
     speed: 'slow',
     interval: 2000,
-    height: '250px',
+    height: '390px',
     visible: 3,
     mousePause: true,
     controls: {
