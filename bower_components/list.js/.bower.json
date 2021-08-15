@@ -1,0 +1,36 @@
+{
+  "name": "list.js",
+  "main": "dist/list.js",
+  "homepage": "https://listjs.com",
+  "authors": [
+    "Jonny Strömberg <jonny.stromberg@gmail.com>"
+  ],
+  "description": "The perfect library for lists. Supports search, sort, filters and flexibility. Built to be invisible and work on existing HTML",
+  "keywords": [
+    "list",
+    "search",
+    "sort",
+    "table",
+    "dom",
+    "html",
+    "ui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "__test__",
+    "docs"
+  ],
+  "version": "2.3.1",
+  "_release": "2.3.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.3.1",
+    "commit": "360da0e76684132e34b4ab282291e3095160e384"
+  },
+  "_source": "https://github.com/javve/list.js.git",
+  "_target": "^2.3.1",
+  "_originalSource": "list.js",
+  "_direct": true
+}

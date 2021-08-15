@@ -1,0 +1,298 @@
+/* Demo ======================================== */
+.demo-button-sizes .btn {
+	margin-bottom: 5px;
+}
+
+.icon-button-demo button {
+	margin-right: 5px;
+	margin-bottom: 12px;
+}
+
+.icon-and-text-button-demo button {
+	margin-right: 5px;
+	margin-bottom: 12px;
+	width: 16.66666666666667%;
+}
+
+.button-demo ul {
+	padding-left: 0;
+}
+
+.button-demo ul li {
+	list-style: none;
+	padding-left: 0;
+	display: inline-block;
+	margin-right: 7px;
+}
+
+.button-demo ul li .btn {
+	display: block;
+	min-width: 175px;
+}
+
+.button-demo .btn {
+	margin-right: 8px;
+	margin-bottom: 13px;
+	min-width: 120px;
+}
+
+.demo-button-groups .btn-group {
+	margin-right: 10px;
+}
+
+.demo-button-toolbar .btn-toolbar {
+	float: left;
+	margin-right: 25px;
+}
+
+.demo-button-nesting > .btn-group {
+	margin-right: 15px;
+}
+
+.demo-single-button-dropdowns > .btn-group {
+	margin-right: 10px;
+}
+
+.demo-splite-button-dropdowns > .btn-group {
+	margin-right: 10px;
+}
+
+.demo-dropup .dropup {
+	margin-right: 10px;
+}
+
+.demo-checkbox label,
+.demo-radio-button label {
+	min-width: 150px;
+}
+
+.demo-knob-chart div {
+	margin-right: 15px;
+}
+
+.demo-switch .switch {
+	display: inline-block;
+	min-width: 170px;
+}
+
+.demo-switch .demo-switch-title {
+	min-width: 95px;
+	display: inline-block;
+}
+
+.demo-color-box {
+	padding: 15px 0;
+	text-align: center;
+	margin-bottom: 20px;
+	border-radius: 3px;
+}
+
+.demo-color-box .color-name {
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+
+.demo-color-box .color-code,
+.demo-color-box .color-class-name {
+	font-size: 13px;
+}
+
+.demo-image-copyright {
+	text-align: right;
+	font-style: italic;
+	font-size: 12px;
+	color: #777;
+	margin: 5px 0 10px 0;
+}
+
+.demo-image-copyright a {
+	font-weight: bold;
+	color: #555 !important;
+}
+
+.demo-tagsinput-area {
+	margin-bottom: 50px !important;
+}
+
+.demo-icon-container .demo-google-material-icon {
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+.demo-icon-container .demo-google-material-icon .icon-name {
+	position: relative;
+	top: -8px;
+	left: 7px;
+}
+
+.demo-icon-container .demo-google-material-icon .material-icons {
+	width: 24px;
+}
+
+.demo-preloader .preloaders {
+	margin-right: 10px;
+}
+
+.irs-demo {
+	margin-bottom: 40px;
+}
+
+.irs-demo .irs {
+	margin-top: 15px;
+}
+
+.right-sidebar .nav-tabs + .tab-content {
+	padding: 0;
+}
+
+.right-sidebar p {
+	margin: 20px 15px 15px 15px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.right-sidebar #settings .setting-list {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 20px;
+}
+
+.right-sidebar #settings .setting-list li {
+	padding: 15px;
+	position: relative;
+	border-top: 1px solid #eee;
+}
+
+.right-sidebar #settings .setting-list li .switch {
+	position: absolute;
+	top: 15px;
+	right: 5px;
+}
+
+.demo-choose-skin {
+	list-style: none;
+	padding-left: 0;
+	overflow-y: hidden;
+}
+
+.demo-choose-skin li {
+	border-bottom: 1px solid #eee;
+	padding: 10px 10px 4px 10px;
+	position: relative;
+	cursor: pointer;
+}
+
+.demo-choose-skin li.active {
+	background-color: #eee;
+}
+
+.demo-choose-skin li.active:after {
+	font-family: "Material Icons";
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	content: "\E876";
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.demo-choose-skin li:hover {
+	background-color: #eee;
+}
+
+.demo-choose-skin li div {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+.demo-choose-skin li span {
+	position: relative;
+	bottom: 7px;
+	left: 5px;
+}
+
+.demo-choose-skin .red {
+	background-color: #f44336;
+}
+
+.demo-choose-skin .pink {
+	background-color: #e91e63;
+}
+
+.demo-choose-skin .purple {
+	background-color: #9c27b0;
+}
+
+.demo-choose-skin .deep-purple {
+	background-color: #673ab7;
+}
+
+.demo-choose-skin .indigo {
+	background-color: #3f51b5;
+}
+
+.demo-choose-skin .blue {
+	background-color: #2196f3;
+}
+
+.demo-choose-skin .light-blue {
+	background-color: #03a9f4;
+}
+
+.demo-choose-skin .cyan {
+	background-color: #00bcd4;
+}
+
+.demo-choose-skin .teal {
+	background-color: #009688;
+}
+
+.demo-choose-skin .green {
+	background-color: #4caf50;
+}
+
+.demo-choose-skin .light-green {
+	background-color: #8bc34a;
+}
+
+.demo-choose-skin .lime {
+	background-color: #cddc39;
+}
+
+.demo-choose-skin .yellow {
+	background-color: #ffe821;
+}
+
+.demo-choose-skin .amber {
+	background-color: #ffc107;
+}
+
+.demo-choose-skin .orange {
+	background-color: #ff9800;
+}
+
+.demo-choose-skin .deep-orange {
+	background-color: #ff5722;
+}
+
+.demo-choose-skin .brown {
+	background-color: #795548;
+}
+
+.demo-choose-skin .grey {
+	background-color: #9e9e9e;
+}
+
+.demo-choose-skin .blue-grey {
+	background-color: #607d8b;
+}
+
+.demo-choose-skin .black {
+	background-color: #000000;
+}
+
+.demo-choose-skin .white {
+	background-color: #ffffff;
+}
