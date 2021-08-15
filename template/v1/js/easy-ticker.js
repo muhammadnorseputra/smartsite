@@ -4,8 +4,8 @@ $(document).ready(function() {
         easing: 'swing',
         speed: 'slow',
         interval: 2000,
-        height: '390px',
-        visible: 3,
+        height: '370px',
+        visible: 5,
         mousePause: true,
         controls: {
             up: '.btn-up',

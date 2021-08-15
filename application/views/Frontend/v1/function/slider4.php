@@ -76,8 +76,8 @@ $content_comments = '<i class="far fa-comment-alt mr-1 ml-3"></i>'.$komentar;
             <div class="card-img-overlay d-flex flex-column justify-content-end">
                 <div class="main-body">
                     <?= $label ?>
-                    <h5 class="card-title" style="text-shadow: 1.5px 1.5px #eee;">
-                    <a href="<?= $posturl ?>"><?= $late->judul ?></a>
+                    <h5 class="card-title">
+                    <a href="<?= $posturl ?>" class="text-white" style="text-shadow: 0.3px 1px white;"><?= $late->judul ?></a>
                     </h5>
                 </div>
                 <p class="card-text small"><?= $content_like ?> <?= $content_comments ?> <span class="text-danger mx-2">&bull;</span> <?= time_ago($late->created_at) ?></p>
@@ -90,6 +90,6 @@ $content_comments = '<i class="far fa-comment-alt mr-1 ml-3"></i>'.$komentar;
         </div>
     </div>
     <div class="col-md-4">
-        <?php //$this->load->view('Frontend/v1/function/populer_post'); ?>
+        <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
     </div>
 </div>
