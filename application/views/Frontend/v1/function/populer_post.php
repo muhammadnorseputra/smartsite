@@ -1,35 +1,30 @@
 <div class="rounded bg-white border">
-<div class="d-flex justify-content-between align-items-center">
-    <div class="pl-3 py-2">
-        <h5>Trending</h5>
-    </div>
+<div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
     <div>
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-outline-none bg-white btn-up btn-sm"><i class="fas fa-angle-up"></i></button>
-          <button type="button" class="btn btn-outline-none bg-white btn-toggle btn-sm">&nbsp;</button>
-          <button type="button" class="btn btn-outline-none bg-white btn-down btn-sm"><i class="fas fa-angle-down"></i></button>
-        </div>
+        <h5 class="text-reset mb-0 pb-0">Trending</h5>
+    </div>
+    <div class="small">
+        Lihat Lainnya <i class="fas fa-chevron-right"></i>
     </div>
 </div>
-<div class="list-group border-0 p-0 controler-ticker">
-    <div>
+<div class="px-3" style="overflow-y:auto; overflow-x:hidden; max-height:650px;">
     <?php
     $nolist = 1;
     foreach ($mf_berita_populer as $b) :
     // Data Post Youtube
     
-    if($b->type === 'YOUTUBE' && cek_internet() === true):
+    if($b->type === 'YOUTUBE'):
         $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
         $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id='.$b->content.'&key='.$key;
         $yt     = api_client($url);
-        $img = $yt['items'][0]['snippet']['thumbnails']['high']['url'];
+        $imgSrc = $yt['items'][0]['snippet']['thumbnails']['high']['url'];
     endif;
 
     // Data Post Link
-    if($b->type === 'LINK' && cek_internet() === true):
+    if($b->type === 'LINK'):
         $url = $b->content;
         $linker = getSiteOG($url);
-        $img = $linker['image'];
+        $imgSrc = $linker['image'];
     endif;
 
     // Post Link Detail
@@ -47,43 +42,50 @@
     // Gambar
     if($b->type === 'BERITA'):
         if(!empty($b->img)):
-            $img = '<img style="max-height:80px; object-fit: cover;" class="rounded border align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.files('file_berita/'.$b->img).'" alt="'.$b->tgl_posting.'">';
+            $img = '<img style="width:85px; height:95px; object-fit: cover;" class="rounded align-self-start lazy" data-src="'.files('file_berita/'.$b->img).'" alt="'.$b->tgl_posting.'">';
         elseif(!empty($b->img_blob)):
-            $img = '<img style="max-height:80px; object-fit: cover;" class="rounded border align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'" alt="'.$b->tgl_posting.'"/>';
+            $img = '<img style="width:85px; height:95px; object-fit: cover;" class="rounded align-self-start lazy" data-src="data:image/jpeg;base64,'.base64_encode( $b->img_blob ).'" alt="'.$b->tgl_posting.'"/>';
         else:
-            $img = '<img style="max-height:80px; object-fit: cover;" class="rounded border align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->tgl_posting.'">';
+            $img = '<img style="width:85px; height:95px; object-fit: cover;" class="rounded align-self-start lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->tgl_posting.'">';
         endif;
     elseif($b->type === 'YOUTUBE' || $b->type === 'LINK'):
-        $img = '<img style="max-height:80px; object-fit: cover;" class="rounded border align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.$img.'" alt="'.$b->tgl_posting.'">';
+        $img = '<img style="width:85px; height:95px; object-fit: cover;" class="rounded align-self-start lazy" data-src="'.$imgSrc.'" alt="'.$b->tgl_posting.'">';
     else:
-        $img = '<img style="max-height:80px; object-fit: cover;" class="rounded border align-self-start lazy pull-left mr-4 w-25 shadow-sm" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->tgl_posting.'">';
+        $img = '<img style="width:85px; height:95px; object-fit: cover;" class="rounded align-self-start lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$b->tgl_posting.'">';
     endif;
+
+    // Like button
+    $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $b->id_berita) == true ? 'btn-like' : '';
+    $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $b->id_berita) == true ? 'fas text-danger' : 'far';
+
+    $content_tglposting = mediumdate_indo($b->tgl_posting);
+    $content_jam = time_ago($b->created_at);
+    $content_like = '<button aria-hidden="true" type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-sm btn-default bg-transparent border-0 rounded-0 p-0 m-0 text-muted'.$btn_like.'" title="Suka" data-id-berita="' . $b->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart text-danger mr-1"></i> <span class="count_like">'.$b->like_count.'</span> </button>';
+    
+    $countKomentar = $this->komentar->jml_komentarbyidberita($b->id_berita);
+    $komentar = $countKomentar != 0 ? $countKomentar : $countKomentar;
+    $content_comments = '<i class="far fa-comment-alt mr-1 ml-3"></i>'.$komentar;
+
+    $content_shares = '<button aria-hidden="true" type="button" data-toggle="tooltip" title="Bagikan postingan ini" data-placement="bottom" id="btn-share" data-row-id="'.$b->id_berita. '" class="btn btn-sm btn-default bg-transparent border-0 rounded-0 p-0 m-0 text-muted"><i class="fas fa-ellipsis-v"></i></button>';
     ?>
-        <?php if(cek_internet() == true): ?>
-        <a  href="<?= $posturl; ?>" class="list-group-item list-group-item-action px-3 border-0">
-        <div class="media">
-            <?= $img ?>
-            <div class="media-body">
-                <h6 class="font-weight-lighter text-primary"><?= character_limiter($b->judul, 35); ?></h6>
-                <div class="mt-2 align-middle text-left small text-secondary d-flex justify-content-between">
-                    <span>
-                        <i class="far fa-thumbs-up mr-2"></i> <?= $b->like_count ?>
-                    </span>
-                    <span>
-                        <i class="fas fa-share mr-2"></i> <?= $b->share_count ?>
-                    </span>
-                    <span>
-                        <i class="fas fa-eye mr-2"></i> <?= nominal($b->views) ?>
-                    </span>
-                </div>
+    <div class='row border-bottom border-light py-2 pr-3'>
+        <div class='col-10 col-md-8'>
+            <div>
+              <h6><a href='<?= $posturl ?>'><?= $b->judul ?></a></h6>
+              <div class='d-flex justify-content-between align-items-center small text-muted mt-1'>
+                <span>
+                <?= $content_like ?> <?= $content_comments ?>
+                </span>
+                <span>
+                    <?= $content_shares ?>
+                </span>
+              </div>
             </div>
         </div>
-    </a>
-    <?php else: ?>  
-        <?php $this->load->view('msg/lose-connection'); ?>
-    <?php endif; ?>
-
-    <?php $nolist++; endforeach; ?>
+        <div class='col-2 col-md-4'>
+            <a href='<?= $posturl ?>'><?= $img ?></a>
+        </div>
     </div>
+    <?php $nolist++; endforeach; ?>
 </div>
 </div>

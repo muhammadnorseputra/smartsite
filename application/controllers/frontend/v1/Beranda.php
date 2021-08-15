@@ -207,10 +207,14 @@ class Beranda extends CI_Controller
                     $sumber = '
                         <div class="d-flex justify-content-start align-items-center">
                             <span class="mr-2">
-                                <img style="object-fit:cover; object-position:top;" src="'.$gravatar.'" alt="Photo Userportal" width="23" height="23" class=" rounded-circle">
+                                <a href="'.$link_profile_public.'">
+                                    <img style="object-fit:cover; object-position:top;" src="'.$gravatar.'" alt="Photo Userportal" width="23" height="23" class=" rounded-circle">
+                                </a>
                             </span>
                             <span class="small text-secondary mt-1">
+                                <a href="'.$link_profile_public.'" class="text-muted">
                                 '.ucwords($namapanggilan).'
+                                </a>
                             </span>
                         </div>
                      ';

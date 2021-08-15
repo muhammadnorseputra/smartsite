@@ -1,5 +1,6 @@
 <?php  
-$late = $mf_berita_terakhir;
+$lates = $mf_berita_kategori_2;
+foreach($lates as $late):
 /* LINK API */
 if($late->type === 'LINK'):
     $url = $late->content;
@@ -21,19 +22,19 @@ if($late->type === 'YOUTUBE'):
 endif;
 
 if(!empty($late->img)):
-    $img = '<img style="object-fit: cover; min-height: 390px; max-height: 390px;" class="card-img rounded border lazy" data-src="'.files('file_berita/'.$late->img).'" alt="'.$late->judul.'">';
+    $img = '<img style="object-fit: cover; min-height: 287px; max-height: 287px;" class="card-img rounded border lazy" data-src="'.files('file_berita/'.$late->img).'" alt="'.$late->judul.'">';
 elseif($late->type === 'YOUTUBE'):
-    $img = '<img style="object-fit: cover; min-height: 390px; max-height: 390px;" class="card-img rounded border lazy" data-src="'.$yt_src.'" alt="'.$late->judul.'">';
+    $img = '<img style="object-fit: cover; min-height: 287px; max-height: 287px;" class="card-img rounded border lazy" data-src="'.$yt_src.'" alt="'.$late->judul.'">';
 elseif($late->type === 'LINK'):
-    $img = '<img style="object-fit: cover; min-height: 390px; max-height: 390px;" class="card-img rounded border lazy" data-src="'.$linkImg.'" alt="'.$late->judul.'">';
+    $img = '<img style="object-fit: cover; min-height: 287px; max-height: 287px;" class="card-img rounded border lazy" data-src="'.$linkImg.'" alt="'.$late->judul.'">';
 else:
-    $img = '<img style="object-fit: cover; min-height: 390px;" class="card-img rounded border lazy" data-src="'.img_blob($late->img_blob).'"  alt="'.$late->judul.'"/>';
+    $img = '<img style="object-fit: cover; min-height: 287px;" class="card-img rounded border lazy" data-src="'.img_blob($late->img_blob).'"  alt="'.$late->judul.'"/>';
 endif;
 
 if($late->tgl_posting == date('Y-m-d')):
-    $label = '<span class="badge badge-danger">New</span>';
+    $label = '<span class="badge badge-danger">'.$late->nama_kategori.'</span>';
 else:
-    $label = '<span class="badge badge-success">Latepost</span>';
+    $label = '<span class="badge badge-info">'.$late->nama_kategori.'</span>';
 endif;
 
 // Profile akun yang posting
@@ -69,42 +70,25 @@ $komentar = $countKomentar != 0 ? $countKomentar : $countKomentar;
 $content_comments = '<i class="far fa-comment-alt mr-1 ml-3"></i>'.$komentar;
 $content_shares = '<button aria-hidden="true" type="button" data-toggle="tooltip" title="Bagikan postingan ini" data-placement="bottom" id="btn-share" data-row-id="'.$late->id_berita. '" class="btn btn-sm btn-default bg-transparent border-0 rounded-0 p-0 m-0 text-light"><i class="fas fa-ellipsis-v"></i></button>';
 ?>
-<div class="row mt-3">
-    <div class="col-md-8">
-        <div class="card bg-light text-white">
-            <div class="card-img-overlay">
-                <div class="d-flex justify-content-start align-items-center">
-                    <span class="mr-2">
-                        <img style="object-fit:cover; object-position:top;" src="<?= $gravatar ?>" alt="Photo Userportal" width="23" height="23" class="rounded-circle border-primary bg-white">
-                    </span>
-                    <span class="small text-secondary mt-1">
-                        <?= ucwords($namapanggilan) ?>
-                    </span>
-                </div>
+<div class="col-md-6">
+    <div class="card bg-light text-white">
+        <?= $img ?>
+        <div class="card-img-overlay d-flex flex-column justify-content-end">
+            <div class="main-body">
+                <?= $label ?>
+                <h5 class="card-title">
+                <a href="<?= $posturl ?>" class="text-white" style="text-shadow: 0.3px 1px white;"><?= $late->judul ?></a>
+                </h5>
             </div>
-            <?= $img ?>
-            <div class="card-img-overlay d-flex flex-column justify-content-end">
-                <div class="main-body">
-                    <?= $label ?>
-                    <h5 class="card-title">
-                    <a href="<?= $posturl ?>" class="text-white" style="text-shadow: 0.3px 1px white;"><?= $late->judul ?></a>
-                    </h5>
-                </div>
-                <div class="d-flex justify-content-between align-items-center small text-light card-text">
-                    <span>
-                        <?= $content_like ?> <?= $content_comments ?> <span class="text-danger mx-2">&bull;</span> <?= time_ago($late->created_at) ?>
-                    </span>
-                    <span>
-                        <?= $content_shares ?>
-                    </span>
-                </div>
+            <div class="card-text d-flex justify-content-between align-items-center small text-light">
+                <span>
+                    <?= $content_like ?> <?= $content_comments ?> <span class="text-danger mx-2">&bull;</span> <?= time_ago($late->created_at) ?>
+                </span>
+                <span>
+                    <?= $content_shares ?>
+                </span>
             </div>
         </div>
-        <div class="row mt-3">
-            <?php $this->load->view('Frontend/v1/function/slider4_2'); ?>
-        </div>
-    </div>
-    <div class="col-md-4 mt-3 mt-md-0">
-        <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
     </div>
 </div>
+<?php endforeach; ?>

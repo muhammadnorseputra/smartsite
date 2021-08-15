@@ -136,7 +136,7 @@ class M_f_beranda extends CI_Model
 
     public function berita_by_kategori($limit, $offset)
     {
-        $this->db->select('b.judul, b.path, b.created_by, k.nama_kategori');
+        $this->db->select('b.*, k.nama_kategori');
         $this->db->from('t_berita AS b');
         $this->db->join('t_kategori AS k', 'b.fid_kategori = k.id_kategori', 'left');
         $this->db->where('b.publish', '1');
