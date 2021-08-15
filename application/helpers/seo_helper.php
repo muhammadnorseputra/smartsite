@@ -87,10 +87,10 @@ if(! function_exists('meta_tags')){
         if($enable['general']){
             if($mobile):
                 $output .= '<link rel="canonical" href="'.$urlamp.'" />';
+                $output .= '<link rel="amphtml" href="'.$urlamp.'">';
             else:
                 $output .= '<link rel="canonical" href="'.$canonical.'" />';
             endif;
-            $output .= '<link rel="amphtml" href="'.$urlamp.'">';
             $output .= '<meta  name="Rating" content="General"/>';
             $output .= '<meta name="Distribution" content="Global" />';
             $output .= '<meta name="audience" content="all" />';
