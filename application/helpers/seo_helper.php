@@ -51,10 +51,7 @@ if(! function_exists('strip_only_tags')){
 }
 if(! function_exists('meta_tags')){
 
-    // $default = ;
-    // $options = ;
-
-    function meta_tags($enable = ['general' => true, 'og'=> true, 'twitter'=> true, 'robot'=> true], 
+    function meta_tags($enable = ['general' => false, 'og'=> false, 'twitter'=> false, 'robot'=> false], 
         $title = '', 
         $metadesc = '', 
         $imgUrl = '', 
@@ -67,6 +64,11 @@ if(! function_exists('meta_tags')){
         $CI =& get_instance();
         $CI->config->load('seo_config');
         $CI->load->model('M_f_beranda');
+        $CI->load->library('user_agent'); // load library 
+        // MOBILE DEVICE
+        $mobile = $CI->agent->is_mobile();
+
+        // GET ID
         $id = $CI->M_f_beranda->get_identitas();
         $output = '';
 
@@ -83,7 +85,11 @@ if(! function_exists('meta_tags')){
         $urlamp     = $urlamp == '' ? base_url('amp') : $urlamp;
 
         if($enable['general']){
-            $output .= '<link rel="canonical" href="'.$canonical.'" />';
+            if($mobile):
+                $output .= '<link rel="canonical" href="'.$urlamp.'" />';
+            else:
+                $output .= '<link rel="canonical" href="'.$canonical.'" />';
+            endif;
             $output .= '<link rel="amphtml" href="'.$urlamp.'">';
             $output .= '<meta  name="Rating" content="General"/>';
             $output .= '<meta name="Distribution" content="Global" />';
