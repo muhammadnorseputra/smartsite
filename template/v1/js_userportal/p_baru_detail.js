@@ -46,7 +46,7 @@
 			remove_script_host: false,
 			convert_urls: true,
 			toolbar: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor",
-			/* filemanager_crossdomain: true,*/
+			//filemanager_crossdomain: true,
 			image_advtab: true,
 			external_filemanager_path: `${_uri}/files/filemanager-v2/filemanager/`,
 			filemanager_title: "Filemanager",
