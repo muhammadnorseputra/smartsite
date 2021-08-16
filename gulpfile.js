@@ -15,7 +15,22 @@ gulp.task('sass', function() {
         .pipe(minify())
         .pipe(gulp.dest('template/v1/prod/'));
 });
-
+gulp.task('darkmode', function() {
+    return gulp.src('template/v1/scss/dark.scss')
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(minify())
+        .pipe(gulp.dest('template/v1/prod/'));
+});
+gulp.task('lightmode', function() {
+    return gulp.src('template/v1/scss/light.scss')
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(minify())
+        .pipe(gulp.dest('template/v1/prod/'));
+});
 gulp.task('CSSHash', function() {
     return gulp.src(['template/v1/prod/app.css'])
         .pipe(hash({
@@ -62,7 +77,7 @@ gulp.task("vendor", function() {
             "template/v1/plugin/rippler/dist/js/jquery.rippler.min.js",
             // "template/v1/plugin/camera/scripts/jquery.easing.1.3.js",
             // "template/v1/plugin/camera/scripts/camera.min.js",
-            // "template/v1/plugin/dark-mode/dark-mode-switch.js",
+            "template/v1/plugin/darkmode.min.js",
             "assets/plugins/jquery-cookie/jquery.cookie.js",
             // "assets/plugins/jquery-countto/jquery.countTo.js",
             "assets/plugins/jquery-confirm/jquery-confirm.min.js",
@@ -84,7 +99,6 @@ gulp.task("vendor", function() {
 });
 // gulp.task('prod', gulp.parallel('sass', 'js', 'vendor'));
 gulp.task('watch', function() {
-    gulp.watch('template/v1/scss/*.scss', gulp.series(['sass']));
-    gulp.watch('template/v1/js/*.js', gulp.series(['js']));
-    // Other watchers
+    gulp.watch('template/v1/scss/*.scss', gulp.series(sass));
+    gulp.watch('template/v1/js/*.js', js);
 })

@@ -1,0 +1,23 @@
+.bg-white-color {
+  background-color: #fff !important; 
+}
+html, body {
+	background: #F3F4ED !important;
+	scrollbar-color: teal #fff;
+  	scrollbar-width: thin;
+}
+
+.separator {
+    border-top: 3px solid #d8e2dc;
+    .separator-text {
+	    background: #F3F4ED;
+	    color: #8a8a8a;
+	}
+}
+
+.navbar li.nav-item a {
+	color: #333 !important;
+}
+.navbar li.nav-item a:hover {
+	color: #333 !important;
+}

@@ -1,4 +1,4 @@
-<div class="rounded bg-white border shadow-sm">
+<div class="rounded border shadow-sm bg-white-color">
 <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
     <div>
         <h5 class="text-reset mb-0 pb-0">Trending</h5>

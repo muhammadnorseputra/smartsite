@@ -3,7 +3,6 @@ $theme-colors: (
 	  "secondary":  #6b705c,
 	  "dark":       #264653,
 	"primary-old": #0f4c75,
-	"white": #ffffff,
 	"light": #d8e2dc);
 $sizes: () !default;
 $sizes: map-merge((5: 5%,
@@ -29,6 +28,6 @@ $enable-shadows: true;
 $enable-gradients: true;
 $spacer: 1.05rem;
 $container-max-widths: (
-  md: 1044px
+  md: 1024px
 );
 

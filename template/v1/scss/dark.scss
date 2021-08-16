@@ -1,0 +1,118 @@
+.bg-white-color {
+  background-color: #2C394B !important; 
+}
+.border, 
+.border-white, 
+.border-light {
+  border-color: #d8e2dc !important;
+}
+html, body {
+	background-color: #082032 !important;
+	scrollbar-color: #eee #2C394B !important;
+  	scrollbar-width: thin !important;
+  	color: #fff !important;
+}
+html::-webkit-scrollbar {
+  width: 15px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #2C394B !important;
+  border-left: 1px solid #2C394B !important;
+  // border-radius: 100px;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  background-color: #eee;
+  opacity: 0.8;
+}
+html::-webkit-scrollbar-thumb:hover {
+  opacity: 1;
+  transition: opacity .3s ease;
+}
+
+.media_youtube iframe {
+	width: 100% !important;
+	max-width: 100%;
+}
+
+// Loading Small
+.loader_small {
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid teal;
+  
+/* Safari */
+  -webkit-animation: spinIn 0.6s linear infinite; /* Safari */
+  animation: spinIn 0.6s linear infinite;
+}
+@-webkit-keyframes spinIn {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spinIn {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.bg-blur {
+  background-color: rgba(255, 255, 255, .9);
+}
+/* if backdrop support: very transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))) {
+  .bg-blur {
+    background-color: rgba(255, 255, 255, .5);
+    -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  }
+}
+// Loading Screen
+.page-slider {
+  content: "";
+  position:fixed;
+  min-width: 100%;
+  min-height: 100vh;
+  left:0;
+  cursor: progress;
+  top: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 9999;
+   -webkit-backdrop-filter: blur(5px);
+   -moz-backdrop-filter: blur(5px);
+   -o-backdrop-filter: blur(5px);
+   backdrop-filter: blur(5px);
+   .logo-loading {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	vertical-align: middle;
+	z-index: 9999;
+	}
+}
+
+.separator {
+    border-top: 3px solid #334756;
+    .separator-text {
+	    background: #082032;
+	    color: #eee;
+      i {
+        color: #334756 !important;
+      }
+	}
+}
+.navbar li.nav-item a {
+  color: #eee !important;
+}
+.navbar li.nav-item a:hover {
+  color: #FF4C29 !important;
+}
+
+
+

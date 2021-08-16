@@ -23,7 +23,7 @@
         <div class="row">     
             <div class="col-md-12 app-slick">
                 <div>
-                    <div class="d-flex align-items-center bg-success py-4 px-md-5 px-0" style="border-radius:15px;">
+                    <div class="d-flex align-items-center bg-success py-4 px-md-5 px-0 rounded">
                         <div class="col-12 col-md-3 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/gpr.svg') ?>" alt="GPR (Government Public Relation)">
                         </div>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div>
-                    <div class="d-flex align-items-center bg-white py-4 px-md-5 px-0" style="border-radius:15px;">
+                    <div class="d-flex align-items-center bg-white py-4 px-md-5 px-0 rounded">
                         <div class="col-12 col-md-3 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/report.svg') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
                         </div>

@@ -63,7 +63,7 @@ if (count($pecah) > 0) {
 $namakategori = $this->post->kategori_byid($post_detail->fid_kategori);
 $post_list_url = base_url('k/' . url_title($namakategori));
 ?>
-<section class="pt-md-2 bg-white">
+<section class="pt-md-2">
 <div class="container">
 	<div class="row">
 		<div class="col-md-2 order-md-first order-lg-last mt-md-3">

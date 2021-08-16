@@ -29,60 +29,61 @@ function listEksternal() {
 	);
 }
 
-
-// $(document).on('click', "#btn-edit-download-eks", function(event) {
-// 	event.preventDefault();
-// 	let self  = $(this); 
-// 	let $href = self.attr('href');
-// 	// alert($href);
-// 	var dialog = $('<div style="display:none" class="loading"></div>').appendTo('body');
-// 	// open the dialog
-// 	dialog.dialog({
-// 			// add a close listener to prevent adding multiple divs to the document
-// 			close: function(event, ui) {
-// 					// remove div with all data and events
-// 					dialog.remove();
-// 			},
-// 			modal: true,
-// 			width: '800px',
-// 			dialogClass: "no-close",
-// 			title: 'Edit file download eksternal',
-// 			position: { my: "center", at: "top", of: window },
-// 			show: {
-//         effect: "fade",
-//         duration: 300
-//       },
-//       hide: {
-//         effect: "fade",
-//         duration: 300
-//       },
-// 			buttons: [
-// 				{
-// 					text: "Simpan",
-// 					click: function() {
-// 						$( this ).dialog( "close" );
-// 					}	
-// 				},
-// 				{
-// 					text: "Batal",
-// 					click: function() {
-// 							$( this ).dialog( "close" );
-// 					}
-// 				},
-// 			]
-// 	});
-// 	// load remote content
-// 	dialog.load(
-// 			$href, 
-// 			{}, // omit this param object to issue a GET request instead a POST request, otherwise you may provide post parameters within the object
-// 			function (responseText, textStatus, XMLHttpRequest) {
-// 					// remove the loading class
-// 					dialog.removeClass('loading');
-// 			}
-// 	);
-// 	//prevent the browser to follow the link
-// 	return false;
-// });
+/*
+$(document).on('click', "#btn-edit-download-eks", function(event) {
+	event.preventDefault();
+	let self  = $(this); 
+	let $href = self.attr('href');
+	// alert($href);
+	var dialog = $('<div style="display:none" class="loading"></div>').appendTo('body');
+	// open the dialog
+	dialog.dialog({
+			// add a close listener to prevent adding multiple divs to the document
+			close: function(event, ui) {
+					// remove div with all data and events
+					dialog.remove();
+			},
+			modal: true,
+			width: '800px',
+			dialogClass: "no-close",
+			title: 'Edit file download eksternal',
+			position: { my: "center", at: "top", of: window },
+			show: {
+        effect: "fade",
+        duration: 300
+      },
+      hide: {
+        effect: "fade",
+        duration: 300
+      },
+			buttons: [
+				{
+					text: "Simpan",
+					click: function() {
+						$( this ).dialog( "close" );
+					}	
+				},
+				{
+					text: "Batal",
+					click: function() {
+							$( this ).dialog( "close" );
+					}
+				},
+			]
+	});
+	// load remote content
+	dialog.load(
+			$href, 
+			{}, // omit this param object to issue a GET request instead a POST request, otherwise you may provide post parameters within the object
+			function (responseText, textStatus, XMLHttpRequest) {
+					// remove the loading class
+					dialog.removeClass('loading');
+			}
+	);
+	//prevent the browser to follow the link
+	return false;
+});
+*/
 
 function hapus_eksternal_file(id,source) {
 	$.confirm({
@@ -112,7 +113,7 @@ function hapus_eksternal_file(id,source) {
 		
 }
 
-//Hapus Data & File
+/*Hapus Data & File*/
 function hapus(id,file,title) {
 	$.confirm({
 		title: 'Konfirmasi hapus!',
@@ -154,7 +155,7 @@ function hapus(id,file,title) {
 }
 
 
-//PILIHAN SOURCE DENGAN SELECT
+/*PILIHAN SOURCE DENGAN SELECT*/
 jQuery("#pilihSource").on("change", function () {
 	let val = jQuery(this).val();
 	if (val == 2) {
@@ -171,21 +172,22 @@ jQuery("#pilihSource").on("change", function () {
 	}
 });
 
-//PILIHAN SOURCE DENGAN RADIO BUTTON
-// jQuery("[name='sts']").on("change", function () {
-// 	let check2 = jQuery("#radio_01");
-// 	let check3 = jQuery("#radio_02");
+/*PILIHAN SOURCE DENGAN RADIO BUTTON
+jQuery("[name='sts']").on("change", function () {
+	let check2 = jQuery("#radio_01");
+	let check3 = jQuery("#radio_02");
 
-// 	if (check2[0].checked) {
-// 		jQuery("#f_link").css('display', 'block');
-// 		jQuery("#f_file").css('display', 'none');
-// 		jQuery("[name='file']").val('');
-// 	} else if (check3[0].checked) {
-// 		jQuery("#f_file").css('display', 'block');
-// 		jQuery("#f_link").css('display', 'none');
-// 		jQuery("[name='link_file']").val('');
-// 	}
-// });
+	if (check2[0].checked) {
+		jQuery("#f_link").css('display', 'block');
+		jQuery("#f_file").css('display', 'none');
+		jQuery("[name='file']").val('');
+	} else if (check3[0].checked) {
+		jQuery("#f_file").css('display', 'block');
+		jQuery("#f_link").css('display', 'none');
+		jQuery("[name='link_file']").val('');
+	}
+});
+*/
 jQuery(function () {
 	jQuery('#FormDownload').validate({
 		rules: {
@@ -219,13 +221,14 @@ jQuery(function () {
 		if ($("[name='file']").val() != '') {
 			if ($("[name='file']").val() == '') {
 
-				// showNotification('bg-red', '<em class="material-icons pull-left m-r-10">warning</em> Nama File tidak boleh kosong.', 'bottom', 'right', 'animated bounceInUp', 'animated fadeOutDown');
+				/*showNotification('bg-red', '<em class="material-icons pull-left m-r-10">warning</em> Nama File tidak boleh kosong.', 'bottom', 'right', 'animated bounceInUp', 'animated fadeOutDown');*/
 				$.dialog('<em class="material-icons pull-left m-r-10">warning</em> Nama File tidak boleh kosong.');
 				form[0].file.focus();
 
 			} else if ((form[0].publish[0].checked == false) && (form[0].publish[1].checked == false)) {
 
-				// showNotification('bg-red', '<em class="material-icons pull-left m-r-10">warning</em> Publish belum dipilih', 'bottom', 'right', 'animated bounceInUp', 'animated fadeOutDown');
+				/*showNotification('bg-red', '<em class="material-icons pull-left m-r-10">warning</em> Publish belum dipilih', 'bottom', 'right', 'animated bounceInUp', 'animated fadeOutDown');
+				*/
 				$.dialog('<em class="material-icons pull-left m-r-10">warning</em> Publish belum dipilih');
 
 			} else {
@@ -244,7 +247,7 @@ jQuery(function () {
 					success: function (result) {
 						if (result.responses.type == 'success') {
 							showNotification('bg-teal', result.responses.pesan, 'bottom', 'right', 'animated fadeIn', 'animated fadeOut');
-							// $.dialog(result.responses.pesan);
+							/*$.dialog(result.responses.pesan);*/
 							form[0].reset();
 							jQuery("#ModalAdd").modal('hide');
 							jQuery("#f_file").css('display', 'none');
@@ -252,7 +255,7 @@ jQuery(function () {
 							listInternal();
 						} else {
 							showNotification('bg-red', result.responses.pesan.error, 'bottom', 'right', 'animated fadeIn', 'animated fadeOut');
-							// $.dialog(result.responses.pesan.error);
+							/*$.dialog(result.responses.pesan.error);*/
 						}
 					},
 					complete: function () {
@@ -262,11 +265,11 @@ jQuery(function () {
 			}
 		} else {
 			if (jQuery("[name='judul']").val() == '') {
-				// showNotification('bg-red', '<em class="material-icons pull-left m-r-10 font-20">warning</em> Judul tidak boleh kosong', 'bottom', 'right', 'animated bounceInUp', 'animated fadeOutDown');
+				/*showNotification('bg-red', '<em class="material-icons pull-left m-r-10 font-20">warning</em> Judul tidak boleh kosong', 'bottom', 'right', 'animated bounceInUp', 'animated fadeOutDown');*/
 				form[0].file.focus();
 				$.dialog('<em class="material-icons pull-left m-r-10 font-20">warning</em> Judul tidak boleh kosong');
 			} else if ((form[0].publish[0].checked == false) && (form[0].publish[1].checked == false)) {
-				// showNotification('bg-red', '<em class="material-icons pull-left m-r-10 font-20">warning</em> Publish belum dipilih', 'bottom', 'right', 'animated bounceInUp', 'animated fadeOutDown');
+				/*showNotification('bg-red', '<em class="material-icons pull-left m-r-10 font-20">warning</em> Publish belum dipilih', 'bottom', 'right', 'animated bounceInUp', 'animated fadeOutDown');*/
 				$.dialog('<em class="material-icons pull-left m-r-10 font-20">warning</em> Publish belum dipilih');
 			} else {
 				jQuery.post(
@@ -329,7 +332,7 @@ jQuery(function () {
     function IsFullScreenCurrently() {
     	var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
 
-    	// If no element is in full-screen
+    	/*If no element is in full-screen*/
     	if (full_screen_element === null)
     		return false;
     	else
