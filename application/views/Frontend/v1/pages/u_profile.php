@@ -24,10 +24,10 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
       <div class="col-md-12 mt-md-5">
         <div>
           <div class="row">
-            <div class="col-xs-9 col-sm-9 col-md-9 mt-4" id="main-content">
+            <div class="col-xs-9 col-sm-9 col-md-9 mt-md-4" id="main-content">
               <div class="row">
-                <div class="col-12 px-0 border rounded-top">
-                  <img src="<?= $photo ?>" height="310" class="w-100 rounded-top" style="object-fit:cover; object-position: 50% 13%; filter: blur(0.5px);">
+                <div class="col-12 px-0 border">
+                  <img src="<?= $photo ?>" height="310" class="w-100" style="object-fit:cover; object-position: 50% 13%; filter: blur(0.5px);">
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 py-3">
                   <img width="110" height="110" class="rounded-circle p-2 mt--8 ml-3" style="object-fit:cover; object-position: center; background-color: #f3f4ed !important;" src="<?= $photo ?>">
@@ -39,6 +39,17 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                   <?= $desc; ?>
                 </div>
               </div>
+              <ul class="nav nav-pills d-lg-none d-md-none d-block d-flex">
+                <li class="nav-item">
+                  <a class="nav-link  bg-primary-old" href="<?= $profileLink ?>">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?= $halamanLink ?>">Halaman</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?= $sukaLink ?>">Disukai</a>
+                </li>
+              </ul>
               <div class="w-100 my-4"></div>
               <div class="row">
                 <!-- <div class="col-md-4 order-3 order-md-first">
@@ -55,7 +66,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                 </div>
               </div>
             </div>
-            <div class="col-md-3 order-first order-md-first">
+            <div class="col-md-3 order-first order-md-first d-none d-md-block d-lg-block">
               <div id="sidebar">
                     <!-- <h5 class="my-3 font-weight-bold title-sidebar">Menu</h5> -->
                     <div class="list-group">
@@ -67,7 +78,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                       <a href="<?= $halamanLink ?>" class="list-group-item list-group-item-action px-2 rounded bg-transparent border-0 border-light bg-white rippler rippler-default"><i class="fas fa-newspaper float-right" aria-hidden="true"></i> Halaman</a>
                     </div>
                     <div class="w-100"></div>
-                    <div class="list-group d-none d-md-block d-lg-block">
+                    <div class="list-group">
                       <div class="separator">
                         <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-shapes text-secondary mr-2"></i>Kategori</span></span>
                         </div>
