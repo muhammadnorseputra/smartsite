@@ -59,7 +59,7 @@ class M_f_beranda extends CI_Model
 
     public function get_submenu($id_menu)
     {
-        $this->db->select('submenu.idsub, submenu.nama_sub, submenu.link_sub, submenu.fid_idsub, submenu.created_at');
+        $this->db->select('submenu.idsub, submenu.nama_sub, submenu.link_sub, submenu.fid_idsub, submenu.created_at, submenu.is_pub, submenu.pub_end');
         $this->db->from('t_submenu AS submenu');
         $this->db->join('t_menu AS menu', 'submenu.idmain = menu.id_menu', 'left');
         $this->db->where('submenu.aktif', 'Y');
@@ -81,7 +81,7 @@ class M_f_beranda extends CI_Model
     }
 
     public function sub_submenu($idsub) {
-        $this->db->select('nama_sub, link_sub, idsub, created_at');
+        $this->db->select('nama_sub, link_sub, idsub, created_at, is_pub, pub_end');
         $this->db->from('t_submenu');
         $this->db->where('fid_idsub', $idsub);
         $this->db->where('aktif', 'Y');

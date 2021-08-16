@@ -30,19 +30,34 @@
 						?>
 						<!-- Level 1 -->
 						<li>
-							<a class="dropdown-item py-md-2" href="<?= base_url($s->link_sub); ?>">
-								<?= $s->nama_sub; ?>
-								<?php if(($create_submenu === $skr)): ?>
+							<?php  
+							// Menampilan submenu berdasarkan tanggal yang ditentukan
+							if (($s->is_pub == 'Y') && (date('Y-m-d H:i:s') >= $s->pub_end)): 
+								$display = 'd-block';
+							elseif($s->is_pub == 'N'):
+								$display = 'd-block';
+							else:
+								$display = 'd-none';
+							endif;
+							?>
+							<a class="dropdown-item py-md-2 <?= $display ?>" href="<?= base_url($s->link_sub); ?>">
+								<?= $s->nama_sub ?>
+								<?php
+									// Jika tgl created_at sama dengan tanggal sekarang 
+									if(($create_submenu === $skr)): 
+								?>
 								<span class="badge badge-danger animated fadeIn infinite">
 									<span class="small">New</span>
 								</span>
 								<?php endif; ?>
 								<?php
+									// Jika submenu memiliki child jadikan sebagai maka parent
 									if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0):
 								?>
-								<i class="float-right text-secondary font-weight-bold animated fadeIn fas fa-caret-right mt-1"></i>
+									<i class="float-right text-secondary font-weight-bold animated fadeIn fas fa-caret-right mt-1"></i>
 								<?php endif; ?>
 							</a>
+							
 							<?php if($this->mf_beranda->parent_submenu($s->idsub)->num_rows() > 0): ?>
 							<!-- Level 2 -->
 							<ul class="submenu dropdown-menu animate slideIn">
@@ -50,8 +65,18 @@
 									foreach ($this->mf_beranda->sub_submenu($s->idsub) as $key):
 									$create_sub_submenu = substr($key->created_at,0,10); 
 								?>
+								<?php  
+								// Menampilan submenu berdasarkan tanggal yang ditentukan
+								if (($key->is_pub == 'Y') && (date('Y-m-d H:i:s') >= $key->pub_end)): 
+									$display = 'd-block';
+								elseif($key->is_pub == 'N'):
+									$display = 'd-block';
+								else:
+									$display = 'd-none';
+								endif;
+								?>
 								<li>
-									<a class="dropdown-item py-md-2 px-2" href="<?= base_url($key->link_sub); ?>"> 
+									<a class="dropdown-item py-md-2 px-2 <?= $display ?>" href="<?= base_url($key->link_sub); ?>"> 
 										<?= $key->nama_sub ?>
 										<?php if(($create_sub_submenu == $skr)): ?>
 										<span class="badge badge-danger animated fadeIn infinite">
@@ -68,7 +93,17 @@
 									<!-- Level 3 -->
 									<ul class="submenu dropdown-menu animate slideIn">
 										<?php foreach ($this->mf_beranda->sub_submenu($key->idsub) as $key_sub):?>
-										<li><a class="dropdown-item py-md-2 px-2" href="<?= base_url($key_sub->link_sub); ?>"> <?= $key_sub->nama_sub ?></a></li>
+										<?php  
+										// Menampilan submenu berdasarkan tanggal yang ditentukan
+										if (($key_sub->is_pub == 'Y') && (date('Y-m-d H:i:s') >= $key_sub->pub_end)): 
+											$display = 'd-block';
+										elseif($key_sub->is_pub == 'N'):
+											$display = 'd-block';
+										else:
+											$display = 'd-none';
+										endif;
+										?>
+										<li><a class="dropdown-item py-md-2 px-2 <?= $display ?>" href="<?= base_url($key_sub->link_sub); ?>"> <?= $key_sub->nama_sub ?></a></li>
 										<?php endforeach; ?>
 									</ul>
 									<?php endif; ?>

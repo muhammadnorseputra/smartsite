@@ -32,7 +32,7 @@ Submenu
             <label for="recipient-name" class="col-form-label">Nama submenu</label>
             <input type="text" data-validation="required" class="form-control" name="nama_sub" id="recipient-name">
           </div>
-          <div class="form-group">
+          <div class="form-group small">
           	Apakah ini link halaman statis ?, jika iya anda dapat mencentang checkbox dan langsung memcopy & paste token halaman pada <b>form_link</b>
           	<div class="custom-control custom-checkbox">
 			  <input type="checkbox" name="module" value="27" class="custom-control-input" id="customCheck1">
@@ -88,7 +88,13 @@ Submenu
 	            	<option value="10">10</option>
 	            </select>
 	        </div>
+	        <div class="form-group">
+            <label for="pub_date" class="col-form-label">Jadwal Submenu</label>
+            <input id="pub_date" type="text" class="form-control datepicker" data-date-format="mm/dd/yyyy" name="pub_end">
+            <span class="help-block small">Atur tanggal dan waktu kapan menu akan ditampilkan, apabila tampilkan selalu silahkan abaikan <b>form_jadwal</b></span>
+	      	</div>
       </div>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Simpan</button>
@@ -183,9 +189,15 @@ Submenu
 
 <link rel="stylesheet" href="<?= base_url('assets/plugins/datatable/datatables2.min.css') ?>">
 <link rel="stylesheet" href="<?= base_url('assets/plugins/datatable/inc_tablesold.css') ?>">
+<link rel="stylesheet" href="<?= base_url('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>">
 <script src="<?= base_url('assets/plugins/datatable/datatables-save.min.js') ?>"></script>
+<script src="<?= base_url('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') ?>"></script>
 <script>
   $(document).ready(function() {
+  $('#pub_date').datepicker({
+  	startDate: '-3d'
+  });
+  /*Datepicker*/
 	/*Tooltips*/
 	$('[data-toggle="tooltip"]').tooltip();
 	var table4 = $("#table-submenu").DataTable({
