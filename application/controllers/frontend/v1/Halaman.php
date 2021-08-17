@@ -41,7 +41,7 @@ class Halaman extends CI_Controller
     $url_amp = base_url("amp/page/{$slug}");
     $meta_tag = meta_tags($e, 
                           $title = $title, 
-                          $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 250))), 
+                          $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 200))), 
                           $imgUrl = $imgurl, 
                           $url = base_url('page/'.$slug), 
                           $keyWords = $keywords,

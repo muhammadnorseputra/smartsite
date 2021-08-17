@@ -55,7 +55,7 @@ class Post extends CI_Controller
             $content = !empty($detail->deskripsi) ? $detail->deskripsi : $yt_desc;
         else:
             $imgurl = $img;
-            $meta_desc = strip_tags(str_replace('"', '', word_limiter($detail->content, 100)));
+            $meta_desc = strip_tags(str_replace('"', '', word_limiter($detail->content, 200)));
             $content = !empty($detail->deskripsi) ? $detail->deskripsi : $meta_desc;
         endif;
         $meta_keywords = !empty($detail->keywords) ? $detail->keywords : $detail->tags;
