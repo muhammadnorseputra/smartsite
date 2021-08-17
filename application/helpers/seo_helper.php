@@ -85,7 +85,7 @@ if(! function_exists('meta_tags')){
         $urlamp     = $urlamp == '' ? base_url('amp') : $urlamp;
 
         if($enable['general']){
-            $output .= '<link rel="canonical" href="'.$urlamp.'" />';
+            $output .= '<link rel="canonical" href="'.$canonical.'" />';
             $output .= '<link rel="amphtml" href="'.$urlamp.'" data-component-name="amp:html:link">';
             // $output .= '<link rel="canonical" href="'.$canonical.'" />';
             $output .= '<meta  name="Rating" content="General"/>';
