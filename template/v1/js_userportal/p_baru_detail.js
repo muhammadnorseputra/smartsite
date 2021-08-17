@@ -32,7 +32,7 @@
 		var tiny = tinymce.init({
 			selector: "#content",
 			theme: "silver",
-			height: 500,
+			height: 780,
 			plugins: [
 				"advlist autolink link image lists charmap print preview hr anchor pagebreak tabfocus searchreplace codesample help",
 				"searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
@@ -41,7 +41,7 @@
 			content_css: [
 				`${_uri}/bower_components/bootstrap/dist/css/bootstrap.min.css`,
 			],
-			content_style: "body{padding: 45px}",
+			content_style: "body{padding: 25px;}",
 			relative_urls: false,
 			remove_script_host: false,
 			convert_urls: true,

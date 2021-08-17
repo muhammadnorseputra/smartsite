@@ -1,27 +1,45 @@
 <?php $id_berita = $this->uri->segment(5) ?>
-<section class="mt-md-5">
+<section>
 	<div class="container-fluid">
 		<?= form_open_multipart(base_url('frontend/v1/post/update_post/1'), ['id' => 'f_post', 'data-id' => $post->id_berita]) ?>
-		<div class="row">
-			<div class="col-md-8 mt-md-5 mt-3">
-				<div class="d-flex mb-3">
-					<div class="w-100">
-						<label for="judul">Judul</label>
-						<input type="text" id="judul" name="judul" value="<?= $post->judul ?>" class="form-control form-control-lg">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="content">Content <span class="badge badge-pill badge-light p-2">#<?= $this->postlist->get_namakategori($post->fid_kategori) ?></span></label>
-					<textarea class="form-control border-light " name="content" id="content" rows="3"><?= $post->content ?></textarea>
+		<div class="row mt-md-5 py-3 border-bottom">
+			<div class="col-md-9">
+				<div class="input-group">
+				  <div class="input-group-prepend">
+				    <button type="button" id="batal" class="btn btn-danger">
+							<span class="fas fa-times-circle"></span>
+						</button>
+				  </div>
+				  <div class="input-group-prepend">
+				    <label  class="input-group-text" for="judul">Judul</label>
+				  </div>
+				  <input type="text" id="judul" name="judul" value="<?= $post->judul ?>" class="form-control" aria-label="judul">
 				</div>
 			</div>
-			<div class="col-md-4 mt-md-4 pb-4 border-left bg-light">
+			<div class="col-md-3 mt-md-0 mt-2">
+				<button type="submit" class="btn btn-outline-primary"><i class="far fa-share-square mr-2"></i>Submit</button>
+					<button type="button" id="draf" data-id="<?php echo $post->id_berita ?>" class="btn btn-secondary">
+						<span class="fas fa-hourglass-end mr-2"></span>As Draf
+					</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-md-9 py-3">
+				<div class="form-group">
+					<label for="content">Content <span class="badge badge-pill badge-light p-2">#<?= $this->postlist->get_namakategori($post->fid_kategori) ?></span></label>
 
-				<div id="accordionExample" class="accordion mt-3">
+					<div class="col-12 col-md-8 offset-md-2 px-0">
+						
+					<textarea class="form-control" name="content" id="content" rows="3"><?= $post->content ?></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3 border-left py-3 p-md-0">
+				<div id="accordionExample" class="accordion">
 					<?php if($post->type !== 'SLIDE'): ?>
 					<!-- Accordion item 1 -->
-					<div class="card rounded-0">
-						<div class="card-header shadow-sm border-0">
+					<div class="card rounded-0 p-0">
+						<div class="card-header">
 							<h6 class="mb-0 font-weight-bold">
 								<a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Photo utama</a>
 							</h6>
@@ -44,7 +62,7 @@
 					<?php endif; ?>
 					<?php if($post->type === 'SLIDE'): ?>
 					<!-- Accordion item 3 -->
-					<div class="card rounded-0">
+					<div class="card rounded-0 p-0">
 						<div class="card-header shadow-sm border-0 d-flex justify-content-between align-items-center">
 							<h6 class="mb-0 font-weight-bold">
 								<a href="#" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree" class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Photo terkait</a>
@@ -58,37 +76,33 @@
 					<?php endif ?>
 					<?php if($post->type === 'BERITA'): ?>
 					<!-- Accordion item 4 -->
-					<div class="card rounded-0">
+					<div class="card rounded-0 p-0">
 						<div class="card-header shadow-sm border-0 d-flex justify-content-between align-items-center">
 							<h6 class="mb-0 font-weight-bold">
 								<a href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Seo</a>
 							</h6>
 						</div>
 						<div id="collapseFour" aria-labelledby="headingFour" data-parent="#accordionExample" class="collapse p-3 show">
-								<div class="input-group input-group-sm">
-								  <div class="input-group-prepend">
-								    <span class="input-group-text">Keywords</span>
-								  </div>
-								  <textarea class="form-control" name="keywords" aria-label="Keywords"><?= $post->keywords ?></textarea>
+								<div class="form-group">
+								  <label for="keywords" class="control-label">Keywords</label>
+								  <textarea class="form-control" id="keywords" name="keywords" aria-label="Keywords"><?= $post->keywords ?></textarea>
 								</div>
 								<hr>
-								<div class="input-group input-group-sm">
-								  <div class="input-group-prepend">
-								    <span class="input-group-text">Description</span>
-								  </div>
-								  <textarea class="form-control" name="description" aria-label="Description"><?= $post->deskripsi ?></textarea>
+								<div class="form-group">
+								  <label for="description" class="control-label">Description</label>
+								  <textarea id="description" class="form-control" name="description" aria-label="Description"><?= $post->deskripsi ?></textarea>
 								</div>
 						</div>
 					</div>
 					<?php endif ?>
 					<!-- Accordion item 2 -->
-					<div class="card rounded-0">
+					<div class="card rounded-0 p-0">
 						<div class="card-header shadow-sm border-0">
 							<h6 class="mb-0 font-weight-bold">
-								<a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Tags / Label</a>
+								<a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Tags / Label</a>
 							</h6>
 						</div>
-						<div id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionExample" class="collapse">
+						<div id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionExample" class="collapse show">
 							<div class="card-body">
 								<div class="form-group">
 									<select name="tags[]" id="tags" class="form-control" multiple="multiple" readonly>
@@ -104,13 +118,6 @@
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary mt-2"><i class="far fa-share-square mr-2"></i>Publish</button>
-					<button type="button" id="draf" data-id="<?php echo $post->id_berita ?>" class="btn btn-secondary mt-2">
-						<span class="fas fa-hourglass-end mr-2"></span>Draf
-					</button>
-					<button type="button" id="batal" class="btn btn-danger mt-2">
-						<span class="fas fa-times-circle mr-2"></span> Batal
-					</button>
 				</div>
 			</div>
 		</div>
@@ -139,7 +146,7 @@
 <link rel="stylesheet" href="<?= base_url('assets/plugins/dropzone/min/dropzone.min.css') ?>">
 <script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
 <script src="<?= base_url('assets/plugins/select2/js/select2.full.min.js'); ?>"></script>
-<script src="<?= base_url('files/tinymce/js/tinymce.min.js'); ?>"></script>
+<script src="<?= base_url('files/tinymce/tinymce.min.js'); ?>"></script>
 <script src="<?= base_url('assets/plugins/dropzone/min/dropzone.min.js'); ?>"></script>
 <script src="<?= base_url('template/v1/js/route.js') ?>"></script>
 <script src="<?= base_url('template/v1/js_userportal/p_baru_detail.js') ?>"></script>
