@@ -12,6 +12,7 @@ class Errors extends CI_Controller {
 	{
 		$data = [
 			'page' => 'error_404',
+			'canonical' => base_url('404'),
 			'title' => '404 Page Not Found',
 			'content' => 'Frontend/amp/errors/error_404'
 		];

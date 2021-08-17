@@ -13,6 +13,7 @@ class Blog extends CI_Controller {
 	{
 		$data = [
 			'page' => 'home',
+			'canonical' => base_url('amp'),
 			'title' => $this->site->site_title,
 			'content' => 'Frontend/amp/blog/index',
 			'postNew' => $this->posts->postList(0,1)->row(),
@@ -27,6 +28,7 @@ class Blog extends CI_Controller {
 	{
 		$data = [
 			'page' => 'home',
+			'canonical' => base_url('amp'),
 			'title' => $this->site->site_title,
 			'content' => 'Frontend/amp/blog/list',
 			'blogList' =>  $this->posts->get_kategori(),
@@ -44,6 +46,7 @@ class Blog extends CI_Controller {
 		endif;
 		$data = [
 			'page' => 'category',
+			'canonical' => base_url("k/{$slug}"),
 			'title' => $this->site->site_title,
 			'content' => 'Frontend/amp/blog/post/category',
 			'postCategory' => $this->posts->postListByCategoryId(0,6,$id)
@@ -117,6 +120,7 @@ class Blog extends CI_Controller {
 	        $categoryTitle = $this->posts->kategori_byid($detail->fid_kategori);
 			$data = [
 				'page' => 'detail',
+				'canonical' => base_url("blog/{$slugPost}"),
 				'content' => 'Frontend/amp/blog/post/detail',
 				'title' => $judul_seo,
 				'post' => $detail,

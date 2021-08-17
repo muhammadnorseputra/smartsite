@@ -15,7 +15,7 @@ limitations under the License.
   <head>
     <meta charset="utf-8" />
     <title><?= $title ?></title>
-    <link rel="canonical" href="<?= curPageURL(); ?>" />
+    <link rel="canonical" href="<?= $canonical; ?>" />
     <meta name="viewport" content="width=device-width" />
     <meta name="amp-google-client-id-api" content="googleanalytics" />
     <link rel="apple-touch-icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />

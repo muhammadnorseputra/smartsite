@@ -13,6 +13,7 @@ class Page extends CI_Controller {
 	{
 		$data = [
 			'page' => 'home',
+			'canonical' => base_url('amp'),
 			'title' => $this->site->site_title,
 			'content' => 'Frontend/amp/page/index',
 			'pageAll' => $this->pages->pageAll(),
@@ -36,6 +37,7 @@ class Page extends CI_Controller {
 	    // Data
 	    $data = [
 	      'page' => 'page_detail',
+	      'canonical' => base_url("page/{$slug}"),
 	      'title' => $title,
 	      'slug' => $slug,
 	      'keywords' => $keywords,
