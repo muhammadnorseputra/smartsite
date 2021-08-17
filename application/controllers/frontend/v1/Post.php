@@ -67,7 +67,7 @@ class Post extends CI_Controller
           'twitter'=> true,
           'robot'=> true
         );
-        $meta_tag = meta_tags($e, character_limiter($title, 60) = $judul_seo, $desc=$content,$imgUrl = $imgurl,
+        $meta_tag = meta_tags($e, $title =character_limiter($judul_seo, 60), $desc=$content,$imgUrl = $imgurl,
                             $url = curPageURL(), $keyWords=$meta_keywords, $type='article', $canonical=curPageURL(), $urlamp=$url_amp);
 
     	$data = [
