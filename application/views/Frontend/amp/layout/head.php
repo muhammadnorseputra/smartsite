@@ -15,14 +15,8 @@ limitations under the License.
   <head>
     <meta charset="utf-8" />
     <title><?= $title ?></title>
-    <?php 
-      $mobile = $this->agent->is_mobile();
-      if($mobile): 
-    ?>
     <link rel="canonical" href="<?= curPageURL(); ?>" />
-    <?php else: ?>
-    <link rel="canonical" href="<?= base_url('beranda'); ?>" />
-    <?php endif; ?>
+
     <meta name="viewport" content="width=device-width" />
     <meta name="amp-google-client-id-api" content="googleanalytics" />
     <link rel="apple-touch-icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />

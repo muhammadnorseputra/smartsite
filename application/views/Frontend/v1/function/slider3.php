@@ -1,7 +1,7 @@
 <section class="bg-white mb-4 border-bottom">
 <div class="container">
     <div class="row d-flex align-items-center">
-        <div class="col-md-5 py-3 py-md-5 mt-md-5 order-last order-md-first">
+        <div class="col-md-5 py-3 py-md-5 mt-md-5 order-last order-md-first d-none d-md-block">
             <div>
                 <h2 class="text-dark animated fadeInDown">Homepage - BKPPD Balangan 2021</h2>
                 <p class="text-muted lead animated fadeInDown">Selamat Datang Pada Portal Web Resmi BKPPD Kabupaten Balangan, Pelayanan Terpadu.</p>
@@ -28,8 +28,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-7 order-first order-md-last py-md-5 mt-md-5 d-none d-md-block">
-            <img class="img-fluid animated-image bounce" src="<?= assets('images/bg/bg-hero.svg') ?>" alt="Homepage - Portal Web BKPPD Balangan">
+        <div class="col-md-7 order-first order-md-last py-md-5 mt-md-5">
+            <img class="img-fluid animated-image rounded" src="https://i2.wp.com/www.goodscoop.id/wp-content/uploads/2021/07/Gambar-HUT-RI-Ke-76.png" alt="HUT RI Ke 76 - Portal Web BKPPD Balangan">
+            <!-- <img class="img-fluid animated-image bounce" src="<?= assets('images/bg/bg-hero.svg') ?>" alt="Homepage - Portal Web BKPPD Balangan"> -->
         </div>
     </div>
 </div>

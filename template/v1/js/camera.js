@@ -4,7 +4,7 @@
 //         height: '30%',
 //         pagination: false,
 //         thumbnails: false,
-//         loader: 'bar',
+//         loader: 'pie',
 //         autoAdvance: true,
 //         barPosition: 'top',
 //         loaderColor: 'teal',

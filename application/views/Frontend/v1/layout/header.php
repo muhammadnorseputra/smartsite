@@ -41,7 +41,7 @@
 							endif;
 							?>
 							<a class="dropdown-item py-md-2 <?= $display ?>" href="<?= base_url($s->link_sub); ?>">
-								<?= $s->nama_sub ?>
+								<?= $s->nama_sub."-".date('Y-m-d H:i:s') ?>
 								<?php
 									// Jika tgl created_at sama dengan tanggal sekarang 
 									if(($create_submenu === $skr)): 

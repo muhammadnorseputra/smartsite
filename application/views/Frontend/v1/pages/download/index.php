@@ -11,8 +11,8 @@
 </section>
 <section class="mb-md-3 mt--6">
 <div class="container bg-white py-4 rounded shadow-sm">
-	<div class="table-responsive-md">
-		<table class="table table-condensed display" id="table-download">
+	<div class="table-responsive">
+		<table class="table table-condensed" id="table-download">
 			<thead>
 				<tr>
 					<th data-priority="1">No</th>
