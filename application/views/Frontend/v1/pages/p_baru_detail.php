@@ -85,12 +85,12 @@
 						<div id="collapseFour" aria-labelledby="headingFour" data-parent="#accordionExample" class="collapse p-3 show">
 								<div class="form-group">
 								  <label for="keywords" class="control-label">Keywords</label>
-								  <textarea class="form-control" id="keywords" name="keywords" aria-label="Keywords"><?= $post->keywords ?></textarea>
+								  <textarea class="form-control" id="keywords" name="keywords" aria-label="Keywords" row="4"><?= $post->keywords ?></textarea>
 								</div>
 								<hr>
 								<div class="form-group">
 								  <label for="description" class="control-label">Description</label>
-								  <textarea id="description" class="form-control" name="description" aria-label="Description"><?= $post->deskripsi ?></textarea>
+								  <textarea id="description" class="form-control" name="description" aria-label="Description" row="4"><?= $post->deskripsi ?></textarea>
 								</div>
 						</div>
 					</div>
