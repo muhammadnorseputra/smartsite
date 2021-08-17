@@ -68,7 +68,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 	$baseUrl = base_url("amp/{$post_detail->slug}");
 // else:
 	// $baseUrl = curPageURL();
-endif;
+// endif;
 $pubDete= new DateTime($post_detail->created_at, new DateTimeZone('Asia/Jakarta'));
 $modDete= new DateTime($post_detail->update_at, new DateTimeZone('Asia/Jakarta'));
 $imgInfo = getimagesize(files('file_berita/'.$post_detail->img));
