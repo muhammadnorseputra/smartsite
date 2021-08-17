@@ -85,12 +85,9 @@ if(! function_exists('meta_tags')){
         $urlamp     = $urlamp == '' ? base_url('amp') : $urlamp;
 
         if($enable['general']){
-            if($mobile):
-                $output .= '<link rel="canonical" href="'.$urlamp.'" />';
-            else:
-                $output .= '<link rel="amphtml" href="'.$urlamp.'">';
-                $output .= '<link rel="canonical" href="'.$canonical.'" />';
-            endif;
+            $output .= '<link rel="canonical" href="'.$urlamp.'" />';
+            $output .= '<link rel="amphtml" href="'.$urlamp.'">';
+            // $output .= '<link rel="canonical" href="'.$canonical.'" />';
             $output .= '<meta  name="Rating" content="General"/>';
             $output .= '<meta name="Distribution" content="Global" />';
             $output .= '<meta name="audience" content="all" />';
