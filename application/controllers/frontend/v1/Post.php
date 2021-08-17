@@ -55,7 +55,7 @@ class Post extends CI_Controller
             $content = !empty($detail->deskripsi) ? $detail->deskripsi : $yt_desc;
         else:
             $imgurl = $img;
-            $meta_desc = strip_tags(str_replace('"', '', word_limiter($detail->content, 200)));
+            $meta_desc = strip_tags(str_replace('"', '', character_limiter($detail->content, 110)));
             $content = !empty($detail->deskripsi) ? $detail->deskripsi : $meta_desc;
         endif;
         $meta_keywords = !empty($detail->keywords) ? $detail->keywords : $detail->tags;
@@ -67,7 +67,7 @@ class Post extends CI_Controller
           'twitter'=> true,
           'robot'=> true
         );
-        $meta_tag = meta_tags($e, $title = $judul_seo, $desc=$content,$imgUrl = $imgurl,
+        $meta_tag = meta_tags($e, character_limiter($title, 60) = $judul_seo, $desc=$content,$imgUrl = $imgurl,
                             $url = curPageURL(), $keyWords=$meta_keywords, $type='article', $canonical=curPageURL(), $urlamp=$url_amp);
 
     	$data = [

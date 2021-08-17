@@ -40,8 +40,8 @@ class Halaman extends CI_Controller
     $imgurl = $ext != 'pdf' ? base_url('files/randoms/'.$path) : base_url('assets/images/logo.png');
     $url_amp = base_url("amp/page/{$slug}");
     $meta_tag = meta_tags($e, 
-                          $title = $title, 
-                          $desc = strip_tags(str_replace('"', '', word_limiter($detail->row()->content, 200))), 
+                          $title = character_limiter($title, 60), 
+                          $desc = strip_tags(str_replace('"', '', character_limiter($detail->row()->content, 110))), 
                           $imgUrl = $imgurl, 
                           $url = base_url('page/'.$slug), 
                           $keyWords = $keywords,
