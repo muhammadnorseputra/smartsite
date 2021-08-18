@@ -8,7 +8,6 @@ Disallow: /api/
 Disallow: /frontend/v1/
 Disallow: /banner/
 Disallow: /fb/
-Disallow: /login_web
 Disallow: /p/
 Disallow: /b/
 Disallow: /post/

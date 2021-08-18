@@ -13,7 +13,7 @@ class Blog extends CI_Controller {
 	{
 		$data = [
 			'page' => 'home',
-			'canonical' => base_url('amp'),
+			'canonical' => base_url('beranda'),
 			'title' => $this->site->site_title,
 			'content' => 'Frontend/amp/blog/index',
 			'postNew' => $this->posts->postList(0,1)->row(),
@@ -28,7 +28,7 @@ class Blog extends CI_Controller {
 	{
 		$data = [
 			'page' => 'home',
-			'canonical' => base_url('amp'),
+			'canonical' => base_url('beranda'),
 			'title' => $this->site->site_title,
 			'content' => 'Frontend/amp/blog/list',
 			'blogList' =>  $this->posts->get_kategori(),

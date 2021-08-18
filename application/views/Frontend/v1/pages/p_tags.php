@@ -1,8 +1,9 @@
-<section class="mt-0 pt-md-5 bg-white rounded shadow-lg">
+<section class="mt-0 pt-md-5 bg-white rounded shadow-sm">
   <div class="container py-md-4">
     <div class="row pt-3">
     	<div class="col-12 col-md-4">
-      	<div class="font-weight-bold display-4 mr-md-3 pr-md-3">Post by tags</div>
+      	<h3 class="font-weight-bold mr-md-3 pr-md-3">Post by tags</h3>
+      	<span class="text-muted"><?= ucwords($this->uri->segment(2)) ?></span>
     	</div>
     	<div class="col-12 col-md-8">
       	<div style="overflow-x: auto;" class="d-flex flex-row flex-nowrap justify-content-start align-items-center">
@@ -11,7 +12,7 @@
 	          $active = url_title($tag->nama_tag);
 	          $active_tag = $active == $this->uri->segment(2) ? 'active' : '';
 	        ?>
-	          <a href="<?= base_url('tag/' . $active); ?>" class="btn rounded-pill my-1 text-nowrap mx-2 p-2 btn-sm btn-outline-secondary <?= $active_tag ?>">#<?= url_title($tag->nama_tag); ?></a>
+	          <a href="<?= base_url('tag/' . $active); ?>" class="btn rounded-pill my-1 text-nowrap mx-2 p-2 btn-sm btn-outline-light <?= $active_tag ?>">#<?= url_title($tag->nama_tag); ?></a>
 	        <?php endforeach; ?>
 	        </div>
     	</div>

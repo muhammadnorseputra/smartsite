@@ -56,8 +56,24 @@ class Post_list extends CI_Controller
         $this->pagination->initialize($config);
         $data['start'] = isset($_GET['page']) ? $_GET['page'] : 0;
 
+        // Meta SEO
+        $e = array(
+          'general' => true, //description, keywords
+          'og' => true,
+          'twitter'=> true,
+          'robot'=> true
+        );
+        $meta_tag = meta_tags($e, 
+                                $title = "Kumpulan Berita - ".ucwords($nama_kategori), 
+                                $desc= "Berikut ini kumpulan daftar berita dengan kategori {$nama_kategori} yang terbaru dan terupdate versi web bkppd balangan",
+                                $imgUrl = '',
+                                $url = curPageURL(), 
+                                $keyWords= 'daftar berita, kumpulan berita, berita terbaru, berita balangan, kategori berita, label berita, berita update, berita balangan, habar balangan, info balangan', 
+                                $type='website', 
+                                $canonical=base_url("k/{$nama_kategori}"), 
+                                $urlamp= base_url("amp/blog/{$nama_kategori}"));
         $data = [
-            'title' => 'Berita: '.$this->post_list->get_namakategori($id_kategori),
+            'title' => 'Kumpulan Berita - '.$this->post_list->get_namakategori($id_kategori),
             'isi' => 'Frontend/v1/pages/p_list',
             'uri_id' => $id_kategori,
             'mf_beranda' => $this->mf_beranda->get_identitas(),
@@ -67,6 +83,7 @@ class Post_list extends CI_Controller
             'posts_by_kategori' => $this->post_list->get_all_berita_by_kategori($id_kategori, $order, $config['per_page'], $data['start']),
             'pagination' => $this->pagination->create_links(),
             'total' => $this->post_list->count_all_berita_by_kategori($id_kategori),
+            'meta' => $meta_tag
         ];
 
         $this->load->view('Frontend/v1/layout/wrapper', $data, false);
@@ -74,14 +91,32 @@ class Post_list extends CI_Controller
 
     public function tags($tag)
     {
+        // Meta SEO
+        $e = array(
+          'general' => true, //description, keywords
+          'og' => true,
+          'twitter'=> true,
+          'robot'=> true
+        );
+        $meta_tag = meta_tags($e, 
+                                $title = "Kumpulan Berita Berlabel- ".ucwords($tag), 
+                                $desc= "Berikut ini kumpulan daftar berita dengan label {$tag} yang terbaru dan terupdate versi web bkppd balangan",
+                                $imgUrl = '',
+                                $url = curPageURL(), 
+                                $keyWords= 'daftar berita, kumpulan berita, berita terbaru, berita balangan, kategori berita, label berita, berita update, berita balangan, habar balangan, info balangan', 
+                                $type='website', 
+                                $canonical=curPageURL(), 
+                                $urlamp= '');
+
         $data = [
-            'title' => 'Label: '.url_title($tag),
+            'title' => 'Kumpulan Berita Berlabel - '.url_title($tag),
             'isi' => 'Frontend/v1/pages/p_tags',
             'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),
             'kategoris' => $this->post_list->get_all_kategori(),
             'tags' => $this->post_list->get_all_tag(),
             'posts_by_tag' => $this->post_list->get_all_berita_by_tag($tag),
+            'meta' => $meta_tag
         ];
 
         $this->load->view('Frontend/v1/layout/wrapper', $data, false);

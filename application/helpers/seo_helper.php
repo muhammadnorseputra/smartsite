@@ -85,11 +85,11 @@ if(! function_exists('meta_tags')){
         $urlamp     = $urlamp == '' ? base_url('amp') : $urlamp;
 
         if($enable['general']){
-            if(!$mobile) {
+            // if(!$mobile) {
                 $output .= '<link rel="canonical" href="'.$canonical.'" />';
-            } else {
-                $output .= '<link rel="canonical" href="'.$urlamp.'" />';
-            }
+            // } else {
+            //     $output .= '<link rel="canonical" href="'.$urlamp.'" />';
+            // }
             $output .= '<link rel="amphtml" href="'.$urlamp.'" data-component-name="amp:html:link">';
             // $output .= '<link rel="canonical" href="'.$canonical.'" />';
             $output .= '<meta  name="Rating" content="General"/>';
@@ -107,8 +107,8 @@ if(! function_exists('meta_tags')){
 
         if($enable['robot']){
             $output .= '<meta name="robots" content="max-image-preview:large, index,follow"/>'
-                    .'<meta name="googlebot-news" content="max-image-preview:large, index, follow" />'
-                    .'<meta  name="googlebot" content="max-image-preview:large, index, follow" />';
+                    .'<meta name="googlebot-news" content="index, follow" />'
+                    .'<meta  name="googlebot" content="index, follow" />';
         } else {
             $output .= '<meta name="robots" content="noindex,nofollow"/>';
         }

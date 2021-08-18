@@ -13,7 +13,7 @@ class Page extends CI_Controller {
 	{
 		$data = [
 			'page' => 'home',
-			'canonical' => base_url('amp'),
+			'canonical' => base_url('beranda'),
 			'title' => $this->site->site_title,
 			'content' => 'Frontend/amp/page/index',
 			'pageAll' => $this->pages->pageAll(),

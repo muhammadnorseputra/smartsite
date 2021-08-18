@@ -5,9 +5,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Login</title>
-		<meta name="robots" content="noindex, nofollow">
-		<meta name="googlebot" content="noindex, nofollow">
-		<meta name="googlebot-news" content="noindex, nofollow" />
+		<meta name="robots" content="noindex, nofollow, noarchive">
+		<meta name="googlebot" content="noindex, nofollow, noarchive">
+		<meta name="googlebot-news" content="noindex, nofollow, noarchive" />
 		<meta name="keywords" content="Login - BKPPD Balangan">
 		<meta name="description" content="Silahkan isikan kredensial anda untuk masuk ke-sistem userportal bkppd balangan sebagai tamu/konstributor/editor dengan memberikan konten dan fitur yang lebih banyak">
 						
