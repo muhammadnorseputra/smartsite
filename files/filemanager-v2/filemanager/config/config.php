@@ -67,7 +67,7 @@ $config = array(
     | without final / (DON'T TOUCH)
     |
     */
-    'base_url' => ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http"). "://". @$_SERVER['HTTP_HOST'].''.str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']),
+    'base_url' => ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http"). "://". @$_SERVER['HTTP_HOST'].'/files/filemanager-v2/',
     /*
     |--------------------------------------------------------------------------
     | path from base_url to base of upload folder
@@ -76,7 +76,7 @@ $config = array(
     | with start and final /
     |
     */
-    'upload_dir' => '../uploads/',
+    'upload_dir' => 'uploads/',
     /*
     |--------------------------------------------------------------------------
     | relative path from filemanager folder to upload folder

@@ -47,7 +47,7 @@
 			selector: "#content",
 			height: 400,
 			themes: "modern",
-			apiKey: "E5EXDFLT",
+			/*apiKey: "E5EXDFLT",*/
 			mobile: {
 			    theme: 'mobile',
 			    plugins: [ 'autosave', 'lists', 'autolink' ]
@@ -56,7 +56,7 @@
 			"advlist autolink link image lists charmap print preview hr anchor pagebreak tabfocus searchreplace codesample help",
 			"searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
 			"table contextmenu directionality emoticons paste textcolor code fullscreen",
-			"n1ed"
+			/*"n1ed"*/
 			],
 			content_css: [
 			'<?= base_url("vendor/twbs/bootstrap/dist/css/bootstrap.min.css") ?>',
