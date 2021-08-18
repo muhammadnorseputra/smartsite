@@ -6,5 +6,8 @@ old-index.php
 .editorconfig
 index-old2.php
 Api_test.http
-files/filemanager-v2/uploads
-files/filemanager-v2/thumbs
+files/filemanager-v2/uploads/
+files/filemanager-v2/thumbs/
+files/thumbs/
+files/file_*/
+files/file_*/

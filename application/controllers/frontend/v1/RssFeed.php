@@ -9,6 +9,7 @@ class RssFeed extends CI_Controller {
         $this->load->helper('text');
         $this->load->model('model_template_v1/M_f_post', 'posts');
         $this->load->model('model_template_v1/M_f_halaman', 'pages');
+        $this->load->model('model_template_v1/M_f_post_list', 'categorys');
       }
 
       public function index()
@@ -33,7 +34,7 @@ class RssFeed extends CI_Controller {
           $profile = $this->mf_beranda->get_identitas();
           $data['feed_name'] = 'bkppd-balangankab.info'; // your website
           $data['encoding'] = 'utf-8'; // the encoding
-          $data['feed_url'] = base_url('rss'); // the url to your feed
+          $data['feed_url'] = base_url('rss_amp'); // the url to your feed
           $data['page_description'] = $profile->meta_desc; // some description
           $data['page_language'] = 'id-ID'; // the language
           $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
@@ -42,6 +43,36 @@ class RssFeed extends CI_Controller {
           $data['pages'] = $this->pages->pageAll();
           $this->output->set_content_type('application/rss+xml');
           $this->load->view('Frontend/v1/rss_amp', $data);
+      }
+
+      public function categorys()
+      {
+          $profile = $this->mf_beranda->get_identitas();
+          $data['feed_name'] = 'POST CATEGORY'; // your website
+          $data['encoding'] = 'utf-8'; // the encoding
+          $data['feed_url'] = base_url('rss_categorys'); // the url to your feed
+          $data['page_description'] = $profile->meta_desc; // some description
+          $data['page_language'] = 'id-ID'; // the language
+          $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
+          $data['creator_name'] = 'BKPPD Balangan'; // your email  
+          $data['categorys'] = $this->categorys->getAll();
+          $this->output->set_content_type('application/rss+xml');
+          $this->load->view('Frontend/v1/rss_categorys', $data);
+      }
+
+      public function tags()
+      {
+          $profile = $this->mf_beranda->get_identitas();
+          $data['feed_name'] = 'POST TAGS'; // your website
+          $data['encoding'] = 'utf-8'; // the encoding
+          $data['feed_url'] = base_url('rss_tags'); // the url to your feed
+          $data['page_description'] = $profile->meta_desc; // some description
+          $data['page_language'] = 'id-ID'; // the language
+          $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
+          $data['creator_name'] = 'BKPPD Balangan'; // your email  
+          $data['tags'] = $this->categorys->get_all_tag();
+          $this->output->set_content_type('application/rss+xml');
+          $this->load->view('Frontend/v1/rss_tags', $data);
       }
 }
 ?>

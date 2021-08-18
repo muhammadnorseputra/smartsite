@@ -130,6 +130,8 @@ $route['closed'] = 'frontend/v1/halaman/closed';
 // RSS
 $route['rss'] = 'frontend/v1/rssFeed';
 $route['rss_amp'] = 'frontend/v1/rssFeed/amp';
+$route['rss_categorys'] = 'frontend/v1/rssFeed/categorys';
+$route['rss_tags'] = 'frontend/v1/rssFeed/tags';
 
 // AMP
 $route['amp'] = 'frontend/amp/blog';

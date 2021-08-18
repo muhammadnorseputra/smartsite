@@ -20,6 +20,10 @@ class M_f_post_list extends CI_Model
         $q = $this->db->get_where('t_kategori', ['nama_kategori' => $name])->row();
         return $q->id_kategori;
     }
+    public function getAll()
+    {
+        return $this->db->get_where('t_kategori');
+    }
     public function get_all_kategori()
     {
         return $this->db->get_where('t_kategori', ['aktif' => 'Y']);
