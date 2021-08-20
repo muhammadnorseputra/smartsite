@@ -68,7 +68,7 @@ $categoryTitle = $this->posts->kategori_byid($postNew->fid_kategori);
 </section>
 <!-- END POST NEW -->
 <section class="block px2">
-<amp-ad width="100vw" height="320"
+<amp-ad
      type="adsense"
      layout="responsive"     
      data-ad-client="ca-pub-1099792537777374"
