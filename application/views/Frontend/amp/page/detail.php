@@ -33,6 +33,14 @@
     <?php endif; ?>
   </section>
   <section class="px3 py3">
+    <amp-ad width="100vw" height="320"
+         type="adsense"
+         data-ad-client="ca-pub-1099792537777374"
+         data-ad-slot="5114117650"
+         data-auto-format="rspv"
+         data-full-width="">
+      <div overflow=""></div>
+    </amp-ad>
     <?= $pagedetail->content ?>
     <div class="flex justify-between items-center mt3">
       <div class="flex justify-start">
