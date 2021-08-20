@@ -16,9 +16,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title><?= $title; ?></title>
     <?= 
-    !empty($meta) ? $meta : '<meta name="author" content="muhamamdnorseputra@gmail.com"/>
-                                 <meta name="description" content="'.$mf_beranda->meta_desc.'"/>
-                                 <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>';  
+    !empty($meta) ? $meta : '
+    <meta name="robots" content="noindex, nofollow, noarchive"/>
+    <meta name="googlebot-news" content="noindex, nofollow, noarchive" />
+    <meta  name="googlebot" content="noindex, nofollow, noarchive" />
+    <meta name="author" content="muhamamdnorseputra@gmail.com"/>
+    <meta name="description" content="'.$mf_beranda->meta_desc.'"/>
+    <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>';  
     ?>
     <link rel="preconnect" href="https://fonts.googleapis.com/"/>
     <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-solid-900.woff2') ?>" crossorigin="anonymous">
