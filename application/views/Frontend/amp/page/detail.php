@@ -33,7 +33,7 @@
     <?php endif; ?>
   </section>
   <section class="px3 py3">
-    <amp-ad
+    <amp-ad height="320"
          type="adsense"
          layout="responsive"
          data-ad-client="ca-pub-1099792537777374"
