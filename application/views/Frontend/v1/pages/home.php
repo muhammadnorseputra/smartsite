@@ -6,11 +6,11 @@
         <div class="row">
             <div class="col-md-12 app-slick">
                 <div>
-                    <div class="d-flex align-items-center bg-success py-4 px-md-5 px-0" style="border-radius:15px;">
-                        <div class="col-12 col-md-5 d-none d-md-block d-lg-block">
+                    <div class="d-flex align-items-center bg-success py-4 px-md-5 px-0 rounded">
+                        <div class="col-12 col-md-3 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/gpr.svg') ?>" alt="GPR (Government Public Relation)">
                         </div>
-                        <div class="col-12 col-md-7 text-white">
+                        <div class="col-12 col-md-9 text-white">
                             <h1>GPR (Government Public Relation)</h1>
                             <p>
                                 Merupakan alat bantu sosialisasi berita berupa widget yang dapat dipasang pada website/blog. Sumber berita didapatkan dari website resmi <span class="badge badge-light" title="Official Site BKPPD Balangan"> web.bkppd-balangankab.info</span> dan informasi statistik pegawai bersumber pada aplikasi SILKa (Sistem Informasi Layanan Kepegawaian) Daerah Balangan.
@@ -20,11 +20,11 @@
                     </div>
                 </div>
                 <div>
-                    <div class="d-flex align-items-center bg-white py-4 px-md-5 px-0" style="border-radius:15px;">
-                        <div class="col-12 col-md-5 d-none d-md-block d-lg-block">
+                    <div class="d-flex align-items-center bg-white py-4 px-md-5 px-0 rounded">
+                        <div class="col-12 col-md-3 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/report.svg') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
                         </div>
-                        <div class="col-12 col-md-7">
+                        <div class="col-12 col-md-9">
                             <h1>Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?></h1>
                             <p>
                                 Kini website telah tersedia grafik Pegawai Negeri Sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
