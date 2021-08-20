@@ -33,9 +33,8 @@
     <?php endif; ?>
   </section>
   <section class="px3 py3">
-    <amp-ad height="320"
+    <amp-ad width="100vw" height="320"
          type="adsense"
-         layout="responsive"
          data-ad-client="ca-pub-1099792537777374"
          data-ad-slot="5114117650"
          data-auto-format="rspv"

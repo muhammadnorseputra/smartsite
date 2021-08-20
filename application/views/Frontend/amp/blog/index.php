@@ -68,13 +68,12 @@ $categoryTitle = $this->posts->kategori_byid($postNew->fid_kategori);
 </section>
 <!-- END POST NEW -->
 <section class="block px2">
-<amp-ad height="320"
+<amp-ad width="100vw" height="320"
      type="adsense"
-     layout="responsive"     
      data-ad-client="ca-pub-1099792537777374"
-     data-ad-slot="8859326512"
+     data-ad-slot="6508565159"
      data-auto-format="rspv"
-     data-full-width="">
+     data-full-width="true">
   <div overflow=""></div>
 </amp-ad>	
 </section>
