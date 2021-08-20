@@ -153,6 +153,9 @@ $route['api-skm/(:any)'] = 'frontend/v1/apiSkm/$1';
 $route['facebook'] = 'frontend/v1/facebook';
 $route['facebook_outh'] = 'frontend/v1/facebook/facebook_outh';
 
+// Sitemap
+$route['sitemaps.xml'] = 'frontend/v1/sitemaps';
+
 /*
 * @BAWAAN CODEIGNITER
 */

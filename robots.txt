@@ -13,6 +13,5 @@ Disallow: /b/
 Disallow: /post/
 Allow: /
 
-Sitemap: https://web.bkppd-balangankab.info/rss
-Sitemap: https://web.bkppd-balangankab.info/rss_amp
-Sitemap: https://web.bkppd-balangankab.info/sitemap_temp.xml
+Sitemap: https://web.bkppd-balangankab.info/sitemaps.xml
+Sitemap: https://web.bkppd-balangankab.info/sitemap_default.xml
