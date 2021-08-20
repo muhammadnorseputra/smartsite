@@ -28,7 +28,7 @@
     ></amp-img>
   </header>
   <section class="mb4 px3">
-<!--     <amp-ad width="100vw" height="320"
+    <amp-ad width="100vw" height="320"
          type="adsense"
          layout="responsive"
          data-ad-client="ca-pub-1099792537777374"
@@ -36,7 +36,7 @@
          data-auto-format="rspv"
          data-full-width="">
       <div overflow=""></div>
-    </amp-ad> -->
+    </amp-ad>
     <?= $postContent ?>
     <div class="flex justify-between items-center mt3">
       <div class="flex justify-start">
