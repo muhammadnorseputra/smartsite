@@ -60,7 +60,6 @@
           <content:encoded><![CDATA[<?= strip_tags($isi) ?>]]></content:encoded>
           <g:image_link><?= $img ?></g:image_link>
           <g:condition><?= $conditional ?></g:condition>
-          <g:id><?= $id ?></g:id>
           <guid isPermaLink="false"><?= $posturl ?></guid>
           <enclosure length="25000" type="image/jpeg" url="<?= $img ?>"/>
           <pubDate><?= $newDateTime->format('D, d M Y H:i:sO') ?></pubDate>
