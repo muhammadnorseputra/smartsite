@@ -1739,6 +1739,7 @@ limitations under the License.
     </style>
   </head>
   <body>
+  <amp-auto-ads type="adsense" data-ad-client="ca-pub-1099792537777374"></amp-auto-ads>
   <?php  
     $site = $this->mf_beranda->get_identitas();
   ?>
