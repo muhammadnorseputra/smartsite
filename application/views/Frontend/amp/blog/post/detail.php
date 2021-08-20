@@ -28,7 +28,7 @@
     ></amp-img>
   </header>
   <section class="mb4 px3">
-    <amp-ad width="100vw" height="320"
+    <amp-ad width="100vw" height="120"
          type="adsense"
          data-ad-client="ca-pub-1099792537777374"
          data-ad-slot="6508565159"
