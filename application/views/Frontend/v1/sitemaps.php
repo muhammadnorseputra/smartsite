@@ -10,7 +10,7 @@
         $slug = strtolower($post->slug);
         $posturl = base_url("blog/{$slug}"); 
         $newDateTime= new DateTime($post->update_at, new DateTimeZone('UTC'));
-        $postMod = $newDateTime->format('Y-m-d H:i:sP');
+        $postMod = $newDateTime->format('Y-m-d');
     ?>
     <url>
         <loc><?= $posturl ?></loc>
