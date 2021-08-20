@@ -71,7 +71,7 @@ $categoryTitle = $this->posts->kategori_byid($postNew->fid_kategori);
 <amp-ad width="100vw" height="320"
      type="adsense"
      data-ad-client="ca-pub-1099792537777374"
-     data-ad-slot="6508565159"
+     data-ad-slot="1184195059"
      data-auto-format="rspv"
      data-full-width="true">
   <div overflow=""></div>

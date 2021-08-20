@@ -38,7 +38,7 @@
          data-ad-client="ca-pub-1099792537777374"
          data-ad-slot="5114117650"
          data-auto-format="rspv"
-         data-full-width="">
+         data-full-width="true">
       <div overflow=""></div>
     </amp-ad>
     <?= $pagedetail->content ?>
