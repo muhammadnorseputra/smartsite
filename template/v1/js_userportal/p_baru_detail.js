@@ -33,19 +33,44 @@
 			selector: "#content",
 			theme: "silver",
 			height: 780,
+			// menubar: false,
 			plugins: [
 				"advlist autolink link image lists charmap print preview hr anchor pagebreak tabfocus searchreplace codesample help",
 				"searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
-				"table contextmenu directionality emoticons paste textcolor code fullscreen"
+				"table contextmenu directionality emoticons paste textcolor code fullscreen bacajuga"
 			],
 			content_css: [
-				`${_uri}/bower_components/bootstrap/dist/css/bootstrap.min.css`,
+				`${_uri}/bower_components/bootstrap/dist/css/bootstrap.min.css?${new Date().getTime()}`,				
 			],
+			content_css_cors: true,
 			content_style: "body{padding: 25px;}",
 			relative_urls: false,
 			remove_script_host: false,
 			convert_urls: true,
-			toolbar: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor",
+			toolbar: [
+				{
+			      name: 'history', items: [ 'undo', 'redo' ]
+			    },
+			    {
+			      name: 'formatting', items: [ 'bold', 'italic', 'underline']
+			    },
+			    {
+			      name: 'alignment', items: [ 'alignleft', 'aligncenter', 'alignright', 'alignjustify' ]
+			    },
+			    {
+			      name: 'indentation', items: [ 'bullist', 'numlist', 'outdent', 'indent' ]
+			    },
+			    {
+			      name: 'colors', items: [ 'forecolor', 'backcolor' ]
+			    },
+			    {
+			     name: 'plugin+', items: ['bacajuga']
+			    }
+			],
+			toolbar_mode: 'sliding',
+			toolbar_location: 'top',
+  			toolbar_persist: true,
+			toolbar_sticky: true,
 			//filemanager_crossdomain: true,
 			image_advtab: true,
 			external_filemanager_path: `${_uri}/files/filemanager-v2/filemanager/`,
