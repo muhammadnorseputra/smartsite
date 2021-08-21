@@ -5,8 +5,8 @@
 		tokenSeparators: [',', ' '],
 		width: 'resolve',
 	});
-
 	$(document).ready(function() {
+		$("#navbar").removeClass('d-md-block').addClass('d-md-none');
 		/*Message*/
 		function message(x,y) {
 			notif({
@@ -32,7 +32,10 @@
 		var tiny = tinymce.init({
 			selector: "#content",
 			theme: "silver",
-			height: 780,
+			height: 1180,
+			inline_boundaries: false,
+			placeholder: 'Ketik disini ...',
+			skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide'),
 			// menubar: false,
 			plugins: [
 				"advlist autolink link image lists charmap print preview hr anchor pagebreak tabfocus searchreplace codesample help",
@@ -40,10 +43,10 @@
 				"table contextmenu directionality emoticons paste textcolor code fullscreen bacajuga"
 			],
 			content_css: [
-				`${_uri}/bower_components/bootstrap/dist/css/bootstrap.min.css?${new Date().getTime()}`,				
+				`${_uri}/bower_components/bootstrap/dist/css/bootstrap.min.css?${new Date().getTime()}`,	
+				'document'			
 			],
 			content_css_cors: true,
-			content_style: "body{padding: 25px;}",
 			relative_urls: false,
 			remove_script_host: false,
 			convert_urls: true,
