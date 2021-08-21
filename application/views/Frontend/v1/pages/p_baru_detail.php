@@ -32,7 +32,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 py-3 p-0 border-left">
+			<div class="col-12 col-md-3 p-0 border-left">
 				<!-- <div id="sidebar"> -->
 					<div class="panel-group" id="accordion">
 						<div class="panel panel-default">
