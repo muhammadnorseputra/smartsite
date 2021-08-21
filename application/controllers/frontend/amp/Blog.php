@@ -98,7 +98,7 @@ class Blog extends CI_Controller {
 			elseif($detail->type === 'LINK'):
 				$content = $linker['description'];
 			else:
-				$content = str_replace('img', 'amp-img', $detail->content);
+				$content = $detail->content;
 			endif;
 			// Meta
 			if($detail->type === 'YOUTUBE'):
