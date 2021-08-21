@@ -73,7 +73,7 @@
 			toolbar_mode: 'sliding',
 			toolbar_location: 'top',
   			toolbar_persist: true,
-			toolbar_sticky: true,
+			// toolbar_sticky: true,
 			//filemanager_crossdomain: true,
 			image_advtab: true,
 			external_filemanager_path: `${_uri}/files/filemanager-v2/filemanager/`,

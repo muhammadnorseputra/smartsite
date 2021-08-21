@@ -2,7 +2,7 @@
 <section class="bg-white">
 	<div class="container-fluid">
 		<?= form_open_multipart(base_url('frontend/v1/post/update_post/1'), ['id' => 'f_post', 'data-id' => $post->id_berita]) ?>
-		<div class="row py-3 border-bottom">
+		<div class="row py-3 border-bottom sticky-top bg-white">
 			<div class="col-md-9">
 				<div class="input-group">
 				  <div class="input-group-prepend">
@@ -17,10 +17,23 @@
 				</div>
 			</div>
 			<div class="col-md-3 mt-md-0 mt-2 border-left">
-				<button type="submit" class="btn btn-outline-primary"><i class="far fa-share-square mr-2"></i>Submit</button>
-					<button type="button" id="draf" data-id="<?php echo $post->id_berita ?>" class="btn btn-secondary">
-						<span class="fas fa-hourglass-end mr-2"></span>As Draf
-					</button>
+				<div class="d-flex justify-content-between align-items-center">
+					<span>
+						<button type="submit" class="btn btn-outline-primary"><i class="far fa-share-square mr-2"></i>Submit</button>
+					</span>
+					<span>
+						<div class="dropdown">
+						  <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    <i class="fas fa-cogs"></i>
+						  </button>
+						  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+								<button type="button" id="draf" data-id="<?php echo $post->id_berita ?>" class="dropdown-item">
+									<span class="fas fa-hourglass-end mr-2"></span>Save as draf
+								</button>
+						  </div>
+						</div>
+					</span>	
+				</div>
 			</div>
 		</div>
 		<div class="row">
