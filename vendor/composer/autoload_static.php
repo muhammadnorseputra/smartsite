@@ -11,12 +11,28 @@ class ComposerStaticInitf57d80892b9eda248217e8be194dfbac
         array (
             'chriskacerguis\\RestServer\\' => 26,
         ),
+        'P' => 
+        array (
+            'Predmond\\HtmlToAmp\\' => 19,
+        ),
+        'L' => 
+        array (
+            'League\\Event\\' => 13,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'chriskacerguis\\RestServer\\' => 
         array (
             0 => __DIR__ . '/..' . '/chriskacerguis/codeigniter-restserver/src',
+        ),
+        'Predmond\\HtmlToAmp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paulredmond/html-to-amp/src',
+        ),
+        'League\\Event\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/event/src',
         ),
     );
 

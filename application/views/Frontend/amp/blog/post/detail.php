@@ -21,7 +21,7 @@
     <amp-img
       src="<?= $postImage ?>"
       width="1280"
-      height="853"
+      height="653"
       layout="responsive"
       alt="<?= $title ?>"
       class="mb4 mx3 rounded ampstart-card"

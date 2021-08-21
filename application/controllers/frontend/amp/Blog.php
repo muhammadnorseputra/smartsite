@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-
+use Predmond\HtmlToAmp\{Environment,AmpConverter};
 class Blog extends CI_Controller {
 	function __construct()
 	{
@@ -7,6 +7,8 @@ class Blog extends CI_Controller {
         $this->load->model('model_template_v1/M_f_post', 'posts');
         $this->load->model('model_template_v1/M_f_users', 'users'); 
 		$this->site = $this->mf_beranda->get_identitas();
+		$this->env = Environment::createDefaultEnvironment();
+		$this->converter = new AmpConverter($this->env);
 	}
 
 	public function index()
@@ -56,7 +58,7 @@ class Blog extends CI_Controller {
 	
 	// Site AMP
 	public function post($slugPost)
-	{		
+	{					
 			// $slugPost = $_GET['title'];
 			$slug = isset($slugPost) ? $slugPost : '';
 			$id = $this->posts->detailIdBySlug($slug);
@@ -130,7 +132,7 @@ class Blog extends CI_Controller {
 				'postCategoryLink' => base_url("amp/blog/{$categoryTitle}"),
 				'postDatetime' => longdate_indo($detail->tgl_posting),
 				'postImage' => $img,
-				'postContent' => $content,
+				'postContent' => $this->converter->convert($content),
 				'postAuthor' => ucwords(decrypt_url($author)),
 				'postAuthorPic' => $photo,
 				'postView' => $count,

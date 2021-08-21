@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "70a459d150c56184f535c1ec06eccbd9",
+    "content-hash": "383db258a5e80b60db6159a2c0e27b88",
     "packages": [
         {
             "name": "chriskacerguis/codeigniter-restserver",
@@ -42,6 +42,115 @@
                 "source": "https://github.com/chriskacerguis/codeigniter-restserver/tree/master"
             },
             "time": "2019-11-12T15:39:34+00:00"
+        },
+        {
+            "name": "league/event",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/event.git",
+                "reference": "d2cc124cf9a3fab2bb4ff963307f60361ce4d119"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/event/zipball/d2cc124cf9a3fab2bb4ff963307f60361ce4d119",
+                "reference": "d2cc124cf9a3fab2bb4ff963307f60361ce4d119",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "henrikbjorn/phpspec-code-coverage": "~1.0.1",
+                "phpspec/phpspec": "^2.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Event\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Event package",
+            "keywords": [
+                "emitter",
+                "event",
+                "listener"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/event/issues",
+                "source": "https://github.com/thephpleague/event/tree/master"
+            },
+            "time": "2018-11-26T11:52:41+00:00"
+        },
+        {
+            "name": "paulredmond/html-to-amp",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paulredmond/html-to-amp.git",
+                "reference": "7062ce7d78ea066c87cc52fecd6710e0082bf80c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paulredmond/html-to-amp/zipball/7062ce7d78ea066c87cc52fecd6710e0082bf80c",
+                "reference": "7062ce7d78ea066c87cc52fecd6710e0082bf80c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "league/event": "^2.1"
+            },
+            "require-dev": {
+                "phpspec/nyan-formatters": "^1.0",
+                "phpspec/phpspec": "^2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Predmond\\HtmlToAmp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Redmond",
+                    "email": "paulrredmond@gmail.com"
+                }
+            ],
+            "description": "A PHP Library to Convert HTML to AMP HTML",
+            "keywords": [
+                "amp",
+                "amp-html",
+                "html"
+            ],
+            "support": {
+                "issues": "https://github.com/paulredmond/html-to-amp/issues",
+                "source": "https://github.com/paulredmond/html-to-amp/tree/master"
+            },
+            "time": "2017-10-08T03:26:00+00:00"
         }
     ],
     "packages-dev": [],

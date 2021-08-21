@@ -7,4 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'chriskacerguis\\RestServer\\' => array($vendorDir . '/chriskacerguis/codeigniter-restserver/src'),
+    'Predmond\\HtmlToAmp\\' => array($vendorDir . '/paulredmond/html-to-amp/src'),
+    'League\\Event\\' => array($vendorDir . '/league/event/src'),
 );
