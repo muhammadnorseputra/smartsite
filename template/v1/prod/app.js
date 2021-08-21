@@ -1316,3 +1316,17 @@ function readURL(input, $element) {
     reader.readAsDataURL(input.files[0]); // convert to base64 string
   }
 }
+
+function renderHtmlFromUrl() {
+  $template_container = "<div id=\"snippet-link\" data-url=\"".concat($url, "\"></div>");
+  $url = $("#snippet-link").attr('data-url');
+
+  if ($url != '') {
+    $.getJSON("".concat(_uri, "/frontend/v1/post_list/render_html"), {
+      url: $url
+    }, function (response) {
+      $template_inner = " \n          <b class=\"text-danger\">Baca Juga :</b> <a href=\"".concat($url, "\" target=\"self\">").concat(response.title, "</a>\n       ");
+      $template_container.html($template_inner);
+    });
+  }
+}

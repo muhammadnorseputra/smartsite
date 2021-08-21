@@ -121,6 +121,13 @@ class Post_list extends CI_Controller
 
         $this->load->view('Frontend/v1/layout/wrapper', $data, false);
     }
+    
+    public function render_html()
+    {
+        $url = $this->input->get('url');
+        $data = getSiteOG($url);
+        echo json_encode($data);
+    }
 }
 
 /* End of file Post_list.php */

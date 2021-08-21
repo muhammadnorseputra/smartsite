@@ -214,7 +214,7 @@ $imgInfo = getimagesize(files('file_berita/'.$post_detail->img));
 					<script>
 					     (adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
-					<p class="card-text font-weight-normal"><?php echo $content; ?></p>
+					<p class="card-text font-weight-normal" id="post-content"><?php echo $content; ?></p>
 				</div>
 				<div class="card-footer bg-transparent p-2 border-bottom rounded-lg d-flex justify-content-around mb-4">
 					<div class="w-100 border-right">
