@@ -4,8 +4,11 @@ $("input[name='judul']").focus();
           form: '#f_buatjudul',
           lang: 'en',
           showErrorDialogs: true,
-          modules: 'toggleDisabled, security, html5, sanitize',
-          disabledFormFilter: 'form.toggle-disabled',
+          modules: 'security, html5, sanitize',
+          // disabledFormFilter: 'form.toggle-disabled',
+          onModulesLoaded: function() {
+	            $('#judul').restrictLength($('#maxlength'));
+	        },
           onError: function($form) {
              notif({
 							msg: "Form Error, silahkan lengkapi formulir",

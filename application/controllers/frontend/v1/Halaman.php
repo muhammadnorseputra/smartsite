@@ -338,6 +338,17 @@ class Halaman extends CI_Controller
       ];
     $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
   }
+  public function sponsor()
+  {
+    $data = [
+        'title' => 'Sponsor',
+        'isi'  => 'Frontend/v1/pages/sponsor/index',
+        'mf_beranda' => $this->mf_beranda->get_identitas(),
+        'mf_menu' => $this->mf_beranda->get_menu()
+      ];
+    $this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+  }
+
 }
 
 /* End of file Halaman.php */

@@ -42,6 +42,7 @@ function message(x,y) {
 }
 
 $(function() {
+	$("#navbar").removeClass('d-md-block').addClass('d-md-none');
 	$("form#f_post").on('submit', function(e) {
 		e.preventDefault();
 		let _this = $(this);

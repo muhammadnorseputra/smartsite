@@ -98,6 +98,7 @@ $route['halaman/(:any)/(:any)'] = 'frontend/v1/users/halaman/$1/$2';
 $route['tag/(:any)'] = 'frontend/v1/post_list/tags/$1';
 $route['k/(:any)'] = 'frontend/v1/post_list/views/$1';
 $route['koran-online'] = 'frontend/v1/halaman/koran_online';
+$route['sponsor'] = 'frontend/v1/halaman/sponsor';
 $route['b/(:any)'] = 'frontend/v1/banner/detail/$1/$2';
 $route['logout'] = 'frontend/v1/users/logout';
 

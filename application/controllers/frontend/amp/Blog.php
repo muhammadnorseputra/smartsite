@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-use Predmond\HtmlToAmp\{Environment,AmpConverter};
+
+use Predmond\HtmlToAmp\AmpConverter;
+
 class Blog extends CI_Controller {
 	function __construct()
 	{
@@ -7,8 +9,7 @@ class Blog extends CI_Controller {
         $this->load->model('model_template_v1/M_f_post', 'posts');
         $this->load->model('model_template_v1/M_f_users', 'users'); 
 		$this->site = $this->mf_beranda->get_identitas();
-		$this->env = Environment::createDefaultEnvironment();
-		$this->converter = new AmpConverter($this->env);
+		$this->converter = new AmpConverter();
 	}
 
 	public function index()

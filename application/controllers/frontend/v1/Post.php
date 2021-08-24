@@ -489,7 +489,14 @@ class Post extends CI_Controller
             $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
             $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$watchID.'&key='.$key;
             $data     = api_client($url);
-            echo json_encode($data);
+            if(count($data['items']) > 0) {
+                $json = $data;
+                $msg = true;
+            } else {
+                $json = 0;
+                $msg = false;
+            }
+            echo json_encode(['data' => $data, 'message' => $msg]);
         }
         public function update_post_youtube($publish)
         {

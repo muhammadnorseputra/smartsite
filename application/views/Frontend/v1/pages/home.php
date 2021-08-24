@@ -56,6 +56,16 @@
                     </span>
                 </div>
                 </a>
+
+                <a href="<?= base_url('sponsor'); ?>" class="btn btn-outline-light btn-light py-3 my-3 btn-block">
+                <div class="d-flex justify-content-between align-items-center text-danger">
+                    <i class="fas fa-leaf mr-3 fa-2x"></i>
+                    <span>
+                        Sponsor <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
+                </div>
+                </a>
+
                 
 
 <!--                 <a rel="noreferrer" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6" class="btn btn-outline-light btn-light py-2 mb-3 btn-block">

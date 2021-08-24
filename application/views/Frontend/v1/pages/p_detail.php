@@ -30,19 +30,28 @@ $yt_src = $yt['items'][0]['snippet']['channelTitle'];
 $yt_player = $yt['items'][0]['player']['embedHtml'];
 $yt_sumber = $yt['items'][0]['status']['license'];
 endif;
+/*Image Carosel*/
+$photo_slide = $this->post->photo_terkait($post_detail->id_berita);
+if($photo_slide->num_rows() > 0) {
+	$first_img = $this->post->photo_terkait($post_detail->id_berita, 1)->row()->photo;
+}
+
 $btn_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == 'on' ? 'btn-bookmark' : '';
 $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == 'on' ? 'fas text-primary' : 'far';
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
 $img = '<img style="object-fit: cover; min-height: 350px;" class="w-100 rounded border lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
+$imgSrc = files('file_berita/'.$post_detail->img);
 elseif($post_detail->type === 'YOUTUBE'):
 $img = $yt_player;
+$imgSrc = $yt_player;
+elseif($post_detail->type === 'SLIDE'):
+$imgSrc = img_blob($first_img);
 else:
 $img = '<img style="object-fit: cover; min-height: 350px;" class="w-100 rounded border lazy" data-src="'.img_blob($post_detail->img_blob).'" data-sizes="5x"  alt="'.$title.'"/>';
+$imgSrc = img_blob($post_detail->img_blob);
 endif;
-/*Image Carosel*/
-$photo_slide = $this->post->photo_terkait($post_detail->id_berita);
 /*Content*/
 if($post_detail->type === 'YOUTUBE'):
 $content = nl2br($yt_desc);
@@ -71,7 +80,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 // endif;
 $pubDete= new DateTime($post_detail->created_at, new DateTimeZone('Asia/Jakarta'));
 $modDete= new DateTime($post_detail->update_at, new DateTimeZone('Asia/Jakarta'));
-$imgInfo = getimagesize(files('file_berita/'.$post_detail->img));
+$imgInfo = getimagesize($imgSrc);
 ?>
 <script type="application/ld+json">
   {
@@ -101,7 +110,7 @@ $imgInfo = getimagesize(files('file_berita/'.$post_detail->img));
     },
     "image": {
       "@type": "ImageObject",
-      "url": "<?= files('file_berita/'.$post_detail->img) ?>",
+      "url": "<?= $imgSrc ?>",
       "height": <?= $imgInfo[1] ?>,
       "width": <?= $imgInfo[0] ?>
     }
@@ -128,13 +137,6 @@ $imgInfo = getimagesize(files('file_berita/'.$post_detail->img));
 		</div>
 		<div class="col-md-8 mb-5 pb-md-4 px-3 px-md-0 order-first order-md-last" id="main-content">
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
-					<nav aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
-					  <ol class="breadcrumb small">
-					    <li class="breadcrumb-item"><a href="<?= base_url("beranda") ?>">Home</a></li>
-					    <li class="breadcrumb-item"><a rel="noindex, nofollow" href="<?= base_url("blog") ?>">Blog</a></li>
-					    <li class="breadcrumb-item active text-truncate" aria-current="page"><?= $post_detail->judul ?></li>
-					  </ol>
-					</nav>
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1><?php echo $post_detail->judul; ?></h1>
 					<div class="d-flex justify-content-between align-items-center mb-3">
@@ -153,6 +155,12 @@ $imgInfo = getimagesize(files('file_berita/'.$post_detail->img));
 							</div>
 						</span>
 					</div>
+					<nav aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
+					  <ol class="breadcrumb small">
+					    <li class="breadcrumb-item"><a href="<?= base_url("beranda") ?>">Home</a></li>
+					    <li class="breadcrumb-item active text-truncate" aria-current="page"><?= $post_detail->judul ?></li>
+					  </ol>
+					</nav>
 					<div class="px-0 media_youtube">
 						<?php if($post_detail->type === 'SLIDE'): ?>
 						<div id="carouselExampleIndicators" class="carousel slide shadow-lg" data-ride="carousel">
@@ -161,10 +169,10 @@ $imgInfo = getimagesize(files('file_berita/'.$post_detail->img));
 								<li data-target="#carouselExampleIndicators" data-slide-to="<?= $key ?>" class="<?= $active ?>"></li>
 								<?php endforeach; ?>
 							</ol>
-							<div class="carousel-inner">
+							<div class="carousel-inner rounded">
 								<?php foreach($photo_slide->result() as $key => $value): $active = ($key == 0) ? 'active' : ''; ?>
 								<div class="carousel-item <?= $active ?> text-center">
-									<img class="img-responsive w-100 lazy" data-src="<?= img_blob($value->photo) ?>" alt="<?= $value->keterangan ?>" style="height:380px; object-fit: contain;">
+									<img class="img-responsive w-100 lazy rounded" data-src="<?= img_blob($value->photo) ?>" alt="<?= $value->keterangan ?>" style="min-height: 250px;max-height:380px; object-fit: contain;">
 									<div class="carousel-caption">
 										<h5 class="d-none d-md-block"><?= ucwords(substr($value->judul, 0, strrpos($value->judul, '.'))) ?></h5>
 										<p class="small d-block d-md-none"><?= ucwords(substr($value->judul, 0, strrpos($value->judul, '.'))) ?></p>

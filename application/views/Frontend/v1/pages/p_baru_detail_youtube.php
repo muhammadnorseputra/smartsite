@@ -1,12 +1,13 @@
-<section class="mt-md-5">
-	<div class="container shadow-sm pt-3 pt-md-0">
+<section>
+	<div class="container shadow-sm pt-3 bg-white">
 		<?= form_open(base_url('frontend/v1/post/update_post_youtube/1'), ['id' => 'f_post'], ['id_berita' => $post->id_berita]) ?>
 		<div id="title" class="sr-only"><?= $post->judul ?></div>
 		<div class="row">
-			<div class="col-md-8 mt-md-5">
+			<div class="col-md-8">
 				<div class="btn-group mr-2 mt-md-0 mt-3" role="group" aria-label="button">
-				    <button type="button" class="btn btn-dark" disabled>Kategori</button>
-				    <button type="button" class="btn btn-default">#<?= $this->postlist->get_namakategori($post->fid_kategori) ?></button>
+				    <button type="button" onclick="window.history.back(-1)" class="btn btn-light"><i class="fas fa-arrow-left"></i></button>
+				    <button type="button" class="btn btn-light" disabled>Kategori</button>
+				    <button type="button" class="btn btn-light" disabled>#<?= $this->postlist->get_namakategori($post->fid_kategori) ?></button>
 				  </div>
 				<div class="d-flex my-3">
 					<div class="w-100">

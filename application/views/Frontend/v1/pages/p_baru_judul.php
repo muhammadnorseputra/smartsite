@@ -9,7 +9,7 @@
 				</div>
 			</div>
 			<div class="col-md-8 mt-md-5">
-				<?= form_open(base_url('frontend/v1/post/baru_detail'), ['autocomplete' => 'off', 'class' => 'toggle-disabled form_horizontal', 'id' => 'f_buatjudul']) ?>
+				<?= form_open(base_url('frontend/v1/post/baru_detail'), ['autocomplete' => 'off', 'class' => ' form_horizontal', 'id' => 'f_buatjudul']) ?>
 				<div class="card bg-white border-0">
 					<div class="card-header rounded border-0 shadow-sm d-flex justify-content-between">
 						<div class="font-weight-bold text-uppercase">buat postingan baru</div>
@@ -17,8 +17,17 @@
 					</div>
 					<div class="card-body">
 						<div class="form-group">
-							<input type="text" data-validation-event="keyup" data-validation="required,length,alphanumeric" data-validation-length="min5" data-validation-allowing=". _'-,!()" data-sanitize="capitalize" name="judul" class="form-control form-control-lg" id="judul" onchange="slug()" onkeyup="slug()" aria-describedby="judulBlockHelp" placeholder="Masukan judul postingan disini...">
-							<small id="judulBlockHelp" class="form-text my-2"><i>Slug:</i> <span class="text-muted" id="judul_slug"></span></small>
+							<input type="text" 
+							data-validation-event="keyup" 
+							data-validation="required|length|alphanumeric" 
+							data-validation-length="min5" 
+							data-validation-allowing=". _'-,!()" 
+							data-sanitize="capitalize"
+							name="judul" class="form-control form-control-lg" id="judul" onchange="slug()" onkeyup="slug()" aria-describedby="judulBlockHelp" placeholder="Masukan judul postingan disini...">
+							<div class="d-flex justify-content-between align-items-center">
+								<small id="judulBlockHelp" class="form-text my-2"><i>Slug:</i> <span class="text-muted" id="judul_slug"></span></small>
+								<span class="small text-secondary">Maks (<span id="maxlength">75</span> karakter tersisa)</span>
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="typepost" class="text-danger font-weight-bold">Type Post</label>
@@ -54,7 +63,6 @@
 						</div>
 						<button type="submit" class="btn mt-3 rounded btn-primary"><i class="fas fa-save mx-2"></i> Lanjutkan <i class="fas fa-arrow-right ml-2"></i></button>
 					</div>
-					<div class="devider-line d-none d-md-block d-lg-block" style="height:55px;"></div>
 				</div>
 				<?= form_close() ?>
 			</div>
