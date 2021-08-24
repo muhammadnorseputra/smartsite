@@ -132,21 +132,18 @@
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 400px; max-height: 400px; overflow-y: auto;">
 						<div class="d-flex flex-lg-column justify-content-start align-items-center ">
 							<a rel="noreferrer" target="_blank" href="https://ekinerja.bkppd-balangankab.info/" class="p-4">
-							<?php echo '<img class="rounded rounded" width="120"  height="100" style="object-fit:cover;" src="'.base_url('assets/images/logo-ekinerja.png').'" alt="e-Kinerja"/>' ; ?>
 							<b class="font-weight-bold text-dark">e-Kinerja</b>
 							<p class="text-muted small text-reset">
 								Mengukur dan memantau kinerja PNS secara periodic, sebagai salah satu data acuan pemberian tunjangan kinerja yang  diterima pegawai
 							</p>
 							</a>
 							<a  rel="noreferrer" target="_blank" href="http://silka.bkppd-balangankab.info/" class="p-4">
-										<?php echo '<img class="rounded rounded" width="120" height="100" style="object-fit:cover;" src="'.base_url('assets/images/logo-silka.png').'" alt="SILKa Online"/>'; ?>
 										<b class="font-weight-bold text-dark">SILKa Online</b>
 										<p class="text-muted small">
 											SILKa Online (Sistem Informasi Layanan Kepegawaian) pengelolaan data kepegawaian kabupaten balangan
 										</p>
 							</a>
 							<a  rel="noreferrer" target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4">
-										<?php echo '<img class="rounded rounded" width="120" height="100" style="object-fit:cover;" src="'.base_url('assets/images/logo-eprilaku.png').'" alt="e-Prilaku"/>'; ?>
 										<b class="font-weight-bold text-dark">e-Prilaku (360)</b>
 										<p class="text-muted small">
 											Aplikasi untuk Menilai dan Mengukur Perilaku yang dinilai oleh Atasan, Teman/Peer dan Bawahan (360 Derajat) dengan menggunakan survei tertutup sehingga lebih objektif.
