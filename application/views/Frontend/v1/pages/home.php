@@ -8,6 +8,20 @@
                 <div>
                     <div class="d-flex align-items-center bg-success py-4 px-md-5 px-0 rounded">
                         <div class="col-12 col-md-3 d-none d-md-block d-lg-block">
+                            <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/illustration_hero_banner.svg') ?>" alt="GPR (Government Public Relation)">
+                        </div>
+                        <div class="col-12 col-md-9 text-white">
+                            <h1>SKM (Survei Kepuasan Masyarakat)</h1>
+                            <p>
+                                Survei Kepuasan Masyarakat (SKM) adalah data dan informasi tentang tingkat kepuasan masyarakat yang diperoleh dari hasil pengukuran secara kuantitatif dan kualitatif atas pendapat masyarakat dalam memperoleh pelayanan dari aparatur penyelenggara pelayanan publik dengan membandingkan antara harapan dan kebutuhannya.
+                            </p>
+                            <a href="<?= base_url('skm') ?>" class="btn btn-lg btn-info">Isi Survei Sekarang <i class="fas fa-vote-yea ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex align-items-center bg-info py-4 px-md-5 px-0 rounded">
+                        <div class="col-12 col-md-3 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/gpr.svg') ?>" alt="GPR (Government Public Relation)">
                         </div>
                         <div class="col-12 col-md-9 text-white">

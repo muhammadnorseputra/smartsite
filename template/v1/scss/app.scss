@@ -571,6 +571,19 @@ h5.title-sidebar {
 	transition: all linear .4s;
 }
 
+.slick-arrow{
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+  z-index: 999;
+}
+button.prev-arrow{
+  left: -10px;
+}
+button.next-arrow{
+  right: -10px;
+ }
+
 /* Warna Gradient */
 // .gradient-primary {
 // 	border: 0;
