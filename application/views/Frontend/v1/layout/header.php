@@ -127,7 +127,7 @@
 				<?php endforeach; ?>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle px-3 mr-md-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Apps
+						Produk
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 400px; max-height: 400px; overflow-y: auto;">
 						<div class="d-flex flex-lg-column justify-content-start align-items-center ">
