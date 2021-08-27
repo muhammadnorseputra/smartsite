@@ -20,6 +20,35 @@ $(document).ready(function() {
               }
         ]
     });
+    $('.grafis-app-slick').slick({
+        autoplay: true,
+        infinite: false,
+        dots: false,
+        autoplaySpeed: 8000,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '0px',
+        focusOnSelect: true,
+        // fade: true,
+        // cssEase: 'linear',
+        arrows: true,
+        prevArrow: '<button class="slide-arrow prev-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-left"></button>',
+        nextArrow: '<button class="slide-arrow next-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-right"></button>',
+        pauseOnHover: true,
+        adaptiveHeight: false,
+        responsive: [
+                {
+                  breakpoint: 480,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  settings: {
+                    arrows: false,
+                  }
+              }
+        ]
+    });
+
     $('.album-slick').slick({
         autoplay: true,
         infinite: true,
