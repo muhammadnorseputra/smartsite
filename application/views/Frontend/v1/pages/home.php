@@ -85,7 +85,7 @@
                     ?>
                     <div>
                             <div class="card bg-light text-white rounded-lg mb-2">
-                                <img class="lazy card-img" height="410" style="object-fit:cover;" alt="<?= $no ?>" data-src="<?= files('file_banner/'.$b->gambar) ?>">
+                                <img class="lazy card-img" height="340" style="object-fit:cover;" alt="<?= $no ?>" data-src="<?= files('file_banner/'.$b->gambar) ?>">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
                                     <div class="main-body align-self-end">
                                         <a href="<?= $b->path ?>" id="xbanner-<?= $no ?>" data-title="<?= $b->judul ?>" data-lightbox="BannerAside" style="text-shadow: 0.3px 1px white;">

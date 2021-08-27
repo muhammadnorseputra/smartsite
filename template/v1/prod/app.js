@@ -967,7 +967,7 @@ $(document).ready(function () {
     slidesToShow: 4,
     slidesToScroll: 1,
     centerMode: false,
-    centerPadding: '0px',
+    centerPadding: '10px',
     focusOnSelect: true,
     // fade: true,
     // cssEase: 'linear',
@@ -979,7 +979,7 @@ $(document).ready(function () {
     responsive: [{
       breakpoint: 480,
       slidesToShow: 1,
-      slidesToScroll: 1,
+      focusOnSelect: false,
       settings: {
         arrows: false
       }
