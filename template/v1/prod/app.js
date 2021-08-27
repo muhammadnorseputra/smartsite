@@ -961,7 +961,7 @@ $(document).ready(function () {
   });
   $('.grafis-app-slick').slick({
     autoplay: true,
-    infinite: true,
+    infinite: false,
     dots: false,
     autoplaySpeed: 8000,
     slidesToShow: 4,
