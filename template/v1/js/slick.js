@@ -40,10 +40,10 @@ $(document).ready(function() {
         responsive: [
                 {
                   breakpoint: 480,
-                  slidesToShow: 1,
-                  focusOnSelect: false,
                   settings: {
+                    focusOnSelect: false,
                     arrows: false,
+                    slidesToShow: 1
                   }
               }
         ]

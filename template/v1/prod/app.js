@@ -978,10 +978,10 @@ $(document).ready(function () {
     adaptiveHeight: false,
     responsive: [{
       breakpoint: 480,
-      slidesToShow: 1,
-      focusOnSelect: false,
       settings: {
-        arrows: false
+        focusOnSelect: false,
+        arrows: false,
+        slidesToShow: 1
       }
     }]
   });

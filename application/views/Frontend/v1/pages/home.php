@@ -83,7 +83,7 @@
                             $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
                         }
                     ?>
-                    <div>
+                    <div class="px-3">
                             <div class="card bg-light text-white rounded-lg mb-2">
                                 <img class="lazy card-img" height="340" style="object-fit:cover;" alt="<?= $no ?>" data-src="<?= files('file_banner/'.$b->gambar) ?>">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -96,7 +96,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <?= $b->judul ?>
                             <div class="d-flex justify-content-start align-items-center">
                                 <span class="mr-2">
                                     <img style="object-fit:cover; object-position:top;" src="<?= $gravatar ?>" alt="Photo Userportal" width="23" height="23" class="rounded-circle border-primary bg-white">
@@ -104,21 +103,21 @@
                                 <span class="small text-secondary mt-1">
                                     <?= ucwords($namapanggilan) ?>
                                 </span>
-                            </div>
-                            
+                            </div>            
+                            <?= $b->judul ?>
                         
                     </div>
                     <?php $no++; endforeach; ?>
-                    <div>
-                        <a href="<?= base_url('bannerlist') ?>" class=" h-100">
-                            <div class="d-flex flex-column justify-content-center">
-                                <div class="text-center font-weight-bold">
-                                    <i class="fas fa-chevron-right mb-2"></i> <br>
-                                    InfoGrafik Lainnya
-                                </div>
+                    
+                    <a href="<?= base_url('bannerlist') ?>">
+                        <div class="d-flex flex-column justify-content-center h-100">
+                            <div class="text-center font-weight-bold">
+                                <i class="fas fa-chevron-right mb-2"></i> <br>
+                                Grafis Lainnya
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
+                
                 </div> 
             </div>
         </div>
