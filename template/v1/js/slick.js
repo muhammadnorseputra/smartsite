@@ -43,6 +43,9 @@ $(document).ready(function() {
                   settings: {
                     focusOnSelect: false,
                     arrows: false,
+                    centerMode: false,
+                    slidesToScroll: 1,
+                    centerPadding: '20px',
                     slidesToShow: 1
                   }
               }
