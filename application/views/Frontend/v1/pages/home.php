@@ -59,7 +59,7 @@
         <div class="row d-flex justify-content-around">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-4 mt-md-0">
                 <div id="sidebar">
-                
+                <!-- 
                 <a href="https://www.buymeacoffee.com/putrabungsu6"><img src="https://img.buymeacoffee.com/button-api/?text=Donasi coffee untuk dev&emoji=&slug=putrabungsu6&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" class="w-100"></a>
 
                 <a href="<?= base_url('koran-online'); ?>" class="btn btn-outline-light btn-light py-3 my-3 btn-block">
@@ -78,7 +78,7 @@
                         Sponsor <i class="fas fa-arrow-right ml-2"></i>
                     </span>
                 </div>
-                </a>
+                </a> -->
 
                 
 
