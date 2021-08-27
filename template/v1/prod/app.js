@@ -980,6 +980,7 @@ $(document).ready(function () {
       breakpoint: 480,
       settings: {
         centerMode: true,
+        arrows: false,
         centerPadding: '60px',
         slidesToShow: 1
       }
