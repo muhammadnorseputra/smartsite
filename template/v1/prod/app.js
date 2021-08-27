@@ -961,7 +961,7 @@ $(document).ready(function () {
   });
   $('.grafis-app-slick').slick({
     autoplay: true,
-    infinite: false,
+    infinite: true,
     dots: false,
     autoplaySpeed: 8000,
     slidesToShow: 4,
@@ -980,7 +980,7 @@ $(document).ready(function () {
       breakpoint: 480,
       settings: {
         focusOnSelect: false,
-        arrows: false,
+        arrows: true,
         centerMode: false,
         slidesToScroll: 1,
         centerPadding: '20px',

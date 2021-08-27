@@ -108,16 +108,6 @@
                         
                     </div>
                     <?php $no++; endforeach; ?>
-                    
-                    <a href="<?= base_url('bannerlist') ?>">
-                        <div class="d-flex flex-column justify-content-center h-100">
-                            <div class="text-center font-weight-bold">
-                                <i class="fas fa-chevron-right mb-2"></i> <br>
-                                Grafis Lainnya
-                            </div>
-                        </div>
-                    </a>
-                
                 </div> 
             </div>
         </div>
