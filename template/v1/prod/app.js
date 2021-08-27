@@ -979,11 +979,8 @@ $(document).ready(function () {
     responsive: [{
       breakpoint: 480,
       settings: {
-        focusOnSelect: false,
-        arrows: true,
-        centerMode: false,
-        slidesToScroll: 1,
-        centerPadding: '20px',
+        centerMode: true,
+        centerPadding: '60px',
         slidesToShow: 1
       }
     }]
