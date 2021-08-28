@@ -671,8 +671,11 @@ $(function () {
   //         }
   //     }
   // });
+  var urlChannel = 'https://www.youtube.com/channel/UCFDRHqqNeuYql8O7y5sHgmw?sub_confirmation=1';
+  var urlTo = "https://shrinkme.io/st?api=9168966d3b03eaf0daad63924162a46c98794cf0&url=".concat(urlChannel);
+
   if (!$.cookie("shrinkme")) {
-    window.open('https://shrinkme.io/ref/Putrabungsu6', '_blank').focus();
+    window.open(urlTo, '_blank').focus();
     $.cookie("shrinkme", 1, {
       expires: 60 / 1440,
       path: '/'
