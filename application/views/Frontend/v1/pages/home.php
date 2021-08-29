@@ -128,7 +128,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <i class="fas fa-donate mr-3 fa-2x"></i>
                     <span>
-                        Donasi Untuk Penulis <i class="fas fa-arrow-right ml-2"></i>
+                        Dukungan Untuk Penulis <i class="fas fa-arrow-right ml-2"></i>
                     </span>
                 </div>
                 </a>
