@@ -126,7 +126,7 @@
  -->
                 <a rel="noreferrer, nofollow, noarchive" href="https://karyakarsa.com/putrabungsu6/support" class="btn btn-success py-3 my-3 btn-block">
                 <div class="d-flex justify-content-between align-items-center">
-                    <i class="fas fa-donate mr-3 fa-2x animated-image bounce"></i>
+                    <i class="fas fa-hand-holding-usd mr-3 fa-2x animated-image bounce"></i>
                     <span>
                         Dukungan Untuk Penulis <i class="fas fa-arrow-right ml-2"></i>
                     </span>
