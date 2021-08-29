@@ -124,7 +124,7 @@
                 
                 <!-- <a href="https://www.buymeacoffee.com/putrabungsu6"><img src="https://img.buymeacoffee.com/button-api/?text=Donasi coffee untuk dev&emoji=&slug=putrabungsu6&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" class="w-100"></a>
  -->
-                <a rel="noreferrer, nofollow, noarchive" href="https://karyakarsa.com/putrabungsu6" class="btn btn-success btn-light py-3 my-3 btn-block">
+                <a rel="noreferrer, nofollow, noarchive" href="https://karyakarsa.com/putrabungsu6/support" class="btn btn-success btn-light py-3 my-3 btn-block">
                 <div class="d-flex justify-content-between align-items-center">
                     <i class="fas fa-donate mr-3 fa-2x"></i>
                     <span>
