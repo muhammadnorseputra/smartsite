@@ -375,4 +375,5 @@ $imgInfo = getimagesize($imgSrc);
 	</div>
 </div>
 </section>
+<script async="async" data-cfasync="false" src="//upgulpinon.com/1?z=4503431"></script>
 <!--<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>-->
