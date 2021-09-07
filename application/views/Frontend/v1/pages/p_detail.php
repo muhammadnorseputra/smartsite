@@ -123,6 +123,8 @@ $imgInfo = getimagesize($imgSrc);
 <div class="container">
 	<div class="row mt-md-5">
 		<div class="col-md-2 order-md-first order-lg-last mt-md-3">
+			<script async="async" data-cfasync="false" src="//overlapflintsidenote.com/3e49b42e164285fcede3b70e3a97507a/invoke.js"></script>
+<div id="container-3e49b42e164285fcede3b70e3a97507a"></div>
 			<!-- <div id="sidebar"> -->
 <!-- 				<ins class="adsbygoogle"
 			     style="display:block"
@@ -348,7 +350,17 @@ $imgInfo = getimagesize($imgSrc);
 			
 		</div>
 		<div class="col-md-2 order-md-last order-lg-last">
-			<div id="sidebar">
+			<!-- <div id="sidebar"> -->
+				<script type="text/javascript">
+					atOptions = {
+						'key' : 'c751086761f46fec2b8094f16fffab8e',
+						'format' : 'iframe',
+						'height' : 300,
+						'width' : 360,
+						'params' : {}
+					};
+					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://overlapflintsidenote.com/c751086761f46fec2b8094f16fffab8e/invoke.js"></scr' + 'ipt>');
+				</script>
 				<!-- <ins class="adsbygoogle"
 			     style="display:block"
 			     data-ad-client="ca-pub-1099792537777374"
@@ -358,7 +370,7 @@ $imgInfo = getimagesize($imgSrc);
 			     <script>
 				     (adsbygoogle = window.adsbygoogle || []).push({});
 				</script> -->
-		     </div>
+		     <!-- </div> -->
 		</div>
 	</div>
 </div>

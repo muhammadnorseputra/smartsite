@@ -29,6 +29,7 @@
         ?>
         
         <?= $h->content ?>
+
 <!--         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
         <ins class="adsbygoogle"
              style="display:block"
@@ -49,7 +50,7 @@
         </p>
         <?php endif; ?>
       </div>
-      <div class="col-md-4 rounded shadow-sm">
+      <div class="col-md-4 rounded">
       <?php
       if(!empty($h->file)):
       $path = !empty($h->filename) ? $h->filename : '';
@@ -63,6 +64,8 @@
         <img style="object-fit:cotain;" data-src="<?= img_blob($h->file) ?>" width="100%" height="350" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded lazy">
         <?php endif; ?>
       <?php endif; ?>
+      <script async="async" data-cfasync="false" src="//overlapflintsidenote.com/3e49b42e164285fcede3b70e3a97507a/invoke.js"></script>
+<div id="container-3e49b42e164285fcede3b70e3a97507a"></div>
       <!-- <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-1099792537777374"
