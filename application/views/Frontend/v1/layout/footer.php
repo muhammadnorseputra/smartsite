@@ -128,6 +128,8 @@
 </section>
 </footer>
 <!-- jQuery -->
+
+<script src="https://phicmune.net/pfe/current/tag.min.js?z=4503415" data-cfasync="false" async></script>
 <script defer="defer" src="<?= base_url('template/v1/prod/vendor-min.js'); ?>" crossorigin="anonymous"></script>
 <script defer="defer" src="<?= base_url('template/v1/prod/app-min.js'); ?>" crossorigin="anonymous"></script>
 <script>

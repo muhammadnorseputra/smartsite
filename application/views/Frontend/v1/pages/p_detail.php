@@ -375,5 +375,4 @@ $imgInfo = getimagesize($imgSrc);
 	</div>
 </div>
 </section>
-<script src="https://phicmune.net/pfe/current/tag.min.js?z=4503415" data-cfasync="false" async></script>
 <!--<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>-->
