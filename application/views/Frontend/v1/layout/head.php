@@ -10,6 +10,7 @@
     <link rel="shortcut icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />
     <link rel="manifest" href="<?= base_url('manifest.json') ?>" crossorigin="anonymous">
     <!-- browser color -->
+    <meta name="propeller" content="d4851115f7a03574554b44fc26275e93">
     <meta name="theme-color" content="#01877c">
     <meta name="msapplication-navbutton-color" content="#01877c">
     <meta name="apple-mobile-web-app-capable" content="yes">
