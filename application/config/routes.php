@@ -116,6 +116,8 @@ $route['testing'] = 'frontend/v1/beranda/testing';
 $route['d/(:any)/(:any)'] = 'frontend/v1/download/d/$1/$2';
 $route['leave'] = 'frontend/v1/api/leave';
 $route['go/(:any)'] = 'frontend/v1/download/openurl/$1';
+$route['adsense'] = 'frontend/v1/adsense';
+$route['adsense/(:any)/(:any)'] = 'frontend/v1/adsense/page/$1/$2';
 
 // SKM
 $route['skm'] = 'frontend/skm/skmIndex';

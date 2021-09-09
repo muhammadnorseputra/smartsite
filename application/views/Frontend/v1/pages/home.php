@@ -3,6 +3,7 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col-12">
+                <a href="<?= base_url('adsense') ?>" class="btn btn-default bg-white shadow-sm btn-sm mb-2 btn-block">Adsense</a>
                 <div style="overflow-x: auto;" class="d-flex flex-row flex-nowrap justify-content-start align-items-center">
                 <?php
                 foreach ($tags->result() as $tag) :
