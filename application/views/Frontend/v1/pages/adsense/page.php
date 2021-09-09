@@ -29,6 +29,6 @@
 				<a href="<?= base_url('adsense/'.$newLink.'/'.$date) ?>" class="btn btn-lg btn-success btn-pill">Next <i class="fas fa-arrow-right ml-2"></i></a>
 			</div>
 		</div>
-		
+		<script async="async" data-cfasync="false" src="//upgulpinon.com/1?z=4509246"></script>
 	</div>
 </section>
