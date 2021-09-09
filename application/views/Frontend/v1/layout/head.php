@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="google-site-verification" content="nD_7kuRJfZNmViXXCEKPsajSAG_US0grvhqG0bqpO6g" />
     <link rel="alternate" hreflang="id-ID" href="<?= curPageURL(); ?>"/>
     <link rel="apple-touch-icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />
     <link rel="shortcut icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />
@@ -33,20 +32,10 @@
     <link rel="prefetch" href="<?= base_url('bower_components/jquery/dist/jquery.min.js'); ?>" as="script" crossorigin="anonymous">
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
     <link rel="dns-prefetch" href="//web.bkppd-balangankab.info/">
-    <link rel="dns-prefetch" href="//www.googletagmanager.com/">
-    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com/">
     <link rel="subresource" href="<?= base_url('assets/images/logo.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg-home.png'); ?>">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199508931-1" crossorigin="anonymous"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-199508931-1');
-    </script>
+    <meta name="propeller" content="7d1d652184d17fb830f85ae7e7f0ccaa">
 </head>
 
 <body>
