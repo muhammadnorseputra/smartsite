@@ -15,7 +15,6 @@
 </section>
 </footer>
 <!-- jQuery -->
-<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://iclickcdn.com/tag.min.js',4509058,document.body||document.documentElement)</script>
 <script defer="defer" src="<?= base_url('template/v1/prod/vendor-min.js'); ?>" crossorigin="anonymous"></script>
 <script defer="defer" src="<?= base_url('template/v1/prod/app-min.js'); ?>" crossorigin="anonymous"></script>
 <script>
@@ -24,5 +23,7 @@
     /*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
     !function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(a){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
   </script>
+
+<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://iclickcdn.com/tag.min.js',4509058,document.body||document.documentElement)</script>
 </body>
 </html>
