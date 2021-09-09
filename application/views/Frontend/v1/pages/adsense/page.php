@@ -14,6 +14,12 @@
 <section class="bg-light">
 	<div class="container">
 		<div class="row">
+			<div class="col-12">
+				<script async="async" data-cfasync="false" src="//overlapflintsidenote.com/e79bcc01db580161fb737570874f9cb0/invoke.js"></script>
+				<div id="container-e79bcc01db580161fb737570874f9cb0"></div>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-12 py-3">
 				<?php  
 					$start = decrypt_url($this->uri->segment(2));
@@ -23,5 +29,6 @@
 				<a href="<?= base_url('adsense/'.$newLink.'/'.$date) ?>" class="btn btn-lg btn-success btn-pill">Next <i class="fas fa-arrow-right ml-2"></i></a>
 			</div>
 		</div>
+		
 	</div>
 </section>

@@ -22,5 +22,19 @@
 				<a href="<?= base_url('adsense/'.$start.'/'.$date) ?>" class="btn btn-lg btn-danger btn-pill">Start Earn <i class="fas fa-arrow-right ml-2"></i></a>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-12">
+				<script type="text/javascript">
+	atOptions = {
+		'key' : '225d5e3d6cd480e367b75cbbdf473a39',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://overlapflintsidenote.com/225d5e3d6cd480e367b75cbbdf473a39/invoke.js"></scr' + 'ipt>');
+</script>
+			</div>
+		</div>
 	</div>
 </section>
