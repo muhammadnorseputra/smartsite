@@ -49,9 +49,6 @@
 						<div class="small">Total Pengunjung</div>
 						<h3><span class="text-warning"><?= nominal($this->mf_visitor->visitor_count()['jml_total_pengunjung'])  ?></span> <span class="d-none d-md-block">Orang</span></h3>
 					</div>
-					<div>
-						<?= $this->mf_visitor->visitor_count()['totalhits'] ?>
-					</div>
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-6">

@@ -38,7 +38,7 @@ class M_f_visitor extends CI_Model
         $bataswaktu = time() - 100;
         $pengunjungonline  = $this->db->query("SELECT * FROM public_visitor WHERE online > '".$bataswaktu."'")->num_rows(); // hitung pengunjung online
   
-        $data = ['jml_hariini' => $pengunjunghariini, 'jml_total_pengunjung' => $totalpengunjung, 'jml_online' => $pengunjungonline, 'totalhits' => $s_query->row()->hits];
+        $data = ['jml_hariini' => $pengunjunghariini, 'jml_total_pengunjung' => $totalpengunjung, 'jml_online' => $pengunjungonline];
         return $data;
     }
 }
