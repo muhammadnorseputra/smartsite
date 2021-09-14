@@ -72,50 +72,8 @@ if (count($pecah) > 0) {
 <?php  
 $namakategori = $this->post->kategori_byid($post_detail->fid_kategori);
 $post_list_url = base_url('k/' . url_title($namakategori));
-// $mobile = $this->agent->is_mobile();
-// if($mobile):
-	$baseUrl = base_url("amp/{$post_detail->slug}");
-// else:
-	// $baseUrl = curPageURL();
-// endif;
-$pubDete= new DateTime($post_detail->created_at, new DateTimeZone('Asia/Jakarta'));
-$modDete= new DateTime($post_detail->update_at, new DateTimeZone('Asia/Jakarta'));
-$imgInfo = getimagesize($imgSrc);
 ?>
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "NewsArticle",
-    "mainEntityOfPage": {
-    	"@type": "WebPage",
-    	"@id": "<?= $baseUrl ?>"
-    },
-    "headline": "<?= $post_detail->judul ?>",
-    "datePublished": "<?= $pubDete->format('Y-m-d H:i:sO') ?>",
-    "dateModified": "<?= $modDete->format('Y-m-d H:i:sO') ?>",
-    "description": "<?= $post_detail->deskripsi ?>",
-    "author": {
-      "@type": "Person",
-      "name": "<?= $namalengkap ?>"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "BKPPD Balangan",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "<?= assets('images/logo.png') ?>",
-        "width": 192,
-        "height": 260
-      }
-    },
-    "image": {
-      "@type": "ImageObject",
-      "url": "<?= $imgSrc ?>",
-      "height": <?= $imgInfo[1] ?>,
-      "width": <?= $imgInfo[0] ?>
-    }
-  }
-</script>
+
 
 <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script> -->
 
