@@ -5,6 +5,7 @@ class Beranda extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->library('user_agent');
         $this->load->model('model_template_v1/M_f_users', 'mf_users');
         $this->load->model('model_template_v1/M_f_post', 'post');
         $this->load->model('model_template_v1/M_f_album', 'album');
@@ -422,5 +423,23 @@ class Beranda extends CI_Controller
     }    
     public function yt_view_video($id) {
         return $this->load->view('Frontend/v1/function/yt_view_video', ['videoId' => $id]);
+    }
+    public function update_location_visitor()
+    {
+        $ip = $this->input->ip_address(); // Mendapatkan IP user
+        $date  = date("Y-m-d");
+        $lat = $this->input->post('latitude');
+        $long = $this->input->post('longitude');
+        $v_query = $this->db->query("SELECT * FROM public_visitor WHERE ip='".$ip."' AND date='".$date."'");
+        $vq = $v_query->num_rows();
+        $is_human = isset($vq)?($vq):0;
+        if($is_human == 0)
+        {
+            $msg = ['status' => false, 'pesan' => 'Not Available'];
+        } else {
+            $msg = ['status' => true, 'pesan' => $lat.','.$long];
+            $this->db->query("UPDATE public_visitor SET latitude='".$lat."', longitude='".$long."' WHERE ip='".$ip."' AND date='".$date."'");
+        }
+        echo json_encode($msg);
     }
 }
