@@ -105,7 +105,7 @@
 </div>
 <script>
 jQuery(function() {
-//JQUERY AUTOSIZE TEXTAERA
+/*JQUERY AUTOSIZE TEXTAERA*/
 autosize(jQuery('textarea'));
 });
 </script>

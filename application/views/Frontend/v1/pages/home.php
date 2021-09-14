@@ -118,7 +118,7 @@
 <section class="<?= $my ?>" id="content-page">
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
-        <div class="row">
+        <div class="row d-flex justify-content-around flex-column flex-lg-row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-4 mt-md-0">
                 <div id="sidebar">
                 
@@ -238,7 +238,6 @@
                     <button id="load_more" class="btn p-2 btn-outline-primary btn-block rounded-lg px-4"><i class="fas fa-newspaper mr-3"></i> Berita Sebelumnya</button>
                 </div>
             </div>
-            <div class="col-1 d-none d-md-block"></div>
         </div>
     </div>
 </section>

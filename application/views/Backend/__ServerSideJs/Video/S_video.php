@@ -1,5 +1,5 @@
 <script>
-	//PREVIEW UPLOAD GAMBAR
+	/*PREVIEW UPLOAD GAMBAR*/
 	let showImg = function(event) {
 		var output = document.getElementById('preview');
 		output.src = URL.createObjectURL(event.target.files[0]);
@@ -23,7 +23,7 @@
 	});
 
 	$(document).ready(function() {
-		//FORM VALIDATION
+		/*FORM VALIDATION*/
 		$('#FormVideo').validate({
 			rules: {
 				'judul': {
@@ -87,7 +87,7 @@
 					$("#imgView").html('<img src="' + result.pesan.file + '" class="img-responsive">');
 					list();
 				}
-				// showNotification(result.pesan.colmsg, result.pesan.content, 'bottom', 'center', 'animated fadeIn', 'animated fadeOut');
+				/*showNotification(result.pesan.colmsg, result.pesan.content, 'bottom', 'center', 'animated fadeIn', 'animated fadeOut');*/
 				if (result.pesan.colmsg != 'bg-red') {
 					form[0].reset();
 				}
@@ -392,15 +392,15 @@
 
 
 	function hapusvideo(id, files, jenis) {
-		// let comf = confirm('Apakah ada yakin akan menghapus Video tersebut?');
-		// if (comf == true) {
-		// 	$.post('<?= site_url("backend/module/c_video/hapusvideo/") ?>' + id + '/' + files + '/' + jenis, function (result) {
-		// 	showNotification(result.pesan.type, result.pesan.content, 'bottom', 'right', 'animated fadeIn', 'animated fadeOut');
-		// 		if (result.pesan.stsText == true) {
-		// 			listVideo();
-		// 		}
-		// 	}, 'json');
-		// }
+		/*let comf = confirm('Apakah ada yakin akan menghapus Video tersebut?');
+		if (comf == true) {
+			$.post('<?= site_url("backend/module/c_video/hapusvideo/") ?>' + id + '/' + files + '/' + jenis, function (result) {
+			showNotification(result.pesan.type, result.pesan.content, 'bottom', 'right', 'animated fadeIn', 'animated fadeOut');
+				if (result.pesan.stsText == true) {
+					listVideo();
+				}
+			}, 'json');
+		}*/
 
 		$.confirm({
 			title: 'Apakah ada yakin akan menghapus Video tersebut?',
@@ -485,9 +485,9 @@
 					$("#infoEditYoutube").html(`Last Update: @${result[0].update_by} | ${result[0].update_at}`).show();
 				}
 
-				//<iframe width="873" height="448" src="https://www.youtube.com/embed/D5KRv5GBHYQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				/*<iframe width="873" height="448" src="https://www.youtube.com/embed/D5KRv5GBHYQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/
 
-				//PUBLISH
+				/*PUBLISH*/
 				let check1 = $("#radio5");
 				let check2 = $("#radio6");
 				if (result[0].publish == 'Y') {
@@ -498,7 +498,7 @@
 					check2.prop('checked', true);
 				}
 
-				//VIDEO PILIHAN
+				/*VIDEO PILIHAN*/
 				let check3 = $("#radio7");
 				let check4 = $("#radio8");
 				if (result[0].pilihan == 'Y') {
@@ -537,7 +537,7 @@
 					$("#infoEditLocal").html(`Last Update: @${result[0].update_by} | ${result[0].update_at}`).show();
 				}
 
-				//PUBLISH
+				/*PUBLISH*/
 				let check1 = $("#radio9");
 				let check2 = $("#radio10");
 				if (result[0].publish == 'Y') {
@@ -548,7 +548,7 @@
 					check2.prop('checked', true);
 				}
 
-				//VIDEO PILIHAN
+				/*VIDEO PILIHAN*/
 				let check3 = $("#radio11");
 				let check4 = $("#radio12");
 				if (result[0].pilihan == 'Y') {
@@ -643,26 +643,26 @@
 		});
 	});
 
-	// $("[name='file_video_local']").on("", function() {
-	// 	let me = $(this);
-	// 	if(me.val() == ''){
-	// 		$("#previewVideoLocal").html('Not Selected Video');	
-	// 	} else {
-	// 		$("#previewVideoLocal").html(`<video controls="controls" class="video-responsive" width="100%" height="280" style="background:#000;">
-	// 					<source src="${me.val()}" type="video/mp4">
-	// 				</video>`);
-	// 	}
-	// });
+	/*$("[name='file_video_local']").on("", function() {
+		let me = $(this);
+		if(me.val() == ''){
+			$("#previewVideoLocal").html('Not Selected Video');	
+		} else {
+			$("#previewVideoLocal").html(`<video controls="controls" class="video-responsive" width="100%" height="280" style="background:#000;">
+						<source src="${me.val()}" type="video/mp4">
+					</video>`);
+		}
+	});*/
 
-	// function testVideoLocal() {
-	// 	let value = $("[name='file_video_local']");
-	// 	// alert(value.val());
-	// 	if(value.val() == ""){
-	// 		$("#previewVideoLocal").html('Not Selected Video');
-	// 	} else {
-	// 		$("#previewVideoLocal").html(`<video controls="controls" class="video-responsive" width="100%" height="280" style="background:#000;">
-	//  					<source src="${value.val()}" type="video/mp4">
-	//  				</video>`);
-	// 	}
-	// }
+	/*function testVideoLocal() {
+		let value = $("[name='file_video_local']");
+		// alert(value.val());
+		if(value.val() == ""){
+			$("#previewVideoLocal").html('Not Selected Video');
+		} else {
+			$("#previewVideoLocal").html(`<video controls="controls" class="video-responsive" width="100%" height="280" style="background:#000;">
+	 					<source src="${value.val()}" type="video/mp4">
+	 				</video>`);
+		}
+	}*/
 </script>
