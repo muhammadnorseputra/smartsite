@@ -35,7 +35,7 @@ class M_f_visitor extends CI_Model
          $pengunjunghariini  = $this->db->query("SELECT * FROM public_visitor WHERE date='".$date."' GROUP BY ip")->num_rows(); // Hitung jumlah pengunjung
         $dbpengunjung = $this->db->query("SELECT COUNT(hits) as hits FROM public_visitor")->row(); 
         $totalpengunjung = isset($dbpengunjung->hits)?($dbpengunjung->hits):0; // hitung total pengunjung
-        $bataswaktu = time() - 10;
+        $bataswaktu = time() - 400;
         $pengunjungonline  = $this->db->query("SELECT * FROM public_visitor WHERE online > '".$bataswaktu."'")->num_rows(); // hitung pengunjung online
   
         $data = ['jml_hariini' => $pengunjunghariini, 'jml_total_pengunjung' => $totalpengunjung, 'jml_online' => $pengunjungonline];
