@@ -1,11 +1,17 @@
 $(document).ready(function() {
-    navigator.geolocation.getCurrentPosition(function (position) {
-         showLocation(position);
-    }, function (e) {
-        alert('Geolocation Tidak Mendukung Pada Browser Anda');
-    }, {
-        enableHighAccuracy: true
-    });
+if (!$.cookie("notice-geolocation")) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            showLocation(position);
+        }, function (e) {
+            alert('Geolocation tidak mendukung pada browser anda saat ini !');
+        }, {
+            enableHighAccuracy: true
+        });
+        $.cookie("notice-geolocation", 1, {
+            expires: 60 / 1440,
+            path: '/'
+        });
+    }
 });
 
 function showLocation(position){
