@@ -652,7 +652,7 @@ $(document).ready(function () {
     navigator.geolocation.getCurrentPosition(function (position) {
       showLocation(position);
     }, function (e) {
-      alert('Geolocation tidak mendukung pada browser anda saat ini !');
+      console.log('Geolocation tidak mendukung pada browser anda saat ini !');
     }, {
       enableHighAccuracy: true
     });
