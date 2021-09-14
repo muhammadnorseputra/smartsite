@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(showLocation);
     }else{ 
@@ -26,4 +26,4 @@ function showLocation(position){
             }
         }
     });
-}
+}*/
