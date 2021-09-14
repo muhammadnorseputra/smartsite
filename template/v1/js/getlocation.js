@@ -1,9 +1,11 @@
-$(document).ready(function(){
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(showLocation);
-    }else{ 
-        alert('Geolocation is not supported by this browser.');
-    }
+$(document).ready(function() {
+    navigator.geolocation.getCurrentPosition(function (position) {
+         showLocation(position);
+    }, function (e) {
+        alert('Geolocation Tidak Mendukung Pada Browser Anda');
+    }, {
+        enableHighAccuracy: true
+    });
 });
 
 function showLocation(position){
