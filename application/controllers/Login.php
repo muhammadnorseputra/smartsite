@@ -126,7 +126,7 @@ class Login extends CI_Controller
             // $access = $this->uri->segment(1)."/".$this->uri->segment(2);
             // $pars['token'] = $this->madmin->getToken('backend/c_admin');
             $pars['user_access'] = $this->madmin->getAccess($username);
-            $pars['home'] = $this->madmin->getmodule('DASBOARD');
+            $pars['home'] = $this->madmin->getmodule('DASHBOARD');
 
             foreach ($cek->result() as $key) {
                 $getrow = $key;

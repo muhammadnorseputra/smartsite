@@ -1,9 +1,9 @@
 <script>
 $(function() {
-  // SELECT JENIS PERATURAN
+  /*SELECT JENIS PERATURAN*/
   let select_jns_peraturan = $("[name='jsnperaturan']").select2();
 
-  // INPUT TAHUN 
+  /*INPUT TAHUN */
   let dateYear = $("[name='tahun']").datepicker({
     	format: " yyyy",
     	autoclose: true,

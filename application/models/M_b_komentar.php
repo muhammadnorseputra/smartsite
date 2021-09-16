@@ -3,14 +3,15 @@
 class M_b_komentar extends CI_Model {
   
   public $table = 't_komentar as tk';
-  public $select_colums = array('tk.*','tb.judul');
-  public $order_colums = array(null,null,null, 'tk.nama_lengkap', null, null);
+  public $select_colums = array('tk.*','tu.*','tb.judul');
+  public $order_colums = array(null,null,null, 'tu.nama_lengkap', null, null);
   public $column_search = array('tb.judul');
 
   public function datatable() {
 		$this->db->select($this->select_colums);
 		$this->db->from($this->table);
-		$this->db->join('t_berita as tb', 'tk.fid_berita=tb.id_berita','left');
+    $this->db->join('t_berita as tb', 'tk.fid_berita=tb.id_berita','left');
+		$this->db->join('t_users_portal as tu', 'tk.fid_users_portal=tu.id_user_portal');
 		// if(!empty($search)){
 		// 	$this->db->like('tb.judul', $search);
 		// }

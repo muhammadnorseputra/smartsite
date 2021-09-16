@@ -115,7 +115,7 @@ h6.title-widget-popup {
         $.unblockUI();
         window.opener.loadTabsWidget();
       }, 2000);
-      // window.opener.location.reload();
+      /*window.opener.location.reload();*/
     }) ;
   });
 </script>

@@ -94,13 +94,13 @@ if ($this->session->flashdata('message') <> '') {
 			var id = $(this).attr('data-id');
 			var nama = $(this).attr('data-title');
 			var vatar = $(this).attr('data-gravatar');
-			// let conf = confirm('Apakah anda yakin akan menghapus users? '+ nama.toLowerCase());
-			// if(conf == true) {
-			// $.post('<?= base_url("backend/module/c_users/hapus_user_list/") ?>', {id: id, nama: nama, gravatar: vatar}, function(result) {
-			// dataTable.ajax.reload();
-			// showNotification(result.type, result.content, 'bottom', 'center', 'animated fadeIn', 'animated fadeOut');
-			// }, 'json');
-			// }
+			/*let conf = confirm('Apakah anda yakin akan menghapus users? '+ nama.toLowerCase());
+			if(conf == true) {
+			$.post('<?= base_url("backend/module/c_users/hapus_user_list/") ?>', {id: id, nama: nama, gravatar: vatar}, function(result) {
+			dataTable.ajax.reload();
+			showNotification(result.type, result.content, 'bottom', 'center', 'animated fadeIn', 'animated fadeOut');
+			}, 'json');
+			}*/
 
 			$.confirm({
 				title: 'Deleted User!',

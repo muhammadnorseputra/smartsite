@@ -8,7 +8,7 @@
 					</h2>
 				</div>
 				<div class="body">
-          <img src="<?= base_url('assets/images/bg/user.png') ?>" class="pull-left m-r-15 m-b-25" width="100">
+          <img src="<?= base_url('assets/images/no-profile-picture.jpg') ?>" class="pull-left m-r-15 m-b-25" width="100">
           
 					Hak akses berguna agar user yang mengakses halaman index (<code>login</code>) bisa terbaca olah sistem bahwa
 					user tersebut telah terdaftar. sistem akan memberika token acak sebagai pengganti iduser.
@@ -66,7 +66,7 @@
         },
         buttons: {
           ok: {
-            isHidden: true // initially not hidden
+            isHidden: true /*initially not hidden*/
           },
           Tutup: {
             btnClass: 'btn btn-sm btn-link',

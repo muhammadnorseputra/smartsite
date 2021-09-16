@@ -81,7 +81,7 @@
 			showNotification(response.classes, response.message, 'bottom', 'center', 'none', 'animated bounceOutDown');
 		}, 'json');
 
-		// alert($id);
+		/*alert($id);*/
 	}
 
 	function hapusWidget(id) {
@@ -92,7 +92,7 @@
 				$.showPreloader(response.msg);
 
 				setTimeout(function() {
-					$.hidePreloader(); // hide the indicator
+					$.hidePreloader(); /*// hide the indicator*/
 					$("#tabs").tabs("load", 2);
 				}, 2000);
 			}, 'json');
@@ -102,7 +102,7 @@
 	function editWidget(id) {
 		$.showIndicator();
 		setTimeout(function() {
-			$.hideIndicator(); // hide the indicator
+			$.hideIndicator(); /*// hide the indicator*/
 			window.open("<?= base_url('backend/c_pengaturan/editWidget/') ?>" + id, '_blank', 'width=500,height=600,left=420,top=50, scrollbars=no, resizable=no, fullscreen=yes,menubar=no,status=no,titlebar=no,toolbar=no', true);
 		}, 1000);
 	}

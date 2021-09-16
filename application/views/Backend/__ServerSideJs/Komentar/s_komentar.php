@@ -23,9 +23,9 @@
 		ajax: {
 			url: '<?= base_url("backend/module/c_komentar/ajax_list") ?>',
 			type: 'POST'
-			// data: function (s) {
-			// 	s.judul = jQuery("[name='search']").val()
-			// }
+			/*data: function (s) {
+				s.judul = jQuery("[name='search']").val()
+			}*/
 		},
 		columnDefs: [
       {

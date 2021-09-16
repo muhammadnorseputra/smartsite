@@ -1,7 +1,7 @@
 <script>
 
 $(function() {
-		// DATATABLE PERATURAN
+		/*DATATABLE PERATURAN*/
 		let dataTable = $('#tbl-peraturan').DataTable({
 			processing: true,
 			serverSide: true,
@@ -18,9 +18,9 @@ $(function() {
 			ajax: {
 				url: '<?= base_url("backend/module/c_peraturan/ajax_list_peraturan") ?>',
 				type: 'POST'
-				// data: function (s) {
-				// 	s.judul = jQuery("[name='search']").val()
-				// }
+				/*data: function (s) {
+					s.judul = jQuery("[name='search']").val()
+				}*/
 			},
 			columnDefs: [
 				{
@@ -71,7 +71,7 @@ $(function() {
 			}
 		});
 		
-		// TABS TABLE PERATURAN
+		/*TABS TABLE PERATURAN*/
 		$("table").on('click', '#button-del', function() {
 			let id = $(this).attr('data-id');
 			let file = $(this).attr('data-file');
@@ -108,7 +108,7 @@ $(function() {
 					title: $jdl,    
 					closeIcon: true,
 					icon: 'glyphicon glyphicon-book',
-					// content: '<iframe src="'+ $url +'" width="100%" height="400" border="1"></iframe>',
+					/*content: '<iframe src="'+ $url +'" width="100%" height="400" border="1"></iframe>',*/
 					content: '<object type="application/pdf" data="' + $url + '?#zoom=0&scrollbar=0&toolbar=0&navpanes=0" width="100%" height="450"></object>',
 					columnClass: 'col-md-12',
 					theme: 'supervan',
@@ -124,7 +124,7 @@ $(function() {
 			});
 		});
 
-    // SELECT LABEL
+    /*SELECT LABEL*/
     let select_jenis_peraturan = $("[name='fid_jenis_peraturan']").select2({
     	placeholder: {
     		id: '-1',
@@ -150,7 +150,7 @@ $(function() {
     	}
     });
 
-    // INPUT TAHUN 
+    /*INPUT TAHUN */
     let dateYear = $("[name='tahun']").datepicker({
     	format: " yyyy",
     	autoclose: true,
@@ -160,7 +160,7 @@ $(function() {
     	container: '#bs_datepicker_component_container'
     });
 
-    // FORM VALIDASI INPUT PERATURAN
+    /*FORM VALIDASI INPUT PERATURAN*/
     let validasiForm = $('#formTambahPeraturan').validate({
     focusCleanup: true,
     onsubmit: true,
@@ -196,7 +196,7 @@ $(function() {
 		}
     });
 
-		// AKSI VALID DATA 
+		/*AKSI VALID DATA */
 		$('#formTambahPeraturan').on('submit', function(event) {
 			event.preventDefault();
 			var form = $(this);
@@ -231,7 +231,7 @@ $(function() {
 			validasiForm.resetForm();
 		});
 
-		// TABS TABLE JENIS PERATURAN
+		/*TABS TABLE JENIS PERATURAN*/
 		$("#formTambahJenisPeraturan").on('submit', function(e) {
 			e.preventDefault();
 			var _frm = $(this);
@@ -276,9 +276,9 @@ $(function() {
 					type: "input",
 					showCancelButton: true,
 					closeOnConfirm: false,
-					// animation: "slide-from-top",
+					/*animation: "slide-from-top",*/
 					inputValue: titletext,
-					// inputPlaceholder: "Rename " + titletext.toLowerCase()
+					/*inputPlaceholder: "Rename " + titletext.toLowerCase()*/
 			}, function (inputValue) {
 					if (inputValue === false) return false;
 					if (inputValue === "") {
@@ -291,7 +291,7 @@ $(function() {
 			});
 		});
 
-		// DATATABLE NAMA JENIS PERATURAN
+		/*DATATABLE NAMA JENIS PERATURAN*/
 		let dataTableJenis = $('#tbl-jenis-peraturan').DataTable({
 			processing: true,
 			serverSide: true,

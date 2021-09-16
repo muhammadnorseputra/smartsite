@@ -116,22 +116,22 @@ $(function() {
       success: function(res)
       {
         if(res.msgdata == 1){
-        //   ControlMsg.html('<div class="alert bg-pink alert-dismissible" role="alert">'+
-        //       '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>'+
-        //       '<em class="material-icons pull-left m-r-10">warning</em> Responses Server Gagal'+
-        //     '</div>');
-        // ControlMsg.fadeIn();
-        // setTimeout(function(){ControlMsg.fadeOut('slow')}, 2500);
+        /*  ControlMsg.html('<div class="alert bg-pink alert-dismissible" role="alert">'+
+              '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>'+
+              '<em class="material-icons pull-left m-r-10">warning</em> Responses Server Gagal'+
+            '</div>');
+        ControlMsg.fadeIn();
+        setTimeout(function(){ControlMsg.fadeOut('slow')}, 2500);*/
         
         showNotification('bg-red', 'Responses Server Gagal', 'bottom', 'left', 'none', 'none');
 
         }else if(res.msgdata == 0){
-        //   ControlMsg.html('<div class="alert bg-green alert-dismissible" role="alert">'+
-        //       '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>'+
-        //       '<em class="glyphicon glyphicon-ok-sign"></em> Success Data Telah Ditambahkan'+
-        //     '</div>');
-        // ControlMsg.fadeIn();
-        // setTimeout(function(){ControlMsg.fadeOut('slow')}, 2500);
+        /*  ControlMsg.html('<div class="alert bg-green alert-dismissible" role="alert">'+
+              '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>'+
+              '<em class="glyphicon glyphicon-ok-sign"></em> Success Data Telah Ditambahkan'+
+            '</div>');
+        ControlMsg.fadeIn();
+        setTimeout(function(){ControlMsg.fadeOut('slow')}, 2500);*/
         showNotification('bg-black', 'Success Data Telah Ditambahkan', 'bottom', 'left', 'none', 'animated fadeOutDown');        
         me[0].reset();
 		$('[name="submainmenu"]').selectpicker('refresh');
@@ -162,8 +162,8 @@ $(function() {
         }
         $("#editordersub").val(res.data[0].order);
         $("#editidsub").val(res.data[0].idsub);
-        //$("#editnamamodule").val(res.data[0].fid_module);
-        //$("[name='editidmainmenu']").val(res.data[0].idmain);
+        /*$("#editnamamodule").val(res.data[0].fid_module);
+        $("[name='editidmainmenu']").val(res.data[0].idmain);*/
 		$('[name="editidmainmenu"]').selectpicker('val', res.data[0].idmain);
     $('[name="editnamamodule"]').selectpicker('val', res.data[0].fid_module);
 		$('[name="editparentsubmenu"]').selectpicker('val', res.data[0].fid_idsub);
@@ -186,7 +186,7 @@ jQuery("form#FormUpdateSubMenu").on('submit', function(e) {
     e.preventDefault();
     var form = jQuery(this);
     jQuery.post(form.attr('action'), form.serialize(), function(responses) {
-        //swal(responses.message.type, responses.message.content, responses.message.type);
+        /*swal(responses.message.type, responses.message.content, responses.message.type);*/
         showNotification(responses.message.label, responses.message.content, 'bottom', 'left', 'none', 'animated fadeOutDown');   
         jQuery("#ModalEdit").modal('hide');
       loadData(1);

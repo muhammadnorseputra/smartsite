@@ -100,7 +100,7 @@
 		});
 
 		function refreshList() {
-			// $( "ul#list-icons" ).listview( "refresh" );
+			/*$( "ul#list-icons" ).listview( "refresh" );*/
 			location.reload();
 		}
 
@@ -124,7 +124,7 @@
 			$("#FormUpdateIcon h3").html(`<i class="material-icons">${title}</i>`);
 			$("#FormUpdateIcon [name='namaicon']").val(title);
 			$("#FormUpdateIcon [name='id']").val(id);
-			// alert('oe');
+			/*alert('oe');*/
 		}
 
 		$("form#FormUpdateIcon button#btnHapus").unbind().bind('click', function(event) {

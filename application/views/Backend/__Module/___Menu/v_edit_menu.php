@@ -206,7 +206,7 @@ $(document).on('submit', '#FormUpdateMenu', function(e) {
   e.preventDefault();
   let form = $(this);
   $.post(form.attr('action'), form.serialize(), function(result) {
-    // showNotification(result.jenis, result.content, 'bottom', 'center', 'animated fadeInUp', 'animated fadeOutDown');
+    /*showNotification(result.jenis, result.content, 'bottom', 'center', 'animated fadeInUp', 'animated fadeOutDown');*/
     $.alert({
 		title: false,
 		content: result.content,
@@ -219,7 +219,7 @@ $(document).on('submit', '#FormUpdateMenu', function(e) {
 		animationSpeed: 100,
 		closeAnimation: 'opacity',
 		onClose: function () {
-			// before the modal is hidden.
+			/*before the modal is hidden.*/
 			window.location.href= result.goto;
 		}
 	});

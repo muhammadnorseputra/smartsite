@@ -321,12 +321,12 @@ class C_Berita extends CI_Controller {
     $sub_array = array();
       $sub_array[] = $no+1;
       // $sub_array[] = $r->id_berita;
-      $sub_array[] = "<img src='".$r->path."' class='img-circle pull-left m-r-15' width='40' height='40'><b>".$r->judul."</b><br> <i class='material-icons pull-left font-16 m-r-5'>comment</i>".$this->mkomen->jml_komentarbyidberita($r->id_berita)." - <i class='text-danger'>". time_ago($r->jam)."</i>";
+      $sub_array[] = "<img src='".$r->path."' class='img-circle pull-left m-r-15' width='50' height='50'><b>".$r->judul."</b><br> <i class='material-icons pull-left font-16 m-r-5'>comment</i>".$this->mkomen->jml_komentarbyidberita($r->id_berita)." <span class='text-danger'>&bull;</span> ". substr($r->jam,0,5) ." WITA ";
       $sub_array[] = longdate_indo($r->tgl_posting);
-      $sub_array[] = "<span class='pull-right'>".$r->views."x</span> <i class='material-icons pull-left font-16'>visibility</i>";
+      $sub_array[] = "<span class='pull-right'>".nominal($r->views)."x</span> <i class='material-icons pull-left font-16'>visibility</i>";
       $sub_array[] = '
-                          <button type="button" id="edit-berita" data-id="'.$r->id_berita.'" class="btn btn-link btn-sm waves-effect"><i class="glyphicon glyphicon-pencil"></i> EDIT</button>
-                          <button type="button" id="hapus-berita" data-id="'.$r->id_berita.'" data-gambar="'.$r->img.'" data-judul="'.$r->judul.'" type="button" class="btn btn-link btn-sm waves-effect"><i class="glyphicon glyphicon-trash"></i> HAPUS</button>
+                          <button type="button" id="edit-berita" data-id="'.$r->id_berita.'" class="btn btn-link btn-sm waves-effect"><i class="glyphicon glyphicon-pencil"></i></button>
+                          <button type="button" id="hapus-berita" data-id="'.$r->id_berita.'" data-gambar="'.$r->img.'" data-judul="'.$r->judul.'" type="button" class="btn btn-link btn-sm waves-effect"><i class="glyphicon glyphicon-trash"></i></button>
                       ';
       $data[] = $sub_array;
   

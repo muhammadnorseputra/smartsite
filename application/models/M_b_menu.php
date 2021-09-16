@@ -4,7 +4,7 @@ class M_b_menu extends CI_Model {
 
   public $table = 't_menu AS tmenu';
   public $select_colums = array('tmenu.*', 'tmod.id_module', 'tmod.nama_module', 'tmod.token', 'tcon.id_icon', 'tcon.nama_icon', 'tbel.id_label', 'tbel.nama_label');
-  public $order_colums = array(null, null,null, 'tmenu.nama_menu', null, null, null, null);
+  public $order_colums = array('tmenu.id_menu', null, null,null, 'tmenu.nama_menu', null, null, null, null);
   public $column_search = array('tmenu.nama_menu');
 
   public function datatable() {

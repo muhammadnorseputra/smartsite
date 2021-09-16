@@ -60,7 +60,7 @@ $('form#FormBalasKomentar').on('submit', function(event){
   let Post = _this.serialize();
 
   $.post(Url, Post, function(result){
-    // $.alert();
+    /*$.alert();*/
     showNotification('bg-black', result.msg, 'bottom', 'center', 'none', 'animated bounceOutUp');
     if(result.type != 0) {
     $("#modal-detail-komentar").modal('hide');

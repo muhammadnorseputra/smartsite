@@ -30,7 +30,7 @@ if ($(this).is(':checked')) {
   var values = 0;
 }
   $.post('<?= base_url("backend/c_pengaturan/do_maintenance") ?>', {status: values}, function(response) {
-    // $.dialog(response.message);    
+    /*$.dialog(response.message);*/    
     showNotification(response.classes, response.message, 'bottom', 'center', 'none', 'animated bounceOutDown');
   }, 'json');
 

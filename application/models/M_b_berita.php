@@ -11,7 +11,9 @@ class M_b_berita extends CI_Model {
 		$this->db->select($this->select_colums);
 		$this->db->from($this->table);
     $this->db->join('t_kategori as tk', 'tb.fid_kategori=tk.id_kategori','left');
-    $this->db->where('created_by', $this->session->userdata('user'));
+    if($this->session->userdata('lvl') != 'ADMIN') {
+      $this->db->where('created_by', $this->session->userdata('user'));
+    }
 		if(!empty($search)){
 			$this->db->like('tb.judul', $search);
 		}

@@ -30,7 +30,7 @@ $("button#edit").unbind().bind('click', function(evt) {
   evt.preventDefault();
   var self = $(this);
   var Url  = self.attr('ajax-src');
-  // var Id   = self.attr('ajax-id');
+  /*var Id   = self.attr('ajax-id');*/
   $.confirm({
     title: 'Edit',
     animation: 'fade',
@@ -53,7 +53,7 @@ $("button#edit").unbind().bind('click', function(evt) {
     },
     buttons: {
       ok: {
-        isHidden: true // initially not hidden
+        isHidden: true /*initially not hidden*/
       },
       Simpan: {
         btnClass: 'btn btn-sm btn-link',

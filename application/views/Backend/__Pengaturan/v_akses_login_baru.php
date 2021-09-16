@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 m-t-25">
+    <button type="button" onclick="onBack();" class="btn btn-circle btn-link bg-indigo waves-effect"><i class="glyphicon glyphicon-chevron-left"></i></button>  Batal
       <div class="card card-border card-shadow">
 				<div class="header">
-        <button type="button" onclick="onBack();" class="btn btn-circle btn-link bg-indigo waves-effect pull-left m-r-15 m-t--15"><i class="glyphicon glyphicon-chevron-left"></i></button>
 					<h2>
 						Buat Hak akses
 					</h2>

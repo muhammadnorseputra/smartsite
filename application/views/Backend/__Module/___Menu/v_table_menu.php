@@ -32,13 +32,13 @@
 			searching: true,
 			lengthChange: true,
 			responsive: true,
-			order: [4, 'desc'],
+			order: [0, 'desc'],
 			ajax: {
 				url: '<?= base_url('backend/module/c_menu/ajax_list'); ?>',
 				type: 'POST'
 			},
 			columnDefs: [{
-				"targets": [0, 1, 2, 3, 5, 6, 7, 8],
+				"targets": [1, 2, 3, 5, 6, 7, 8],
 				"orderable": false
 			}],
 			language: {

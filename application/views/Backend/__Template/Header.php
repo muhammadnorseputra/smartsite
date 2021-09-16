@@ -32,7 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css'); ?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/themes/all-themes.css'); ?>">
 	<script src="<?= site_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
-	<script src="<?= base_url('/files/tinymce/js/tinymce.min.js'); ?>"></script>
+	<script src="<?= base_url('files/tinymce/tinymce.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/plugins/jquery-ui/jquery-ui.js'); ?>"></script>
 	<script data-pace-options='{ "ajax": false }' src="<?= site_url('assets/plugins/pace/pace.min.js'); ?>"></script>
 	<link href="<?= site_url('assets/plugins/pace/themes/green/pace-theme-flash.css'); ?>" rel="stylesheet" />

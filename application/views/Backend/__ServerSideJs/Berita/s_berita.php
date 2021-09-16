@@ -1,6 +1,6 @@
 <script type="text/javascript">
 jQuery(function () {
-	// VARIABEL TABLE
+	/*VARIABEL TABLE*/
 	 	let table = jQuery('#tbl-berita').DataTable({
 		processing: true,
 		serverSide: true,
@@ -49,7 +49,7 @@ jQuery(function () {
 				"targets": [4],
 				"className": "dt-center",
 				"orderable": false,
-        		"width": "20%"
+        		"width": "10%"
 			}
 		],
 		language: {
@@ -63,7 +63,7 @@ jQuery(function () {
 		}
 	});
 
-	// AKSI SEARCH BERITA BERDASARKAN JUDUL
+	/*AKSI SEARCH BERITA BERDASARKAN JUDUL*/
   jQuery("#form_search_berita").on('submit', function(e) {
     e.preventDefault();
     let fr = jQuery(this);
@@ -78,7 +78,7 @@ jQuery(function () {
 		table.ajax.reload(null, false);
 	}
 
-	// AKSI HAPUS BERITA BERDASARKAN ID DAN GAMBAR
+	/*AKSI HAPUS BERITA BERDASARKAN ID DAN GAMBAR*/
 	$("table").on('click', '#hapus-berita', function(e) {
 			e.preventDefault();
 			let id 	= $(this).attr('data-id');
@@ -93,7 +93,7 @@ jQuery(function () {
 			}
 		});
 
-		// AKSI EDIT BERITA BERDASARKAN ID DAN GAMBAR
+		/*AKSI EDIT BERITA BERDASARKAN ID DAN GAMBAR*/
 		$("table").on('click', '#edit-berita', function(e) {
 			e.preventDefault();
 			let id 	= $(this).attr('data-id');

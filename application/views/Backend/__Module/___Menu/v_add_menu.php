@@ -190,7 +190,7 @@
 		}
 
 		var select_all = $("[name='user_menu'], [name='module'], [name='label']").select2();
-		//SELECT ICON
+		/*SELECT ICON*/
 		var select_icon = $("select#icons").select2({
 			placeholder: {
 				id: '-1',

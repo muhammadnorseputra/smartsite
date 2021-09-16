@@ -1,12 +1,12 @@
 <script>
 
-//PREVIEW UPLOAD GAMBAR
+/*PREVIEW UPLOAD GAMBAR*/
 let showImg 	= function(event) {
     var output 		= document.getElementById('preview');
     output.src = URL.createObjectURL(event.target.files[0]);
     output.style.width = '100%';
-    // output.style.display = "block";
-    // $("#before").css("display","none");
+    /*output.style.display = "block";
+    $("#before").css("display","none");*/
 }
 
 jQuery(function() {
@@ -32,7 +32,7 @@ tinymce.init({
     convert_urls: true,
     save_enablewhendirty: true,
     toolbar: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor",
-    //  filemanager_crossdomain: true,
+    /* filemanager_crossdomain: true,*/
     image_advtab: true,
     external_filemanager_path: "<?= base_url('files/filemanager-v2/filemanager/') ?>",
     filemanager_title: "Filemanager",

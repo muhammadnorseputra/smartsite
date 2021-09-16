@@ -60,7 +60,7 @@
     $.post($this.attr('action'), $this.serialize(), function(response) {
       Materialize.toast(response.msg, 4000);
       if(response.type == 'OK') {
-        // window.opener.location.reload(true);
+        /*window.opener.location.reload(true);*/
         window.opener.loadTabsWidget();
       }
     }, 'json');
