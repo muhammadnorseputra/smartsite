@@ -4,10 +4,10 @@
 	}
 </style>
 <script>
-	// TODO Tampilkan list
+	/*TODO Tampilkan list*/
 	list();
 
-	// ? Fungsi show list
+	/*? Fungsi show list*/
 	function list() {
 		$.getJSON('<?= site_url("backend/module/c_agenda/list_agenda") ?>', function(result) {
 			$("#MyAgenda").html(result);

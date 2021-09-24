@@ -1,9 +1,9 @@
 <div class="media">
     <div class="media-left">
-            <img class="media-object" src="<?= base_url('assets/images/gravatar/').$d->gravatar ?>" width="64" height="64">
+            <img class="media-object" src="<?= img_blob($d->photo_pic) ?>" width="64" height="64">
     </div>
     <div class="media-body">
-        <h4 class="media-heading"><?= $d->nama_lengkap ?> / <span class="font-12 col-teal"><?= longdate_indo($d->tanggal)." - ".substr($d->jam,0,5) ?></span></h4>
+        <h4 class="media-heading"><?= decrypt_url($d->nama_lengkap) ?> / <span class="font-12 col-teal"><?= longdate_indo($d->tanggal)." - ".substr($d->waktu,0,5) ?></span></h4>
         <p>
           <b><u><?= $this->mkomentar->getjudulberitabyidkomentar($d->fid_berita) ?></u></b>
         </p>
@@ -20,7 +20,7 @@
                   </a>
               </div>
               <div class="media-body">
-                  <h4 class="media-heading"><?= $r->nama_lengkap ?></h4> 
+                  <h4 class="media-heading"><?= decrypt_url($r->nama_lengkap) ?></h4> 
                   <p>
                       <?= $r->isi ?>
                   </p>
@@ -39,7 +39,7 @@
   <?= form_open('backend/module/c_komentar/proses_balas_komentar', array('id' => 'FormBalasKomentar')) ?>
   <div class="form-group">
       <div class="form-line">
-          <textarea rows="4" class="form-control no-resize" name="isi_komentar" id="isi_komentar" placeholder="Masukan komentar balasan kepada: <?php echo $d->nama_lengkap ?> ..."></textarea>
+          <textarea rows="4" class="form-control no-resize" name="isi_komentar" id="isi_komentar" placeholder="Masukan komentar balasan kepada: <?php echo decrypt_url($d->nama_lengkap) ?> ..."></textarea>
       </div>
   </div>
   <input type="hidden" name="parent_id" value="<?= $id ?>">

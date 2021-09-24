@@ -64,7 +64,7 @@ class M_b_komentar extends CI_Model {
     return $query;
   }
   public function getbyid($tbl, $id) {
-    return $this->db->get_where($tbl, array('id_komentar' => $id))->row();
+    return $this->db->join('t_users_portal', 't_komentar.fid_users_portal=t_users_portal.id_user_portal')->get_where($tbl, array('id_komentar' => $id))->row();
   }
 	public function getjudulberitabyidkomentar($id) {
     $this->db->select('judul');

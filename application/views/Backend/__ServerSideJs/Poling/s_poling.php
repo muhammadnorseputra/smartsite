@@ -32,7 +32,7 @@ jQuery("#FormPoling").on('submit', function (e) {
 		success: function (result) {
 			showNotification('bg-black', result.pesan, 'bottom', 'center', '', '');
 	      form[0].reset();
-	      //form[0].judul.focus();
+	      /*form[0].judul.focus();*/
 	      list();
 	      review_pertanyaan();
 	      review_jawaban();    
@@ -109,7 +109,7 @@ function review_jawaban() {
     }
   );
 }
-// Grafik
+/*Grafik*/
 jQuery(function () {
   let grafik = getMorris('donut', 'donut_chart');
 });

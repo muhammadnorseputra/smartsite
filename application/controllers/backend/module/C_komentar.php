@@ -54,9 +54,9 @@ class C_komentar extends CI_Controller {
   
     $sub_array = array();
       $sub_array[] = $no+1;
-      $sub_array[] = "<img src='".base_url('assets/images/gravatar/').$r->gravatar."' width='50' height='50' class='img-circle'><br><code>ID.".$r->id_komentar."</code>";
+      $sub_array[] = "<img src='".img_blob($r->photo_pic)."' width='50' height='50' class='img-circle'><br><code>ID.".$r->id_komentar."</code>";
       $sub_array[] = $r->parent_id;
-      $sub_array[] = "<u><b class='font-12'>".$r->nama_lengkap."</b></u><br><a href='mailto:".$r->email."' target='_blank'>" . $r->email . "</a><br><code>—— ".longdate_indo($r->tanggal)." / ". substr($r->jam,0,5)." WIB</code>";
+      $sub_array[] = "<u><b class='font-12'>".decrypt_url($r->nama_lengkap)."</b></u><br><a href='mailto:".decrypt_url($r->email)."' target='_blank'>" . decrypt_url($r->email) . "</a><br><code>".longdate_indo($r->tanggal)." / ". substr($r->waktu,0,5)." WIB</code>";
       $sub_array[] = $r->judul;
 			$sub_array[] = '<div class="btn-group btn-group-xs" role="group">
                           <button type="button" class="btn btn-link waves-effect" id="detail" data-id="'.$r->id_komentar.'" data-parent="'.$r->parent_id.'">DETAIL</button>
