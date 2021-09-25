@@ -59,7 +59,7 @@ class C_statistik extends CI_Controller {
   
     foreach($getdata as $r) {
 
-      if(($r->latitude !== NULL) && ($r->longitude !== NULL)) {
+      if(($r->latitude !== NULL) && ($r->longitude !== NULL) && ($r->latitude !== '')) {
         $btnMaps = "<button id='map-marker' role='button' class='btn btn-sm btn-link waves-effect' data-lat='{$r->latitude}' data-long='{$r->longitude}' href='javascript:void(0);'><i class='glyphicon glyphicon-map-marker'></button>";
       } else {
         $btnMaps = '';
