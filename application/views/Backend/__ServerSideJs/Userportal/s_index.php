@@ -7,6 +7,7 @@ $(function() {
 			order: [
 				[5, 'desc']
 			],
+			lengthMenu: [ 5, 10, 25, 50, 75, 100 ],
 			deferRender: true,
 			keys: false,
 			autoWidth: false,
