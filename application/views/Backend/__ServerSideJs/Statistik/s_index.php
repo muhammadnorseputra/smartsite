@@ -62,7 +62,7 @@
 				{
 					"targets": [7],
 					"className": "dt-center",
-					"orderable": false
+					"orderable": true
 				},
 				{
 					"targets": [8],
@@ -82,6 +82,23 @@
 			}
 		});
 
+	function initMaps(lat, long) {
+		const myLatLng = { lat: parseInt(lat), lng: parseInt(long) };
+				const map = new google.maps.Map(document.getElementById("map_canvas"), {
+					zoom: 8,
+					center: myLatLng,
+					mapTypeId: google.maps.MapTypeId.HYBRID,
+					mapId: "ee85d0d64294115",
+				});
+				return new google.maps.Marker({
+					position: myLatLng,
+					map,
+					title: "Location",
+					animation: google.maps.Animation.DROP,
+					optimized: true 
+				});
+	}
+
 	$("table").on('click', '#map-marker', function() {
 		let lat = $(this).attr('data-lat');
 		let long = $(this).attr('data-long');
@@ -89,24 +106,7 @@
 		    title: 'Google Maps',
 		    content: '<div id="map_canvas" style="width:100%; height:300px;"></div>',
 		    onContentReady: function () {
-				/*var map_canvas = document.getElementById('map_canvas');
-				var map_options = {
-					center: new google.maps.LatLng(lat, long),
-					zoom:4,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				};
-				return new google.maps.Map(map_canvas, map_options);*/
-				const myLatLng = { lat: parseInt(lat), lng: parseInt(long) };
-				const map = new google.maps.Map(document.getElementById("map_canvas"), {
-					zoom: 8,
-					center: myLatLng,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				});
-				return new google.maps.Marker({
-					position: myLatLng,
-					map,
-					title: "Location"
-				});
+		    	initMaps(lat, long);
 		    },
 		    columnClass: 'medium',
 		});

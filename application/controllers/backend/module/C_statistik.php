@@ -37,7 +37,7 @@ class C_statistik extends CI_Controller {
           'assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js',
           'assets/js/pages/forms/input-masked.js',
           'assets/js/pages/forms/input-datetime.js',
-          'https://maps.googleapis.com/maps/api/js?key=AIzaSyB3mY70TwKObZIg6_WUz0ntbbT_sGOTvVM&sensor=false'
+          'https://maps.googleapis.com/maps/api/js?key=AIzaSyB3mY70TwKObZIg6_WUz0ntbbT_sGOTvVM&region=ID&language=id&callback=initMaps'
         ]  
     ];
     $this->load->view('Backend/v_home', $data);
