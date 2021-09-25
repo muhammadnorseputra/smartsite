@@ -24,11 +24,20 @@ class C_statistik extends CI_Controller {
           'assets/plugins/datatable/datatables.min.css',
           'assets/plugins/datatable/inc_tablesold.css',
           'assets/plugins/jquery-ui/jquery-ui.min.css',
-          'assets/plugins/jquery-ui/jquery-ui.theme.min.css'
+          'assets/plugins/jquery-ui/jquery-ui.theme.min.css',
+          'assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css',
+          'assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css',
         ],
         'js' => [
+          'assets/plugins/momentjs/moment.js',
           'assets/plugins/datatable/datatables.min.js',
-          'https://maps.googleapis.com/maps/api/js?sensor=false'
+          'assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js',
+          'assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js',
+          'assets/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js',
+          'assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js',
+          'assets/js/pages/forms/input-masked.js',
+          'assets/js/pages/forms/input-datetime.js',
+          'https://maps.googleapis.com/maps/api/js?key=AIzaSyB3mY70TwKObZIg6_WUz0ntbbT_sGOTvVM&sensor=false'
         ]  
     ];
     $this->load->view('Backend/v_home', $data);
@@ -40,8 +49,11 @@ class C_statistik extends CI_Controller {
   ## AJAX LIST
 
   public function ajax_list() {
+    $input = $this->input->post();
+    $tgl_m = join('-',array_reverse(explode('/',$input['tgl_m'])));
+    $tgl_s = join('-',array_reverse(explode('/',$input['tgl_s'])));
 
-    $getdata = $this->statistik->fetch_datatable_statistik();
+    $getdata = $this->statistik->fetch_datatable_statistik($tgl_m,$tgl_s);
     $data = array();
     $no = $_POST['start'];
   
@@ -69,9 +81,10 @@ class C_statistik extends CI_Controller {
   
     $output = array(
       'draw'            => intval($_POST['draw']),
-      'recordsTotal'    => $this->statistik->get_all_data_statistik(),
-      'recordsFiltered' => $this->statistik->get_filtered_data_statistik(),
-      'data'            => $data      
+      'recordsTotal'    => $this->statistik->get_all_data_statistik($tgl_m,$tgl_s),
+      'recordsFiltered' => $this->statistik->get_filtered_data_statistik($tgl_m,$tgl_s),
+      'data'            => $data,
+      'filtered'        => ['tgl_mulai' => $tgl_m, 'tgl_selesai' => $tgl_s]    
     );
   
     echo json_encode($output); 

@@ -32,7 +32,7 @@
 								<div class="form-line">
 									<input type="text" name="stgl_selesai" class="form-control date" placeholder="Tgl Selesai">
 								</div>
-								<span class="input-group-addon"><button type="reset" onclick="list()" class="btn btn-link btn-xs waves-effect waves-circle circle btn-circle" data-toggle="tooltip" data-placement="bottom" title="CLEAR KOLOM"><em class="material-icons m-t-8">replay</em></button></span>
+								<span class="input-group-addon"><button type="reset" onclick="list()" class="btn btn-link btn-xs waves-effect waves-circle circle btn-circle" data-toggle="tooltip" data-placement="bottom" title="CLEAR KOLOM"><em class="material-icons">replay</em></button></span>
 							</div>
 						</div>
 						<?= form_close(); ?>

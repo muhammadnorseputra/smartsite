@@ -9,6 +9,7 @@ class Login extends CI_Controller
         $this->load->model('mlogin', 'ml');
         $this->load->model('M_b_admin', 'madmin');
         $this->load->library('user_agent');
+        $this->dashboard = $this->madmin->getmodule('DASHBOARD');
     }
 
     public function index()
@@ -32,6 +33,10 @@ class Login extends CI_Controller
         $cek = $this->madmin->cekakses($token, $ip);
 
         if ($cek == true) {
+            if($this->session->userdata('userkey') != null) {
+               $user = $this->session->userdata('user_access');
+               return redirect(base_url('backend/c_admin?module='.$this->dashboard.'&user='.$user));
+            }
             redirect(base_url('login/v2/'.sha1($ip).'/'.$ip.'/'.$os.'?message=sign-in'));
         } else {
             $this->session->set_flashdata('error', 'access denied for user');
@@ -100,6 +105,10 @@ class Login extends CI_Controller
         ));
 
         if ($cek == true) {
+            if($this->session->userdata('userkey') != null) {
+               $user = $this->session->userdata('user_access');
+               return redirect(base_url('backend/c_admin?module='.$this->dashboard.'&user='.$user));
+            }
             $this->load->view('Backend/v_login', $data);
         } else {
             redirect(base_url('/'));
@@ -126,7 +135,7 @@ class Login extends CI_Controller
             // $access = $this->uri->segment(1)."/".$this->uri->segment(2);
             // $pars['token'] = $this->madmin->getToken('backend/c_admin');
             $pars['user_access'] = $this->madmin->getAccess($username);
-            $pars['home'] = $this->madmin->getmodule('DASHBOARD');
+            $pars['home'] = $this->dashboard;
 
             foreach ($cek->result() as $key) {
                 $getrow = $key;

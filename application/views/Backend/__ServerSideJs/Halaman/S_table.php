@@ -8,7 +8,7 @@
 </style>
 <script>
 $(function(){
-	// DATATABLE PERATURAN
+	/*DATATABLE PERATURAN*/
 		let dataTable = $('#tbl-halaman').DataTable({
 			processing: true,
 			serverSide: true,
@@ -19,9 +19,9 @@ $(function(){
 			ajax: {
 				url: '<?= base_url("backend/module/c_halaman/list_halaman_datatable") ?>',
 				type: 'POST'
-				// data: function (s) {
-				// 	s.judul = jQuery("[name='search']").val()
-				// }
+				/*data: function (s) {
+					s.judul = jQuery("[name='search']").val()
+				}*/
 			},
 			columnDefs: [
 				{
@@ -60,8 +60,8 @@ $(function(){
 			}
 		});
 
-	// TEXT AREA EDITOR
-	/*CKEDITOR.replace('content_halaman' ,{
+	/*// TEXT AREA EDITOR
+	CKEDITOR.replace('content_halaman' ,{
 				filebrowserImageBrowseUrl : '<?php echo base_url('assets/kcfinder/browse.php');?>',
 				filebrowserUploadUrl: '<?php echo base_url('assets/kcfinder/upload.php');?>',
 				height: 300,
@@ -71,7 +71,7 @@ $(function(){
 	
 	var clipboard = new ClipboardJS('a.copy-token');
 	clipboard.on('success', function (e) {
-		//$.alert('Copied: ' + e.text + ' (success)');
+		/*$.alert('Copied: ' + e.text + ' (success)');*/
 		showNotification('bg-black', 'Coppied: ' + e.text, 'bottom', 'center', 'none', 'none');  
 		e.clearSelection();
 	});
@@ -88,41 +88,41 @@ function list() {
 	);
 }
 
-// jQuery("#FormEditHalaman").on('submit', function(e){
-// 	e.preventDefault();
-// 	let form = jQuery(this);
-// 	let formdata = new FormData(this);
-// 	jQuery.ajax({
-// 		url: form.attr('action'),
-// 		method: 'POST',
-// 		dataType: 'json',
-// 		contentType: false,
-// 		cache: false,
-// 		processData: false,
-// 		data:formdata,
-// 		beforeSend: function () {
-// 			jQuery.Mprog.starts(3, '#edit-halaman .modal-footer', true);
-// 		},
-// 		success: function(result) {
-// 			jQuery("#message").fadeIn();
-// 			jQuery("#message").html(result.message);
-// 			setTimeout(() => {	
-// 					jQuery("#message").fadeOut();
-// 			}, 3000);
-// 			list();
-// 			jQuery.Mprog.starts(3, '#edit-halaman .modal-footer', false).end(true);
-// 			form[0].reset();
-// 		}
-// 	});	
+/*jQuery("#FormEditHalaman").on('submit', function(e){
+	e.preventDefault();
+	let form = jQuery(this);
+	let formdata = new FormData(this);
+	jQuery.ajax({
+		url: form.attr('action'),
+		method: 'POST',
+		dataType: 'json',
+		contentType: false,
+		cache: false,
+		processData: false,
+		data:formdata,
+		beforeSend: function () {
+			jQuery.Mprog.starts(3, '#edit-halaman .modal-footer', true);
+		},
+		success: function(result) {
+			jQuery("#message").fadeIn();
+			jQuery("#message").html(result.message);
+			setTimeout(() => {	
+					jQuery("#message").fadeOut();
+			}, 3000);
+			list();
+			jQuery.Mprog.starts(3, '#edit-halaman .modal-footer', false).end(true);
+			form[0].reset();
+		}
+	});	
 
-// });
+});
 
-// function hover(id) {
-// 		jQuery("#button-option-"+id).show('fast');
-// }
-// function leave(id){
-// 	jQuery("#button-option-"+id).hide('fast');
-// }
+function hover(id) {
+		jQuery("#button-option-"+id).show('fast');
+}
+function leave(id){
+	jQuery("#button-option-"+id).hide('fast');
+}*/
 
 jQuery('#FormSearchHalaman').on('submit', function(e){
 	e.preventDefault();
@@ -152,8 +152,8 @@ function edit_halaman(id){
 				$('.btn-preview-file, .btn-hapus-file').show();
 				$(".label-file").html("Ubah File");
 			}
-			// jQuery("[name='content_halaman']").append().html(result[0].content);
-			//CKEDITOR.instances.editor.setData(result[0].content);
+			/*jQuery("[name='content_halaman']").append().html(result[0].content);
+			CKEDITOR.instances.editor.setData(result[0].content);*/
 			
 			preview_file_halaman(id);
 			$("#edit-halaman").modal('show');
@@ -209,7 +209,7 @@ $('.btn-hapus-file').on('click', function(e) {
 											text: "Ok",
 											click: function() {
 												$.post('<?= site_url("backend/module/c_halaman/hapus_lampiran/") ?>' + id, function(result) {
-													// $.alert(result[0]);
+													/*$.alert(result[0]);*/
 													showNotification('bg-black', result[0] , 'top', 'center', 'none', 'animated fadeOutUp');
 													if(result[1] != 'fail') {
 														$("#edit-halaman").modal('hide');
@@ -243,8 +243,8 @@ function copytoken(token) {
 		content: 'url:<?= site_url("backend/module/c_halaman/copytoken/") ?>' + token,
 		buttons: {
 			batal: function(){
-            // shorthand method to define a button
-            // the button key will be used as button name
+            /*shorthand method to define a button
+            the button key will be used as button name*/
 			},
 		}
 	});

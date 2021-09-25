@@ -1,6 +1,6 @@
 <script>
 $(function () {
-	// TEXT AREA EDITOR
+	/*TEXT AREA EDITOR*/
 	tinymce.init({ 
 		selector: "#content_halaman",theme: "silver", height: 400,
     plugins: [
@@ -19,7 +19,7 @@ $(function () {
 		convert_urls : true,
   	save_enablewhendirty: true,
    toolbar: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor",
-	//  filemanager_crossdomain: true,
+	/* filemanager_crossdomain: true,*/
    image_advtab: true ,
    external_filemanager_path:"<?= base_url('files/filemanager-v2/filemanager/') ?>",
    filemanager_title:"Filemanager",
@@ -27,63 +27,63 @@ $(function () {
 	});
 	
 });
-	// jQuery('#FormAddHalaman').validate({
-	// 	rules: {
-	// 		'title_halaman': {
-	// 			required: true
-	// 		},
-	// 		'publish': {
-	// 			required: true
-	// 		},
-	// 		'fileinsert': {
-	// 			required: true
-	// 		}
-	// 	},
-	// 	highlight: function (input) {
-	// 		jQuery(input).parents('.form-line').addClass('error');
-	// 	},
-	// 	unhighlight: function (input) {
-	// 		jQuery(input).parents('.form-line').removeClass('error');
-	// 	},
-	// 	errorPlacement: function (error, element) {
-	// 		jQuery(element).parents('.form-group').append(error);
-	// 	}
-	// });
+	/*jQuery('#FormAddHalaman').validate({
+		rules: {
+			'title_halaman': {
+				required: true
+			},
+			'publish': {
+				required: true
+			},
+			'fileinsert': {
+				required: true
+			}
+		},
+		highlight: function (input) {
+			jQuery(input).parents('.form-line').addClass('error');
+		},
+		unhighlight: function (input) {
+			jQuery(input).parents('.form-line').removeClass('error');
+		},
+		errorPlacement: function (error, element) {
+			jQuery(element).parents('.form-group').append(error);
+		}
+	});
 
-// });
+});
 
-// jQuery("#FormAddHalaman").on('submit', function(e){
-// e.preventDefault();
-// let form = jQuery(this);
-// let msg = jQuery("#message");
-// 	jQuery.ajax({
-// 		url: form.attr('action'),
-// 		method: 'POST',
-// 		contentType: false,
-//     cache: false,
-//   	processData:false,
-// 		data: new FormData(this),
-// 		dataType: 'json',
-// 		beforeSend: function () {
-// 			NProgress.start();
-// 		},
-// 		success: function (result) {
-// 			// msg.html(`<div class="alert ${result.col} alert-dismissible" role="alert">
-// 			// 						<strong>${result.content}</strong>
-// 			// 						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-// 			// 				</div>`);
-// 			showNotification(result.col,result.content, 'top', 'center', 'animated fadeIn', 'animated fadeOut');
-// 			if (result.status != false) {
-// 				form[0].reset();
-// 				CKEDITOR.instances.content_halaman.setData('');
-// 				setInterval(() => {
-// 					window.history.back(-1);
-// 				}, 1000);
-// 			}
-// 		},
-// 		complete: function () {
-// 			NProgress.done();
-// 		}
-// 	});
-// });
+jQuery("#FormAddHalaman").on('submit', function(e){
+e.preventDefault();
+let form = jQuery(this);
+let msg = jQuery("#message");
+	jQuery.ajax({
+		url: form.attr('action'),
+		method: 'POST',
+		contentType: false,
+    cache: false,
+  	processData:false,
+		data: new FormData(this),
+		dataType: 'json',
+		beforeSend: function () {
+			NProgress.start();
+		},
+		success: function (result) {
+			// msg.html(`<div class="alert ${result.col} alert-dismissible" role="alert">
+			// 						<strong>${result.content}</strong>
+			// 						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			// 				</div>`);
+			showNotification(result.col,result.content, 'top', 'center', 'animated fadeIn', 'animated fadeOut');
+			if (result.status != false) {
+				form[0].reset();
+				CKEDITOR.instances.content_halaman.setData('');
+				setInterval(() => {
+					window.history.back(-1);
+				}, 1000);
+			}
+		},
+		complete: function () {
+			NProgress.done();
+		}
+	});
+});*/
 </script>

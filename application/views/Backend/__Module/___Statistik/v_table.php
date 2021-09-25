@@ -6,7 +6,31 @@
 </div>
 <div class="card card-border">
 	<div class="header">
+		<div class="row">
+			
+		<div class="col-md-2">	
 		<button id="btn-reload" role="button" class="btn btn-sm btn-circle btn-primary waves-effect"><i class='glyphicon glyphicon-repeat'></i></button>
+		</div>
+		<div class="col-md-10">
+		<?= form_open('#', array('id' => 'FormSearchByTgl')) ?>
+		<div class="form-group masked-input">
+			<label>Filter Tanggal:</label>
+			<div class="input-group input-daterange col-md-3" id="bs_datepicker_range_container">
+				<span class="input-group-addon"><em class="material-icons">date_range</em></span>
+				<div class="form-line">
+					<input type="text" name="tgl_mulai" class="form-control date" placeholder="Tgl Mulai">
+				</div>
+
+				<span class="input-group-addon font-bold">s/d</span>
+				<div class="form-line">
+					<input type="text" name="tgl_selesai" class="form-control date" placeholder="Tgl Selesai">
+				</div>
+				<span class="input-group-addon"><button type="reset" class="btn btn-link btn-xs waves-effect waves-circle circle btn-circle" data-toggle="tooltip" data-placement="bottom" title="Reset Filter"><em class="material-icons">replay</em></button></span>
+			</div>
+		</div>
+		<?= form_close(); ?>
+		</div>
+		</div>
 	</div>
 	<div class="body">
 		<table class="table table-responsive table-condensed table-striped" id="tbl-statistik">
@@ -25,124 +49,4 @@
 		</table>
 	</div>
 </div>
-<script>
-	$(function() {
-		let dataTable = $('table#tbl-statistik').DataTable({
-			processing: true,
-			serverSide: true,
-			order: [
-				[3, 'desc']
-			],
-			deferRender: true,
-			keys: false,
-			autoWidth: false,
-			select: false,
-			searching: true,
-			lengthChange: true,
-			responsive: true,
-			ajax: {
-				url: '<?= base_url('backend/module/c_statistik/ajax_list'); ?>',
-				type: 'POST'
-			},
-			columnDefs: [{
-					"targets": [0],
-					"className": "dt-left",
-					"orderable": true,
-					"responsivePriority": 1,
-				},
-				{
-					"targets": [1],
-					"className": "dt-left",
-					"orderable": false
-				},
-				{
-					"targets": [2],
-					"className": "dt-left",
-					"orderable": false
-				},
-				{
-					"targets": [3],
-					"className": "dt-left",
-					"orderable": true
-				},
-				{
-					"targets": [4],
-					"className": "dt-center",
-					"orderable": true,
-					"responsivePriority": 2,
-				},
-				{
-					"targets": [5],
-					"className": "dt-left",
-					"orderable": false
-				},
-				{
-					"targets": [6],
-					"className": "dt-left",
-					"orderable": false
-				},
-				{
-					"targets": [7],
-					"className": "dt-center",
-					"orderable": false
-				},
-				{
-					"targets": [8],
-					"className": "dt-center",
-					"orderable": false
-				}
 
-			],
-			language: {
-				search: "Cari IP : ",
-				processing: "Mohon Tunggu, Processing...",
-				paginate: {
-					previous: "Sebelumnya",
-					next: "Selanjutnya"
-				},
-				emptyTable: "No matching records found, please filter this data"
-			}
-		});
-
-	$("table").on('click', '#map-marker', function() {
-		let lat = $(this).attr('data-lat');
-		let long = $(this).attr('data-long');
-		$.confirm({
-		    title: 'Google Maps',
-		    content: '<div id="map_canvas" style="width:100%; height:300px;"></div>',
-		    onContentReady: function () {
-				/*var map_canvas = document.getElementById('map_canvas');
-				var map_options = {
-					center: new google.maps.LatLng(lat, long),
-					zoom:4,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				};
-				return new google.maps.Map(map_canvas, map_options);*/
-				const myLatLng = { lat: parseInt(lat), lng: parseInt(long) };
-				const map = new google.maps.Map(document.getElementById("map_canvas"), {
-					zoom: 10,
-					center: myLatLng,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				});
-				return new google.maps.Marker({
-					position: myLatLng,
-					map,
-					title: "Location"
-				});
-		    },
-		    columnClass: 'medium',
-		});
-	});	
-
-	$("button#btn-reload").on('click', function() {
-		return refresh();
-	});
-
-	function refresh()
-	{
-		dataTable.ajax.reload();
-	}
-
-
-	});
-</script>
