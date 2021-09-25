@@ -7,9 +7,10 @@ elseif (empty($js)) {$js   = [];}
 
 $header = [
   'titlebar' =>  ucwords($this->uri->segment(2)).' | Administrator Page',
-  'title' => 'MGMT<b>Balangan</b>.v2',
+  'title' => '<b>BKPSDM</b>.v2',
   'skin' => $this->madmin->listskin('t_skin')->result(),
   'label' => $this->madmin->listlabel()->result(),
+  'baseinfo' => $this->mpengaturan->getIdentitas()->row(),
   'autoload_css' => $css
 ];
 

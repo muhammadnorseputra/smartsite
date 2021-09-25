@@ -10,14 +10,14 @@
 					<?= $this->session->userdata('namalengkap') ?>
 				</div>
 				<div class="email"><?= $this->session->userdata('emailuser') ?></div>
-				<!-- <div class="btn-group user-helper-dropdown">
+				<div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
-                        <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);" onclick="menu_link('<?= base_url('backend/admin/profile'); ?>')"><i class="material-icons">person</i>Profile</a></li>
+                        <!-- <ul class="dropdown-menu pull-right">
+                            <li><a href="<?= base_url('backend/c_admin?module=null&user='.$this->session->userdata('user_access')); ?>"><i class="material-icons">person</i>Profile</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="javascript:void(0);" onclick="logout('<?= base_url('login/logout') ?>')"><i class="material-icons">input</i>Sign Out</a></li>
-                        </ul>
-                    </div> -->
+                        </ul> -->
+                    </div>
 			</div>
 		</div>
 		<!-- #User Info -->

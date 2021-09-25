@@ -49,8 +49,8 @@ class Login extends CI_Controller
         $cek = $this->madmin->cekakses($this->uri->segment(3), $this->uri->segment(4));
         $data = array(
             'titlebar' => 'Login | Administrator Page',
-            'title' => '<b>MGMTBalangan</b>.v2',
-            'tagline' => 'SISTEM INFORMASI BKPPD KAB. BALANGAN '.date('Y').'',
+            'title' => '<b>BKPSDM</b>.v2',
+            'tagline' => 'SISTEM INFORMASI BKPSDM KAB. BALANGAN '.date('Y').'',
             'lastlogon' => $this->ml->last_logon()->result(),
             'autoload_css' => array(
                 'assets/css/fonts.css',

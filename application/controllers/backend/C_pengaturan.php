@@ -5,8 +5,6 @@ class C_pengaturan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('M_b_pengaturan', 'mpengaturan');
-
         if (($this->session->userdata('status') != 'ONLINE') && ($this->session->userdata('user_access') == '')) {
             redirect('login');
         }
