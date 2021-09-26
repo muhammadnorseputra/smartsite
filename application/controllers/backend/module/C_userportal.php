@@ -59,7 +59,7 @@ class C_userportal extends CI_Controller {
       $sub_array = array();
       $sub_array[] = $r->id_user_portal;
       $sub_array[] = "<img src='".img_blob($r->photo_pic)."' class='img-fluid' width='40'>";
-      $sub_array[] = decrypt_url(ucwords($r->nama_lengkap)) . " (".decrypt_url($r->nama_panggilan).")";      
+      $sub_array[] = decrypt_url($r->nama_lengkap) . " (".decrypt_url($r->nama_panggilan).")";      
       $sub_array[] = "<a href='mailto:".$email."' target='_blank'>".$email."</a> ".$email_verify;     
       $sub_array[] = decrypt_url($r->nohp);      
       $sub_array[] = longdate_indo($r->tanggal_bergabung);
