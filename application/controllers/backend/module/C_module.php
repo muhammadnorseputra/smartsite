@@ -15,7 +15,7 @@ class C_module extends CI_Controller {
 	{
 
 		$data = [
-				'content' => 'Backend/__module/___Module/v_module',
+				'content' => 'Backend/__Module/___Module/v_module',
 				'scriptjs' => 'Backend/__ServerSideJs/Module/s_module',
 				'pageinfo' => '<li><a href="#"><i class="material-icons">dashboard</i> Dasboard</a></li>
 							<li class="active">Module Web</li>',
