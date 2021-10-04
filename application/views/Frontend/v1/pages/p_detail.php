@@ -81,8 +81,8 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 <div class="container">
 	<div class="row mt-md-5">
 		<div class="col-md-2 order-md-first order-lg-last mt-md-3">
-			<!-- <div id="sidebar"> -->
-<!-- 				<ins class="adsbygoogle"
+			<div id="sidebar">
+				<ins class="adsbygoogle"
 			     style="display:block"
 			     data-ad-client="ca-pub-1099792537777374"
 			     data-ad-slot="6508565159"
@@ -91,7 +91,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 			     <script>
 				     (adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
- -->		     <!-- </div> -->
+		     </div>
 		</div>
 		<div class="col-md-8 mb-5 pb-md-4 px-3 px-md-0 order-first order-md-last" id="main-content">
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
@@ -171,7 +171,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					<div class="g-ytsubscribe mt-md-0 mt-4" data-channelid="<?= $yt_channel ?>" data-layout="full" data-theme="light" data-count="default"></div>
 					<?php endif; ?>
 					<!-- ads -->
-<!-- 					<ins class="adsbygoogle"
+					<ins class="adsbygoogle"
 					     style="display:block; text-align:center;"
 					     data-ad-layout="in-article"
 					     data-ad-format="fluid"
@@ -180,7 +180,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					<script>
 					     (adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
- -->					<p class="card-text font-weight-normal" id="post-content"><?php echo $content; ?></p>
+ 					<p class="card-text font-weight-normal" id="post-content"><?php echo $content; ?></p>
 				</div>
 				<div class="card-footer bg-transparent p-2 border-bottom rounded-lg d-flex justify-content-around mb-4">
 					<div class="w-100 border-right">
@@ -306,8 +306,8 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 			
 		</div>
 		<div class="col-md-2 order-md-last order-lg-last">
-			<!-- <div id="sidebar"> -->
-				<!-- <ins class="adsbygoogle"
+			<div id="sidebar">
+				<ins class="adsbygoogle"
 			     style="display:block"
 			     data-ad-client="ca-pub-1099792537777374"
 			     data-ad-slot="6508565159"
@@ -315,8 +315,8 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 			     data-full-width-responsive="true"></ins>
 			     <script>
 				     (adsbygoogle = window.adsbygoogle || []).push({});
-				</script> -->
-		     <!-- </div> -->
+				</script>
+		     </div>
 		</div>
 	</div>
 </div>
