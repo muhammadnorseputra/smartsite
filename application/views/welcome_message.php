@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Welcome, Sistem Informasi Website BKPPD</title>
+		<title>Welcome, Sistem Informasi Website BKPSDM Balangan</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="<?= base_url('assets/intro/css/main.css'); ?>" />
@@ -34,8 +34,18 @@
 			<!-- Intro -->
 			<section id="top">
 				<div class="container">
+					<?php  
+					if($this->session->flashdata('prereq') <> '') {
+					?>
+					<div style="padding:8px; box-shadow:0 0 3px gold; background-color:#fff; border:1px solid gold; text-align:center;">
+						<?= $this->session->flashdata('prereq'); ?>
+					</div>
+					
+					<?php
+					}
+					?>
 					<header>
-						<h2 class="alt">WELCOME,<br> <strong>Sistem Informasi Website BKPPD</strong></h2>
+						<h2 class="alt">WELCOME,<br> <strong>Sistem Informasi Website BKPSDM</strong></h2>
 					</header>
 					<footer>
 						<a href="<?= base_url('login'); ?>" class="btn">
@@ -51,7 +61,12 @@
 					<i class="fas fa-lock"></i>	Login adminpanel</a>
 					</footer>
 					<a href="<?= base_url('beranda') ?>" class="backToHome"><i class="far fa-arrow-left"></i> Beranda</a>
+					&nbsp;
+					<a href="<?= base_url('login/prereq') ?>" class="backToHome"> Prerequest <i class="far fa-arrow-right"></i></a>
+					<!-- <a href="https://api.whatsapp.com/send?phone=6282151815132&text=IP%3A%20<?= $ip ?>%3BOS%3A<?= $os ?>%3B" class="backToHome"> Prerequest <i class="far fa-arrow-right"></i></a> -->
+						
 				</div>
+
 			</section>
 			<!-- Footer -->
 			<div id="footer">

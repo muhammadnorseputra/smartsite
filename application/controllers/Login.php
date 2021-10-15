@@ -11,10 +11,7 @@ class Login extends CI_Controller
         $this->load->library('user_agent');
         $this->dashboard = $this->madmin->getmodule('DASHBOARD');
     }
-
-    public function index()
-    {
-        // $ip = $this->input->ip_address();
+    // $ip = $this->input->ip_address();
         function get_client_ip()
         {
             if (!empty($_SERVER['HTTP_CLIENT_IP'])) {   //check ip from share internet
@@ -27,7 +24,11 @@ class Login extends CI_Controller
 
             return $ip;
         }
-        $ip = get_client_ip();
+
+    public function index()
+    {
+        
+        $ip = $this->get_client_ip();
         $os = $this->agent->platform();
         $token = sha1($ip);
         $cek = $this->madmin->cekakses($token, $ip);
@@ -230,5 +231,22 @@ class Login extends CI_Controller
         $this->session->unset_userdata($where);
         $this->session->sess_destroy();
         redirect(base_url('login/v2/'.$token.'/'.$ip.'/'.$os.'?message=unset'));
+    }
+
+    public function prereq()
+    {
+        $ip = $this->get_client_ip();
+        $os = $this->agent->platform();
+        $cekdb = $this->ml->cekip($ip);
+        if($cekdb == 1) {
+            $data_update = ['name' => generateRandomString(5), 'type' => '-', 'token' => sha1($ip)];
+            $this->ml->updateip($data_update, $ip);
+            $this->session->set_flashdata('prereq', 'Request Access Token Success Updated');
+        } else {
+            $data_insert = ['ip' => $ip, 'name' => generateRandomString(5), 'type' => '-', 'block' => 'y', 'token' => sha1($ip)];
+            $this->ml->insertip($data_insert);
+            $this->session->set_flashdata('prereq', 'Request Access Token Success Record');
+        }
+        redirect(base_url('adminpanel'));
     }
 }

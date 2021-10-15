@@ -28,5 +28,18 @@ class Mlogin extends CI_Model {
         }
         return "<b>".$col['data']['ip']."</b> (".$col['data']['os'].")";
     }
+    public function cekip($ip)
+    {
+        return $this->db->get_where('ref_access_logregistered', ['ip' => $ip])->num_rows();
+    }
+    public function insertip($data)
+    {
+        return $this->db->insert('ref_access_logregistered', $data);
+    }
+    public function updateip($data,$ip)
+    {
+        $this->db->where('ip', $ip);
+        return $this->db->update('ref_access_logregistered', $data);
+    }
 
 }
