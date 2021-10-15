@@ -94,7 +94,7 @@ class M_b_statistik extends CI_Model {
     if(!empty($tgl_m) && !empty($tgl_s)) {
       $this->db->where('date BETWEEN "'.$tgl_m.'" AND "'.$tgl_s.'"');
     }
-    return $this->db->get_where($this->table, ['hits' => $count])->row();
+    return $this->db->get_where($this->table, ['hits' => $count])->row()->ip ?? '-';
   }
 
   
