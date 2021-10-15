@@ -83,8 +83,6 @@ class M_b_statistik extends CI_Model {
     $this->db->from($this->table);
     $this->db->where('latitude !=', NULL);
     $this->db->where('longitude !=', NULL);
-    $this->db->or_where('latitude !=', '');
-    $this->db->or_where('longitude !=', '');
     if(!empty($tgl_m) && !empty($tgl_s)) {
       $this->db->where('date BETWEEN "'.$tgl_m.'" AND "'.$tgl_s.'"');
     }
