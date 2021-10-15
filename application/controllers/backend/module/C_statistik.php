@@ -102,7 +102,6 @@ class C_statistik extends CI_Controller {
     $hits_up = ceil($this->statistik->ip_hits($start,$end,'up')[0]->hits/3);
     $hits_up_ip = $this->statistik->ip_hits($start,$end,'up')[0]->ip;
     $hits_down = ceil($this->statistik->ip_hits($start,$end)[0]->hits/3);
-    $hits_down_ip = $this->statistik->ip_hits($start,$end)[0]->ip;
     $location = $this->statistik->ip_loc($start,$end);
     if($db>0)
     {
@@ -116,7 +115,7 @@ class C_statistik extends CI_Controller {
       $min = 0;
       $loc = 0;
     }
-    echo json_encode(['jml_ip' => $res, 'ip_loc' => $loc, 'hits_max' => $max, 'ip_max' => $hits_up_ip, 'hits_min' => $min, 'ip_min' => $hits_down_ip]);
+    echo json_encode(['jml_ip' => $res, 'ip_loc' => $loc, 'hits_max' => $max, 'ip_max' => $hits_up_ip, 'hits_min' => $min]);
   }
 
 }
