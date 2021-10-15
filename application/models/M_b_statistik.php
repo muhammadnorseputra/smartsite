@@ -90,5 +90,9 @@ class M_b_statistik extends CI_Model {
     return $query;
   }
 
+  public function ip_hits_count($count) {
+    return $this->db->get_where($this->table, ['hits' => $count])->row()->ip;
+  }
+
   
 }
