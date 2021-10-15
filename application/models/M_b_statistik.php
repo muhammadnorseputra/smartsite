@@ -63,11 +63,10 @@ class M_b_statistik extends CI_Model {
 
   public function ip_hits($tgl_m,$tgl_s,$lvl=null)
   {
+    $this->db->select('ip');
     if($lvl == 'up'):
-      $this->db->select_max('ip');
       $this->db->select_max('hits');
     else:
-      $this->db->select_min('ip');
       $this->db->select_min('hits');
     endif;
     $this->db->from($this->table);
