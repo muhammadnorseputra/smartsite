@@ -44,6 +44,7 @@
 			<div class="col-xs-6 col-sm-6 col-md-3">
 				<h5>Hit's Max</h5>
 				<h1 id="hits_max">0</h1>
+				<b id="ip_max"></b>
 			</div>
 			<div class="col-md-3">
 				<h5>Hit's Min</h5>

@@ -144,6 +144,7 @@
 			$("h1#ip_loc").text(res.ip_loc);
 			$("h1#hits_max").text(res.hits_max);
 			$("h1#hits_min").text(res.hits_min);
+			$("b#ip_max").text(`(${res.ip_max})`);
 		});
 	}
 
