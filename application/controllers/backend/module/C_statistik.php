@@ -104,10 +104,10 @@ class C_statistik extends CI_Controller {
     $location = $this->statistik->ip_loc($start,$end);
     if($db>0)
     {
-      $res = $db;
-      $max = $hits_up;
-      $min = $hits_down;
-      $loc = $location;
+      $res = nominal($db);
+      $max = nominal($hits_up);
+      $min = nominal($hits_down);
+      $loc = nominal($location);
     } else {
       $res = 0;
       $max = 0;
