@@ -90,7 +90,10 @@ class M_b_statistik extends CI_Model {
     return $query;
   }
 
-  public function ip_hits_count($count) {
+  public function ip_hits_count($tgl_m,$tgl_s,$count) {
+    if(!empty($tgl_m) && !empty($tgl_s)) {
+      $this->db->where('date BETWEEN "'.$tgl_m.'" AND "'.$tgl_s.'"');
+    }
     return $this->db->get_where($this->table, ['hits' => $count])->row()->ip;
   }
 
