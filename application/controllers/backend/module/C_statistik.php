@@ -100,9 +100,9 @@ class C_statistik extends CI_Controller {
 
     $db = $this->statistik->get_all_data_statistik($start,$end);
     $hits_up = ceil($this->statistik->ip_hits($start,$end,'up')[0]->hits/3);
-    $hits_up_ip = $this->statistik->ip_hits($start,$end,'up')[0]->ip_max;
+    $hits_up_ip = $this->statistik->ip_hits($start,$end,'up')[0]->ip;
     $hits_down = ceil($this->statistik->ip_hits($start,$end)[0]->hits/3);
-    $hits_down_ip = $this->statistik->ip_hits($start,$end)[0]->ip_min;
+    $hits_down_ip = $this->statistik->ip_hits($start,$end)[0]->ip;
     $location = $this->statistik->ip_loc($start,$end);
     if($db>0)
     {
