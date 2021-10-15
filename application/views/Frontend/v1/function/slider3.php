@@ -3,7 +3,7 @@
     <div class="row d-flex align-items-center">
         <div class="col-md-12 py-3 py-md-5 mt-md-5 order-last order-md-first text-center">
             <div>
-                <h2 class="text-dark animated fadeInDown">Homepage - BKPPD Balangan 2021</h2>
+                <h2 class="text-dark animated fadeInDown">Welcome, Website BKPSDM Balangan</h2>
                 <p class="text-muted lead animated fadeInDown">Selamat Datang Pada Portal Web Resmi BKPPD Kabupaten Balangan, Pelayanan Terpadu.</p>
             </div>
             <div class="">

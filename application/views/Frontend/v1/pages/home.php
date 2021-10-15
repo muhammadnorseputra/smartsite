@@ -124,7 +124,7 @@
                 
                 <!-- <a href="https://www.buymeacoffee.com/putrabungsu6"><img src="https://img.buymeacoffee.com/button-api/?text=Donasi coffee untuk dev&emoji=&slug=putrabungsu6&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" class="w-100"></a>
  -->
-                <a rel="noreferrer, nofollow, noarchive" href="https://www.nihbuatjajan.com/putra" class="btn btn-success py-3 mb-3 btn-block" target="_blank">
+<!--                 <a rel="noreferrer, nofollow, noarchive" href="https://www.nihbuatjajan.com/putra" class="btn btn-success py-3 mb-3 btn-block" target="_blank">
                 <div class="d-flex justify-content-between align-items-center">
                     <i class="fas fa-hand-holding-usd mr-3 fa-2x"></i>
                     <span>
@@ -132,7 +132,7 @@
                     </span>
                 </div>
                 </a>
-
+ -->
                 <a href="<?= base_url('koran-online'); ?>" class="btn btn-outline-light btn-light py-3 my-3 btn-block">
                 <div class="d-flex justify-content-between align-items-center text-primary">
                     <i class="fas fa-newspaper mr-3 fa-2x"></i>

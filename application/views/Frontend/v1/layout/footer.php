@@ -128,7 +128,17 @@
 </section>
 </footer>
 <!-- jQuery -->
-
+<script src="https://www.google.com/recaptcha/api.js?render=6Le5188cAAAAALJLPkaQd8MHHmzdLSMTmyRXxgNV"></script>
+ <script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6Le5188cAAAAALJLPkaQd8MHHmzdLSMTmyRXxgNV', {action: 'submit'}).then(function(token) {
+          // Add your logic to submit to your backend server here.
+      });
+    });
+  }
+</script>
 <script defer="defer" src="<?= base_url('template/v1/prod/vendor-min.js'); ?>" crossorigin="anonymous"></script>
 <script defer="defer" src="<?= base_url('template/v1/prod/app-min.js'); ?>" crossorigin="anonymous"></script>
 <script>
