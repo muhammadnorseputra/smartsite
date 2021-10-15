@@ -4,6 +4,15 @@
 <section class="content-home">
     <div class="container">
         <div class="row">
+            <div class="col-md-6">
+                <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
+            </div>
+            <div class="col-md-6">
+                <?php $this->load->view('Frontend/v1/function/media_sosial'); ?>
+            </div>
+        </div>  
+
+        <div class="row">
             <div class="col-12">
                 <div class="separator">
                     <span class="separator-text text-capitalize font-weight-bold"><span class="font-weight-bold"><i class="fab fa-medapps text-secondary mr-2"></i>Yang Baru Dari Kami</span></span>
@@ -164,7 +173,6 @@
                 </div>
                 </a>
  -->
-                <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
                 <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>

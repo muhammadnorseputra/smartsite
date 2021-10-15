@@ -1,5 +1,5 @@
 <div class="separator">
-    <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-user-alt text-secondary mr-2"></i> Search PNS</span>
+        <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-user-alt text-secondary mr-2"></i> Search PNS</span>
 </div>
 <form class="form-horizontal shadow-sm" id="caripegawai" method="GET" action="<?= base_url('frontend/v1/pegawai/detail') ?>">
     <div class="typeahead__container form-group text-left">
@@ -16,3 +16,4 @@
         </div>
     </div>
 </form>
+Silahkan masukan Nomor Induk Pegawai (NIP) untuk melihat profile.

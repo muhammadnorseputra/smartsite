@@ -227,15 +227,15 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img style="height:260px; object-fit: cover;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:200px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     elseif(!empty($row->img_blob)):
-                        $img = '<img style="height:260px; object-fit: cover;" class="card-img-top w-100 lazy rounded-top border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
+                        $img = '<img style="height:200px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy rounded-top border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
-                        $img = '<img style="height:260px; object-fit: cover;" class="w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:200px; object-fit: cover; object-position: top;" class="w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="height:260px; object-fit: cover;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="height:200px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-4x bg-primary rounded-circle"></i>
                         </div>
@@ -243,9 +243,9 @@ class Beranda extends CI_Controller
                 elseif($row->type === 'SLIDE'):
                     $img = $photo_t;
                 elseif($row->type === 'LINK'):
-                    $img = '<img style="height:260px; object-fit: cover;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:200px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
                 else:
-                    $img = '<img style="height:260px; object-fit: cover;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:200px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                 endif;
 
                 // Kategori
@@ -302,13 +302,18 @@ class Beranda extends CI_Controller
                       '.$img.'
                     </a>
                     </div>
-					<div class="card-body px-2" style="z-index:99;">
+					<div class="card-body px-2 d-flex justify-content-start align-items-center" style="z-index:99;">
+                        <div>
+                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded-circle ml-1 ml-md-3 lazy mt--7 p-2 bg-white">
+                        </div>
+                        <div class="w-100 ml-md-3 ml-2">
                         <button type="button"  aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
-                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="55" height="55" class="float-left mr-3 d-inline-block rounded-circle ml-1 ml-md-3 lazy">
+                        
 						<h6 class="mb-0 pb-1"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h6>
                         <p class="card-text">
                             <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
                         </p>
+                        </div>
 					</div>
                     
                     '.$content_body.'
