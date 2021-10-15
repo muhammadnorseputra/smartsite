@@ -92,4 +92,29 @@ class C_statistik extends CI_Controller {
 
   //==========================================//
 
+  public function jml_ip()
+  {
+    $input = $this->input->get();
+    $start = join('-',array_reverse(explode('/',$input['s'])));
+    $end = join('-',array_reverse(explode('/',$input['e'])));
+
+    $db = $this->statistik->get_all_data_statistik($start,$end);
+    $hits_up = ceil($this->statistik->ip_hits($start,$end,'up')[0]->hits/3);
+    $hits_down = ceil($this->statistik->ip_hits($start,$end)[0]->hits/3);
+    $location = $this->statistik->ip_loc($start,$end);
+    if($db>0)
+    {
+      $res = $db;
+      $max = $hits_up;
+      $min = $hits_down;
+      $loc = $location;
+    } else {
+      $res = 0;
+      $max = 0;
+      $min = 0;
+      $loc = 0;
+    }
+    echo json_encode(['jml_ip' => $res, 'ip_loc' => $loc, 'hits_max' => $max, 'hits_min' => $min]);
+  }
+
 }

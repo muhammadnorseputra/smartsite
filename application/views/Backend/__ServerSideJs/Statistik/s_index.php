@@ -123,6 +123,7 @@
 	function refresh()
 	{
 		dataTable.ajax.reload();
+		_countIp();
 	}
 
 	$("#FormSearchByTgl").on('change', function(e) {
@@ -131,7 +132,20 @@
 		let tglM = $("[name='tgl_mulai']").val();
 		let tglS = $("[name='tgl_selesai']").val();
 		dataTable.draw();
+		_countIp();
 	});
+
+	_countIp();
+	function _countIp() {
+		let tglM = $("[name='tgl_mulai']").val();
+		let tglS = $("[name='tgl_selesai']").val();
+		$.getJSON(`<?= base_url('backend/module/c_statistik/jml_ip'); ?>`, {s: tglM, e: tglS}, function(res) {
+			$("h1#total_ip").text(res.jml_ip);
+			$("h1#ip_loc").text(res.ip_loc);
+			$("h1#hits_max").text(res.hits_max);
+			$("h1#hits_min").text(res.hits_min);
+		});
+	}
 
 	})
 </script>

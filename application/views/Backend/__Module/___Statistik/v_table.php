@@ -31,6 +31,25 @@
 		<?= form_close(); ?>
 		</div>
 		</div>
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-3">
+				<h5>Total IP</h5>
+				<h1 id="total_ip">0</h1>
+			</div>
+			<div class="col-md-3">
+				<h5>Open Location</h5>
+				<h1 id="ip_loc">0</h1>
+			</div>
+			
+			<div class="col-xs-6 col-sm-6 col-md-3">
+				<h5>Hit's Max</h5>
+				<h1 id="hits_max">0</h1>
+			</div>
+			<div class="col-md-3">
+				<h5>Hit's Min</h5>
+				<h1 id="hits_min">0</h1>
+			</div>
+		</div>
 	</div>
 	<div class="body">
 		<table class="table table-responsive table-condensed table-striped" id="tbl-statistik">

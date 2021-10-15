@@ -61,5 +61,33 @@ class M_b_statistik extends CI_Model {
     return $query;
   }
 
+  public function ip_hits($tgl_m,$tgl_s,$lvl=null)
+  {
+    if($lvl == 'up'):
+      $this->db->select_max('hits');
+    else:
+      $this->db->select_min('hits');
+    endif;
+    $this->db->from($this->table);
+    if(!empty($tgl_m) && !empty($tgl_s)) {
+      $this->db->where('date BETWEEN "'.$tgl_m.'" AND "'.$tgl_s.'"');
+    }
+    $query = $this->db->get()->result();
+    return $query;
+  }
+
+  public function ip_loc($tgl_m,$tgl_s)
+  {
+    $this->db->select('latitude,longitude');
+    $this->db->from($this->table);
+    $this->db->where('latitude !=', NULL);
+    $this->db->where('longitude !=', NULL);
+    if(!empty($tgl_m) && !empty($tgl_s)) {
+      $this->db->where('date BETWEEN "'.$tgl_m.'" AND "'.$tgl_s.'"');
+    }
+    $query = $this->db->count_all_results();
+    return $query;
+  }
+
   
 }
