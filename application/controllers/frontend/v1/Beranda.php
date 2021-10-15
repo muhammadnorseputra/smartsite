@@ -237,7 +237,7 @@ class Beranda extends CI_Controller
                     $img = ' <div class="position-relative">
                         <img style="height:310px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
-                            <i class="far fa-play-circle fa-4x bg-primary rounded-circle"></i>
+                            <i class="far fa-play-circle fa-3x bg-dark rounded-circle"></i>
                         </div>
                         </div>';
                 elseif($row->type === 'SLIDE'):
