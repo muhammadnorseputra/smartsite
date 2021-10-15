@@ -35,10 +35,12 @@
 			<div class="col-xs-6 col-sm-6 col-md-3">
 				<h5>Total IP</h5>
 				<h1 id="total_ip">0</h1>
+				<b id="ip_presentase_day">0%</b>
 			</div>
 			<div class="col-md-3">
 				<h5>Open Location</h5>
 				<h1 id="ip_loc">0</h1>
+				<b id="ip_loc_close">0</b>
 			</div>
 			
 			<div class="col-xs-6 col-sm-6 col-md-3">

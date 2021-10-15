@@ -146,6 +146,8 @@
 			$("h1#hits_min").text(res.hits_min);
 			$("b#ip_max").text(`(${res.ip_max})`);
 			$("b#ip_min").text(`(${res.ip_min})`);
+			$("b#ip_presentase_day").text(`(${res.ip_persentase_day}%)`);
+			$("b#ip_loc_close").text(`(${res.ip_loc_off} OFF)`);
 		});
 	}
 

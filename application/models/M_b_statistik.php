@@ -61,6 +61,11 @@ class M_b_statistik extends CI_Model {
     return $query;
   }
 
+  public function get_all_count()
+  {
+    return $this->db->select('*')->from($this->table)->get()->num_rows();
+  }
+
   public function ip_hits($tgl_m,$tgl_s,$lvl=null)
   {
     $this->db->select('ip');
@@ -77,12 +82,19 @@ class M_b_statistik extends CI_Model {
     return $query;
   }
 
-  public function ip_loc($tgl_m,$tgl_s)
+  public function ip_loc($tgl_m,$tgl_s,$type=null)
   {
     $this->db->select('latitude,longitude');
     $this->db->from($this->table);
-    $this->db->where('latitude !=', NULL);
-    $this->db->where('longitude !=', NULL);
+    
+    if($type == 'on'):
+      $this->db->where('latitude !=', NULL);
+      $this->db->where('longitude !=', NULL);
+    else:
+      $this->db->where('latitude', NULL);
+      $this->db->where('longitude', NULL);
+    endif;
+
     if(!empty($tgl_m) && !empty($tgl_s)) {
       $this->db->where('date BETWEEN "'.$tgl_m.'" AND "'.$tgl_s.'"');
     }

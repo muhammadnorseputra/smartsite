@@ -97,7 +97,7 @@ class C_statistik extends CI_Controller {
     $input = $this->input->get();
     $start = join('-',array_reverse(explode('/',$input['s'])));
     $end = join('-',array_reverse(explode('/',$input['e'])));
-
+    $total_ip = $this->statistik->get_all_count();
     $db = $this->statistik->get_all_data_statistik($start,$end);
     $up = $this->statistik->ip_hits($start,$end,'up')[0]->hits;
     $down = $this->statistik->ip_hits($start,$end)[0]->hits;
@@ -105,20 +105,30 @@ class C_statistik extends CI_Controller {
     $hits_down = ceil($down/3);
     $ip_hits_count_up = $this->statistik->ip_hits_count($start,$end,$up);
     $ip_hits_count_down = $this->statistik->ip_hits_count($start,$end,$down);
-    $location = $this->statistik->ip_loc($start,$end);
+    $location = $this->statistik->ip_loc($start,$end,'on');
+    $location_off = $this->statistik->ip_loc($start,$end);
+    $ip_persentase_day = number_format(($db/$total_ip) * 100,2);
     if($db>0)
     {
       $res = nominal($db);
       $max = nominal($hits_up);
       $min = nominal($hits_down);
       $loc = nominal($location);
+      $loc_off = nominal($location_off);
     } else {
       $res = 0;
       $max = 0;
       $min = 0;
       $loc = 0;
     }
-    echo json_encode(['jml_ip' => $res, 'ip_loc' => $loc, 'hits_max' => $max, 'ip_max' => $ip_hits_count_up, 'hits_min' => $min, 'ip_min' => $ip_hits_count_down]);
+    echo json_encode(['total_ip' => $total_ip,
+                      'jml_ip' => $res, 
+                      'ip_loc' => $loc, 'ip_loc_off' => $loc_off, 
+                      'hits_max' => $max, 
+                      'ip_max' => $ip_hits_count_up, 
+                      'hits_min' => $min, 
+                      'ip_min' => $ip_hits_count_down, 
+                      'ip_persentase_day' => $ip_persentase_day]);
   }
 
 }
