@@ -227,15 +227,15 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img style="height:320px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:340px; object-fit: cover; object-position: center;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     elseif(!empty($row->img_blob)):
-                        $img = '<img style="height:320px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy rounded-top border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
+                        $img = '<img style="height:340px; object-fit: cover; object-position: center;" class="card-img-top w-100 lazy rounded-top border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
-                        $img = '<img style="height:320px; object-fit: cover; object-position: top;" class="w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:340px; object-fit: cover; object-position: center;" class="w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="height:320px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="height:340px; object-fit: cover; object-position: center;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-3x bg-dark rounded-circle"></i>
                         </div>
@@ -243,9 +243,9 @@ class Beranda extends CI_Controller
                 elseif($row->type === 'SLIDE'):
                     $img = $photo_t;
                 elseif($row->type === 'LINK'):
-                    $img = '<img style="height:320px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:340px; object-fit: cover; object-position: center;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
                 else:
-                    $img = '<img style="height:320px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:340px; object-fit: cover; object-position: center;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                 endif;
 
                 // Kategori
