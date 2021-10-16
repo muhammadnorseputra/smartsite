@@ -66,7 +66,7 @@ class C_statistik extends CI_Controller {
       }
 
       $sub_array = array();
-      $sub_array[] = $r->ip;
+      $sub_array[] = "<a href='".$r->ip."' class='btn-ip'>".$r->ip."</a>";
       $sub_array[] = $r->browser." (".substr($r->browser_version,0,4).")";
       $sub_array[] = $r->os;      
       $sub_array[] = longdate_indo($r->date);
@@ -131,4 +131,67 @@ class C_statistik extends CI_Controller {
                       'ip_persentase_day' => $ip_persentase_day]);
   }
 
+  public function page_source() {
+    $data = [
+        'content' => 'Backend/__Module/___Statistik/v_page_source',
+        'scriptjs' => 'Backend/__ServerSideJs/Statistik/s_page_source',
+        'pageinfo' => '<li><a href="#"><i class="material-icons">dashboard</i> Dasboard</a></li>
+              <li>Statistik</li><li class="active">Page Source</li>',
+        'css' => [
+          'assets/plugins/datatable/datatables.min.css',
+          'assets/plugins/datatable/inc_tablesold.css',
+        ],
+        'js' => [
+          'assets/plugins/datatable/datatables.min.js',
+        ]  
+    ];
+    $this->load->view('Backend/v_home', $data);
+  }
+
+  protected function persentase_color($total)
+  {
+    if($total >= '10.00' && $total <= '24.99'):
+      $color = 'progress-bar-danger';
+    elseif($total >= '25.00' && $total <= '49.99'):
+      $color = 'progress-bar-warning';
+    elseif($total >= '50.00' && $total <= '74.99'):
+      $color = 'progress-bar-info';
+    elseif($total >= '75.00' && $total <= '100.00'):
+      $color = 'progress-bar-success';
+    else:
+      $color = 'progress-bar-striped';
+    endif;
+    return $color;
+  }
+
+  public function ajax_list_ps()
+  {
+    $getdata = $this->statistik->fetch_datatable_ps();
+    $data = array();
+    $no = $_POST['start'];
+  
+    foreach($getdata as $r) {
+      $total_hits = $this->statistik->total_hits_ps();
+      $persentase = number_format(($r->total_hits_per_item/$total_hits) * 100, 2);
+      $color = $this->persentase_color($persentase);
+      $progress = '<div class="progress-bar '.$color.'" role="progressbar" aria-valuenow="'.$persentase.'" aria-valuemin="0" aria-valuemax="100" style="width: '.$persentase.'%;">
+                                    '.$persentase.'%
+                                </div>';
+      $sub_array = array();
+      $sub_array[] = $r->url;
+      $sub_array[] = $progress;      
+      $sub_array[] = $r->total_hits_per_item;      
+      $data[]      = $sub_array;
+    $no++;
+    }
+  
+    $output = array(
+      'draw'            => intval($_POST['draw']),
+      'recordsTotal'    => $this->statistik->get_all_data_ps(),
+      'recordsFiltered' => $this->statistik->get_filtered_data_ps(),
+      'data'            => $data
+    );
+  
+    echo json_encode($output); 
+  }
 }

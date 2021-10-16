@@ -116,5 +116,68 @@ class M_b_statistik extends CI_Model {
     return $query;
   }
 
+  // Datatable Pagesource
+  public $table_ps = 'public_visitor_source';
+  public $select_colums_ps = array('id','ip','url','date','time');
+  public $order_colums_ps = array(null, 'hits',null);
+  public $column_search_ps = array('hits');
+
+  public function datatable_ps() {
+    $this->db->select_sum('hits', 'total_hits_per_item');
+    $this->db->select($this->select_colums_ps);
+    $this->db->from($this->table_ps);
+    $this->db->group_by('url');
+    $i=0;
+    foreach ($this->column_search_ps as $item) { // loop column 
+            if (!empty($_POST['search']['value'])) { // if datatable send POST for search
+            if ($i === 0) { // first loop
+                $this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+                $this->db->like($item, $_POST['search']['value']);
+            } else {
+                $this->db->or_like($item, $_POST['search']['value']);
+            }
+
+            if (count($this->column_search_ps) - 1 == $i) //last loop
+                $this->db->group_end(); //close bracket
+        }
+        $i++;
+    }
+    
+    if(isset($_POST["order"])){
+      $this->db->order_by($this->order_colums_ps[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+    } else {
+      $this->db->order_by("hits", "desc");
+    }
+  }
+
+  public function fetch_datatable_ps() {
+    $this->datatable_ps();
+    if($_POST['length'] != -1){
+      $this->db->limit($_POST['length'], $_POST['start']);
+    }
+    $query = $this->db->get();
+    return $query->result();
+  }
   
+  public function get_filtered_data_ps() {
+    $this->datatable_ps();
+    $query = $this->db->get();
+    return $query->num_rows();
+  }
+
+  public function get_all_data_ps() {
+    $this->db->select("*");
+    $this->db->from($this->table_ps);
+    $query = $this->db->count_all_results();
+    return $query;
+  }
+  
+  public function total_hits_ps()
+  {
+    $this->db->select_sum('hits', 'total_hits');
+    $this->db->from($this->table_ps);
+    $r = $this->db->get();
+    $query = $r->row();
+    return $query->total_hits;
+  }
 }
