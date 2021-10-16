@@ -18,7 +18,7 @@ class M_f_visitor extends CI_Model
         $waktu = date("H:i:s"); // Time
         $hits = 1;
         $url = curPageURL();
-        $query = $this->db->get($this->fk_table, ['ip' => $ip, 'date' => $date, 'url' => $url]);
+        $query = $this->db->get_where($this->fk_table, ['ip' => $ip, 'date' => $date, 'url' => $url]);
         $query_row = $query->num_rows();
         $row = isset($query_row) ? ($query_row) : 0;
         if($row === 0) {
