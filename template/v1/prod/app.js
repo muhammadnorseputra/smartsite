@@ -951,7 +951,6 @@ $(function () {
         type: y,
         offset: -10,
         position: "center",
-        width: 'all',
         color: '#fff'
       });
     }
