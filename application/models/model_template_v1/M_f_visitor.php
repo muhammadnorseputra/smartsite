@@ -26,7 +26,7 @@ class M_f_visitor extends CI_Model
             $this->db->insert($this->fk_table, $data_insert);
         } else {
             $hits_count = $query->row()->hits;
-            $data_where = ['ip' => $ip, 'url' => $url];
+            $data_where = ['ip' => $ip, 'date' => $date, 'url' => $url];
             $data_update = ['hits' => $hits_count+1];
             $this->db->where($data_where);
             $this->db->update($this->fk_table, $data_update);
