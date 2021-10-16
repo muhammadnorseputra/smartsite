@@ -178,7 +178,7 @@ class C_statistik extends CI_Controller {
                                     '.$persentase.'%
                                 </div>';
       $sub_array = array();
-      $sub_array[] = $r->url;
+      $sub_array[] = character_limiter($r->url, 123);
       $sub_array[] = $progress;      
       $sub_array[] = $r->total_hits_per_item;      
       $data[]      = $sub_array;
