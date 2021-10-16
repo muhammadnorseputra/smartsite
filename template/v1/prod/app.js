@@ -949,7 +949,10 @@ $(function () {
       notif({
         msg: "<i class='fas fa-info-circle mr-2'></i> ".concat(x),
         type: y,
-        position: "bottom"
+        offset: -10,
+        position: "center",
+        width: 'all',
+        color: '#fff'
       });
     }
 
