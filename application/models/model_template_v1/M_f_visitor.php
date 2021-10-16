@@ -10,6 +10,19 @@ class M_f_visitor extends CI_Model
         $this->table = 'public_visitor';
         $this->fk_table = 'public_visitor_source';
     }
+    public function visitor_view()
+    {
+        $date  = date("Y-m-d"); // Mendapatkan tanggal sekarang
+        
+        $pengunjunghariini  = $this->db->query("SELECT * FROM public_visitor WHERE date='".$date."' GROUP BY ip")->num_rows(); // Hitung jumlah pengunjung
+        $dbpengunjung = $this->db->query("SELECT COUNT(hits) as hits FROM public_visitor")->row(); 
+        $totalpengunjung = isset($dbpengunjung->hits)?($dbpengunjung->hits):0; // hitung total pengunjung
+        $bataswaktu = time() - 400;
+        $pengunjungonline  = $this->db->query("SELECT * FROM public_visitor WHERE online > '".$bataswaktu."'")->num_rows(); // hitung pengunjung online
+  
+        $data = ['jml_hariini' => $pengunjunghariini, 'jml_total_pengunjung' => $totalpengunjung, 'jml_online' => $pengunjungonline];
+        return $data;
+    }
 
     public function visitor_source()
     {
@@ -56,13 +69,5 @@ class M_f_visitor extends CI_Model
         $hits_count = $s_query->row()->hits;
         $this->db->query("UPDATE public_visitor SET hits='".($hits_count+1)."', online='".$waktu."' WHERE ip='".$ip."' AND date='".$date."'");
         }
-         $pengunjunghariini  = $this->db->query("SELECT * FROM public_visitor WHERE date='".$date."' GROUP BY ip")->num_rows(); // Hitung jumlah pengunjung
-        $dbpengunjung = $this->db->query("SELECT COUNT(hits) as hits FROM public_visitor")->row(); 
-        $totalpengunjung = isset($dbpengunjung->hits)?($dbpengunjung->hits):0; // hitung total pengunjung
-        $bataswaktu = time() - 400;
-        $pengunjungonline  = $this->db->query("SELECT * FROM public_visitor WHERE online > '".$bataswaktu."'")->num_rows(); // hitung pengunjung online
-  
-        $data = ['jml_hariini' => $pengunjunghariini, 'jml_total_pengunjung' => $totalpengunjung, 'jml_online' => $pengunjungonline];
-        return $data;
     }
 }

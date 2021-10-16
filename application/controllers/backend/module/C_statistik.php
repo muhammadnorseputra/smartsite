@@ -70,7 +70,7 @@ class C_statistik extends CI_Controller {
       $sub_array[] = $r->browser." (".substr($r->browser_version,0,4).")";
       $sub_array[] = $r->os;      
       $sub_array[] = longdate_indo($r->date);
-      $sub_array[] = ceil($r->hits/3);      
+      $sub_array[] = ceil($r->hits);      
       $sub_array[] = $r->latitude;      
       $sub_array[] = $r->longitude;      
       $sub_array[] = substr($r->time, 11,5);      
@@ -101,8 +101,8 @@ class C_statistik extends CI_Controller {
     $db = $this->statistik->get_all_data_statistik($start,$end);
     $up = $this->statistik->ip_hits($start,$end,'up')[0]->hits;
     $down = $this->statistik->ip_hits($start,$end)[0]->hits;
-    $hits_up = ceil($up/3);
-    $hits_down = ceil($down/3);
+    $hits_up = ceil($up);
+    $hits_down = ceil($down);
     $ip_hits_count_up = $this->statistik->ip_hits_count($start,$end,$up);
     $ip_hits_count_down = $this->statistik->ip_hits_count($start,$end,$down);
     $location = $this->statistik->ip_loc($start,$end,'on');
