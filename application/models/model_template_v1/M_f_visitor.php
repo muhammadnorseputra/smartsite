@@ -7,6 +7,30 @@ class M_f_visitor extends CI_Model
     {
         parent::__construct();
         $this->load->library('user_agent');
+        $this->table = 'public_visitor';
+        $this->fk_table = 'public_visitor_source';
+    }
+
+    public function visitor_source()
+    {
+        $ip    = $this->input->ip_address(); // Mendapatkan IP user
+        $date  = date("Y-m-d"); // Mendapatkan tanggal sekarang
+        $waktu = date("H:i:s"); // Time
+        $hits = 1;
+        $url = curPageURL();
+        $query = $this->db->get($this->fk_table, ['ip' => $ip, 'date' => $date, 'url' => $url]);
+        $query_row = $query->num_rows();
+        $row = isset($query_row) ? ($query_row) : 0;
+        if($row === 0) {
+            $data_insert = ['ip' => $ip, 'url' => $url, 'hits' => $hits, 'date' => $date, 'time' => $waktu];
+            $this->db->insert($this->fk_table, $data_insert);
+        } else {
+            $hits_count = $query->row()->hits;
+            $data_where = ['ip' => $ip, 'url' => $url];
+            $data_update = ['hits' => $hits_count+1];
+            $this->db->where($data_where);
+            $this->db->update($this->fk_table, $data_update);
+        }
     }
 
     public function visitor_count() {
