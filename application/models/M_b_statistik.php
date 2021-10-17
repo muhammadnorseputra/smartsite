@@ -146,7 +146,7 @@ class M_b_statistik extends CI_Model {
     if(isset($_POST["order"])){
       $this->db->order_by($this->order_colums_ps[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
     } else {
-      $this->db->order_by("hits", "desc");
+      $this->db->order_by("total_hits_per_item", "desc");
     }
   }
 
