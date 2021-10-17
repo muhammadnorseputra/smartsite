@@ -42,8 +42,8 @@
 				search: "Cari Hit's : ",
 				processing: "Mohon Tunggu, Processing...",
 				paginate: {
-					previous: "Next",
-					next: "Prev"
+					previous: "Prev",
+					next: "Next"
 				},
 				emptyTable: "No matching records found, please filter this data"
 			}

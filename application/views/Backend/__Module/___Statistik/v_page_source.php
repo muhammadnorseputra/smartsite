@@ -6,13 +6,15 @@
 </div>
 <div class="card card-border">
 	<div class="body">
-		<table class="table table-responsive table-condensed table-striped" id="tbl-ps">
-			<thead>
-				<th>URL</th>
-				<th>%</th>
-				<th>TOTAL HITS</th>
-			</thead>
-			<tbody>
-		</table>
+		<div class="table-responsive">
+			<table class="table table-responsive table-condensed table-striped" id="tbl-ps">
+				<thead>
+					<th>URL</th>
+					<th>%</th>
+					<th>TOTAL HITS</th>
+				</thead>
+				<tbody>
+			</table>
+		</div>
 	</div>
 </div>
