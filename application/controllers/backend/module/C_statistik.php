@@ -195,9 +195,10 @@ class C_statistik extends CI_Controller {
     echo json_encode($output); 
   }
   public function tabel_ip_detail($row) {
-    $tbl = '<table class="table table-condensed table-hover table-responsive table-striped">';
+    $tbl = '<div class="table-responsive"><table class="table table-condensed table-hover table-striped">';
     $tbl .= '<thead class="bg-dark">';
       $tbl .= '<tr>
+          <th>Date</th>
           <th>Url</th>
           <th>Hits</th>
       </tr>';
@@ -205,12 +206,13 @@ class C_statistik extends CI_Controller {
     $tbl .= '<tbody>';
       foreach($row->result() as $r):
           $tbl .= '<tr>';
+            $tbl .= '<td>'.longdate_indo($r->date).'</td>';
             $tbl .= '<td>'.character_limiter($r->url,120).'</td>';
             $tbl .= '<td>'.$r->hits.'</td>';
           $tbl .= '</tr>';
       endforeach;
     $tbl .= '</tbody>';
-    $tbl .= '</table>'; 
+    $tbl .= '</table></div>'; 
     return $tbl;
   }
 

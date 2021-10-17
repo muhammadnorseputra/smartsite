@@ -185,6 +185,7 @@ class M_b_statistik extends CI_Model {
     $this->db->select('*');
     $this->db->from('public_visitor_source');
     $this->db->where('ip', $ip);
+    $this->db->order_by('date', 'desc');
     $q = $this->db->get();
     return $q;
   }
