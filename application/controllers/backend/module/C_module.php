@@ -37,7 +37,7 @@ class C_module extends CI_Controller {
   //==========================================//
   ## VIEW TABLE
 	public function module_table() {
-		$data = 'Backend/__module/___Module/v_table';
+		$data = 'Backend/__Module/___Module/v_table';
 		$this->load->view($data);
 	}
 	//==========================================//
@@ -45,7 +45,7 @@ class C_module extends CI_Controller {
 	//==========================================//
   ## VIEW ADD
 	public function module_add() {
-		$data = 'Backend/__module/___Module/v_add';
+		$data = 'Backend/__Module/___Module/v_add';
 		$this->load->view($data);
 	}
 	//==========================================//
@@ -53,7 +53,7 @@ class C_module extends CI_Controller {
 	//==========================================//
   ## VIEW EDIT
 	public function module_edit($id) {
-		$fr = 'Backend/__module/___Module/v_edit';
+		$fr = 'Backend/__Module/___Module/v_edit';
 		$data['data'] = $this->module->edit('t_module', $id);
 		$this->load->view($fr, $data);
 	}

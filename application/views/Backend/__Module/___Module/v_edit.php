@@ -3,8 +3,6 @@
  foreach($data->result() as $row):
 ?>
 
-
-
 <input type="hidden" name="id_module" value="<?= $row->id_module; ?>">
 <label for="nama_module">Nama Module</label>
 <div class="form-group">

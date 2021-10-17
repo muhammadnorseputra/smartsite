@@ -115,8 +115,5 @@
 				});
 			$dialog.dialog('open');
 		});
-
-
-
 	});
 </script>
