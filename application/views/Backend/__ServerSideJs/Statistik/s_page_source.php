@@ -4,7 +4,7 @@
 			processing: true,
 			serverSide: true,
 			order: [
-				[1, 'desc']
+				[2, 'desc']
 			],
 			deferRender: true,
 			keys: false,
@@ -30,12 +30,13 @@
 				{
 					"targets": [1],
 					"className": "dt-left",
-					"orderable": true
+					"orderable": false,
+					"responsivePriority": 2
 				},
 				{
 					"targets": [2],
 					"className": "dt-left",
-					"orderable": false
+					"orderable": true
 				}
 			],
 			language: {

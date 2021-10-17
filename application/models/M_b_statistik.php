@@ -119,7 +119,7 @@ class M_b_statistik extends CI_Model {
   // Datatable Pagesource
   public $table_ps = 'public_visitor_source';
   public $select_colums_ps = array('id','ip','url','date','time');
-  public $order_colums_ps = array(null, 'hits',null);
+  public $order_colums_ps = array(null, null, 'total_hits_per_item');
   public $column_search_ps = array('hits');
 
   public function datatable_ps() {
