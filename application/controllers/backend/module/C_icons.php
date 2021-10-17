@@ -17,7 +17,7 @@ class C_icons extends CI_Controller {
 	{
 
 		$data = [
-				'content' => 'Backend/__module/___Icons/v_table',
+				'content' => 'Backend/__Module/___Icons/v_table',
 				'scriptjs' => 'Backend/__ServerSideJs/Icons/s_icons',
 				'pageinfo' => '<li><a href="#"><i class="material-icons">dashboard</i> Dasboard</a></li>
 							<li class="active">Icons</li>',
