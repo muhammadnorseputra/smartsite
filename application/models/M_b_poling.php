@@ -29,11 +29,17 @@ class M_b_poling extends CI_Model {
 
   public function grafik($tbl)
   {
-    return $this->db->select('label, value')
+    $total_responden = $this->countPartisipasi();
+    $q = $this->db->select('label, value')
              ->from($tbl)
              ->where('status','JAWABAN')
              ->where('aktif','Y')
              ->get()->result();
+    $data = [];
+    foreach($q as $r):
+      $data[] = ['label' => $r->label, 'value' => number_format(($r->value/$total_responden) * 100,2)];
+    endforeach;
+    return $data;
   }
 
 
