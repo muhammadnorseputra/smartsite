@@ -150,6 +150,25 @@
 			$("b#ip_loc_close").text(`(${res.ip_loc_off} OFF)`);
 		});
 	}
+});
 
-	})
+function show_ip_detail(ip) {
+	$.confirm({
+    title: 'IP. ' + ip,
+    content: function () {
+	    var self = this;
+	    return $.ajax({
+	        url: '<?= base_url('backend/module/c_statistik/ip_detail'); ?>',
+	        dataType: 'json',
+	        method: 'post',
+	        data: {ip: ip}
+	    }).done(function (response) {
+	        self.setContent(response);
+	    }).fail(function(){
+	        self.setContent('Something went wrong.');
+	    });
+	},
+	columnClass: 'col-md-12'
+	});
+}
 </script>

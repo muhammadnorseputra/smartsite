@@ -180,4 +180,12 @@ class M_b_statistik extends CI_Model {
     $query = $r->row();
     return $query->total_hits;
   }
+
+  public function get_all_ps($ip) {
+    $this->db->select('*');
+    $this->db->from('public_visitor_source');
+    $this->db->where('ip', $ip);
+    $q = $this->db->get();
+    return $q;
+  }
 }

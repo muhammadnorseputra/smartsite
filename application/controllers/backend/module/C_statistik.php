@@ -66,7 +66,7 @@ class C_statistik extends CI_Controller {
       }
 
       $sub_array = array();
-      $sub_array[] = "<a href='".$r->ip."' class='btn-ip'>".$r->ip."</a>";
+      $sub_array[] = "<a href='#' onClick='show_ip_detail(\"".$r->ip."\")'>".$r->ip."</a>";
       $sub_array[] = $r->browser." (".substr($r->browser_version,0,4).")";
       $sub_array[] = $r->os;      
       $sub_array[] = longdate_indo($r->date);
@@ -178,7 +178,7 @@ class C_statistik extends CI_Controller {
                                     '.$persentase.'%
                                 </div>';
       $sub_array = array();
-      $sub_array[] = character_limiter($r->url, 123);
+      $sub_array[] = character_limiter($r->url, 118);
       $sub_array[] = $progress;      
       $sub_array[] = $r->total_hits_per_item;      
       $data[]      = $sub_array;
@@ -193,5 +193,37 @@ class C_statistik extends CI_Controller {
     );
   
     echo json_encode($output); 
+  }
+  public function tabel_ip_detail($row) {
+    $tbl = '<table class="table table-condensed table-hover table-responsive table-striped">';
+    $tbl .= '<thead class="bg-dark">';
+      $tbl .= '<tr>
+          <th>Url</th>
+          <th>Hits</th>
+      </tr>';
+    $tbl .= '</thead>';
+    $tbl .= '<tbody>';
+      foreach($row->result() as $r):
+          $tbl .= '<tr>';
+            $tbl .= '<td>'.character_limiter($r->url,120).'</td>';
+            $tbl .= '<td>'.$r->hits.'</td>';
+          $tbl .= '</tr>';
+      endforeach;
+    $tbl .= '</tbody>';
+    $tbl .= '</table>'; 
+    return $tbl;
+  }
+
+  public function ip_detail() {
+    $ip = $this->input->post('ip');
+    $data = $this->statistik->get_all_ps($ip);
+    if($data->num_rows() > 0)
+    {
+      $template = $this->tabel_ip_detail($data);
+      $render = $template;
+    } else {
+      $render = 'No Data';
+    }
+    echo json_encode($render);
   }
 }
