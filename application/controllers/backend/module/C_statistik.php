@@ -112,11 +112,11 @@ class C_statistik extends CI_Controller {
     $ip_persentase_day = number_format(($db/$total_ip) * 100,2);
     if($db>0)
     {
-      $res = nominal($db);
-      $max = nominal($hits_up);
-      $min = nominal($hits_down);
-      $loc = nominal($location);
-      $loc_off = nominal($location_off);
+      $res = $db;
+      $max = $hits_up;
+      $min = $hits_down;
+      $loc = $location;
+      $loc_off = $location_off;
     } else {
       $res = 0;
       $max = 0;
