@@ -189,4 +189,21 @@ class M_b_statistik extends CI_Model {
     $q = $this->db->get();
     return $q;
   }
+
+  public function v_year($tahun)
+  {
+    $this->db->select('date');
+    $this->db->from('public_visitor');
+    $this->db->like('date', $tahun);
+    $q = $this->db->get();
+    return $q->num_rows();
+  }
+
+  public function v_year_hits($tahun) {
+    $this->db->select_sum('hits', 'total_hits');
+    $this->db->from('public_visitor');
+    $this->db->like('date', $tahun);
+    $q = $this->db->get()->row();
+    return $q->total_hits;
+  }
 }

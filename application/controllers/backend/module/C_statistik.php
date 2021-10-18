@@ -239,12 +239,44 @@ class C_statistik extends CI_Controller {
               <li>Statistik</li><li class="active">Chart</li>',
         'css' => [
           'assets/plugins/morrisjs/morris.css',
+          'assets/plugins/waitme/waitMe.min.css'
         ],
         'js' => [
           'assets/plugins/morrisjs/morris.js',
-          'assets/plugins/raphael/raphael.min.js'
+          'assets/plugins/raphael/raphael.min.js',
+          'assets/plugins/waitme/waitMe.min.js'
         ]  
     ];
     $this->load->view('Backend/v_home', $data);
+  }
+
+  public function chart_visitor_year()
+  {
+    // Total Visitor
+    $total_0 = $this->statistik->v_year('2020'); $hits_0 = $this->statistik->v_year_hits('2020');
+    $total_1 = $this->statistik->v_year('2021'); $hits_1 = $this->statistik->v_year_hits('2021');
+    $total_2 = $this->statistik->v_year('2022'); $hits_2 = $this->statistik->v_year_hits('2022');
+    $total_3 = $this->statistik->v_year('2023'); $hits_3 = $this->statistik->v_year_hits('2023');
+    $total_4 = $this->statistik->v_year('2024'); $hits_4 = $this->statistik->v_year_hits('2024');
+    $total_5 = $this->statistik->v_year('2025'); $hits_5 = $this->statistik->v_year_hits('2025');
+    $total_6 = $this->statistik->v_year('2026'); $hits_6 = $this->statistik->v_year_hits('2026');
+    $total_7 = $this->statistik->v_year('2027'); $hits_7 = $this->statistik->v_year_hits('2027');
+    $total_8 = $this->statistik->v_year('2028'); $hits_8 = $this->statistik->v_year_hits('2028');
+    $total_9 = $this->statistik->v_year('2029'); $hits_9 = $this->statistik->v_year_hits('2029');
+    
+    $visitor = ['2020' => $total_0, '2021' => $total_1,'2022'=> $total_2,'2023'=> $total_3,'2024'=> $total_4,'2025'=> $total_5,'2026'=> $total_6, '2027' => $total_7, '2028'=> $total_8, '2029'=> $total_9];
+    $hits = ['2020' => $hits_0, '2021' => $hits_1,'2022'=> $hits_2,'2023'=> $hits_3,'2024'=> $hits_4,'2025'=> $hits_5,'2026'=> $hits_6, '2027' => $hits_7, '2028'=> $hits_8, '2029'=> $hits_9];
+    
+    $total_hits = [];
+    foreach($hits as $key => $val) {
+      $total_hits[] = ['hits' => intval($val)];
+    }
+    $total_visitor = []; 
+    foreach($visitor as $key => $val) {
+      $total_visitor[] = ['y' => ''.$key.'', 'count' => intval($val)];
+    }
+    $total = $total_visitor;
+    $json = json_encode($total);
+    echo $json;
   }
 }
