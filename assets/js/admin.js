@@ -261,6 +261,10 @@ $.AdminBSB.search = {
                 _this.hideSearchBar();
             }
         });
+
+        $searchBar.find('input[type="text"]').on("keyup", function(e) {
+            e.preventDefault();
+        });
     },
     showSearchBar: function() {
         $searchBar.addClass("open");
@@ -528,7 +532,7 @@ $(function() {
     $.AdminBSB.dropdownMenu.activate();
     $.AdminBSB.input.activate();
     $.AdminBSB.select.activate();
-    // $.AdminBSB.search.activate();
+    $.AdminBSB.search.activate();
 
     setTimeout(function() {
         $(".page-loader-wrapper").fadeOut();

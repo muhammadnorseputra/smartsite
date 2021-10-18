@@ -8,6 +8,7 @@
 <script src="<?= site_url('assets/plugins/sweetalert/sweetalert.min.js'); ?>"></script>
 <script src="<?= site_url('assets/plugins/jquery-confirm/jquery-confirm.min.js'); ?>"></script>
 <script src="<?= site_url('assets/plugins/jquery-slimscrollbar/jquery.slimscroll.js'); ?>"></script>
+<script src="<?= site_url('assets/plugins/select2/js/select2.min.js'); ?>"></script>
 
 <script src="<?= base_url('assets/js/mproggressbar.js'); ?>"></script>
 <script src="<?= base_url('assets/js/session_out.js'); ?>"></script>

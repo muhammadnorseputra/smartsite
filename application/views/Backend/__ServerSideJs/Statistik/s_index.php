@@ -116,7 +116,9 @@
 		return refresh();
 	});
 
-	$("button[type='reset']").on('click', function() {
+	$("button#reset").on('click', function() {
+		$("[name='tgl_mulai']").val('');
+		$("[name='tgl_selesai']").val('');
 		refresh();
 	});
 
@@ -140,14 +142,16 @@
 		let tglM = $("[name='tgl_mulai']").val();
 		let tglS = $("[name='tgl_selesai']").val();
 		$.getJSON(`<?= base_url('backend/module/c_statistik/jml_ip'); ?>`, {s: tglM, e: tglS}, function(res) {
-			$("h1#total_ip").text(res.jml_ip);
-			$("h1#ip_loc").text(res.ip_loc);
-			$("h1#hits_max").text(res.hits_max);
-			$("h1#hits_min").text(res.hits_min);
-			$("b#ip_max").text(`(${res.ip_max})`);
-			$("b#ip_min").text(`(${res.ip_min})`);
-			$("b#ip_presentase_day").text(`(${res.ip_persentase_day}%)`);
-			$("b#ip_loc_close").text(`(${res.ip_loc_off} OFF)`);
+			$('.total_ip').countTo({from: 0, to: res.jml_ip});
+			$('.ip_loc').countTo({from: 0, to: res.ip_loc});
+			$('.hits_max').countTo({from: 0, to: res.hits_max});
+			$('.hits_min').countTo({from: 0, to: res.hits_min});
+			$('.ip_presentase_day').countTo({speed: 1000, refreshInterval: 50, from: 0, to: res.ip_persentase_day, formatter: function (value, options) {
+					return `${value}%`;
+				}});
+			$('.ip_loc_close').countTo({from: 0, to: res.ip_loc_off});
+			$(".ip_max").text(`(${res.ip_max})`);
+			$(".ip_min").text(`(${res.ip_min})`);
 		});
 	}
 });

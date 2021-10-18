@@ -13,6 +13,9 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <!-- #END# Call Search -->
                     <li aria-label="Logout Akun" class="hint--bottom hint--error">
                         <a href="javascript:void(0);" data-usrname="<?= $this->session->userdata('namalengkap') ?>" id="btnLogout" data-href="<?= base_url('login/logout') ?>" class="waves-effect waves-circle" data-close="true"><i class="material-icons">logout</i></a>
                     </li>

@@ -37,7 +37,9 @@ class C_statistik extends CI_Controller {
           'assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js',
           'assets/js/pages/forms/input-masked.js',
           'assets/js/pages/forms/input-datetime.js',
-          'https://maps.googleapis.com/maps/api/js?key=AIzaSyB3mY70TwKObZIg6_WUz0ntbbT_sGOTvVM&region=ID&language=id&callback=initMaps'
+          'https://maps.googleapis.com/maps/api/js?key=AIzaSyB3mY70TwKObZIg6_WUz0ntbbT_sGOTvVM&region=ID&language=id&callback=initMaps',
+          'assets/plugins/jquery-countto/jquery.countTo.js',
+          'assets/js/pages/widgets/infobox/count.js'
         ]  
     ];
     $this->load->view('Backend/v_home', $data);
@@ -227,5 +229,22 @@ class C_statistik extends CI_Controller {
       $render = 'No Data';
     }
     echo json_encode($render);
+  }
+
+  public function chart() {
+    $data = [
+        'content' => 'Backend/__Module/___Statistik/v_chart',
+        'scriptjs' => 'Backend/__ServerSideJs/Statistik/s_chart',
+        'pageinfo' => '<li><a href="#"><i class="material-icons">dashboard</i> Dasboard</a></li>
+              <li>Statistik</li><li class="active">Chart</li>',
+        'css' => [
+          'assets/plugins/morrisjs/morris.css',
+        ],
+        'js' => [
+          'assets/plugins/morrisjs/morris.js',
+          'assets/plugins/raphael/raphael.min.js'
+        ]  
+    ];
+    $this->load->view('Backend/v_home', $data);
   }
 }

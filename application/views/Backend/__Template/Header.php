@@ -36,6 +36,7 @@
 	<script src="<?= base_url('assets/plugins/jquery-ui/jquery-ui.js'); ?>"></script>
 	<script data-pace-options='{ "ajax": false }' src="<?= site_url('assets/plugins/pace/pace.min.js'); ?>"></script>
 	<link href="<?= site_url('assets/plugins/pace/themes/green/pace-theme-flash.css'); ?>" rel="stylesheet" />
+	<link href="<?= site_url('assets/plugins/select2/css/select2-materialize.css'); ?>" rel="stylesheet" />
 
 </head>
 
@@ -62,14 +63,13 @@
 	<div class="overlay"></div>
 	<!-- #END# Overlay For Sidebars -->
 	<!-- Search Bar -->
-	<div class="search-bar">
-		<div class="search-icon">
-			<i class="material-icons">search</i>
-		</div>
-		<input type="text" placeholder="START TYPING...">
-		<div class="close-search">
-			<i class="material-icons">close</i>
-		</div>
-	</div>
-
-	<!-- #END# Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
