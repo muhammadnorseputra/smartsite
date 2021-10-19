@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("input[name='nama_lengkap'], input[name='umur'], select[name='jns_kelamin']").prop('disabled', true);
+    // $("input[name='nama_lengkap'], input[name='umur'], select[name='jns_kelamin']").prop('disabled', true);
     $("input[name='cek_nipnik']").on('blur', function() {
         // let value = $("input[name='cek_nipnik']").val();
         let value = $(this).val();
