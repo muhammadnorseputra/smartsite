@@ -223,4 +223,26 @@ class M_b_statistik extends CI_Model {
     $q = $this->db->get()->row();
     return $q->total_hits;
   }
+  public function get_day($yearmonth) {
+    $this->db->select('date');
+    $this->db->from('public_visitor');
+    $this->db->where("DATE_FORMAT(date,'%Y-%m')", $yearmonth);
+    $q = $this->db->get()->result();
+    return $q;
+  }
+  public function v_day($day)
+  {
+    $this->db->select('date');
+    $this->db->from('public_visitor');
+    $this->db->where("DATE_FORMAT(date,'%d')", $day);
+    $q = $this->db->get();
+    return $q->num_rows();
+  }
+  public function v_day_hits($day) {
+    $this->db->select_sum('hits', 'total_hits');
+    $this->db->from('public_visitor');
+    $this->db->where("DATE_FORMAT(date,'%d')", $day);
+    $q = $this->db->get()->row();
+    return $q->total_hits;
+  }
 }

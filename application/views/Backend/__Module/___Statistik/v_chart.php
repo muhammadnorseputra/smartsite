@@ -5,11 +5,11 @@
 	</h2>
 </div>
 <div class="row">
-	<div class="col-md-12">
-		<div class="card card-shadow">
+    <div class="col-md-12">
+        <div class="card card-shadow">
             <div class="header">
                 <h2>
-                    Visitor - Tahunan <small>ANTAR TAHUN 2020 - 2029</small>
+                    Visitor - Harian <small>Bulan <?= date('M') ?></small>
                 </h2>
                 <ul class="header-dropdown m-r--5">
                                 <li>
@@ -20,10 +20,10 @@
                             </ul>
             </div>
             <div class="body">
-                <div id="chart_visitor_tahun" style="height: 250px;"></div>
+                <div id="chart_visitor_hari" style="height: 250px;"></div>
             </div>
         </div>
-	</div>
+    </div>
 </div>
 <div class="row">
     <div class="col-md-12">
@@ -46,3 +46,25 @@
         </div>
     </div>
 </div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="card card-shadow">
+            <div class="header">
+                <h2>
+                    Visitor - Tahunan <small>ANTAR TAHUN 2020 - 2029</small>
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                                <li>
+                                    <a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="ios">
+                                        <i class="material-icons">loop</i>
+                                    </a>
+                                </li>
+                            </ul>
+            </div>
+            <div class="body">
+                <div id="chart_visitor_tahun" style="height: 250px;"></div>
+            </div>
+        </div>
+	</div>
+</div>
+

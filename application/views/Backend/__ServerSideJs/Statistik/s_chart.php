@@ -1,5 +1,6 @@
 <script>
 $(function() {
+  grafik_visitor_day();
   grafik_visitor_month();
   grafik_visitor_year();
 });
@@ -9,6 +10,7 @@ function grafik_visitor_year() {
     new Morris.Line({
       element: 'chart_visitor_tahun',
       data: res,
+      smooth: true,
       xkey: 'y',
       xLabels: 'year',
       ykeys: ['hits', 'count'],
@@ -32,5 +34,17 @@ function grafik_visitor_month() {
     });
   });
 }
-
+function grafik_visitor_day() {
+  $.getJSON("<?= base_url('backend/module/c_statistik/chart_visitor_day') ?>", function(res) {
+    new Morris.Area({
+      element: 'chart_visitor_hari',
+      data: res,
+      smooth: true,
+      xkey: 'd',
+      xLabels: 'day',
+      ykeys: ['count','hits'],
+      labels: ['Visitors', 'Hits']
+    });
+  });
+}
 </script>

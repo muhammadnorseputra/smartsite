@@ -252,23 +252,11 @@ class C_statistik extends CI_Controller {
 
   public function chart_visitor_year()
   {
-    // Total Visitor
-    $total_0 = $this->statistik->v_year('2020');
-    $total_1 = $this->statistik->v_year('2021');
-    $total_2 = $this->statistik->v_year('2022');
-    $total_3 = $this->statistik->v_year('2023');
-    $total_4 = $this->statistik->v_year('2024');
-    $total_5 = $this->statistik->v_year('2025');
-    $total_6 = $this->statistik->v_year('2026');
-    $total_7 = $this->statistik->v_year('2027');
-    $total_8 = $this->statistik->v_year('2028');
-    $total_9 = $this->statistik->v_year('2029');
-    
-    $visitor = ['2020' => $total_0, '2021' => $total_1,'2022'=> $total_2,'2023'=> $total_3,'2024'=> $total_4,'2025'=> $total_5,'2026'=> $total_6, '2027' => $total_7, '2028'=> $total_8, '2029'=> $total_9];
-    
+    $years = ['2020','2021','2022','2023','2024','2025','2026','2027','2028','2029'];
     $total_visitor = []; 
-    foreach($visitor as $key => $val) {
+    foreach($years as $key) {
       $total_hits = $this->statistik->v_year_hits($key);
+      $val = $this->statistik->v_year($key);
       $total_visitor[] = ['y' => ''.$key.'', 'count' => intval($val), 'hits' => $total_hits];
     }
     $total = $total_visitor;
@@ -282,7 +270,24 @@ class C_statistik extends CI_Controller {
     $visitors = [];
     foreach($month as $key => $value) {
       $total_hits = $this->statistik->v_month_hits($key);
-      $visitors[] = ['month' => $value, 'count' => $this->statistik->v_month($key), 'hits' => $total_hits];
+      $val = $this->statistik->v_month($key);
+      $visitors[] = ['month' => $value, 'count' => $val, 'hits' => $total_hits];
+    }
+    $total = $visitors;
+    $json = json_encode($total);
+    echo $json;
+  }
+
+  public function chart_visitor_day() 
+  {
+    $yearmonth = date('Y-m');
+    $day_of_db = $this->statistik->get_day($yearmonth);
+    $visitors = [];
+    foreach($day_of_db as $day) {
+      $days = substr($day->date,8,2);
+      $total_hits = $this->statistik->v_day_hits($days);
+      $val = $this->statistik->v_day($days);
+      $visitors[] = ['d' => $day->date, 'count' => $val, 'hits' => $total_hits];
     }
     $total = $visitors;
     $json = json_encode($total);
