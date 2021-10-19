@@ -90,7 +90,7 @@ $(document).ready(function() {
                         position: 'fixed',
                         offset: 0,
                         placement: {
-                            from: "top",
+                            from: "center",
                             align: "center"
                         },
                     });

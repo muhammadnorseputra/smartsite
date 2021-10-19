@@ -2,8 +2,8 @@
 $card = isset($_GET['card']) ? $_GET['card'] : '';
 ?>
 <section class="survei-non-asn bg-light">
-	<div class="py-3 bg-success bg-gradient text-center">
-		<h3 class="text-light">Formulir Survei IKM</h3>
+	<div class="py-3 bg-success bg-gradient text-center sticky-top">
+		<h4 class="text-light">Formulir Survei IKM</h4>
 	</div>
 	<?php  
 	$hidden = ['token_' => encrypt_url('@270599bkppd_balangan_'.date('dmYH')), 'nomor' => encrypt_url($nomor), 'card' => $_GET['card'], 'periode' => encrypt_url($periode->id)];

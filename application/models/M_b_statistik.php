@@ -206,4 +206,21 @@ class M_b_statistik extends CI_Model {
     $q = $this->db->get()->row();
     return $q->total_hits;
   }
+
+  public function v_month($month)
+  {
+    // $q = $this->db->query("select date from public_visitor where month({$month}) = $month group_by date")
+    $this->db->select('date');
+    $this->db->from('public_visitor');
+    $this->db->where("DATE_FORMAT(date,'%m')", $month);
+    $q = $this->db->get();
+    return $q->num_rows();
+  }
+  public function v_month_hits($month) {
+    $this->db->select_sum('hits', 'total_hits');
+    $this->db->from('public_visitor');
+    $this->db->where("DATE_FORMAT(date,'%m')", $month);
+    $q = $this->db->get()->row();
+    return $q->total_hits;
+  }
 }

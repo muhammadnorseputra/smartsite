@@ -9,7 +9,7 @@
 		<div class="card card-shadow">
             <div class="header">
                 <h2>
-                    Visitor By Tahun <small>2020 - 2029</small>
+                    Visitor - Tahunan <small>ANTAR TAHUN 2020 - 2029</small>
                 </h2>
                 <ul class="header-dropdown m-r--5">
                                 <li>
@@ -24,4 +24,25 @@
             </div>
         </div>
 	</div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-shadow">
+            <div class="header">
+                <h2>
+                    Visitor - Bulanan <small>Tahun <?= date('Y') ?></small>
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                                <li>
+                                    <a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="ios">
+                                        <i class="material-icons">loop</i>
+                                    </a>
+                                </li>
+                            </ul>
+            </div>
+            <div class="body">
+                <div id="chart_visitor_bulan" style="height: 250px;"></div>
+            </div>
+        </div>
+    </div>
 </div>

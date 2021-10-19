@@ -104,7 +104,7 @@
 					<div>
 						<div class="card-body">
 							<h5 class="card-title fw-bold">Total Indikator</h5>
-							<span class="card-text display-2"><?= $total_indikator ?></span>
+							<span class="card-text display-2 countTo" data-from="0" data-to="<?= nominal($total_indikator) ?>" data-speed="300" data-refresh-interval="50"><?= $total_indikator ?></span>
 							<div class="card-text"><small class="text-dark">Jumlah Indikator</small></div>
 						</div>
 					</div>
