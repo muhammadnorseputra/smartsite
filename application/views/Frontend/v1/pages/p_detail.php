@@ -77,21 +77,11 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
 
-<section class="pt-md-2 bg-white">
+<section class="pt-md-3 bg-white">
 <div class="container">
 	<div class="row mt-md-5">
 		<div class="col-md-2 order-md-first order-lg-last mt-md-3">
-			<div id="sidebar">
-				<ins class="adsbygoogle"
-			     style="display:block"
-			     data-ad-client="ca-pub-1099792537777374"
-			     data-ad-slot="6508565159"
-			     data-ad-format="auto"
-			     data-full-width-responsive="true"></ins>
-			     <script>
-				     (adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-		     </div>
+			<!-- Sidebar Left -->
 		</div>
 		<div class="col-md-8 mb-5 pb-md-4 px-3 px-md-0 order-first order-md-last" id="main-content">
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
@@ -170,16 +160,6 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					<?php  if($post_detail->type === 'YOUTUBE'): ?>
 					<div class="g-ytsubscribe mt-md-0 mt-4" data-channelid="<?= $yt_channel ?>" data-layout="full" data-theme="light" data-count="default"></div>
 					<?php endif; ?>
-					<!-- ads -->
-					<ins class="adsbygoogle"
-					     style="display:block; text-align:center;"
-					     data-ad-layout="in-article"
-					     data-ad-format="fluid"
-					     data-ad-client="ca-pub-1099792537777374"
-					     data-ad-slot="6818392621"></ins>
-					<script>
-					     (adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
  					<p class="card-text font-weight-normal" id="post-content"><?php echo $content; ?></p>
 				</div>
 				<div class="card-footer bg-transparent p-2 border-bottom rounded-lg d-flex justify-content-around mb-4">
@@ -306,17 +286,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 			
 		</div>
 		<div class="col-md-2 order-md-last order-lg-last">
-			<div id="sidebar">
-				<ins class="adsbygoogle"
-			     style="display:block"
-			     data-ad-client="ca-pub-1099792537777374"
-			     data-ad-slot="6508565159"
-			     data-ad-format="auto"
-			     data-full-width-responsive="true"></ins>
-			     <script>
-				     (adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-		     </div>
+			<!-- Sidebar Right -->
 		</div>
 	</div>
 </div>

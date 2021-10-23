@@ -29,18 +29,7 @@
         ?>
         
         <?= $h->content ?>
-
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-format="fluid"
-             data-ad-layout-key="-g7+41+d-9o+g9"
-             data-ad-client="ca-pub-1099792537777374"
-             data-ad-slot="1412915482"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-         <?php else : ?>
+        <?php else : ?>
         <img class="d-block mx-auto mb-2 mt-5" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/page-not-found.svg') ?>">
         <p>
           <h4 class="text-center">Halaman tidak ditemukan!</h4>
@@ -64,17 +53,6 @@
         <img style="object-fit:cotain;" data-src="<?= img_blob($h->file) ?>" width="100%" height="350" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded lazy">
         <?php endif; ?>
       <?php endif; ?>
-      <!-- <script async="async" data-cfasync="false" src="//overlapflintsidenote.com/3e49b42e164285fcede3b70e3a97507a/invoke.js"></script>
-<div id="container-3e49b42e164285fcede3b70e3a97507a"></div> -->
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-1099792537777374"
-           data-ad-slot="5114117650"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
       </div>
     </div>
   </div>
