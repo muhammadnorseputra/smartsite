@@ -77,23 +77,22 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
 
-<section class="pt-md-3 bg-white">
+<section class="pt-md-4">
 <div class="container">
 	<div class="row mt-md-5">
 		<div class="col-md-2 order-md-first order-lg-last mt-md-3">
 			<!-- Sidebar Left -->
 		</div>
-		<div class="col-md-8 mb-5 pb-md-4 px-3 px-md-0 order-first order-md-last" id="main-content">
+		<div class="col-md-8 mb-5 pb-md-4 px-4 pb-4 rounded order-first order-md-last bg-white shadow-sm p-md-4" id="main-content">
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1><?php echo $post_detail->judul; ?></h1>
 					<div class="d-flex justify-content-between align-items-center mb-3">
 						<div class="d-flex justify-content-start align-items-center text-muted">
 						<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top; border: 4px solid #FCFCFC;" width="40" height="40" class="mr-md-2 mr-2 lazy rounded-circle shadow-sm bg-light"> 
-						<span>
-							Editor by <?= ucwords($namapanggilan); ?> 
+						<span> <?= ucwords($namapanggilan); ?> 
 							<span class="text-danger">&#8226;</span>  
-							<?php echo longdate_indo($post_detail->tgl_posting); ?> 
+							<?php echo date_indo($post_detail->tgl_posting); ?> 
 						</span>
 						</div>	
 						<span>
