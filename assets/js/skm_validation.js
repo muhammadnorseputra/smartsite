@@ -66,8 +66,8 @@ $(document).ready(function() {
         onError: function($form) {
             $.notify({
                 icon: `fas fa-times`,
-                title: '<strong>Gagal!</strong>',
-                message: 'Formulir ' + $form.attr('id') + ' gagal, cek kembali kelengkapan survei!',
+                title: '<strong>Galat !</strong>',
+                message: 'Formulir ' + $form.attr('id') + ' gagal, cek kembali kelengkapan survei.',
             }, {
                 type: 'danger'
             });
