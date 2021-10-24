@@ -23,7 +23,7 @@
 	max-width: 100%;
 }
 html, body {
-	scrollbar-color: teal #fff;
+	scrollbar-color: #444 transparent;
   	scrollbar-width: thin;
 }
 html::-webkit-scrollbar {
@@ -33,7 +33,7 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-track {
   background-color: #fff;
   border-left: 1px solid #eee;
-  // border-radius: 100px;
+  border-radius: 100px;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -45,7 +45,7 @@ html::-webkit-scrollbar-thumb {
 }
 html::-webkit-scrollbar-thumb:hover {
   opacity: 1;
-  transition: opacity .3s ease;
+  transition: opacity .4s ease;
 }
 
 section.hero-beranda {

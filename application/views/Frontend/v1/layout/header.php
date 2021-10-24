@@ -1,5 +1,5 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar fixed-top navbar-expand-sm border-bottom border-light navbar-light d-none d-md-block py-0">
+<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light d-none d-md-block py-0">
 	<div class="container">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
 			<?php echo '<img style="object-fit:contain;" src="' .img_blob($mf_beranda->site_logo) . '" alt="BKPPD Kab. Balangan 2021" width="150" height="45"/>'; ?>
@@ -174,8 +174,8 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a rel="noindex, nofollow" class="btn shadow-sm btn-dark rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.curPageURL()); ?>">
-				<i class="fas fa-lock mr-2"></i> Login 
+			<a rel="noindex, nofollow" class="btn shadow-sm btn-secondary rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.curPageURL()); ?>">
+				<i class="fas fa-lock mr-2"></i> Masuk 
 			</a>
 			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-outline-none border-0 rounded ml-2" href="<?= base_url('daftar'); ?>">
 				<i class="fas fa-user"></i>
