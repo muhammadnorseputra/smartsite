@@ -189,7 +189,7 @@ class SkmIndex extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'SKM - BKPPD Balangan',
+            'title' => 'SKM - BKPSDM Kab. Balangan',
             'content' => 'Frontend/skm/index',
             'total_responden' => $this->skm->skm_total_responden_all()
         ];
@@ -199,7 +199,7 @@ class SkmIndex extends CI_Controller
     public function survei()
     {
         $card = $this->input->get('card');
-        $title = 'Survei - BKPPD Balangan';
+        $title = 'Survei - BKPSDM Kab. Balangan';
         if($this->skm->skm_periode()->row()->status === 'ON'){
             if($card === 'bkpsdm_balangan'):
                 $data = [
