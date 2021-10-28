@@ -116,7 +116,7 @@
 	<div class="col-12 col-md-6">
 		<div class="fs-4 fw-bold text-success mb-2">Tinjau Perkembangan IKM</div>
 		<p class="text-muted">
-			Silahkan pindai QR-Code untuk meninjau secara langsung hasil dari penilaian Indeks Kepuasan Masyarakat (IKM) atau dengan mengunjungi alamat url (<code>https://qrco.de/ikm-bkppd-balangan</code>)
+			Silahkan pindai QR-Code untuk meninjau secara langsung hasil dari penilaian Indeks Kepuasan Masyarakat (IKM) atau dengan mengunjungi alamat url (<code>https://web.bkppd-balangankab.info/ikm</code>)
 		</p>
 		<p class="text-muted">
 			Kami selaku unit pelayanan mengucapkan terimakasih atas partisipasi anda dalam pelaksanaan penilaian IKM secara Online maupun Offline.
