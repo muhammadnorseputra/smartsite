@@ -23,7 +23,7 @@ class Skm extends CI_Model {
 	}
 	public function skm_pertanyaan()
 	{
-		return $this->db->get('skm_pertanyaan');
+		return $this->db->get_where('skm_pertanyaan', ['status' => 'Y']);
 	}
 	public function skm_jawaban_pertanyaan($id)
 	{
