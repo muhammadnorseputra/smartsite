@@ -201,7 +201,7 @@ class SkmIndex extends CI_Controller
         $card = $this->input->get('card');
         $title = 'Survei - BKPPD Balangan';
         if($this->skm->skm_periode()->row()->status === 'ON'){
-            if($card === 'asn_balangan'):
+            if($card === 'bkpsdm_balangan'):
                 $data = [
                     'title' => $title,
                     'content' => 'Frontend/skm/pages/survei_mulai',
