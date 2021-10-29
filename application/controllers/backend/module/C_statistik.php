@@ -261,7 +261,9 @@ class C_statistik extends CI_Controller {
     }
     $total = $total_visitor;
     $json = json_encode($total);
-    echo $json;
+    $this->output->set_status_header(200)
+    ->set_content_type('application/json')
+    ->set_output($json);
   }
 
   public function chart_visitor_month()
@@ -275,7 +277,9 @@ class C_statistik extends CI_Controller {
     }
     $total = $visitors;
     $json = json_encode($total);
-    echo $json;
+    $this->output->set_status_header(200)
+    ->set_content_type('application/json')
+    ->set_output($json);
   }
 
   public function chart_visitor_day() 
@@ -291,6 +295,8 @@ class C_statistik extends CI_Controller {
     }
     $total = $visitors;
     $json = json_encode($total);
-    echo $json;
+    $this->output->set_status_header(200)
+    ->set_content_type('application/json')
+    ->set_output($json);
   }
 }

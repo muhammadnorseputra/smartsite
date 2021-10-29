@@ -6,7 +6,7 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <div class="card card-shadow">
+        <div class="card card-shadow chart_visitor_hari">
             <div class="header">
                 <h2>
                     Visitor - Harian <small>Bulan <?= date('M') ?></small>
@@ -27,7 +27,7 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <div class="card card-shadow">
+        <div class="card card-shadow chart_visitor_bulan">
             <div class="header">
                 <h2>
                     Visitor - Bulanan <small>Tahun <?= date('Y') ?></small>
@@ -48,7 +48,7 @@
 </div>
 <div class="row">
 	<div class="col-md-12">
-		<div class="card card-shadow">
+		<div class="card card-shadow chart_visitor_tahun">
             <div class="header">
                 <h2>
                     Visitor - Tahunan <small>ANTAR TAHUN 2020 - 2029</small>
