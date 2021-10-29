@@ -228,7 +228,7 @@ class M_b_statistik extends CI_Model {
     $this->db->from('public_visitor');
     $this->db->where("DATE_FORMAT(date,'%Y-%m')", $yearmonth);
     $this->db->order_by('date', 'desc');
-    // $this->db->limit(7);
+    $this->db->limit(7);
     $q = $this->db->get()->result();
     return $q;
   }
