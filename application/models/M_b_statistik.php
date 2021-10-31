@@ -224,12 +224,12 @@ class M_b_statistik extends CI_Model {
     return $q->total_hits;
   }
   public function get_day($yearmonth) {
-    $this->db->select('date');
+    $this->db->select('id,date');
     $this->db->from('public_visitor');
     $this->db->where("DATE_FORMAT(date,'%Y-%m')", $yearmonth);
     $this->db->order_by('date', 'desc');
     // $this->db;
-    $q = $this->db->limit(7)->get()->result();
+    $q = $this->db->limit(12)->get()->result();
     return $q;
   }
   public function v_day($day)

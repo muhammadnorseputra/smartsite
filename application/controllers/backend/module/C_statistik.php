@@ -286,15 +286,15 @@ class C_statistik extends CI_Controller {
   {
     $yearmonth = date('Y-m');
     $day_of_db = $this->statistik->get_day($yearmonth);
-    $visitors = [];
+    $visitors_days = [];
     foreach($day_of_db as $day) {
       $days = substr($day->date,8,2);
       $total_hits = $this->statistik->v_day_hits($days);
       $val = $this->statistik->v_day($days);
-      $visitors[] = ['d' => $day->date, 'count' => $val, 'hits' => $total_hits];
+      $visitors_days[] = ['d' => $day->date, 'count' => $val, 'hits' => $total_hits];
     }
-    $total = $visitors;
-    $json = json_encode($total);
+    $total_v_days = $visitors_days;
+    $json = json_encode($total_v_days);
     $this->output->set_status_header(200)
     ->set_content_type('application/json')
     ->set_output($json);
