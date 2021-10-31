@@ -13,9 +13,6 @@
                 </h2>
                 <ul class="header-dropdown m-r--5">
                                 <li>
-                                    <a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="ios">
-                                        <i class="material-icons">loop</i>
-                                    </a>
                                 </li>
                             </ul>
             </div>
@@ -34,9 +31,6 @@
                 </h2>
                 <ul class="header-dropdown m-r--5">
                                 <li>
-                                    <a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="ios">
-                                        <i class="material-icons">loop</i>
-                                    </a>
                                 </li>
                             </ul>
             </div>
@@ -55,9 +49,6 @@
                 </h2>
                 <ul class="header-dropdown m-r--5">
                                 <li>
-                                    <a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="ios">
-                                        <i class="material-icons">loop</i>
-                                    </a>
                                 </li>
                             </ul>
             </div>
