@@ -284,8 +284,9 @@ class C_statistik extends CI_Controller {
 
   public function chart_visitor_day() 
   {
-    $yearmonth = date('Y-m');
-    $day_of_db = $this->statistik->get_day($yearmonth);
+    $year = date('Y');
+    $month = date('m');
+    $day_of_db = $this->statistik->get_day($year,$month);
     $visitors_days = [];
     foreach($day_of_db as $day) {
       $days = substr($day->date,8,2);

@@ -223,10 +223,11 @@ class M_b_statistik extends CI_Model {
     $q = $this->db->get()->row();
     return $q->total_hits;
   }
-  public function get_day($yearmonth) {
-    $this->db->select('id,date');
+  public function get_day($tahun,$bulan) {
+    $this->db->select('date');
     $this->db->from('public_visitor');
-    $this->db->where("DATE_FORMAT(date,'%Y-%m')", $yearmonth);
+    $this->db->where("DATE_FORMAT(date,'%Y')", $tahun);
+    $this->db->where("DATE_FORMAT(date,'%m')", $bulan);
     $this->db->order_by('date', 'desc');
     // $this->db;
     $q = $this->db->limit(12)->get()->result();
