@@ -229,6 +229,7 @@ class M_b_statistik extends CI_Model {
     $this->db->where("DATE_FORMAT(date,'%Y')", $tahun);
     $this->db->where("DATE_FORMAT(date,'%m')", $bulan);
     $this->db->order_by('date', 'desc');
+    $this->db->group_by('date');
     // $this->db;
     $q = $this->db->limit(12)->get()->result();
     return $q;
