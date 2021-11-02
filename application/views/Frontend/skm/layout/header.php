@@ -43,6 +43,11 @@
 					</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link fw-bold" target="_blank" href="//bit.ly/3q22H7Q">
+						Panduan Pengguna
+					</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link fw-bold" href="#cetak" tabindex="-1" aria-disabled="true" data-bs-toggle="offcanvas" role="button" aria-controls="offcanvasExample">Cetak Formulir</a>
 				</li>
 				<?php if(!empty($this->session->userdata('user_portal_log')['id'])): ?>
