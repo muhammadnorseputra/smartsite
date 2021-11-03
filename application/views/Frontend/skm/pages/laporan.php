@@ -1,6 +1,6 @@
 <?php
 if(empty($this->session->userdata('user_portal_log')['email'])):
-	$this->load->view('Frontend/v1/skm/pages/restricted');
+	$this->load->view('Frontend/skm/pages/restricted');
 	return false;
 endif;
 $tahun_skr = $this->skm->skm_periode()->row()->tahun;
