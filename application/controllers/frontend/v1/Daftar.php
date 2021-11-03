@@ -103,8 +103,8 @@ class Daftar extends CI_Controller
                     $img_pic = base_url('assets/images/no-profile-picture.jpg');
                     $img_ktp = base_url('assets/images/noimage.gif');
 
-                    $photo_pic = file_get_contents($img_pic);
-                    $photo_ktp = file_get_contents($img_ktp);
+                    $photo_pic = @file_get_contents($img_pic);
+                    $photo_ktp = @file_get_contents($img_ktp);
 
                     $data_indentity = [
                             'photo_pic' => $photo_pic,
