@@ -99,6 +99,7 @@ endif;
               <div class="panel-body">
               <a id="module" href="<?= base_url('frontend/v1/users/ikm_periode/'); ?>" class="border-0  rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-poll float-right" aria-hidden="true"></i> Periode</a>
                <a id="module" href="<?= base_url('frontend/v1/users/ikm_responden/'); ?>" class="border-0  rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-user-circle float-right" aria-hidden="true"></i> Responden</a>
+               <a href="<?= base_url('laporan'); ?>" target="_blank" class="border-0 rounded mb-1 list-group-item list-group-item-action text-muted font-weight-light"><i class="fas fa-user-circle float-right" aria-hidden="true"></i> Laporan IKM</a>
               </div>
             </div>
           </div>
