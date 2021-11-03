@@ -1,5 +1,5 @@
 <?php
-if($this->session->userdata('user_portal_log')['online'] === 'ON'):
+if(empty($this->session->userdata('user_portal_log')['email'])):
 	$this->load->view('Frontend/v1/skm/pages/restricted');
 	return false;
 endif;
