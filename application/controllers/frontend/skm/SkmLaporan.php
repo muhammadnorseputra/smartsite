@@ -7,6 +7,8 @@ class SkmLaporan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        redirect('//ikm.bkppd-balangankab.info/skm');
+        return false;
         $this->load->model('skm');
         $this->load->model('skm_laporan', 'lap');
     }

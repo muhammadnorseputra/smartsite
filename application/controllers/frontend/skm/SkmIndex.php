@@ -7,7 +7,8 @@ class SkmIndex extends CI_Controller
     {
         parent::__construct();
         $this->load->model('skm');
-
+        redirect('//ikm.bkppd-balangankab.info/skm');
+        return false;
         // $this->tahun_skr = $this->skm->skm_periode()->row()->tahun;
         $this->periode_skr = $this->skm->skm_periode()->row()->id;
     }
