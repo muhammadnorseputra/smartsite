@@ -141,7 +141,7 @@ class C_userportal extends CI_Controller {
             <td>{$result->deskripsi}</td>
           </tr>
           <tr>
-            <td><b>Deskripsi</b></td>
+            <td><b>Tgl Lahir</b></td>
             <td>{$result->tanggal_lahir}</td>
           </tr>
           <tr>
