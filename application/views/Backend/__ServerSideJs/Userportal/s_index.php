@@ -63,9 +63,17 @@ $(function() {
 					"targets": [8],
 					"className": "dt-center",
 					"orderable": false
+				},
+				{
+					"targets": [9],
+					"className": "dt-center",
+					"orderable": false
+				},
+				{
+					"targets": [10],
+					"className": "dt-center",
+					"orderable": false
 				}
-
-
 			],
 			language: {
 				search: "Cari Nama : ",
@@ -77,6 +85,45 @@ $(function() {
 				emptyTable: "No matching records found, please filter this data"
 			}
 		});
+
+	$(document).on("click", "a#deleteUserportal", function(e) {
+		e.preventDefault();
+		var $id = this.dataset.uid;
+		if(confirm('Apakah anda akan menghapus user tersebut ?')) {		
+			$.getJSON(`<?= base_url('backend/module/c_userportal/hapus') ?>`, {uid: $id}, function(res) {
+				console.log(res);
+				dataTable.ajax.reload();
+			});
+		}
+		/*console.log();*/
+	});
+
+	$(document).on("click", "a#detailUserportal", function(e) {
+		e.preventDefault();
+		var $id = this.dataset.uid;	
+		$.confirm({
+			icon: 'glyphicon glyphicon-eye-open',
+    		title: 'Detail',
+			columnClass: 'large',
+	        content: function () {
+	            var self = this;
+	            return $.ajax({
+	                url: '<?= base_url('backend/module/c_userportal/detail') ?>',
+	                dataType: 'json',
+	                method: 'post',
+	                data: {
+	                	uid: $id
+	                }
+	            }).done(function (response) {
+	                self.setContent(response);
+	            }).fail(function(){
+	                self.setContent('Something went wrong.');
+	            });
+	        }
+	    });
+
+		/*console.log();*/
+	});
 
 });
 </script>

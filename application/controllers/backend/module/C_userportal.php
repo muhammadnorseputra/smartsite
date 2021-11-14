@@ -60,12 +60,14 @@ class C_userportal extends CI_Controller {
       $sub_array[] = $r->id_user_portal;
       $sub_array[] = "<img src='".img_blob($r->photo_pic)."' class='img-fluid' width='40'>";
       $sub_array[] = decrypt_url($r->nama_lengkap) . " (".decrypt_url($r->nama_panggilan).")";      
-      $sub_array[] = "<a href='mailto:".$email."' target='_blank'>".$email."</a> ".$email_verify;     
+      $sub_array[] = $email_verify;     
       $sub_array[] = decrypt_url($r->nohp);      
       $sub_array[] = longdate_indo($r->tanggal_bergabung);
       $sub_array[] = $role;
       $sub_array[] = '<a href="'.img_blob($r->photo_ktp).'" target="_blank" class="btn btn-sm btn-link waves-effect"><i class="glyphicon glyphicon-new-window"></i></a>';
-      $sub_array[] = '<a href="'.img_blob($r->photo_ktp).'" class="btn btn-sm btn-link bg-blue waves-effect"><i class="glyphicon glyphicon-pencil"></i></a>';
+      $sub_array[] = '<a href="'.img_blob($r->photo_ktp).'" class="btn btn-sm btn-link bg-primary waves-effect"><i class="glyphicon glyphicon-pencil"></i></a>';
+      $sub_array[] = '<a href="#" id="detailUserportal" data-uid="'.$r->id_user_portal.'" class="btn btn-sm btn-link bg-info waves-effect"><i class="glyphicon glyphicon-eye-open"></i></a>';
+      $sub_array[] = '<a href="#" id="deleteUserportal" data-uid="'.$r->id_user_portal.'" class="btn btn-sm btn-link bg-danger waves-effect"><i class="glyphicon glyphicon-trash"></i></a>';
       $data[]      = $sub_array;
     $no++;
     }
@@ -80,6 +82,85 @@ class C_userportal extends CI_Controller {
     echo json_encode($output); 
   }
 
+  public function hapus()
+  {
+    $id = $this->input->get('uid');
+    $db = $this->userportal->hapus('t_users_portal', ['id_user_portal' => $id]);
+    if($db) {
+      $valid = true;
+    } else {
+      $valid = false;
+    } 
+    echo json_encode($valid);
+  }
+
+  public function detail()
+  {
+    $id = $this->input->post('uid');
+    $db = $this->userportal->detail('t_users_portal', ['id_user_portal' => $id]);
+    $result = $db->row();
+    $pwd = explode("$", $result->password);
+    $pwd_show = $pwd[2];
+    $template = "
+      <table class='table table-responsive table-condensed'>
+        <tbody>
+          <tr>
+            <td><b>Role</b></td>
+            <td>{$result->role}</td>
+          </tr>
+          <tr>
+            <td><b>Status</b></td>
+            <td>{$result->online}</td>
+          </tr>
+          <tr>
+            <td><b>Email</b></td>
+            <td>".decrypt_url($result->email)."</td>
+          </tr>
+          <tr>
+            <td><b>Email Verify</b></td>
+            <td>{$result->email_verifikasi}</td>
+          </tr>
+          <tr>
+            <td><b>Token Verify</b></td>
+            <td>{$result->token_verifikasi}</td>
+          </tr>
+          <tr>
+            <td class='text-danger'><b>Pwd</b></td>
+            <td>".decrypt_url($pwd_show)."</td>
+          </tr>
+          <tr>
+            <td><b>Nama Lengkap</b></td>
+            <td>".decrypt_url($result->nama_lengkap)."</td>
+          </tr>
+          <tr>
+            <td><b>Nama Panggilan</b></td>
+            <td>".decrypt_url($result->nama_panggilan)."</td>
+          </tr>
+          <tr>
+            <td><b>Deskripsi</b></td>
+            <td>{$result->deskripsi}</td>
+          </tr>
+          <tr>
+            <td><b>Deskripsi</b></td>
+            <td>{$result->tanggal_lahir}</td>
+          </tr>
+          <tr>
+            <td><b>Alamat</b></td>
+            <td>".decrypt_url($result->alamat)."</td>
+          </tr>
+          <tr>
+            <td><b>Pekerjaan</b></td>
+            <td>".decrypt_url($result->pekerjaan)."</td>
+          </tr>
+          <tr>
+            <td><b>Pedidikan</b></td>
+            <td>".decrypt_url($result->pendidikan)."</td>
+          </tr>
+        </tbody>
+      </table>
+    ";
+    echo json_encode($template);
+  }
   //==========================================//
 
 }

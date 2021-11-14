@@ -55,5 +55,14 @@ class M_b_userportal extends CI_Model {
     return $query;
   }
 
+  public function hapus($tbl,$whr)
+  {
+    return $this->db->where($whr)->delete($tbl);
+  }
+
+  public function detail($tbl,$whr)
+  {
+    return $this->db->get_where($tbl, $whr);
+  }
   
 }

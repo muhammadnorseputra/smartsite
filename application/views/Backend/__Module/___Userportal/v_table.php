@@ -17,6 +17,8 @@
 				<th>Role</th>
 				<th>KTP</th>
 				<th>Edit</th>
+				<th>Detail</th>
+				<th>Hapus</th>
 			</thead>
 			<tbody>
 		</table>
