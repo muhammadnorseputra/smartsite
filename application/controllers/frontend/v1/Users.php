@@ -248,13 +248,13 @@ class Users extends CI_Controller {
     public function cek_akun() {
 
     		$true_token = $this->session->csrf_token;
-	        if($this->input->post('token') != $true_token):
+	        if($this->input->post('xtoken') != $true_token):
 	            $this->output->set_status_header('403');
 	            $this->session->unset_userdata('csrf_token');
 	            show_error('This request rejected');
 	            return false;
 	        endif;
-	        
+
     		$captcha = $this->input->post('captcha');
 	        $sess_captcha = $this->session->userdata('captcha');
 	        $sess_login = $this->input->post('session_login');
@@ -734,7 +734,7 @@ class Users extends CI_Controller {
 	public function update()
 	{
 		$true_token = $this->session->csrf_token;
-        if($this->input->post('token') != $true_token):
+        if($this->input->post('xtoken') != $true_token):
             $this->output->set_status_header('403');
             $this->session->unset_userdata('csrf_token');
             show_error('This request rejected');
