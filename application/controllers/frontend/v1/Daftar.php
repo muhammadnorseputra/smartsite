@@ -53,7 +53,7 @@ class Daftar extends CI_Controller
                 $tgl_lahir = $tgl_pecah[2].'-'.$tgl_pecah[1].'-'.$tgl_pecah[0];
 
                 $p_name = $this->input->post('nama_lengkap');
-                $result_name = str_replace(['hacked','hacker','hack'], ['wkwk','hihi','blee'], $p_name);
+                $result_name = str_replace(['hacked','hacker','hack', 'defece'], ['lol','lol','lol', 'lol'], $p_name);
                 $data = [
                     'nama_lengkap' => encrypt_url($result_name),
                     'nama_panggilan' => encrypt_url($this->input->post('nama_pangilan')),
