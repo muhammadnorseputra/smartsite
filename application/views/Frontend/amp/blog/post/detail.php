@@ -28,14 +28,6 @@
     ></amp-img>
   </header>
   <section class="mb4 px3">
-    <amp-ad width="100vw" height="320"
-         type="adsense"
-         data-ad-client="ca-pub-1099792537777374"
-         data-ad-slot="6508565159"
-         data-auto-format="rspv"
-         data-full-width="true">
-      <div overflow=""></div>
-    </amp-ad>
     <?= $postContent ?>
     <div class="flex justify-between items-center mt3">
       <div class="flex justify-start">

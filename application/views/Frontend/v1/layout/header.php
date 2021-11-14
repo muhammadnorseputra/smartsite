@@ -1,6 +1,6 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light d-none d-md-block py-0">
-	<div class="container">
+<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light d-none bg-white d-md-block shadow-sm py-0">
+	<div class="container-fluid">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
 			<?php echo '<img style="object-fit:contain;" src="' .img_blob($mf_beranda->site_logo) . '" alt="BKPPD Kab. Balangan 2021" width="150" height="45"/>'; ?>
 		</a>

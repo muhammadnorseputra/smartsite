@@ -3,7 +3,7 @@ $(document).ready(function() {
      $sticky.hcSticky({
         stickTo: $('#main-content'),
         // innerSticker: '#stickMe',
-        top: 85,
+        top: 70,
         // followScroll: true,
         // mobileFirst: false,
         responsive: {

@@ -4,7 +4,7 @@
 <section class="content-home">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 bg-white p-3">
                 <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
             </div>
             <div class="col-md-6">
@@ -128,7 +128,7 @@
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
         <div class="row d-flex justify-content-around flex-column flex-lg-row">
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-4 mt-md-0">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-3 mt-md-0">
                 <div id="sidebar">
                 
                 <!-- <a href="https://www.buymeacoffee.com/putrabungsu6"><img src="https://img.buymeacoffee.com/button-api/?text=Donasi coffee untuk dev&emoji=&slug=putrabungsu6&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" class="w-100"></a>
@@ -142,7 +142,7 @@
                 </div>
                 </a>
  -->
-                <a href="<?= base_url('koran-online'); ?>" class="btn btn-outline-light btn-light py-3 my-3 btn-block">
+    <!--             <a href="<?= base_url('koran-online'); ?>" class="btn btn-outline-light btn-light py-3 my-3 btn-block">
                 <div class="d-flex justify-content-between align-items-center text-primary">
                     <i class="fas fa-newspaper mr-3 fa-2x"></i>
                     <span>
@@ -150,7 +150,7 @@
                     </span>
                 </div>
                 </a>
-
+ -->
                 <!-- <a href="<?= base_url('sponsor'); ?>" class="btn btn-outline-light btn-light py-3 my-3 btn-block">
                 <div class="d-flex justify-content-between align-items-center text-danger">
                     <i class="fas fa-leaf mr-3 fa-2x"></i>
