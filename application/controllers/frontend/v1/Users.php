@@ -724,6 +724,14 @@ class Users extends CI_Controller {
 
 	public function update()
 	{
+		$true_token = $this->session->csrf_token;
+        if($this->input->post('token') != $true_token):
+            $this->output->set_status_header('403');
+            $this->session->unset_userdata('csrf_token');
+            show_error('This request rejected');
+            return false;
+        endif;
+
 		$id = decrypt_url($this->input->post('id'));
 		$namalengkap = encrypt_url($this->input->post('nama_lengkap'));
 		$namapanggilan = encrypt_url($this->input->post('nama_panggilan'));
@@ -732,7 +740,7 @@ class Users extends CI_Controller {
 		$nohp = encrypt_url($this->input->post('nohp'));
 		$tgllahir = $this->input->post('tanggal_lahir');
 		$pendidikan = encrypt_url($this->input->post('pendidikan'));
-		$deskripsi = htmlentities($this->input->post('deskripsi'));
+		$deskripsi = htmlentities($this->input->post('deskripsi'), ENT_QUOTES);
 		$pass = "$".sha1('bkppd_balangan')."$".encrypt_url($this->input->post('password'));
 
 		$whr = [

@@ -51,7 +51,13 @@ endif;
 						</div>
 					</div>
 				</div>
-				<?= form_open_multipart(base_url('frontend/v1/users/update/'), ['id' => 'form_edit']); ?>
+				<?php  
+					if(!$this->session->csrf_token) {
+						$this->session->csrf_token = hash('sha1', time());
+					}
+				?>
+				<?= form_open_multipart(base_url('frontend/v1/users/update/'), ['id' => 'form_edit'], ['xtoken' => $this->session->csrf_token]); ?>
+
 				<input type="hidden" name="id" value="<?= encrypt_url($profile->id_user_portal) ?>">
 				<div class="card mt-5 bg-white shadow border-0">
 					<div class="card-header border-light bg-transparent p-4">
