@@ -296,8 +296,10 @@ class Users extends CI_Controller {
 					// $this->users->status_online('t_users_portal', ['email' => $where['email']], ['online' => 'OFF']);
 					// $this->session->unset_userdata('user_portal_log');
 				// }
+			
 			}else{
 				$msg = array('valid' => false, 'pesan' => "Username dan password tidak terdaftar");
+	            $this->session->unset_userdata('csrf_token');
 			}
 			echo json_encode($msg);
 			}
