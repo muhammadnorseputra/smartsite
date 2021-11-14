@@ -783,7 +783,7 @@ class Users extends CI_Controller {
 			];
 		}
 		$tbl = 't_users_portal';
-		$send = $this->users->update_profile($tbl, $post, $whr);
+		$send = $this->users->update_profile($tbl, $this->security->xss_clean($post), $whr);
 		if($send == true)
 		{
 			$msg = ['valid' => true, 'type' => 'success', 'msg' => "<b>Sukses,</b> Profile updated <i class='fas fa-check-circle ml-2'></i>"];
