@@ -277,10 +277,10 @@ class Halaman extends CI_Controller
 
     if (isset($captcha) && isset($sess_captcha)):
       
-      $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap', 'required|min_length[3]', ['required' => '{field} wajib diisi', 'min_length' => '{field} minimal 3 karakter']);
-      $this->form_validation->set_rules('isi_saran', 'Isi Saran', 'required', ['required' => '{field} wajib diisi']);
-      $this->form_validation->set_rules('category', 'Kategori Saran', 'required', ['required' => '{field} belum dipilih']);
-      $this->form_validation->set_rules('captcha', 'Pertanyaan Keamanan', 'required', ['required' => '{field} dijawab']);
+      $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap', 'required|min_length[3]|xss_clean', ['required' => '{field} wajib diisi', 'min_length' => '{field} minimal 3 karakter']);
+      $this->form_validation->set_rules('isi_saran', 'Isi Saran', 'required|xss_clean', ['required' => '{field} wajib diisi']);
+      $this->form_validation->set_rules('category', 'Kategori Saran', 'required|xss_clean', ['required' => '{field} belum dipilih']);
+      $this->form_validation->set_rules('captcha', 'Pertanyaan Keamanan', 'required|xss_clean', ['required' => '{field} dijawab']);
 
       if($this->form_validation->run() == FALSE):
         $this->form_validation->set_error_delimiters('<div class="text-danger my-1 py-1">', '</div>');
