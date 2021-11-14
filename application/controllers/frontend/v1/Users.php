@@ -743,8 +743,11 @@ class Users extends CI_Controller {
             return false;
         endif;
 
+        $p_name = $this->input->post('nama_lengkap');
+        $result_name = str_replace(['hacked','hacker','hack'], ['wkwk','hihi','blee'], $p_name);
+
 		$id = decrypt_url($this->input->post('id'));
-		$namalengkap = encrypt_url($this->input->post('nama_lengkap'));
+		$namalengkap = encrypt_url($result_name);
 		$namapanggilan = encrypt_url($this->input->post('nama_panggilan'));
 		$alamat = encrypt_url($this->input->post('alamat'));
 		$pekerjaan = encrypt_url($this->input->post('pekerjaan'));
