@@ -93,7 +93,7 @@ class Daftar extends CI_Controller
                 // $this->email->message($message); 
                 
                 //Send mail 
-                $db = $this->daftar->send_akun('t_users_portal', $data);
+                $db = $this->daftar->send_akun('t_users_portal', $this->security->xss_clean($data));
                 if($db){
                     // Message success regitered
                     $msg = ['valid' => true, 'msg' => 'Akun telah diproses'];
