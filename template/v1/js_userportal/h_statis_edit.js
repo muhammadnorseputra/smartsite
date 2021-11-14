@@ -27,7 +27,7 @@
 			image_advtab: true ,
 			external_filemanager_path:`${_uri}/files/filemanager-v2/filemanager/`,
 			filemanager_title:"Filemanager",
-			filemanager_access_key: '@putrabungsu6@#123',
+			filemanager_access_key: 'putrabungsu6123',
 			external_plugins: { "filemanager" : `${_uri}/files/filemanager-v2/filemanager/plugin.min.js`}
 		});
 

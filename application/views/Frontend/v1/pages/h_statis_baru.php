@@ -70,7 +70,7 @@
 			image_advtab: true ,
 			external_filemanager_path:"<?= base_url('files/filemanager-v2/filemanager/') ?>",
 			filemanager_title:"Filemanager",
-			filemanager_access_key: '@putrabungsu6@#123',
+			filemanager_access_key: 'putrabungsu6123',
 			external_plugins: { "filemanager" : "<?= base_url('files/filemanager-v2/filemanager/plugin.min.js') ?>"}
 		});
 		
