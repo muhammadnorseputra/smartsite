@@ -732,7 +732,7 @@ class Users extends CI_Controller {
 		$nohp = encrypt_url($this->input->post('nohp'));
 		$tgllahir = $this->input->post('tanggal_lahir');
 		$pendidikan = encrypt_url($this->input->post('pendidikan'));
-		$deskripsi = $this->input->post('deskripsi');
+		$deskripsi = htmlentities($this->input->post('deskripsi'));
 		$pass = "$".sha1('bkppd_balangan')."$".encrypt_url($this->input->post('password'));
 
 		$whr = [
