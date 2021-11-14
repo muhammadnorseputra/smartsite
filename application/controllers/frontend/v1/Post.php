@@ -685,7 +685,13 @@ class Post extends CI_Controller
 
     public function send_komentar()
     {
-        
+        $true_token = $this->session->csrf_token;
+        if($this->input->post('xtoken') != $true_token):
+            $this->output->set_status_header('403');
+            $this->session->unset_userdata('csrf_token');
+            show_error('This request rejected');
+            return false;
+        endif;
         $idUser = $this->session->userdata('user_portal_log')['id'];
         $parentId = $this->input->post('id_c');
         $fidIdBerita = $this->input->post('id_b');
@@ -703,7 +709,7 @@ class Post extends CI_Controller
             'waktu' => date('H:i:s'),
             'aktif' => $akf
         ];
-        $db = $this->post->send_komentar('t_komentar', $data);
+        $db = $this->post->send_komentar('t_komentar', $this->security->xss_clean($data));
         if($db) {
             $valid = true;
         } else {

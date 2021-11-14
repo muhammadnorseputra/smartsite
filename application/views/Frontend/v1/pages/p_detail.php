@@ -254,7 +254,12 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					<?php if ($this->session->userdata('user_portal_log')['online'] == 'ON') { ?>
 					<b class="reply_username float-right"></b>
 					<h5 class="card-title"><i class="far fa-comment-alt mr-2"></i> Post Komentar</h5>
-					<?= form_open(base_url('frontend/v1/post/send_komentar'), ['id' => 'f_komentar', 'class' => $post_detail->id_berita]) ?>
+					<?php  
+					if(!$this->session->csrf_token) {
+						$this->session->csrf_token = hash('sha384', time());
+					}
+					?>
+					<?= form_open(base_url('frontend/v1/post/send_komentar'), ['id' => 'f_komentar', 'class' => $post_detail->id_berita], ['xtoken' => $this->session->csrf_token]) ?>
 					<div class="form-group">
 						<textarea class="form-control" name="isi_komentar" id="exampleFormControlTextarea1"></textarea>
 					</div>

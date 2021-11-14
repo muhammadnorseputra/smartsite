@@ -438,12 +438,14 @@ $(document).ready(function () {
     var id_user_username = $(".reply_username").attr('username'); // let isi_komentar = $("textarea").val();
 
     var isi_komentar = $el[0].emojioneArea.getText();
+    var xssToken = form.find('input[name="xtoken"]').val();
 
     if (isi_komentar != '') {
       $.post(action, {
         id_b: id_berita,
         id_c: id_user_comment,
-        isi: isi_komentar
+        isi: isi_komentar,
+        xtoken: xssToken
       }, function (response) {
         if (response == true) {
           batal();

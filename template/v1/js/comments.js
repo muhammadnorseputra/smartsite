@@ -72,11 +72,13 @@ $(document).ready(function() {
         let id_user_username = $(".reply_username").attr('username');
         // let isi_komentar = $("textarea").val();
         let isi_komentar = $el[0].emojioneArea.getText();
+        let xssToken = form.find('input[name="xtoken"]').val();
         if (isi_komentar != '') {
             $.post(action, {
                 id_b: id_berita,
                 id_c: id_user_comment,
-                isi: isi_komentar
+                isi: isi_komentar,
+                xtoken : xssToken
             }, function(response) {
                 if (response == true) {
                     batal();
