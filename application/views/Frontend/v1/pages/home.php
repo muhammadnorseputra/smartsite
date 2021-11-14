@@ -123,7 +123,7 @@
     </div>
 </section>
 <?php endif; ?>
-<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-3 mt-md-5 pt-md-5' : 'my-4' ?>
+<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-3 mt-md-4 pt-md-5' : 'my-4' ?>
 <section class="<?= $my ?>" id="content-page">
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
