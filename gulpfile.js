@@ -5,6 +5,8 @@ var babel = require('gulp-babel');
 var minify = require("gulp-minify");
 var sass = require('gulp-sass')(require('sass'));
 const hash = require('gulp-hash-filename');
+const javascriptObfuscator = require('gulp-javascript-obfuscator');
+
 
 // sass.compiler = require('node-sass');
 gulp.task('sass', function() {
@@ -35,6 +37,9 @@ gulp.task("js", function() {
                 presets: ["@babel/env"],
             })
         )
+        .pipe(javascriptObfuscator({
+            compact: true
+        }))
         .pipe(concat("app.js"))
         .pipe(minify())
         .pipe(gulp.dest("template/v1/prod/"));
@@ -78,6 +83,9 @@ gulp.task("vendor", function() {
             // "bower_components/jquery.scrollTo/jquery.scrollTo.min.js",
             "bower_components/hc-sticky/dist/hc-sticky.js"
         ])
+        .pipe(javascriptObfuscator({
+            compact: true
+        }))
         .pipe(concat("vendor.js"))
         .pipe(minify())
         .pipe(gulp.dest("template/v1/prod/"));

@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/muhammadnorseputra/smartsite/issues"
   },
-  "homepage": "https://github.com/muhammadnorseputra/smartsite#readme"
+  "homepage": "https://github.com/muhammadnorseputra/smartsite#readme",
+  "dependencies": {
+    "gulp-javascript-obfuscator": "^1.1.6"
+  }
 }
