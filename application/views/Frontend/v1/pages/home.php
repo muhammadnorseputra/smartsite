@@ -7,7 +7,7 @@
             <div class="col-md-6 bg-white p-3">
                 <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 p-3">
                 <?php $this->load->view('Frontend/v1/function/media_sosial'); ?>
             </div>
         </div>  
