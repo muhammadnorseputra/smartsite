@@ -61,7 +61,7 @@
 			content_css: [
 			'<?= base_url("vendor/twbs/bootstrap/dist/css/bootstrap.min.css") ?>',
 			],
-			content_style: "body{padding: 10px}",
+			content_style: "body{paddinga: 10px}",
 			relative_urls : false,
 			remove_script_host : false,
 			convert_urls : true,
