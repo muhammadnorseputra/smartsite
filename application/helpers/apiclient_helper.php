@@ -11,11 +11,23 @@
  
 if (! function_exists('api_client'))
 {
-	function api_client($url)
+	function api_client($url='')
 	{
-		 $api_url = $url;
-		 $json_data = file_get_contents($api_url);
-	 	return json_decode($json_data, TRUE);
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+		// execute!
+		$response = curl_exec($ch);
+
+		// close the connection, release resources used
+		curl_close($ch);
+
+		if($response === false) {
+			$response = '-';
+		}
+		// do anything you want with your response
+		return json_decode($response, TRUE);
 	}
 }
 if (! function_exists('file_get_contents_curl'))

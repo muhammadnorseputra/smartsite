@@ -33,8 +33,8 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                   <img width="110" height="110" class="rounded-circle p-2 mt--8 ml-3" style="object-fit:cover; object-position: center; background-color: #f3f4ed !important;" src="<?= $photo ?>">
                 </div>
                 <div class="col-md-10 py-3">
-                  <h3 class="font-weight-bold"><?= $namalengkap ?> <?= $online ?></h3>
-                  <span class="text-secondary"><?= $namapanggilan; ?> <span class="mx-1"> &bull;</span> <small>Bergabung pada: <?= $tanggal_bergabung; ?></small></span>
+                  <h3 class="font-weight-bold"><?= fstring($namalengkap) ?> <?= $online ?></h3>
+                  <span class="text-secondary"><?= fstring($namapanggilan); ?> <span class="mx-1"> &bull;</span> <small>Bergabung pada: <?= $tanggal_bergabung; ?></small></span>
                   <hr>
                   <?= $desc; ?>
                 </div>
