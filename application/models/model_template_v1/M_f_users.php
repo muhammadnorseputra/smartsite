@@ -360,7 +360,7 @@ class M_f_users extends CI_Model
     // return $this->db->like('word', $word)->get('t_badwords');
     $this->db->select('word');
     $this->db->from('t_badwords');
-    $this->db->where('word', $word);
+    $this->db->like('word', $word);
     $q = $this->db->get();
     return $q;
   }
