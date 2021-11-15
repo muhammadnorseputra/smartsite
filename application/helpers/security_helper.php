@@ -24,8 +24,10 @@ if ( ! function_exists('fstring'))
             foreach ($q as $row) {
               $word_found = $row->word;
               $new_word = preg_replace('/(?!^.?).(?!.{0}$)/', '*', $word_found);
+              
               $key = array_search($word_found, $str_to_array);
               $length = strlen($word_found) - 1;
+
               $replace = array($key => $new_word);
               $str_to_array = array_replace($str_to_array, $replace);
             }

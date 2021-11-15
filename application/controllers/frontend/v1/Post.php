@@ -813,7 +813,7 @@ class Post extends CI_Controller
                 if($comment->aktif === 'N') {
                     $isi_komentar = '<i class="text-danger">This Comment Is Blocked Administrator</i>';
                 } else {
-                    $isi_komentar = $comment->isi;
+                    $isi_komentar = fstring($comment->isi);
                 }
                 
                 $output .= ' 
@@ -824,7 +824,7 @@ class Post extends CI_Controller
                                 <div class="tracking-date">'.mediumdate_indo($comment->tanggal).'</div>
                                 <div class="tracking-content">
                                 '.$button.'
-                                '.decrypt_url($profileUser->nama_lengkap). ' &bull; <i class="small">'.time_ago($comment->waktu, true).'</i><span>'.$isi_komentar. '</span> <div id="displayReplyId'. encrypt_url($comment->fid_users_portal).'"></div> '. $btn_reply.' 
+                                '.fstring(decrypt_url($profileUser->nama_lengkap)). ' &bull; <i class="small">'.time_ago($comment->waktu, true).'</i><span>'.$isi_komentar. '</span> <div id="displayReplyId'. encrypt_url($comment->fid_users_portal).'"></div> '. $btn_reply.' 
                                 </div>
                             </div>
                  ';
