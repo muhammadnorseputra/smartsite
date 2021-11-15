@@ -49,7 +49,7 @@ class Users extends CI_Controller {
 								'.longdate_indo($u->tanggal_bergabung).'
 								<br>
 								<div class="small text-muted">Nama</div> 
-								'.decrypt_url($u->nama_lengkap).'
+								'.fstring(decrypt_url($u->nama_lengkap)).'
 								<div class="small text-muted">Status</div> 
 								'.$online.'
 							</td>
@@ -744,10 +744,9 @@ class Users extends CI_Controller {
         endif;
 
         $p_name = $this->input->post('nama_lengkap');
-        $result_name = str_replace(['hacked','hacker','hack', 'defece'], ['LOL','LOL','LOL', 'LOL'], $p_name);
-
+     
 		$id = decrypt_url($this->input->post('id'));
-		$namalengkap = encrypt_url($result_name);
+		$namalengkap = encrypt_url($p_name);
 		$namapanggilan = encrypt_url($this->input->post('nama_panggilan'));
 		$alamat = encrypt_url($this->input->post('alamat'));
 		$pekerjaan = encrypt_url($this->input->post('pekerjaan'));

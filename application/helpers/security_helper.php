@@ -13,6 +13,27 @@ if ( ! function_exists('do_hash'))
           }
       }
  }
+if ( ! function_exists('fstring'))
+  {
+      function fstring($str)
+      {
+          $CI =& get_instance();
+          $str_to_array = explode(" ", $str);
+          foreach ($str_to_array as $word) {
+            $q = $CI->mf_users->cari_kata($word)->result();
+            foreach ($q as $row) {
+              $word_found = $row->word;
+              $new_word = preg_replace('/(?!^.?).(?!.{0}$)/', '*', $word_found);
+              $key = array_search($word_found, $str_to_array);
+              $length = strlen($word_found) - 1;
+              $replace = array($key => $new_word);
+              $str_to_array = array_replace($str_to_array, $replace);
+            }
+          }
+          $new_str = implode(" ", $str_to_array);
+          return $new_str;
+      }
+ }
 function encrypt_url($string) {
 
     $output = false;

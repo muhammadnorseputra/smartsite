@@ -355,6 +355,16 @@ class M_f_users extends CI_Model
         return $this->db->count_all_results();
     }
 
+  public function cari_kata($word) 
+  {
+    // return $this->db->like('word', $word)->get('t_badwords');
+    $this->db->select('word');
+    $this->db->from('t_badwords');
+    $this->db->like('word', $word);
+    $q = $this->db->get();
+    return $q;
+  }
+
 }
 
 /* End of file M_f_users.php */
