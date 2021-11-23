@@ -75,7 +75,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 ?>
 
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script>
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script> -->
 
 <section class="pt-md-4">
 <div class="container">
@@ -159,16 +159,6 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					<?php  if($post_detail->type === 'YOUTUBE'): ?>
 					<div class="g-ytsubscribe mt-md-0 mt-4" data-channelid="<?= $yt_channel ?>" data-layout="full" data-theme="light" data-count="default"></div>
 					<?php endif; ?>
-					<!-- ads -->
-					<ins class="adsbygoogle"
-					     style="display:block; text-align:center;"
-					     data-ad-layout="in-article"
-					     data-ad-format="fluid"
-					     data-ad-client="ca-pub-1099792537777374"
-					     data-ad-slot="6818392621"></ins>
-					<script>
-					     (adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
  					<p class="card-text font-weight-normal" id="post-content"><?php echo $content; ?></p>
 				</div>
 				<div class="card-footer bg-transparent p-2 border-bottom rounded-lg d-flex justify-content-around mb-4">
