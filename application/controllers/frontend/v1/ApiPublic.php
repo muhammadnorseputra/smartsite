@@ -58,6 +58,12 @@ class ApiPublic extends RestController {
                     $img = $linker['image'];
                 endif;
 
+                if($r->type === 'SLIDE'):
+                    $limit_photo = 1;
+                    $photo_terkait = $this->post->photo_terkait($r->id_berita, $limit_photo)->row();
+                    $img = img_blob($photo_terkait->photo);
+                endif;
+
                 if($r->type === 'BERITA'):
                     if(empty($r->img)):
                         $img = base_url('assets/images/noimage.gif');

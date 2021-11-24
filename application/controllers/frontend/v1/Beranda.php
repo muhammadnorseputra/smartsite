@@ -208,7 +208,7 @@ class Beranda extends CI_Controller
                 endif;
 
                 // gambar terkait
-                $limit_photo = 2;
+                $limit_photo = 3;
                 $photo_terkait = $this->post->photo_terkait($row->id_berita, $limit_photo);
                 $total_photo_terkait =  $this->post->photo_terkait($row->id_berita)->num_rows();
                 $total_sisa = $total_photo_terkait - $photo_terkait->num_rows();
