@@ -86,7 +86,7 @@ class ApiPublic extends RestController {
                 endif;
 
                 // Post Link Detail
-                if($r->type === 'YOUTUBE' || $r->type === 'BERITA'):
+                if($r->type === 'YOUTUBE' || $r->type === 'BERITA' || $r->type === 'SLIDE'):
                     $id = encrypt_url($r->id_berita);
                     $postby = strtolower(url_title($namalengkap));
                     $slug = strtolower($r->slug);

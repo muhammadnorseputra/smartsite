@@ -119,7 +119,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 							<div class="carousel-inner rounded">
 								<?php foreach($photo_slide->result() as $key => $value): $active = ($key == 0) ? 'active' : ''; ?>
 								<div class="carousel-item <?= $active ?> text-center">
-									<img class="img-responsive w-100 lazy rounded" data-src="<?= img_blob($value->photo) ?>" alt="<?= $value->keterangan ?>" style="min-height: 250px;max-height:380px; object-fit: contain;">
+									<img class="img-responsive w-100 lazy rounded" data-src="<?= img_blob($value->photo) ?>" alt="<?= $value->keterangan ?>" style="min-height: 250px;max-height:385px; object-fit: contain;">
 									<div class="carousel-caption">
 										<h5 class="d-none d-md-block"><?= ucwords(substr($value->judul, 0, strrpos($value->judul, '.'))) ?></h5>
 										<p class="small d-block d-md-none"><?= ucwords(substr($value->judul, 0, strrpos($value->judul, '.'))) ?></p>
