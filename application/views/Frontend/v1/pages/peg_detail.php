@@ -11,7 +11,7 @@
 <?php 
 	$response = api_curl_get('silka.bkppd-balangankab.info/api/detail_pns/?nip='.$data['nip']);
 	$r = json_decode($response);
-	if(empty($data['nip']) || count($r) === 0) {
+	if(empty($data['nip']) || @count($r) === 0) {
 		redirect('errors/html/error_404','refresh');	
 		return false;
 	}  
