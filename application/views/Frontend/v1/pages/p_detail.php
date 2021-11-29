@@ -75,8 +75,6 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 ?>
 
 
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1099792537777374" crossorigin="anonymous"></script> -->
-
 <section class="pt-md-4">
 <div class="container">
 	<div class="row mt-md-5">

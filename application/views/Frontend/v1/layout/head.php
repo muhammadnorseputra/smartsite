@@ -28,14 +28,13 @@
     <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-solid-900.woff2') ?>" crossorigin="anonymous">
     <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-brands-400.woff2') ?>" crossorigin="anonymous">
     <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-regular-400.woff2') ?>" crossorigin="anonymous">
-    <link rel="preload" as="style" href="<?= base_url('template/v1/prod/app.css'); ?>" onload="this.rel='stylesheet'" crossorigin="anonymous">
     <link rel="preload" href="<?= base_url('template/v1/prod/vendor-min.js'); ?>" as="script" crossorigin="anonymous">
     <link rel="preload" href="<?= base_url('template/v1/prod/app-min.js'); ?>" as="script" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('template/v1/prod/app.css'); ?>">
     <link rel="prefetch" href="<?= base_url('bower_components/jquery/dist/jquery.min.js'); ?>" as="script" crossorigin="anonymous">
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
     <link rel="dns-prefetch" href="//web.bkppd-balangankab.info/">
     <link rel="dns-prefetch" href="//www.googletagmanager.com/">
-    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com/">
     <link rel="subresource" href="<?= base_url('assets/images/logo.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg-home.png'); ?>">
@@ -52,9 +51,9 @@
 
 <body>
 <div class="page-slider">
-    <!-- <div class="logo-loading">
+    <div class="logo-loading">
         <img class="w-50" src="<?= base_url('assets/images/logo.png'); ?>" alt="BKPPD BALANGAN">
-    </div> -->
+    </div> 
   <div class="slider">
     <div class="line"></div>
     <div class="subline inc"></div>
