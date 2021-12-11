@@ -54,9 +54,9 @@
 
 <body>
 <div class="page-slider">
-    <div class="logo-loading">
+    <!-- <div class="logo-loading">
         <img class="w-50" src="<?= base_url('assets/images/logo.png'); ?>" alt="BKPPD BALANGAN">
-    </div> 
+    </div>  -->
   <div class="slider">
     <div class="line"></div>
     <div class="subline inc"></div>
