@@ -1,17 +1,17 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider3') ?>
-<section class="content-home">
+<section class="bg-white">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 bg-white p-3">
+            <div class="col-md-6 offset-md-3 bg-white p-3 mt--6 rounded shadow-sm">
                 <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
             </div>
-            <div class="col-md-6 p-3">
-                <?php $this->load->view('Frontend/v1/function/media_sosial'); ?>
-            </div>
         </div>  
-
+    </div>
+</section>
+<section class="content-home">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="separator">
