@@ -16,11 +16,11 @@
 		</div>
 	</div>
 </section>
-<section class="py-5 bg-footer-style">
+<section class="py-5 bg-footer bg-footer-style">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 text-left">
-				<?php echo '<img src="'.img_blob($mf_beranda->site_logo).'" width="210" alt="BKPPD Balangan"/>'; ?>
+				<img src="<?= base_url('assets/images/logo.png') ?>" width="100" alt="logo kabupaten balangan from bkpsdm">
 				<p class="my-4 text-white">
 					<?= $mf_beranda->meta_desc ?>
 				</p>
@@ -70,7 +70,7 @@
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-6">
-				<h6 class="text-white pb-3 border-bottom">Ikuti Juga</h6>
+				<h6 class="text-warning pb-3 border-bottom">Ikuti Juga</h6>
 				<ul class="list-unstyled list-footer">
 					<li>
 						<a  rel="noreferrer" href="https://news.google.com/publications/CAAqBwgKMLfcpwswpOe_Aw?oc=3&ceid=ID:id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>BKPPD Google News</a>
@@ -95,7 +95,7 @@
 				</ul>
 			</div>
 			<div class="col-md-4 col-sm-6">
-				<h6 class="text-white pb-3 border-bottom">Link Terkait</h6>
+				<h6 class="text-warning pb-3 border-bottom">Link Terkait</h6>
 				<ul class="list-unstyled list-footer text-light">
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>

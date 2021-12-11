@@ -1,5 +1,5 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-light d-none bg-white d-md-block shadow-sm py-0">
+<nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-dark d-none d-md-block">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
 			<?php echo '<img style="object-fit:contain;" src="' .img_blob($mf_beranda->site_logo) . '" alt="BKPPD Kab. Balangan 2021" width="150" height="45"/>'; ?>
@@ -174,15 +174,15 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a rel="noindex, nofollow" class="btn shadow-sm btn-secondary rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.curPageURL()); ?>">
+			<a rel="noindex, nofollow" class="btn shadow-sm btn-primary-old rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.curPageURL()); ?>">
 				<i class="fas fa-lock mr-2"></i> Masuk 
 			</a>
-			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-outline-none border-0 rounded ml-2" href="<?= base_url('daftar'); ?>">
+			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-outline-light border-0 rounded ml-2" href="<?= base_url('daftar'); ?>">
 				<i class="fas fa-user"></i>
 			</a>
 			<?php } ?>
 			<span class="text-light ml-2">|</span>
-			<button class="btn btn-outline-none rounded-pill bg-white py-2 ml-2 post-search">
+			<button class="btn btn-outline-none rounded-pill bg-transparent text-white py-2 ml-2 post-search">
 				<i class="fas fa-search"></i>
 			</button>
 			<!-- <label class="switch mt-2">

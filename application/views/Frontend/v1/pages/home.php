@@ -1,10 +1,10 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
-<?php $this->load->view('Frontend/v1/function/slider3') ?>
-<section class="bg-white">
+<?php $this->load->view('Frontend/v1/function/slider4') ?>
+<section>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 offset-md-3 bg-white p-3 mt--6 rounded shadow-sm">
+            <div class="col-md-8 bg-white p-3 mt--8 rounded shadow-sm animated fadeInUp">
                 <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
             </div>
         </div>  

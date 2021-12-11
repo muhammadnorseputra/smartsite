@@ -70,12 +70,12 @@ section.hero {
 	background-color: #C6EBC9;
 	background-position: bottom center;
 	background-repeat: repeat; 
-	background-image: url('../../../assets/images/bg/bg.png');
+	background-image: url('../../../assets/images/bg/bg-super-statis.png');
 }
 .bg-footer {
-	background-image: url('../../../assets/images/bg/bg-footer.webp');
-	background-size: cover;
-	background-position: center;
+	background-image: url('../../../assets/images/bg/footer-super-graf.png');
+	background-size: 360px;
+	background-position: bottom right;
 	background-repeat: no-repeat;	
 }
 .bg-footer-style {
@@ -102,16 +102,16 @@ section.hero {
   100% { transform: rotate(360deg); }
 }
 .bg-blur {
-  background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, 0.84);
 }
 /* if backdrop support: very transparent and blurred */
 @supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))) {
   .bg-blur {
-    background-color: rgba(255, 255, 255, .5);
-    -webkit-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.84);
+    -webkit-backdrop-filter: blur(8px);
+  -moz-backdrop-filter: blur(8px);
+  -o-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   }
 }
 // Loading Screen
@@ -137,8 +137,8 @@ section.hero {
   left:0;
   top: 0;
   z-index: 8888;
-  background-color: #ccc;
-  opacity: 0.85;
+  background-color: #fff;
+  opacity: 0.95;
 }
 .slider{
   z-index: 9999;
@@ -292,7 +292,7 @@ body {
 	font-family: 'Rubik', sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 1.8em;
 	letter-spacing: 0.1px;
 	word-spacing:0.5px;
@@ -355,10 +355,10 @@ h5.title-sidebar {
 	font-weight: 700;
 }
 .navbar li.nav-item a {
-	color: #222 !important;
+	// color: #fff !important;
 	transition: background .1s ease;
 	font-family: 'Rubik', sans-serif;
-	font-size: 16px;
+	font-size: 15.5px;
 	font-weight: 500;
 	border-radius: 8px !important;
 	padding-top: .5rem .2rem;
@@ -366,14 +366,14 @@ h5.title-sidebar {
 }
 .navbar li.nav-item a:hover {
 	background-color: #eff8ff !important;
-	color: #333;
+	color: #333 !important;
 }
 .dropdown-item:hover, .dropdown-item:focus {
 	background: inherit !important;
 }
 .dropdown-menu {
 	top: 43px;
-	// left: 0px;
+	left: 3px;
 	padding: .5rem;
 	border: 0px;
 	border-radius: 8px;
