@@ -1036,9 +1036,9 @@ $(document).ready(function () {
       breakpoint: 480,
       settings: {
         centerMode: true,
-        arrows: false,
+        arrows: true,
         slidesToShow: 2,
-        centerPadding: '10px'
+        centerPadding: '5px'
       }
     }]
   });
