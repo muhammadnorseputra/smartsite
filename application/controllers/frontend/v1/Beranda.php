@@ -304,7 +304,7 @@ class Beranda extends CI_Controller
                     </div>
 					<div class="card-body px-2 d-flex justify-content-start align-items-center" style="z-index:99;">
                         <div>
-                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded-circle ml-1 ml-md-3 lazy mt--7 p-2 bg-white">
+                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded-circle ml-1 ml-md-3 lazy mt--8 p-2 bg-white">
                         </div>
                         <div class="w-100 ml-md-3 ml-2">
                         <button type="button"  aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
