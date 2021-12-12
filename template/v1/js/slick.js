@@ -43,7 +43,8 @@ $(document).ready(function() {
                   settings: {
                     centerMode: true,
                     arrows: false,
-                    centerPadding: '0px',
+                    slidesToShow: 2,
+                    centerPadding: '10px',
                     slidesToShow: 1
                   }
               }
