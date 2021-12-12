@@ -1011,7 +1011,7 @@ $(document).ready(function () {
     responsive: [{
       breakpoint: 480,
       settings: {
-        arrows: true
+        arrows: false
       }
     }]
   });
