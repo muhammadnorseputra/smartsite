@@ -1,7 +1,7 @@
-<section style="background-image: url(<?= base_url('assets/images/bg/bg-super-home.png') ?>); background-repeat: no-repeat; background-position: left top; background-size: cover; min-height: 500px; background-color: #000D6B;">
+<section class="bg-hero-home">
 <div class="container">
     <div class="row d-flex align-items-center">
-        <div class="col-md-6 py-5 mt-5 order-last order-md-first text-left">
+        <div class="col-md-6 py-md-5 mt-5 order-last order-md-first text-left">
             <div class="mt-md-5">
                 <h2 class="text-white font-weight-bold animated fadeInUp">Portal WEB Resmi Badan Kepegawaian dan Pengembangan Sumber Daya Manusia</h2>
                 <p class="text-warning animated fadeInUp">Selamat Datang Pada Portal Web Resmi BKPSDM Kabupaten Balangan, Pelayanan Terpadu.</p>

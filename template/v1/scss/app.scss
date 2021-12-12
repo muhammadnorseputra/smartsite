@@ -48,10 +48,13 @@ html::-webkit-scrollbar-thumb:hover {
   transition: opacity .4s ease;
 }
 
-section.hero-beranda {
-	background: url('../../../assets/images/bg/bgheader.svg');
+section.bg-hero-home {
+	background: url('../../../assets/images/bg/bg-super-home.png');
+	background-repeat: no-repeat; 
+	background-position: left top; 
 	background-size: cover; 
-	background-position: center; 
+	min-height: 500px; 
+	background-color: #000D6B;
 }
 
 section.hero-beranda::before {
@@ -1112,33 +1115,50 @@ i.likes:hover {
 }
 
 // Bounce Aniamtion
-		.animated-image {
-		-webkit-animation-duration: 2s;
-		animation-duration: 2s;
-		-webkit-animation-fill-mode: both;
-		animation-fill-mode: both;
-		-webkit-animation-timing-function: linear;
-		animation-timing-function: linear;
-		animation-iteration-count: infinite;
-		-webkit-animation-iteration-count: infinite;
-		}
-		@-webkit-keyframes bounce {
-		0%, 100% {
-		-webkit-transform: translateY(0);
-		}
-		50% {
-		-webkit-transform: translateY(-15px);
-		}
-		}
-		@keyframes  bounce {
-		0%, 100% {
-		transform: translateY(0);
-		}
-		50% {
-		transform: translateY(-15px);
-		}
-		}
-		.bounce {
-		-webkit-animation-name: bounce;
-		animation-name: bounce;
-		}
+.animated-image {
+-webkit-animation-duration: 2s;
+animation-duration: 2s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+-webkit-animation-timing-function: linear;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+-webkit-animation-iteration-count: infinite;
+}
+@-webkit-keyframes bounce {
+0%, 100% {
+-webkit-transform: translateY(0);
+}
+50% {
+-webkit-transform: translateY(-15px);
+}
+}
+@keyframes  bounce {
+0%, 100% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-15px);
+}
+}
+.bounce {
+-webkit-animation-name: bounce;
+animation-name: bounce;
+}
+
+// Trinket
+.trinket_graf_slide {
+	background-image: url('../../../assets/images/bg/trinket_3.png');
+	background-position: bottom left;
+	background-size: inherit;
+	z-index: 13;
+	background-repeat: no-repeat;
+}
+.trinket_statis {
+	background-image: url('../../../assets/images/bg/trinket_5.png');
+	background-position: bottom left;
+	background-size: 120px;
+	z-index: 13;
+	background-repeat: no-repeat;
+	position: relative;
+}

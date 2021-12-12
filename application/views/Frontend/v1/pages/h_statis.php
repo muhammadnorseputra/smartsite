@@ -1,7 +1,7 @@
 <section class="py-md-5 hero">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 pt-md-5 mt-5 text-left pb-5 pb-md-3">
+      <div class="col-md-12 pt-md-5 mt-md-5 text-left pb-5 pb-md-3">
         <?php
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
@@ -19,10 +19,10 @@
     </div>
   </div>
 </section>
-<section class="h-statis-detail mt--6 mb-3">
+<section class="h-statis-detail mt--6 bg-white rounded trinket_statis">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 bg-white p-3 p-md-4 rounded shadow-sm order-last order-md-first">
+      <div class="col-md-8 p-3 p-md-4 order-last order-md-first">
         <?php
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
