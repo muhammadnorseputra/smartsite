@@ -1037,8 +1037,8 @@ $(document).ready(function () {
       settings: {
         centerMode: true,
         arrows: true,
-        slidesToShow: 2,
-        centerPadding: '5px'
+        slidesToShow: 1,
+        centerPadding: '10px'
       }
     }]
   });
