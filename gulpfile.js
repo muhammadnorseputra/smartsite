@@ -37,9 +37,9 @@ gulp.task("js", function() {
                 presets: ["@babel/env"],
             })
         )
-        // .pipe(javascriptObfuscator({
-        //     compact: true
-        // }))
+        .pipe(javascriptObfuscator({
+            compact: true
+        }))
         .pipe(concat("app.js"))
         .pipe(minify())
         .pipe(gulp.dest("template/v1/prod/"));
