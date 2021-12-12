@@ -15,7 +15,7 @@ $(document).ready(function() {
                 {
                   breakpoint: 480,
                   settings: {
-                    arrows: false,
+                    arrows: true,
                   }
               }
         ]
@@ -29,7 +29,7 @@ $(document).ready(function() {
         slidesToScroll: 2,
         centerMode: false,
         centerPadding: '10px',
-        focusOnSelect: true,
+        focusOnSelect: false,
         // fade: true,
         // cssEase: 'linear',
         arrows: true,
