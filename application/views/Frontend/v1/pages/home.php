@@ -4,29 +4,29 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 bg-white p-3 mt--8 rounded shadow-sm animated fadeInUp">
+            <div class="col-md-8 bg-white px-3 pb-4 mt--8 rounded shadow-sm animated fadeInUp">
                 <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
             </div>
         </div>  
     </div>
 </section>
-<section class="content-home">
+<section class="bg-white py-md-5 my-md-4">
     <div class="container">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
                 <div class="separator">
                     <span class="separator-text text-capitalize font-weight-bold"><span class="font-weight-bold"><i class="fab fa-medapps text-secondary mr-2"></i>Yang Baru Dari Kami</span></span>
                 </div>
             </div>
-        </div> 
+        </div>  -->
         <div class="row">
             <div class="col-12 app-slick">
                 <div>
-                    <div class="d-flex align-items-center bg-success py-4 px-md-5 px-0 rounded">
-                        <div class="col-12 col-md-3 d-none d-md-block d-lg-block">
+                    <div class="d-flex align-items-center py-5 px-md-5 px-0 rounded">
+                        <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/illustration_hero_banner.svg') ?>" alt="GPR (Government Public Relation)">
                         </div>
-                        <div class="col-12 col-md-9 text-white">
+                        <div class="col-12 col-md-8 bg-white p-3 rounded border-left">
                             <h3>SKM (Survei Kepuasan Masyarakat)</h3>
                             <p>
                                 Survei Kepuasan Masyarakat (SKM) adalah data dan informasi tentang tingkat kepuasan masyarakat yang diperoleh dari hasil pengukuran secara kuantitatif dan kualitatif atas pendapat masyarakat dalam memperoleh pelayanan dari aparatur penyelenggara pelayanan publik dengan membandingkan antara harapan dan kebutuhannya.
@@ -36,11 +36,11 @@
                     </div>
                 </div>
                 <div>
-                    <div class="d-flex align-items-center bg-info py-4 px-md-5 px-0 rounded">
-                        <div class="col-12 col-md-3 d-none d-md-block d-lg-block">
+                    <div class="d-flex align-items-center py-5 px-md-5 px-0 rounded">
+                        <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/gpr.svg') ?>" alt="GPR (Government Public Relation)">
                         </div>
-                        <div class="col-12 col-md-9 text-white">
+                        <div class="col-12 col-md-8 bg-white p-3 rounded border-left">
                             <h3>GPR (Government Public Relation)</h3>
                             <p>
                                 Merupakan alat bantu sosialisasi berita berupa widget yang dapat dipasang pada website/blog. Sumber berita didapatkan dari website resmi <span class="badge badge-light" title="Official Site BKPPD Balangan"> web.bkppd-balangankab.info</span> dan informasi statistik pegawai bersumber pada aplikasi SILKa (Sistem Informasi Layanan Kepegawaian) Daerah Balangan.
@@ -50,11 +50,11 @@
                     </div>
                 </div>
                 <div>
-                    <div class="d-flex align-items-center bg-white py-4 px-md-5 px-0 rounded">
-                        <div class="col-12 col-md-3 d-none d-md-block d-lg-block">
+                    <div class="d-flex align-items-center py-5 px-md-5 px-0 rounded">
+                        <div class="col-12 col-md-4 d-none d-md-block d-lg-block">
                             <img class="img-fluid animated-image bounce" src="<?= base_url('assets/images/bg/report.svg') ?>" alt="Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?>">
                         </div>
-                        <div class="col-12 col-md-9">
+                        <div class="col-12 col-md-8 p-3 bg-white rounded border-left">
                             <h3>Grafik Pegawai Negeri Sipil Tahun <?= date('Y') ?></h3>
                             <p>
                                 Kini website telah tersedia grafik Pegawai Negeri Sipil yang terintegrasi dengan SILKa Online (Sistem Informasi Layanan Kepegawaian) Daerah Kabupaten Balangan, silahkan lihat pada laman grafik.
@@ -65,6 +65,10 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+<section class="content-home">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="separator">

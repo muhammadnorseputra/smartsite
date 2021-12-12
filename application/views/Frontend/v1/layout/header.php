@@ -182,7 +182,7 @@
 			</a>
 			<?php } ?>
 			<span class="text-light ml-2">|</span>
-			<button class="btn btn-outline-none rounded-pill bg-transparent text-white py-2 ml-2 post-search">
+			<button class="btn btn-outline-light rounded-pill py-2 ml-2 post-search">
 				<i class="fas fa-search"></i>
 			</button>
 			<!-- <label class="switch mt-2">

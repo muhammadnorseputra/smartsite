@@ -159,15 +159,15 @@ section.hero {
 .line{
   position:absolute;
   opacity: 0.3;
-  background:$teal;
+  background:transparent;
   width:190%;
   height:4.5px;
 }
 
 .subline{
   position:absolute;
-  background:$green;
-  height:2.5px; 
+  background:orange;
+  height:4.5px; 
 }
 .inc{
   animation: increase 1.5s infinite;

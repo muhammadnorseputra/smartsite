@@ -20,10 +20,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 text-left">
-				<img src="<?= base_url('assets/images/logo.png') ?>" width="100" alt="logo kabupaten balangan from bkpsdm">
-				<p class="my-4 text-white">
-					<?= $mf_beranda->meta_desc ?>
-				</p>
+				<div class="d-flex justify-content-start mb-3">
+					<div>
+						<img src="<?= base_url('assets/images/logo.png') ?>" width="80" alt="logo kabupaten balangan from bkpsdm">	
+					</div>
+					<div>
+						<p class="text-white">
+							<?= $mf_beranda->meta_desc ?>
+						</p>
+					</div>
+				</div>
 				<div class="d-flex justify-content-start align-items-center mb-3">
 				    <a  rel="noreferrer" target="_blank" href="<?= $mf_beranda->fb; ?>" class="btn py-3 btn-primary-old" data-toggle="tooltip" data-placement="bottom" data-title="Join group facebook" title="Join group facebook">
 				        <i class="fab fa-facebook"></i>

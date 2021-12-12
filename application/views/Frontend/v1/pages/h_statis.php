@@ -22,7 +22,7 @@
 <section class="h-statis-detail mt--8 mb-3">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 bg-white p-3 p-md-3 rounded shadow-sm order-last order-md-first">
+      <div class="col-md-8 bg-white p-3 p-md-4 rounded shadow-sm order-last order-md-first">
         <?php
         if ($detail->num_rows() > 0) :
         $h = $detail->row();

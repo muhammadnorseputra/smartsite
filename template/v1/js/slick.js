@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('.app-slick').slick({
         autoplay: true,
-        infinite: false,
+        infinite: true,
         dots: false,
         autoplaySpeed: 8000,
         // fade: true,
@@ -22,11 +22,11 @@ $(document).ready(function() {
     });
     $('.grafis-app-slick').slick({
         autoplay: true,
-        infinite: false,
+        infinite: true,
         dots: false,
         autoplaySpeed: 8000,
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         centerMode: false,
         centerPadding: '10px',
         focusOnSelect: true,
@@ -43,7 +43,7 @@ $(document).ready(function() {
                   settings: {
                     centerMode: true,
                     arrows: false,
-                    centerPadding: '60px',
+                    centerPadding: '0px',
                     slidesToShow: 1
                   }
               }
