@@ -1147,6 +1147,34 @@ animation-name: bounce;
 }
 
 // Trinket
+section {
+	position: relative;
+	width: 100%;
+	display: block;
+}
+.trinket {
+	position: absolute;
+	height: 230px;
+	z-index: 0;
+	&.trinket-13 {
+		top: 22px;
+		left: 0;
+	}
+	&.trinket-4 {
+		right: 0;
+		top: -200;
+	}
+	&.trinket-7 {
+		right: 0;
+		top: 0;
+	}
+}
+.trinket_bottom {
+	background-image: url('../../../assets/images/bg/testimonial_card_background.png');
+	background-position: bottom left;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 .trinket_graf_slide {
 	background-image: url('../../../assets/images/bg/trinket_3.png');
 	background-position: bottom left;
