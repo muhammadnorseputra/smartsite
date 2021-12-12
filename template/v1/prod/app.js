@@ -995,8 +995,6 @@ $(function () {
 });
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 $(document).ready(function () {
   $('.app-slick').slick({
     autoplay: true,
@@ -1036,12 +1034,12 @@ $(document).ready(function () {
     adaptiveHeight: false,
     responsive: [{
       breakpoint: 480,
-      settings: _defineProperty({
+      settings: {
         centerMode: true,
         arrows: false,
         slidesToShow: 2,
         centerPadding: '10px'
-      }, "slidesToShow", 1)
+      }
     }]
   });
   $('.album-slick').slick({

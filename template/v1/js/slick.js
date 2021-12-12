@@ -45,7 +45,6 @@ $(document).ready(function() {
                     arrows: false,
                     slidesToShow: 2,
                     centerPadding: '10px',
-                    slidesToShow: 1
                   }
               }
         ]
