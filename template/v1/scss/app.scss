@@ -67,9 +67,10 @@ section.hero-beranda::before {
 	z-index: -1;
 }
 section.hero {
-	background-color: #C6EBC9;
-	background-position: bottom center;
-	background-repeat: repeat; 
+	background-color: #000D6B;
+	background-position: top left;
+	background-repeat: repeat-x;
+	background-size: fill; 
 	background-image: url('../../../assets/images/bg/bg-super-statis.png');
 }
 .bg-footer {
