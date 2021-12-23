@@ -66,13 +66,14 @@ class C_download extends CI_Controller {
 				foreach($data as $val) {
 					if($val->publish == 'N' ? $col = 'col-red font-italic' : $col = '');
 					$jmlChar = strlen($val->file);
+					$pathToFile = base_url("d/{$val->d_key}/".url_title(strtolower($val->judul)));
 					$row .= '
 										<tr class="'.$col.'">
 											<td class="'.$col.'">'.$no.'</td>
 											<td class="'.$col.'"><code>'.$val->d_key.'<code></td>
 											<td class="'.$col.'"><b>'.$val->judul.'</b><br><code>'.$val->file.'</code><br>'.word_limiter($val->keterangan, 8).'</td>
 											<td class="'.$col.'">'.date_indo($val->tgl_publish).'</td>											
-											<td class="align-center"><a href="javascript:void(0)" onclick=\'window.open("'.$val->path.'", "_blank", "height=650, width=800, top=50, left=250, scrollbars=no, resizable=no")\'><em class="material-icons font-20">attach_file</em></a></td>
+											<td class="align-center"><a href="javascript:void(0)" onclick=\'window.open("'.$pathToFile.'", "_blank", "height=650, width=800, top=50, left=250, scrollbars=no, resizable=no")\'><em class="material-icons font-20">attach_file</em></a></td>
 											<td class="align-right '.$col.'"><em class="material-icons font-20 pull-left col-grey">file_download</em>'.$val->count.'</td>
 											<td class="align-center '.$col.'"><b class="col-teal">'.byte_format($val->ukuran).'</b></td>
 											<td class="align-center">

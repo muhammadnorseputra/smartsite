@@ -12,11 +12,10 @@
 				<div class="email"><?= $this->session->userdata('emailuser') ?></div>
 				<div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
-                        <!-- <ul class="dropdown-menu pull-right">
-                            <li><a href="<?= base_url('backend/c_admin?module=null&user='.$this->session->userdata('user_access')); ?>"><i class="material-icons">person</i>Profile</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0);" onclick="logout('<?= base_url('login/logout') ?>')"><i class="material-icons">input</i>Sign Out</a></li>
-                        </ul> -->
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="<?= base_url('beranda'); ?>" target="_blank">Kunjungi Situs <i class="material-icons">call_made</i></a></li>
+                            <!-- <li role="separator" class="divider"></li> -->
+                        </ul>
                     </div>
 			</div>
 		</div>

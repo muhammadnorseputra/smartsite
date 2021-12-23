@@ -133,8 +133,7 @@ function hapus(id,file,title) {
 					method: 'POST',
 					dataType: 'json',
 					beforeSend: function () {
-						NProgress.start();
-						NProgress.inc(0.9);
+						$.Mprog.starts(3, 'nav.navbar', true);
 					},
 					success: function( result ) {
 						if(result.pesan.stsText == true) {
@@ -145,7 +144,7 @@ function hapus(id,file,title) {
 						}
 					},
 						complete: function () {
-							NProgress.done();
+							$.Mprog.starts(3, 'nav.navbar', false).end(true);
 					}
 				});
 			},
@@ -241,8 +240,8 @@ jQuery(function () {
 					dataType: 'json',
 					data: new FormData(this),
 					beforeSend: function () {
-						NProgress.start();
-						NProgress.inc(0.9);
+						$.Mprog.starts(3, '#ModalAdd .modal-footer', true);
+						$("#ModalAdd").find('button[type="submit"]').prop("disabled", true);
 					},
 					success: function (result) {
 						if (result.responses.type == 'success') {
@@ -253,13 +252,18 @@ jQuery(function () {
 							jQuery("#f_file").css('display', 'none');
 							jQuery("#f_link").css('display', 'none');
 							listInternal();
+							$.Mprog.starts(3, '#ModalAdd .modal-footer', false).end(true);
+							$("#ModalAdd").find('button[type="submit"]').prop("disabled", false);
 						} else {
 							showNotification('bg-red', result.responses.pesan.error, 'bottom', 'right', 'animated fadeIn', 'animated fadeOut');
+							$.Mprog.starts(3, '#ModalAdd .modal-footer', false).end(true);
+							$("#ModalAdd").find('button[type="submit"]').prop("disabled", false);
 							/*$.dialog(result.responses.pesan.error);*/
 						}
 					},
 					complete: function () {
-						NProgress.done();
+						$.Mprog.starts(3, '#ModalAdd .modal-footer', false).end(true);
+							$("#ModalAdd").find('button[type="submit"]').prop("disabled", false);
 					}
 				});
 			}
@@ -292,10 +296,11 @@ jQuery(function () {
 						}
 					}, 'json'
 				).then(() => {
-					NProgress.start();
-					NProgress.inc(0.9);
+					$.Mprog.starts(3, '#ModalAdd .modal-footer', true);
+					$("#ModalAdd").find('button[type="submit"]').prop("disabled", true);
 				}).done(() => {
-					NProgress.done();
+					$.Mprog.starts(3, '#ModalAdd .modal-footer', false).end(true);
+					$("#ModalAdd").find('button[type="submit"]').prop("disabled", false);
 				});
 			}
 		}
