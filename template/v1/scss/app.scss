@@ -293,7 +293,7 @@ position: fixed;
 }
 body {	
 	background: rgb(243,244,237);
-	background: linear-gradient(0deg, rgba(243,244,237,1) 0%, rgba(243,244,237,1) 80%, rgba(217,217,217,1) 100%); 
+	background: linear-gradient(0deg, rgba(243,244,237,1) 0%, rgba(243,244,237,1) 80%, rgba(203,201,201,1) 100%); 
 	font-family: 'Rubik', sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -649,7 +649,7 @@ img.lazy {
 	display: block;
 	// background-color: transparent;
 	/* optional way, set loading as background */
-	background-image: url("../../../assets/images/loader/simple-pre-loader/loader-icons-set-2-32x64x128/32x32/Preloader_1.gif");
+	background-image: url("../../../assets/images/loader/simple-pre-loader/loader-icons-set-2-32x64x128/32x32/Preloader_2.gif");
 	background-size: auto;
 	// background-image: url("https://via.placeholder.com/300.png?text=BKPPD");
 	background-repeat: no-repeat;
