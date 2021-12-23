@@ -101,10 +101,9 @@ function hapus_eksternal_file(id,source) {
 					showNotification(result.pesan.type, result.pesan.content, 'bottom', 'right', 'animated fadeIn', 'animated fadeOut');
 					listEksternal();
 				}).then(() => {
-					NProgress.start();
-					NProgress.inc(0.9);
+					$.Mprog.starts(3, 'nav.navbar', true);
 				}).done(() => {
-					NProgress.done();
+					$.Mprog.starts(3, 'nav.navbar', false).end(true);
 				});
 			},
 			cancel: function () {}
