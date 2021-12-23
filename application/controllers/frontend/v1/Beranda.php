@@ -252,7 +252,7 @@ class Beranda extends CI_Controller
                 $namakategori = $this->post->kategori_byid($row->fid_kategori);
                 $post_list_url = base_url('k/' . url_title($namakategori));
                 
-                $arr_color = ['text-primary', 'text-success', 'text-info', 'text-warning', 'text-danger', 'text-default', 'text-dark'];
+                $arr_color = ['text-primary', 'text-success', 'text-info', 'text-warning', 'text-danger', 'text-default', 'text-dark','text-primary', 'text-success', 'text-info', 'text-warning', 'text-danger', 'text-default', 'text-dark'];
                 $rand = '';
                 for($x=0; $x<count($arr_color);$x++):
                     $rand = $arr_color[$no];
