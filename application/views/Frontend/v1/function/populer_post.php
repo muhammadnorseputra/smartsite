@@ -1,7 +1,7 @@
 <div class="separator d-flex justify-content-between align-items-center">
     <div>
         <span class="separator-text text-uppercase font-weight-bold">
-            <i class="fas fa-heart text-secondary mr-2"></i> Populer Post
+            <i class="fas fa-heart mr-2"></i> Populer Post
         </span>
     </div>
     <div class="mt--4">

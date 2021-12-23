@@ -1,6 +1,6 @@
 <div id="stickMe">
 <div class="separator">
-    <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-check-circle text-secondary mr-2"></i> Data Poling</span>
+    <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-check-circle mr-2"></i> Data Poling</span>
 </div>
 <div class="border-0 shadow-none p-3 bg-light rounded">
 	<?php $poling_q = $mf_poling_pertanyaan; ?>
