@@ -292,7 +292,8 @@ position: fixed;
 	position: relative;
 }
 body {	
-	background: #F3F4ED;
+	background: rgb(243,244,237);
+	background: linear-gradient(0deg, rgba(243,244,237,1) 0%, rgba(243,244,237,1) 80%, rgba(217,217,217,1) 100%); 
 	font-family: 'Rubik', sans-serif;
 	font-style: normal;
 	font-weight: 400;
