@@ -187,7 +187,7 @@ class C_download extends CI_Controller {
 					$config['upload_path']          = './files/file_download/';
 					$path_now 								      = site_url('/files/file_download/'.strtolower(str_replace("/","",$files)));
 					$config['allowed_types']        = 'pdf|doc|xlsx|xls|pptx|csv|zip|rar';
-					$config['max_size'] = '2048'; //maksimum besar file 5M
+					$config['max_size'] = '2548'; //maksimum besar file 2.5M
 					$config['file_name'] = strtolower($files); //nama yang terupload nantinya
 					
 					$this->load->library('upload', $config);
@@ -307,7 +307,7 @@ class C_download extends CI_Controller {
 				$config['upload_path']   	= './files/file_download/';
 				$path_now 								= site_url('/files/file_download/'.strtolower(str_replace("/","",$files)));
 				$config['allowed_types'] 	= 'pdf|doc|xlsx|xls|pptx|csv|zip|rar';
-				$config['max_size'] 			= '2048'; //maksimum besar file 5M
+				$config['max_size'] 			= '2548'; //maksimum besar file 2.5M
 				$config['file_name'] 			= strtolower($files); //nama yang terupload nantinya
 				
 				$this->load->library('upload', $config);

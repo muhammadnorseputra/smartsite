@@ -87,8 +87,8 @@
 										<input type="file" id="file" name="file" class="form-control" placeholder="Pilih">
 									</div>
 									<p class="help-block font-12 col-grey"> File yang di ijinkan Upload hanya
-										(<code>pdf,doc,xls,pptx,csv</code>),
-										Ukuran Maksimal 2 MB (2048 Kb)</p>
+										(<code>pdf,doc,xls,pptx,csv,zip,rar</code>),
+										Ukuran Maksimal 2.5 MB (2548 Kb)</p>
 								</div>
 							</div>
 
@@ -96,7 +96,7 @@
 						<div class="row m-t-20">
 							<button type="submit" class="btn btn-primary waves-effect m-r-10 pull-right m-l-10"> SIMPAN</button>
 							<button type="button" onclick="window.history.back(-1)"
-								class="btn btn-danger btn-sm waves-effect pull-right"> BATAL</button>
+								class="btn btn-link btn-sm waves-effect pull-right"> BATAL</button>
 						</div>
 					</div>
 				</div>
@@ -129,11 +129,11 @@
 
 					<input type="hidden" class="form-control" name="file_lama" value="<?= $formdata[0]['file'] ?>">
 					<div style="display:<?= $sel_ffile ?>;"
-						class="col-md-12 border border-1 border-col-grey p-t-5 p-b-5 bg-blue-grey">
+						class="col-md-12 p-t-5 p-b-5">
 						<?php if($formdata[0]['type'] == '.pdf' || $formdata[0]['type'] == '.PDF') { ?>
 
 						<!-- <iframe id="view-file" src="<?= $formdata[0]['path'] ?>" frameborder="0" height="450" width="100%" class="p-t-10 p-b-5" style="display: <?= $typepo ?>"></iframe> -->
-						<object id="view-file" data="data:application/pdf;base64, <?= base64_encode($formdata[0]['file_blob']) ?>" width="100%" height="450" style="display: <?= $typepo ?>"></object>
+						<object id="view-file" data="data:application/pdf;base64, <?= base64_encode($formdata[0]['file_blob']) ?>" width="100%" height="550" style="display: <?= $typepo ?>"></object>
 
 						<a href="javascript:void(0);" id="btn-fullscreen" class="btn btn-sm btn-link pull-right"
 							style="display: <?= $typepo ?>"><em class="material-icons m-t-5 m-b-5">fullscreen</em></a>

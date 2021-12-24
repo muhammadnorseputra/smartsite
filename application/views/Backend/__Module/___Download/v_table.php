@@ -65,7 +65,7 @@
 </div>
 </div>
 <!-- ################################ MODAL TAMBAH ################################-->
-<div class="modal fade" id="ModalAdd" tabindex="2" role="dialog" data-backdrop="static" data-keyboard="false">
+<div class="modal fade modal-fixed-footer" id="ModalAdd" tabindex="2" role="dialog" data-backdrop="static" data-keyboard="false">
 <div class="modal-dialog modal-md" role="document">
 <div class="modal-content">
 	<?= form_open_multipart('backend/module/c_download/add', array('id' => 'FormDownload')) ?>
@@ -140,8 +140,8 @@
 						<input type="file" id="file" name="file" class="form-control" placeholder="Pilih">
 					</div>
 					<p class="help-block font-12 col-grey"> File yang di ijinkan Upload hanya
-						(<code>pdf,doc,xls,pptx,csv</code>),
-					Ukuran Maksimal 2 MB (2048 Kb)</p>
+						(<code>pdf,doc,xls,pptx,csv,zip,rar</code>),
+					Ukuran Maksimal 2.5 MB (2548 Kb)</p>
 				</div>
 			</div>
 		</div>
