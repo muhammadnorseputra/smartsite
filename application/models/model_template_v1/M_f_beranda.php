@@ -8,7 +8,7 @@ class M_f_beranda extends CI_Model
         return $this->db->get('t_pengaturan')->row();
     }
 
-    public function list_banner($jns_banner, $posisi, $start=0,$limit=null)
+    public function list_banner($jns_banner, $posisi, $start=0,$limit=7)
     {
         $this->db->select('t_banner.*, ref_jns_banner.jenis');
         $this->db->from('t_banner');

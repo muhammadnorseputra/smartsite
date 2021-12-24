@@ -128,7 +128,6 @@
                                 </span>
                             </div>            
                             <?= $b->judul ?>
-                        
                     </div>
                     <?php $no++; endforeach; ?>
                 </div> 
@@ -141,7 +140,7 @@
 <section class="<?= $my ?>" id="content-page">
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
-        <div class="row d-flex justify-content-around flex-column flex-lg-row">
+        <div class="row d-flex justify-content-between flex-column flex-lg-row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 order-last order-md-last mt-3 mt-md-0">
                 <div id="sidebar">
                 
