@@ -8,7 +8,7 @@ class M_f_beranda extends CI_Model
         return $this->db->get('t_pengaturan')->row();
     }
 
-    public function list_banner($jns_banner, $posisi, $start=0,$limit=7)
+    public function list_banner($jns_banner, $posisi,$start=null,$limit=5)
     {
         $this->db->select('t_banner.*, ref_jns_banner.jenis');
         $this->db->from('t_banner');
@@ -17,11 +17,10 @@ class M_f_beranda extends CI_Model
                           'ref_jns_banner.jenis' => $jns_banner,
                           'ref_jns_banner.posisi' => $posisi, ]);
         $this->db->order_by('t_banner.id_banner', 'desc');
-        if(!empty($start) && !empty($limit)){
-            $q = $this->db->get($limit, $start);   
-        } else {
-            $q = $this->db->get();
-        }
+        if(!empty($limit)){
+            $this->db->limit($limit);   
+        } 
+        $q = $this->db->get();
         return $q;
     }
 
