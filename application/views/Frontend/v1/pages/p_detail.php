@@ -43,12 +43,16 @@ $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user
 if(!empty($post_detail->img)):
 $img = '<img style="object-fit: cover; min-height:450px; max-height: 450px;" class="w-100 lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
 $imgSrc = files('file_berita/'.$post_detail->img);
+$mt = 'mt-md-3';
 elseif($post_detail->type === 'YOUTUBE'):
 $img = $yt_player;
 $imgSrc = $yt_player;
+$mt = 'mt-md-5';
 elseif($post_detail->type === 'SLIDE'):
 $imgSrc = img_blob($first_img);
+$mt = 'mt-md-3';
 else:
+$mt = 'mt-md-3';
 $img = '<img style="object-fit: cover;min-height:450px; max-height: 450px;" class="w-100 lazy" data-src="'.img_blob($post_detail->img_blob).'" data-sizes="5x"  alt="'.$title.'"/>';
 $imgSrc = img_blob($post_detail->img_blob);
 endif;
@@ -104,12 +108,12 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 	<?php else: ?>
 		<?php if($post_detail->type !== 'YOUTUBE'): ?>
 		<?= $img ?>
-		<div class="d-none d-md-block" style="background-image: url('<?= assets("images/bg/bg-shadow-nav.png"); ?>'); background-repeat: repeat-x; display: block; width: 100%; height:120px; position: absolute; top: 0; left: 0;">&nbsp;</div>
 		<?php endif; ?>
+		<div class="d-none d-md-block" style="background-image: url('<?= assets("images/bg/bg-shadow-nav.png"); ?>'); background-repeat: repeat-x; display: block; width: 100%; height:120px; position: absolute; top: 0; left: 0;">&nbsp;</div>
 	<?php endif; ?>
 <section>
 <div class="container">
-	<div class="row mt-md-3">
+	<div class="row <?= $mt ?>">
 		<div class="col-md-8 offset-md-2 px-0">
 			<nav aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
 			  <ol class="breadcrumb small">
