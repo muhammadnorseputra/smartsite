@@ -41,7 +41,7 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
-$img = '<img style="object-fit: cover; max-height: 450px;" class="w-100 lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
+$img = '<img style="object-fit: cover; min-height:350px; max-height: 450px;" class="w-100 lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
 $imgSrc = files('file_berita/'.$post_detail->img);
 elseif($post_detail->type === 'YOUTUBE'):
 $img = $yt_player;
@@ -49,7 +49,7 @@ $imgSrc = $yt_player;
 elseif($post_detail->type === 'SLIDE'):
 $imgSrc = img_blob($first_img);
 else:
-$img = '<img style="object-fit: cover; max-height: 450px;" class="w-100 lazy" data-src="'.img_blob($post_detail->img_blob).'" data-sizes="5x"  alt="'.$title.'"/>';
+$img = '<img style="object-fit: cover;min-height:350px; max-height: 450px;" class="w-100 lazy" data-src="'.img_blob($post_detail->img_blob).'" data-sizes="5x"  alt="'.$title.'"/>';
 $imgSrc = img_blob($post_detail->img_blob);
 endif;
 /*Content*/
@@ -103,6 +103,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 	</div>
 	<?php else: ?>
 		<?= $img ?>
+		<div class="d-none d-md-block" style="background-image: url('<?= assets("images/bg/bg-shadow-nav.png"); ?>'); background-repeat: repeat-x; display: block; width: 100%; height:120px; position: absolute; top: 0; left: 0;">&nbsp;</div>
 	<?php endif; ?>
 <section>
 <div class="container">
@@ -126,7 +127,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1><?php echo $post_detail->judul; ?></h1>
-					<div class="d-flex justify-content-between align-items-center mb-3">
+					<div class="d-flex justify-content-between align-items-center">
 						<div class="d-flex justify-content-start align-items-center text-muted">
 						<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top; border: 4px solid #FCFCFC;" width="40" height="40" class="mr-md-2 mr-2 lazy rounded-circle shadow-sm bg-light"> 
 						<span> <?= ucwords($namapanggilan); ?> 
@@ -219,40 +220,42 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					endif;
 					if($no == 1):
 						$textAlign = 'text-left';
+						$pageNote = 'Prev';
 					else:
+						$pageNote = 'Next';
 						$textAlign = 'text-right';
 					endif;
 					?>
 					<?php if($berita_selanjutnya->num_rows() > 0): ?>
-							<div class="col-md-6">
-					<a href="<?= $posturl ?>" class="text-link">
-								<div class="d-flex align-items-center <?= $textAlign ?>">
-									<?php if($no == 1): ?>
-										<i class="fas fa-chevron-left text-muted mr-2"></i>
-										<img style="object-fit:cover;" width="35" src="<?= $img ?>" class="	rounded" height="35" alt="<?= $b->judul ?>">
-									<?php endif ?>
-									<h6 class="my-2 px-3"><?= word_limiter($b->judul, 8); ?></h6>
-									<?php if($no == 2): ?>
-										<img style="object-fit:cover;" width="35" src="<?= $img ?>" class="rounded" height="35" alt="<?= $b->judul ?>">
-										<i class="fas fa-chevron-right text-muted ml-2"></i>
-									<?php endif ?>
-								</div>
-								
-					</a>
-							</div>
+					<div class="col-md-6">
+						<a href="<?= $posturl ?>" class="text-link">
+							<div class="d-flex align-items-center <?= $textAlign ?>">
+								<?php if($no == 1): ?>
+									<i class="fas fa-chevron-left text-muted mr-2"></i>	
+								<?php endif ?>
+								<h6 class="my-2 px-3">
+									<div class="font-weight-bold text-light"><?= $pageNote ?></div>
+									<?= word_limiter($b->judul, 8); ?>
+								</h6>
+								<?php if($no == 2): ?>
+									<i class="fas fa-chevron-right text-muted ml-2"></i>
+								<?php endif ?>
+							</div>	
+						</a>
+					</div>
 					<?php endif; ?>
 					<?php $no++; endforeach; ?>
 				</div>
 			</div>
 			<?php if($post_detail->komentar_status == 0): ?>
-			<div class="card my-4 border-0 bg-white shadow-sm">
+			<div class="card my-4 border border-light bg-white">
 				<div class="card-body py-0" style="max-height: 480px; overflow-y: auto;">
 					<div id="tracking" data-postid="<?= encrypt_url($postId) ?>">
 						<div class="tracking-list"></div>
 					</div>
 				</div>
 			</div>
-			<div class="card border-0 bg-light shadow-sm">
+			<div class="card border-0">
 				<div class="card-body">
 					<?php if ($this->session->userdata('user_portal_log')['online'] == 'ON') { ?>
 					<b class="reply_username float-right"></b>
