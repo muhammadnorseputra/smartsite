@@ -37,9 +37,9 @@ gulp.task("js", function() {
                 presets: ["@babel/env"],
             })
         )
-        // .pipe(javascriptObfuscator({
-        //     compact: true
-        // }))
+        .pipe(javascriptObfuscator({
+            compact: true
+        }))
         .pipe(concat("app.js"))
         .pipe(minify())
         .pipe(gulp.dest("template/v1/prod/"));
@@ -54,7 +54,7 @@ gulp.task("vendor", function() {
             "bower_components/masonry-layout/dist/masonry.pkgd.min.js",
             "bower_components/imagesloaded/imagesloaded.pkgd.min.js",
             "bower_components/emojionearea/dist/emojionearea.min.js",
-            "bower_components/jquery-typeahead/dist/jquery.typeahead.min.js",
+            // "bower_components/jquery-typeahead/dist/jquery.typeahead.min.js",
             "template/v1/plugin/slick/slick/slick.min.js",
             // "template/v1/plugin/popmodal/popModal.min.js",
             "template/v1/plugin/lazyload/jquery.lazy.min.js",

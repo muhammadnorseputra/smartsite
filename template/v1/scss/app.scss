@@ -162,8 +162,8 @@ section.hero {
 }
 .line{
   position:absolute;
-  opacity: 0.3;
-  background:transparent;
+  opacity: 0.8;
+  background:#fff;
   width:210%;
   height:4.5px;
 }
@@ -174,10 +174,10 @@ section.hero {
   height:4.5px; 
 }
 .inc{
-  animation: increase 1.5s infinite;
+  animation: increase 2.8s infinite;
 }
 .dec{
-  animation: decrease 1.5s 0.5s infinite;
+  animation: decrease 2.8s 0.8s infinite;
 }
 .logo-loading {
 	position: fixed;

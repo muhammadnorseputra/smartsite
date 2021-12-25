@@ -227,15 +227,15 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img style="height:340px; object-fit: cover; object-position: center;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:240px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     elseif(!empty($row->img_blob)):
-                        $img = '<img style="height:340px; object-fit: cover; object-position: center;" class="card-img-top w-100 lazy rounded-top border-light" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
+                        $img = '<img style="height:240px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
-                        $img = '<img style="height:340px; object-fit: cover; object-position: center;" class="w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:240px; object-fit: cover; object-position: top;" class="w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="height:340px; object-fit: cover; object-position: center;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="height:240px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-3x bg-dark rounded-circle"></i>
                         </div>
@@ -243,9 +243,9 @@ class Beranda extends CI_Controller
                 elseif($row->type === 'SLIDE'):
                     $img = $photo_t;
                 elseif($row->type === 'LINK'):
-                    $img = '<img style="height:340px; object-fit: cover; object-position: center;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:240px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
                 else:
-                    $img = '<img style="height:340px; object-fit: cover; object-position: center;" class="card-img-top w-100 lazy rounded-top border-light" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:240px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                 endif;
 
                 // Kategori
@@ -295,14 +295,14 @@ class Beranda extends CI_Controller
                 endif;
 
                 $output .= '
-                <div class="ps-scroll mb-5">
-					<div class="card border-0 bg-white mb-3 mb-md-0 shadow-sm">
+                <div class="ps-scroll">
+					<div class="card border-0 rounded-bottom bg-white mb-2">
                     <div class="canvas overflow-hidden">
                     <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
                       '.$img.'
                     </a>
                     </div>
-					<div class="card-body px-2 d-flex justify-content-start align-items-center" style="z-index:99;">
+					<div class="card-body bg-white px-2 d-flex justify-content-start align-items-center sticky-top" style="z-index:99;">
                         <div>
                         <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded-circle ml-1 ml-md-3 lazy p-2 bg-white">
                         </div>
@@ -318,7 +318,7 @@ class Beranda extends CI_Controller
                     
                     '.$content_body.'
 
-					<div class="card-footer bg-transparent p-2 d-flex justify-content-start border-light border-top">
+					<div class="card-footer bg-transparent p-2 d-flex justify-content-start">
                     <div class="w-100">
 					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.nominal($row->views). '</button>
                     </div>
