@@ -337,7 +337,11 @@ body {
     will-change: position, transform;
 }
 .modal-backdrop {
-  opacity:0; transition:opacity .4s;
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  -webkit-backdrop-filter: blur(8px);
+  -moz-backdrop-filter: blur(8px);
+  -o-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 .modal-backdrop.in {
   opacity:.9;
@@ -971,7 +975,7 @@ i.likes:hover {
 		background-position: left top; 
 		background-size: cover; 
 		min-height: 500px; 
-		background-color: #000D6B;
+		// background-color: #000D6B;
 	}
 	.intro-website {
 		color: #fff !important;

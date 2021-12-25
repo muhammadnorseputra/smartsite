@@ -1039,11 +1039,10 @@ $(document).ready(function () {
     responsive: [{
       breakpoint: 480,
       settings: {
-        centerMode: false,
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        centerMode: true,
+        slidesToShow: 1,
         arrows: true,
-        centerPadding: '10px'
+        centerPadding: '40px'
       }
     }]
   });
