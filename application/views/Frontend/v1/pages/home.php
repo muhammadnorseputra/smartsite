@@ -1,7 +1,12 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
+<div class="alert alert-warning alert-dismissible fade show rounded-0 border-0 mb-0 d-md-none d-lg-none" role="alert">
+  <strong>Survei !</strong> Mari bantu kami untuk meningkatkan pelayanan <a href="//ikm.bkppd-balangankab.info/ikm" class="btn btn-sm btn-warning">Isi Survei Sekarang</a>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider4') ?>
-
 <section class="bg-white py-md-5">
     <img class="trinket trinket-13 d-none d-sm-block d-lg-block d-xl-block" src="<?= base_url('assets/images/bg/trinket_5.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
     <img class="trinket trinket-4" src="<?= base_url('assets/images/bg/trinket_7.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
