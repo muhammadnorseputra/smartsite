@@ -2,12 +2,12 @@ $(document).ready(function() {
     // make it as accordion for smaller screens
     $(document).scroll(function() {
         if ($(document).scrollTop() > 30) {
-            $("nav#navbar").removeClass('navbar-dark').css("transition", ".5s ease").addClass("bg-blur navbar-light py-0");
+            $("nav#navbar").removeClass('navbar-dark').css("transition", ".5s ease").addClass("bg-white navbar-light py-0");
             $("button#caripost").addClass('btn-outline-light');
         } else {
             $("button#caripost").removeClass('btn-outline-light');
             // $("button#caripost").toggleClass('');
-            $("nav#navbar").addClass('navbar-dark').removeClass("bg-blur navbar-light py-0");
+            $("nav#navbar").addClass('navbar-dark').removeClass("bg-white navbar-light py-0");
         }
     });
     var prevScrollpos = window.pageYOffset;

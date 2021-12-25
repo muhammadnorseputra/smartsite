@@ -151,7 +151,7 @@
 	</div> 
 </section>
 </footer>
-<script defer="defer" src="<?= base_url('template/v1/prod/vendor-min.js'); ?>" crossorigin="anonymous"></script>
-<script defer="defer" src="<?= base_url('template/v1/prod/app-min.js'); ?>" crossorigin="anonymous"></script>
+<script async src="<?= base_url('template/v1/prod/vendor-min.js'); ?>"></script>
+<script async src="<?= base_url('template/v1/prod/app-min.js'); ?>"></script>
 </body>
 </html>
