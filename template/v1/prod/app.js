@@ -996,26 +996,28 @@ $(function () {
 "use strict";
 
 $(document).ready(function () {
-  $('.app-slick').slick({
-    autoplay: true,
-    infinite: true,
-    dots: false,
-    autoplaySpeed: 8000,
-    // fade: true,
-    // cssEase: 'linear',
-    arrows: true,
-    zIndex: 10,
-    prevArrow: '<button class="slide-arrow prev-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-left"></button>',
-    nextArrow: '<button class="slide-arrow next-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-right"></button>',
-    pauseOnHover: true,
-    adaptiveHeight: false,
-    responsive: [{
-      breakpoint: 480,
-      settings: {
-        arrows: false
-      }
-    }]
-  });
+  // $('.app-slick').slick({
+  //     autoplay: true,
+  //     infinite: true,
+  //     dots: false,
+  //     autoplaySpeed: 8000,
+  //     // fade: true,
+  //     // cssEase: 'linear',
+  //     arrows: true,
+  //     zIndex: 10,
+  //     prevArrow: '<button class="slide-arrow prev-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-left"></button>',
+  //     nextArrow: '<button class="slide-arrow next-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-right"></button>',
+  //     pauseOnHover: true,
+  //     adaptiveHeight: false,
+  //     responsive: [
+  //             {
+  //               breakpoint: 480,
+  //               settings: {
+  //                 arrows: false,
+  //               }
+  //           }
+  //     ]
+  // });
   $('.grafis-app-slick').slick({
     autoplay: true,
     infinite: true,
@@ -1037,9 +1039,10 @@ $(document).ready(function () {
     responsive: [{
       breakpoint: 480,
       settings: {
-        centerMode: true,
+        centerMode: false,
+        slidesToShow: 2,
+        slidesToScroll: 2,
         arrows: true,
-        slidesToShow: 1,
         centerPadding: '10px'
       }
     }]

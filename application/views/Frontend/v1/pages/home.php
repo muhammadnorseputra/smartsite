@@ -7,10 +7,10 @@
 </div>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider4') ?>
-<section class="bg-white py-md-5">
-    <img class="trinket trinket-13 d-none d-sm-block d-lg-block d-xl-block" src="<?= base_url('assets/images/bg/trinket_5.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
-    <img class="trinket trinket-4" src="<?= base_url('assets/images/bg/trinket_7.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
-    <div class="container">
+<!-- <section class="bg-white py-md-5"> -->
+    <!-- <img class="trinket trinket-13 d-none d-sm-block d-lg-block d-xl-block" src="<?= base_url('assets/images/bg/trinket_5.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
+    <img class="trinket trinket-4" src="<?= base_url('assets/images/bg/trinket_7.png') ?>" alt="Portal BKPSDM Kabupaten Balangan"> -->
+    <!-- <div class="container"> -->
         <!-- <div class="row">
             <div class="col-12">
                 <div class="separator">
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>  -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12 app-slick">
                 <div>
                     <div class="d-flex align-items-center py-5 px-md-5 px-0 rounded">
@@ -63,20 +63,20 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
    
-</section>
-<section class="content-home trinket_graf_slide">
+<!-- </section> -->
+<section class="content-home trinket_graf_slide py-md-5 py-3">
     <img class="trinket trinket-7" src="<?= base_url('assets/images/bg/trinket_6.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
     <div class="container">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
                 <div class="separator">
                     <span class="separator-text text-capitalize font-weight-bold"><span class="font-weight-bold"><i class="fas fa-images text-secondary mr-2"></i>Info Grafis</span></span>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-12">
                 <div class="row  grafis-app-slick">
