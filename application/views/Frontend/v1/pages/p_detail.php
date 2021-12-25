@@ -102,8 +102,10 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 		</a>
 	</div>
 	<?php else: ?>
+		<?php if($post_detail->type !== 'YOUTUBE'): ?>
 		<?= $img ?>
 		<div class="d-none d-md-block" style="background-image: url('<?= assets("images/bg/bg-shadow-nav.png"); ?>'); background-repeat: repeat-x; display: block; width: 100%; height:120px; position: absolute; top: 0; left: 0;">&nbsp;</div>
+		<?php endif; ?>
 	<?php endif; ?>
 <section>
 <div class="container">
@@ -144,6 +146,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					</div>
 					<div class="px-0 media_youtube">
 						<?php  if($post_detail->type === 'YOUTUBE'): ?>
+						<?= $img ?>
 						<div class="pl-3 border-left border-light">
 							<div class="d-flex justify-content-start align-items-start align-items-md-center">
 								<div class="mr-3 text-light">
@@ -196,28 +199,6 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					$namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
 					}
 
-					if($b->type === 'YOUTUBE'):
-						$key      = $this->config->item('YOUTUBE_KEY'); /*TOKEN goole developer*/
-					    $url      = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$b->content.'&key='.$key;
-					    $yt     = api_client($url);
-					    $img = $yt['items'][0]['snippet']['thumbnails']['medium']['url'];
-					endif;
-
-					if($b->type === 'LINK'):
-						$url = $b->content;
-					    $linker = getSiteOG($url);
-					    $img = $linker['image'];
-					endif;
-
-					if($b->type === 'SLIDE'):
-						$img = img_blob($this->post->photo_terkait($b->id_berita,1)->row()->photo);
-					endif;
-
-					if(!empty($b->img) && $b->type === 'BERITA'):
-						$img = files('file_berita/'.$b->img);
-					else:
-						$img = img_blob($b->img_blob);
-					endif;
 					if($no == 1):
 						$textAlign = 'text-left';
 						$pageNote = 'Prev';
