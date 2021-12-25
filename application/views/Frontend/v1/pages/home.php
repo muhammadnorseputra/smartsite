@@ -1,18 +1,10 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider4') ?>
-<section class="bg-white py-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5 bg-white px-3 pb-4 mt--8 rounded shadow-sm animated fadeInUp trinket_bottom">
-                <?php $this->load->view('Frontend/v1/function/search_pegawai'); ?>
-            </div>
-        </div>  
-    </div>
-</section>
+
 <section class="bg-white py-md-5">
-    <img class="trinket trinket-13" src="<?= base_url('assets/images/bg/trinket_13.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
-    <img class="trinket trinket-4" src="<?= base_url('assets/images/bg/trinket_4.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
+    <img class="trinket trinket-13 d-none d-sm-block d-lg-block d-xl-block" src="<?= base_url('assets/images/bg/trinket_5.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
+    <img class="trinket trinket-4" src="<?= base_url('assets/images/bg/trinket_7.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
     <div class="container">
         <!-- <div class="row">
             <div class="col-12">

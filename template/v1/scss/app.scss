@@ -965,8 +965,13 @@ i.likes:hover {
 	.big-card {
 		transform: scale(1) !important;	
 	}
-	section.hero-beranda::before {
-		background: #70af85;
+	section.bg-hero-home {
+		background: url('../../../assets/images/bg/bg-super-home-mobile.png');
+		background-repeat: no-repeat; 
+		background-position: left top; 
+		background-size: cover; 
+		min-height: 400px; 
+		background-color: #000D6B;
 	}
 	.intro-website {
 		color: #fff !important;
@@ -1158,7 +1163,7 @@ section {
 	height: 230px;
 	z-index: 0;
 	&.trinket-13 {
-		top: 22px;
+		top: 120px;
 		left: 0;
 	}
 	&.trinket-4 {
