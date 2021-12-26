@@ -41,7 +41,7 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
-$img = '<img style="object-fit: cover;  max-height: 450px;" class="w-100 lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
+$img = '<img style="object-fit: cover;  max-height: 320px;" class="w-100 lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
 $imgSrc = files('file_berita/'.$post_detail->img);
 $mt = 'mt-md-3';
 elseif($post_detail->type === 'YOUTUBE'):
@@ -53,7 +53,7 @@ $imgSrc = img_blob($first_img);
 $mt = 'mt-md-3';
 else:
 $mt = 'mt-md-3';
-$img = '<img style="object-fit: cover; max-height: 450px;" class="w-100 lazy" data-src="'.img_blob($post_detail->img_blob).'" data-sizes="5x"  alt="'.$title.'"/>';
+$img = '<img style="object-fit: cover; max-height: 320px;" class="w-100 lazy" data-src="'.img_blob($post_detail->img_blob).'" data-sizes="5x"  alt="'.$title.'"/>';
 $imgSrc = img_blob($post_detail->img_blob);
 endif;
 /*Content*/
@@ -88,7 +88,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 		<div class="carousel-inner rounded">
 			<?php foreach($photo_slide->result() as $key => $value): $active = ($key == 0) ? 'active' : ''; ?>
 			<div class="carousel-item <?= $active ?> text-center">
-				<img class="img-responsive w-100 lazy rounded" data-src="<?= img_blob($value->photo) ?>" alt="<?= $value->keterangan ?>" style="min-height: 250px;max-height:385px; object-fit: contain;">
+				<img class="img-responsive w-100 lazy rounded" data-src="<?= img_blob($value->photo) ?>" alt="<?= $value->keterangan ?>" style="min-height: 350px;max-height:385px; object-fit: contain;">
 				<div class="carousel-caption">
 					<h5 class="d-none d-md-block"><?= ucwords(substr($value->judul, 0, strrpos($value->judul, '.'))) ?></h5>
 					<p class="small d-block d-md-none"><?= ucwords(substr($value->judul, 0, strrpos($value->judul, '.'))) ?></p>
@@ -108,6 +108,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 	<?php else: ?>
 		<?php if($post_detail->type !== 'YOUTUBE'): ?>
 		<?= $img ?>
+		<a href="<?= $imgSrc ?>" data-lightbox="BannerAside" rel="noreferrer" class="d-none d-md-block btn btn-sm btn-warning rounded-none border-0 shadow-none"><i class="fas fa-seach mr-2"></i> Lihat Gambar Versi Original</a>
 		<?php endif; ?>
 		<div class="d-none d-md-block" style="background-image: url('<?= assets("images/bg/bg-shadow-nav.png"); ?>'); background-repeat: repeat-x; display: block; width: 100%; height:120px; position: absolute; top: 0; left: 0;">&nbsp;</div>
 	<?php endif; ?>
@@ -129,22 +130,23 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 		<div class="col-md-2 order-md-first order-lg-last mt-md-3">
 			<!-- Sidebar Left -->
 		</div>
-		<div class="col-md-8 mb-5 pb-md-4 px-4 pb-4 rounded order-first order-md-last bg-white shadow-sm p-md-4" id="main-content">
+		<div class="col-md-8 mb-md-5 pb-md-4 px-4 pb-4 rounded-none order-first order-md-last bg-white shadow-sm p-md-4" id="main-content">
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
-					<h1><?php echo $post_detail->judul; ?></h1>
+					<h1 class="fs6 d-none d-md-block d-lg-block"><?php echo $post_detail->judul; ?></h1>
+					<h1 class="fs9 d-md-none d-block"><?php echo $post_detail->judul; ?></h1>
 					<div class="d-flex justify-content-between align-items-center">
 						<div class="d-flex justify-content-start align-items-center text-muted">
 						<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top; border: 4px solid #FCFCFC;" width="40" height="40" class="mr-md-2 mr-2 lazy rounded-circle shadow-sm bg-light"> 
-						<span> <?= ucwords($namapanggilan); ?> 
+						<span class="text-truncate"> <?= ucwords($namapanggilan); ?> 
 							<span class="text-danger">&#8226;</span>  
 							<?php echo date_indo($post_detail->tgl_posting); ?> 
 						</span>
 						</div>	
 						<span>
 							<div class="d-flex justify-content-end">
-								<button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-0 rounded text-muted"><i class="far fa-eye mr-2"></i> <?= $count; ?> </button>
-								<button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-0 rounded w-100 text-danger <?= $btn_like ?>" title="Suka / Tidak suka" data-id-berita="<?= $post_detail->id_berita ?>" data-id-user="<?= $this->session->userdata('user_portal_log')['id'] ?>"><i class="<?= $status_like ?> fa-heart mr-2"></i> <span class="count_like"><?= $post_detail->like_count ?></span> </button>
+								<button type="button" data-toggle="tooltip" data-placement="bottom" title="Dilihat" class="btn btn-transparent border-0 rounded text-muted"><i class="far fa-eye mr-1"></i> <?= $count; ?> </button>
+								<button type="button" onclick="like_toggle(this)" data-toggle="tooltip" data-placement="bottom" class="btn btn-transparent border-0 rounded w-100 text-danger <?= $btn_like ?>" title="Suka / Tidak suka" data-id-berita="<?= $post_detail->id_berita ?>" data-id-user="<?= $this->session->userdata('user_portal_log')['id'] ?>"><i class="<?= $status_like ?> fa-heart mr-1"></i> <span class="count_like"><?= $post_detail->like_count ?></span> </button>
 							</div>
 						</span>
 					</div>
@@ -278,10 +280,6 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 				Komentar Ditutup
 			</div>
 			<?php endif; ?>
-			
-		</div>
-		<div class="col-md-2 order-md-last order-lg-last">
-			<!-- Sidebar Right -->
 		</div>
 	</div>
 </div>

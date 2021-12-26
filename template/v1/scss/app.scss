@@ -179,27 +179,27 @@ section.hero {
 .dec{
   animation: decrease 2.8s 0.8s infinite;
 }
-.logo-loading {
-	position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-	text-align: center;
-	vertical-align: middle;
-	z-index: 9999;
-	// opacity: 0.5;
-}
-.page-slider p {
-position: fixed;
-  left: 50%;
-  top: 58%;
-  transform: translate(-50%, -58%);
-	text-align: center;
-	vertical-align: middle;
-	z-index: 9999;
-	margin-top: 30px; 
-	color: #999;
-}
+// .logo-loading {
+// 	position: fixed;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+// 	text-align: center;
+// 	vertical-align: middle;
+// 	z-index: 9999;
+// 	// opacity: 0.5;
+// }
+// .page-slider p {
+// position: fixed;
+//   left: 50%;
+//   top: 58%;
+//   transform: translate(-50%, -58%);
+// 	text-align: center;
+// 	vertical-align: middle;
+// 	z-index: 9999;
+// 	margin-top: 30px; 
+// 	color: #999;
+// }
 @keyframes increase {
    from { left: -5%; width: 5%; }
    to { left: 130%; width: 100%;}
@@ -304,38 +304,38 @@ body {
 }
 
 // Custome
-.devider-line {
-	background-image: url('../../../assets/images/bg/devider-shadow.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	display: block;
-	width: 100%;
-	height: 57px;
-	border-radius: 8px;
-	// object-fit: cover;
-	opacity: 0.5;
-}
-.intro-website {
-	font-family: "Rubik";
-	font-weight: 500;
-}
+// .devider-line {
+// 	background-image: url('../../../assets/images/bg/devider-shadow.jpg');
+// 	background-size: cover;
+// 	background-repeat: no-repeat;
+// 	background-position: center;
+// 	display: block;
+// 	width: 100%;
+// 	height: 57px;
+// 	border-radius: 8px;
+// 	// object-fit: cover;
+// 	opacity: 0.5;
+// }
+// .intro-website {
+// 	font-family: "Rubik";
+// 	font-weight: 500;
+// }
 
-#caripegawai .typeahead__list {
-    max-height: 300px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
+// #caripegawai .typeahead__list {
+//     max-height: 300px;
+//     overflow-y: auto;
+//     overflow-x: hidden;
+// }
 
-.sidebar{
-    will-change: min-height;
-}
+// .sidebar{
+//     will-change: min-height;
+// }
 
-.sidebar__inner{
-    transform: translate(0, 0); /* For browsers don't support translate3d. */
-    transform: translate3d(0, 0, 0);
-    will-change: position, transform;
-}
+// .sidebar__inner{
+//     transform: translate(0, 0); /* For browsers don't support translate3d. */
+//     transform: translate3d(0, 0, 0);
+//     will-change: position, transform;
+// }
 .modal-backdrop {
   background-color: rgba(255, 255, 255, 0.94) !important;
   -webkit-backdrop-filter: blur(8px);
@@ -344,7 +344,7 @@ body {
   backdrop-filter: blur(8px);
 }
 .modal-backdrop.in {
-  opacity:.9;
+  opacity:0.9;
 }
 a {
 	text-decoration: none;
@@ -1125,36 +1125,36 @@ i.likes:hover {
 }
 
 // Bounce Aniamtion
-.animated-image {
--webkit-animation-duration: 2s;
-animation-duration: 2s;
--webkit-animation-fill-mode: both;
-animation-fill-mode: both;
--webkit-animation-timing-function: linear;
-animation-timing-function: linear;
-animation-iteration-count: infinite;
--webkit-animation-iteration-count: infinite;
-}
-@-webkit-keyframes bounce {
-0%, 100% {
--webkit-transform: translateY(0);
-}
-50% {
--webkit-transform: translateY(-15px);
-}
-}
-@keyframes  bounce {
-0%, 100% {
-transform: translateY(0);
-}
-50% {
-transform: translateY(-15px);
-}
-}
-.bounce {
--webkit-animation-name: bounce;
-animation-name: bounce;
-}
+// .animated-image {
+// -webkit-animation-duration: 2s;
+// animation-duration: 2s;
+// -webkit-animation-fill-mode: both;
+// animation-fill-mode: both;
+// -webkit-animation-timing-function: linear;
+// animation-timing-function: linear;
+// animation-iteration-count: infinite;
+// -webkit-animation-iteration-count: infinite;
+// }
+// @-webkit-keyframes bounce {
+// 0%, 100% {
+// -webkit-transform: translateY(0);
+// }
+// 50% {
+// -webkit-transform: translateY(-15px);
+// }
+// }
+// @keyframes  bounce {
+// 0%, 100% {
+// transform: translateY(0);
+// }
+// 50% {
+// transform: translateY(-15px);
+// }
+// }
+// .bounce {
+// -webkit-animation-name: bounce;
+// animation-name: bounce;
+// }
 
 // Trinket
 section {
@@ -1200,3 +1200,14 @@ section {
 	background-repeat: no-repeat;
 	position: relative;
 }
+
+/*  fontSize: Responsive */
+.fs1  {font-size: 1vw}
+.fs2  {font-size: 1.4vw}
+.fs3  {font-size: 1.6vw}
+.fs4  {font-size: 1.8vw}
+.fs5  {font-size: 2vw}
+.fs6  {font-size: 2.2vw}
+.fs7  {font-size: 2.4vw}
+.fs8  {font-size: 4.6vw; font-weight: bold;}
+.fs9  {font-size: 5.6vw; font-weight: bold;}
