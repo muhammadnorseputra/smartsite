@@ -9,7 +9,7 @@
     <link rel="alternate" hreflang="id-ID" href="<?= curPageURL(); ?>"/>
     <link rel="apple-touch-icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />
     <link rel="shortcut icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />
-    <link rel="manifest" href="<?= base_url('manifest.json') ?>" crossorigin="anonymous">
+    <link rel="manifest" href="<?= base_url('manifest.json') ?>">
     <!-- browser color -->
     <meta name="theme-color" content="#000D6B">
     <meta name="msapplication-navbutton-color" content="#000D6B">
@@ -26,24 +26,26 @@
     <meta name="keywords" content="'.$mf_beranda->meta_seo.'"/>';  
     ?>
     <link rel="preconnect" href="https://fonts.googleapis.com/"/>
-    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-solid-900.woff2') ?>" crossorigin="anonymous">
-    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-brands-400.woff2') ?>" crossorigin="anonymous">
-    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-regular-400.woff2') ?>" crossorigin="anonymous">
-    <link rel="preload" href="<?= base_url('template/v1/prod/vendor-min.js'); ?>" as="script" crossorigin="anonymous">
-    <link rel="preload" href="<?= base_url('template/v1/prod/app-min.js'); ?>" as="script" crossorigin="anonymous">
+    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-solid-900.woff2') ?>">
+    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-brands-400.woff2') ?>">
+    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-regular-400.woff2') ?>">
+    <link rel="preload" href="<?= base_url('template/v1/prod/vendor-min.js'); ?>" as="script">
+    <link rel="preload" href="<?= base_url('template/v1/prod/app-min.js'); ?>" as="script">
     <link rel="stylesheet" type="text/css" href="<?= base_url('template/v1/prod/app.css'); ?>">
     
-    <link rel="prefetch" href="<?= base_url('bower_components/jquery/dist/jquery.min.js'); ?>" as="script" crossorigin="anonymous">
+    <link rel="prefetch" href="<?= base_url('bower_components/jquery/dist/jquery.min.js'); ?>" as="script">
 
+    <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
     <link rel="dns-prefetch" href="//www.googletagmanager.com/">
     <link rel="dns-prefetch" href="//web.bkppd-balangankab.info/">
     
+    <!-- Sub Resource -->
     <link rel="subresource" href="<?= base_url('assets/images/logo.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg-home.png'); ?>">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199508931-1" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199508931-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
