@@ -1,15 +1,14 @@
 <section class="py-md-5 hero">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 pt-md-5 mt-md-5 text-left pb-5 pb-md-3">
+      <div class="col-md-12 pt-md-1 mt-md-1 text-left pb-5 pb-md-1">
         <?php
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
         ?>
         <span class="font-weight-light small d-block text-white my-3">Created by <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= nominal($h->views) ?>x Diakses</span>
-        <h1 class="font-weight-bold mb-0 pb-0">
-        <span class="d-block font-weight-bold text-white"><?= $h->title; ?></span>
-        </h1>
+        <h1 class="mb-0 pb-0 fs7 d-none d-md-block d-lg-block"><span class="d-block text-white"><?= $h->title; ?></span></h1>
+        <h1 class="mb-0 pb-0 fs9 d-md-none d-block"><span class="d-block text-white"><?= $h->title; ?></span></h1>
         <div id="share"></div>
         <?php else : ?>
         <h3 class="font-weight-bold text-white">not found</h3>
@@ -19,7 +18,7 @@
     </div>
   </div>
 </section>
-<section class="h-statis-detail mt--6 bg-white rounded trinket_statis">
+<section class="h-statis-detail bg-white rounded trinket_statis">
   <div class="container">
     <div class="row">
       <div class="col-md-8 p-3 p-md-4 order-last order-md-first">
@@ -48,9 +47,9 @@
         <?php
         if($ext === 'pdf'):
         ?>
-        <object class="rounded-lg border mb-3" data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:350px; width: 100%;"></object>
+        <object class="rounded-lg border my-3" data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:350px; width: 100%;"></object>
         <?php else: ?>
-        <img style="object-fit:cotain;" data-src="<?= img_blob($h->file) ?>" width="100%" height="350" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded lazy">
+        <img style="object-fit:cotain;" data-src="<?= img_blob($h->file) ?>" width="100%" height="350" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded lazy mt-3">
         <?php endif; ?>
       <?php endif; ?>
       </div>
