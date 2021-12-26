@@ -37,7 +37,7 @@
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
     <link rel="dns-prefetch" href="//www.googletagmanager.com/">
-    <link rel="dns-prefetch" href="//web.bkppd-balangnakab.info/">
+    <link rel="dns-prefetch" href="//web.bkppd-balangankab.info/">
     
     <link rel="subresource" href="<?= base_url('assets/images/logo.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg.png'); ?>">

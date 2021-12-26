@@ -4,7 +4,9 @@ if ( ! function_exists('img_blob'))
 {
     
   function img_blob($url) {
-    $txt = "data:image/jpeg;base64,".base64_encode($url)."";
+    $encode = base64_encode($url);
+    // $decode = base64_decode($encode);
+    $txt = "data:image/jpeg;base64,".$encode."";
     return $txt;
   }
 }
