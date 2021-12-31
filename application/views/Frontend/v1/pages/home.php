@@ -238,7 +238,7 @@
                             $url = empty($sort) ? '?type='.$dataType[$x] : '?sort='.$sort.'&type='.$dataType[$x];
                             $typeTitle = ucwords($dataType[$x]);
                             ?>
-                            <a rel="noindex, nofollow" href="<?= $url ?>" class="btn bg-white btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
+                            <a rel="noindex, nofollow" href="<?= $url ?>" class="btn btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
                             <?php endfor; ?>
                         </div>
                     </div>

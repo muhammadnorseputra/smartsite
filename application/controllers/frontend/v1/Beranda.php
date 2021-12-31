@@ -47,19 +47,19 @@ class Beranda extends CI_Controller
                     'isi' => 'Frontend/v1/pages/home',
                     'mf_beranda' => $id,
                     'mf_menu' => $this->mf_beranda->get_menu(),
-                    'mf_informasi_terbaru' => $this->mf_beranda->get_informasi_terbaru(),
-                    'mf_berita_terakhir' => $this->mf_beranda->berita_terakhir(),
-                    'mf_berita_pilihan' => $this->mf_beranda->berita_pilihan(),
-                    'mf_berita_kategori_1' => $this->mf_beranda->berita_by_kategori(1, 1),
-                    'mf_berita_kategori_2' => $this->mf_beranda->berita_by_kategori(2, 2),
+                    // 'mf_informasi_terbaru' => $this->mf_beranda->get_informasi_terbaru(),
+                    // 'mf_berita_terakhir' => $this->mf_beranda->berita_terakhir(),
+                    // 'mf_berita_pilihan' => $this->mf_beranda->berita_pilihan(),
+                    // 'mf_berita_kategori_1' => $this->mf_beranda->berita_by_kategori(1, 1),
+                    // 'mf_berita_kategori_2' => $this->mf_beranda->berita_by_kategori(2, 2),
                     'mf_album' => $this->mf_beranda->get_listing_album(),
-                    'mf_lastvideo' => $this->mf_beranda->get_lastvideo(),
+                    // 'mf_lastvideo' => $this->mf_beranda->get_lastvideo(),
                     'mf_berita_populer' => $this->mf_beranda->berita_populer(),
-                    'mf_kategori' => $this->mf_beranda->get_kategori_listing(),
-                    'mf_agenda' => $this->mf_beranda->get_agenda_terbaru(),
+                    // 'mf_kategori' => $this->mf_beranda->get_kategori_listing(),
+                    // 'mf_agenda' => $this->mf_beranda->get_agenda_terbaru(),
                     'mf_poling_pertanyaan' => $this->mf_beranda->get_poling_a()->row(),
                     'mf_poling_jawaban' => $this->mf_beranda->get_poling_b(),
-                    'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
+                    // 'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
                     'mf_banner_home' => $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 5),
                     'meta' => $meta_tag
                 ];
@@ -76,7 +76,7 @@ class Beranda extends CI_Controller
     }
 
     function template_sumber($text, $icon) {
-        $html = '<div class="btn-group btn-group-sm ml-md-0" role="group" aria-label="button">
+        $html = '<div class="btn-group btn-group-sm ml-md-0 border rounded" role="group" aria-label="button">
                     <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent" disabled>'.$icon.'</button>
                     <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent"  disabled>'.$text.'</button>
                 </div>';
@@ -112,7 +112,7 @@ class Beranda extends CI_Controller
                     $tag = '';
                     for ($i = 0; $i < count($pecah); $i++) {
                         if (count($pecah) > 0) {
-                            $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-light mr-1 mb-1">#'.$pecah[$i].'</a>';
+                            $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-primary-old mr-1 mb-1">#'.$pecah[$i].'</a>';
                         }
                     }
 
@@ -227,15 +227,15 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img style="height:240px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     elseif(!empty($row->img_blob)):
-                        $img = '<img style="height:240px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
+                        $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
-                        $img = '<img style="height:240px; object-fit: cover; object-position: top;" class="w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="height:240px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-3x bg-dark rounded-circle"></i>
                         </div>
@@ -243,9 +243,9 @@ class Beranda extends CI_Controller
                 elseif($row->type === 'SLIDE'):
                     $img = $photo_t;
                 elseif($row->type === 'LINK'):
-                    $img = '<img style="height:240px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
                 else:
-                    $img = '<img style="height:240px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                    $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                 endif;
 
                 // Kategori
@@ -263,12 +263,7 @@ class Beranda extends CI_Controller
                                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
                                         <div class="mx-4 mx-md-0 pr-md-4">
                                             <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h4>
-                                                '.$sumber.'
-                                                <div class="btn-group btn-group-sm ml-1 ml-md-0" role="group" aria-label="button">
-                                                    <button aria-hidden="true" type="button" class="btn btn-sm btn-default bg-transparent" disabled><i class="fas fa-tag"></i></button>
-                                                    <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent '.$rand.'">'.$namakategori.'</a>
-                                                </div>
-
+                                            '.$sumber.' <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent '.$rand.'">'.ucwords($namakategori).'</a>
                                             <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
                                             <p class="text-secondary">'.$tag. '</p>
                                         </div>
@@ -295,30 +290,29 @@ class Beranda extends CI_Controller
                 endif;
 
                 $output .= '
-                <div class="ps-scroll">
-					<div class="card border-0 rounded-bottom bg-white mb-2">
+                
+				<div class="card shadow-sm border-white rounded-bottom bg-white mb-4">
                     <div class="canvas overflow-hidden">
                     <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
                       '.$img.'
                     </a>
                     </div>
-					<div class="card-body bg-white px-2 d-flex justify-content-start align-items-center sticky-top" style="z-index:99;">
+					<div class="card-body bg-white px-2 py-1 d-flex justify-content-start align-items-center sticky-top" style="z-index:99;">
                         <div>
-                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded-circle ml-1 ml-md-3 lazy p-2 bg-white">
+                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-1 ml-md-3 mt--7 lazy p-2 bg-white">
                         </div>
-                        <div class="w-100 ml-md-3 ml-2">
-                        <button type="button"  aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-transparent border-0 rounded-0 mr-3 p-0 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark text-secondary"></i> </button>
-                        
-						<h6 class="mb-0 pb-1"><a href="'.$link_profile_public.'"> '.$namalengkap.'</a></h6>
-                        <p class="card-text">
+                        <div class="w-100 ml-md-2 ml-2">
+                        <button type="button"  aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-link bg-transparent text-primary-old border-0 rounded-0 mt--7 mr-2 p-1 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark"></i> </button>
+						<h6 class="mb-0 py-1">
+                            <span class="text-light">&bull;</span> <a href="'.$link_profile_public.'" class="small"> '.$namalengkap.'</a> <span class="text-light">&dash;</span>  
                             <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
-                        </p>
+                        </h6> 
                         </div>
 					</div>
                     
                     '.$content_body.'
 
-					<div class="card-footer bg-transparent p-2 d-flex justify-content-start">
+					<div class="card-footer border-light bg-transparent p-2 d-flex justify-content-start">
                     <div class="w-100">
 					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.nominal($row->views). '</button>
                     </div>
@@ -333,7 +327,7 @@ class Beranda extends CI_Controller
                     </div>
 					</div>
                     </div>
-				</div>
+				
 				';
                 $no++;
             }

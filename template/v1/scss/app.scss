@@ -48,6 +48,13 @@ html::-webkit-scrollbar-thumb:hover {
   transition: opacity .4s ease;
 }
 
+section.hero {
+	background-color: #000D6B;
+	background-position: top left;
+	background-repeat: repeat-x;
+	background-size: fill; 
+	background-image: url('../../../assets/images/bg/bg-super-statis.png');
+}
 section.bg-hero-home {
 	background: url('../../../assets/images/bg/bg-super-home.png');
 	background-repeat: no-repeat; 
@@ -57,25 +64,18 @@ section.bg-hero-home {
 	background-color: #000D6B;
 }
 
-section.hero-beranda::before {
-	position: absolute;
-	left: 0;
-	top: 0;
-	content: "";
-	width: 100%;
-	height: 100%;
-	background: url('../../../assets/images/bg/kantor-bkppd.jpg');
-	background-size: cover; 
-	background-position: left top; 	
-	z-index: -1;
-}
-section.hero {
-	background-color: #000D6B;
-	background-position: top left;
-	background-repeat: repeat-x;
-	background-size: fill; 
-	background-image: url('../../../assets/images/bg/bg-super-statis.png');
-}
+// section.hero-beranda::before {
+// 	position: absolute;
+// 	left: 0;
+// 	top: 0;
+// 	content: "";
+// 	width: 100%;
+// 	height: 100%;
+// 	background: url('../../../assets/images/bg/kantor-bkppd.jpg');
+// 	background-size: cover; 
+// 	background-position: left top; 	
+// 	z-index: -1;
+// }
 .bg-footer {
 	background-image: url('../../../assets/images/bg/footer-super-graf.png');
 	background-size: 310px;
@@ -292,8 +292,7 @@ section.hero {
 	position: relative;
 }
 body {	
-	background: rgb(243,244,237);
-	background: linear-gradient(0deg, rgba(243,244,237,1) 0%, rgba(243,244,237,1) 80%, rgba(203,201,201,1) 100%); 
+	background: #eff7f6;
 	font-family: 'Rubik', sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -399,7 +398,7 @@ h5.title-sidebar {
 	    padding: 0px 10px 0px 0px;
 	    font-family: inherit;
 	    font-weight: 600;
-	    background: #F3F4ED;
+	    background: #eff7f6;
 	    color: #8a8a8a;
 	}
 }
@@ -976,6 +975,13 @@ i.likes:hover {
 		background-size: cover; 
 		min-height: 500px; 
 		// background-color: #000D6B;
+	}
+	section.hero {
+		background-color: #fff;
+		background-position: top left;
+		background-repeat: repeat-x;
+		background-size: fill; 
+		background-image: url('../../../assets/images/bg/bg-super-statis-mobile.png');
 	}
 	.intro-website {
 		color: #fff !important;

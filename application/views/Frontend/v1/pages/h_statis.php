@@ -1,4 +1,4 @@
-<section class="py-md-5 hero">
+<section class="pt-md-5 hero">
   <div class="container">
     <div class="row">
       <div class="col-md-12 pt-md-1 mt-md-1 text-left pb-5 pb-md-1">
@@ -6,10 +6,10 @@
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
         ?>
-        <span class="font-weight-light small d-block text-white my-3">Created by <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= nominal($h->views) ?>x Diakses</span>
+        <span class="font-weight-light small d-block text-white my-3">Post On <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= nominal($h->views) ?>x Diakses</span>
         <h1 class="mb-0 pb-0 fs7 d-none d-md-block d-lg-block"><span class="d-block text-white"><?= $h->title; ?></span></h1>
         <h1 class="mb-0 pb-0 fs9 d-md-none d-block"><span class="d-block text-white"><?= $h->title; ?></span></h1>
-        <div id="share"></div>
+        <div id="share" class="mb-md-3"></div>
         <?php else : ?>
         <h3 class="font-weight-bold text-white">not found</h3>
         <small class="font-weight-light d-block text-white pb-4">PagesID: <?= encrypt_url($uri_token_halaman) ?> | Halaman ini ditampilkan dalam waktu <strong>{elapsed_time}</strong> detik.</small>
@@ -49,7 +49,7 @@
         ?>
         <object class="rounded-lg border my-3" data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:350px; width: 100%;"></object>
         <?php else: ?>
-        <img style="object-fit:cotain;" data-src="<?= img_blob($h->file) ?>" width="100%" height="350" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded lazy mt-3">
+        <img style="object-fit:cotain;" data-src="<?= img_blob($h->file) ?>" width="100%" height="350" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded-lg lazy">
         <?php endif; ?>
       <?php endif; ?>
       </div>
