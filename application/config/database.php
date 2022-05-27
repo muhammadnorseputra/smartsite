@@ -98,9 +98,9 @@ else:
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'bkpk8946_webkppd',
-	'password' => '@webkppd2021',
-	'database' => 'bkpk8946_webkppd',
+	'username' => 'bkpsdm_webv2',
+	'password' => '@webkpsdm2022',
+	'database' => 'bkpsdm_webv2',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
