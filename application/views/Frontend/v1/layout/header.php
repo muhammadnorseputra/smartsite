@@ -131,13 +131,13 @@
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 400px; max-height: 400px; overflow-y: auto;">
 						<div class="d-flex flex-lg-column justify-content-start align-items-center ">
-							<a rel="noreferrer" target="_blank" href="https://ekinerja.bkppd-balangankab.info/" class="p-4">
+							<a rel="noreferrer" target="_blank" href="https://ekinerja.balangankab.go.id/" class="p-4">
 							<b class="font-weight-bold text-dark">e-Kinerja</b>
 							<p class="text-muted small text-reset">
 								Mengukur dan memantau kinerja PNS secara periodic, sebagai salah satu data acuan pemberian tunjangan kinerja yang  diterima pegawai
 							</p>
 							</a>
-							<a  rel="noreferrer" target="_blank" href="http://silka.bkppd-balangankab.info/" class="p-4">
+							<a  rel="noreferrer" target="_blank" href="http://36.91.72.99/" class="p-4">
 										<b class="font-weight-bold text-dark">SILKa Online</b>
 										<p class="text-muted small">
 											SILKa Online (Sistem Informasi Layanan Kepegawaian) pengelolaan data kepegawaian kabupaten balangan

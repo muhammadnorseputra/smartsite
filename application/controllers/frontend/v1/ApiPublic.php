@@ -124,7 +124,7 @@ class ApiPublic extends RestController {
 	}
     public function silka_jsonp_get()
     {
-        $url = 'http://36.91.72.99';
+        $url = $this->config->item('SILKA_URI');
         $type = ['asn','pns','nonpns','pensiun'];
         $asn = api_client($url.'/api/get_grap/'.$type[0]);
         $pns = api_client($url.'/api/get_grap/'.$type[1]);

@@ -52,7 +52,7 @@ class Api extends CI_Controller {
 	}
 	public function silka_file_json()
 	{
-		$url = 'http://silka.bkppd-balangankab.info';
+		$url = $this->config->item('SILKA_URI');
 		$type = ['asn','pns','nonpns','pensiun'];
 		$asn = api_curl_get($url.'/api/get_grap/'.$type[0]);
 		$pns = api_curl_get($url.'/api/get_grap/'.$type[1]);
@@ -76,13 +76,13 @@ class Api extends CI_Controller {
 		// @file_put_contents('statistik-pegawai.json', $jsonfile);
 	}
 	public function silka_get_grap($type) {
-		$url = 'http://silka.bkppd-balangankab.info';
+		$url = $this->config->item('SILKA_URI');
 		$api = api_curl_get($url.'/api/get_grap/'.$type);
 		echo json_encode($api);
 	}
 	public function silka_get_grap_pns($type)
 	{
-		$url = 'http://silka.bkppd-balangankab.info';
+		$url = $this->config->item('SILKA_URI');
 		$api = api_client($url.'/api/get_grap_pns/'.$type);
 		echo json_encode($api);
 	}
