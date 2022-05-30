@@ -59,7 +59,7 @@
 			/*"n1ed"*/
 			],
 			content_css: [
-			'<?= base_url("vendor/twbs/bootstrap/dist/css/bootstrap.min.css") ?>',
+			'<?= base_url("bower_components/bootstrap/dist/css/bootstrap.min.css") ?>',
 			],
 			content_style: "body{paddinga: 10px}",
 			relative_urls : false,
