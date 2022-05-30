@@ -7,7 +7,7 @@ how to use :
 
 // Localize jQuery variable
 var jQuery;
-var GPR_url = 'https://web.bkppd-balangankab.info/';
+var GPR_url = 'https://bkpsdm.balangankab.go.id/';
 // var GPR_url = 'http://localhost/smartsite/';
 
 /******** Load jQuery if not present *********/
