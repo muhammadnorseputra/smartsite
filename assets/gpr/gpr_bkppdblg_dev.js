@@ -99,9 +99,9 @@ function main() {
 									myhtml+='</div>';
 									myhtml+='<div class="gpr_panel_head_right">';
 										myhtml+='<div class="gpr_panel_title">';
-											myhtml+='<div class="gpr_panel_title_main"><strong>GPR</strong> - BKPPD BLG </div>';
+											myhtml+='<div class="gpr_panel_title_main"><strong>GPR</strong> - BKPSDM BLG </div>';
 											myhtml+='<div class="gpr_panel_title_sub"><em>Government Public Relations</em></div>';
-											myhtml+='<div class="gpr_panel_title_url"><a  rel="nofollow" href="https://web.bkppd-balangankab.info/beranda" target="_blank">web.bkppd-balangankab.info</a></div>';
+											myhtml+='<div class="gpr_panel_title_url"><a  rel="nofollow" href="https://bkpsdm.balangankab.go.id/beranda" target="_blank">web.bkppd-balangankab.info</a></div>';
 										myhtml+='</div>';
 									myhtml+='</div>';			
 								myhtml+='</div>';
@@ -143,8 +143,8 @@ function main() {
 							});
 							myhtml+='</ul>';
 							myhtml+='<div class="gpr_footer" style="background-color:'+theme+';">';
-								myhtml+='<span>&copy; BKPPD Balangan</span>';
-								myhtml+='<div>&bull; <a rel="nofollow" href="https://web.bkppd-balangankab.info/widget-gpr-bkppdblg" target="_blank">Pasang Widget</a><div>';
+								myhtml+='<span>&copy; BKPSDM Balangan</span>';
+								myhtml+='<div>&bull; <a rel="nofollow" href="https://bkpsdm.balangankab.go.id/widget-gpr-bkppdblg" target="_blank">Pasang Widget</a><div>';
 							myhtml+='</div>';
 						myhtml+='</div>';
 						jQuery('#widget-gpr-bkppdblg').html(myhtml).css('background-color', theme);          
