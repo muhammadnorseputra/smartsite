@@ -5,7 +5,7 @@
 				<h4>Tentang GPR-BKPPD Balangan</h4>
 				<hr>
 				<p>
-					GPR (Government Public Relation) BKPPD Balangan merupakan alat bantu sosialisasi berita berupa widget yang dapat dipasang pada website/blog. Sumber berita didapatkan dari website resmi <span class="badge badge-light badge-pill" title="Official Site BKPPD Balangan"> https://bkpsdm.balangankab.go.id/</span> dan informasi statistik pegawai bersumber pada aplikasi SILKa (Sistem Informasi Kepegawaian) Daerah Balangan <span class="badge badge-light badge-pill" title="SILKa Online">http://silka.bkppd-balangankab.info/</span>.
+					GPR (Government Public Relation) BKPPD Balangan merupakan alat bantu sosialisasi berita berupa widget yang dapat dipasang pada website/blog. Sumber berita didapatkan dari website resmi <span class="badge badge-light badge-pill" title="Official Site BKPPD Balangan"> https://bkpsdm.balangankab.go.id/</span> dan informasi statistik pegawai bersumber pada aplikasi SILKa (Sistem Informasi Kepegawaian) Daerah Balangan <span class="badge badge-light badge-pill" title="SILKa Online">http://silka.bkpsdm.balangankab.go.id/</span>.
 				</p>
 				<h4>Cara Memasang Widget pada CMS (Wordpress, Joomla, dll)</h4>
 				<hr>
@@ -90,7 +90,7 @@ document.head.append(jqueryScript);<br>&lt;/script&gt;</code></pre>
 					<h4>Tampilan Widget</h4>
 					<hr>
 					<script defer="defer" type="text/javascript" src="//bkpsdm.balangankab.go.id/assets/gpr/gpr_bkppdblg_production.js"></script>
-					<div id="widget-gpr-bkppdblg" gpr-thumb="image"></div>
+					<div id="widget-gpr-bkppdblg" gpr-theme="#000d6b" gpr-thumb="image"></div>
 				</div>	
 			</div>	
 		</div>
