@@ -40,7 +40,7 @@
 	</div>
 </section>
 <script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
-<script src="<?= base_url('files/tinymce/js/tinymce.min.js'); ?>"></script>
+<script src="<?= base_url('files/tinymce/tinymce.min.js'); ?>"></script>
 <script>
 	$(document).ready(function() {
 		var tiny = tinymce.init({
