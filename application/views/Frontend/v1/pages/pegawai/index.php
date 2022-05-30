@@ -2,14 +2,14 @@
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-start flex-lg-row flex-column">
 			<div>
-				<h3 class="font-weight-bold text-responsive">Grafik Pegawai </h3>
+				<h3 class="font-weight-bold text-responsive text-white">Grafik Pegawai </h3>
 				<p class="text-muted small">Resources <code>SILKa Online</code> &bull; Uptodate <?= date('Y-m-d H:i:s') ?></p>
 			</div>
 		</div>
 	</div>
 </div>
 </section>
-<section class="bg-dark">
+<section>
 	<div class="container py-3">
 		<div class="row mt--7 mb-3 bg-white p-3 rounded">
 			<div class="col-6 col-md-4 col-lg-3 border px-0 rounded">
