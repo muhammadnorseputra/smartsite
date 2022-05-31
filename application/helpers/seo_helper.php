@@ -102,13 +102,13 @@ if(! function_exists('meta_tags')){
             $output .= '<meta name="google" content="translate" />';
             $output .= '<meta name="keywords" content="'.$keyWords.'" />';
             $output .= '<meta name="description" content="'.$desc.'" />';
-            $output .= '<meta http-equiv="content-language" content="In-Id" />';
+            $output .= '<meta http-equiv="content-language" content="id-ID" />';
         }
 
         if($enable['robot']){
-            $output .= '<meta name="robots" content="max-image-preview:large, max-video-preview:-1"/>'
+            $output .= '<meta name="robots" content="max-image-preview:large"/>'
                     .'<meta name="googlebot-news" content="index, follow" />'
-                    .'<meta name="rating" content="RTA-5042-1996-1400-1577-RTA" />'
+                    .'<meta name="google-site-verification" content="bSCKU4GxtgQKLwewKLjrX5NLU9j9OaqzScNy3eyHOqw" />'
                     .'<meta  name="googlebot" content="index, follow" />';
         } else {
             $output .= '<meta name="robots" content="noindex,nofollow"/>';
