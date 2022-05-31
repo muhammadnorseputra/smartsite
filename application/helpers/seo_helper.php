@@ -108,11 +108,11 @@ if(! function_exists('meta_tags')){
         if($enable['robot']){
             $output .= '<meta name="robots" content="max-image-preview:large"/>'
                     .'<meta name="googlebot-news" content="index, follow" />'
-                    .'<meta  name="googlebot" content="index, follow" />';
-                    .'<meta content="all" name="Googlebot-Image" />';
-                    .'<meta content="all" name="msnbot" />';
-                    .'<meta content="all" name="Slurp" />';
-                    .'<meta content="all" name="ZyBorg" />';
+                    .'<meta  name="googlebot" content="index, follow" />'
+                    .'<meta content="all" name="Googlebot-Image" />'
+                    .'<meta content="all" name="msnbot" />'
+                    .'<meta content="all" name="Slurp" />'
+                    .'<meta content="all" name="ZyBorg" />'
                     .'<meta content="all" name="Scooter" />';
 
         } else {
