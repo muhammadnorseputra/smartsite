@@ -121,7 +121,7 @@ if(! function_exists('meta_tags')){
                 .'<meta property="og:title" content="'.$title.'" />'
                 .'<meta property="og:description" content="'.$desc.'" />'
                 .'<meta property="og:image" content="'.$imgUrl.'" />'
-                .'<meta property="og:site_name" content="web.bkppd-balangnakab.info" />'
+                .'<meta property="og:site_name" content="bkpsdm.balangankab.go.id" />'
                 .'<meta property="fb:page_id" content="'.$app_id.'" />';
         }
 

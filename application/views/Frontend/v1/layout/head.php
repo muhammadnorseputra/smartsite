@@ -18,6 +18,7 @@
     <title><?= $title; ?></title>
     <?= 
     !empty($meta) ? $meta : '
+    <meta name="google-site-verification" content="bSCKU4GxtgQKLwewKLjrX5NLU9j9OaqzScNy3eyHOqw" />
     <meta name="robots" content="noindex, nofollow, noarchive"/>
     <meta name="googlebot-news" content="noindex, nofollow, noarchive" />
     <meta  name="googlebot" content="noindex, nofollow, noarchive" />
@@ -54,14 +55,15 @@
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg.png'); ?>">
     <link rel="subresource" href="<?= base_url('assets/images/bg/bg-home.png'); ?>">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-199508931-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-230315730-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-199508931-1');
+      gtag('config', 'UA-230315730-1');
     </script>
+        
 </head>
 
 <body>
