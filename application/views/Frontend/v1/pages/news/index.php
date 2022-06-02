@@ -8,7 +8,7 @@
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-start flex-lg-row flex-column">
 			<div>
-				<h3 class="font-weight-bold text-responsive">Top Headlines Indonesia</h3>
+				<h3 class="font-weight-bold text-responsive text-white">Top Headlines Indonesia</h3>
 				<p class="text-muted small">Resources api <code>https://newsapi.org/</code></p>
 			</div>
 			<div>
