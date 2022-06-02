@@ -33,7 +33,7 @@ class Page extends CI_Controller {
 	    $slug = $this->pages->get_slug_halaman($token_halaman);
 	    $detail = $this->pages->get_detail_halaman($token_halaman);
 	    $keywords = str_replace('-',',',url_title(strtolower($title)));
-	    $description = $this->security->xss_clean(word_limiter($detail->row()->content,150));
+	    $description = $this->security->xss_clean(word_limiter(strip_tags($detail->row()->content,100)));
 	    // Data
 	    $data = [
 	      'page' => 'page_detail',
