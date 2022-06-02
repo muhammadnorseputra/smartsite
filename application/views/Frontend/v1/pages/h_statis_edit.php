@@ -68,6 +68,6 @@
 </section>
 
 <script defer src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>" crossorigin="anonymous"></script>
-<script defer src="<?= base_url('files/tinymce/js/tinymce.min.js'); ?>" crossorigin="anonymous"></script>
+<script defer src="<?= base_url('files/tinymce/tinymce.min.js'); ?>" crossorigin="anonymous"></script>
 <script defer src="<?= base_url('template/v1/js/route.js') ?>" crossorigin="anonymous"></script>
 <script defer src="<?= base_url('template/v1/js_userportal/h_statis_edit.js'); ?>" crossorigin="anonymous"></script>
