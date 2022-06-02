@@ -32,6 +32,7 @@ limitations under the License.
     src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
     async=""
     ></script>
+    
     <style amp-boilerplate="">
     body {
     -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
