@@ -1037,7 +1037,7 @@ $(document).ready(function () {
     centerMode: false,
     centerPadding: '10px',
     focusOnSelect: false,
-    fade: true,
+    // fade: false,
     // cssEase: 'linear',
     arrows: true,
     prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-left"></button>',
@@ -1050,6 +1050,7 @@ $(document).ready(function () {
         centerMode: true,
         slidesToShow: 1,
         arrows: true,
+        fade: true,
         centerPadding: '40px'
       }
     }]
