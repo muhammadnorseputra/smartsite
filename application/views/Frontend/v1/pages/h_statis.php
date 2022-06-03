@@ -6,13 +6,13 @@
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
         ?>
-        <span class="font-weight-light small d-block text-white my-3">Post On <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= nominal($h->views) ?>x Diakses</span>
-        <h1 class="mb-0 pb-0 fs7 d-none d-md-block d-lg-block"><span class="d-block text-white"><?= $h->title; ?></span></h1>
-        <h1 class="mb-0 pb-0 fs9 d-md-none d-block"><span class="d-block text-white"><?= $h->title; ?></span></h1>
+        <span class="font-weight-light small d-block text-dark my-3">Post On <b>@<?= decrypt_url($this->users->get_userportal_namalengkap($h->fid_users_portal)) ?></b> &bull; <?= nominal($h->views) ?>x Diakses</span>
+        <h1 class="mb-0 pb-0 fs7 d-none d-md-block d-lg-block"><span class="d-block text-dark"><?= $h->title; ?></span></h1>
+        <h1 class="mb-0 pb-0 fs9 d-md-none d-block"><span class="d-block text-dark"><?= $h->title; ?></span></h1>
         <div id="share" class="mb-md-3"></div>
         <?php else : ?>
-        <h3 class="font-weight-bold text-white">not found</h3>
-        <small class="font-weight-light d-block text-white pb-4">PagesID: <?= encrypt_url($uri_token_halaman) ?> | Halaman ini ditampilkan dalam waktu <strong>{elapsed_time}</strong> detik.</small>
+        <h3 class="font-weight-bold text-dark">not found</h3>
+        <small class="font-weight-light d-block text-dark pb-4">PagesID: <?= encrypt_url($uri_token_halaman) ?> | Halaman ini ditampilkan dalam waktu <strong>{elapsed_time}</strong> detik.</small>
         <?php endif; ?>
       </div>
     </div>
