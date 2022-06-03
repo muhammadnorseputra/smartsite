@@ -67,8 +67,7 @@
     <!-- </div> -->
    
 <!-- </section> -->
-<section class="content-home trinket_graf_slide py-md-5 py-3">
-    <img class="trinket trinket-7" src="<?= base_url('assets/images/bg/trinket_6.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
+<section class="content-home py-md-5 py-3">
     <div class="container">
         <!-- <div class="row">
             <div class="col-12">
