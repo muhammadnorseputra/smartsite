@@ -182,7 +182,7 @@
 			</a>
 			
 			<?php } ?>
-			<span class="text-light ml-2">|</span>
+			<span class="text-dark ml-2">|</span>
 			<button class="btn btn-primary-old rounded py-2 ml-2 post-search">
 				<i class="fas fa-search"></i>
 			</button>

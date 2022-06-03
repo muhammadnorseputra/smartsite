@@ -110,10 +110,10 @@ $(function() {
                             delay: 1000,
                             throttle: 550,
                             afterLoad: function(element) {
-                                element.removeClass('blured');
+                                element.removeClass('content-placeholder');
                             },
                             beforeLoad: function(element) {
-                                element.addClass('blured');
+                                element.addClass('content-placeholder');
                             },
                             onFinishedAll: function() {
                                 if( !this.config("autoDestroy") )

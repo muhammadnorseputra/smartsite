@@ -1,3 +1,5 @@
+<div class="container">
+<div class="row no-gutters">        
 <?php  
 $mf_banner_home = $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 8)->result();
 ?>
@@ -22,7 +24,7 @@ $mf_banner_home = $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 8)->resul
         ?>
         <div class="px-3">
                 <div class="card bg-light text-white rounded-lg mb-2">
-                    <img class="lazy card-img" height="340" style="object-fit:cover;" alt="<?= $no ?>" data-src="<?= files('file_banner/'.$b->gambar) ?>">
+                    <img class="card-img" height="340" style="object-fit:cover;" alt="<?= $no ?>" src="<?= files('file_banner/'.$b->gambar) ?>">
                     <div class="card-img-overlay d-flex flex-column justify-content-end">
                         <div class="main-body align-self-end">
                             <a href="<?= $b->path ?>" id="xbanner-<?= $no ?>" data-title="<?= $b->judul ?>" data-lightbox="BannerAside" style="text-shadow: 0.3px 1px white;">
@@ -45,4 +47,6 @@ $mf_banner_home = $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 8)->resul
         </div>
         <?php $no++; endforeach; ?>
     </div> 
+</div>
+</div>
 </div>
