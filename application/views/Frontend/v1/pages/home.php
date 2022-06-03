@@ -7,6 +7,8 @@
 </div>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider4') ?>
+<?php $this->load->view('Frontend/v1/function/count_peg_home') ?>
+<?php $this->load->view('Frontend/v1/function/slider_banner_home') ?>
 <!-- <section class="bg-white py-md-5"> -->
     <!-- <img class="trinket trinket-13 d-none d-sm-block d-lg-block d-xl-block" src="<?= base_url('assets/images/bg/trinket_5.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
     <img class="trinket trinket-4" src="<?= base_url('assets/images/bg/trinket_7.png') ?>" alt="Portal BKPSDM Kabupaten Balangan"> -->
@@ -67,65 +69,9 @@
     <!-- </div> -->
    
 <!-- </section> -->
-<section class="content-home py-md-5 py-3">
-    <div class="container">
-        <!-- <div class="row">
-            <div class="col-12">
-                <div class="separator">
-                    <span class="separator-text text-capitalize font-weight-bold"><span class="font-weight-bold"><i class="fas fa-images text-secondary mr-2"></i>Info Grafis</span></span>
-                </div>
-            </div>
-        </div> -->
-        <div class="row">
-            <div class="col-12">
-                <div class="row  grafis-app-slick">
-                    <?php 
-                        $no=1; 
-                        foreach($mf_banner_home->result() as $b): 
-                        $by = $b->upload_by;
-                        if($by == 'admin') {
-                            $link_profile_public = 'javascript:void(0);';
-                            $namalengkap = $this->mf_users->get_namalengkap($by);
-                            $namapanggilan = $by;
-                            $gravatar = base_url('assets/images/users/'.$this->mf_users->get_gravatar($by));
-                        } else {
-                            $link_profile_public = 
-                            base_url("user/".decrypt_url( $this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan)."/".encrypt_url($by));
-                            $namalengkap = decrypt_url($this->mf_users->get_userportal_namalengkap($by));
-                            $namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
-                            $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
-                        }
-                    ?>
-                    <div class="px-3">
-                            <div class="card bg-light text-white rounded-lg mb-2">
-                                <img class="lazy card-img" height="340" style="object-fit:cover;" alt="<?= $no ?>" data-src="<?= files('file_banner/'.$b->gambar) ?>">
-                                <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                    <div class="main-body align-self-end">
-                                        <a href="<?= $b->path ?>" id="xbanner-<?= $no ?>" data-title="<?= $b->judul ?>" data-lightbox="BannerAside" style="text-shadow: 0.3px 1px white;">
-                                            <span class="badge p-2 badge-pill badge-warning">
-                                                <i class="fas fa-search mr-2"></i> Perbesar
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-start align-items-center">
-                                <span class="mr-2">
-                                    <img style="object-fit:cover; object-position:top;" src="<?= $gravatar ?>" alt="Photo Userportal" width="23" height="23" class="rounded-circle border-primary bg-white">
-                                </span>
-                                <span class="small text-secondary mt-1">
-                                    <?= ucwords($namapanggilan) ?>
-                                </span>
-                            </div>            
-                            <?= $b->judul ?>
-                    </div>
-                    <?php $no++; endforeach; ?>
-                </div> 
-            </div>
-        </div>
-    </div>
-</section>
+
 <?php endif; ?>
+
 <?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-3 mt-md-4 pt-md-5' : 'my-4' ?>
 <section class="<?= $my ?>" id="content-page">
     <div class="container">
@@ -193,15 +139,6 @@
                             <span class="separator-text text-uppercase font-weight-bold"><span class="font-weight-bold"><i class="fa fa-quote-left text-secondary mr-2"></i>Postingan Terbaru</span></span>
                         </div>
                     </div>
-                </div> -->
-                <!-- <div style="overflow-x: auto;" class="d-flex justify-content-between align-items-center flex-row flex-nowrap mb-3">
-                    <?php $no=1; foreach($mf_banner_home->result() as $b): ?>
-                    <div class="mx-3 flex-grow-1">
-                        <a href="<?= $b->path ?>" id="xbanner-<?= $no ?>" data-title="<?= $b->judul ?>" data-lightbox="BannerAside">
-                        <img class="lazy rounded-circle border shadow-sm p-1" width="110" height="110" style="object-fit:cover;" alt="<?= $no ?>" data-src="<?= files('file_banner/'.$b->gambar) ?>">
-                        </a>
-                    </div>
-                    <?php $no++; endforeach; ?>
                 </div> -->
                 <div class="mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap">
                     <?php

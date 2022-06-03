@@ -78,6 +78,7 @@ class Api extends CI_Controller {
 	public function silka_get_grap($type) {
 		$url = $this->config->item('SILKA_URI');
 		$api = api_curl_get($url.'/api/get_grap/'.$type);
+		$this->output->set_content_type('application/json');
 		echo json_encode($api);
 	}
 	public function silka_get_grap_pns($type)

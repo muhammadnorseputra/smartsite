@@ -105,31 +105,35 @@
 				<ul class="list-unstyled list-footer text-light">
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="noreferrer" target="_blank" href="https://www.bkn.go.id/">BKN Pusat</a>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://www.bkn.go.id/">BKN Pusat</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="noreferrer" target="_blank" href="https://sscasn.bkn.go.id/">SSCASN BKN</a>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://sscasn.bkn.go.id/">SSCASN BKN</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="noreferrer" target="_blank" href="https://www.kemendagri.go.id/">Kementerian Dalam Negeri</a>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://www.kemendagri.go.id/">Kementerian Dalam Negeri</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="noreferrer" target="_blank" href="https://www.menpan.go.id/site/">Kementrian Pemberdayagunaan Aparatur Negara</a>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://www.menpan.go.id/site/">Kementrian Pemberdayagunaan Aparatur Negara</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="noreferrer" target="_blank" href="https://bpsdm.kalselprov.go.id/">BPSDM Provinsi Kalimantan Selatan</a>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://bpsdm.kalselprov.go.id/">BPSDM Provinsi Kalimantan Selatan</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="noreferrer" target="_blank" href="https://bkd.kalselprov.go.id/">BKD Provinsi Kalimantan Selatan</a>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://bkd.kalselprov.go.id/">BKD Provinsi Kalimantan Selatan</a>
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="noreferrer" target="_blank" href="https://balangankab.go.id/">Pemerintah Kabupaten Balangan</a>
+						<a target="_blank" href="https://balangankab.go.id/">Pemerintah Kabupaten Balangan</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-light mr-2"></i></span>
+						<a target="_blank" href="https://www.mediadigitalcenter.my.id/">MDCenter</a>
 					</li>
 				</ul>
 			</div>
