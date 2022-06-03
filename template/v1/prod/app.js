@@ -95,12 +95,6 @@ $(function () {
               combined: true,
               delay: 1000,
               throttle: 550,
-              afterLoad: function afterLoad(element) {
-                element.removeClass('content-placeholder');
-              },
-              beforeLoad: function beforeLoad(element) {
-                element.addClass('content-placeholder');
-              },
               onFinishedAll: function onFinishedAll() {
                 if (!this.config("autoDestroy")) this.destroy();
               },
@@ -795,12 +789,6 @@ $(document).ready(function () {
     delay: 1000,
     enableThrottle: true,
     throttle: 250,
-    afterLoad: function afterLoad(element) {
-      element.removeClass('content-placeholder');
-    },
-    beforeLoad: function beforeLoad(element) {
-      element.addClass('content-placeholder');
-    },
     onFinishedAll: function onFinishedAll() {
       if (!this.config("lazy")) this.destroy();
     },
@@ -1049,8 +1037,8 @@ $(document).ready(function () {
     centerMode: false,
     centerPadding: '10px',
     focusOnSelect: false,
-    // fade: true,
-    cssEase: 'linear',
+    fade: true,
+    // cssEase: 'linear',
     arrows: true,
     prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-left"></button>',
     nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-right"></button>',
