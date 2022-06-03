@@ -83,9 +83,9 @@ gulp.task("vendor", function() {
             // "bower_components/jquery.scrollTo/jquery.scrollTo.min.js",
             "bower_components/hc-sticky/dist/hc-sticky.js"
         ])
-        .pipe(javascriptObfuscator({
-            compact: true
-        }))
+        // .pipe(javascriptObfuscator({
+        //     compact: true
+        // }))
         .pipe(concat("vendor.js"))
         .pipe(minify())
         .pipe(gulp.dest("template/v1/prod/"));
