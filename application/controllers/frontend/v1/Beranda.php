@@ -298,7 +298,7 @@ class Beranda extends CI_Controller
                     </div>
 					<div class="card-body bg-white px-2 py-1 d-flex justify-content-start align-items-center sticky-top" style="z-index:99;">
                         <div>
-                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-1 ml-md-3 mt--7 lazy p-2 bg-white">
+                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-1 ml-md-3 lazy p-2 bg-white">
                         </div>
                         <div class="w-100 ml-md-2 ml-2">
 						<h6 class="mb-0 py-1">
