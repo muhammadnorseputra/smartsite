@@ -519,6 +519,11 @@ h5.title-sidebar {
 //     will-change: position, transform;
 // }
 /* Slick sliderjs */
+.grafis-app-slick {
+	& > .slick-slide:not(:first-child) {
+    display: none;
+  }
+}
 .slick-banner {
 	display: flex;
 }
