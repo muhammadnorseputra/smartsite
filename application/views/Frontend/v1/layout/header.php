@@ -143,10 +143,16 @@
 											SILKa Online (Sistem Informasi Layanan Kepegawaian) pengelolaan data kepegawaian kabupaten balangan
 										</p>
 							</a>
-							<a  rel="noreferrer" target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4">
+							<a rel="noreferrer" target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4">
 										<b class="font-weight-bold text-dark">e-Prilaku (360)</b>
 										<p class="text-muted small">
 											Aplikasi untuk Menilai dan Mengukur Perilaku yang dinilai oleh Atasan, Teman/Peer dan Bawahan (360 Derajat) dengan menggunakan survei tertutup sehingga lebih objektif.
+										</p>
+							</a>
+							<a rel="noreferrer" target="_blank" href="<?= base_url('widget-gpr-bkppdblg') ?>" class="p-4">
+										<b class="font-weight-bold text-dark">Goverment Public Relation (GPR)</b>
+										<p class="text-muted small">
+											GPR (Government Public Relation) BKPPD Balangan merupakan alat bantu sosialisasi berita berupa widget yang dapat dipasang pada website/blog. Sumber berita didapatkan dari website resmi <kbd>https://bkpsdm.balangankab.go.id/</kbd>
 										</p>
 							</a>
 						</div>
