@@ -1,9 +1,9 @@
-<section class="hero py-5">
+<section class="py-5">
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-center">
 			<div>
 				<h3 class="font-weight-bold text-responsive">Daftar Banner</h3>
-				<p class="text-muted small">Resources Tim BinaInfo BKPPD</p>
+				<p class="text-dark small">Resources Tim BinaInfo BKPPD</p>
 			</div>
 			<div>
 			</div>
