@@ -149,7 +149,7 @@
 											Aplikasi untuk Menilai dan Mengukur Perilaku yang dinilai oleh Atasan, Teman/Peer dan Bawahan (360 Derajat) dengan menggunakan survei tertutup sehingga lebih objektif.
 										</p>
 							</a>
-							<a rel="noreferrer" target="_blank" href="https://www.bkpsdm.balangankab.go.id" class="p-4">
+							<a rel="noreferrer" target="_blank" href="https://www.bkpsdm-skm.balangankab.go.id/" class="p-4">
 										<b class="font-weight-bold text-dark">Indeks Kepuasan Masyarakat (IKM)</b>
 										<p class="text-muted small">
 											Indeks Kepuasan Masyarakat (IKM) adalah data dan informasi tentang tingkat kepuasan masyarakat yang diperoleh dari hasil pengukuran secara kuantitatif dan kualitatif atas pendapat masyarakat dalam memperoleh pelayanan dari aparatur penyelenggara pelayanan publik dengan membandingkan antara harapan dan kebutuhannya.

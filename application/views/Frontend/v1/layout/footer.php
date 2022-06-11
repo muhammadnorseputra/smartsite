@@ -83,7 +83,7 @@
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-external-link-alt text-light mr-2"></i></span>
-						<a href="//www.bkpsdm.balangankab.go.id" target="_blank">Survey Layanan Kepegawaian</a>
+						<a href="//www.bkpsdm-skm.balangankab.go.id" target="_blank">Survey Layanan Kepegawaian</a>
 					</li>
 					<li>
 						<a href="<?= base_url('kotak_saran') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Kirim Saran / Laporkan BUG</a>
