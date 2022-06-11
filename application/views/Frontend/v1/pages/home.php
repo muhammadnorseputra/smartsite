@@ -1,6 +1,6 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <div class="alert alert-warning alert-dismissible fade show rounded-0 border-0 mb-0 d-md-none d-lg-none" role="alert">
-  <strong>Hai, </strong> Mari bantu kami untuk meningkatkan pelayanan <a href="//ikm.bkppd-balangankab.info/survei?card=bkpsdm_balangan" class="btn btn-sm btn-warning">Isi Survei Sekarang</a>
+  <strong>Hai, </strong> Mari bantu kami untuk meningkatkan pelayanan <a href="//www.bkpsdm.balangankab.go.id/survei?card=bkpsdm_balangan" class="btn btn-sm btn-warning">Isi Survei Sekarang</a>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
