@@ -143,10 +143,22 @@
 											SILKa Online (Sistem Informasi Layanan Kepegawaian) pengelolaan data kepegawaian kabupaten balangan
 										</p>
 							</a>
-							<a  rel="noreferrer" target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4">
+							<a rel="noreferrer" target="_blank" href="https://eprilaku.bkppd-balangankab.info/" class="p-4">
 										<b class="font-weight-bold text-dark">e-Prilaku (360)</b>
 										<p class="text-muted small">
 											Aplikasi untuk Menilai dan Mengukur Perilaku yang dinilai oleh Atasan, Teman/Peer dan Bawahan (360 Derajat) dengan menggunakan survei tertutup sehingga lebih objektif.
+										</p>
+							</a>
+							<a rel="noreferrer" target="_blank" href="https://www.bkpsdm-skm.balangankab.go.id/" class="p-4">
+										<b class="font-weight-bold text-dark">Indeks Kepuasan Masyarakat (IKM)</b>
+										<p class="text-muted small">
+											Indeks Kepuasan Masyarakat (IKM) adalah data dan informasi tentang tingkat kepuasan masyarakat yang diperoleh dari hasil pengukuran secara kuantitatif dan kualitatif atas pendapat masyarakat dalam memperoleh pelayanan dari aparatur penyelenggara pelayanan publik dengan membandingkan antara harapan dan kebutuhannya.
+										</p>
+							</a>
+							<a rel="noreferrer" href="<?= base_url('widget-gpr-bkppdblg') ?>" class="p-4">
+										<b class="font-weight-bold text-dark">Goverment Public Relation (GPR)</b>
+										<p class="text-muted small">
+											GPR (Government Public Relation) BKPPD Balangan merupakan alat bantu sosialisasi berita berupa widget yang dapat dipasang pada website/blog. Sumber berita didapatkan dari website resmi <kbd>https://bkpsdm.balangankab.go.id/</kbd>
 										</p>
 							</a>
 						</div>
@@ -174,7 +186,7 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-primary-old py-2 px-4 border-0 rounded mr-2" href="<?= base_url('daftar'); ?>">
+			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-primary-old py-2 border-0 rounded mr-2" href="<?= base_url('daftar'); ?>">
 				<i class="fas fa-user"></i>
 			</a>
 			<a rel="noindex, nofollow" class="btn shadow-sm btn-primary-old rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.curPageURL()); ?>">
@@ -182,8 +194,8 @@
 			</a>
 			
 			<?php } ?>
-			<span class="text-light ml-2">|</span>
-			<button class="btn btn-primary-old rounded-pill py-2 ml-2 post-search">
+			<span class="text-dark ml-2">|</span>
+			<button class="btn btn-primary-old rounded py-2 ml-2 post-search">
 				<i class="fas fa-search"></i>
 			</button>
 			<!-- <label class="switch mt-2">

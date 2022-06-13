@@ -31,14 +31,14 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-  background-color: #fff;
+  background-color: transparent;
   border-left: 1px solid #eee;
   border-radius: 100px;
 }
 
 html::-webkit-scrollbar-thumb {
   border-radius: 100px;
-  border: 3px solid transparent;
+  border: 1.5px solid transparent;
   background-clip: content-box;
   background-color: teal;
   opacity: 0.8;
@@ -519,6 +519,11 @@ h5.title-sidebar {
 //     will-change: position, transform;
 // }
 /* Slick sliderjs */
+.grafis-app-slick {
+	& > .slick-slide:not(:first-child) {
+    display: none;
+  }
+}
 .slick-banner {
 	display: flex;
 }

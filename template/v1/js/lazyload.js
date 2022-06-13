@@ -7,12 +7,6 @@
                 delay: 1000,
                 enableThrottle: true,
                 throttle: 250,
-                afterLoad: function(element) {
-                    element.removeClass('blured');
-                },
-                beforeLoad: function(element) {
-                    element.addClass('blured');
-                },
                 onFinishedAll: function() {
                     if( !this.config("lazy") )
                         this.destroy();

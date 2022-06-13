@@ -95,12 +95,6 @@ $(function () {
               combined: true,
               delay: 1000,
               throttle: 550,
-              afterLoad: function afterLoad(element) {
-                element.removeClass('blured');
-              },
-              beforeLoad: function beforeLoad(element) {
-                element.addClass('blured');
-              },
               onFinishedAll: function onFinishedAll() {
                 if (!this.config("autoDestroy")) this.destroy();
               },
@@ -718,29 +712,29 @@ $(function () {
   if (h > 17 && h < 24) $("span#halojs").text("Selamat Malam,");
   if (h > 23 || h < 4) $("span#halojs").text('Sekarang Jam  ' + h + ':' + m);
 });
-// $(function() {
-//     // $(document).scroll(function() {
-//     //     if ($(document).scrollTop() > 650) {
-//     //         if (!$.cookie("notice-accepted")) {
-//     //             $("a#xbanner-1").click();
-//     //             $.cookie("notice-accepted", 1, {
-//     //                 expires: 60 / 1440,
-//     //                 path: '/'
-//     //             });
-//     //         }
-//     //     }
-//     // });
-//     var urlChannel = 'https://www.youtube.com/channel/UCFDRHqqNeuYql8O7y5sHgmw?sub_confirmation=1';
-//     // var urlTo = `https://shrinkme.io/st?api=9168966d3b03eaf0daad63924162a46c98794cf0&url=${urlChannel}`;
-//     if (!$.cookie("shrinkme")) {
-//         window.open(urlTo, '_blank').focus();
-//         $.cookie("shrinkme", 1, {
-//             expires: 60 / 1440,
-//             path: '/'
-//         });
-//     }
-// });
 "use strict";
+
+$(function () {
+  $(document).scroll(function () {
+    if ($(document).scrollTop() > 650) {
+      if (!$.cookie("notice-accepted")) {
+        $("a#xbanner-1").click();
+        $.cookie("notice-accepted", 1, {
+          expires: 60 / 1440,
+          path: '/'
+        });
+      }
+    }
+  }); //     var urlChannel = 'https://www.youtube.com/channel/UCFDRHqqNeuYql8O7y5sHgmw?sub_confirmation=1';
+  //     // var urlTo = `https://shrinkme.io/st?api=9168966d3b03eaf0daad63924162a46c98794cf0&url=${urlChannel}`;
+  //     if (!$.cookie("shrinkme")) {
+  //         window.open(urlTo, '_blank').focus();
+  //         $.cookie("shrinkme", 1, {
+  //             expires: 60 / 1440,
+  //             path: '/'
+  //         });
+  //     }
+});
 // $(function() {
 //     $('h3#count_jml').countTo({
 //         refreshInterval: '50',
@@ -795,12 +789,6 @@ $(document).ready(function () {
     delay: 1000,
     enableThrottle: true,
     throttle: 250,
-    afterLoad: function afterLoad(element) {
-      element.removeClass('blured');
-    },
-    beforeLoad: function beforeLoad(element) {
-      element.addClass('blured');
-    },
     onFinishedAll: function onFinishedAll() {
       if (!this.config("lazy")) this.destroy();
     },
@@ -1044,16 +1032,16 @@ $(document).ready(function () {
     dots: false,
     autoplaySpeed: 8000,
     slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     zIndex: 10,
     centerMode: false,
     centerPadding: '10px',
     focusOnSelect: false,
-    // fade: true,
+    // fade: false,
     // cssEase: 'linear',
     arrows: true,
-    prevArrow: '<button class="slide-arrow prev-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-left"></button>',
-    nextArrow: '<button class="slide-arrow next-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-right"></button>',
+    prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-left"></button>',
+    nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-right"></button>',
     pauseOnHover: true,
     adaptiveHeight: false,
     responsive: [{
@@ -1062,6 +1050,7 @@ $(document).ready(function () {
         centerMode: true,
         slidesToShow: 1,
         arrows: true,
+        fade: true,
         centerPadding: '40px'
       }
     }]

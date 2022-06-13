@@ -60,7 +60,6 @@ class Beranda extends CI_Controller
                     'mf_poling_pertanyaan' => $this->mf_beranda->get_poling_a()->row(),
                     'mf_poling_jawaban' => $this->mf_beranda->get_poling_b(),
                     // 'mf_banner' => $this->mf_beranda->list_banner('SLIDE', 'Web'),
-                    'mf_banner_home' => $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 5),
                     'meta' => $meta_tag
                 ];
          
@@ -299,10 +298,9 @@ class Beranda extends CI_Controller
                     </div>
 					<div class="card-body bg-white px-2 py-1 d-flex justify-content-start align-items-center sticky-top" style="z-index:99;">
                         <div>
-                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-1 ml-md-3 mt--7 lazy p-2 bg-white">
+                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-1 ml-md-3 lazy p-2 bg-white">
                         </div>
                         <div class="w-100 ml-md-2 ml-2">
-                        <button type="button"  aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-lg btn-link bg-transparent text-primary-old border-0 rounded-0 mt--7 mr-2 p-1 float-right '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark"></i> </button>
 						<h6 class="mb-0 py-1">
                             <span class="text-light">&bull;</span> <a href="'.$link_profile_public.'" class="small"> '.$namalengkap.'</a> <span class="text-light">&dash;</span>  
                             <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
@@ -324,6 +322,9 @@ class Beranda extends CI_Controller
                     </div>
                     <div class="w-100">
                     <button aria-hidden="true" type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
+                    </div>
+                    <div class="w-100">
+                    <button type="button" aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-primary-old '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark"></i> </button>
                     </div>
 					</div>
                     </div>
