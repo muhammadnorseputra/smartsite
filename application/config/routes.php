@@ -79,7 +79,6 @@ $route['module/(:any)/update/(:any)'] = 'backend/module/$1/update/$2';
 */
 $route['api/(:any)'] = 'frontend/v1/api/$1';
 $route['news'] = 'frontend/v1/api/news';
-$route['pegawai/(:any)'] = 'frontend/v1/pegawai/$1';
 $route['under-construction'] = 'theme/maintenance_site';
 $route['page/(:any)'] = 'frontend/v1/halaman/statis/$1';
 $route['beranda'] = 'frontend/v1/beranda';
@@ -153,6 +152,9 @@ $route['api-skm/(:any)'] = 'frontend/v1/apiSkm/$1';
 // USERPORTAL
 $route['facebook'] = 'frontend/v1/facebook';
 $route['facebook_outh'] = 'frontend/v1/facebook/facebook_outh';
+
+// PEGAWAI
+$route['pegawai/(:any)'] = 'frontend/v1/pegawai/$1';
 
 // Sitemap
 $route['sitemaps.xml'] = 'frontend/v1/sitemaps';

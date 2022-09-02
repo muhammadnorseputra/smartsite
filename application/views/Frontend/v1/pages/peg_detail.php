@@ -1,7 +1,7 @@
 <section class="hero py-5">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 py-5 text-primary text-center">
+			<div class="col-md-12 py-5 text-white text-center">
 				<i class="fas fa-user-circle fa-4x my-3">	</i>
 				<h1>Profile Pegawai</h1>
 			</div>
@@ -9,7 +9,7 @@
 	</div>
 </section>
 <?php 
-	$response = api_curl_get('silka.bkppd-balangankab.info/api/detail_pns/?nip='.$data['nip']);
+	$response = api_curl_get('silka.balangankab.go.id/api/detail_pns/?nip='.$data['nip']);
 	$r = json_decode($response);
 	if(empty($data['nip']) || @count($r) === 0) {
 		redirect('errors/html/error_404','refresh');	
@@ -22,13 +22,13 @@
 			<div class="col-md-10 offset-md-1">
 				<div class="card pt-3 px-3 border-0 bg-white">
 					<div class="alert alert-warning">
-						<span class="font-weight-nomal"><i class="fa fa-info-circle mr-2"></i> Data ini ditampilkan secara realtime, berdasarkan pada aplikasi SILKa (Sistem Informasi Layanan Kepegawian) Kabupaten Balangan.</span>
+						<span class="font-weight-nomal"><i class="fa fa-info-circle mr-2"></i> Data ini ditampilkan secara upto-date, berdasarkan pada aplikasi SILKa (Sistem Informasi Layanan Kepegawian) Kabupaten Balangan.</span>
 					</div>
 					<table class="table table-bordered">
 						<tbody>
 							<tr>
 								<td width="140" rowspan="13">
-					<img class="img-thumbnail img-fluid d-none d-md-block" src="http://silka.bkppd-balangankab.info/photo/<?= $r[0]->nip ?>.jpg" alt="<?= $r[0]->nip ?>">									
+					<img class="img-thumbnail img-fluid d-none d-md-block" src="http://silka.balangankab.go.id/photo/<?= $r[0]->nip ?>.jpg" alt="<?= $r[0]->nip ?>">									
 								</td>
 							</tr>
 							<tr class="font-weight-bold">

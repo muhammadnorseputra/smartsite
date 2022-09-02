@@ -12,6 +12,16 @@ class Pegawai extends CI_Controller {
             redirect(base_url('under-construction'),'refresh');
         }
 	}
+	public function dataku() {
+		$data = [
+			'title' => 'CEK DATAKU',
+			'mf_beranda' => $this->mf_beranda->get_identitas(),
+            'mf_menu' => $this->mf_beranda->get_menu(),
+			'isi'	=> 'Frontend/v1/pages/pegawai/dataku',
+		];
+
+		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
+	}
 	public function report()
 	{
 		$data = [

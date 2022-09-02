@@ -93,3 +93,13 @@ If you are using command-line you can do the following:
 3. `git push origin develop`
 
 Now your fork is up to date. This should be done regularly, or before you send a pull request at least.
+
+### How to install this app
+
+1. git clone `https://github.com/muhammadnorseputra/smartsite.git` (on your server)
+2. install globaly composer, and then run on your terminal `composer update`
+3. install globaly bower, and then run on your terminal `bower install`
+4. start your server with wampp or xampp, etc
+5. setup database, create new db as si_bkppd
+6. import db file format .sql
+7. finish (check your url: localhost/smartsite)

@@ -12,3 +12,5 @@ files/filemanager-v2/thumbs/
 files/thumbs/
 files/file_*/
 files/file_*/
+vendor/
+bower_components/

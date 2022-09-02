@@ -211,6 +211,3 @@
 <?php $this->load->view('Frontend/v1/function/modal-mobile-menu'); ?>
 <?php $this->load->view('Frontend/v1/function/modal-search'); ?>
 <?php $this->load->view('msg/modal-auth'); ?>
-
-			
-			
