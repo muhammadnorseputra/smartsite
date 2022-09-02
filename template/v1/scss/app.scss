@@ -1167,52 +1167,34 @@ i.likes:hover {
 // animation-name: bounce;
 // }
 
-// Trinket
-section {
-	position: relative;
-	width: 100%;
-	display: block;
-}
-.trinket {
-	position: absolute;
-	height: 230px;
-	z-index: 0;
-	&.trinket-13 {
-		top: 120px;
-		left: 0;
-	}
-	&.trinket-4 {
-		right: 0;
-		top: -200;
-	}
-	&.trinket-7 {
-		right: 0;
-		top: 0;
-	}
-}
-.trinket_bottom {
-	background-image: url('../../../assets/images/bg/testimonial_card_background.png');
-	background-position: bottom left;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-.trinket_graf_slide {
-	background-image: url('../../../assets/images/bg/trinket_3.png');
-	background-position: bottom left;
-	background-size: inherit;
-	z-index: 13;
-	background-repeat: no-repeat;
-}
-.trinket_statis {
-	background-image: url('../../../assets/images/bg/trinket_5.png');
-	background-position: bottom left;
-	background-size: 120px;
-	z-index: 13;
-	background-repeat: no-repeat;
-	position: relative;
-}
 
-/*  fontSize: Responsive */
+/* TEXT NEON ANIMATION */
+.text-glow-white {
+  -webkit-animation: neon-white 0.75s ease-in-out infinite alternate;
+  animation: neon-white 0.75s ease-in-out infinite alternate;
+}
+.text-glow-white-static {
+  text-shadow: 0 0 10px hsla(0, 0%, 100%, 0.8);
+}
+@-webkit-keyframes neon-white {
+  0% {
+    text-shadow: 0 0 10px hsla(0, 0%, 100%, 0.3);
+  }
+  to {
+    text-shadow: 0 0 10px #fff;
+  }
+}
+@keyframes neon-white {
+  0% {
+    text-shadow: 0 0 10px hsla(0, 0%, 100%, 0.3);
+  }
+  to {
+    text-shadow: 0 0 10px #fff;
+  }
+}
+/* END TEXT NEON ANIMATION */
+
+/* FONT SIZE RESPONSIVE */
 .fs1  {font-size: 1vw}
 .fs2  {font-size: 1.4vw}
 .fs3  {font-size: 1.6vw}
@@ -1222,3 +1204,4 @@ section {
 .fs7  {font-size: 2.4vw}
 .fs8  {font-size: 4.6vw; font-weight: bold;}
 .fs9  {font-size: 5.6vw; font-weight: bold;}
+/* END FONT SIZE RESPONSIVE */
