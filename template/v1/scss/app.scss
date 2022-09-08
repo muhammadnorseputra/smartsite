@@ -616,8 +616,8 @@ button.next-arrow{
 	transition: all 1s ease;
 }
 .rippler-img:hover img {
-	transform: scale(1.2) translateY(-30px);
-	filter: grayscale(80%);
+	// transform: scale(1.2) translateY(-30px);
+	filter: grayscale(50%);
 }
 
 .card-text {

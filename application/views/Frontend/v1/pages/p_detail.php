@@ -43,7 +43,7 @@ $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user
 if(!empty($post_detail->img)):
 $img = '<img style="object-fit: cover;  max-height: 320px;" class="w-100 lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
 $imgSrc = files('file_berita/'.$post_detail->img);
-$mt = 'mt-md-3';
+$mt = 'mt-md-5';
 elseif($post_detail->type === 'YOUTUBE'):
 $img = $yt_player;
 $imgSrc = $yt_player;
@@ -78,59 +78,59 @@ $namakategori = $this->post->kategori_byid($post_detail->fid_kategori);
 $post_list_url = base_url('k/' . url_title($namakategori));
 ?>
 
-<?php if($post_detail->type === 'SLIDE'): ?>
-	<div id="carouselExampleIndicators" class="carousel slide shadow-lg" data-ride="carousel">
-		<ol class="carousel-indicators">
-			<?php foreach($photo_slide->result() as $key => $value): $active = ($key == 0) ? 'active' : ''; ?>
-			<li data-target="#carouselExampleIndicators" data-slide-to="<?= $key ?>" class="<?= $active ?>"></li>
-			<?php endforeach; ?>
-		</ol>
-		<div class="carousel-inner rounded">
-			<?php foreach($photo_slide->result() as $key => $value): $active = ($key == 0) ? 'active' : ''; ?>
-			<div class="carousel-item <?= $active ?> text-center">
-				<img class="img-responsive w-100 lazy rounded" data-src="<?= img_blob($value->photo) ?>" alt="<?= $value->keterangan ?>" style="min-height: 350px;max-height:385px; object-fit: contain;">
-				<div class="carousel-caption">
-					<h5 class="d-none d-md-block"><?= ucwords(substr($value->judul, 0, strrpos($value->judul, '.'))) ?></h5>
-					<p class="small d-block d-md-none"><?= ucwords(substr($value->judul, 0, strrpos($value->judul, '.'))) ?></p>
-				</div>
-			</div>
-			<?php $i++; endforeach; ?>
-		</div>
-		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-	</div>
-	<?php else: ?>
-		<?php if($post_detail->type !== 'YOUTUBE'): ?>
-		<?= $img ?>
-		<a href="<?= $imgSrc ?>" data-lightbox="BannerAside" rel="noreferrer" class="d-none d-md-block btn btn-sm btn-warning rounded-none border-0 shadow-none"><i class="fas fa-seach mr-2"></i> Lihat Gambar Versi Original</a>
-		<?php endif; ?>
-		<div class="d-none d-md-block" style="background-image: url('<?= assets("images/bg/bg-shadow-nav.png"); ?>'); background-repeat: repeat-x; display: block; width: 100%; height:120px; position: absolute; top: 0; left: 0;">&nbsp;</div>
-	<?php endif; ?>
+
 <section>
+
 <div class="container">
-	<div class="row <?= $mt ?>">
-		<div class="col-md-8 offset-md-2 px-0">
-			<nav aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
-			  <ol class="breadcrumb small">
-			    <li class="breadcrumb-item"><a href="<?= base_url("beranda") ?>">Home</a></li>
-			    <li class="breadcrumb-item active text-truncate" aria-current="page"><?= $post_detail->judul ?></li>
-			  </ol>
-			</nav>
-		</div>
-	</div>
-</div>
-<div class="container">
+
 	<div class="row mt-md-2">
 		<div class="col-md-2 order-md-first order-lg-last mt-md-3">
 			<!-- Sidebar Left -->
 		</div>
 		<div class="col-md-8 mb-md-5 pb-md-4 px-4 pb-4 rounded-none order-first order-md-last bg-white shadow-sm p-md-4" id="main-content">
+
+				<nav class="<?= $mt ?>" aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
+				<ol class="breadcrumb small">
+					<li class="breadcrumb-item"><a href="<?= base_url("beranda") ?>">Home</a></li>
+					<li class="breadcrumb-item active text-truncate" aria-current="page"><?= $post_detail->judul ?></li>
+				</ol>
+				</nav>
+		
+		<?php if($post_detail->type === 'SLIDE'): ?>
+		<div id="carouselExampleIndicators" class="carousel slide shadow-lg" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<?php foreach($photo_slide->result() as $key => $value): $active = ($key == 0) ? 'active' : ''; ?>
+				<li data-target="#carouselExampleIndicators" data-slide-to="<?= $key ?>" class="<?= $active ?>"></li>
+				<?php endforeach; ?>
+			</ol>
+			<div class="carousel-inner rounded">
+				<?php foreach($photo_slide->result() as $key => $value): $active = ($key == 0) ? 'active' : ''; ?>
+				<div class="carousel-item <?= $active ?> text-center">
+					<img class="img-responsive w-100 lazy rounded" data-src="<?= img_blob($value->photo) ?>" alt="<?= $value->keterangan ?>" style="min-height: 350px;max-height:385px; object-fit: contain;">
+					<div class="carousel-caption">
+						<h5 class="d-none d-md-block"><?= ucwords(substr($value->judul, 0, strrpos($value->judul, '.'))) ?></h5>
+						<p class="small d-block d-md-none"><?= ucwords(substr($value->judul, 0, strrpos($value->judul, '.'))) ?></p>
+					</div>
+				</div>
+				<?php $i++; endforeach; ?>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+		<?php else: ?>
+			<?php if($post_detail->type !== 'YOUTUBE'): ?>
+			<?= $img ?>
+			<a href="<?= $imgSrc ?>" data-lightbox="BannerAside" rel="noreferrer" class="d-none d-md-block btn btn-sm btn-warning rounded-none border-0 shadow-none"><i class="fas fa-seach mr-2"></i> Lihat Gambar Versi Original</a>
+			<?php endif; ?>
+			<div class="d-none d-md-block" style="background-image: url('<?= assets("images/bg/bg-shadow-nav.png"); ?>'); background-repeat: repeat-x; display: block; width: 100%; height:120px; position: absolute; top: 0; left: 0;">&nbsp;</div>
+		<?php endif; ?>
+
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1 class="fs6 d-none d-md-block d-lg-block"><?php echo $post_detail->judul; ?></h1>
