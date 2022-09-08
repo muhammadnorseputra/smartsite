@@ -19,7 +19,8 @@ $mf_banner_home = $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 8)->resul
                 base_url("user/".decrypt_url( $this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan)."/".encrypt_url($by));
                 $namalengkap = decrypt_url($this->mf_users->get_userportal_namalengkap($by));
                 $namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
-                $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
+                // $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
+                $gravatar = base_url('assets/images/gravatar/user.png');
             }
         ?>
         <div class="px-3">
