@@ -126,11 +126,11 @@ class Beranda extends CI_Controller
                     $namapanggilan = $by;
                     $gravatar = base_url('assets/images/users/'.$this->mf_users->get_gravatar($by));
                 } else {
-                    $link_profile_public = 
-                    base_url("user/".decrypt_url( $this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan)."/".encrypt_url($by));
+                    $link_profile_public = base_url("user/".decrypt_url( $this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan)."/".encrypt_url($by));
                     $namalengkap = decrypt_url($this->mf_users->get_userportal_namalengkap($by));
                     $namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
-                    $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
+                    // $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
+                    $gravatar = base_url('assets/images/gravatar/user.png');
                 }
 
                 // Post Link Detail
