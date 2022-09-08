@@ -1,10 +1,10 @@
     $(document).ready(function() {
             $(".lazy").lazy({
                 effect: 'fadeIn',
-                effectTime: 300,
+                effectTime: 100,
                 threshold: 0,
                 combined: true,
-                delay: 1000,
+                delay: 800,
                 enableThrottle: true,
                 throttle: 250,
                 onFinishedAll: function() {

@@ -1,6 +1,6 @@
 $(function() {
   $(document).scroll(function() {
-      if ($(document).scrollTop() > 650) {
+      if ($(document).scrollTop() > 100) {
           if (!$.cookie("notice-accepted")) {
               $("a#xbanner-1").click();
               $.cookie("notice-accepted", 1, {

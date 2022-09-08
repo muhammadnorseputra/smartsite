@@ -716,7 +716,7 @@ $(function () {
 
 $(function () {
   $(document).scroll(function () {
-    if ($(document).scrollTop() > 650) {
+    if ($(document).scrollTop() > 100) {
       if (!$.cookie("notice-accepted")) {
         $("a#xbanner-1").click();
         $.cookie("notice-accepted", 1, {
@@ -783,10 +783,10 @@ $(function () {
 $(document).ready(function () {
   $(".lazy").lazy({
     effect: 'fadeIn',
-    effectTime: 300,
+    effectTime: 100,
     threshold: 0,
     combined: true,
-    delay: 1000,
+    delay: 800,
     enableThrottle: true,
     throttle: 250,
     onFinishedAll: function onFinishedAll() {
@@ -802,10 +802,10 @@ $(document).ready(function () {
 "use strict";
 
 lightbox.option({
-  'resizeDuration': 250,
+  'resizeDuration': 150,
   'wrapAround': false,
   'fadeDuration': 500,
-  'imageFadeDuration': 500,
+  'imageFadeDuration': 800,
   'disableScrolling': false,
   'albumLabel': "Story Web %1 dari %2"
 });
@@ -1028,8 +1028,8 @@ $(document).ready(function () {
   // });
   $('.grafis-app-slick').slick({
     autoplay: true,
-    infinite: true,
-    dots: false,
+    infinite: false,
+    dots: true,
     autoplaySpeed: 8000,
     slidesToShow: 4,
     slidesToScroll: 1,

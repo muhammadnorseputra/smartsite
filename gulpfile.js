@@ -53,7 +53,7 @@ gulp.task("vendor", function() {
             "bower_components/lightbox2/dist/js/lightbox.min.js",
             "bower_components/masonry-layout/dist/masonry.pkgd.min.js",
             "bower_components/imagesloaded/imagesloaded.pkgd.min.js",
-            "bower_components/emojionearea/dist/emojionearea.min.js",
+            "bower_components/emojionearea/js/emojionearea.min.js",
             // "bower_components/jquery-typeahead/dist/jquery.typeahead.min.js",
             "template/v1/plugin/slick/slick/slick.min.js",
             // "template/v1/plugin/popmodal/popModal.min.js",

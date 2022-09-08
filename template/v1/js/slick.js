@@ -23,8 +23,8 @@ $(document).ready(function() {
     // });
     $('.grafis-app-slick').slick({
         autoplay: true,
-        infinite: true,
-        dots: false,
+        infinite: false,
+        dots: true,
         autoplaySpeed: 8000,
         slidesToShow: 4,
         slidesToScroll: 1,
