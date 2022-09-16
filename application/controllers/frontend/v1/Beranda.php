@@ -207,7 +207,7 @@ class Beranda extends CI_Controller
                 endif;
 
                 // gambar terkait
-                $limit_photo = 5;
+                $limit_photo = 4;
                 $photo_terkait = $this->post->photo_terkait($row->id_berita, $limit_photo);
                 $total_photo_terkait =  $this->post->photo_terkait($row->id_berita)->num_rows();
                 $total_sisa = $total_photo_terkait - $photo_terkait->num_rows();
@@ -216,8 +216,8 @@ class Beranda extends CI_Controller
                 if($photo_terkait->num_rows() > 0):
                     $photo_t .= '<ul style="gap: 3px;" class="d-flex justify-content-start align-items-stretch flex-wrap list-unstyled rounded-top m-0 pr-4">';
                     foreach($photo_terkait->result() as $p):
-                        $photo_t .= '<li style="max-width: 180px; max-height: 160">
-                                        <img class="lazy w-100 h-100" data-src="'.img_blob($p->photo).'" alt="'.$p->judul.'" style="object-fit: contain;"/>
+                        $photo_t .= '<li style="width: 100%">
+                                        <img class="lazy w-50 h-50" data-src="'.img_blob($p->photo).'" alt="'.$p->judul.'" style="object-fit: contain;"/>
                                     </li>';
                     endforeach;
                     $photo_t .= ' </ul>';
