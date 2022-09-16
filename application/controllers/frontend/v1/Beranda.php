@@ -171,7 +171,7 @@ class Beranda extends CI_Controller
                 // Headline
                 if ($row->headline == '1') {
                     $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
-                    $isi = substr($isi_berita, 0, 250); // ambil sebanyak 80 karakter
+                    $isi = substr($isi_berita, 0, 80); // ambil sebanyak 80 karakter
                     $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
                 } else {
                     $isi = $row->content;
@@ -226,11 +226,11 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:245px; object-fit: cover; object-position: center; border-radius: 10px;" class="w-100 lazy" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     // elseif(!empty($row->img_blob)):
                     //     $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
-                        $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:245px; object-fit: cover; object-position: center;" class="w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
@@ -261,6 +261,11 @@ class Beranda extends CI_Controller
                 $content_body = '<div class="row">
                                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
                                         <div class="mx-4 mx-md-0 pr-md-4">
+                                            <div class="canvas overflow-hidden mb-3">
+                                                <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
+                                                  '.$img.'
+                                                </a>
+                                            </div>
                                             <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h4>
                                             '.$sumber.' <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent '.$rand.'">'.ucwords($namakategori).'</a>
                                             <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
@@ -290,19 +295,14 @@ class Beranda extends CI_Controller
 
                 $output .= '
                 
-				<div class="card shadow-sm border-white rounded-bottom bg-white mb-4">
-                    <div class="canvas overflow-hidden">
-                    <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
-                      '.$img.'
-                    </a>
-                    </div>
-					<div class="card-body bg-white px-2 py-1 d-flex justify-content-start align-items-center sticky-top" style="z-index:99;">
+				<div class="card border-white bg-white">
+					<div class="card-body bg-white px-2 py-1 d-flex justify-content-start align-items-center">
                         <div>
                         <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-1 ml-md-3 lazy p-2 bg-white">
                         </div>
-                        <div class="w-100 ml-md-2 ml-2">
+                        <div class="w-100 ml-md-3 ml-2">
 						<h6 class="mb-0 py-1">
-                            <span class="text-light">&bull;</span> <a href="'.$link_profile_public.'" class="small"> '.$namalengkap.'</a> <span class="text-light">&dash;</span>  
+                            <a href="'.$link_profile_public.'" class="small"> '.$namalengkap.'</a> <br>  
                             <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
                         </h6> 
                         </div>

@@ -23,44 +23,44 @@ $(function() {
 
         function lazzy_loader(limit) {
             var output = "";
-            for (var count = 0; count < 1; count++) {
-            // output += `
-            //     <div class="card border-0 bg-white mb-3" style="border-radius:5px;">
-            //         <div class ="card-body p-0 border-0">
-            //             <span class ="content-placeholder" style="width:100%; height: 250px; border-radius:8px;"> &nbsp; </span>
-            //         </div> 
-            //         <div class="card-header border-0 bg-white" style="border-radius:5px;">
-            //         <p>
-            //         <span class="content-placeholder rounded-circle float-left mr-3" style="width:40px; height: 40px;">&nbsp;</span>
-            //         <span class="content-placeholder rounded-lg float-left"
-            //         style ="width:40%; height: 40px; border-radius: 15px;"> &nbsp; </span>
+            for (var count = 0; count < limit; count++) {
+            output += `
+                <div class="card border-0 bg-white mb-3" style="border-radius:5px;">
+                    <div class ="card-body p-0 border-0">
+                        <span class ="content-placeholder" style="width:100%; height: 250px; border-radius:8px;"> &nbsp; </span>
+                    </div> 
+                    <div class="card-header border-0 bg-white" style="border-radius:5px;">
+                    <p>
+                    <span class="content-placeholder rounded-circle float-left mr-3" style="width:40px; height: 40px;">&nbsp;</span>
+                    <span class="content-placeholder rounded-lg float-left"
+                    style ="width:40%; height: 40px; border-radius: 15px;"> &nbsp; </span>
 
-            //         <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
-            //         style ="width:40px; height: 40px;"> &nbsp; </span>
-            //         </p> 
-            //         </div> 
+                    <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
+                    style ="width:40px; height: 40px;"> &nbsp; </span>
+                    </p> 
+                    </div> 
                     
-            //         <div class ="card-footer d-flex justify-content-bettwen p-3 bg-transparent border-0">
-            //             <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
-            //             <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
-            //             <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
-            //             <span class="content-placeholder rounded w-100 p-2"> &nbsp; </span>
-            //         </div> 
-            //     </div>
-            // `;
+                    <div class ="card-footer d-flex justify-content-bettwen p-3 bg-transparent border-0">
+                        <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
+                        <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
+                        <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
+                        <span class="content-placeholder rounded w-100 p-2"> &nbsp; </span>
+                    </div> 
+                </div>
+            `;
             
             
             // output += `<div class="d-flex justify-content-center align-items-center my-5">
             //                 <div class="loader_small" style="width:50px;height:50px;"></div>
             //             </div>`;
 
-            output += `
+            // output += `
                 
-                <div class ="content-placeholder" style="width:30%; height: 14px; border-radius:50px;"> &nbsp; </div>
-                <br>
-                <div class ="content-placeholder" style="width:60%; height: 14px; border-radius:50px;"> &nbsp; </div>
+            //     <div class ="content-placeholder" style="width:30%; height: 14px; border-radius:50px;"> &nbsp; </div>
+            //     <br>
+            //     <div class ="content-placeholder" style="width:60%; height: 14px; border-radius:50px;"> &nbsp; </div>
             
-            `;
+            // `;
             }
             $("#load_data_message").html(output);
             $("button#load_more").html(`<div class="d-flex justify-content-center align-items-center">
@@ -104,10 +104,10 @@ $(function() {
                         $(".lazy").lazy({
                             effect: 'fadeIn',
                             effectTime: 250,
-                            threshold: 0,
+                            threshold: 1000,
                             enableThrottle: true,
                             combined: true,
-                            delay: 1000,
+                            delay: 250,
                             throttle: 550,
                             onFinishedAll: function() {
                                 if( !this.config("autoDestroy") )
@@ -125,7 +125,7 @@ $(function() {
                         });
                         // Tooltips
                         $('[data-toggle="tooltip"]').tooltip({
-                            delay: 250,
+                            delay: 150,
                             offset: '0, 12px',
                             padding: 15
                         });
