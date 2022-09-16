@@ -234,7 +234,7 @@ class Beranda extends CI_Controller
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="filter: grayscale(90%); height:245px; object-fit: cover; object-position: center;border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="filter: contrast(10%); height:245px; object-fit: cover; object-position: center;border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-3x bg-dark rounded-circle"></i>
                         </div>
