@@ -234,7 +234,7 @@ class Beranda extends CI_Controller
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="height:245px; object-fit: cover; object-position: center;border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="filter: grayscale(90%); height:245px; object-fit: cover; object-position: center;border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-3x bg-dark rounded-circle"></i>
                         </div>
@@ -261,14 +261,15 @@ class Beranda extends CI_Controller
                 $content_body = '<div class="row">
                                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
                                         <div class="mx-4 mx-md-0 pr-md-4">
-                                            <div class="canvas overflow-hidden mb-3">
+                                            '.$sumber.'
+                                            <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent '.$rand.'">'.ucwords($namakategori).'</a>
+                                            <h4 class="font-weight-bold mt-2"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h4>
+                                            <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
+                                            <div class="canvas overflow-hidden my-3">
                                                 <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
                                                   '.$img.'
                                                 </a>
                                             </div>
-                                            <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h4>
-                                            '.$sumber.' <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent '.$rand.'">'.ucwords($namakategori).'</a>
-                                            <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
                                             <p class="text-secondary">'.$tag. '</p>
                                         </div>
                                     </div>
