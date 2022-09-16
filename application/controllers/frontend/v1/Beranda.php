@@ -207,17 +207,17 @@ class Beranda extends CI_Controller
                 endif;
 
                 // gambar terkait
-                $limit_photo = 3;
+                $limit_photo = 5;
                 $photo_terkait = $this->post->photo_terkait($row->id_berita, $limit_photo);
                 $total_photo_terkait =  $this->post->photo_terkait($row->id_berita)->num_rows();
                 $total_sisa = $total_photo_terkait - $photo_terkait->num_rows();
                 $photo_terkait_sisa = $this->template_photo_terkait_sisa($total_sisa);
                 $photo_t = '';
                 if($photo_terkait->num_rows() > 0):
-                    $photo_t .= '<ul style="gap: 5px;" class="d-flex justify-content-between flex-wrap list-unstyled rounded-top m-0 p-0">';
+                    $photo_t .= '<ul style="gap: 3px;" class="d-flex justify-content-between flex-wrap list-unstyled rounded-top m-0 p-0">';
                     foreach($photo_terkait->result() as $p):
                         $photo_t .= '<li style="max-width: 160px">
-                                        <img class="lazy w-100 h-100" data-src="'.img_blob($p->photo).'" alt="'.$p->judul.'" style="object-fit: cover;"/>
+                                        <img class="lazy" data-src="'.img_blob($p->photo).'" alt="'.$p->judul.'" style="object-fit: cover;"/>
                                     </li>';
                     endforeach;
                     $photo_t .= ' </ul>';
@@ -226,7 +226,7 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img style="height:245px; object-fit: cover; object-position: center; border-radius: 10px;" class="w-100 lazy border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:245px; object-fit: cover; object-position: center; border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     // elseif(!empty($row->img_blob)):
                     //     $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
@@ -234,7 +234,7 @@ class Beranda extends CI_Controller
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="height:245px; object-fit: cover; object-position: center;border-radius: 10px;" class="w-100 lazy border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="height:245px; object-fit: cover; object-position: center;border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-3x bg-dark rounded-circle"></i>
                         </div>
