@@ -216,7 +216,7 @@ class Beranda extends CI_Controller
                 if($photo_terkait->num_rows() > 0):
                     $photo_t .= '<ul class="d-flex flex-nowrap list-unstyled rounded-top overflow-auto m-0 p-0">';
                     foreach($photo_terkait->result() as $p):
-                        $photo_t .= '<li class="flex-grow-1 flex-shrink-1" style="height:260px;">
+                        $photo_t .= '<li class="flex-grow-1 flex-shrink-1" style="width:150px;height:150px;">
                                         <img class="lazy w-100 h-100" data-src="'.img_blob($p->photo).'" alt="'.$p->judul.'" style="object-fit: cover;"/>
                                     </li>';
                     endforeach;
@@ -234,7 +234,7 @@ class Beranda extends CI_Controller
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="height:245px; object-fit: cover; object-position: center;border-radius: 10px;" class="card-img-top w-100 lazy" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-3x bg-dark rounded-circle"></i>
                         </div>
