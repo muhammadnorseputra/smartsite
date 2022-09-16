@@ -226,7 +226,7 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img style="height:245px; object-fit: cover; object-position: center; border-radius: 10px;" class="w-100 lazy" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:245px; object-fit: cover; object-position: center; border-radius: 10px;" class="w-100 lazy border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     // elseif(!empty($row->img_blob)):
                     //     $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
@@ -234,7 +234,7 @@ class Beranda extends CI_Controller
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="height:245px; object-fit: cover; object-position: center;border-radius: 10px;" class="card-img-top w-100 lazy" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="height:245px; object-fit: cover; object-position: center;border-radius: 10px;" class="w-100 lazy border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-3x bg-dark rounded-circle"></i>
                         </div>
@@ -277,6 +277,11 @@ class Beranda extends CI_Controller
                 $content_body = '
                 <div class="row">
                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
+                        <div class="canvas overflow-hidden mb-3">
+                            <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
+                              '.$img.'
+                            </a>
+                        </div>
                         '.$sumber.'
                         <div class="btn-group btn-group-sm mb-2 ml-3 ml-md-0" role="group" aria-label="button">
                             <button type="button"  aria-hidden="true" class="btn btn-sm btn-light" disabled><i class="fas fa-tag"></i></button>
