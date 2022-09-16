@@ -149,7 +149,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 							</div>
 						</span>
 					</div>
-					<div class="px-0 media_youtube">
+					<div class="px-0 mt-4 media_youtube">
 						<?php  if($post_detail->type === 'YOUTUBE'): ?>
 						<?= $img ?>
 						<div class="pl-3 border-left border-light">
