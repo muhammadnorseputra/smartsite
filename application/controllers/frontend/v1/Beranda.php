@@ -216,7 +216,7 @@ class Beranda extends CI_Controller
                 if($photo_terkait->num_rows() > 0):
                     $photo_t .= '<ul style="gap: 3px; border-radius:10px" class="d-flex justify-content-start align-items-stretch flex-wrap list-unstyled m-0 mr-4 border border-light overflow-hidden">';
                     foreach($photo_terkait->result() as $p):
-                        $photo_t .= '<li style="flex: 1 1 auto; flex-basis: 40%">
+                        $photo_t .= '<li style="flex: 1 1 auto; flex-basis: 40%; max-height: 180px">
                                         <img class="lazy w-100 h-100" data-src="'.img_blob($p->photo).'" alt="'.$p->judul.'" style="object-fit: contain;"/>
                                     </li>';
                     endforeach;
