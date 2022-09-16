@@ -91,7 +91,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 		<nav class="<?= $mt ?> pt-md-4" aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
 			<ol class="breadcrumb small mb-0 rounded-0">
 				<li class="breadcrumb-item"><a href="<?= base_url("beranda") ?>">Home</a></li>
-				<li class="breadcrumb-item active text-truncate" aria-current="page"><?= $post_detail->judul ?></li>
+				<li class="breadcrumb-item active d-inline-block text-truncate" style="max-width: 150px;" aria-current="page"><?= $post_detail->judul ?></li>
 			</ol>
 		</nav>
 		
