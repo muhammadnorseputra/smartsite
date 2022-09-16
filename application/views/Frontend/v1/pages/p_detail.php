@@ -91,7 +91,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 		<nav class="<?= $mt ?> pt-md-4" aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
 			<ol class="breadcrumb small mb-0 rounded-0">
 				<li class="breadcrumb-item"><a href="<?= base_url("beranda") ?>">Home</a></li>
-				<li class="breadcrumb-item active d-inline-block text-truncate" style="max-width: 150px;" aria-current="page"><?= $post_detail->judul ?></li>
+				<li class="breadcrumb-item active d-inline-block text-truncate" style="max-width: 250px;" aria-current="page"><?= $post_detail->judul ?></li>
 			</ol>
 		</nav>
 		
@@ -161,7 +161,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 								Postingan ini merupakan <abbr title="<?= ucwords($yt_sumber) ?>">Repost</abbr> dari sumber aslinya.
 							</div>
 							<div class="ml-auto">
-								<a href="https://www.youtube.com/watch?v=<?= $yt_id ?>?ref=bkppd_balangan" target="_blank" class="btn btn-light btn-sm">Lihat sumber asli</a>
+								<a href="https://www.youtube.com/watch?v=<?= $yt_id ?>?ref=bkppd_balangan" target="_blank" class="btn btn-light btn-sm"><i class="fas fa-link"></i></a>
 							</div>
 						</div>
 					</div>
