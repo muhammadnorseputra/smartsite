@@ -81,20 +81,19 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 
 <section>
 
-<div class="container">
-
-	<div class="row mt-md-2">
+<div class="container px-0">
+	<div class="row">
 		<div class="col-md-2 order-md-first order-lg-last mt-md-3">
 			<!-- Sidebar Left -->
 		</div>
-		<div class="col-md-8 mb-md-5 pb-md-4 px-4 pb-4 rounded-none order-first order-md-last bg-white shadow-sm p-md-4" id="main-content">
+		<div class="col-md-8 mb-md-5 pb-md-4 pb-4 rounded-none order-first order-md-last bg-white shadow-sm" id="main-content">
 
-				<nav class="<?= $mt ?>" aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
-				<ol class="breadcrumb small">
-					<li class="breadcrumb-item"><a href="<?= base_url("beranda") ?>">Home</a></li>
-					<li class="breadcrumb-item active text-truncate" aria-current="page"><?= $post_detail->judul ?></li>
-				</ol>
-				</nav>
+		<nav class="<?= $mt ?> pt-md-4" aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
+			<ol class="breadcrumb small mb-0 rounded-0">
+				<li class="breadcrumb-item"><a href="<?= base_url("beranda") ?>">Home</a></li>
+				<li class="breadcrumb-item active text-truncate" aria-current="page"><?= $post_detail->judul ?></li>
+			</ol>
+		</nav>
 		
 		<?php if($post_detail->type === 'SLIDE'): ?>
 		<div id="carouselExampleIndicators" class="carousel slide shadow-lg" data-ride="carousel">
@@ -131,7 +130,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 			<div class="d-none d-md-block" style="background-image: url('<?= assets("images/bg/bg-shadow-nav.png"); ?>'); background-repeat: repeat-x; display: block; width: 100%; height:120px; position: absolute; top: 0; left: 0;">&nbsp;</div>
 		<?php endif; ?>
 
-				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-0">
+				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-3 px-4">
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1 class="fs6 d-none d-md-block d-lg-block"><?php echo $post_detail->judul; ?></h1>
 					<h1 class="fs9 d-md-none d-block"><?php echo $post_detail->judul; ?></h1>
