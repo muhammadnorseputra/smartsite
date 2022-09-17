@@ -23,8 +23,8 @@ $(function() {
 
         function lazzy_loader(limit) {
             var output = "";
-            for (var count = 0; count < limit; count++) {
-            output += `
+            for (var count = 0; count < 1; count++) {
+            /*output += `
                 <div class="card border-0 bg-white mb-3" style="border-radius:5px;">
                     <div class ="card-body p-0 border-0">
                         <span class ="content-placeholder" style="width:100%; height: 250px; border-radius:8px;"> &nbsp; </span>
@@ -48,19 +48,20 @@ $(function() {
                     </div> 
                 </div>
             `;
-            
+            */
             
             // output += `<div class="d-flex justify-content-center align-items-center my-5">
             //                 <div class="loader_small" style="width:50px;height:50px;"></div>
             //             </div>`;
 
-            // output += `
+            output += `
                 
-            //     <div class ="content-placeholder" style="width:30%; height: 14px; border-radius:50px;"> &nbsp; </div>
-            //     <br>
-            //     <div class ="content-placeholder" style="width:60%; height: 14px; border-radius:50px;"> &nbsp; </div>
+                <div class ="content-placeholder" style="width:30%; height: 14px; border-radius:50px;"> &nbsp; </div>
+                <br>
+                <div class ="content-placeholder" style="width:60%; height: 14px; border-radius:50px; margin-bottom: 10px"> &nbsp; </div>
+                <div class ="content-placeholder" style="width:80%; height: 14px; border-radius:50px;"> &nbsp; </div>
             
-            // `;
+            `;
             }
             $("#load_data_message").html(output);
             $("button#load_more").html(`<div class="d-flex justify-content-center align-items-center">
