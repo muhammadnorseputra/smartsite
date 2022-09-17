@@ -203,7 +203,7 @@ class Beranda extends CI_Controller
                     $status_posted = 'Posted';
                     $text = $domain;
                     $icon = '<i class="fas fa-globe-asia"></i>';
-                    $sumber = $this->template_sumber($text, $icon);
+                    $sumber = '';
                 endif;
 
                 // gambar terkait
@@ -262,7 +262,7 @@ class Beranda extends CI_Controller
                                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
                                         <div class="mx-4 mx-md-0 pr-md-4">
                                             '.$sumber.'
-                                            <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent '.$rand.'">'.ucwords($namakategori).'</a>
+                                            <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent btn-outline-light '.$rand.'">'.ucwords($namakategori).'</a>
                                             <h4 class="font-weight-bold mt-2"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h4>
                                             <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
                                             <div class="canvas overflow-hidden my-3">
@@ -301,7 +301,7 @@ class Beranda extends CI_Controller
 
                 $output .= '
                 
-				<div class="card border-white bg-white">
+				<div class="card border-top border-right border-left rounded-0">
 					<div class="card-body bg-white px-2 py-1 d-flex justify-content-start align-items-center">
                         <div>
                         <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-1 ml-md-3 lazy p-2 bg-white">
@@ -316,7 +316,7 @@ class Beranda extends CI_Controller
                     
                     '.$content_body.'
 
-					<div class="card-footer border-light bg-transparent p-2 d-flex justify-content-start">
+					<div class="card-footer border-light border-top-0 bg-transparent p-2 d-flex justify-content-end">
                     <div class="w-100">
 					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.nominal($row->views). '</button>
                     </div>

@@ -361,6 +361,10 @@ h5.title-sidebar {
 	font-family: 'Poppins', sans-serif;
 	font-weight: 700;
 }
+.navbar-gradient {
+	background: rgb(34,34,34);
+	background: linear-gradient(180deg, rgba(34,34,34,1) 0%, rgba(0,0,0,0) 100%);
+}
 .navbar li.nav-item a {
 	// color: #fff !important;
 	transition: background .1s ease;
