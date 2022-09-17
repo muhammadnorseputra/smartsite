@@ -1,5 +1,5 @@
 <!-- Counter jumlah pegawai -->
-<section class="bg-light">
+<section>
 <div class="container">
 <div class="row no-gutters lazy" data-loader="ajax" data-src="<?= base_url('frontend/v1/beranda/section/count_peg') ?>">
     <div class="col-6 col-md-3 p-2">
