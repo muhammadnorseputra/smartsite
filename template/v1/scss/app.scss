@@ -114,11 +114,11 @@ section.bg-hero-home {
 /* if backdrop support: very transparent and blurred */
 @supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))) {
   .bg-blur {
-    background-color: rgba(255, 255, 255, 0.84);
-    -webkit-backdrop-filter: blur(8px);
-  -moz-backdrop-filter: blur(8px);
-  -o-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.54);
+    -webkit-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
+  -o-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   }
 }
 // Loading Screen
@@ -366,8 +366,8 @@ h5.title-sidebar {
 	font-weight: 700;
 }
 .navbar-gradient {
-	background: rgb(34,34,34);
-	background: linear-gradient(180deg, rgba(34,34,34,1) 0%, rgba(0,0,0,0) 100%);
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(62,62,62,0.4920168751094187) 100%);
 }
 .navbar li.nav-item a {
 	// color: #fff !important;
