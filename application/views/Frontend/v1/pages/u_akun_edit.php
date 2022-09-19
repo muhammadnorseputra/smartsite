@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-1 my-md-5 pt-md-4 text-left pb-md-3 pb-5">
-      	<h3>Edit Profile</h3>
+      	<h3 class="text-white">Edit Profile</h3>
       	<div class="text-white">Edit your profile identity</div>
       </div>
     </div>
