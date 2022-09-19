@@ -8,9 +8,7 @@
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider4') ?>
 <?php $this->load->view('Frontend/v1/function/count_peg_home') ?>
-<section class="mt-5">
 <?php $this->load->view('Frontend/v1/function/slider_banner') ?>
-</section>
 <!-- <section class="bg-white py-md-5"> -->
     <!-- <img class="trinket trinket-13 d-none d-sm-block d-lg-block d-xl-block" src="<?= base_url('assets/images/bg/trinket_5.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
     <img class="trinket trinket-4" src="<?= base_url('assets/images/bg/trinket_7.png') ?>" alt="Portal BKPSDM Kabupaten Balangan"> -->

@@ -2,12 +2,12 @@ $(document).ready(function() {
     
     $(document).scroll(function() {
         if ($(document).scrollTop() > 80) {
-            $("nav#navbar").removeClass('navbar-dark').css("transition", ".3s ease-in-out").addClass("bg-blur shadow");
+            $("nav#navbar").removeClass('navbar-dark navbar-gradient').css("transition", ".3s ease-in-out").addClass("bg-blur shadow");
             $("button#caripost").addClass('btn-outline-light');
         } else {
             $("button#caripost").removeClass('btn-outline-light');
             /*$("button#caripost").toggleClass('');*/
-            $("nav#navbar").addClass('navbar-dark').removeClass("bg-blur shadow");
+            $("nav#navbar").addClass('navbar-dark navbar-gradient').removeClass("bg-blur shadow");
         }
     });
     /*
