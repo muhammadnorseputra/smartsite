@@ -1,5 +1,5 @@
 <!-- Modal Menus Mobile-->
-<div class="modal bd-example-modal-lg" id="mobileMenu" tabindex="-1" role="dialog" aria-labelledby="mobileMenuLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="mobileMenu" tabindex="-1" role="dialog" aria-labelledby="mobileMenuLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content border-0 shadow-none bg-white">
 			<div class="modal-body">
@@ -112,6 +112,9 @@
 						endforeach;
 					?>
 				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-block btn-default" data-dismiss="modal">Sembuyikan</button>
 			</div>
 		</div>
 	</div>
