@@ -1,3 +1,4 @@
+<section class="mt-5 bg-light pt-5">
 <div class="container">
 <div class="row no-gutters">        
 <?php  
@@ -51,3 +52,4 @@ $mf_banner_home = $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 8)->resul
 </div>
 </div>
 </div>
+        </section>

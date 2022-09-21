@@ -31,7 +31,7 @@ $(function () {
                 <span class="content-placeholder rounded-circle float-left mr-3" style="width:40px; height: 40px;">&nbsp;</span>
                 <span class="content-placeholder rounded-lg float-left"
                 style ="width:40%; height: 40px; border-radius: 15px;"> &nbsp; </span>
-                 <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
+                  <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
                 style ="width:40px; height: 40px;"> &nbsp; </span>
                 </p> 
                 </div> 
@@ -845,13 +845,13 @@ $(function () {
 $(document).ready(function () {
   $(document).scroll(function () {
     if ($(document).scrollTop() > 80) {
-      $("nav#navbar").removeClass('navbar-dark').css("transition", ".3s ease-in-out").addClass("bg-blur shadow");
+      $("nav#navbar").removeClass('navbar-dark navbar-gradient').css("transition", ".3s ease-in-out").addClass("bg-blur shadow navbar-light");
       $("button#caripost").addClass('btn-outline-light');
     } else {
       $("button#caripost").removeClass('btn-outline-light');
       /*$("button#caripost").toggleClass('');*/
 
-      $("nav#navbar").addClass('navbar-dark').removeClass("bg-blur shadow");
+      $("nav#navbar").addClass('navbar-dark navbar-gradient').removeClass("bg-blur shadow");
     }
   });
   /*
@@ -1030,7 +1030,7 @@ $(document).ready(function () {
   // });
   $('.grafis-app-slick').slick({
     autoplay: true,
-    infinite: false,
+    infinite: true,
     dots: true,
     autoplaySpeed: 8000,
     slidesToShow: 4,
@@ -1042,8 +1042,8 @@ $(document).ready(function () {
     // fade: false,
     // cssEase: 'linear',
     arrows: true,
-    prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-left"></button>',
-    nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-right"></button>',
+    prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 shadow ml-3"><i class="fas fa-chevron-left"></button>',
+    nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 shadow mr-3"><i class="fas fa-chevron-right"></button>',
     pauseOnHover: true,
     adaptiveHeight: false,
     responsive: [{

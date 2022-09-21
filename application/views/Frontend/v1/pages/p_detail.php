@@ -41,7 +41,7 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
-$img = '<img style="object-fit: cover;  max-height: 320px;" class="w-100 lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
+$img = '<img style="object-fit: cover; min-height: 320px;  max-height: 320px;" class="w-100 lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
 $imgSrc = files('file_berita/'.$post_detail->img);
 $mt = 'mt-md-5';
 elseif($post_detail->type === 'YOUTUBE'):
@@ -53,7 +53,7 @@ $imgSrc = img_blob($first_img);
 $mt = 'mt-md-3';
 else:
 $mt = 'mt-md-3';
-$img = '<img style="object-fit: cover; max-height: 320px;" class="w-100 lazy" data-src="'.img_blob($post_detail->img_blob).'" data-sizes="5x"  alt="'.$title.'"/>';
+$img = '<img style="object-fit: cover; min-height: 320px; max-height: 320px;" class="w-100 lazy" data-src="'.img_blob($post_detail->img_blob).'" data-sizes="5x"  alt="'.$title.'"/>';
 $imgSrc = img_blob($post_detail->img_blob);
 endif;
 /*Content*/
@@ -134,7 +134,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1 class="fs6 d-none d-md-block d-lg-block"><?php echo $post_detail->judul; ?></h1>
 					<h1 class="fs9 d-md-none d-block"><?php echo $post_detail->judul; ?></h1>
-					<div class="d-flex justify-content-between align-items-center">
+					<div class="d-flex justify-content-between align-items-center border-bottom pb-3">
 						<div class="d-flex justify-content-start align-items-center text-muted">
 						<img data-src="<?= $photo; ?>" style="object-fit:cover; object-position: top; border: 4px solid #FCFCFC;" width="40" height="40" class="mr-md-2 mr-2 lazy rounded-circle shadow-sm bg-light"> 
 						<span class="text-truncate"> <?= ucwords($namapanggilan); ?> 
@@ -149,7 +149,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 							</div>
 						</span>
 					</div>
-					<div class="px-0 mt-4 media_youtube">
+					<div class="px-0 media_youtube">
 						<?php  if($post_detail->type === 'YOUTUBE'): ?>
 						<?= $img ?>
 						<div class="pl-3 border-left border-light">
