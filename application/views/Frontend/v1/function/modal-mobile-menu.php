@@ -6,19 +6,19 @@
 				<div class="text-light text-left font-weight-bold">Menu Utama</div>
 				<div class="row">
 					<div class="col-6">
-						<a href="//ekinerja.balangankab.go.id" class="btn btn-outline-light text-dark w-100">
+						<a href="http://ekinerja.balangankab.go.id" class="btn btn-outline-light text-dark w-100">
 							<i class="fas fa-link"></i> <br>
 							E-Kinerja
 						</a>
 					</div>
 					<div class="col-6 mb-2">
-						<a href="//silka.balangankab.go.id" class="btn btn-outline-light text-dark w-100">
+						<a href="http://silka.balangankab.go.id" class="btn btn-outline-light text-dark w-100">
 							<i class="fas fa-link"></i> <br>
 							SILKa Online
 						</a>
 					</div>
 					<div class="col-6">
-						<a href="//eprilaku.balangankab.go.id" class="btn btn-outline-light text-dark w-100">
+						<a href="http://eprilaku.balangankab.go.id" class="btn btn-outline-light text-dark w-100">
 							<i class="fas fa-link"></i> <br>
 							E-Prilaku
 						</a>
