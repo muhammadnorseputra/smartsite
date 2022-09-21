@@ -12,7 +12,7 @@
         </div>
     </div>
 </div>
-<div class="list-group border-0 shadow-sm p-0 mb-3 mt--5 rounded controler-ticker">
+<div class="list-group border-0 shadow-sm p-0 mb-5 mt--5 rounded controler-ticker">
     <div>
     <?php
     $nolist = 1;

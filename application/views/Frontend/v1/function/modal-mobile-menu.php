@@ -3,7 +3,33 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content border-0 shadow-none bg-white">
 			<div class="modal-body">
-				<div class="text-light text-left font-weight-bold">Navigation Menus</div>
+				<div class="text-light text-left font-weight-bold">Menu Utama</div>
+				<div class="row">
+					<div class="col-6">
+						<a href="//ekinerja.balangankab.go.id" class="btn btn-outline-light text-dark w-100">
+							<i class="fas fa-link"></i> <br>
+							E-Kinerja
+						</a>
+					</div>
+					<div class="col-6 mb-2">
+						<a href="//silka.balangankab.go.id" class="btn btn-outline-light text-dark w-100">
+							<i class="fas fa-link"></i> <br>
+							SILKa Online
+						</a>
+					</div>
+					<div class="col-6">
+						<a href="//eprilaku.balangankab.go.id" class="btn btn-outline-light text-dark w-100">
+							<i class="fas fa-link"></i> <br>
+							E-Prilaku
+						</a>
+					</div>
+					<div class="col-6">
+						<a href="<?= base_url('widget-gpr-bkppdblg') ?>" class="btn btn-outline-light text-dark w-100">
+							<i class="fas fa-link"></i> <br>
+							GPR Public
+						</a>
+					</div>
+				</div>
 				<!-- Body -->
 				<div id="accordionParent" class="accordion">
 					<?php

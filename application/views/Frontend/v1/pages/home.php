@@ -124,7 +124,6 @@
  -->
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
-                <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="main-content">

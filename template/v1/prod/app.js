@@ -31,7 +31,7 @@ $(function () {
                 <span class="content-placeholder rounded-circle float-left mr-3" style="width:40px; height: 40px;">&nbsp;</span>
                 <span class="content-placeholder rounded-lg float-left"
                 style ="width:40%; height: 40px; border-radius: 15px;"> &nbsp; </span>
-                  <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
+                 <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
                 style ="width:40px; height: 40px;"> &nbsp; </span>
                 </p> 
                 </div> 
@@ -1056,18 +1056,18 @@ $(document).ready(function () {
         centerPadding: '40px'
       }
     }]
-  });
-  $('.album-slick').slick({
-    autoplay: true,
-    infinite: true,
-    dots: false,
-    autoplaySpeed: 2000,
-    fade: true,
-    cssEase: 'linear',
-    arrows: false,
-    pauseOnHover: false,
-    adaptiveHeight: true
-  }); // Custom carousel nav
+  }); // $('.album-slick').slick({
+  //     autoplay: true,
+  //     infinite: true,
+  //     dots: false,
+  //     autoplaySpeed: 2000,
+  //     fade: true,
+  //     cssEase: 'linear',
+  //     arrows: false,
+  //     pauseOnHover: false,
+  //     adaptiveHeight: true
+  // });
+  // Custom carousel nav
 
   $('.app-prev').click(function () {
     $(this).parent().find('.app-slick').slick('slickPrev');
@@ -1096,6 +1096,8 @@ $(document).ready(function () {
     stickTo: $('#main-content'),
     // innerSticker: '#stickMe',
     top: 70,
+    // bottom: 270,
+    // bottomEnd: 80,
     // followScroll: true,
     // mobileFirst: false,
     responsive: {
