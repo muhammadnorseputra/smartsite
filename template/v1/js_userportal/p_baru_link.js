@@ -37,7 +37,7 @@ function preview_link(url) {
 	// }, 'json');
 	$.ajax({
 		url: `${_uri}/frontend/v1/post/preview_url_link`,
-		method: 'post',
+		method: 'get',
 		beforeSend: function() {
 			$("#preview").html(`
 				<div class ="content-placeholder" style="width:100%; height: 200px; border-radius:10px;margin-bottom:10px"> &nbsp; </div>
