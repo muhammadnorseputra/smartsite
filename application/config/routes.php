@@ -112,7 +112,7 @@ $route['cek-token/(:any)'] = 'frontend/v1/users/cek_token/$1';
 $route['reset-pass/(:any)/(:any)'] = 'frontend/v1/users/reset_pass/$1/$2';
 
 // Lainnya
-$route['testing'] = 'frontend/v1/beranda/testing';
+$route['testing/(:any)'] = 'frontend/v1/beranda/testing/$1';
 $route['d/(:any)/(:any)'] = 'frontend/v1/download/d/$1/$2';
 $route['leave'] = 'frontend/v1/api/leave';
 $route['go/(:any)'] = 'frontend/v1/download/openurl/$1';
