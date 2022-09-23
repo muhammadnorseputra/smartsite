@@ -21,10 +21,12 @@ class Beranda extends CI_Controller
         //     redirect(base_url('frontend/v1/users/login'),'refresh');
         // }
     }
-    public function testing() {
-        $url = base_url('beranda?id=123&media=id');
-        $parse = parse_url($url, PHP_URL_SCHEME);
-        var_dump(parse_str($_SERVER['QUERY_STRING'], $_GET));
+    public function testing($url) {
+        // $url = base_url('beranda?id=123&media=id');
+        // $parse = parse_url($url, PHP_URL_SCHEME);
+        // var_dump(parse_str($_SERVER['QUERY_STRING'], $_GET));
+        $data = getSiteOG($url);
+        echo json_encode($data);
     }
     public function index()
     {
