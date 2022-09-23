@@ -1,9 +1,9 @@
-<section class="mt-md-5">
-	<div class="container shadow-sm py-3 pt-md-0">
+<section>
+	<div class="container bg-white shadow-sm py-3 pt-md-0">
 		<?= form_open(base_url('frontend/v1/post/update_post_link/1'), ['id' => 'f_post'], ['id_berita' => $post->id_berita]) ?>
 		<div id="title" class="sr-only"><?= $post->judul ?></div>
 		<div class="row">
-			<div class="col-md-8 mt-md-5">
+			<div class="col-md-8 mt-md-2">
 				<div class="btn-group mr-2 mt-md-0 mt-3" role="group" aria-label="button">
 				    <button type="button" class="btn btn-dark" disabled>Kategori</button>
 				    <button type="button" class="btn btn-default">#<?= $this->postlist->get_namakategori($post->fid_kategori) ?></button>
