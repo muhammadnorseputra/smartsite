@@ -57,7 +57,7 @@ function preview_link(url) {
 				<div class="p-3">
 				<p class="text-primary">${domain.hostname}</p>
 				<b>${response.title}</b>
-				<p class="mt-3 small text-muted">${response.description.substr(0,90)}</p>
+				<p class="mt-3 small text-muted">${response.description}</p>
 				</div>
 			</div>
 			`);
