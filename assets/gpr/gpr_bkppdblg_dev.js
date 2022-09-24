@@ -81,17 +81,23 @@ function main() {
 		//JSONP API 
 		var jsonp_silka = GPR_url + 'frontend/v1/apiPublic/silka_jsonp';
     var jsonp_url = GPR_url + "frontend/v1/apiPublic/gpr";
+    var $grap_silka = localStorage.getItem("result_silka");
     $.ajax({
         url: jsonp_url, 
         dataType: 'jsonp',
         jsonpCallback: 'grp_article',
         beforeSend: function() {
-					$.get(jsonp_silka, function(response) {
-						localStorage.setItem("result_silka", JSON.stringify(response));
-					}, 'jsonp');
+        	if($grap_silka === null) {
+						$.get(jsonp_silka, function(response) {
+							localStorage.setItem("result_silka", JSON.stringify(response));
+						}, 'jsonp');
+        	}
         },
         success: function(data) {
         var $asn = JSON.parse(localStorage.getItem("result_silka"));
+        var $jml_asn = $grap_silka !== null ? $asn.jml_asn : '-';
+        var $jml_pns = $grap_silka !== null ? $asn.jml_pns : '-';
+        var $jml_nonpns = $grap_silka !== null ? $asn.jml_nonpns : '-';
 				var myhtml='<div class="gpr_bkppdblg">';
 								myhtml+='<div class="gpr_panel_head" style="background-color:'+theme+';">';
 									myhtml+='<div class="gpr_panel_head_left">';
@@ -101,15 +107,15 @@ function main() {
 										myhtml+='<div class="gpr_panel_title">';
 											myhtml+='<div class="gpr_panel_title_main"><strong>GPR</strong> - BKPSDM BLG </div>';
 											myhtml+='<div class="gpr_panel_title_sub"><em>Government Public Relations</em></div>';
-											myhtml+='<div class="gpr_panel_title_url"><a  rel="nofollow" href="https://bkpsdm.balangankab.go.id/beranda" target="_blank">web.bkppd-balangankab.info</a></div>';
+											myhtml+='<div class="gpr_panel_title_url"><a  rel="nofollow" href="https://bkpsdm.balangankab.go.id/beranda" target="_blank">bkpsdm.balangnakab.go.id</a></div>';
 										myhtml+='</div>';
 									myhtml+='</div>';			
 								myhtml+='</div>';
-							myhtml+='<div class="gpr_panel_silka">'; 
-													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn.jml_asn+'</h3>ASN</div>';
-													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn.jml_pns+'</h3>PNS + CPNS</div>';
-													myhtml+='<div><h3 class="gpr_panel_title_silka">'+$asn.jml_nonpns+'</h3>NON PNS</div>';
-							myhtml+='</div>';
+								myhtml+='<div class="gpr_panel_silka">'; 
+														myhtml+='<div><h3 class="gpr_panel_title_silka">'+$jml_asn+'</h3>ASN</div>';
+														myhtml+='<div><h3 class="gpr_panel_title_silka">'+$jml_pns+'</h3>PNS + CPNS</div>';
+														myhtml+='<div><h3 class="gpr_panel_title_silka">'+$jml_nonpns+'</h3>NON PNS</div>';
+								myhtml+='</div>';
 							myhtml+='<ul class="gpr_list" style="max-height:'+maxHeight+'px;">';
 							var number = 1;
 							jQuery.each(data, function(k, v) {
