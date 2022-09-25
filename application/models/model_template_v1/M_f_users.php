@@ -100,12 +100,7 @@ class M_f_users extends CI_Model
 
     public function cek_login($tbl, $whr, $nohp)
     {
-        if(!empty($whr)) {
-            $this->db->where($whr);
-        } else {
-            $this->db->where($nohp);
-        }
-        return $this->db->get($tbl);
+        return $this->db->where($whr)->where($nohp)->get($tbl);
     }
 
     public function status_online($tbl, $whr, $data)
