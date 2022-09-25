@@ -105,7 +105,7 @@ class M_f_users extends CI_Model
         } else {
             $this->db->where($nohp);
         }
-        return $this->db->->get($tbl);
+        return $this->db->get($tbl);
     }
 
     public function status_online($tbl, $whr, $data)
