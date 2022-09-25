@@ -70,14 +70,14 @@
 							<?= form_open(base_url('frontend/v1/users/cek_akun'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d')), 'urlRef' => $urlRef, 'xtoken' => $this->session->csrf_token]); ?>
 							<div class="form-group">
 								<label class="mb-2" for="email">Email atau No. HP</label>
-								<input type="text" data-sanitize="trim,lower,email|number" class="form-control form-control-lg mb-2" name="email" id="email" placeholder="Email or No. HP" required="required">
+								<input type="text" data-sanitize="trim,lower" data-validation="email|number" class="form-control form-control-lg mb-2" name="email" id="email" placeholder="Email or No. HP" required="required">
 							</div>
 							<div class="form-group my-4">
 								<label class="mb-2 d-block" for="password">
 									Password
 								</label>
 								<input type="password" autocomplete="off" class="form-control form-control-lg" name="password" id="password-field" placeholder="Password"  required="required">
-								<a href="#" toggle="#password-field" class="fas fa-fw fa-eye field-icon toggle-password text-secondary"></a>
+								<a href="#" tabindex="-1" toggle="#password-field" class="fas fa-fw fa-eye field-icon toggle-password text-secondary"></a>
 							</div>
 							
 								<?php
