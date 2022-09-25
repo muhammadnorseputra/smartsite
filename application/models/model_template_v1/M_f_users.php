@@ -103,7 +103,7 @@ class M_f_users extends CI_Model
         if(!empty($whr)) {
             $this->db->where($whr);
         } else {
-            $this->db->where($nohp)
+            $this->db->where($nohp);
         }
         return $this->db->->get($tbl);
     }
