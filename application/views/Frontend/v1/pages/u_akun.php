@@ -143,12 +143,12 @@ endif;
       </div>
     </div>
     <div class="col-md-9 px-md-0 order-first order-md-last mt--7 bg-white rounded shadow-sm">
-      <div class="alert alert-warning alert-dismissible fade show mb-0 rounded-top mt-3 mt-md-0" role="alert">
+      <!-- <div class="alert alert-warning alert-dismissible fade show mb-0 rounded-top mt-3 mt-md-0" role="alert">
         <strong>For Userportal</strong>, mulai tanggal 10 juli 2021 kami akan terus mengupdate UI & UX Website
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
+      </div> -->
       <div id="containerModule">
         <?php $this->load->view('Frontend/v1/pages/u_akun_user'); ?>
       </div>

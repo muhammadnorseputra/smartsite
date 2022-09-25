@@ -98,9 +98,9 @@ class M_f_users extends CI_Model
         return $profile;
     }
 
-    public function cek_login($tbl, $whr)
+    public function cek_login($tbl, $whr, $nohp)
     {
-        return $this->db->get_where($tbl, $whr);
+        return $this->db->where($whr)->or_where('nohp', $nohp)->get($tbl);
     }
 
     public function status_online($tbl, $whr, $data)
