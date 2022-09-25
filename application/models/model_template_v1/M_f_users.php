@@ -100,7 +100,7 @@ class M_f_users extends CI_Model
 
     public function cek_login($tbl, $whr, $nohp)
     {
-        return $this->db->where($whr)->or_where('nohp', $nohp)->get($tbl);
+        return $this->db->where($whr)->or_where($nohp)->get($tbl);
     }
 
     public function status_online($tbl, $whr, $data)
