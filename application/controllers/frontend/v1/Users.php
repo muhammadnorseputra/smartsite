@@ -267,15 +267,8 @@ class Users extends CI_Controller {
 
     		$email = $this->input->post('email');
     		$pass  = $this->input->post('password');
-    		$with_nohp = array(
-					'nohp' => encrypt_url(formatting($email)),
-					'password' => "$".sha1('bkppd_balangan')."$".encrypt_url($pass),
-				);
-    		$where = array(
-					'email' => encrypt_url($email),
-					'password' => "$".sha1('bkppd_balangan')."$".encrypt_url($pass),
-				);
-			$cek = $this->users->cek_login("t_users_portal", $where, $with_nohp);
+
+			$cek = $this->users->cek_login("t_users_portal", $email, $pass);
 			if($cek->num_rows() > 0){
 				// if($this->users->getuserportalbyemail($where['email'])->row()->online === 'OFF' && empty($this->session->userdata('user_portal_log')['email'])) {
 				$q = $cek->row();
