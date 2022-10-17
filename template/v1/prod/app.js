@@ -7,7 +7,7 @@
 
 $(function () {
   // get all berita
-  var limit = 3;
+  var limit = 6;
   var start = 0;
   var action = "inactive";
   var $url = $host ? _uriSegment[2] : _uriSegment[1];
@@ -31,7 +31,7 @@ $(function () {
                 <span class="content-placeholder rounded-circle float-left mr-3" style="width:40px; height: 40px;">&nbsp;</span>
                 <span class="content-placeholder rounded-lg float-left"
                 style ="width:40%; height: 40px; border-radius: 15px;"> &nbsp; </span>
-                 <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
+                  <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
                 style ="width:40px; height: 40px;"> &nbsp; </span>
                 </p> 
                 </div> 
