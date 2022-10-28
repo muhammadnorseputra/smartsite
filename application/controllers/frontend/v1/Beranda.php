@@ -226,15 +226,15 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img style="height:245px; object-fit: cover; object-position: center; border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:245px; object-fit: cover; object-position: top; border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
                     // elseif(!empty($row->img_blob)):
                     //     $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
-                        $img = '<img style="height:245px; object-fit: cover; object-position: center;" class="w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                        $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="filter: contrast(10%); height:245px; object-fit: cover; object-position: center;border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="filter: contrast(10%); height:245px; object-fit: cover; object-position: top;border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-3x bg-dark rounded-circle"></i>
                         </div>
