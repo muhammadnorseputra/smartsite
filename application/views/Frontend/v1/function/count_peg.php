@@ -45,7 +45,7 @@ $arr = [
 <div class="col-6 col-sm-6 col-md-3 rounded-right">
     <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent rounded border-0">
         <div class="card-body text-center">
-            <i class="far pb-md-4 fa-house-user fa-3x mx-auto text-secondary rounded"></i>
+            <i class="fas pb-md-4 fa-home fa-3x mx-auto text-secondary rounded"></i>
             <h1 id="count_jml" data-from="0" data-to="<?= $arr['jml_pensiun'] ?>"
             data-speed="3000" class="font-weight-bold"><?= nominal($arr['jml_pensiun']) ?></h1>
             <b class="text-secondary small">Jumlah PNS Pensiun pada tahun <?= date('Y') ?></b>
