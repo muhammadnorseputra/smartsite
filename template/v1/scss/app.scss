@@ -622,9 +622,9 @@ button.next-arrow{
 // }
 
 .rippler-img img {
-	transition: all 1s ease;
+	transition: filter 0.8s ease;
 }
-.rippler-img:hover img {
+.rippler-img:hover > img {
 	// transform: scale(1.2) translateY(-30px);
 	filter: grayscale(50%);
 }

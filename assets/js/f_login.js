@@ -32,7 +32,7 @@
                   data: _data,
                   dataType: 'json',
                   beforeSend: function() {
-                      $('button[type="submit"]').html('<div class="d-flex justify-content-center align-items-center"><div style="width: 30px; height:30px;" class="loader_small"></div></div>');
+                      $('button[type="submit"]').prop("disabled", true).html('<div class="d-flex justify-content-center align-items-center"><div style="width: 30px; height:30px;" class="loader_small"></div></div>');
                   },
                   success: suksesLogin,
                   error: errorLogin,
@@ -61,7 +61,7 @@
           onClose: function(el) {
               if (response.valid == true) {
                   window.location.href = response.redirect;
-                  $('button[type="submit"]').html(`<i class="fas fa-lock mr-2"></i> Log In`);
+                  $('button[type="submit"]').prop("disabled", false).html(`<i class="fas fa-lock mr-2"></i> Log In`);
               }
           }
       });
@@ -78,7 +78,7 @@
               el.find(".content_inner").html("Oppss! sepertinya ada kesalaah nih, coba reload browser kamu");
           },
           onClose: function(el) {
-              $('button[type="submit"]').html(`<i class="fas fa-lock mr-2"></i> Log In`);
+              $('button[type="submit"]').prop("disabled", false).html(`<i class="fas fa-lock mr-2"></i> Log In`);
           }
       });
   }
@@ -94,7 +94,7 @@
               el.find(".content_inner").html(msg.pesan);
           },
           onClose: function(el) {
-              $('button[type="submit"]').html(`<i class="fas fa-lock mr-2"></i> Log In`);
+              $('button[type="submit"]').prop("disabled", false).html(`<i class="fas fa-lock mr-2"></i> Log In`);
               // window.location.href = msg.redirect;
           }
       });
