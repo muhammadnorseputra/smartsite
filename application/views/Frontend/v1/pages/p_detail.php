@@ -41,7 +41,7 @@ $status_bookmark = $this->mf_beranda->get_status_bookmark($this->session->userda
 $btn_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'btn-like' : '';
 $status_like = $this->mf_beranda->get_status_like($this->session->userdata('user_portal_log')['id'], $post_detail->id_berita) == true ? 'fas text-danger' : 'far';
 if(!empty($post_detail->img)):
-$img = '<img style="object-fit: cover; min-height: 320px;  max-height: 320px;" class="w-100 lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
+$img = '<img style="object-fit: cover; min-height: 350px;  max-height: 450px;" class="w-100 lazy" data-src="'.files('file_berita/'.$post_detail->img).'" data-sizes="5x" alt="'.$title.'">';
 $imgSrc = files('file_berita/'.$post_detail->img);
 $mt = 'mt-md-5';
 elseif($post_detail->type === 'YOUTUBE'):
@@ -81,12 +81,12 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 
 <section>
 
-<div class="container px-0">
+<div class="container bg-white px-0">
 	<div class="row">
 		<div class="col-md-2 order-md-first order-lg-last mt-md-3">
 			<!-- Sidebar Left -->
 		</div>
-		<div class="col-md-8 mb-md-5 pb-md-4 pb-4 rounded-none order-first order-md-last bg-white shadow-sm" id="main-content">
+		<div class="col-md-8 pb-md-4 pb-4 rounded-none order-first order-md-last bg-white" id="main-content">
 
 		<nav class="<?= $mt ?> pt-md-4" aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
 			<ol class="breadcrumb small mb-0 rounded-0">
@@ -127,7 +127,6 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 			<?= $img ?>
 			<a href="<?= $imgSrc ?>" data-lightbox="BannerAside" rel="noreferrer" class="d-none d-md-block btn btn-sm btn-warning rounded-none border-0 shadow-none"><i class="fas fa-seach mr-2"></i> Lihat Gambar Versi Original</a>
 			<?php endif; ?>
-			<div class="d-none d-md-block" style="background-image: url('<?= assets("images/bg/bg-shadow-nav.png"); ?>'); background-repeat: repeat-x; display: block; width: 100%; height:120px; position: absolute; top: 0; left: 0;">&nbsp;</div>
 		<?php endif; ?>
 
 				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-3 px-4">

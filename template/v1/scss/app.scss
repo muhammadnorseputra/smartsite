@@ -622,9 +622,9 @@ button.next-arrow{
 // }
 
 .rippler-img img {
-	transition: all 1s ease;
+	transition: filter 0.8s ease;
 }
-.rippler-img:hover img {
+.rippler-img:hover > img {
 	// transform: scale(1.2) translateY(-30px);
 	filter: grayscale(50%);
 }
@@ -1226,7 +1226,7 @@ section {
 .fs3  {font-size: 1.6vw}
 .fs4  {font-size: 1.8vw}
 .fs5  {font-size: 2vw}
-.fs6  {font-size: 2.2vw}
-.fs7  {font-size: 2.4vw}
+.fs6  {font-size: 2.2vw; font-weight: bold;}
+.fs7  {font-size: 2.4vw; font-weight: bold;}
 .fs8  {font-size: 4.6vw; font-weight: bold;}
 .fs9  {font-size: 5.6vw; font-weight: bold;}
