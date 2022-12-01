@@ -13,17 +13,17 @@
 				  <div class="input-group-prepend border-right">
 				    <label  class="input-group-text rounded-right" for="judul">Title</label>
 				  </div>
-				  <input type="text" id="judul" name="judul" value="<?= $post->judul ?>" class="form-control border-0 shadow-none text-muted" aria-label="judul">
+				  <input type="text" id="judul" name="judul" value="<?= $post->judul ?>" class="form-control border-0 shadow-none text-muted font-weight-bold" aria-label="judul">
 				</div>
 			</div>
 			<div class="col-md-3 mt-md-0 mt-2 border-left">
-				<div class="d-flex justify-content-between align-items-center">
+				<div class="d-flex justify-content-start align-items-center">
 					<span>
-						<button type="submit" class="btn btn-outline-primary"><i class="far fa-share-square mr-2"></i>Submit</button>
+						<button type="submit" class="btn btn-outline-primary mr-2"><i class="far fa-share-square mr-2"></i>Submit</button>
 					</span>
 					<span>
 						<div class="dropdown">
-						  <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						    <i class="fas fa-cogs"></i>
 						  </button>
 						  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
@@ -33,13 +33,13 @@
 						  </div>
 						</div>
 					</span>	
+					<!-- <span class="badge badge-pill badge-light p-2">#<?= $this->postlist->get_namakategori($post->fid_kategori) ?></span> -->
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12 col-md-9 py-0 px-0" id="main-content">
 				<div class="form-group mb-0">
-				<!-- 	<label for="content">Content <span class="badge badge-pill badge-light p-2">#<?= $this->postlist->get_namakategori($post->fid_kategori) ?></span></label> -->
 					<div class="col-12 py-0 px-0">
 						<textarea class="form-control" name="content" id="content" rows="3"><?= $post->content ?></textarea>
 					</div>
