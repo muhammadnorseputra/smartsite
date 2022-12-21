@@ -473,7 +473,10 @@ function Loading(isLoading) {
   }
 }
 CONTAINER.html(Loading(true));
-fetch("".concat(URL, "/api/get_grap_all")).then(function (response) {
+fetch("".concat(URL, "/api/get_grap_all"), {
+  method: 'GET',
+  mode: 'cors'
+}).then(function (response) {
   return response.json();
 }).then(function (res) {
   Loading(false);

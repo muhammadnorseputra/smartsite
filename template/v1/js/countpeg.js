@@ -28,7 +28,10 @@ function Loading(isLoading) {
 
 CONTAINER.html(Loading(true));
 
-fetch(`${URL}/api/get_grap_all`)
+fetch(`${URL}/api/get_grap_all`, {
+    method: 'GET',
+    mode: 'cors'
+  })
 .then(response => response.json())
 .then((res) => {
     Loading(false);
