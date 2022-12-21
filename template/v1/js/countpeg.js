@@ -29,8 +29,7 @@ function Loading(isLoading) {
 CONTAINER.html(Loading(true));
 
 fetch(`${URL}/api/get_grap_all`, {
-    method: 'GET',
-    mode: 'cors'
+    method: 'GET'
   })
 .then(response => response.json())
 .then((res) => {
@@ -75,6 +74,5 @@ fetch(`${URL}/api/get_grap_all`, {
     `);
 })
 .catch((error) => {
-    console.error(error);
-    Loading(false)
+    console.error(error)
 })
