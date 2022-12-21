@@ -7,7 +7,14 @@
 </div>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <?php $this->load->view('Frontend/v1/function/slider4') ?>
-<?php $this->load->view('Frontend/v1/function/count_peg_home') ?>
+<!-- Counter jumlah pegawai -->
+<section class="mt-5">
+    <div class="container">
+        <div class="row no-gutters" id="countpeg_container">
+
+        </div>
+    </div>
+</section>
 <?php $this->load->view('Frontend/v1/function/slider_banner') ?>
 <!-- <section class="bg-white py-md-5"> -->
     <!-- <img class="trinket trinket-13 d-none d-sm-block d-lg-block d-xl-block" src="<?= base_url('assets/images/bg/trinket_5.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">

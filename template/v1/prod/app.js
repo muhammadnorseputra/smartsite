@@ -11,15 +11,12 @@ $(function () {
   var start = 0;
   var action = "inactive";
   var $url = $host ? _uriSegment[2] : _uriSegment[1];
-
   if ($url == 'beranda') {
     var load_data_message = function load_data_message() {
       $("#load_data_message").html("<div class=\"card border-0 bg-transparent shadow-none mb-5\">\n                        <div class=\"card-body text-danger text-center\">\n                        <img src=\"".concat(_uri, "/template/v1/img/humaaans-3.png\" alt=\"croods\" class=\"img-fluid rounded\">\n                            <h5 class=\"card-title\">Data Tidak Ditemukan</h5>  \n                            <p class=\"font-weight-light text-secondary\"> Berita telah berakhir.</p>\n                        </div>\n                    </div>"));
     };
-
     var lazzy_loader = function lazzy_loader(limit) {
       var output = "";
-
       for (var count = 0; count < 1; count++) {
         /*output += `
             <div class="card border-0 bg-white mb-3" style="border-radius:5px;">
@@ -45,16 +42,16 @@ $(function () {
             </div>
         `;
         */
+
         // output += `<div class="d-flex justify-content-center align-items-center my-5">
         //                 <div class="loader_small" style="width:50px;height:50px;"></div>
         //             </div>`;
+
         output += "\n                \n                <div class =\"content-placeholder\" style=\"width:30%; height: 14px; border-radius:50px;\"> &nbsp; </div>\n                <br>\n                <div class =\"content-placeholder\" style=\"width:60%; height: 14px; border-radius:50px; margin-bottom: 10px\"> &nbsp; </div>\n                <div class =\"content-placeholder\" style=\"width:80%; height: 14px; border-radius:50px;\"> &nbsp; </div>\n            \n            ";
       }
-
       $("#load_data_message").html(output);
       $("button#load_more").html("<div class=\"d-flex justify-content-center align-items-center\">\n        <div class=\"loader_small\" style=\"width:20px; height: 20px;\"></div>\n      </div> ").prop('disabled', true);
     };
-
     var load_data = function load_data(limit, start) {
       $.ajax({
         url: _uri + '/frontend/v1/beranda/get_all_berita',
@@ -84,8 +81,6 @@ $(function () {
             }
             /*var hg = $(".ps-scroll:last").height() * 3;
             window.scrollBy(0, -hg);*/
-
-
             $("#load_data").append(data.html);
             $("button#load_more").html("<i class=\"fas fa-newspaper mr-2\"></i> Berita Lainnya").prop('disabled', false);
             action = "inactive";
@@ -105,12 +100,12 @@ $(function () {
                 var imageSrc = element.data('src');
                 element.attr('src', "".concat(_uri, "/assets/images/noimage.gif"));
               }
-            }); // Ripple
-
+            });
+            // Ripple
             $(".rippler").rippler({
               effectClass: 'rippler-effect'
-            }); // Tooltips
-
+            });
+            // Tooltips
             $('[data-toggle="tooltip"]').tooltip({
               delay: 150,
               offset: '0, 12px',
@@ -123,13 +118,12 @@ $(function () {
         }
       });
     };
-
     lazzy_loader(limit);
-
     if (action == "inactive") {
       action = "active";
       load_data(limit, start);
     }
+
     /*$(window).scroll(function() {
          if (
              $(window).scrollTop() + $(window).height() > $("#load_data").height() &&
@@ -142,11 +136,8 @@ $(function () {
          }
      });
      */
-
-
     $("button#load_more").on("click", function (e) {
       e.preventDefault();
-
       if ($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == "inactive") {
         action = "active";
         start = start + limit;
@@ -217,7 +208,6 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(document).on("click", "#btn-share", function () {
     var _id = $(this).attr("data-row-id");
-
     $.confirm({
       title: false,
       content: "url:" + _uri + "/frontend/v1/beranda/share_artikel/" + _id,
@@ -242,7 +232,6 @@ function like_toggle(x) {
   var dislike = parseInt(count_like) - 1;
   var id_user = $(x).attr('data-id-user');
   var id_berita = $(x).attr('data-id-berita');
-
   if (id_user != 0) {
     if (x.classList.contains('btn-like')) {
       $(x).find('i').removeClass('far').addClass('fas text-danger');
@@ -261,8 +250,8 @@ function like_toggle(x) {
             color: "#eee",
             timeout: 1000,
             width: 300
-          }); // count_like.text(like);
-
+          });
+          // count_like.text(like);
           $(x).find('span.count_like').text(like);
         }
       }, 'json');
@@ -283,8 +272,8 @@ function like_toggle(x) {
             color: "#eee",
             timeout: 1000,
             width: 300
-          }); // count_like.text(dislike);
-
+          });
+          // count_like.text(dislike);
           $(x).find('span.count_like').text(dislike);
         }
       }, 'json');
@@ -294,12 +283,10 @@ function like_toggle(x) {
     $("#noticeSigin").modal('show').modal('handleUpdate');
   }
 }
-
 function bookmark_toggle(x) {
   x.classList.toggle("btn-bookmark");
   var id_user = $(x).attr('data-id-user');
   var id_berita = $(x).attr('data-id-berita');
-
   if (id_user != 0) {
     if (x.classList.contains('btn-bookmark')) {
       $(x).find('i').removeClass('far').addClass('fas text-primary');
@@ -347,10 +334,8 @@ function bookmark_toggle(x) {
     $("#noticeSigin").modal('show').modal('handleUpdate');
   }
 }
-
 function modeBaca(x) {
   x.classList.toggle('btn-dark');
-
   if (x.classList.contains('btn-dark')) {
     Focusable.setFocus($(".card-post"), {
       fadeDuration: 700,
@@ -402,22 +387,19 @@ $(document).ready(function () {
   var $online = _uriSegment[1] == 'blog';
   var $local = _uriSegment[2] == 'blog';
   var $url = $host ? $local : $online;
-
   if ($url) {
     displayComments();
   } else {
     console.log('Komentar tidak ditampilkan dikarnakan anda belum login atau bukan halaman detail berita');
   }
-
   $(".tracking-list").html(" \n            <div class=\"d-flex justify-content-center align-items-center p-3 text-light\">\n            <h3>Memuat Komentar ...</h3>\n        </div>\n    ");
-
   function displayComments() {
     $.getJSON("".concat(_uri, "/frontend/v1/post/displayKomentar/").concat($id), function (response) {
       $(".tracking-list").html(response);
     });
-  } // Reply komentar
+  }
 
-
+  // Reply komentar
   $(document).on('click', '#btn-reply-comment', function () {
     var id_parent = $(this).attr('data-id-parent');
     var id_berita = $(this).attr('data-id-berita');
@@ -426,8 +408,9 @@ $(document).ready(function () {
     var id_comment = $(this).attr('data-id-comment');
     $(".reply_username").attr('id', "".concat(id_comment)).attr('username', "@".concat(id_user_username.trim().toLowerCase())).html("Reply <span class=\"text-info\">@".concat(id_user_username.trim().toLowerCase(), "</span> <button onclick=\"batal()\" class=\"btn btn-sm text-danger btn-default\">x</button>"));
     $(".emojionearea-editor").html("@".concat(id_user_username.trim().toLowerCase())).focus();
-  }); // Button hapus komentar
+  });
 
+  // Button hapus komentar
   $(document).on('click', '#btn-delete-comment', function () {
     var id = $(this).attr('data-id');
     $.getJSON(_uri + '/frontend/v1/post/deleteComment', {
@@ -442,8 +425,9 @@ $(document).ready(function () {
         });
       }
     });
-  }); // Form submit komentar
+  });
 
+  // Form submit komentar
   $(document).on('submit', 'form#f_komentar', function (e) {
     e.preventDefault();
     var form = $(this);
@@ -451,11 +435,10 @@ $(document).ready(function () {
     var action = form.attr('action');
     var id_berita = form.attr('class');
     var id_user_comment = $(".reply_username").attr('id');
-    var id_user_username = $(".reply_username").attr('username'); // let isi_komentar = $("textarea").val();
-
+    var id_user_username = $(".reply_username").attr('username');
+    // let isi_komentar = $("textarea").val();
     var isi_komentar = $el[0].emojioneArea.getText();
     var xssToken = form.find('input[name="xtoken"]').val();
-
     if (isi_komentar != '') {
       $.post(action, {
         id_b: id_berita,
@@ -469,7 +452,8 @@ $(document).ready(function () {
         }
       }, 'json');
     } else {
-      $(".emojionearea-editor").addClass('is-invalid').focus(); // alert('Kolom Komentar Kosong');
+      $(".emojionearea-editor").addClass('is-invalid').focus();
+      // alert('Kolom Komentar Kosong');
     }
   });
 });
@@ -479,6 +463,24 @@ function batal() {
   $(".emojionearea-editor").removeClass('is-invalid').addClass('is-valid');
   $(".reply_username").attr('id', '').html('');
 }
+"use strict";
+
+var CONTAINER = $("#countpeg_container");
+var URL = 'http://silka.balangankab.go.id';
+function Loading(isLoading) {
+  if (isLoading) {
+    return "<div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>";
+  }
+}
+CONTAINER.html(Loading(true));
+fetch("".concat(URL, "/api/get_grap_all")).then(function (response) {
+  return response.json();
+}).then(function (res) {
+  Loading(false);
+  CONTAINER.html("\n    <div class=\"col-6 col-sm-6 col-md-3 rounded-left\">\n        <div class=\"card bg-transparent border-0 rounded\">\n            <div class=\"card-body text-center\">\n                <i class=\"fas fa-users pb-md-4 rounded fa-3x text-info\"></i>\n                <h1 id=\"count_jml\" class=\"font-weight-bold\" data-speed=\"3000\">".concat(res.asn, "</h1>\n                <b class=\"text-secondary small\">Jumlah ASN Kab. Balangan</b>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-6 col-sm-6 col-md-3\">\n        <div class=\"card bg-transparent border-0 rounded\">\n            <div class=\"card-body text-center\">\n                <i class=\"fas fa-user-tie pb-md-4 fa-3x mx-auto text-success rounded\"></i>\n                <h1 id=\"count_jml\" data-speed=\"3000\" class=\"font-weight-bold\">").concat(res.pns, "</h1>\n                <b class=\"text-secondary small\">Jumlah PNS + CPNS</b>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-6 col-sm-6 col-md-3 rounded-right\">\n        <div class=\"card bg-transparent rounded border-0\">\n            <div class=\"card-body text-center\">\n                <i class=\"far pb-md-4 fa-user-circle fa-3x mx-auto text-warning rounded\"></i>\n                <h1 id=\"count_jml\" data-speed=\"3000\" class=\"font-weight-bold\">").concat(res.nonpns, "</h1>\n                <b class=\"text-secondary small\">Jumlah NON PNS (Pendataan thn. 2018)</b>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-6 col-sm-6 col-md-3 rounded-right\">\n        <div class=\"card bg-transparent rounded border-0\">\n            <div class=\"card-body text-center\">\n                <i class=\"fas pb-md-4 fa-home fa-3x mx-auto text-secondary rounded\"></i>\n                <h1 id=\"count_jml\" data-speed=\"3000\" class=\"font-weight-bold\">").concat(res.pensiun, "</h1>\n                <b class=\"text-secondary small\">Jumlah PNS Pensiun</b>\n            </div>\n        </div>\n    </div>\n    "));
+})["catch"](function (error) {
+  return console.error(error);
+});
 "use strict";
 
 $(document).ready(function () {
@@ -501,7 +503,9 @@ $(document).ready(function () {
       before: false,
       after: false
     }
-  }); // $('.headline-ticker').easyTicker({
+  });
+
+  // $('.headline-ticker').easyTicker({
   //     visible: 1,
   //     interval: 4000,
   //     direction: 'up',
@@ -579,12 +583,15 @@ $(document).ready(function () {
 // 	function readURL(input, $element) {
 // 		if (input.files && input.files[0]) {
 // 			var reader = new FileReader();
+
 // 			reader.onload = function (e) {
 // 				$($element).attr('src', e.target.result);
 // 			}
+
 // 			reader.readAsDataURL(input.files[0]); // convert to base64 string
 // 		}
 // 	}
+
 // 	$("input[name='photo_pic']").change(function () {
 // 		readURL(this, $('img.photo_pic'));
 // 	});
@@ -612,6 +619,7 @@ $(document).ready(function () {
 //         }
 //     });
 //   }
+
 // function errorLogin(error) {
 // $('#content2').notifyModal({
 //     duration : 2500,
@@ -625,6 +633,7 @@ $(document).ready(function () {
 //     onClose : function(el) {}
 // });
 // }
+
 // $.validate({
 //     form: '#form_login',
 //     lang : 'en',
@@ -680,7 +689,6 @@ $(document).ready(function () {
     });
   }
 });
-
 function showLocation(position) {
   var uri = _uri;
   var latitude = position.coords.latitude;
@@ -727,7 +735,8 @@ $(function () {
         });
       }
     }
-  }); //     var urlChannel = 'https://www.youtube.com/channel/UCFDRHqqNeuYql8O7y5sHgmw?sub_confirmation=1';
+  });
+  //     var urlChannel = 'https://www.youtube.com/channel/UCFDRHqqNeuYql8O7y5sHgmw?sub_confirmation=1';
   //     // var urlTo = `https://shrinkme.io/st?api=9168966d3b03eaf0daad63924162a46c98794cf0&url=${urlChannel}`;
   //     if (!$.cookie("shrinkme")) {
   //         window.open(urlTo, '_blank').focus();
@@ -746,40 +755,50 @@ $(function () {
 //     });
 // });
 "use strict";
-// $(document).ready(function () {
-// // Instagram
-// function nFormatter(num) {
-// 	if (num >= 1000000000) {
-// 		return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "G";
-// 	}
-// 	if (num >= 1000000) {
-// 		return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
-// 	}
-// 	if (num >= 1000) {
-// 		return (num / 1000).toFixed(1).replace(/\.0$/, "") + "K";
-// 	}
-// 	return num;
-// }
-// var instagram_user = $("a.btn-instagram").attr("data-username");
-// $.ajax({
-// 	url: "https://www.instagram.com/" + instagram_user + "/?__a=1",
-// 	type: "get",
-// 	success: function (response) {
-// 		console.log(response);
-// 		// var username = response.graphql.user.username;
-// 		// var profile_pic = response.graphql.user.profile_pic_url;
-// 		// var followers = response.graphql.user.edge_followed_by.count;
-// 		// var follow = response.graphql.user.edge_follow.count;
-// 		// $("p.instagram-biograpy").html(response.graphql.user.biography);
-// 		// $("a.btn-follow").attr("href", `https://www.instagram.com/${username}/`);
-// 		// $("p.instagram-user").html(`<b>@${username}</b>`);
-// 		// $("img.profile-pic").attr("data-src", profile_pic);
-// 		// $("span.count_ig").html(followers);
-// 		// $("span.count_ig_follow").html(follow);
-// 	},
-// });
-// });
 "use strict";
+
+$(document).ready(function () {
+  // Instagram
+  function nFormatter(num) {
+    if (num >= 1000000000) {
+      return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "G";
+    }
+    if (num >= 1000000) {
+      return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+    }
+    if (num >= 1000) {
+      return (num / 1000).toFixed(1).replace(/\.0$/, "") + "K";
+    }
+    return num;
+  }
+  // var instagram_user = $("a.btn-instagram").attr("data-username");
+  var instagram_user = 'bkpsdm.blg';
+  $.ajax({
+    url: "https://www.instagram.com/" + instagram_user + "/?__a=1",
+    type: "get",
+    headers: {
+      'Access-Control-Allow-Credentials': true,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET',
+      'Access-Control-Allow-Headers': 'application/json'
+    },
+    dataType: 'jsonp',
+    success: function success(response) {
+      console.log(response);
+      // var username = response.graphql.user.username;
+      // var profile_pic = response.graphql.user.profile_pic_url;
+      // var followers = response.graphql.user.edge_followed_by.count;
+      // var follow = response.graphql.user.edge_follow.count;
+
+      // $("p.instagram-biograpy").html(response.graphql.user.biography);
+      // $("a.btn-follow").attr("href", `https://www.instagram.com/${username}/`);
+      // $("p.instagram-user").html(`<b>@${username}</b>`);
+      // $("img.profile-pic").attr("data-src", profile_pic);
+      // $("span.count_ig").html(followers);
+      // $("span.count_ig_follow").html(follow);
+    }
+  });
+});
 "use strict";
 
 $(document).ready(function () {
@@ -815,7 +834,6 @@ lightbox.option({
 
 document.onreadystatechange = function () {
   var body = document.getElementsByTagName("BODY")[0];
-
   if (document.readyState !== "complete") {
     // document.querySelector("html").style.visibility = "hidden";
     document.querySelector(".page-slider").style.transition = "0";
@@ -825,7 +843,8 @@ document.onreadystatechange = function () {
     body.style.cursor = 'auto';
     document.querySelector(".page-slider").style.transition = "0.8s";
     document.querySelector(".page-slider").style.opacity = 0;
-    document.querySelector(".page-slider").style.visibility = "hidden"; // document.querySelector("html").style.visibility = "visible";
+    document.querySelector(".page-slider").style.visibility = "hidden";
+    // document.querySelector("html").style.visibility = "visible";
   }
 };
 "use strict";
@@ -834,8 +853,8 @@ $(function () {
   var $grid = $('.grid').masonry({
     percentPosition: true,
     transitionDuration: '0.8s'
-  }); // layout Masonry after each image loads
-
+  });
+  // layout Masonry after each image loads
   $grid.imagesLoaded().progress(function () {
     $grid.masonry();
   });
@@ -850,7 +869,6 @@ $(document).ready(function () {
     } else {
       $("button#caripost").removeClass('btn-outline-light');
       /*$("button#caripost").toggleClass('');*/
-
       $("nav#navbar").addClass('navbar-dark navbar-gradient').removeClass("bg-blur shadow");
     }
   });
@@ -895,8 +913,10 @@ $(document).ready(function () {
     effectClass: 'rippler-effect',
     effectSize: 16 // Default size (width & height)
     ,
+
     addElement: 'div' // e.g. 'svg'(feature)
     ,
+
     duration: 400
   });
 });
@@ -911,22 +931,18 @@ $(document).ready(function () {
 // }
 // Uri Segement
 var $host = window.location.origin == 'http://localhost';
-
 if ($host) {
   var _uri = "".concat(window.location.origin, "/smartsite");
-
   var _silka = "http://192.168.1.4";
 } else {
   var _silka = "http://silka.bkppd-balangankab.info";
-
   var _uri = "".concat(window.location.origin);
 }
-
 var _uriSegment = window.location.pathname.split('/');
-
 console.log('Location Origin', _uri);
-console.log(_uriSegment); // Params
+console.log(_uriSegment);
 
+// Params
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 console.log('Params', queryString);
@@ -950,17 +966,12 @@ $(function () {
   });
   $("#form_post_search").on("submit", function (e) {
     e.preventDefault();
-
     var _this = $(this);
-
     var _input = _this[0].q;
-
     var _container = $("#search-result");
-
     if (_input.value == '') {
       _container.html("<div class=\"pl-3 pl-md-0 rounded d-flex justify-content-around align-items-center\">\n\t\t            \t\t<div class=\"d-none d-md-block\">\n\t\t            \t\t\t<i class=\"fas fa-search fa-2x\"></i>\n\t\t            \t\t</div>\n\t\t            \t\t<div class=\"py-3\">\n\t\t\t\t\t\t\t\t<h2>Silahkan masukan katakunci !</h2>\n\t\t\t\t            \t<p class=\"text-muted pl-3 border-left border-warning\">\n\t\t\t\t            \t\tSilahkan masukan keywords pencarian, dengan memasukan judul atau label\n\t\t\t\t            \t</p>\n\t\t            \t\t</div>\n\t\t            \t</div>\n            ");
     }
-
     function message(x, y) {
       notif({
         msg: "<i class='fas fa-info-circle mr-2'></i> ".concat(x),
@@ -970,11 +981,9 @@ $(function () {
         color: '#fff'
       });
     }
-
     function lazzy() {
       _container.html('<div id="loader" class="mx-auto my-5"></div>');
     }
-
     if (_input.value.length > 3) {
       $.ajax({
         url: _this[0].action,
@@ -988,7 +997,6 @@ $(function () {
         timeout: 1000,
         success: function success(res) {
           _container.html(res.data);
-
           if (res.count != '0') {
             message("".concat(res.count, " data ditemukan"), 'success');
           }
@@ -999,8 +1007,8 @@ $(function () {
       });
     } else {
       message('Silahkan masukan min. 3 karakter.', 'warning');
-    } // console.log(_this[0].action);
-
+    }
+    // console.log(_this[0].action);
   });
 });
 "use strict";
@@ -1056,7 +1064,9 @@ $(document).ready(function () {
         centerPadding: '40px'
       }
     }]
-  }); // $('.album-slick').slick({
+  });
+
+  // $('.album-slick').slick({
   //     autoplay: true,
   //     infinite: true,
   //     dots: false,
@@ -1067,8 +1077,8 @@ $(document).ready(function () {
   //     pauseOnHover: false,
   //     adaptiveHeight: true
   // });
-  // Custom carousel nav
 
+  // Custom carousel nav
   $('.app-prev').click(function () {
     $(this).parent().find('.app-slick').slick('slickPrev');
   });
@@ -1088,26 +1098,25 @@ $(document).ready(function () {
     }, 300);
   });
 });
+// $(document).ready(function() {
+//     var $sticky = $('#sidebar');
+//      $sticky.hcSticky({
+//         stickTo: $('#main-content'),
+//         // innerSticker: '#stickMe',
+//         top: 70,
+//         // bottom: 270,
+//         // bottomEnd: 80,
+//         // followScroll: true,
+//         // mobileFirst: false,
+//         responsive: {
+//             980: {
+//               disable: true,
+//               stickTo: 'body'
+//             }
+//         }
+//       });
+// });
 "use strict";
-
-$(document).ready(function () {
-  var $sticky = $('#sidebar');
-  $sticky.hcSticky({
-    stickTo: $('#main-content'),
-    // innerSticker: '#stickMe',
-    top: 70,
-    // bottom: 270,
-    // bottomEnd: 80,
-    // followScroll: true,
-    // mobileFirst: false,
-    responsive: {
-      980: {
-        disable: true,
-        stickTo: 'body'
-      }
-    }
-  });
-});
 // $(document).ready(function () {
 //   $(".titleModal").titleModal({});
 // });
@@ -1127,8 +1136,9 @@ $(document).ready(function () {
     html: true,
     container: 'body'
   });
-}); // Get user details for tooltip
+});
 
+// Get user details for tooltip
 function listdetail() {
   var id = this.getAttribute('idp');
   var $url = this.getAttribute('urlpost');
@@ -1154,6 +1164,7 @@ function listdetail() {
   return tooltipText;
 }
 // $(document).ready(function() {
+
 //     $.typeahead({
 //         input: '.js-nipnama',
 //         minLength: 16,
@@ -1225,9 +1236,9 @@ $(document).ready(function () {
         $this.addClass('active');
       }
     });
-
     function preloadModule() {
-      $container.html("<div style=\"height:50vh;\" class=\"d-flex justify-content-center align-items-center\">\n                <div class=\"loader_small\" style=\"width: 50px; height: 50px;\"></div></div>"); // $container.html(`<div class="slider"><div class="line"></div> <div class="subline inc"></div> 
+      $container.html("<div style=\"height:50vh;\" class=\"d-flex justify-content-center align-items-center\">\n                <div class=\"loader_small\" style=\"width: 50px; height: 50px;\"></div></div>");
+      // $container.html(`<div class="slider"><div class="line"></div> <div class="subline inc"></div> 
       //     <div class="subline dec"></div></div>`);
     }
   });
@@ -1239,11 +1250,9 @@ $(document).ready(function () {
   function readURL(input, $element) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
-
       reader.onload = function (e) {
         $($element).attr('src', e.target.result);
       };
-
       reader.readAsDataURL(input.files[0]); // convert to base64 string
     }
   }
@@ -1253,24 +1262,22 @@ $(document).ready(function () {
   });
   $("input[name='photo_ktp']").change(function () {
     readURL(this, $('img.photo_ktp'));
-  }); // Image Upload
+  });
 
+  // Image Upload
   $(document).ready(function () {
     // Upload photo profile
     $("input[name=\"photo_pic\"]").on('change', function () {
       var name = this.files[0].name;
       var form_data = new FormData();
       var ext = name.split('.').pop().toLowerCase();
-
       if (jQuery.inArray(ext, ['jpg', 'jpeg', 'png']) == -1) {
         alert("Invalid Image File");
       }
-
       var oFReader = new FileReader();
       oFReader.readAsDataURL(this.files[0]);
       var f = this.files[0];
       var fsize = f.size || f.fileSize;
-
       if (fsize > 2000000) {
         alert("Ukuran File Gambar Terlalu Besar Maksimal 2MB");
       } else {
@@ -1292,13 +1299,12 @@ $(document).ready(function () {
           }
         });
       }
-    }); // Upload photo KTP
-
+    });
+    // Upload photo KTP
     $("input[name=\"photo_ktp\"]").on('change', function () {
       var name = this.files[0].name;
       var form_data = new FormData();
       var ext = name.split('.').pop().toLowerCase();
-
       if (jQuery.inArray(ext, ['jpg', 'jpeg', 'png']) == -1) {
         notif({
           msg: "Invalid Image File",
@@ -1306,12 +1312,10 @@ $(document).ready(function () {
           position: "center"
         });
       }
-
       var oFReader = new FileReader();
       oFReader.readAsDataURL(this.files[0]);
       var f = this.files[0];
       var fsize = f.size || f.fileSize;
-
       if (fsize > 2000000) {
         notif({
           msg: "Ukuran File Gambar Terlalu Besar Maksimal 2MB",
@@ -1336,8 +1340,9 @@ $(document).ready(function () {
           }
         });
       }
-    }); //Update profile 
+    });
 
+    //Update profile 
     $.validate({
       form: '#form_edit',
       modules: 'date, security, html5, sanitize',
@@ -1352,11 +1357,8 @@ $(document).ready(function () {
       },
       onSuccess: function onSuccess($form) {
         var _action = $form.attr('action');
-
         var _method = $form.attr('method');
-
         var _data = $form.serialize();
-
         $.ajax({
           url: _action,
           method: _method,
@@ -1370,7 +1372,6 @@ $(document).ready(function () {
             if (response.valid == true) {
               $('button#save').html('<i class="fas fa-save"></i> Simpan Perubahan').prop("disabled", false);
             }
-
             notif({
               msg: response.msg,
               type: response.type,
@@ -1393,6 +1394,7 @@ $(document).ready(function () {
         });
         return false; // Will stop the submission of the form
       },
+
       onModulesLoaded: function onModulesLoaded() {
         $('#alamat').restrictLength($('#maxlength'));
       }
@@ -1404,11 +1406,8 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(document).on("click", "a#btn-view-video", function (e) {
     e.preventDefault();
-
     var _id = $(this).attr("href");
-
     var _title = $(this).attr("title");
-
     $.confirm({
       title: _title,
       content: "url:" + _uri + "/frontend/v1/beranda/yt_view_video/" + _id,
@@ -1430,20 +1429,16 @@ $(document).ready(function () {
 function readURL(input, $element) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
-
     reader.onload = function (e) {
       $($element).attr('src', e.target.result);
     };
-
     reader.readAsDataURL(input.files[0]); // convert to base64 string
   }
 }
 
 renderHtmlFromUrl();
-
 function renderHtmlFromUrl() {
   var $url = $("#snippet-link").attr('data-url');
-
   if ($url != '') {
     var $template_container = $("#snippet-link");
     var $template = "<div id=\"snippet-link\" data-url=\"".concat($url, "\"></div>");
