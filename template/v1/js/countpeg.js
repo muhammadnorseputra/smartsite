@@ -74,4 +74,7 @@ fetch(`${URL}/api/get_grap_all`, {
     </div>
     `);
 })
-.catch(error => console.error(error))
+.catch((error) => {
+    console.error(error);
+    Loading(false)
+})
