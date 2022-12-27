@@ -475,7 +475,7 @@ function Loading(isLoading) {
 CONTAINER.html(Loading(true));
 $.getJSON("".concat(URL, "/services/statistik?apiKey=bkpsdm6811&callback=?"), {
   format: 'jsonp',
-  ssl: false
+  crossDomain: true
 }).done(function (res) {
   // data is the JSON response from the server
   Loading(false);
