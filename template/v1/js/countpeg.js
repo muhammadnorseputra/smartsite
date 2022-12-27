@@ -28,48 +28,55 @@ function Loading(isLoading) {
 
 CONTAINER.html(Loading(true));
 
-$.getJSON(`${URL}/services/statistik?apiKey=bkpsdm6811&callback=?`, function(res) {
-  // data is the JSON response from the server
-  Loading(false);
-    CONTAINER.html(`
-    <div class="col-6 col-sm-6 col-md-3 rounded-left">
-        <div class="card bg-transparent border-0 rounded">
-            <div class="card-body text-center">
-                <i class="fas fa-users pb-md-4 rounded fa-3x text-info"></i>
-                <h1 id="count_jml" class="font-weight-bold" data-speed="3000">${res.asn}</h1>
-                <b class="text-secondary small">Jumlah ASN Kab. Balangan</b>
-            </div>
-        </div>
-    </div>
-    <div class="col-6 col-sm-6 col-md-3">
-        <div class="card bg-transparent border-0 rounded">
-            <div class="card-body text-center">
-                <i class="fas fa-user-tie pb-md-4 fa-3x mx-auto text-success rounded"></i>
-                <h1 id="count_jml" data-speed="3000" class="font-weight-bold">${res.pns}</h1>
-                <b class="text-secondary small">Jumlah PNS + CPNS</b>
-            </div>
-        </div>
-    </div>
-    <div class="col-6 col-sm-6 col-md-3 rounded-right">
-        <div class="card bg-transparent rounded border-0">
-            <div class="card-body text-center">
-                <i class="far pb-md-4 fa-user-circle fa-3x mx-auto text-warning rounded"></i>
-                <h1 id="count_jml" data-speed="3000" class="font-weight-bold">${res.nonpns}</h1>
-                <b class="text-secondary small">Jumlah NON PNS (Pendataan thn. 2018)</b>
-            </div>
-        </div>
-    </div>
-    <div class="col-6 col-sm-6 col-md-3 rounded-right">
-        <div class="card bg-transparent rounded border-0">
-            <div class="card-body text-center">
-                <i class="fas pb-md-4 fa-home fa-3x mx-auto text-secondary rounded"></i>
-                <h1 id="count_jml" data-speed="3000" class="font-weight-bold">${res.pensiun}</h1>
-                <b class="text-secondary small">Jumlah PNS Pensiun</b>
-            </div>
-        </div>
-    </div>
-    `);
-});
+$.getJSON(`${URL}/services/statistik?apiKey=bkpsdm6811&callback=?`, {
+    format: 'jsonp',
+    ssl: false
+}).done(function(res) {
+    // data is the JSON response from the server
+    Loading(false);
+      CONTAINER.html(`
+      <div class="col-6 col-sm-6 col-md-3 rounded-left">
+          <div class="card bg-transparent border-0 rounded">
+              <div class="card-body text-center">
+                  <i class="fas fa-users pb-md-4 rounded fa-3x text-info"></i>
+                  <h1 id="count_jml" class="font-weight-bold" data-speed="3000">${res.asn}</h1>
+                  <b class="text-secondary small">Jumlah ASN Kab. Balangan</b>
+              </div>
+          </div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-3">
+          <div class="card bg-transparent border-0 rounded">
+              <div class="card-body text-center">
+                  <i class="fas fa-user-tie pb-md-4 fa-3x mx-auto text-success rounded"></i>
+                  <h1 id="count_jml" data-speed="3000" class="font-weight-bold">${res.pns}</h1>
+                  <b class="text-secondary small">Jumlah PNS + CPNS</b>
+              </div>
+          </div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-3 rounded-right">
+          <div class="card bg-transparent rounded border-0">
+              <div class="card-body text-center">
+                  <i class="far pb-md-4 fa-user-circle fa-3x mx-auto text-warning rounded"></i>
+                  <h1 id="count_jml" data-speed="3000" class="font-weight-bold">${res.nonpns}</h1>
+                  <b class="text-secondary small">Jumlah NON PNS (Pendataan thn. 2018)</b>
+              </div>
+          </div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-3 rounded-right">
+          <div class="card bg-transparent rounded border-0">
+              <div class="card-body text-center">
+                  <i class="fas pb-md-4 fa-home fa-3x mx-auto text-secondary rounded"></i>
+                  <h1 id="count_jml" data-speed="3000" class="font-weight-bold">${res.pensiun}</h1>
+                  <b class="text-secondary small">Jumlah PNS Pensiun</b>
+              </div>
+          </div>
+      </div>
+      `);
+  }).fail(function( jqxhr, textStatus, error ) {
+        var err = textStatus + ", " + error;
+        console.log( "Request Failed: " + err );
+        Loading(false);
+    });
 
 // fetch(`${URL}/services/statistik?apiKey=bkpsdm6811`, {
 //     method: 'GET',
