@@ -484,6 +484,7 @@ $.getJSON("".concat(URL, "/services/statistik?apiKey=bkpsdm6811&callback=?"), {
   var err = textStatus + ", " + error;
   console.log("Request Failed: " + err);
   Loading(false);
+  CONTAINER.html('');
 });
 
 // fetch(`${URL}/services/statistik?apiKey=bkpsdm6811`, {
