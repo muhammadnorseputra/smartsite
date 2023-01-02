@@ -1,5 +1,5 @@
 const CONTAINER = $("#countpeg_container");
-const URL = 'http://36.91.72.99'
+const URL = 'http://silka.balangankab.go.id'
 
 function Loading(isLoading) {
     if(isLoading) {
