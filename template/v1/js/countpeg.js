@@ -28,9 +28,8 @@ function Loading(isLoading) {
 
 CONTAINER.html(Loading(true));
 
-$.getJSON(`${URL}/services/statistik?apiKey=bkpsdm6811&callback=?`, {
-    format: 'jsonp',
-    crossDomain:true
+$.post(`${URL}/services/statistik?callback=?`, {
+    apiKey: 'bkpsdm6811'
 }).done(function(res) {
     // data is the JSON response from the server
     Loading(false);
@@ -72,7 +71,7 @@ $.getJSON(`${URL}/services/statistik?apiKey=bkpsdm6811&callback=?`, {
           </div>
       </div>
       `);
-  }).fail(function( jqxhr, textStatus, error ) {
+  }, 'jsonp').fail(function( jqxhr, textStatus, error ) {
         var err = textStatus + ", " + error;
         console.log( "Request Failed: " + err );
         Loading(false);
