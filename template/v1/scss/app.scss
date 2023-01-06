@@ -375,13 +375,11 @@ h5.title-sidebar {
 	font-family: 'Poppins', sans-serif;
 	font-size: 15.5px;
 	font-weight: 500;
-	border-radius: 0px !important;
+	border-radius: 6px !important;
 	padding-top: .8rem .2rem;
-	border-bottom: 3px solid transparent;
 }
 .navbar li.nav-item a:hover {
 	color: #333 !important;
-	border-bottom-color: #4cbb87;
 }
 .dropdown-item:hover, .dropdown-item:focus {
 	background: #4cbb87 !important;

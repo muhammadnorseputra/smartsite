@@ -6,7 +6,6 @@
   </button>
 </div>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
-<?php $this->load->view('Frontend/v1/function/slider4') ?>
 <!-- Counter jumlah pegawai -->
 <?php $this->load->view('Frontend/v1/function/count_peg_home') ?>
 <!-- Slider -->
