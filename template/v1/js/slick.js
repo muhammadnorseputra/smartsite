@@ -32,6 +32,7 @@ $(document).ready(function() {
         centerMode: false,
         centerPadding: '10px',
         focusOnSelect: false,
+        lazyLoad: 'ondemand',
         // fade: false,
         // cssEase: 'linear',
         arrows: true,

@@ -81,12 +81,12 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 
 <section>
 
-<div class="container bg-white px-0">
+<div class="container px-0">
 	<div class="row">
 		<div class="col-md-2 order-md-first order-lg-last mt-md-3">
 			<!-- Sidebar Left -->
 		</div>
-		<div class="col-md-8 pb-md-4 pb-4 rounded-none order-first order-md-last bg-white" id="main-content">
+		<div class="col-md-8 pb-md-4 pb-4 rounded-none order-first order-md-last bg-white shadow-sm" id="main-content">
 
 		<nav class="<?= $mt ?> pt-md-4" aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
 			<ol class="breadcrumb small mb-0 rounded-0">

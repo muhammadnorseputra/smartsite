@@ -6,8 +6,6 @@
   </button>
 </div>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
-<!-- Counter jumlah pegawai -->
-<?php $this->load->view('Frontend/v1/function/count_peg_home') ?>
 <!-- Slider -->
 <?php $this->load->view('Frontend/v1/function/slider_banner') ?>
 <!-- <section class="bg-white py-md-5"> -->
@@ -140,7 +138,7 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap">
+                <div class="mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap bg-white p-2 border rounded">
                     <?php
                     $sort = $this->input->get('sort');
                     $type = $this->input->get('type');

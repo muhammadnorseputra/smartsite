@@ -56,7 +56,7 @@ $(function() {
 
             output += `
                 
-                <div class ="content-placeholder" style="width:30%; height: 14px; border-radius:50px;"> &nbsp; </div>
+                <div class ="content-placeholder" style="width:30%; height: 14px; border-radius:50px; margin-top: 10px"> &nbsp; </div>
                 <br>
                 <div class ="content-placeholder" style="width:60%; height: 14px; border-radius:50px; margin-bottom: 10px"> &nbsp; </div>
                 <div class ="content-placeholder" style="width:80%; height: 14px; border-radius:50px;"> &nbsp; </div>
@@ -64,9 +64,7 @@ $(function() {
             `;
             }
             $("#load_data_message").html(output);
-            $("button#load_more").html(`<div class="d-flex justify-content-center align-items-center">
-        <div class="loader_small" style="width:20px; height: 20px;"></div>
-      </div> `).prop('disabled', true);
+            $("button#load_more").hide().prop('disabled', true);
         }
 
         lazzy_loader(limit);
@@ -99,7 +97,7 @@ $(function() {
                         /*var hg = $(".ps-scroll:last").height() * 3;
                         window.scrollBy(0, -hg);*/
                         $("#load_data").append(data.html);
-                        $("button#load_more").html(`<i class="fas fa-newspaper mr-2"></i> Berita Lainnya`).prop('disabled', false);
+                        $("button#load_more").show().prop('disabled', false);
                         action = "inactive";
 
                         $(".lazy").lazy({

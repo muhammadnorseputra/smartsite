@@ -301,8 +301,8 @@ class Beranda extends CI_Controller
 
                 $output .= '
                 
-				<div class="card border-top border-right border-left rounded-0">
-					<div class="card-body bg-white px-2 py-1 d-flex justify-content-start align-items-center">
+				<div class="card border-top border-right border-left mb-3" style="border-radius: 10px;">
+					<div class="card-body bg-white px-2 py-1 d-flex justify-content-start align-items-center"  style="border-top-left-radius: 10px;border-top-right-radius: 10px">
                         <div>
                         <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-1 ml-md-3 lazy p-2 bg-white">
                         </div>
