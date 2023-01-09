@@ -1,6 +1,6 @@
 $(function() {
     // get all berita
-    var limit = 8;
+    var limit = 3;
     var start = 0;
     var action = "inactive";
     let $url = $host ? _uriSegment[2] : _uriSegment[1];
@@ -18,7 +18,6 @@ $(function() {
                         </div>
                     </div>`
             );
-
         }
 
         function lazzy_loader(limit) {
@@ -56,10 +55,10 @@ $(function() {
 
             output += `
                 
-                <div class ="content-placeholder" style="width:30%; height: 14px; border-radius:50px; margin-top: 10px"> &nbsp; </div>
+                <div class ="content-placeholder" style="width:30%; height: 15px; border-radius:50px; margin-top: 10px"> &nbsp; </div>
                 <br>
-                <div class ="content-placeholder" style="width:60%; height: 14px; border-radius:50px; margin-bottom: 10px"> &nbsp; </div>
-                <div class ="content-placeholder" style="width:80%; height: 14px; border-radius:50px;"> &nbsp; </div>
+                <div class ="content-placeholder" style="width:60%; height: 15px; border-radius:50px; margin-bottom: 10px"> &nbsp; </div>
+                <div class ="content-placeholder" style="width:80%; height: 15px; border-radius:50px;"> &nbsp; </div>
             
             `;
             }

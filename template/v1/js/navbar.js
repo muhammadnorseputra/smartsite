@@ -1,14 +1,14 @@
-// $(document).ready(function() {    
-    // $(document).scroll(function() {
-    //     if ($(document).scrollTop() > 80) {
-    //         $("nav#navbar").css("transition", ".3s ease-in-out").addClass("shadow-sm");
-    //         $("button#caripost").addClass('btn-outline-light');
-    //     } else {
-    //         $("button#caripost").removeClass('btn-outline-light');
-    //         /*$("button#caripost").toggleClass('');*/
-    //         $("nav#navbar").removeClass("shadow-sm");
-    //     }
-    // });
+$(document).ready(function() {    
+    $(document).scroll(function() {
+        if ($(document).scrollTop() > 120) {
+            $("nav#navbar").css("transition", ".3s ease-in-out").addClass("fixed-top").slideDown();
+            $("button#caripost").addClass('btn-outline-light');
+        } else {
+            $("button#caripost").removeClass('btn-outline-light');
+            /*$("button#caripost").toggleClass('');*/
+            $("nav#navbar").removeClass("fixed-top");
+        }
+    });
     
     // var prevScrollpos = window.pageYOffset;
     // window.onscroll = function() {
@@ -22,4 +22,4 @@
     
     // }
     
-// });
+});
