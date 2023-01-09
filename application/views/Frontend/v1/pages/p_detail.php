@@ -83,12 +83,12 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 
 <div class="container px-0">
 	<div class="row">
-		<div class="col-md-2 order-md-first order-lg-last mt-md-3">
+		<div class="col-md-2 order-md-first order-lg-last">
 			<!-- Sidebar Left -->
 		</div>
 		<div class="col-md-8 pb-md-4 pb-4 rounded-none order-first order-md-last bg-white shadow-sm" id="main-content">
 
-		<nav class="<?= $mt ?> pt-md-4" aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
+		<nav aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
 			<ol class="breadcrumb small mb-0 rounded-0">
 				<li class="breadcrumb-item"><a href="<?= base_url("beranda") ?>">Home</a></li>
 				<li class="breadcrumb-item active d-inline-block text-truncate" style="max-width: 250px;" aria-current="page"><?= $post_detail->judul ?></li>

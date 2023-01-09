@@ -1,16 +1,18 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
-<div class="alert alert-warning alert-dismissible fade show rounded-0 border-0 mb-0" role="alert" style="
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    gap: 5px;
-">
-  <strong>Halo Pengunjung, </strong> Mari bantu kami untuk meningkatkan pelayanan <a href="//bkpsdm-skm.balangankab.go.id/survei?card=bkpsdm_balangan" class="btn btn-sm btn-warning">Isi Survei Sekarang</a>
+<div class="alert alert-warning alert-dismissible fade show rounded-0 border-0 mb-0 d-md-none d-lg-none" role="alert">
+  <strong>Halo Pengunjung, </strong> Mari bantu kami untuk meningkatkan pelayanan <a href="//www.bkpsdm-skm.balangankab.go.id/survei?card=bkpsdm_balangan" class="btn btn-sm btn-warning">Isi Survei Sekarang</a>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
+<div class="bg-primary text-white rounded-xl border p-2">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center pl-3">
+            <div><b>Helo Pengunjung</b>, Selamat Datang Di Website Resmi Badan Kepegawaian dan Pengembangan Sumber Daya Manusia.</div>
+        </div>
+    </div>
+</div>
 <!-- Slider -->
 <?php $this->load->view('Frontend/v1/function/slider_banner') ?>
 <!-- <section class="bg-white py-md-5"> -->

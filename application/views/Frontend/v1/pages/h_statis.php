@@ -1,4 +1,4 @@
-<section class="pt-md-5">
+<section>
   <div class="container">
     <div class="row">
       <div class="col-md-12 pt-md-1 mt-md-1 text-left pb-5 pb-md-1">
