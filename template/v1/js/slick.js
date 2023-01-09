@@ -29,6 +29,7 @@ $(document).ready(function() {
         slidesToShow: 4,
         slidesToScroll: 1,
         zIndex: 10,
+        speed: 500,
         centerMode: false,
         centerPadding: '80px',
         focusOnSelect: false,
