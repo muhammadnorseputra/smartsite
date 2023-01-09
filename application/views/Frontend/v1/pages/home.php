@@ -138,7 +138,7 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap bg-white p-2 border rounded">
+                <div class="mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap">
                     <?php
                     $sort = $this->input->get('sort');
                     $type = $this->input->get('type');

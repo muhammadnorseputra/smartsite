@@ -921,32 +921,32 @@ $(function () {
     $grid.masonry();
   });
 });
+// $(document).ready(function() {    
+// $(document).scroll(function() {
+//     if ($(document).scrollTop() > 80) {
+//         $("nav#navbar").css("transition", ".3s ease-in-out").addClass("shadow-sm");
+//         $("button#caripost").addClass('btn-outline-light');
+//     } else {
+//         $("button#caripost").removeClass('btn-outline-light');
+//         /*$("button#caripost").toggleClass('');*/
+//         $("nav#navbar").removeClass("shadow-sm");
+//     }
+// });
+
+// var prevScrollpos = window.pageYOffset;
+// window.onscroll = function() {
+//     var currentScrollPos = window.pageYOffset;
+//     if (prevScrollpos > currentScrollPos) {
+//         document.getElementById("navbar").style.top = "0";
+//     } else {
+//         document.getElementById("navbar").style.top = "-80px";
+//     }
+//     prevScrollpos = currentScrollPos;
+
+// }
+
+// });
 "use strict";
-
-$(document).ready(function () {
-  $(document).scroll(function () {
-    if ($(document).scrollTop() > 80) {
-      $("nav#navbar").css("transition", ".3s ease-in-out").addClass("shadow-sm");
-      $("button#caripost").addClass('btn-outline-light');
-    } else {
-      $("button#caripost").removeClass('btn-outline-light');
-      /*$("button#caripost").toggleClass('');*/
-      $("nav#navbar").removeClass("shadow-sm");
-    }
-  });
-
-  // var prevScrollpos = window.pageYOffset;
-  // window.onscroll = function() {
-  //     var currentScrollPos = window.pageYOffset;
-  //     if (prevScrollpos > currentScrollPos) {
-  //         document.getElementById("navbar").style.top = "0";
-  //     } else {
-  //         document.getElementById("navbar").style.top = "-80px";
-  //     }
-  //     prevScrollpos = currentScrollPos;
-
-  // }
-});
 // $(function() {
 // 	window.paceOptions = {
 // 	  ajax: false, // disabled
@@ -1100,12 +1100,12 @@ $(document).ready(function () {
   $('.grafis-app-slick').slick({
     autoplay: true,
     infinite: true,
-    dots: true,
+    dots: false,
     autoplaySpeed: 8000,
     slidesToShow: 4,
     slidesToScroll: 1,
     zIndex: 10,
-    centerMode: false,
+    centerMode: true,
     centerPadding: '10px',
     focusOnSelect: false,
     lazyLoad: 'ondemand',

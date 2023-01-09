@@ -1,4 +1,4 @@
-<section class="mt-5 pt-5">
+<section class="mt-3 mt-md-5 pt-md-5">
 <div class="container">
 <div class="row no-gutters">        
 <?php  
