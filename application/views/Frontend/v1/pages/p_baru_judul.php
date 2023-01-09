@@ -1,5 +1,5 @@
-<section class="my-md-5 my-2">
-	<div class="container">
+<section>
+	<div class="container my-5">
 		<div class="row no-gutters">
 			<div class="col-md-4 d-none d-md-block">
 				<div class="d-flex justify-content-center align-items-center h-100">
@@ -8,7 +8,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-8 mt-md-5">
+			<div class="col-md-8">
 				<?= form_open(base_url('frontend/v1/post/baru_detail'), ['autocomplete' => 'off', 'class' => ' form_horizontal', 'id' => 'f_buatjudul']) ?>
 				<div class="card bg-white border-0">
 					<div class="card-header rounded border-0 shadow-sm d-flex justify-content-between">
