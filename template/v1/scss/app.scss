@@ -593,18 +593,17 @@ h5.title-sidebar {
 	height: 100%;
 	transition: all linear .4s;
 }
-
-.slick-arrow{
+.slide-arrow {
   position: absolute;
   top: 50%;
   margin-top: -35px;
   z-index: 999;
 }
 button.prev-arrow{
-  left: 15px;
+  left: 18px;
 }
 button.next-arrow{
-  right: 15px;
+  right: 18px;
  }
 
 /* Warna Gradient */

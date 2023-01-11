@@ -86,7 +86,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 		<div class="col-md-2 order-md-first order-lg-last">
 			<!-- Sidebar Left -->
 		</div>
-		<div class="col-md-8 pb-md-4 pb-4 rounded-none order-first order-md-last bg-white shadow-sm" id="main-content">
+		<div class="col-md-8 pb-md-4 pb-4 rounded-none order-first order-md-last bg-white border-right border-left pr-0 pl-0" id="main-content">
 
 		<nav aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
 			<ol class="breadcrumb small mb-0 rounded-0">
@@ -125,11 +125,11 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 		<?php else: ?>
 			<?php if($post_detail->type !== 'YOUTUBE'): ?>
 			<?= $img ?>
-			<a href="<?= $imgSrc ?>" data-lightbox="BannerAside" rel="noreferrer" class="d-none d-md-block btn btn-sm btn-warning rounded-none border-0 shadow-none"><i class="fas fa-seach mr-2"></i> Lihat Gambar Versi Original</a>
+			<a href="<?= $imgSrc ?>" data-lightbox="BannerAside" rel="noreferrer" class="d-none d-md-block btn btn-sm btn-info rounded-0 border-0 shadow-none"><i class="fas fa-seach mr-2"></i> Lihat Gambar Versi Original</a>
 			<?php endif; ?>
 		<?php endif; ?>
 
-				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-3 px-4">
+				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-3 px-4 px-md-5">
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1 class="fs6 d-none d-md-block d-lg-block"><?php echo $post_detail->judul; ?></h1>
 					<h1 class="fs9 d-md-none d-block"><?php echo $post_detail->judul; ?></h1>
@@ -186,7 +186,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 				</div>
 			</div>
 			<div>
-				<div class="py-1 my-3 bg-light rounded"></div>
+				<div class="py-1 my-3 bg-light"></div>
 				<div class="row">
 					<?php
 					$no=1;
@@ -205,9 +205,9 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 
 					if($no == 1):
 						$textAlign = 'text-left';
-						$pageNote = 'Prev';
+						$pageNote = 'Sebelumnya';
 					else:
-						$pageNote = 'Next';
+						$pageNote = 'Selanjutnya';
 						$textAlign = 'text-right';
 					endif;
 					?>
@@ -216,14 +216,14 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 						<a href="<?= $posturl ?>" class="text-link">
 							<div class="d-flex align-items-center <?= $textAlign ?>">
 								<?php if($no == 1): ?>
-									<i class="fas fa-chevron-left text-muted mr-2"></i>	
+									<i class="fas fa-chevron-left text-muted mr-2 ml-3"></i>	
 								<?php endif ?>
 								<h6 class="my-2 px-3">
 									<div class="font-weight-bold text-light"><?= $pageNote ?></div>
 									<?= word_limiter($b->judul, 8); ?>
 								</h6>
 								<?php if($no == 2): ?>
-									<i class="fas fa-chevron-right text-muted ml-2"></i>
+									<i class="fas fa-chevron-right text-muted ml-2 mr-3"></i>
 								<?php endif ?>
 							</div>	
 						</a>
@@ -233,7 +233,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 				</div>
 			</div>
 			<?php if($post_detail->komentar_status == 0): ?>
-			<div class="card my-4 border border-light bg-white">
+			<div class="card my-4 border border-light bg-white mx-md-3 mx-4">
 				<div class="card-body py-0" style="max-height: 480px; overflow-y: auto;">
 					<div id="tracking" data-postid="<?= encrypt_url($postId) ?>">
 						<div class="tracking-list"></div>

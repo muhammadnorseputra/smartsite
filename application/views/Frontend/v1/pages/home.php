@@ -8,7 +8,7 @@
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
 <div class="bg-primary text-white rounded-xl border p-2 d-none d-md-block">
     <div class="container">
-        <div class="d-flex justify-content-between align-items-center pl-3">
+        <div class="d-flex justify-content-between align-items-center pl-2">
             <div><b>Helo Pengunjung</b>, Selamat Datang Di Website Resmi Badan Kepegawaian dan Pengembangan Sumber Daya Manusia.</div>
         </div>
     </div>

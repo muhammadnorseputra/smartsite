@@ -1,4 +1,4 @@
-<section class="py-5">
+<section>
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-center">
 			<div>
@@ -11,7 +11,7 @@
 	</div>
 </div>
 </section>
-<section class="mb-3 mt--8">
+<section class="mb-3">
 <div class="container">
 	<div class="row">
 		<div class="col-12" id="bannerList">
@@ -39,8 +39,8 @@
 					<div class="d-flex justify-content-lg-start align-items-center <?= $flexDir ?>">
 						<img data-src="<?= $b->path; ?>" class="lazy card-img-top">
 												<div class="ml-3">
-							<b class="title_banner">#<?php echo $b->judul; ?></b>
-							<p class="text-muted small"><?php echo word_limiter($b->keterangan, 10); ?></p>
+							<!-- <b class="title_banner">#<?php echo $b->judul; ?></b> -->
+							<!-- <p class="text-muted small"><?php echo word_limiter($b->keterangan, 10); ?></p> -->
 						</div>
 					</div>
 				</a>

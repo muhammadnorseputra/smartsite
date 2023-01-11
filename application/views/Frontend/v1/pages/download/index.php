@@ -1,15 +1,15 @@
-<section class="hero py-5">
+<section class="hero pb-5">
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-start flex-lg-row flex-column">
 			<div>
-				<h3 class="font-weight-bold text-responsive">Direktori Download</h3>
+				<h3 class="font-weight-bold text-responsive text-white">Direktori Download</h3>
 				<p class="text-muted small">Resources arsip kepegawaian</p>
 			</div>
 		</div>
 	</div>
 </div>
 </section>
-<section class="mb-md-3 mt--6">
+<section class="mb-md-3 mt--7">
 <div class="container bg-white py-4 rounded shadow-sm">
 	<div class="table-responsive">
 		<table class="table table-condensed" id="table-download">
