@@ -43,7 +43,7 @@ $(function() {
             notif({
                 msg: `<i class='fas fa-info-circle mr-2'></i> ${x}`,
                 type: y,
-                offset: -10,
+                offset: 15,
                 position: "center",
                 color: '#fff'
             });

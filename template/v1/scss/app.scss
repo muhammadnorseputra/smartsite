@@ -150,7 +150,7 @@ section.bg-hero-home {
 .slider{
   z-index: 9999;
   position:fixed;
-  height:4.5px;
+  height:3.5px;
   overflow-x: hidden;
   // ditengah layar
   // width:30%;
@@ -165,22 +165,22 @@ section.bg-hero-home {
 }
 .line{
   position:absolute;
-  opacity: 0.8;
+  opacity: 0.9;
   background:#fff;
   width:210%;
-  height:4.5px;
+  height:3.5px;
 }
 
 .subline{
   position:absolute;
-  background:orange;
-  height:4.5px; 
+  background:green;
+  height:3.5px; 
 }
 .inc{
-  animation: increase 2.8s infinite;
+  animation: increase 1.8s infinite;
 }
 .dec{
-  animation: decrease 2.8s 0.8s infinite;
+  animation: decrease 1.8s 0.8s infinite;
 }
 // .logo-loading {
 // 	position: fixed;

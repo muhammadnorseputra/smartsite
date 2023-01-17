@@ -979,7 +979,7 @@ $(function () {
       notif({
         msg: "<i class='fas fa-info-circle mr-2'></i> ".concat(x),
         type: y,
-        offset: -10,
+        offset: 15,
         position: "center",
         color: '#fff'
       });
@@ -1091,7 +1091,7 @@ $(document).ready(function () {
     e.preventDefault();
     $('body,html').animate({
       scrollTop: $(this.hash).offset().top
-    }, 600);
+    }, 1200);
   });
 });
 // $(document).ready(function() {
