@@ -15,6 +15,14 @@
 </div>
 <!-- Slider -->
 <?php $this->load->view('Frontend/v1/function/slider_banner') ?>
+<!-- Counter jumlah pegawai -->
+<section>
+    <div class="container">
+        <div class="row no-gutters border rounded" id="countpeg_container">
+
+        </div>
+    </div>
+</section>
 <!-- <section class="bg-white py-md-5"> -->
     <!-- <img class="trinket trinket-13 d-none d-sm-block d-lg-block d-xl-block" src="<?= base_url('assets/images/bg/trinket_5.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
     <img class="trinket trinket-4" src="<?= base_url('assets/images/bg/trinket_7.png') ?>" alt="Portal BKPSDM Kabupaten Balangan"> -->
@@ -127,7 +135,7 @@
                     </span>
                 </div>
                 </a>
- -->
+ -->            
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
                 </div>
