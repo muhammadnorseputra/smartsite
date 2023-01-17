@@ -14,7 +14,13 @@
     </div>
 </div>
 <!-- Slider -->
-<?php $this->load->view('Frontend/v1/function/slider_banner') ?>
+<section>
+    <div class="container AppGrafisContainer">
+        <div class="row no-gutters AppGrafis mt-3">
+
+        </div>
+    </div>
+</section>
 <!-- Counter jumlah pegawai -->
 <section>
     <div class="container">

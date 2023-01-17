@@ -1,27 +1,34 @@
 $(document).ready(function() {
-    // $('.app-slick').slick({
-    //     autoplay: true,
-    //     infinite: true,
-    //     dots: false,
-    //     autoplaySpeed: 8000,
-    //     // fade: true,
-    //     // cssEase: 'linear',
-    //     arrows: true,
-    //     zIndex: 10,
-    //     prevArrow: '<button class="slide-arrow prev-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-left"></button>',
-    //     nextArrow: '<button class="slide-arrow next-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-right"></button>',
-    //     pauseOnHover: true,
-    //     adaptiveHeight: false,
-    //     responsive: [
-    //             {
-    //               breakpoint: 480,
-    //               settings: {
-    //                 arrows: false,
-    //               }
-    //           }
-    //     ]
-    // });
-    $('.grafis-app-slick').slick({
+    $.getJSON('frontend/v1/api/slider', function(res) {
+        res.forEach(d => {
+            $('.AppGrafis').slick('slickAdd', `
+            <div class="px-3">
+                    <div class="card bg-light text-white rounded-lg mb-2">
+                        <img class="card-img" height="340" style="object-fit:cover;" alt="${d.title}" src="${d.path}">
+                        <div class="card-img-overlay d-flex flex-column justify-content-end">
+                            <div class="main-body align-self-end">
+                                <a href="${d.path}" id="xbanner-${d.uuid}" data-title="${d.title}" data-lightbox="BannerAside" style="text-shadow: 0.3px 1px white;">
+                                    <span class="badge p-2 badge-pill badge-warning">
+                                        <i class="fas fa-search mr-2"></i> Perbesar
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-center">
+                        <span class="mr-2">
+                            <img style="object-fit:cover; object-position:top;" src="${d.user}" alt="Photo Userportal" width="23" height="23" class="rounded-circle border-primary bg-white">
+                        </span>
+                        <span class="small text-secondary mt-1">
+                            ${d.user_nama}
+                        </span>
+                    </div>            
+                    ${d.title}
+            </div>
+            `);
+        });
+    })
+    $('.AppGrafis').slick({
         autoplay: true,
         infinite: true,
         dots: false,

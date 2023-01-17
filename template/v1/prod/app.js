@@ -1012,29 +1012,12 @@ $(function () {
 "use strict";
 
 $(document).ready(function () {
-  // $('.app-slick').slick({
-  //     autoplay: true,
-  //     infinite: true,
-  //     dots: false,
-  //     autoplaySpeed: 8000,
-  //     // fade: true,
-  //     // cssEase: 'linear',
-  //     arrows: true,
-  //     zIndex: 10,
-  //     prevArrow: '<button class="slide-arrow prev-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-left"></button>',
-  //     nextArrow: '<button class="slide-arrow next-arrow btn btn-light p-3 shadow"><i class="fas fa-chevron-right"></button>',
-  //     pauseOnHover: true,
-  //     adaptiveHeight: false,
-  //     responsive: [
-  //             {
-  //               breakpoint: 480,
-  //               settings: {
-  //                 arrows: false,
-  //               }
-  //           }
-  //     ]
-  // });
-  $('.grafis-app-slick').slick({
+  $.getJSON('frontend/v1/api/slider', function (res) {
+    res.forEach(function (d) {
+      $('.AppGrafis').slick('slickAdd', "\n            <div class=\"px-3\">\n                    <div class=\"card bg-light text-white rounded-lg mb-2\">\n                        <img class=\"card-img\" height=\"340\" style=\"object-fit:cover;\" alt=\"".concat(d.title, "\" src=\"").concat(d.path, "\">\n                        <div class=\"card-img-overlay d-flex flex-column justify-content-end\">\n                            <div class=\"main-body align-self-end\">\n                                <a href=\"").concat(d.path, "\" id=\"xbanner-").concat(d.uuid, "\" data-title=\"").concat(d.title, "\" data-lightbox=\"BannerAside\" style=\"text-shadow: 0.3px 1px white;\">\n                                    <span class=\"badge p-2 badge-pill badge-warning\">\n                                        <i class=\"fas fa-search mr-2\"></i> Perbesar\n                                    </span>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"d-flex justify-content-start align-items-center\">\n                        <span class=\"mr-2\">\n                            <img style=\"object-fit:cover; object-position:top;\" src=\"").concat(d.user, "\" alt=\"Photo Userportal\" width=\"23\" height=\"23\" class=\"rounded-circle border-primary bg-white\">\n                        </span>\n                        <span class=\"small text-secondary mt-1\">\n                            ").concat(d.user_nama, "\n                        </span>\n                    </div>            \n                    ").concat(d.title, "\n            </div>\n            "));
+    });
+  });
+  $('.AppGrafis').slick({
     autoplay: true,
     infinite: true,
     dots: false,
@@ -1095,7 +1078,7 @@ $(document).ready(function () {
     e.preventDefault();
     $('body,html').animate({
       scrollTop: $(this.hash).offset().top
-    }, 300);
+    }, 600);
   });
 });
 // $(document).ready(function() {

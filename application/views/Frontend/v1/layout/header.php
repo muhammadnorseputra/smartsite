@@ -195,7 +195,7 @@
 			
 			<?php } ?>
 			<span class="text-dark ml-2">|</span>
-			<button class="btn btn-primary rounded py-2 ml-2 post-search">
+			<button class="btn rounded py-2 ml-2 post-search" data-toggle="tooltip" title="Klik untuk mencari artikel atau berita">
 				<i class="fas fa-search"></i>
 			</button>
 			<!-- <label class="switch mt-2">

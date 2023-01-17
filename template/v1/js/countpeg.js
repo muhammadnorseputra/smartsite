@@ -29,7 +29,7 @@ function Loading(isLoading) {
 
 CONTAINER.html(Loading(true));
 
-$.getJSON(`${SEGMENT}`).done(function(res) {
+    $.getJSON(`${SEGMENT}`).done(function(res) {
     // data is the JSON response from the server
     Loading(false);
       CONTAINER.html(`
