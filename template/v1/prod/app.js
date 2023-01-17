@@ -492,7 +492,7 @@ $(document).ready(function () {
     easing: 'swing',
     speed: 'slow',
     interval: 2000,
-    height: '250px',
+    height: '320px',
     visible: 3,
     mousePause: true,
     controls: {
@@ -1099,7 +1099,7 @@ $(document).ready(function () {
 //      $sticky.hcSticky({
 //         stickTo: $('#main-content'),
 //         // innerSticker: '#stickMe',
-//         top: 70,
+//         top: 90,
 //         // bottom: 270,
 //         // bottomEnd: 80,
 //         // followScroll: true,

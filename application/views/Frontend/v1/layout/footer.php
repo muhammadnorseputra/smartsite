@@ -1,5 +1,5 @@
 <footer>
-<section class="py-4 bg-white">
+<section class="py-4 bg-white border-top">
 	<div class="container">
 		<div class="d-flex justify-content-lg-start align-content-center text-dark flex-column flex-lg-row">
 			<div class="mr-3 d-none d-md-block d-lg-block">

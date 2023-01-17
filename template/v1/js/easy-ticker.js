@@ -4,7 +4,7 @@ $(document).ready(function() {
         easing: 'swing',
         speed: 'slow',
         interval: 2000,
-        height: '250px',
+        height: '320px',
         visible: 3,
         mousePause: true,
         controls: {
