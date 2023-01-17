@@ -728,13 +728,13 @@ $(function () {
 "use strict";
 
 $(function () {
-  if (!$.cookie("notice-accepted")) {
-    $("a#xbanner-1").click();
-    $.cookie("notice-accepted", 1, {
-      expires: 60 / 1440,
-      path: '/'
-    });
-  }
+  // if (!$.cookie("notice-accepted")) {
+  //     $("a#xbanner-1").click();
+  //     $.cookie("notice-accepted", 1, {
+  //         expires: 60 / 1440,
+  //         path: '/'
+  //     });
+  // }
   //     var urlChannel = 'https://www.youtube.com/channel/UCFDRHqqNeuYql8O7y5sHgmw?sub_confirmation=1';
   //     // var urlTo = `https://shrinkme.io/st?api=9168966d3b03eaf0daad63924162a46c98794cf0&url=${urlChannel}`;
   //     if (!$.cookie("shrinkme")) {
@@ -744,6 +744,11 @@ $(function () {
   //             path: '/'
   //         });
   //     }
+
+  var style = 'background-color: darkblue; color: white; font-style: italic; border: 5px solid hotpink; font-size: 2em;';
+  var style2 = 'background-color: darkred; color: white; font-style: italic; border: 5px solid hotpink; font-size: 2em;';
+  console.log("%cHappy Hacking by BKPSDM Balangan", style);
+  console.log("%cDikelola Oleh PPIK", style2);
 });
 // $(function() {
 //     $('h3#count_jml').countTo({
@@ -1013,7 +1018,7 @@ $(function () {
 
 function LoadingImage(isLoading) {
   if (isLoading) {
-    return "<div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 235px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 235px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 235px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 235px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>";
+    return "<div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>";
   }
 }
 $('.AppGrafis').html(LoadingImage(true));
@@ -1037,7 +1042,7 @@ $(document).ready(function () {
     centerMode: false,
     centerPadding: '80px',
     focusOnSelect: false,
-    lazyLoad: 'ondemand',
+    // lazyLoad: 'ondemand',
     // fade: false,
     // cssEase: 'linear',
     arrows: true,
