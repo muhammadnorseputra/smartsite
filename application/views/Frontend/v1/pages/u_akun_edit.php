@@ -1,4 +1,4 @@
-<section class="hero py-5">
+<section class="hero pb-5">
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-1 my-md-5 pt-md-4 text-left pb-md-3 pb-5">
@@ -26,7 +26,7 @@ endif;
 	<div class="container mb-5">
 		<div class="row">
 			<div class="col-md-10 offset-md-1">
-				<div class="card mt-4 bg-white shadow border-0">
+				<div class="card mt-4 bg-white border">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Identitas</h5>
 					</div>
@@ -59,7 +59,7 @@ endif;
 				<?= form_open_multipart(base_url('frontend/v1/users/update/'), ['id' => 'form_edit'], ['xtoken' => $this->session->csrf_token]); ?>
 
 				<input type="hidden" name="id" value="<?= encrypt_url($profile->id_user_portal) ?>">
-				<div class="card mt-5 bg-white shadow border-0">
+				<div class="card mt-5 bg-white border">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Edit Profile</h5>
 					</div>
@@ -128,7 +128,7 @@ endif;
 					</div>
 				</div>
 
-				<div class="card my-5 bg-white shadow border-0">
+				<div class="card my-5 bg-white border">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Deskripsi</h5>
 					</div>
@@ -140,7 +140,7 @@ endif;
 					</div>
 				</div>
 
-				<div class="card mb-3 border-0 shadow">
+				<div class="card mb-3 border">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Informasi masuk</h5>
 					</div>
