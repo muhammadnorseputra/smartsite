@@ -159,7 +159,7 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap">
+                <div class="filterhome sticky-top mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap bg-white p-2 border rounded" style="top:60px;">
                     <?php
                     $sort = $this->input->get('sort');
                     $type = $this->input->get('type');
@@ -176,7 +176,7 @@
                                 <?php
                                 for($x=0; $x<count($dataSort); $x++):
                                 $active = $dataSort[$x] === $sort ? 'active disabled' : '';
-                                $url = empty($type) ? '?sort='.$dataSort[$x] : '?sort='.$dataSort[$x].'&type='.$type;
+                                $url = empty($type) ? '?sort='.$dataSort[$x] : '?sort='.$dataSort[$x].'&type='.$type.'#load_data';
                                 $sortTitle = ucwords($dataSort[$x]);
                                 ?>
                                 <a rel="noindex, nofollow" class="dropdown-item <?= $active ?>" href="<?= $url ?>"><?= $sortTitle; ?></a>
@@ -193,7 +193,7 @@
                             $url = empty($sort) ? '?type='.$dataType[$x] : '?sort='.$sort.'&type='.$dataType[$x];
                             $typeTitle = ucwords($dataType[$x]);
                             ?>
-                            <a rel="noindex, nofollow" href="<?= $url ?>" class="btn btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
+                            <a rel="noindex, nofollow" href="<?= $url.'#load_data' ?>" class="btn btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
                             <?php endfor; ?>
                         </div>
                     </div>

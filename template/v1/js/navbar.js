@@ -1,10 +1,10 @@
 $(document).ready(function() {    
     $(document).scroll(function() {
         if ($(document).scrollTop() > 120) {
-            $("nav#navbar").css("transition", ".3s ease-in-out").addClass("fixed-top").slideDown();
-            $("button#caripost").addClass('btn-outline-light');
+            $("nav#navbar").css("transition", ".3s ease-in-out").addClass("fixed-top");
+            $(".filterhome").removeClass('rounded');
         } else {
-            $("button#caripost").removeClass('btn-outline-light');
+            $(".filterhome").addClass('rounded');
             /*$("button#caripost").toggleClass('');*/
             $("nav#navbar").removeClass("fixed-top");
         }

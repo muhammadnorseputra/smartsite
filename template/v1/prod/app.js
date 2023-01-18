@@ -868,10 +868,10 @@ $(function () {
 $(document).ready(function () {
   $(document).scroll(function () {
     if ($(document).scrollTop() > 120) {
-      $("nav#navbar").css("transition", ".3s ease-in-out").addClass("fixed-top").slideDown();
-      $("button#caripost").addClass('btn-outline-light');
+      $("nav#navbar").css("transition", ".3s ease-in-out").addClass("fixed-top");
+      $(".filterhome").removeClass('rounded');
     } else {
-      $("button#caripost").removeClass('btn-outline-light');
+      $(".filterhome").addClass('rounded');
       /*$("button#caripost").toggleClass('');*/
       $("nav#navbar").removeClass("fixed-top");
     }
@@ -1018,7 +1018,7 @@ $(function () {
 
 function LoadingImage(isLoading) {
   if (isLoading) {
-    return "<div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>";
+    return "<div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2 d-none d-md-block\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2 d-none d-md-block\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2 d-none d-md-block\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>";
   }
 }
 $('.AppGrafis').html(LoadingImage(true));
@@ -1042,7 +1042,7 @@ $(document).ready(function () {
     centerMode: false,
     centerPadding: '80px',
     focusOnSelect: false,
-    // lazyLoad: 'ondemand',
+    lazyLoad: 'ondemand',
     // fade: false,
     // cssEase: 'linear',
     arrows: true,

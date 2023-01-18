@@ -5,17 +5,17 @@ function LoadingImage(isLoading) {
                 <span class="content-placeholder my-2" style="width: 100%; height: 20px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
             </div>
-            <div class="col-6 col-md-3 p-2">
+            <div class="col-6 col-md-3 p-2 d-none d-md-block">
                 <span class="content-placeholder rounded mx-auto d-block" style="width:100%; height: 300px;">&nbsp;</span>
                 <span class="content-placeholder my-2" style="width: 100%; height: 20px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
             </div>
-            <div class="col-6 col-md-3 p-2">
+            <div class="col-6 col-md-3 p-2 d-none d-md-block">
                 <span class="content-placeholder rounded mx-auto d-block" style="width:100%; height: 300px;">&nbsp;</span>
                 <span class="content-placeholder my-2" style="width: 100%; height: 20px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
             </div>
-            <div class="col-6 col-md-3 p-2">
+            <div class="col-6 col-md-3 p-2 d-none d-md-block">
                 <span class="content-placeholder rounded mx-auto d-block" style="width:100%; height: 300px;">&nbsp;</span>
                 <span class="content-placeholder my-2" style="width: 100%; height: 20px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
@@ -67,7 +67,7 @@ $(document).ready(function() {
         centerMode: false,
         centerPadding: '80px',
         focusOnSelect: false,
-        // lazyLoad: 'ondemand',
+        lazyLoad: 'ondemand',
         // fade: false,
         // cssEase: 'linear',
         arrows: true,
