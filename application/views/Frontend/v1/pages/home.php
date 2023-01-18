@@ -159,7 +159,7 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="filterhome sticky-top mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap bg-white p-2 border rounded" style="top:60px;">
+                <div class="filterhome sticky-top mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap bg-white p-2 border rounded">
                     <?php
                     $sort = $this->input->get('sort');
                     $type = $this->input->get('type');

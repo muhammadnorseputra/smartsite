@@ -26,7 +26,10 @@ img {
 	max-width: 100%;
 }
 :target {
-	scroll-margin-top: 8rem;
+	scroll-margin-top: 12rem;
+}
+.filterhome {
+	top: 60px;
 }
 html, body {
 	scrollbar-color: #444 transparent;
@@ -974,7 +977,11 @@ i.likes:hover {
   background-color:transparent
  }
 }
-
+@media (max-width: 420px) { 
+	.filterhome {
+		top: 0px;
+	}
+}
 @media (max-width: 620px) {
 	#cover {
 		background-position: left bottom !important;
