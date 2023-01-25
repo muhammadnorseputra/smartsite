@@ -98,7 +98,7 @@
         <!-- <div class="bg-light my-3 py-1"></div> -->
         <div class="row d-flex justify-content-between flex-column flex-lg-row">
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 order-last order-md-last mt-3 mt-md-0">
-                <div id="sidebar" class="sticky-top" style="top: 90px">
+                <div id="sidebar">
                 
                 <!-- <a href="https://www.buymeacoffee.com/putrabungsu6"><img src="https://img.buymeacoffee.com/button-api/?text=Donasi coffee untuk dev&emoji=&slug=putrabungsu6&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" class="w-100"></a>
  -->
@@ -159,7 +159,7 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="filterhome sticky-top mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap bg-white p-2 border rounded">
+                <div class="mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap bg-white p-2 border rounded">
                     <?php
                     $sort = $this->input->get('sort');
                     $type = $this->input->get('type');

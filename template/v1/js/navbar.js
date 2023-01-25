@@ -2,9 +2,9 @@ $(document).ready(function() {
     $(document).scroll(function() {
         if ($(document).scrollTop() > 120) {
             $("nav#navbar").css("transition", ".3s ease-in-out").addClass("fixed-top");
-            $(".filterhome").removeClass('rounded');
+            // $(".filterhome").removeClass('rounded');
         } else {
-            $(".filterhome").addClass('rounded');
+            // $(".filterhome").addClass('rounded');
             /*$("button#caripost").toggleClass('');*/
             $("nav#navbar").removeClass("fixed-top");
         }
