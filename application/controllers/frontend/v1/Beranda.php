@@ -20,6 +20,8 @@ class Beranda extends CI_Controller
         // if(!$this->session->userdata('email')) {
         //     redirect(base_url('frontend/v1/users/login'),'refresh');
         // }
+        // Cek Mac Blacklist
+        is_blacklist();
     }
     public function testing() {
         $url = base_url('beranda?id=123&media=id');

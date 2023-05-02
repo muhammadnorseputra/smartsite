@@ -1,9 +1,9 @@
-<section class="hero py-5">
-	<div class="container py-5">
-		<div class="col-md-4 offset-md-4 py-3 d-flex justify-content-center align-items-center">
+<section class="py-5">
+	<div class="container pb-5">
+		<div class="col-md-4 offset-md-4 d-flex justify-content-center align-items-center">
 			<div class="font-weight-bold text-center">
-				<i class="fas fa-images fa-5x mb-3"></i>
-				<h4 class="text-muted">Create New Album</h4>
+				<i class="fas fa-images fa-5x mb-3 text-dark"></i>
+				<h4 class="text-dark">Create New Album</h4>
 			</div>
 		</div>
 	</div>
@@ -27,7 +27,7 @@
 		<hr>
 		<div class="form-group">
 			<label for="photo_judul">Judul Album<span class="text-danger">*</span></label>
-			<input type="text" name="photo_judul" class="form-control" id="photo_judul" placeholder="Masukan judul photo disini.." required>
+			<input type="text" name="photo_judul" class="form-control" id="photo_judul" placeholder="Masukan judul album disini.." required>
 		</div>
 		<div class="form-group">
 			<label for="photo_keterangan">Deskripsi<span class="text-success">*</span></label>
