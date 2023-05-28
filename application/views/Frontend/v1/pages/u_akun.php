@@ -24,7 +24,7 @@ endif;
 <section class="hero">
   <div class="container pb-5 py-md-5">
     <div class="row">
-    <div class="col-12 col-md-8 my-3 my-md-0">
+    <div class="col-12 col-md-8 my-3 my-md-0 offset-md-2">
       <div class="d-flex justify-content-start align-items-md-center align-items-start">
         <img width="85" height="85" src="<?= $photo ?>" class="rounded-circle shadow-sm" style="object-fit:cover; object-position: top;">
         <div class="ml-3 font-weight-bold text-white">
@@ -37,7 +37,7 @@ endif;
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-12">
       <div class="h-100 d-flex justify-content-center justify-content-lg-end align-items-end">
           <a class="mb-4 animated text-info pulse infinite" href="<?= base_url('kotak_saran') ?>" data-toggle="tooltip" data-placement="top" title="Ajukan Verifikasi Email"><i class="fas fa-envelope-open-text fa-2x"></i></a>
           <a class="mb-4 pl-3 ml-3 border-left border-primary" href="<?= base_url('frontend/v1/users/edit/'.encrypt_url($this->session->userdata('user_portal_log')['id'])); ?>" data-toggle="tooltip" data-placement="top" title="Edit Profile"><i class="fas fa-cog fa-2x"></i></a>
@@ -49,10 +49,9 @@ endif;
 </section>
   
 <section>
-<div class="container bg-white mb-md-0 mb-3">
+<div class="container bg-white mb-md-0">
   <div class="row">
-    <div class="col-md-3 no-gutters mt-5 mt-md-0">
-      
+    <div class="col-md-3 no-gutters offset-md-2 bg-white mt--7 border-right border-left">
       <div class="list-group border-0">
         <div class="panel-group" id="accordion">
           <!-- UTAMA -->
@@ -142,7 +141,7 @@ endif;
        
       </div>
     </div>
-    <div class="col-md-9 px-md-0 order-first order-md-last mt--7 bg-white rounded shadow-sm">
+    <div class="col-md-7 order-first order-md-last mt--7 bg-white border-right">
       <!-- <div class="alert alert-warning alert-dismissible fade show mb-0 rounded-top mt-3 mt-md-0" role="alert">
         <strong>For Userportal</strong>, mulai tanggal 10 juli 2021 kami akan terus mengupdate UI & UX Website
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">

@@ -25,7 +25,7 @@ endif;
 <section class="mt--9">
 	<div class="container mb-5">
 		<div class="row">
-			<div class="col-md-10 offset-md-1">
+			<div class="col-md-10 offset-md-2">
 				<div class="card mt-4 bg-white border">
 					<div class="card-header border-light bg-transparent p-4">
 						<h5 class="p-0 m-0">#Identitas</h5>

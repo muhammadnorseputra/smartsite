@@ -1,5 +1,6 @@
-<nav id="navbar" class="navbar navbar-expand-sm d-none d-md-block p-0">
+<div class="d-flex justify-content-between flex-column" style="height:100%">
 	
+<nav id="navbar" class="navbar navbar-expand-sm d-none d-md-block p-0">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
 			<?= '<img style="object-fit:contain; margin: 14px 0px;" src="' .base_url('assets/images/logo.png') . '" alt="BKPPD Kab. Balangan 2021" width="80" height="50"/>'; ?>
 		</a>
@@ -115,18 +116,25 @@
 				} else {
 				?>
 				<li class="nav-item">
-					<a class="nav-link px-4" style="background-color: <?= $m->color ? $m->color : 'transparent' ?>" href="<?= base_url($m->link); ?>">
+					<a class="nav-link px-4 d-flex align-items-center justify-content-start" style="background-color: <?= $m->color ? $m->color : 'transparent' ?>" href="<?= base_url($m->link); ?>">
+						<i class="material-icons mr-3 p-0"><?= $m->fid_icon; ?></i> 
 						<?= ucwords($m->nama_menu); ?>
 					</a>
 				</li>
 				<?php } ?>
 				<?php endforeach; ?>
+				<li class="nav-item">
+					<a href="#" role="button" class="nav-link px-4 d-flex align-items-center justify-content-start post-search" data-placement="right" data-toggle="tooltip" title="Klik untuk mencari artikel atau berita">
+						<i class="material-icons  mr-3 p-0">search</i>
+						Pencarian
+					</a>
+				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle px-4 d-flex align-items-center justify-content-start" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="material-icons mr-3 p-0">apps</i> 
 						Produk
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 400px; max-height: 400px; overflow-y: auto;">
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 400px; max-height:300px; overflow-y: auto;">
 						<div class="d-flex flex-lg-column justify-content-start align-items-center ">
 							<a rel="noreferrer" target="_blank" href="https://ekinerja.balangankab.go.id/" class="p-4">
 							<b class="font-weight-bold text-dark">e-Kinerja</b>
@@ -164,5 +172,29 @@
 			</ul>
 			
 		</div>
-	
 </nav>
+	<?php if ($this->session->userdata('user_portal_log')['online'] === 'ON') { ?>
+	<?php
+	$idSes = $this->session->userdata('user_portal_log')['id'];
+	$getImg = $this->mf_users->get_userportal_byid($idSes)->photo_pic;
+	$u_name = ucfirst($this->session->userdata('user_portal_log')['nama_panggilan']);
+	if(!empty($getImg)):
+		$photo = 'data:image/jpeg;base64,' . base64_encode($getImg) . '';
+	else:
+		$photo = base_url('assets/images/no-profile-picture.jpg');
+	endif;
+	$img = '<img style="object-fit:cover; object-position: top;" class="rounded-circle mr-1 shadow-sm" width="40" height="40" src="'.$photo.'" alt="Userportal - '.$u_name.'"/>';
+	?>
+	<div class="dropdown mb-5 mx-3">
+		<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
+		<button type="button" class="btn btn-outline-light btn-block border-0 text-muted my-sm-0 d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+		<span> <?= $img ?> <?= $u_name ?></span>
+		<i class="fas fa-angle-up ml-5"></i>
+		</button>
+	</div>
+	<?php } else { ?>
+	<a rel="noindex, nofollow" class="btn d-block mx-4 mb-5 shadow-sm btn-primary rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.curPageURL()); ?>">
+		<i class="fas fa-lock mr-2"></i> Masuk 
+	</a>
+	<?php } ?>
+</div>
