@@ -129,7 +129,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 			<?php endif; ?>
 		<?php endif; ?>
 
-				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-3 px-4 px-md-5">
+				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-3 px-5 px-md-0">
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1 class="fs6 d-none d-md-block d-lg-block"><?php echo $post_detail->judul; ?></h1>
 					<h1 class="fs9 d-md-none d-block"><?php echo $post_detail->judul; ?></h1>
