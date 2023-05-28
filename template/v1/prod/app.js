@@ -47,7 +47,7 @@ $(function () {
         //                 <div class="loader_small" style="width:50px;height:50px;"></div>
         //             </div>`;
 
-        output += "\n                \n                <div class =\"content-placeholder\" style=\"width:30%; height: 15px; border-radius:50px; margin-top: 10px\"> &nbsp; </div>\n                <br>\n                <div class =\"content-placeholder\" style=\"width:60%; height: 15px; border-radius:50px; margin-bottom: 10px\"> &nbsp; </div>\n                <div class =\"content-placeholder\" style=\"width:80%; height: 15px; border-radius:50px;\"> &nbsp; </div>\n            \n            ";
+        output += "\n                \n                <div class =\"content-placeholder\" style=\"width:30%; height: 15px; border-radius:50px; margin-top: 10px; margin-left: 40px;\"> &nbsp; </div>\n                <br>\n                <div class =\"content-placeholder\" style=\"width:60%; height: 15px; border-radius:50px; margin-bottom: 10px; margin-left: 40px;\"> &nbsp; </div>\n                <div class =\"content-placeholder\" style=\"width:80%; height: 15px; border-radius:50px; margin-left: 40px;\"> &nbsp; </div>\n            \n            ";
       }
       $("#load_data_message").html(output);
       $("button#load_more").hide().prop('disabled', true);
@@ -824,16 +824,15 @@ $(document).ready(function () {
     }
   });
 });
+// lightbox.option({
+//     'resizeDuration': 150,
+//     'wrapAround': false,
+//     'fadeDuration': 500,
+//     'imageFadeDuration': 800,
+//     'disableScrolling': false,
+//     'albumLabel': "Story Web %1 dari %2"
+// });
 "use strict";
-
-lightbox.option({
-  'resizeDuration': 150,
-  'wrapAround': false,
-  'fadeDuration': 500,
-  'imageFadeDuration': 800,
-  'disableScrolling': false,
-  'albumLabel': "Story Web %1 dari %2"
-});
 "use strict";
 
 document.onreadystatechange = function () {
@@ -863,32 +862,32 @@ $(function () {
     $grid.masonry();
   });
 });
+// $(document).ready(function() {    
+// $(document).scroll(function() {
+//     if ($(document).scrollTop() > 120) {
+//         $("nav#navbar").css("transition", ".3s ease-in-out").addClass("fixed-top");
+//         // $(".filterhome").removeClass('rounded');
+//     } else {
+//         // $(".filterhome").addClass('rounded');
+//         /*$("button#caripost").toggleClass('');*/
+//         $("nav#navbar").removeClass("fixed-top");
+//     }
+// });
+
+// var prevScrollpos = window.pageYOffset;
+// window.onscroll = function() {
+//     var currentScrollPos = window.pageYOffset;
+//     if (prevScrollpos > currentScrollPos) {
+//         document.getElementById("navbar").style.top = "0";
+//     } else {
+//         document.getElementById("navbar").style.top = "-80px";
+//     }
+//     prevScrollpos = currentScrollPos;
+
+// }
+
+// });
 "use strict";
-
-$(document).ready(function () {
-  $(document).scroll(function () {
-    if ($(document).scrollTop() > 120) {
-      $("nav#navbar").css("transition", ".3s ease-in-out").addClass("fixed-top");
-      // $(".filterhome").removeClass('rounded');
-    } else {
-      // $(".filterhome").addClass('rounded');
-      /*$("button#caripost").toggleClass('');*/
-      $("nav#navbar").removeClass("fixed-top");
-    }
-  });
-
-  // var prevScrollpos = window.pageYOffset;
-  // window.onscroll = function() {
-  //     var currentScrollPos = window.pageYOffset;
-  //     if (prevScrollpos > currentScrollPos) {
-  //         document.getElementById("navbar").style.top = "0";
-  //     } else {
-  //         document.getElementById("navbar").style.top = "-80px";
-  //     }
-  //     prevScrollpos = currentScrollPos;
-
-  // }
-});
 // $(function() {
 // 	window.paceOptions = {
 // 	  ajax: false, // disabled

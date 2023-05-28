@@ -1,3 +1,7 @@
+<div class="col-md-2 fixed-top order-first border-light border-right bg-white p-0" style="height: 100vh">
+ <?php include_once("menu.php") ?>
+</div>
+
 <?php  
 if ($isi) {
 	# code...

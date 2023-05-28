@@ -303,8 +303,8 @@ class Beranda extends CI_Controller
 
                 $output .= '
                 
-				<div class="card border-top border-right border-left mb-3" style="border-radius: 10px;">
-					<div class="card-body bg-white px-2 py-1 d-flex justify-content-start align-items-center"  style="border-top-left-radius: 10px;border-top-right-radius: 10px">
+				<div class="card border-top-0 border-left-0 border-right-0 border-bottom border-light bg-transparent">
+					<div class="card-body px-2 py-1 d-flex justify-content-start align-items-center">
                         <div>
                         <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-1 ml-md-3 lazy p-2 bg-white">
                         </div>
@@ -318,21 +318,18 @@ class Beranda extends CI_Controller
                     
                     '.$content_body.'
 
-					<div class="card-footer border-light border-top-0 bg-transparent p-2 d-flex justify-content-end">
+					<div class="card-footer border-0 bg-transparent p-2 d-flex justify-content-end align-items-center">
                     <div class="w-100">
-					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.nominal($row->views). '</button>
+					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.nominal($row->views). '</button>
                     </div>
                     <div class="w-100">
-					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Komentar" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-info"><i class="far fa-comment-alt mr-2"></i> '.$this->komentar->jml_komentarbyidberita($row->id_berita). '</button>
+                    <button aria-hidden="true" type="button" data-toggle="tooltip" title="Bagikan juga postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent  border-0 rounded p-2 w-100 text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
                     </div>
                     <div class="w-100">
-                    <button aria-hidden="true" type="button" data-toggle="tooltip" title="Bagikan juga postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent  border-0 rounded-pill p-2 w-100 text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
+                    <button aria-hidden="true" type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded p-2 w-100 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
                     </div>
                     <div class="w-100">
-                    <button aria-hidden="true" type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
-                    </div>
-                    <div class="w-100">
-                    <button type="button" aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-primary-old '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark"></i> </button>
+                    <button type="button" aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-transparent border-0 rounded p-2 w-100 text-primary-old '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark"></i> </button>
                     </div>
 					</div>
                     </div>

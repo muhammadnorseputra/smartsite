@@ -55,10 +55,10 @@ $(function() {
 
             output += `
                 
-                <div class ="content-placeholder" style="width:30%; height: 15px; border-radius:50px; margin-top: 10px"> &nbsp; </div>
+                <div class ="content-placeholder" style="width:30%; height: 15px; border-radius:50px; margin-top: 10px; margin-left: 40px;"> &nbsp; </div>
                 <br>
-                <div class ="content-placeholder" style="width:60%; height: 15px; border-radius:50px; margin-bottom: 10px"> &nbsp; </div>
-                <div class ="content-placeholder" style="width:80%; height: 15px; border-radius:50px;"> &nbsp; </div>
+                <div class ="content-placeholder" style="width:60%; height: 15px; border-radius:50px; margin-bottom: 10px; margin-left: 40px;"> &nbsp; </div>
+                <div class ="content-placeholder" style="width:80%; height: 15px; border-radius:50px; margin-left: 40px;"> &nbsp; </div>
             
             `;
             }

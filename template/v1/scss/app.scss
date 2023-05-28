@@ -223,7 +223,7 @@ section.bg-hero-home {
 #loader { 
     border: 5px solid #eee; 
     border-radius: 50%; 
-    border-top: 5px solid $cyan; 
+    border-top: 5px solid cyan; 
     width: 50px; 
     height: 50px; 
     animation: spin 0.5s linear infinite; 
@@ -302,7 +302,8 @@ section.bg-hero-home {
 	position: relative;
 }
 body {	
-	background: #eff7f6;
+	// background: #eff7f6;
+	background: #fff;
 	font-family: 'Poppins', sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -392,8 +393,8 @@ h5.title-sidebar {
 	background: #4cbb87 !important;
 }
 .dropdown-menu {
-	top: 43px;
-	left: 3px;
+	top: 0;
+	left: 100%;
 	padding: .3rem;
 	border: 0px;
 	border-radius: 8px !important;

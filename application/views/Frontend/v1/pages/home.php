@@ -7,16 +7,14 @@
 </div>
 
 <section id="content-page">
-    <div class="container mt-3">
-        <!-- <div class="bg-light my-3 py-1"></div> -->
+    <div class="container-fluid">
         <div class="row d-flex justify-content-between flex-column flex-lg-row">
-            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 order-last order-md-last mt-3 mt-md-0">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 order-last order-md-last mt-3 mr-md-5">
                 <div id="sidebar">        
-                <?php $this->load->view('Frontend/v1/function/poling'); ?>
-                <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
+                    <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="main-content">
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 offset-md-3 mt-3" id="main-content">
                 <div id="load_data"></div>
                 <div id="load_data_message"></div>
                 <div class="text-center mb-md-4">

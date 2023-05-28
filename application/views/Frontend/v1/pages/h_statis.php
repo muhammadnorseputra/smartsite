@@ -1,7 +1,7 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-12 pt-md-1 mt-md-1 text-left pb-5 pb-md-1">
+      <div class="col-md-12 pt-md-1 mt-md-1 offset-md-3 text-left pb-5 pb-md-1">
         <?php
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
@@ -21,7 +21,7 @@
 <section class="h-statis-detail bg-white rounded trinket_statis">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 p-3 p-md-4 order-last order-md-first">
+      <div class="col-md-8 p-3 p-md-4 offset-md-3 order-last">
         <?php
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
@@ -38,7 +38,7 @@
         </p>
         <?php endif; ?>
       </div>
-      <div class="col-md-4 rounded">
+      <div class="col-md-2 offset-md-3 rounded">
       <?php
       if(!empty($h->file)):
       $path = !empty($h->filename) ? $h->filename : '';

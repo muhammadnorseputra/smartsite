@@ -1,5 +1,5 @@
 <!-- <div id="stickMe"> -->
-<div class="shadow-none p-3 bg-light rounded">
+<div class="shadow-none p-3 rounded border bg-light">
 	<?php $poling_q = $mf_poling_pertanyaan; ?>
 	<h4 class="text-uppercase font-weight-bold small"><?= $poling_q->label ?> ?</h4>
 	<?php  
