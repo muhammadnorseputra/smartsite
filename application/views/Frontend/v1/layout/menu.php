@@ -1,9 +1,8 @@
 <nav id="navbar" class="navbar navbar-expand-sm d-none d-md-block p-0">
 	
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
-			<?= '<img style="object-fit:contain;" src="' .base_url('assets/images/logo.png') . '" alt="BKPPD Kab. Balangan 2021" width="150" height="45"/>'; ?>
+			<?= '<img style="object-fit:contain; margin: 14px 0px;" src="' .base_url('assets/images/logo.png') . '" alt="BKPPD Kab. Balangan 2021" width="80" height="50"/>'; ?>
 		</a>
-        <hr>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto mr-md-auto p-0" style="flex-direction: column;">
 				<?php
@@ -15,8 +14,8 @@
 					$skr = date('Y-m-d');
 				?>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle px-3 mx-1" href="#" id="navbarDropdown" role="button" style="background-color: <?= $m->color ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<!-- <i class="material-icons mr-2"><?= $m->fid_icon; ?></i>  -->
+					<a class="nav-link dropdown-toggle px-4 d-flex align-items-center justify-content-start" href="#" id="navbarDropdown" role="button" style="background-color: <?= $m->color ? $m->color : 'transparent' ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="material-icons mr-3 p-0"><?= $m->fid_icon; ?></i> 
 						<?= $m->nama_menu; ?>
 					</a>
 					<ul class="dropdown-menu animate slideIn" aria-labelledby="navbarDropdown">
@@ -116,14 +115,15 @@
 				} else {
 				?>
 				<li class="nav-item">
-					<a class="nav-link px-3 mr-md-1" style="background-color: <?= $m->color ?>" href="<?= base_url($m->link); ?>">
+					<a class="nav-link px-4" style="background-color: <?= $m->color ? $m->color : 'transparent' ?>" href="<?= base_url($m->link); ?>">
 						<?= ucwords($m->nama_menu); ?>
 					</a>
 				</li>
 				<?php } ?>
 				<?php endforeach; ?>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle px-3 mr-md-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle px-4 d-flex align-items-center justify-content-start" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="material-icons mr-3 p-0">apps</i> 
 						Produk
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 400px; max-height: 400px; overflow-y: auto;">

@@ -9,6 +9,7 @@
     <link rel="apple-touch-icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />
     <link rel="shortcut icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />
     <link rel="manifest" href="<?= base_url('manifest.json') ?>">
+    
     <!-- browser color -->
     <meta name="theme-color" content="#000D6B">
     <meta name="msapplication-navbutton-color" content="#000D6B">

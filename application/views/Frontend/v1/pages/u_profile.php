@@ -9,7 +9,7 @@ $profileLink = base_url("user/" . decrypt_url($this->mf_users->get_userportal_na
 $sukaLink = base_url("disukai/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($public_profile->id_user_portal)->nama_panggilan) . "/" . encrypt_url($public_profile->id_user_portal));
 $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal_namapanggilan($public_profile->id_user_portal)->nama_panggilan) . "/" . encrypt_url($public_profile->id_user_portal));
 ?>
-<section class="my-md-4">
+<section>
   <div class="container">
     <div class="row">
       <!-- <div class="col-md-3 mt-5">
@@ -21,12 +21,12 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
           </div>
         </div>
       </div> -->
-      <div class="col-md-12 mt-md-5">
+      <div class="col-md-12 offset-md-1">
         <div>
           <div class="row">
             <div class="col-xs-9 col-sm-9 col-md-9 mt-md-4" id="main-content">
               <div class="row">
-                <div class="col-12 px-0 border">
+                <div class="col-12 px-0">
                   <img src="<?= $photo ?>" height="310" class="w-100" style="object-fit:cover; object-position: 50% 13%; filter: blur(0.5px);">
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 py-3">
@@ -66,7 +66,7 @@ $halamanLink = base_url("halaman/" . decrypt_url($this->mf_users->get_userportal
                 </div>
               </div>
             </div>
-            <div class="col-md-3 order-first order-md-first d-none d-md-block d-lg-block">
+            <div class="col-md-3 order-first order-md-first d-none d-md-block d-lg-block border-right border-light pl-0 pr-4 sticky-top">
               <div id="sidebar">
                     <!-- <h5 class="my-3 font-weight-bold title-sidebar">Menu</h5> -->
                     <div class="list-group">

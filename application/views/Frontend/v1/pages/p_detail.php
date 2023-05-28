@@ -96,7 +96,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 		</nav>
 		
 		<?php if($post_detail->type === 'SLIDE'): ?>
-		<div id="carouselExampleIndicators" class="carousel slide shadow-lg" data-ride="carousel">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
 				<?php foreach($photo_slide->result() as $key => $value): $active = ($key == 0) ? 'active' : ''; ?>
 				<li data-target="#carouselExampleIndicators" data-slide-to="<?= $key ?>" class="<?= $active ?>"></li>
