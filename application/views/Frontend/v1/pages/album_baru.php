@@ -1,17 +1,16 @@
-<section class="py-5">
-	<div class="container pb-5">
-		<div class="col-md-4 offset-md-4 d-flex justify-content-center align-items-center">
+<section>
+	<div class="container">
+		<div class="col-md-4 mt-3">
 			<div class="font-weight-bold text-center">
-				<i class="fas fa-images fa-5x mb-3 text-dark"></i>
-				<h4 class="text-dark">Create New Album</h4>
+				<b class="text-dark">Create New Album</b>
 			</div>
 		</div>
 	</div>
 </div>
 </section>
-<section class="mb-3 mt--8">
+<section>
 <div class="container">
-	<div class="col-md-4 offset-md-4 bg-white rounded p-4">
+	<div class="col-md-5 offset-md-1 bg-white rounded p-4">
 		<?php $this->load->view('msg/flashdata'); ?>
 		<?= form_open_multipart(base_url('frontend/v1/album/upload_album')); ?>
 		<div class="form-group">

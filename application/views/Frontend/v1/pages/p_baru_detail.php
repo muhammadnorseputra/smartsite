@@ -3,7 +3,7 @@
 	<div class="container-fluid">
 		<?= form_open_multipart(base_url('frontend/v1/post/update_post/1'), ['id' => 'f_post', 'data-id' => $post->id_berita]) ?>
 		<div class="row py-3 border-bottom sticky-top bg-white">
-			<div class="col-md-9">
+			<div class="col-md-7 offset-md-2">
 				<div class="input-group">
 				  <div class="input-group-prepend">
 				    <button type="button" id="batal" class="btn btn-danger">
@@ -26,7 +26,7 @@
 						  <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						    <i class="fas fa-cogs"></i>
 						  </button>
-						  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+						  <div class="dropdown-menu dropdown-menu-right" style="left:0; top: 100%" aria-labelledby="dropdownMenu2">
 								<button type="button" id="draf" data-id="<?php echo $post->id_berita ?>" class="dropdown-item">
 									<span class="fas fa-hourglass-end mr-2"></span>Save as draf
 								</button>
@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12 col-md-9 py-0 px-0" id="main-content">
+			<div class="col-12 col-md-7 py-0 px-0 offset-md-2" id="main-content">
 				<div class="form-group mb-0">
 					<div class="col-12 py-0 px-0">
 						<textarea class="form-control" name="content" id="content" rows="3"><?= $post->content ?></textarea>
@@ -63,7 +63,7 @@
 										<button id="upload-img" type="button" class="btn btn-block btn-outline-danger my-2 d-block"><i class="fas fa-upload mr-2"></i>Ganti gambar</button>
 										<input type="file" id="FileUpload" class="d-none" />
 									<?php else : ?>
-										<img id="single-photo" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/undraw_folder_x4ft.svg') ?>" class="img-fluid mx-auto d-block" alt="noimage">
+										<img id="single-photo" width="100" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/undraw_folder_x4ft.svg') ?>" class="img-fluid mx-auto d-block" alt="noimage">
 										<p class="text-center text-nowrap my-2" id="FilePath">Gambar tidak ditemukan ?</p>
 										<button id="upload-img" type="button" class="btn btn-outline-danger my-2 d-block mx-auto"><i class="fas fa-upload mr-2"></i>Upload</button>
 										<input type="file" id="FileUpload" class="d-none" />
@@ -96,7 +96,7 @@
 									<b class="d-block">Seo</b>	
 								</div>
 							</div>
-							<div id="collapseFour" class="panel-collapse collapse show p-3">
+							<div id="collapseFour" class="panel-collapse collapse p-3">
 									<div class="form-group">
 									  <label for="keywords" class="control-label">Keywords</label>
 									  <textarea class="form-control" id="keywords" name="keywords" aria-label="Keywords" rows="6"><?= $post->keywords ?></textarea>
@@ -116,7 +116,7 @@
 								</div>
 							</div>
 
-								<div id="collapseTwo" class="panel-collapse collapse show p-3">
+								<div id="collapseTwo" class="panel-collapse collapse p-3">
 									
 									<div class="form-group">
 										<select name="tags[]" id="tags" class="form-control" multiple="multiple" readonly>

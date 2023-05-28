@@ -2,10 +2,16 @@
 	
 <nav id="navbar" class="navbar navbar-expand-sm d-none d-md-block p-0">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
-			<?= '<img style="object-fit:contain; margin: 14px 0px;" src="' .base_url('assets/images/logo.png') . '" alt="BKPPD Kab. Balangan 2021" width="80" height="50"/>'; ?>
+			<?= '<img style="object-fit:contain; margin: 14px 0px;" src="' .base_url('assets/images/logo.png') . '" alt="BKPPD Kab. Balangan 2021" width="100" height="50"/>'; ?>
 		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto mr-md-auto p-0" style="flex-direction: column;">
+				<li class="nav-item">
+					<a href="<?= base_url('/') ?>" class="nav-link px-4 d-flex align-items-center justify-content-start">
+						<i class="material-icons mr-3 p-0">person</i>
+						Beranda
+					</a>
+				</li>
 				<?php
 				$menu = $mf_menu;
 				foreach ($menu as $m) :
@@ -168,6 +174,12 @@
 							</a>
 						</div>
 					</ul>
+				</li>
+				<li class="nav-item">
+					<a href="<?= base_url('userlist') ?>" class="nav-link px-4 d-flex align-items-center justify-content-start">
+						<i class="material-icons  mr-3 p-0">person</i>
+						Users Portal
+					</a>
 				</li>
 			</ul>
 			

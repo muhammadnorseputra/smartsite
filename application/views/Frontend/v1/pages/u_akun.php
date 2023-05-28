@@ -49,9 +49,9 @@ endif;
 </section>
   
 <section>
-<div class="container bg-white mb-md-0">
+<div class="container bg-white mb-5">
   <div class="row">
-    <div class="col-md-3 no-gutters offset-md-2 bg-white mt--7 border-right border-left">
+    <div class="col-md-3 no-gutters offset-md-2 bg-white mt--7 border-right border-left border-bottom">
       <div class="list-group border-0">
         <div class="panel-group" id="accordion">
           <!-- UTAMA -->
@@ -141,7 +141,7 @@ endif;
        
       </div>
     </div>
-    <div class="col-md-7 order-first order-md-last mt--7 bg-white border-right">
+    <div class="col-md-7 order-first order-md-last mt--7 bg-white border-right border-bottom">
       <!-- <div class="alert alert-warning alert-dismissible fade show mb-0 rounded-top mt-3 mt-md-0" role="alert">
         <strong>For Userportal</strong>, mulai tanggal 10 juli 2021 kami akan terus mengupdate UI & UX Website
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">

@@ -1,32 +1,33 @@
-<section class="hero py-5">
-	<div class="container py-5">
-		<div class="col-md-4 offset-md-4 py-3 d-flex justify-content-center align-items-center">
-			<div class="font-weight-bold text-center">
-				<i class="fas fa-image fa-5x mb-3"></i>
-				<h4 class="text-muted">Created New Banner</h4>
+<section>
+	<div class="container">
+		<div class="col-md-4 offset-md-5 py-3 d-flex justify-content-center align-items-center">
+			<div class="font-weight-bold text-center d-flex justify-content-center align-items-center">
+				<i class="fas fa-image fa-3x mr-3 text-primary"></i>
+				<b class="text-muted">Created New Banner</b>
 			</div>
 		</div>
 	</div>
 </div>
 </section>
-<section class="mb-3 mt--8">
+<section>
 <div class="container">
 	<?php $this->load->view('msg/flashdata'); ?>
 	<?= form_open_multipart(base_url('frontend/v1/banner/upload')); ?>
 	<div class="row mb-3">
-		<div class="col-md-6 bg-white border-right p-4">
+		<div class="col-md-4 offset-md-3 bg-white border d-flex justify-content-center align-items-center">
 			<div class="form-group">
+			<div class="preview">
+					<img id="single-photo" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/undraw_folder_x4ft.svg') ?>" class="w-50 d-block mx-auto my-2" alt="noimage">
+				</div>
 					<span class="text-info">Silahkan Pilih Gambar</span>
 				<div class="custom-file">
 					<input type="file" name="gambar" class="custom-file-input" id="customFile">
 					<label class="custom-file-label" for="customFile">Choose file</label>
 				</div>
-				<div class="preview">
-					<img id="single-photo" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/undraw_folder_x4ft.svg') ?>" class="w-50 d-block mx-auto my-2" alt="noimage">
-				</div>
+				
 			</div>
 		</div>
-		<div class="col-md-6 bg-white p-4">
+		<div class="col-md-5 bg-white">
 			<div class="form-group">
 				<select class="custom-select" name="idjns_banner">
 					<option value="0">-- Posisi Banner -- </option>

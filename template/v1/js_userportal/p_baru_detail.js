@@ -6,7 +6,7 @@
 		width: 'resolve',
 	});
 	$(document).ready(function() {
-		$("#navbar").removeClass('d-md-block').addClass('d-md-none');
+		/*$("#navbar").removeClass('d-md-block').addClass('d-md-none');*/
 		/*Message*/
 		function message(x,y) {
 			notif({
@@ -32,10 +32,10 @@
 		var tiny = tinymce.init({
 			selector: "#content",
 			theme: "silver",
-			height: 1180,
+			height: '100%',
 			inline_boundaries: false,
 			placeholder: 'Ketik disini ...',
-			skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide'),
+			skin: 'oxide',
 			// menubar: false,
 			plugins: [
 				"advlist autolink link image lists charmap print preview hr anchor pagebreak tabfocus searchreplace codesample help",

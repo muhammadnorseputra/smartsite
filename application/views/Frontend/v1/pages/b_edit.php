@@ -1,21 +1,34 @@
-<section class="mb-3 mt-5 pt-3">
+
+<section>
+	<div class="container">
+		<div class="col-md-4 offset-md-5 py-3 d-flex justify-content-center align-items-center">
+			<div class="font-weight-bold text-center d-flex justify-content-center align-items-center">
+				<i class="fas fa-image fa-3x mr-3 text-primary"></i>
+				<b class="text-muted"><?= $d->judul ?></b>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<section>
 <div class="container">
 	<?= form_open_multipart(base_url('frontend/v1/banner/update_banner')); ?>
 	<input type="hidden" name="idbanner" value="<?= $this->uri->segment(5) ?>">
 	<div class="row mb-3">
-		<div class="col-md-6 bg-white border-right p-4">
+		<div class="col-md-4 offset-md-3 bg-white border d-flex justify-content-center align-items-center">
 			<div class="form-group">
+				
+			<div class="preview">
+					<img id="single-photo" src="<?= base_url('files/file_banner/'.$d->gambar) ?>" class="w-50 d-block mx-auto my-2" alt="noimage">
+				</div>
 					<span class="text-info">Silahkan Pilih Gambar</span>
 				<div class="custom-file">
 					<input type="file" name="gambar" class="custom-file-input" id="customFile">
 					<label class="custom-file-label" for="customFile">Choose file</label>
 				</div>
-				<div class="preview">
-					<img id="single-photo" src="<?= base_url('files/file_banner/'.$d->gambar) ?>" class="w-50 d-block mx-auto my-2" alt="noimage">
-				</div>
 			</div>
 		</div>
-		<div class="col-md-6 bg-white p-4">
+		<div class="col-md-5 bg-white">
 			<div class="form-group">
 				<select class="custom-select" name="idjns_banner">
 					<option value="0">-- Posisi Banner -- </option>

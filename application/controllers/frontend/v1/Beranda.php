@@ -113,7 +113,7 @@ class Beranda extends CI_Controller
                     $tag = '';
                     for ($i = 0; $i < count($pecah); $i++) {
                         if (count($pecah) > 0) {
-                            $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-outline-primary-old mr-1 mb-1">#'.$pecah[$i].'</a>';
+                            $tag .= '<a href="'.base_url('tag/'.url_title($pecah[$i])).'" class="btn btn-sm btn-default mr-1 mb-1">#'.$pecah[$i].'</a>';
                         }
                     }
 
@@ -261,8 +261,8 @@ class Beranda extends CI_Controller
 
                 if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'LINK'):
                 $content_body = '<div class="row">
-                                    <div class="col-12 col-md-10 offset-md-2 pl-md-0">
-                                        <div class="mx-4 mx-md-0 pr-md-4">
+                                    <div class="col-12 col-md-10 offset-md-1">
+                                        <div>
                                             '.$sumber.'
                                             <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent btn-outline-light '.$rand.'">'.ucwords($namakategori).'</a>
                                             <h4 class="font-weight-bold mt-2"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h4>
@@ -279,14 +279,14 @@ class Beranda extends CI_Controller
                 else:
                 $content_body = '
                 <div class="row">
-                    <div class="col-12 col-md-10 offset-md-2 pl-md-0">
+                    <div class="col-12 col-md-10 offset-md-1 pl-md-0">
                         '.$sumber.'
                         <div class="btn-group btn-group-sm ml-3 ml-md-0" role="group" aria-label="button">
                             <button type="button"  aria-hidden="true" class="btn btn-sm btn-light" disabled><i class="fas fa-tag"></i></button>
                             <a href="'.$post_list_url.'" class="btn btn-sm btn-light '.$rand.'">'.$namakategori.'</a>
                         </div>
                         '.$photo_terkait_sisa.'
-                        <div class="mx-3 mx-md-0 pr-md-4 mt-2">
+                        <div class="mx-3 mx-md-0">
                             <h3 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h3>
                             <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
                             <div class="border border-light block canvas overflow-hidden mb-3" style="border-radius: 10px;">
@@ -303,12 +303,12 @@ class Beranda extends CI_Controller
 
                 $output .= '
                 
-				<div class="card border-top-0 border-left-0 border-right-0 border-bottom border-light bg-transparent">
-					<div class="card-body px-2 py-1 ml-md-5 d-flex justify-content-start align-items-center">
+				<div class="card border-top-0 border-left-0 border-right-0 border-bottom-0 border-light bg-transparent">
+					<div class="card-body px-2 ml-md-3 py-1 d-flex justify-content-start align-items-center">
                         <div>
-                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-1 ml-md-3 lazy p-2 bg-white">
+                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-md-3 lazy p-md-2 bg-white">
                         </div>
-                        <div class="w-100 ml-md-3 ml-2">
+                        <div class="w-100 ml-md-2 ml-2">
 						<h6 class="mb-0 py-1">
                             <a href="'.$link_profile_public.'" class="small"> '.$namalengkap.'</a> <br>  
                             <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
@@ -318,18 +318,18 @@ class Beranda extends CI_Controller
                     
                     '.$content_body.'
 
-					<div class="card-footer border-0 bg-transparent p-2 d-flex justify-content-end align-items-center">
+					<div class="card-footer mx-md-5 border-bottom border-top-0 px-0 pt-0 bg-transparent d-flex justify-content-around align-items-center">
                     <div class="w-100">
-					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.nominal($row->views). '</button>
+					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 text-secondary"><i class="far fa-eye mr-2"></i> '.nominal($row->views). '</button>
                     </div>
-                    <div class="w-100">
-                    <button aria-hidden="true" type="button" data-toggle="tooltip" title="Bagikan juga postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent  border-0 rounded p-2 w-100 text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
+                    <div>
+                    <button aria-hidden="true" type="button" data-toggle="tooltip" title="Bagikan juga postingan ini" id="btn-share" data-row-id="'.$row->id_berita. '" class="btn btn-transparent  border-0 rounded p-2 text-success"><i class="fas fa-share-alt mr-2"></i> <span class="share_count">'.$row->share_count. '</span></button>
                     </div>
-                    <div class="w-100">
-                    <button aria-hidden="true" type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded p-2 w-100 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
+                    <div>
+                    <button aria-hidden="true" type="button" onclick="like_toggle(this)" data-toggle="tooltip" class="btn btn-transparent border-0 rounded p-2 text-danger'.$btn_like.'" title="Suka / Tidak suka" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'.$status_like.' fa-heart mr-2"></i> <span class="count_like">'.$row->like_count.'</span> </button>
                     </div>
-                    <div class="w-100">
-                    <button type="button" aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-transparent border-0 rounded p-2 w-100 text-primary-old '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark"></i> </button>
+                    <div>
+                    <button type="button" aria-hidden="true" onclick="bookmark_toggle(this)" data-toggle="tooltip" data-placement="top" class="btn btn-transparent border-0 rounded p-2 text-primary-old '.$btn_bookmark.'" title="Simpan Postingan" data-id-berita="' . $row->id_berita . '" data-id-user="' . $this->session->userdata('user_portal_log')['id'] . '"><i  class="'. $status_bookmark.' fa-bookmark"></i> </button>
                     </div>
 					</div>
                     </div>

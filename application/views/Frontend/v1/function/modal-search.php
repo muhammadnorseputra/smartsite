@@ -1,6 +1,6 @@
 <!-- Modal Search -->
 <div class="modal bd-example-modal-lg" id="mpostseacrh" tabindex="-1" role="dialog" aria-labelledby="mpostseacrhLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content border-0 shadow-lg">
 			<div class="modal-body">
 				<?= form_open(base_url('frontend/v1/post/search'), ['id' => 'form_post_search','class' => 'form-inline']); ?>

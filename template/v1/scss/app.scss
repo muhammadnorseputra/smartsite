@@ -395,8 +395,8 @@ h5.title-sidebar {
 }
 .dropdown-menu {
 	top: 0;
-	left: 100%;
-	padding: .3rem;
+	left: 95%;
+	padding: .4rem;
 	border: 0px;
 	border-radius: 8px !important;
 }
@@ -717,6 +717,10 @@ i.likes:hover {
 }
 
 .dropdown-toggle::after {
+	position: absolute;
+    right: 0;
+	border-right: 0;
+	color: #ccc;
 	transition: transform 0.18s linear;
 	-webkit-transition: transform 0.18s linear;
 	-moz-transition: transform 0.18s linear;

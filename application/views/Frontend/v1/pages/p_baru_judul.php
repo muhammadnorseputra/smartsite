@@ -1,5 +1,5 @@
 <section>
-	<div class="container my-5">
+	<div class="container mt-md-5">
 		<div class="row no-gutters">
 			<div class="col-md-4 d-none d-md-block">
 				<div class="d-flex justify-content-center align-items-center h-100">
@@ -13,7 +13,6 @@
 				<div class="card bg-white border-0">
 					<div class="card-header rounded border-0 shadow-sm d-flex justify-content-between">
 						<div class="font-weight-bold text-uppercase">buat postingan baru</div>
-						<div><i class="fas fa-times-circle"></i></div>
 					</div>
 					<div class="card-body">
 						<div class="form-group">
