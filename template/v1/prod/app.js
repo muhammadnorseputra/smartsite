@@ -17,38 +17,23 @@ $(function () {
     };
     var lazzy_loader = function lazzy_loader(limit) {
       var output = "";
-      for (var count = 0; count < 1; count++) {
-        /*output += `
-            <div class="card border-0 bg-white mb-3" style="border-radius:5px;">
-                <div class ="card-body p-0 border-0">
-                    <span class ="content-placeholder" style="width:100%; height: 250px; border-radius:8px;"> &nbsp; </span>
-                </div> 
-                <div class="card-header border-0 bg-white" style="border-radius:5px;">
-                <p>
-                <span class="content-placeholder rounded-circle float-left mr-3" style="width:40px; height: 40px;">&nbsp;</span>
-                <span class="content-placeholder rounded-lg float-left"
-                style ="width:40%; height: 40px; border-radius: 15px;"> &nbsp; </span>
-                  <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
-                style ="width:40px; height: 40px;"> &nbsp; </span>
-                </p> 
-                </div> 
-                
-                <div class ="card-footer d-flex justify-content-bettwen p-3 bg-transparent border-0">
-                    <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
-                    <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
-                    <span class="content-placeholder rounded w-100 mr-2 p-2"> &nbsp; </span>
-                    <span class="content-placeholder rounded w-100 p-2"> &nbsp; </span>
-                </div> 
-            </div>
-        `;
-        */
+      for (var count = 0; count < 2; count++) {
+        output += "\n                <div class=\"card border-0 bg-white mb-3 ml-5 pl-5 mt-3\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:40px; height: 40px;\">&nbsp;</span>\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:40%; height: 40px; border-radius: 15px;\"> &nbsp; </span>\n                    </p> \n                    <div class =\"card-body p-0 border-0\">\n                        <span class =\"content-placeholder\" style=\"width:100%; height: 250px; border-radius:8px;\"> &nbsp; </span>\n                    </div>  \n                    <div class =\"card-footer d-flex justify-content-bettwen p-3 bg-transparent border-0\">\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 mr-2 p-2\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded w-100 p-2\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
 
         // output += `<div class="d-flex justify-content-center align-items-center my-5">
         //                 <div class="loader_small" style="width:50px;height:50px;"></div>
         //             </div>`;
 
-        output += "\n                \n                <div class =\"content-placeholder\" style=\"width:30%; height: 15px; border-radius:50px; margin-top: 10px; margin-left: 40px;\"> &nbsp; </div>\n                <br>\n                <div class =\"content-placeholder\" style=\"width:60%; height: 15px; border-radius:50px; margin-bottom: 10px; margin-left: 40px;\"> &nbsp; </div>\n                <div class =\"content-placeholder\" style=\"width:80%; height: 15px; border-radius:50px; margin-left: 40px;\"> &nbsp; </div>\n            \n            ";
+        // output += `
+
+        //     <div class ="content-placeholder" style="width:30%; height: 15px; border-radius:50px; margin-top: 10px; margin-left: 40px;"> &nbsp; </div>
+        //     <br>
+        //     <div class ="content-placeholder" style="width:60%; height: 15px; border-radius:50px; margin-bottom: 10px; margin-left: 40px;"> &nbsp; </div>
+        //     <div class ="content-placeholder" style="width:80%; height: 15px; border-radius:50px; margin-left: 40px;"> &nbsp; </div>
+
+        // `;
       }
+
       $("#load_data_message").html(output);
       $("button#load_more").hide().prop('disabled', true);
     };
@@ -123,28 +108,24 @@ $(function () {
       action = "active";
       load_data(limit, start);
     }
-
-    /*$(window).scroll(function() {
-         if (
-             $(window).scrollTop() + $(window).height() > $("#load_data").height() &&
-             action == "inactive"
-         ) {
-             lazzy_loader(limit);
-             action = "active";
-             start = start + limit;
-             load_data(limit, start);
-         }
-     });
-     */
-    $("button#load_more").on("click", function (e) {
-      e.preventDefault();
+    $(window).scroll(function () {
       if ($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == "inactive") {
+        lazzy_loader(limit);
         action = "active";
         start = start + limit;
-        lazzy_loader(limit);
         load_data(limit, start);
       }
     });
+
+    // $("button#load_more").on("click", function(e) {
+    // e.preventDefault();
+    //     if ($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == "inactive") {
+    //         action = "active";
+    //         start = start + limit;
+    //         lazzy_loader(limit);
+    //         load_data(limit, start);
+    //     }
+    // });
   } else {
     console.log('Semua berita tidak ditampilkan, karna bukan halaman beranda');
   }
