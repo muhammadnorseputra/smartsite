@@ -55,7 +55,7 @@ gulp.task("vendor", function() {
             "bower_components/imagesloaded/imagesloaded.pkgd.min.js",
             "bower_components/emojionearea/dist/emojionearea.min.js",
             // "bower_components/jquery-typeahead/dist/jquery.typeahead.min.js",
-            // "template/v1/plugin/slick/slick/slick.min.js",
+            "template/v1/plugin/slick/slick/slick.min.js",
             // "template/v1/plugin/popmodal/popModal.min.js",
             "template/v1/plugin/lazyload/jquery.lazy.min.js",
             "template/v1/plugin/lazyload/jquery.lazy.plugins.min.js",

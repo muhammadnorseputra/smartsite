@@ -60,11 +60,11 @@ $(document).ready(function() {
         infinite: true,
         dots: false,
         autoplaySpeed: 4000,
-        slidesToShow: 4,
+        slidesToShow: 2,
         slidesToScroll: 1,
         zIndex: 10,
         speed: 500,
-        centerMode: false,
+        centerMode: true,
         centerPadding: '80px',
         focusOnSelect: false,
         lazyLoad: 'ondemand',
@@ -79,11 +79,11 @@ $(document).ready(function() {
                 {
                   breakpoint: 480,
                   settings: {
-                    centerMode: true,
+                    centerMode: false,
                     slidesToShow: 1,
                     arrows: true,
                     fade: true,
-                    centerPadding: '40px',
+                    centerPadding: '0px',
                   }
               }
         ]

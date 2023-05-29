@@ -24,14 +24,14 @@ $(function() {
             var output = "";
             for (var count = 0; count < 2; count++) {
             output += `
-                <div class="card border-0 bg-white mb-3 pl-md-5 mt-3">
+                <div class="card border-0 bg-white mb-3 offset-md-1 mt-3">
                     <p>
                     <span class="content-placeholder rounded-circle float-left mr-3" style="width:40px; height: 40px;">&nbsp;</span>
                     <span class="content-placeholder rounded-lg float-left"
                     style ="width:40%; height: 40px; border-radius: 15px;"> &nbsp; </span>
                     </p> 
                     <div class ="card-body p-0 border-0">
-                        <span class ="content-placeholder" style="width:90%; height: 250px; border-radius:8px;"> &nbsp; </span>
+                        <span class ="content-placeholder" style="width:93%; height: 250px; border-radius:8px;"> &nbsp; </span>
                     </div>  
                     <div class="card-footer d-flex justify-content-bettwen p-2 bg-transparent border-0 mr-5">
                         <span class="content-placeholder rounded mr-auto p-2" style="width:40px; height: 40px;"> &nbsp; </span>

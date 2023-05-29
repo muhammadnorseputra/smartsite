@@ -18,7 +18,7 @@ $(function () {
     var lazzy_loader = function lazzy_loader(limit) {
       var output = "";
       for (var count = 0; count < 2; count++) {
-        output += "\n                <div class=\"card border-0 bg-white mb-3 pl-md-5 mt-3\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:40px; height: 40px;\">&nbsp;</span>\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:40%; height: 40px; border-radius: 15px;\"> &nbsp; </span>\n                    </p> \n                    <div class =\"card-body p-0 border-0\">\n                        <span class =\"content-placeholder\" style=\"width:90%; height: 250px; border-radius:8px;\"> &nbsp; </span>\n                    </div>  \n                    <div class=\"card-footer d-flex justify-content-bettwen p-2 bg-transparent border-0 mr-5\">\n                        <span class=\"content-placeholder rounded mr-auto p-2\" style=\"width:40px; height: 40px;\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded mr-2 p-2\" style=\"width:40px; height: 40px;\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded mr-2 p-2\" style=\"width:40px; height: 40px;\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded p-2\" style=\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
+        output += "\n                <div class=\"card border-0 bg-white mb-3 offset-md-1 mt-3\">\n                    <p>\n                    <span class=\"content-placeholder rounded-circle float-left mr-3\" style=\"width:40px; height: 40px;\">&nbsp;</span>\n                    <span class=\"content-placeholder rounded-lg float-left\"\n                    style =\"width:40%; height: 40px; border-radius: 15px;\"> &nbsp; </span>\n                    </p> \n                    <div class =\"card-body p-0 border-0\">\n                        <span class =\"content-placeholder\" style=\"width:93%; height: 250px; border-radius:8px;\"> &nbsp; </span>\n                    </div>  \n                    <div class=\"card-footer d-flex justify-content-bettwen p-2 bg-transparent border-0 mr-5\">\n                        <span class=\"content-placeholder rounded mr-auto p-2\" style=\"width:40px; height: 40px;\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded mr-2 p-2\" style=\"width:40px; height: 40px;\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded mr-2 p-2\" style=\"width:40px; height: 40px;\"> &nbsp; </span>\n                        <span class=\"content-placeholder rounded p-2\" style=\"width:40px; height: 40px;\"> &nbsp; </span>\n                    </div> \n                </div>\n            ";
 
         // output += `<div class="d-flex justify-content-center align-items-center my-5">
         //                 <div class="loader_small" style="width:50px;height:50px;"></div>
@@ -455,14 +455,14 @@ var CONTAINER = $("#countpeg_container");
 var SEGMENT = 'frontend/v1/api/silka_file_json';
 function Loading(isLoading) {
   if (isLoading) {
-    return "<div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>";
+    return "<div class=\"col-6 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 p-2\">\n                <span class=\"content-placeholder rounded-circle mx-auto d-block\" style=\"width:65px; height: 65px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-1\" style=\"width: 100%; height: 60px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>";
   }
 }
 CONTAINER.html(Loading(true));
 $.getJSON("".concat(SEGMENT)).done(function (res) {
   // data is the JSON response from the server
   Loading(false);
-  CONTAINER.html("\n      <div class=\"col-6 col-sm-6 col-md-3 rounded-left border-right\">\n          <div class=\"card bg-transparent border-0 rounded\">\n              <div class=\"card-body text-center\">\n                  <i class=\"fas fa-users pb-md-4 rounded fa-3x text-info\"></i>\n                  <h1 id=\"count_jml\" class=\"font-weight-bold\" data-speed=\"3000\">".concat(res.jml_asn, "</h1>\n                  <b class=\"text-secondary small\">Jumlah ASN Kab. Balangan</b>\n              </div>\n          </div>\n      </div>\n      <div class=\"col-6 col-sm-6 col-md-3 border-right\">\n          <div class=\"card bg-transparent border-0 rounded\">\n              <div class=\"card-body text-center\">\n                  <i class=\"fas fa-user-tie pb-md-4 fa-3x mx-auto text-success rounded\"></i>\n                  <h1 id=\"count_jml\" data-speed=\"3000\" class=\"font-weight-bold\">").concat(res.jml_pns, "</h1>\n                  <b class=\"text-secondary small\">Jumlah PNS + CPNS</b>\n              </div>\n          </div>\n      </div>\n      <div class=\"col-6 col-sm-6 col-md-3 border-right\">\n          <div class=\"card bg-transparent rounded border-0\">\n              <div class=\"card-body text-center\">\n                  <i class=\"far pb-md-4 fa-user-circle fa-3x mx-auto text-warning rounded\"></i>\n                  <h1 id=\"count_jml\" data-speed=\"3000\" class=\"font-weight-bold\">").concat(res.jml_nonpns, "</h1>\n                  <b class=\"text-secondary small\">Jumlah NON PNS (Pendataan thn. 2018)</b>\n              </div>\n          </div>\n      </div>\n      <div class=\"col-6 col-sm-6 col-md-3 rounded-right\">\n          <div class=\"card bg-transparent rounded border-0\">\n              <div class=\"card-body text-center\">\n                  <i class=\"fas pb-md-4 fa-home fa-3x mx-auto text-secondary rounded\"></i>\n                  <h1 id=\"count_jml\" data-speed=\"3000\" class=\"font-weight-bold\">").concat(res.jml_pensiun, "</h1>\n                  <b class=\"text-secondary small\">Jumlah PNS Pensiun</b>\n              </div>\n          </div>\n      </div>\n      "));
+  CONTAINER.html("\n      <div class=\"col-6 rounded-left border-right border-bottom\">\n          <div class=\"card bg-transparent border-0 rounded\">\n              <div class=\"card-body text-center\">\n                  <i class=\"fas fa-users pb-md-4 rounded fa-3x text-info\"></i>\n                  <h1 id=\"count_jml\" class=\"font-weight-bold\" data-speed=\"3000\">".concat(res.jml_asn, "</h1>\n                  <b class=\"text-secondary small\">Jumlah ASN Kab. Balangan</b>\n              </div>\n          </div>\n      </div>\n      <div class=\"col-6 border-bottom\">\n          <div class=\"card bg-transparent border-0 rounded\">\n              <div class=\"card-body text-center\">\n                  <i class=\"fas fa-user-tie pb-md-4 fa-3x mx-auto text-success rounded\"></i>\n                  <h1 id=\"count_jml\" data-speed=\"3000\" class=\"font-weight-bold\">").concat(res.jml_pns, "</h1>\n                  <b class=\"text-secondary small\">Jumlah PNS + CPNS</b>\n              </div>\n          </div>\n      </div>\n      <div class=\"col-6 border-right\">\n          <div class=\"card bg-transparent rounded border-0\">\n              <div class=\"card-body text-center\">\n                  <i class=\"far pb-md-4 fa-user-circle fa-3x mx-auto text-warning rounded\"></i>\n                  <h1 id=\"count_jml\" data-speed=\"3000\" class=\"font-weight-bold\">").concat(res.jml_nonpns, "</h1>\n                  <b class=\"text-secondary small\">Jumlah NON PNS (Pendataan thn. 2018)</b>\n              </div>\n          </div>\n      </div>\n      <div class=\"col-6 rounded-right\">\n          <div class=\"card bg-transparent rounded border-0\">\n              <div class=\"card-body text-center\">\n                  <i class=\"fas pb-md-4 fa-home fa-3x mx-auto text-secondary rounded\"></i>\n                  <h1 id=\"count_jml\" data-speed=\"3000\" class=\"font-weight-bold\">").concat(res.jml_pensiun, "</h1>\n                  <b class=\"text-secondary small\">Jumlah PNS Pensiun</b>\n              </div>\n          </div>\n      </div>\n      "));
 }).fail(function (jqxhr, textStatus, error) {
   var err = textStatus + ", " + error;
   console.log("Request Failed: " + err);
@@ -744,50 +744,50 @@ $(function () {
 //     });
 // });
 "use strict";
+// $(document).ready(function () {
+
+// // Instagram
+// function nFormatter(num) {
+// 	if (num >= 1000000000) {
+// 		return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "G";
+// 	}
+// 	if (num >= 1000000) {
+// 		return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+// 	}
+// 	if (num >= 1000) {
+// 		return (num / 1000).toFixed(1).replace(/\.0$/, "") + "K";
+// 	}
+// 	return num;
+// }
+// // var instagram_user = $("a.btn-instagram").attr("data-username");
+// var instagram_user = 'bkpsdm.blg';
+// $.ajax({
+// 	url: "https://www.instagram.com/" + instagram_user + "/?__a=1",
+// 	type: "get",
+//     headers: {
+//         'Access-Control-Allow-Credentials' : true,
+//         'Access-Control-Allow-Origin':'*',
+//         'Access-Control-Allow-Methods':'GET',
+//         'Access-Control-Allow-Headers':'application/json',
+//       },
+//     dataType: 'jsonp',
+// 	success: function (response) {
+// 		console.log(response);
+// 		// var username = response.graphql.user.username;
+// 		// var profile_pic = response.graphql.user.profile_pic_url;
+// 		// var followers = response.graphql.user.edge_followed_by.count;
+// 		// var follow = response.graphql.user.edge_follow.count;
+
+// 		// $("p.instagram-biograpy").html(response.graphql.user.biography);
+// 		// $("a.btn-follow").attr("href", `https://www.instagram.com/${username}/`);
+// 		// $("p.instagram-user").html(`<b>@${username}</b>`);
+// 		// $("img.profile-pic").attr("data-src", profile_pic);
+// 		// $("span.count_ig").html(followers);
+// 		// $("span.count_ig_follow").html(follow);
+// 	},
+// });
+// });
 "use strict";
-
-$(document).ready(function () {
-  // Instagram
-  function nFormatter(num) {
-    if (num >= 1000000000) {
-      return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "G";
-    }
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
-    }
-    if (num >= 1000) {
-      return (num / 1000).toFixed(1).replace(/\.0$/, "") + "K";
-    }
-    return num;
-  }
-  // var instagram_user = $("a.btn-instagram").attr("data-username");
-  var instagram_user = 'bkpsdm.blg';
-  $.ajax({
-    url: "https://www.instagram.com/" + instagram_user + "/?__a=1",
-    type: "get",
-    headers: {
-      'Access-Control-Allow-Credentials': true,
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET',
-      'Access-Control-Allow-Headers': 'application/json'
-    },
-    dataType: 'jsonp',
-    success: function success(response) {
-      console.log(response);
-      // var username = response.graphql.user.username;
-      // var profile_pic = response.graphql.user.profile_pic_url;
-      // var followers = response.graphql.user.edge_followed_by.count;
-      // var follow = response.graphql.user.edge_follow.count;
-
-      // $("p.instagram-biograpy").html(response.graphql.user.biography);
-      // $("a.btn-follow").attr("href", `https://www.instagram.com/${username}/`);
-      // $("p.instagram-user").html(`<b>@${username}</b>`);
-      // $("img.profile-pic").attr("data-src", profile_pic);
-      // $("span.count_ig").html(followers);
-      // $("span.count_ig_follow").html(follow);
-    }
-  });
-});
 "use strict";
 
 $(document).ready(function () {
@@ -1019,11 +1019,11 @@ $(document).ready(function () {
     infinite: true,
     dots: false,
     autoplaySpeed: 4000,
-    slidesToShow: 4,
+    slidesToShow: 2,
     slidesToScroll: 1,
     zIndex: 10,
     speed: 500,
-    centerMode: false,
+    centerMode: true,
     centerPadding: '80px',
     focusOnSelect: false,
     lazyLoad: 'ondemand',
@@ -1037,11 +1037,11 @@ $(document).ready(function () {
     responsive: [{
       breakpoint: 480,
       settings: {
-        centerMode: true,
+        centerMode: false,
         slidesToShow: 1,
         arrows: true,
         fade: true,
-        centerPadding: '40px'
+        centerPadding: '0px'
       }
     }]
   });

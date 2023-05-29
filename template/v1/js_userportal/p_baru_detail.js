@@ -32,7 +32,7 @@
 		var tiny = tinymce.init({
 			selector: "#content",
 			theme: "silver",
-			height: '100%',
+			height: 1024,
 			inline_boundaries: false,
 			placeholder: 'Ketik disini ...',
 			skin: 'oxide',

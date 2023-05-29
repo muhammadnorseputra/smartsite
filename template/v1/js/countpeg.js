@@ -4,22 +4,22 @@ const SEGMENT = 'frontend/v1/api/silka_file_json'
 
 function Loading(isLoading) {
     if(isLoading) {
-    return `<div class="col-6 col-md-3 p-2">
+    return `<div class="col-6 p-2">
                 <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
                 <span class="content-placeholder my-1" style="width: 100%; height: 60px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
             </div>
-            <div class="col-6 col-md-3 p-2">
+            <div class="col-6 p-2">
                 <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
                 <span class="content-placeholder my-1" style="width: 100%; height: 60px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
             </div>
-            <div class="col-6 col-md-3 p-2">
+            <div class="col-6 p-2">
                 <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
                 <span class="content-placeholder my-1" style="width: 100%; height: 60px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
             </div>
-            <div class="col-6 col-md-3 p-2">
+            <div class="col-6 p-2">
                 <span class="content-placeholder rounded-circle mx-auto d-block" style="width:65px; height: 65px;">&nbsp;</span>
                 <span class="content-placeholder my-1" style="width: 100%; height: 60px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
@@ -33,7 +33,7 @@ CONTAINER.html(Loading(true));
     // data is the JSON response from the server
     Loading(false);
       CONTAINER.html(`
-      <div class="col-6 col-sm-6 col-md-3 rounded-left border-right">
+      <div class="col-6 rounded-left border-right border-bottom">
           <div class="card bg-transparent border-0 rounded">
               <div class="card-body text-center">
                   <i class="fas fa-users pb-md-4 rounded fa-3x text-info"></i>
@@ -42,7 +42,7 @@ CONTAINER.html(Loading(true));
               </div>
           </div>
       </div>
-      <div class="col-6 col-sm-6 col-md-3 border-right">
+      <div class="col-6 border-bottom">
           <div class="card bg-transparent border-0 rounded">
               <div class="card-body text-center">
                   <i class="fas fa-user-tie pb-md-4 fa-3x mx-auto text-success rounded"></i>
@@ -51,7 +51,7 @@ CONTAINER.html(Loading(true));
               </div>
           </div>
       </div>
-      <div class="col-6 col-sm-6 col-md-3 border-right">
+      <div class="col-6 border-right">
           <div class="card bg-transparent rounded border-0">
               <div class="card-body text-center">
                   <i class="far pb-md-4 fa-user-circle fa-3x mx-auto text-warning rounded"></i>
@@ -60,7 +60,7 @@ CONTAINER.html(Loading(true));
               </div>
           </div>
       </div>
-      <div class="col-6 col-sm-6 col-md-3 rounded-right">
+      <div class="col-6 rounded-right">
           <div class="card bg-transparent rounded border-0">
               <div class="card-body text-center">
                   <i class="fas pb-md-4 fa-home fa-3x mx-auto text-secondary rounded"></i>

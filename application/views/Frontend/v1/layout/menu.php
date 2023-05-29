@@ -5,9 +5,9 @@
 			<?= '<img style="object-fit:contain; margin: 14px 0px;" src="' .base_url('assets/images/logo.png') . '" alt="BKPPD Kab. Balangan 2021" width="100" height="50"/>'; ?>
 		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav ml-auto mr-md-auto p-0" style="flex-direction: column;">
+			<ul class="navbar-nav mx-4 w-100" style="flex-direction: column;">
 				<li class="nav-item">
-					<a href="<?= base_url('/') ?>" class="nav-link px-4 d-flex align-items-center justify-content-start">
+					<a href="<?= base_url('/') ?>" class="nav-link px-2 d-flex align-items-center justify-content-start">
 						<i class="material-icons mr-3 p-0">person</i>
 						Beranda
 					</a>
@@ -21,7 +21,7 @@
 					$skr = date('Y-m-d');
 				?>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle px-4 d-flex align-items-center justify-content-start" href="#" id="navbarDropdown" role="button" style="background-color: <?= $m->color ? $m->color : 'transparent' ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle px-2 d-flex align-items-center justify-content-start" href="#" id="navbarDropdown" role="button" style="background-color: <?= $m->color ? $m->color : 'transparent' ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="material-icons mr-3 p-0"><?= $m->fid_icon; ?></i> 
 						<?= $m->nama_menu; ?>
 					</a>
@@ -122,7 +122,7 @@
 				} else {
 				?>
 				<li class="nav-item">
-					<a class="nav-link px-4 d-flex align-items-center justify-content-start" style="background-color: <?= $m->color ? $m->color : 'transparent' ?>" href="<?= base_url($m->link); ?>">
+					<a class="nav-link px-2 d-flex align-items-center justify-content-start" style="background-color: <?= $m->color ? $m->color : 'transparent' ?>" href="<?= base_url($m->link); ?>">
 						<i class="material-icons mr-3 p-0"><?= $m->fid_icon; ?></i> 
 						<?= ucwords($m->nama_menu); ?>
 					</a>
@@ -130,13 +130,13 @@
 				<?php } ?>
 				<?php endforeach; ?>
 				<li class="nav-item">
-					<a href="#" role="button" class="nav-link px-4 d-flex align-items-center justify-content-start post-search" data-placement="right" data-toggle="tooltip" title="Klik untuk mencari artikel atau berita">
+					<a href="#" role="button" class="nav-link px-2 d-flex align-items-center justify-content-start post-search" data-placement="right" data-toggle="tooltip" title="Klik untuk mencari artikel atau berita">
 						<i class="material-icons  mr-3 p-0">search</i>
 						Pencarian
 					</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle px-4 d-flex align-items-center justify-content-start" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle px-2 d-flex align-items-center justify-content-start" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="material-icons mr-3 p-0">apps</i> 
 						Produk
 					</a>
@@ -176,7 +176,7 @@
 					</ul>
 				</li>
 				<li class="nav-item">
-					<a href="<?= base_url('userlist') ?>" class="nav-link px-4 d-flex align-items-center justify-content-start">
+					<a href="<?= base_url('userlist') ?>" class="nav-link px-2 d-flex align-items-center justify-content-start">
 						<i class="material-icons  mr-3 p-0">person</i>
 						Users Portal
 					</a>

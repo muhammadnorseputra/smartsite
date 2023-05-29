@@ -4,7 +4,6 @@
 <?php  
 $mf_banner_home = $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 8)->result();
 ?>
-<div class="col-12">
     <div class="row grafis-app-slick">
         <?php 
             $no=1; 
@@ -26,7 +25,7 @@ $mf_banner_home = $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 8)->resul
         ?>
         <div class="px-3">
                 <div class="card bg-light text-white rounded-lg mb-2">
-                    <img class="card-img" height="340" style="object-fit:cover;" alt="<?= $b->judul ?>" src="<?= files('file_banner/'.$b->gambar) ?>">
+                    <img class="card-img" height="320" style="object-fit:cover;" alt="<?= $b->judul ?>" src="<?= files('file_banner/'.$b->gambar) ?>">
                     <div class="card-img-overlay d-flex flex-column justify-content-end">
                         <div class="main-body align-self-end">
                             <a href="<?= $b->path ?>" id="xbanner-<?= $no ?>" data-title="<?= $b->judul ?>" data-lightbox="BannerAside" style="text-shadow: 0.3px 1px white;">
@@ -49,7 +48,6 @@ $mf_banner_home = $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 8)->resul
         </div>
         <?php $no++; endforeach; ?>
     </div> 
-</div>
 </div>
 </div>
         </section>

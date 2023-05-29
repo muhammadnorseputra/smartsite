@@ -261,7 +261,7 @@ class Beranda extends CI_Controller
 
                 if($row->type === 'YOUTUBE' || $row->type === 'BERITA' || $row->type === 'LINK'):
                 $content_body = '<div class="row">
-                                    <div class="col-12 col-md-10 offset-md-1">
+                                    <div class="col-12 col-md-10 offset-md-1 pr-md-0 mr-md-0">
                                         <div>
                                             '.$sumber.'
                                             <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent btn-outline-light '.$rand.'">'.ucwords($namakategori).'</a>
@@ -306,9 +306,9 @@ class Beranda extends CI_Controller
 				<div class="card border-top-0 border-left-0 border-right-0 border-bottom-0 border-light bg-transparent">
 					<div class="card-body px-2 ml-md-3 py-1 d-flex justify-content-start align-items-center">
                         <div>
-                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-md-3 lazy p-md-2 bg-white">
+                        <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-md-3 ml-lg-4 lazy p-md-2 bg-white">
                         </div>
-                        <div class="w-100 ml-md-2 ml-2">
+                        <div class="w-100 ml-md-2 ml-lg-3 ml-2">
 						<h6 class="mb-0 py-1">
                             <a href="'.$link_profile_public.'" class="small"> '.$namalengkap.'</a> <br>  
                             <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
@@ -318,7 +318,7 @@ class Beranda extends CI_Controller
                     
                     '.$content_body.'
 
-					<div class="card-footer mx-md-5 border-bottom border-top-0 px-0 pt-0 bg-transparent d-flex justify-content-around align-items-center">
+					<div class="card-footer mr-md-5 offset-md-1 rounded-0 border-bottom border-top-0 px-0 pt-0 bg-transparent d-flex justify-content-around align-items-center">
                     <div class="w-100">
 					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded p-2 text-secondary"><i class="far fa-eye mr-2"></i> '.nominal($row->views). '</button>
                     </div>
