@@ -4,8 +4,8 @@ $(document).ready(function() {
         stickTo: $('#main-content'),
         // innerSticker: '#stickMe',
         top: 10,
-        bottom: 10,
-        bottomEnd: 10,
+        bottom: 120,
+        bottomEnd: 100,
         // followScroll: true,
         // mobileFirst: false,
         responsive: {
