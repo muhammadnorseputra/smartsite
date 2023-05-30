@@ -1,7 +1,7 @@
-<section class="post-list mt-5 mb-4">
+<section class="post-list mb-4">
 	<div class="container">
-		<div class="row">
-			<div class="col-12 col-md-8 col-lg-8 mt-5">
+		<div class="row offset-md-2">
+			<div class="col-12 col-md-8 col-lg-8 mt-3">
 				<div class="p-3 border rounded">
 				<a target="_blank" href="<?= $banner->url ?>">
 				<img data-src="<?= $banner->path; ?>" class="lazy rounded mx-auto d-block shadow-sm img-fluid" alt="<?= $banner->judul; ?>">	
@@ -12,7 +12,7 @@
 				</p>
 				</div>
 			</div>
-			<div class="col-md-4 col-lg-4 mt-5">
+			<div class="col-md-4 col-lg-4 mt-3">
 				<div class="banner-list">
 				<ul class="list-group list-group-flush shadow-sm" style="max-height: 540px; overflow-y: scroll;">
 				  <?php foreach ($banner_all as $b): ?>

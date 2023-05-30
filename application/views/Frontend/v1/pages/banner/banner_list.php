@@ -1,20 +1,8 @@
-<section>
-	<div class="container pt-md-5">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>
-				<h3 class="font-weight-bold text-responsive">Daftar Banner</h3>
-				<p class="text-dark small">Resources Tim BinaInfo BKPPD</p>
-			</div>
-			<div>
-			</div>
-		</div>
-	</div>
-</div>
-</section>
-<section class="mb-3">
+
+<section class="my-5">
 <div class="container">
 	<div class="row">
-		<div class="col-12" id="bannerList">
+		<div class="col-10 offset-md-2" id="bannerList">
 			<div class="d-flex justify-content-end mb-3">
 				<div>
 					<input type="text" class="fuzzy-search form-control" placeholder="Masukan judul banner"/>

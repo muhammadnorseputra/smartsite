@@ -2,7 +2,7 @@
 	
 <nav id="navbar" class="navbar navbar-expand-sm d-none d-md-block p-0">
 		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
-			<?= '<img style="object-fit:contain;" src="' .base_url('assets/images/logo.png') . '" class="my-4 ml-lg-4" alt="BKPPD Kab. Balangan 2021" width="100%" height="80"/>'; ?>
+			<?= '<img style="object-fit:contain;" src="' .base_url('assets/images/logo.png') . '" class="mt-3 mb-2 mb-lg-4 ml-lg-4" alt="BKPPD Kab. Balangan 2021" width="100%" height="80"/>'; ?>
 		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mx-4 w-100" style="flex-direction: column;">

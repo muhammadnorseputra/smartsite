@@ -1,6 +1,6 @@
-<section class="my-md-5 my-3">
+<section class="my-3">
 	<div class="container">
-		<div class="row pt-md-5">
+		<div class="row offset-md-2">
 			<div class="col-md-8 pr-md-5 order-last order-md-first" id="main-content">
 				<h4>Tentang GPR-BKPPD Balangan</h4>
 				<hr>
