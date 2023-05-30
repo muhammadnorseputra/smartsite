@@ -287,7 +287,7 @@ class Users extends CI_Controller {
 											['online' => 'ON']);
 					$msg = array('valid' => true, 
 					'pesan' => "<div class='d-block mx-auto text-center'>Login berhasil, akun ditemukan ...</div>", 
-					'redirect' => $urlRef);
+					'redirect' => urldecode($urlRef));
 				// } else {
 					// $msg = array('valid' => true, 'pesan' => 'Login Berhasil, akun juga login di device lain.', 'debug' => $this->users->getuserportalbyemail($where['email'])->row()->online);
 					// $this->users->status_online('t_users_portal', ['email' => $where['email']], ['online' => 'OFF']);

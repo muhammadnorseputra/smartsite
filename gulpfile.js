@@ -81,7 +81,7 @@ gulp.task("vendor", function() {
             // "assets/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js",
             // "assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js",
             // "bower_components/jquery.scrollTo/jquery.scrollTo.min.js",
-            // "bower_components/hc-sticky/dist/hc-sticky.js"
+            "bower_components/hc-sticky/dist/hc-sticky.js"
         ])
         // .pipe(javascriptObfuscator({
         //     compact: true

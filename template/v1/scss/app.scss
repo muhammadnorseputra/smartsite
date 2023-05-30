@@ -157,7 +157,7 @@ section.bg-hero-home {
 .slider{
   z-index: 9999;
   position:fixed;
-  height:3.5px;
+  height:4px;
   overflow-x: hidden;
   // ditengah layar
   // width:30%;
@@ -173,15 +173,15 @@ section.bg-hero-home {
 .line{
   position:absolute;
   opacity: 0.9;
-  background:#fff;
-  width:210%;
-  height:3.5px;
+  background:teal;
+  width:310%;
+  height:4px;
 }
 
 .subline{
   position:absolute;
   background:green;
-  height:3.5px; 
+  height:4px; 
 }
 .inc{
   animation: increase 1.8s infinite;
@@ -387,15 +387,18 @@ h5.title-sidebar {
 	padding-top: .12rem .4rem;
 	margin: 8px 0px;
 }
-.navbar li.nav-item > a:hover {
+.navbar li.nav-item > a:hover,
+.navbar li.nav-item:hover > a,
+.navbar .dropdown-menu li:hover > a {
 	color: #333 !important;
+	background-color: #eaeaea !important ;
 }
 .dropdown-item:hover, .dropdown-item:focus {
 	background: #eaeaea !important;
 }
 .dropdown-menu {
 	top: 0;
-	left: 95%;
+	left: 101%;
 	padding: .4rem;
 	border: 0px;
 	border-radius: 8px !important;
@@ -717,8 +720,6 @@ i.likes:hover {
 }
 
 .dropdown-toggle::after {
-	position: absolute;
-    right: 15px;
 	border-right: 0;
 	color: #ccc;
 	transition: transform 0.18s linear;

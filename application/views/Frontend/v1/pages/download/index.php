@@ -1,30 +1,35 @@
 <section class="hero pb-5">
 	<div class="container pt-md-5">
-		<div class="d-flex justify-content-between align-items-start flex-lg-row flex-column">
-			<div>
-				<h3 class="font-weight-bold text-responsive text-white">Direktori Download</h3>
-				<p class="text-muted small">Resources arsip kepegawaian</p>
-			</div>
-		</div>
+    <div class="col-md-8 offset-md-3">
+      <div class="d-flex justify-content-start align-items-start flex-lg-row flex-column">
+        <i class="fas fa-download fa-3x text-white mr-3"></i>
+        <div>
+          <h3 class="font-weight-bold text-responsive text-white">Direktori Download</h3>
+          <p class="text-muted small">Resources arsip kepegawaian</p>
+        </div>
+      </div>
+    </div>
 	</div>
 </div>
 </section>
 <section class="mb-md-3 mt--7">
-<div class="container bg-white py-4 rounded shadow-sm">
-	<div class="table-responsive">
-		<table class="table table-condensed" id="table-download">
-			<thead>
-				<tr>
-					<th data-priority="1">No</th>
-					<th data-priority="2">Judul</th>
-					<th>Keterangan</th>
-					<th>Hits</th>
-					<th>Size</th>
-					<th data-priority="3">Download</th>
-				</tr>
-			</thead>
-		</table>
-	</div>
+<div class="container">
+  <div class="col-md-8 offset-md-3 bg-white p-3 rounded shadow-sm">
+    <div class="table-responsive">
+      <table class="table table-condensed" id="table-download">
+        <thead>
+          <tr>
+            <th data-priority="1">No</th>
+            <th data-priority="2">Judul</th>
+            <th>Keterangan</th>
+            <th>Hits</th>
+            <th>Size</th>
+            <th data-priority="3">Download</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
 </div>
 </section>
 

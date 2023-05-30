@@ -205,7 +205,7 @@
 		</button>
 	</div>
 	<?php } else { ?>
-	<a rel="noindex, nofollow" class="btn d-block mx-4 mb-5 shadow-sm btn-primary rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.curPageURL()); ?>">
+	<a rel="noindex, nofollow" class="btn d-block mx-4 mb-5 shadow-sm btn-primary rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.urlencode(curPageURL())); ?>">
 		<i class="fas fa-lock mr-2"></i> Masuk 
 	</a>
 	<?php } ?>

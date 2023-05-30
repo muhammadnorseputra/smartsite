@@ -4,8 +4,8 @@ $chanelId = $this->config->item('YOUTUBE_CHANNELID'); //ID chanel youtube
 $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 ?>
 <section>
-	<div class="container pt-md-5">
-		<div class="d-flex justify-content-between align-items-md-center align-items-start flex-lg-row  flex-md-row flex-column">
+	<div class="container py-md-4">
+		<div class="d-flex justify-content-between align-items-md-center align-items-start flex-lg-row  flex-md-row flex-column offset-md-2">
 			<div class="d-none d-md-block d-lg-block">	
 				<h3 class="font-weight-bold text-responsive text-dark">Videos</h3>
 				<p class="text-muted small">Resources <a href="www.youtube.com"> www.youtube.com</a></p>
@@ -17,9 +17,9 @@ $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 	</div>
 </div>
 </section>
-<section class="mb-3">
+<section>
 	<div class="container">
-		<div class="row">
+		<div class="row offset-md-2">
 			<?php  
 				// Playlsit
 				$urlPlaylist = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId='.$playlistId.'&key='.$key;
@@ -31,11 +31,11 @@ $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 				$thumb_video    = $v['snippet']['thumbnails']['medium']['url'];
 				$publish_video    = $v['snippet']['publishedAt'];
 			?>
-				<div class="col-12 col-sm-6 col-md-4 col-lg-4">
+				<div class="col-12 col-sm-6 col-md-4 col-lg-4 pl-md-0">
 					<a href="<?= $videoID ?>" id="btn-view-video" title="<?= $title_video ?>" class="position-relative">
 						<img src="<?= $thumb_video ?>" alt="<?= $title_video ?>" class="img-fluid w-100 shadow-sm rounded mb-3">
 					</a>
-					<div class="small text-light mb-3">Upload: <?= longdate_indo(substr($publish_video, 0, 10)) ?></div>
+					<div class="small text-dark mb-3">Upload: <?= longdate_indo(substr($publish_video, 0, 10)) ?></div>
 					<a href="<?= $videoID ?>" id="btn-view-video" title="<?= $title_video ?>">
 						<h6><?= $title_video ?></h6>
 					</a>

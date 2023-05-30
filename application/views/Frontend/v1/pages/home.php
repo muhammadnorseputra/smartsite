@@ -9,7 +9,7 @@
 <section id="content-page">
     <div class="container-fluid">
         <div class="row d-flex justify-content-between flex-column flex-lg-row">
-            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 order-md-last mt-3 mr-md-5">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 order-md-last mt-3 mr-lg-5">
                 <div id="sidebar">        
                     <?php $this->load->view('Frontend/v1/function/poling'); ?>
                     <div class="row no-gutters mt-3" id="countpeg_container"></div>

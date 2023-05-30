@@ -5,7 +5,8 @@
 	$category_arr = ['General', 'Business', 'Entertainment', 'Health', 'Science', 'Sports', 'Technology'];
 ?>
 <section class="hero py-5">
-	<div class="container pt-md-5">
+	<div class="container">
+		<div class="col-md-10 offset-md-2">
 		<div class="d-flex justify-content-between align-items-start flex-lg-row flex-column">
 			<div>
 				<h3 class="font-weight-bold text-responsive text-white">Top Headlines Indonesia</h3>
@@ -27,12 +28,13 @@
 			</div>
 		</div>
 	</div>
+	</div>
 </div>
 </section>
 <section class="mb-3 mt--6">
-<div class="container mb-5 bg-white py-3 rounded shadow">
-	<div>
-		<b class="text-light text-uppercase mb-2 d-block">category</b>
+<div class="container">
+	<div class="col-md-10 offset-md-2 mb-5 bg-white py-3 rounded shadow">
+		<b class="text-dark text-uppercase mb-2 d-block">category</b>
 		<div style="overflow-x: auto;" class="d-flex justify-content-between align-items-center flex-nowrap">
 			<?php 
 				foreach ($category_arr as $c) :
@@ -44,7 +46,7 @@
 	</div>
 </div>
 <div class="container">
-	<div class="row">
+	<div class="row offset-md-2">
 		<?php
 		$key = $this->config->item('NEWS_KEY'); 
 		$source = 'id';

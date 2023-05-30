@@ -1,7 +1,7 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-12 pt-md-1 mt-md-1 offset-md-3 text-left pb-5 pb-md-1">
+      <div class="col-md-8 col-lg-10 pt-md-1 mt-md-1 offset-md-3 offset-lg-2 text-left pb-5 pb-md-1 px-md-0">
         <?php
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
@@ -19,9 +19,9 @@
   </div>
 </section>
 <section class="h-statis-detail bg-white rounded trinket_statis">
-  <div class="container">
+  <div class="container mb-md-5">
     <div class="row">
-      <div class="col-md-8 p-3 p-md-4 offset-md-3 order-last">
+      <div class="col-md-6 order-last" style="overflow-x: hidden;">
         <?php
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
@@ -38,7 +38,7 @@
         </p>
         <?php endif; ?>
       </div>
-      <div class="col-md-2 offset-md-3 rounded">
+      <div class="col-md-4 offset-md-2 mb-3 mb-md-0 pl-md-0 pt-md-0">
       <?php
       if(!empty($h->file)):
       $path = !empty($h->filename) ? $h->filename : '';
@@ -49,7 +49,7 @@
         ?>
         <object class="rounded-lg border my-3" data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:350px; width: 100%;"></object>
         <?php else: ?>
-        <img style="object-fit:cotain;" data-src="<?= img_blob($h->file) ?>" width="100%" height="350" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded-lg lazy">
+        <img style="object-fit:cotain; min-height: 350px" data-src="<?= img_blob($h->file) ?>" width="100%" height="350" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded-lg lazy">
         <?php endif; ?>
       <?php endif; ?>
       </div>

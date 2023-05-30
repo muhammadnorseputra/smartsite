@@ -83,10 +83,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 
 <div class="container px-0">
 	<div class="row">
-		<div class="col-md-3 order-md-first order-lg-last">
-			<!-- Sidebar Left -->
-		</div>
-		<div class="col-md-8 pb-md-4 pb-4 rounded-none order-first order-md-last bg-white pr-0 pl-0" id="main-content">
+		<div class="col-md-8 pb-md-4 pb-4 rounded-none bg-white pr-0 pl-0 offset-md-3" id="main-content">
 
 		<nav aria-label="breadcrumb" class="d-none d-md-block d-lg-block">
 			<ol class="breadcrumb small mb-0 rounded-0">
@@ -129,7 +126,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 			<?php endif; ?>
 		<?php endif; ?>
 
-				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-3 px-5 px-md-0">
+				<div class="card rounded-lg shadow-none bg-transparent rounded border-0 mt-3 mt-md-3 px-4 px-md-0">
 					<a href="<?= $post_list_url ?>"><i class="fas fa-link"></i> <?= $namakategori ?></a>
 					<h1 class="fs6 d-none d-md-block d-lg-block"><?php echo $post_detail->judul; ?></h1>
 					<h1 class="fs9 d-md-none d-block"><?php echo $post_detail->judul; ?></h1>
@@ -261,7 +258,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 					<p class=" text-center text-muted small px-md-5 px-0">Mau ikutan diskusi? Untuk ikutan diskusi kamu harus punya identitas, maka dari itu login dulu.</p>
 					<div class="d-flex justify-content-center flex-wrap-reverse">
 						<div>
-							<a href="<?php echo base_url('login_web?urlRef='.curPageURL()) ?>" class="btn btn-dark btn-md btn-block"><i class="fas fa-lock mr-3"></i> Login</a>
+							<a href="<?php echo base_url('login_web?urlRef='.urlencode(curPageURL())) ?>" class="btn btn-dark btn-md btn-block"><i class="fas fa-lock mr-3"></i> Login</a>
 						</div>
 						<div class="ml-2">
 							<a href="<?php echo base_url('daftar') ?>" class="btn btn-success btn-md btn-block"><i class="fas fa-user-plus mr-3"></i> Daftar</a>

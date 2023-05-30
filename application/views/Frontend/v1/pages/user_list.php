@@ -1,17 +1,17 @@
-<section class="pt-md-5">
+<section>
 	<div class="container">
 		<div class="row mt-3 mt-lg-5 mt-md-5">
-			<div class="col-12 col-md-4 mb-md-5 mb-3">
+			<div class="col-12 col-md-4 offset-lg-2 offset-md-1 mb-md-5 mb-3">
         <div id="sidebar">
   				<h3 class="text-uppercase">userportal</h3>
   				<p class="text-muted lead">
-  					List Userportal yang telah berhasil bergabung.
+  					Daftar Userportal yang telah berhasil join ke website.
   				</p>
   				<p class="text-dark font-weight-bold">Userportal - Total</p>
   				<p class="display-1">
   					<?= $total_userlist ?>
   				</p>
-          <p class="text-dark font-weight-bold">Userportal - Populer</p>
+          <p class="text-dark font-weight-bold">Userportal - Aktif</p>
           <div class="row">
             <?php foreach($user_populer->result() as $u): ?>
               <div class="col-md-12">
@@ -40,7 +40,7 @@
           </div>
         </div>
 			</div>
-			<div class="col-12 col-md-8" id="main-content">
+			<div class="col-12 col-md-6" id="main-content">
 				<div class="table-responsive">
 					<table class="table table-borderless table-condensed table-striped table-light" id="userportal">
 						<thead>
