@@ -1,22 +1,22 @@
 function LoadingImage(isLoading) {
     if(isLoading) {
     return `<div class="col-6 col-md-3 p-2">
-                <span class="content-placeholder rounded mx-auto d-block" style="width:100%; height: 300px;">&nbsp;</span>
+                <span class="content-placeholder rounded mx-auto d-block" style="width:100%; height: 200px;">&nbsp;</span>
                 <span class="content-placeholder my-2" style="width: 100%; height: 20px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
             </div>
             <div class="col-6 col-md-3 p-2 d-none d-md-block">
-                <span class="content-placeholder rounded mx-auto d-block" style="width:100%; height: 300px;">&nbsp;</span>
+                <span class="content-placeholder rounded mx-auto d-block" style="width:100%; height: 200px;">&nbsp;</span>
                 <span class="content-placeholder my-2" style="width: 100%; height: 20px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
             </div>
             <div class="col-6 col-md-3 p-2 d-none d-md-block">
-                <span class="content-placeholder rounded mx-auto d-block" style="width:100%; height: 300px;">&nbsp;</span>
+                <span class="content-placeholder rounded mx-auto d-block" style="width:100%; height: 200px;">&nbsp;</span>
                 <span class="content-placeholder my-2" style="width: 100%; height: 20px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
             </div>
             <div class="col-6 col-md-3 p-2 d-none d-md-block">
-                <span class="content-placeholder rounded mx-auto d-block" style="width:100%; height: 300px;">&nbsp;</span>
+                <span class="content-placeholder rounded mx-auto d-block" style="width:100%; height: 200px;">&nbsp;</span>
                 <span class="content-placeholder my-2" style="width: 100%; height: 20px;"></span>
                 <span class="content-placeholder" style="width: 100%; height: 30px;"></span>
             </div>`;
@@ -30,8 +30,8 @@ $(document).ready(function() {
         res.forEach(d => {
             $('.AppGrafis').slick('slickAdd', `
             <div class="px-3">
-                    <div class="card bg-light text-white rounded-lg mb-2">
-                        <img class="card-img" height="340" style="object-fit:cover;" alt="${d.title}" src="${d.path}">
+                    <div class="card bg-light text-white rounded-lg mb-2 shadow-sm">
+                        <img class="card-img" height="220" style="object-fit:cover; object-position: top" alt="${d.title}" src="${d.path}">
                         <div class="card-img-overlay d-flex flex-column justify-content-end">
                             <div class="main-body align-self-end">
                                 <a href="${d.path}" id="xbanner-${d.uuid}" data-title="${d.title}" data-lightbox="BannerAside" style="text-shadow: 0.3px 1px white;">
@@ -60,12 +60,12 @@ $(document).ready(function() {
         infinite: true,
         dots: false,
         autoplaySpeed: 4000,
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
         zIndex: 10,
         speed: 500,
         centerMode: true,
-        centerPadding: '80px',
+        centerPadding: '40px',
         focusOnSelect: false,
         lazyLoad: 'ondemand',
         // fade: false,

@@ -18,7 +18,7 @@
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 offset-md-3 mt-3" id="main-content">
             <!-- Slider -->
             <div class="AppGrafisContainer">
-                <div class="row no-gutters AppGrafis border-bottom mb-3 ml-md-3"></div>
+                <div class="row no-gutters AppGrafis border-bottom mb-3"></div>
             </div>
             <div class="mb-3 offset-md-1 mr-md-5 d-flex justify-content-between align-items-center flex-row flex-nowrap bg-white">
                     <?php
