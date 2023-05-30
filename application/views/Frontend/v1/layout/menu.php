@@ -8,7 +8,7 @@
 			<ul class="navbar-nav mx-4 w-100" style="flex-direction: column;">
 				<li class="nav-item">
 					<a href="<?= base_url('/') ?>" class="nav-link px-2 d-flex align-items-center justify-content-start">
-						<i class="material-icons mr-3 p-0">person</i>
+						<i class="material-icons mr-3 p-0">home</i>
 						Beranda
 					</a>
 				</li>
