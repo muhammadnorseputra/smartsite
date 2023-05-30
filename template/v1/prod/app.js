@@ -1086,8 +1086,8 @@ $(document).ready(function () {
     stickTo: $('#main-content'),
     // innerSticker: '#stickMe',
     top: 10,
-    bottom: 120,
-    bottomEnd: 100,
+    bottom: 10,
+    bottomEnd: 30,
     // followScroll: true,
     // mobileFirst: false,
     responsive: {
