@@ -5,7 +5,7 @@ $(document).ready(function() {
         // innerSticker: '#stickMe',
         top: 10,
         bottom: 10,
-        bottomEnd: 10,
+        bottomEnd: 30,
         // followScroll: true,
         // mobileFirst: false,
         responsive: {

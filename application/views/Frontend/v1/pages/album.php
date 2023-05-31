@@ -1,9 +1,11 @@
 <section>
 	<div class="container pt-md-5">
-		<div class="d-flex justify-content-between align-items-start">
-			<div>
-				<h3 class="font-weight-bold text-dark text-responsive">Daftar Album</h3>
-				<p class="text-muted small">Resources Dokumentasi BKPPD</p>
+		<div class="row offset-md-2">	
+			<div class="d-flex justify-content-between align-items-start offset-lg-0">
+				<div>
+					<h3 class="font-weight-bold text-dark text-responsive">Daftar Album</h3>
+					<p class="text-muted small">Resources Dokumentasi BKPPD</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -11,6 +13,7 @@
 </section>
 <section class="mb-3">
 <div class="container">
+	<div class="row offset-md-2">
 	<div class="card-columns">
 		<?php if($album->num_rows() > 0): ?>
 		<?php foreach($album->result() as $a): ?>
@@ -36,5 +39,6 @@
 		</div>
 		<?php endif; ?>
 	</div>
+</div>
 </div>
 </section>

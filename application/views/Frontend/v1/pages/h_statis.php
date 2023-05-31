@@ -21,7 +21,7 @@
 <section class="h-statis-detail bg-white rounded trinket_statis">
   <div class="container mb-md-5">
     <div class="row">
-      <div class="col-md-6 order-last" style="overflow-x: hidden;">
+      <div class="px-3 px-md-0 <?= empty($h->file) ? 'col-md-10 offset-md-2' : 'col-md-6' ?> order-last" style="overflow-x: hidden;">
         <?php
         if ($detail->num_rows() > 0) :
         $h = $detail->row();
@@ -38,12 +38,12 @@
         </p>
         <?php endif; ?>
       </div>
-      <div class="col-md-4 offset-md-2 mb-3 mb-md-0 pl-md-0 pt-md-0">
       <?php
       if(!empty($h->file)):
       $path = !empty($h->filename) ? $h->filename : '';
       $ext = pathinfo($path, PATHINFO_EXTENSION);
       ?>
+      <div class="col-md-4 offset-md-2 mb-3 mb-md-0 pl-md-0 pt-md-0">
         <?php
         if($ext === 'pdf'):
         ?>
@@ -51,8 +51,8 @@
         <?php else: ?>
         <img style="object-fit:cotain; min-height: 350px" data-src="<?= img_blob($h->file) ?>" width="100%" height="350" alt="<?= $h->filename ?>" class="mx-auto img-fluid d-block rounded-lg lazy">
         <?php endif; ?>
-      <?php endif; ?>
       </div>
+      <?php endif; ?>
     </div>
   </div>
 </section>

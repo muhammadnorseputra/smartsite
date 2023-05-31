@@ -1,17 +1,8 @@
-<section class="hero pt-md-5">
-	<div class="container pt-md-5 pt-2">
-		<div class="d-flex justify-content-center justify-content-md-center align-items-center">
-			<p class="font-weight-bold mx-2">Album <i class="fas fa-chevron-right mx-2"></i>
-				<span class="text-success"><?= $this->album->judul_album_by_id($id) ?></span>
-			</p>
-		</div>
-	</div>
-</div>
-</section>
+
 <section class="bg-dark">
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-8 offset-md-2">
+		<div class="col-md-8 offset-md-3">
 			
 	<?php if($photos->num_rows() > 0): ?>
 	<?php

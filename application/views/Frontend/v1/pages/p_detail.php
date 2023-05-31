@@ -122,7 +122,7 @@ $post_list_url = base_url('k/' . url_title($namakategori));
 		<?php else: ?>
 			<?php if($post_detail->type !== 'YOUTUBE'): ?>
 			<?= $img ?>
-			<a href="<?= $imgSrc ?>" data-lightbox="BannerAside" rel="noreferrer" class="d-none d-md-block btn btn-sm btn-info rounded-0 border-0 shadow-none"><i class="fas fa-seach mr-2"></i> Lihat Gambar Versi Original</a>
+			<a href="<?= $imgSrc ?>" data-lightbox="BannerAside" rel="noreferrer" class="d-none d-inline-block mt--8 ml-md-3 ml-4 btn btn-sm btn-info rounded-0 border-0 shadow-none"><i class="fas fa-search mr-2"></i> Lihat Gambar Versi Original</a>
 			<?php endif; ?>
 		<?php endif; ?>
 
