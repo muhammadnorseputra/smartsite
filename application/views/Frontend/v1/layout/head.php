@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="google-site-verification" content="bSCKU4GxtgQKLwewKLjrX5NLU9j9OaqzScNy3eyHOqw" />
     <link rel="alternate" hreflang="id-ID" href="<?= curPageURL(); ?>"/>
-    <link rel="apple-touch-icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />
-    <link rel="shortcut icon" sizes="32x32" href="<?= base_url('assets/images/logo.png') ?>" />
+    <link rel="apple-touch-icon" sizes="32x32" href="<?= base_url('assets/images/favicon.png') ?>" />
+    <link rel="shortcut icon" sizes="32x32" href="<?= base_url('assets/images/favicon.png') ?>" />
     <link rel="manifest" href="<?= base_url('manifest.json') ?>">
     
     <!-- browser color -->
