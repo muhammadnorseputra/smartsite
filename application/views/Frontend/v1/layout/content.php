@@ -1,5 +1,6 @@
-<div class="col-sm-3 col-md-2 fixed-top order-first border-light border-right bg-white p-0  d-none d-md-block" style="height: 100vh">
+<div id="menusidebar" class="col-sm-3 col-md-2 fixed-top order-first border-light border-right bg-white p-0  d-none d-md-block" style="height: 100vh">
  <?php include_once("menu.php") ?>
+ <button class="btn btn-default" data-toggle="tooltip" data-title="Collapse Menu" data-placement="right" style="position: absolute; top:15%; right:-5%; border-radius: 50%"><i class="fas fa-chevron-left"></i></button>
 </div>
 
 <?php  

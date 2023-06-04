@@ -394,11 +394,30 @@ h5.title-sidebar {
 	padding-top: .12rem .4rem;
 	margin: 8px 0px;
 }
+.navbar li.nav-item > a::before {
+	content: "";
+	position: absolute;
+	left: -13%;
+	top: 0;
+	width: 5px;
+	height: 100%;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: teal;
+	display: none;
+}
 .navbar li.nav-item > a:hover,
 .navbar li.nav-item:hover > a,
 .navbar .dropdown-menu li:hover > a {
 	color: #333 !important;
 	background-color: #eaeaea !important ;
+}
+.navbar li.nav-item:hover a::before {
+	display: block;
+} 
+.navbar li.nav-item > a:hover > i {
+	color: teal;
+	transform: scale(1.1);
 }
 .dropdown-item:hover, .dropdown-item:focus {
 	background: #eaeaea !important;
