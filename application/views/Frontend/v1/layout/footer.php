@@ -136,7 +136,7 @@
 					</li>
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a target="_blank" href="https://www.mediadigitalcenter.my.id/">MDCenter</a>
+						<a target="_blank" href="https://www.mediabalangan.com/" rel="dofollow">MDCenter</a>
 					</li>
 				</ul>
 			</div>
