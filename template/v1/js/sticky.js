@@ -3,9 +3,9 @@ $(document).ready(function() {
      $sticky.hcSticky({
         stickTo: $('#main-content'),
         // innerSticker: '#stickMe',
-        top: 10,
-        bottom: 10,
-        bottomEnd: 30,
+        top: 15,
+        bottom: 15,
+        bottomEnd: 80,
         // followScroll: true,
         // mobileFirst: false,
         responsive: {

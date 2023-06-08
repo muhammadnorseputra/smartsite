@@ -9,10 +9,11 @@
 <section id="content-page">
     <div class="container-fluid">
         <div class="row d-flex justify-content-between flex-column flex-lg-row">
-            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 order-md-last mt-3 mr-lg-5">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 order-last mt-3 mr-lg-5">
                 <div id="sidebar">        
                     <?php $this->load->view('Frontend/v1/function/poling'); ?>
                     <div class="row no-gutters mt-3" id="countpeg_container"></div>
+                    <p class="text-secondary text-sm p-3 border-top border-light">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian dan Pengembangan Sumber Daya Manusia.</p>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 offset-md-3 mt-3" id="main-content">
