@@ -542,8 +542,10 @@ h5.title-sidebar {
 	& > .slick-slide:not(:first-child) {
     display: none;
   }
+  	& > .slick-slide:not(.slick-active) {
+		filter: blur(5px)
+	}
 }
-
 .slick-banner {
 	display: flex;
 }
@@ -609,7 +611,7 @@ h5.title-sidebar {
 .slide-arrow {
   position: absolute;
   top: 50%;
-  margin-top: -35px;
+  margin-top: -50px;
   z-index: 999;
 }
 button.prev-arrow{
