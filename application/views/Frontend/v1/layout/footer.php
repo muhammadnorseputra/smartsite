@@ -102,6 +102,41 @@
 						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Userportal</a>
 					</li>
 				</ul>
+				<h6 class="text-warning pb-3 border-bottom">Link Patner Informative</h6>
+				<ul class="list-unstyled list-footer">
+					<li>
+					    <!-- Permanent -->
+						<a target="_blank" href="https://worldquran.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>World Quran</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-external-link-alt text-light mr-2"></i></span>
+						<a target="_blank" href="https://www.mediabalangan.com/">Media Balangan</a>
+					</li>
+					<li>
+					    <!-- Permanent -->
+						<a target="_blank" href="https://satechainmedia.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Blockchain technology</a>
+					</li>
+					<li>
+					    <!-- Permanent -->
+						<a target="_blank" href="https://sdn-haurgading.xyz"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Berita Technology</a>
+					</li>
+					<li>
+					    <!-- Permanent -->
+						<a target="_blank" href="https://lokeridn.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Lowongan Kerja</a>
+					</li>
+					<li>
+					    <!-- Permanent -->
+						<a target="_blank" href="https://world-giveaways.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Giveaway Gratis</a>
+					</li>
+					<li>
+					    <!-- Permanent -->
+						<a target="_blank" href="https://www.ulastempat.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>UlasTempat </a>
+					</li>
+					<li>
+					    <!-- Permanent -->
+						<a target="_blank" href="https://www.soundoftext.co.id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Soundoftext</a>
+					</li>
+				</ul>
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<h6 class="text-warning pb-3 border-bottom">Link Terkait</h6>
