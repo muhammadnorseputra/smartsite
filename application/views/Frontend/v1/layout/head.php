@@ -26,9 +26,9 @@
     ?>
     <link rel="preconnect" href="https://fonts.googleapis.com/"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-solid-900.woff2') ?>">
-    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-brands-400.woff2') ?>">
-    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts//fa-regular-400.woff2') ?>">
+    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts/fa-solid-900.woff2') ?>">
+    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts/fa-brands-400.woff2') ?>">
+    <link rel="preload" as="font" href="<?= base_url('bower_components/Font-Awesome/webfonts/fa-regular-400.woff2') ?>">
     <link rel="preload" href="<?= base_url('template/v1/prod/vendor-min.js'); ?>" as="script">
     <link rel="preload" href="<?= base_url('template/v1/prod/app-min.js'); ?>" as="script">
     <link rel="stylesheet" type="text/css" href="<?= base_url('template/v1/prod/app.css'); ?>">
