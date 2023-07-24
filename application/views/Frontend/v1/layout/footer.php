@@ -102,15 +102,14 @@
 						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Userportal</a>
 					</li>
 				</ul>
-				<h6 class="text-warning pb-3 border-bottom">Link Patner Informative</h6>
-				<ul class="list-unstyled list-footer">
+				<h6 class="text-warning pb-3 border-bottom panel-title d-flex" data-toggle="collapse" data-target="#collapseTree">Link Patner Informative</h6>
+				<ul class="list-unstyled list-footer panel-collapse collapse" id="collapseTree">
 					<li>
 					    <!-- Permanent -->
 						<a target="_blank" href="https://worldquran.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>World Quran</a>
 					</li>
-					<li class="d-flex">
-						<span><i class="fas fa-external-link-alt text-light mr-2"></i></span>
-						<a target="_blank" href="https://www.mediabalangan.com/">Media Balangan</a>
+					<li>
+					<a target="_blank" href="https://www.mediabalangan.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Media Balangan</a>
 					</li>
 					<li>
 					    <!-- Permanent -->
