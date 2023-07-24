@@ -139,7 +139,7 @@
 			</div>
 			<div class="col-md-7 offset-md-5">
 				<h6 class="mb-2 border-bottom text-warning panel-title d-flex pb-3 align-item-center" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false">Link Patner Informative</h6>
-					<ul class="list-unstyled list-footer panel-collapse collapse d-flex-column d-md-flex-row align-item-center justify-content-between" id="collapseTree">
+					<ul class="list-unstyled list-footer panel-collapse collapse d-flex flex-column flex-md-row align-item-center justify-content-between" id="collapseTree">
 						<li>
 							<div>
 								<!-- Permanent -->
