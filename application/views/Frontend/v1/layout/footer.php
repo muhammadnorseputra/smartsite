@@ -102,7 +102,43 @@
 						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Userportal</a>
 					</li>
 				</ul>
-				<h6 class="mb-2 border-bottom text-warning panel-title d-flex pb-3 align-item-center" data-toggle="collapse" data-target="#collapseTree">Link Patner Informative</h6>
+				
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<h6 class="text-warning pb-3 border-bottom">Link Terkait</h6>
+				<ul class="list-unstyled list-footer text-light">
+					<li class="d-flex">
+						<span><i class="fas fa-link text-light mr-2"></i></span>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://www.bkn.go.id/">BKN Pusat</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-light mr-2"></i></span>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://sscasn.bkn.go.id/">SSCASN BKN</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-light mr-2"></i></span>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://www.kemendagri.go.id/">Kementerian Dalam Negeri</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-light mr-2"></i></span>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://www.menpan.go.id/site/">Kementrian Pemberdayagunaan Aparatur Negara</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-light mr-2"></i></span>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://bpsdm.kalselprov.go.id/">BPSDM Provinsi Kalimantan Selatan</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-light mr-2"></i></span>
+						<a  rel="nofollow, noreferrer" target="_blank" href="https://bkd.kalselprov.go.id/">BKD Provinsi Kalimantan Selatan</a>
+					</li>
+					<li class="d-flex">
+						<span><i class="fas fa-link text-light mr-2"></i></span>
+						<a target="_blank" href="https://balangankab.go.id/">Pemerintah Kabupaten Balangan</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-7">
+			<h6 class="mb-2 border-bottom text-warning panel-title d-flex pb-3 align-item-center" data-toggle="collapse" data-target="#collapseTree">Link Patner Informative</h6>
 				<ul class="list-unstyled list-footer panel-collapse collapse" id="collapseTree">
 					<li class="d-flex align-item-center justify-content-between">
 					    <div>
@@ -141,39 +177,6 @@
 					<li>
 					    <!-- 2 Bulan Exp (23 Juli - 23 September) -->
 						<a target="_blank" href="https://kicaumania.net/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>kicaumania</a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-md-4 col-sm-6">
-				<h6 class="text-warning pb-3 border-bottom">Link Terkait</h6>
-				<ul class="list-unstyled list-footer text-light">
-					<li class="d-flex">
-						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="nofollow, noreferrer" target="_blank" href="https://www.bkn.go.id/">BKN Pusat</a>
-					</li>
-					<li class="d-flex">
-						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="nofollow, noreferrer" target="_blank" href="https://sscasn.bkn.go.id/">SSCASN BKN</a>
-					</li>
-					<li class="d-flex">
-						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="nofollow, noreferrer" target="_blank" href="https://www.kemendagri.go.id/">Kementerian Dalam Negeri</a>
-					</li>
-					<li class="d-flex">
-						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="nofollow, noreferrer" target="_blank" href="https://www.menpan.go.id/site/">Kementrian Pemberdayagunaan Aparatur Negara</a>
-					</li>
-					<li class="d-flex">
-						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="nofollow, noreferrer" target="_blank" href="https://bpsdm.kalselprov.go.id/">BPSDM Provinsi Kalimantan Selatan</a>
-					</li>
-					<li class="d-flex">
-						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a  rel="nofollow, noreferrer" target="_blank" href="https://bkd.kalselprov.go.id/">BKD Provinsi Kalimantan Selatan</a>
-					</li>
-					<li class="d-flex">
-						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a target="_blank" href="https://balangankab.go.id/">Pemerintah Kabupaten Balangan</a>
 					</li>
 				</ul>
 			</div>
