@@ -137,7 +137,7 @@
 					</li>
 				</ul>
 			</div>
-				<div class="col-md-7 offset-md-4">
+				<div class="col-md-7 offset-md-5">
 				<h6 class="mb-2 border-bottom text-warning panel-title d-flex pb-3 align-item-center" data-toggle="collapse" data-target="#collapseTree">Link Patner Informative</h6>
 					<ul class="list-unstyled list-footer panel-collapse collapse" id="collapseTree">
 						<li class="d-flex align-item-center justify-content-between">
@@ -149,34 +149,38 @@
 								<!-- Permanent -->
 								<a target="_blank" href="https://www.mediabalangan.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Media Balangan</a>
 							</div>
+							<div>
+								<!-- 2 Bulan Exp (23 Juli - 23 September) -->
+								<a target="_blank" href="https://kicaumania.net/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>kicaumania</a>
+							</div>
 						</li>
-						<li>
-							<!-- Permanent -->
-							<a target="_blank" href="https://satechainmedia.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Blockchain technology</a>
+						<li class="d-flex align-item-center justify-content-between">
+							<div>
+								<!-- Permanent -->
+								<a target="_blank" href="https://satechainmedia.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Blockchain technology</a>
+							</div>
+							<div>
+								<!-- Permanent -->
+								<a target="_blank" href="https://sdn-haurgading.xyz"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Berita Technology</a>
+							</div>
+							<div>
+								<!-- Permanent -->
+								<a target="_blank" href="https://www.soundoftext.co.id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Soundoftext</a>
+							</div>
 						</li>
-						<li>
-							<!-- Permanent -->
-							<a target="_blank" href="https://sdn-haurgading.xyz"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Berita Technology</a>
-						</li>
-						<li>
-							<!-- Permanent -->
-							<a target="_blank" href="https://lokeridn.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Lowongan Kerja</a>
-						</li>
-						<li>
-							<!-- Permanent -->
-							<a target="_blank" href="https://world-giveaways.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Giveaway Gratis</a>
-						</li>
-						<li>
-							<!-- Permanent -->
-							<a target="_blank" href="https://www.ulastempat.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>UlasTempat </a>
-						</li>
-						<li>
-							<!-- Permanent -->
-							<a target="_blank" href="https://www.soundoftext.co.id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Soundoftext</a>
-						</li>
-						<li>
-							<!-- 2 Bulan Exp (23 Juli - 23 September) -->
-							<a target="_blank" href="https://kicaumania.net/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>kicaumania</a>
+						<li class="d-flex align-item-center justify-content-between">
+							<div>
+								<!-- Permanent -->
+								<a target="_blank" href="https://lokeridn.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Lowongan Kerja</a>
+							</div>
+							<div>
+								<!-- Permanent -->
+								<a target="_blank" href="https://world-giveaways.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Giveaway Gratis</a>
+							</div>
+							<div>
+								<!-- Permanent -->
+								<a target="_blank" href="https://www.ulastempat.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>UlasTempat </a>
+							</div>
 						</li>
 					</ul>
 				</div>
