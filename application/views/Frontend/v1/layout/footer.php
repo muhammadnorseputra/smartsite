@@ -102,7 +102,7 @@
 						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Userportal</a>
 					</li>
 				</ul>
-				<h6 class="text-warning pb-3 border-bottom panel-title d-flex" data-toggle="collapse" data-target="#collapseTree">Link Patner Informative</h6>
+				<h6 class="mb-2 border-bottom text-warning panel-title d-flex pb-3 align-item-center" data-toggle="collapse" data-target="#collapseTree">Link Patner Informative</h6>
 				<ul class="list-unstyled list-footer panel-collapse collapse" id="collapseTree">
 					<li>
 					    <!-- Permanent -->
@@ -167,10 +167,6 @@
 					<li class="d-flex">
 						<span><i class="fas fa-link text-light mr-2"></i></span>
 						<a target="_blank" href="https://balangankab.go.id/">Pemerintah Kabupaten Balangan</a>
-					</li>
-					<li class="d-flex">
-						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a target="_blank" href="https://www.mediabalangan.com/" rel="dofollow">Media Balangan</a>
 					</li>
 				</ul>
 			</div>

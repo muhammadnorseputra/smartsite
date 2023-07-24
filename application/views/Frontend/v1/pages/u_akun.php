@@ -1,4 +1,4 @@
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
 <?php
 $d = $this->users->detail_user(encrypt_url($this->session->userdata('user_portal_log')['email']));
 $cek_verify = $d->email_verifikasi == 'Y' ? '<i class="fas text-success fa-check-circle"></i>' : '<br><span class="badge badge-warning">Belum verify</span>';
