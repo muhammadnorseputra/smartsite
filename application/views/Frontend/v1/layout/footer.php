@@ -104,12 +104,15 @@
 				</ul>
 				<h6 class="mb-2 border-bottom text-warning panel-title d-flex pb-3 align-item-center" data-toggle="collapse" data-target="#collapseTree">Link Patner Informative</h6>
 				<ul class="list-unstyled list-footer panel-collapse collapse" id="collapseTree">
-					<li>
-					    <!-- Permanent -->
-						<a target="_blank" href="https://worldquran.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>World Quran</a>
-					</li>
-					<li>
-					<a target="_blank" href="https://www.mediabalangan.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Media Balangan</a>
+					<li class="d-flex align-item-center justify-content-between">
+					    <div>
+							<!-- Permanent -->
+							<a target="_blank" href="https://worldquran.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>World Quran</a>
+						</div>
+						<div>
+							<!-- Permanent -->
+							<a target="_blank" href="https://www.mediabalangan.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Media Balangan</a>
+						</div>
 					</li>
 					<li>
 					    <!-- Permanent -->
