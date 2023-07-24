@@ -135,6 +135,10 @@
 					    <!-- Permanent -->
 						<a target="_blank" href="https://www.soundoftext.co.id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Soundoftext</a>
 					</li>
+					<li>
+					    <!-- 2 Bulan Exp (23 Juli - 23 Agustus) -->
+						<a target="_blank" href="https://kicaumania.net/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>kicaumania</a>
+					</li>
 				</ul>
 			</div>
 			<div class="col-md-4 col-sm-6">
