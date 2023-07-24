@@ -138,8 +138,8 @@
 				</ul>
 			</div>
 			<div class="col-md-7 offset-md-5">
-				<h6 class="mb-2 border-bottom text-warning panel-title d-flex pb-3 align-item-center" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false">Link Patner Informative</h6>
-					<ul class="list-unstyled list-footer panel-collapse collapse d-flex flex-column flex-md-row align-item-center justify-content-between" id="collapseTree">
+				<h6 class="mb-2 border-bottom text-warning panel-title pb-3" data-toggle="collapse" data-target="#collapseTree">Link Patner Informative</h6>
+					<ul class="list-unstyled list-footer d-flex flex-column flex-md-row align-item-start justify-content-between panel-collapse collapse " id="collapseTree">
 						<li>
 							<div>
 								<!-- Permanent -->
