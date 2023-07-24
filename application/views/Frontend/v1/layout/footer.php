@@ -139,8 +139,9 @@
 			</div>
 			<div class="col-md-7 offset-md-5">
 				<h6 class="mb-2 border-bottom text-warning panel-title pb-3" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false">Link Patner Informative</h6>
-					<ul class="list-unstyled list-footer d-flex flex-column flex-md-row align-item-start justify-content-between panel-collapse collapse " id="collapseTree">
-						<li>
+					<div class="panel-collapse collapse" id="collapseTree">
+						<div class="d-flex flex-column flex-md-row align-item-start justify-content-between">
+						<div>
 							<div>
 								<!-- Permanent -->
 								<a target="_blank" href="https://worldquran.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>World Quran</a>
@@ -153,8 +154,8 @@
 								<!-- 2 Bulan Exp (23 Juli - 23 September) -->
 								<a target="_blank" href="https://kicaumania.net/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>kicaumania</a>
 							</div>
-						</li>
-						<li>
+						</div>
+						<div>
 							<div>
 								<!-- Permanent -->
 								<a target="_blank" href="https://satechainmedia.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Blockchain technology</a>
@@ -167,8 +168,8 @@
 								<!-- Permanent -->
 								<a target="_blank" href="https://www.soundoftext.co.id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Soundoftext</a>
 							</div>
-						</li>
-						<li>
+						</div>
+						<div>
 							<div>
 								<!-- Permanent -->
 								<a target="_blank" href="https://lokeridn.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Lowongan Kerja</a>
@@ -181,8 +182,9 @@
 								<!-- Permanent -->
 								<a target="_blank" href="https://www.ulastempat.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>UlasTempat </a>
 							</div>
-						</li>
-					</ul>
+						</div>
+						</div>
+					</div>
 				</div>
 		</div>
 	</div>
