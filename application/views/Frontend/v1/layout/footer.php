@@ -137,7 +137,7 @@
 					</li>
 				</ul>
 			</div>
-				<div class="col-md-7 col-offset-md-2">
+				<div class="col-md-7 offset-md-2">
 				<h6 class="mb-2 border-bottom text-warning panel-title d-flex pb-3 align-item-center" data-toggle="collapse" data-target="#collapseTree">Link Patner Informative</h6>
 					<ul class="list-unstyled list-footer panel-collapse collapse" id="collapseTree">
 						<li class="d-flex align-item-center justify-content-between">
