@@ -1,12 +1,10 @@
+<IfModule mod_rewrite.c>
 RewriteEngine On
+
+#REMOVE INDEX.PHP
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L] 
-
-#Remove WWW from the url
-RewriteCond %{HTTPS} !=on
-RewriteCond %{HTTP_HOST} ^www.(.+)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
 #HTTP to HTTPS
 RewriteCond %{HTTP_HOST} !=localhost
@@ -15,6 +13,12 @@ RewriteCond %{REMOTE_ADDR} !=127.0.0.1
 RewriteCond %{REMOTE_ADDR} !=::1
 RewriteCond %{HTTPS} !on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+#Remove WWW from the url
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} ^www.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
 
 <ifModule mod_gzip.c>
 mod_gzip_on Yes
