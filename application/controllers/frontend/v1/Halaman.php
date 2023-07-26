@@ -28,7 +28,7 @@ class Halaman extends CI_Controller
       'robot'=> true
     );
     // Meta SEO
-    $title = $this->halaman->get_namahalaman($token_halaman).' - BKPPD Balangan';
+    $title = $this->halaman->get_namahalaman($token_halaman).' - BKPPD Balangan '.date('Y');
     $slug = $this->halaman->get_slug_halaman($token_halaman);
     $detail = $this->halaman->get_detail_halaman($token_halaman);
     $keywords = str_replace('-',',',url_title(strtolower($title)));
@@ -41,7 +41,7 @@ class Halaman extends CI_Controller
     $url_amp = base_url("amp/page/{$slug}");
     $meta_tag = meta_tags($e, 
                           $title = character_limiter($title, 60), 
-                          $desc = strip_tags(str_replace('"', '', character_limiter($detail->row()->content, 110))), 
+                          $desc = $title.",".strip_tags(str_replace('"', '', character_limiter($detail->row()->content, 110))), 
                           $imgUrl = $imgurl, 
                           $url = base_url('page/'.$slug), 
                           $keyWords = $keywords,
