@@ -49,6 +49,12 @@ if(! function_exists('strip_only_tags')){
     }
 
 }
+if(! function_exists('strip')){
+    function strip($domain) {
+        $domain = str_replace("www.","",$domain);
+        return $domain;
+    }
+}
 if(! function_exists('meta_tags')){
 
     function meta_tags($enable = ['general' => false, 'og'=> false, 'twitter'=> false, 'robot'=> false], 

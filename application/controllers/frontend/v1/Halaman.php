@@ -43,11 +43,11 @@ class Halaman extends CI_Controller
                           $title = character_limiter($title, 60), 
                           $desc = strip_tags(str_replace('"', '', character_limiter($detail->row()->content, 110))), 
                           $imgUrl = $imgurl, 
-                          $url = base_url('page/'.$slug), 
+                          $url = strip(base_url('page/'.$slug)), 
                           $keyWords = $keywords,
                           $type = 'article',
-                          $canonical = curPageURL(),
-                          $urlamp = $url_amp
+                          $canonical = strip(curPageURL()),
+                          $urlamp = strip($url_amp)
                         );
     else:
       $meta_tag = '';
