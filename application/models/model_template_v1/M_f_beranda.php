@@ -164,6 +164,7 @@ class M_f_beranda extends CI_Model
         $this->db->select('*');
         $this->db->from('t_berita');
         $this->db->where('publish', '1');
+        $this->db->where('is_private', '0');
         
         if(!empty($type) && $type != 'all'):
             $this->db->where('type', strtoupper($type));
