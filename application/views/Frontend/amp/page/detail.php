@@ -32,7 +32,7 @@
       <?php endif; ?>
     <?php endif; ?>
   </section>
-  <section class="px3 py3">
+  <section class="px3 py3 line-height-4">
     <?= $pagedetail->content ?>
     <div class="flex justify-between items-center mt3">
       <div class="flex justify-start">
