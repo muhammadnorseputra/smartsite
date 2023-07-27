@@ -27,7 +27,7 @@
       class="mb4 mx3 rounded ampstart-card"
     ></amp-img>
   </header>
-  <section class="mb4 px3">
+  <section class="mb4 px3 line-height-4">
     <?= $postContent ?>
     <div class="flex justify-between items-center mt3">
       <div class="flex justify-start">
@@ -79,7 +79,7 @@
     </div> -->
   </section>
   <section class="pb4 px3">
-    <a href="<?= base_url("blog/{$postSlug}") ?>" class="ampstart-accent">
+    <a href="<?= base_url("blog/{$postSlug}") ?>" class="ampstart-accent act">
       Lihat versi non-AMP
     </a>
   </section>
