@@ -101,6 +101,9 @@
 					<li>
 						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Userportal</a>
 					</li>
+					<li>
+						<a href="https://heylink.me/BKPSDMBalangan/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Heylink.me</a>
+					</li>
 				</ul>
 				
 			</div>
