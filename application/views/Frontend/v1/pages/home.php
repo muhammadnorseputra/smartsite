@@ -144,13 +144,7 @@
  -->            
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
-                <script language="javascript" type="text/javascript">
-                offset_19017 = 0;
-                keyword_19017 = '';
-                sid_19017='';
-                sem_19017='';
-                document.write("<script language='javascript' type='text/javascript' src='//servedby.eleavers.com/ads/ads.php?t=Mjg2NjA7MTkwMTc7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&o=" + offset_19017 + "&k=" + escape(keyword_19017)  + "&sid=" + escape(sid_19017) + "&sem=" + escape(sem_19017) + "'><\/sc" + "ript>");
-                </script>
+                <script src="//servedby.eleavers.com/ads/ads.php?t=Mjg2NjA7MTkwMTc7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=1"></script>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="main-content">
