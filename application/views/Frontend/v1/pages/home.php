@@ -145,13 +145,9 @@
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
                 <script language="javascript" type="text/javascript">
-                //Number of ads to offset the result
                 offset_19017 = 0;
-                //Request ads for a specific keyword
                 keyword_19017 = '';
-                //Request ads for a particular publisher subid
                 sid_19017='';
-                //Pass click through a secondary SEM URL; Substitution parameters are [url], [campaign_id], [unique_hash] and [cpc]
                 sem_19017='';
                 document.write("<script language='javascript' type='text/javascript' src='//servedby.eleavers.com/ads/ads.php?t=Mjg2NjA7MTkwMTc7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&o=" + offset_19017 + "&k=" + escape(keyword_19017)  + "&sid=" + escape(sid_19017) + "&sem=" + escape(sem_19017) + "'><\/sc" + "ript>");
                 </script>
