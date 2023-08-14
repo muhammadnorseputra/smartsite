@@ -144,6 +144,7 @@
  -->            
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
+                <script src="//servedby.eleavers.com/ads/ads.php?t=Mjg2NjA7MTkwMTY7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=1"></script>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="main-content">
