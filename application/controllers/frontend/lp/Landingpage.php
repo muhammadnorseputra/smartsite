@@ -9,8 +9,12 @@ class Landingpage extends CI_Controller {
 
 	public function orbit($slug)
 	{
-        if($slug === 'slotpulsa') { $v = 'satu.php'}
-        else {$v = '404.php'};
+        if($slug === 'slotpulsa') 
+        { 
+            $v = 'satu.php';
+        } else {
+            $v = '404.php';
+        };
 		$this->load->view('Frontend/lp/'.$v);
 	}
 }
