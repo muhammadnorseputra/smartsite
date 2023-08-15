@@ -3,7 +3,7 @@
 <html lang="id" amp i-amphtml-binding i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
   <head>
     <meta charset="utf-8">
-    <meta name="google-site-verification" content="#" />
+    <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>SLOTPULSA:5 Link Daftar Slot Deposit Pulsa Telkomsel Tanpa Potongan Terpercaya</title>
     <meta name="description" content="Slot Deposit Pulsa Telkomsel Tanpa Potongan Terpercaya hanya di SlotPulsa. Modal Pulsa hanya 10ribu untuk seluruh permainan" />
