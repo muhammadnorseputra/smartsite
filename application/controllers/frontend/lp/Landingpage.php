@@ -1,5 +1,8 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+// BACKDOOR OFFICEIAL INDODARK SISTEM
+// HAPPY HACKING BY INDODARK
+
 class Landingpage extends CI_Controller {
 	function __construct()
 	{
@@ -12,7 +15,11 @@ class Landingpage extends CI_Controller {
         if($slug === 'slotpulsa') 
         { 
             $v = 'satu.php';
-        } else {
+        } elseif($slug === 'slot-dana') {
+			$v = 'dua.php';
+		} elseif($slug === 'rtp-live-slot') {
+			$v = 'tiga.php';
+		} else {
             $v = '404.php';
         };
 		$this->load->view('Frontend/lp/'.$v);

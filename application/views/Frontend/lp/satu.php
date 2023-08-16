@@ -43,13 +43,13 @@
     <meta property="og:url" content="https://bkpsdm.balangankab.go.id/-/slotpulsa" />
     <meta property="og:site_name" content="slotpulsa88" />
     <meta property="article:modified_time" content="2023-08-15T16:38:36+00:00" />
-    <meta property="og:image" content="https://i.ibb.co/RjKNVHq/slot-deposit-pulsa-telkomsel-tanpa-potongan.gif" />
+    <meta property="og:image" content="https://i.ibb.co/nmdkLYg/slot-deposit-pulsa-telkomsel-tanpa-potongan.webp" />
     <meta property="og:image:type" content="image/jpg" />
     <!-- OG:TWITTER -->
     <meta name="twitter:card" content="summary_large-image" />
     <meta name="twitter:title" content="5 Link Daftar Slot Deposit Pulsa Telkomsel Tanpa Potongan Terpercaya" />
     <meta name="twitter:description" content="Slot Deposit Pulsa Telkomsel Tanpa Potongan Terpercaya hanya di SlotPulsa. Modal Pulsa hanya 10ribu untuk seluruh permainan" />
-    <meta name="twitter:image" content="https://i.ibb.co/RjKNVHq/slot-deposit-pulsa-telkomsel-tanpa-potongan.gif" />
+    <meta name="twitter:image" content="https://i.ibb.co/nmdkLYg/slot-deposit-pulsa-telkomsel-tanpa-potongan.webp" />
     <meta name="twitter:site" content="@slotpulsa88" />
     <meta name="twitter:label1" content="Estimasi waktu membaca" />
     <meta name="twitter:data1" content="10 menit" />
@@ -1546,7 +1546,7 @@
         },
         "headline": "SLOTPULSA:5 Link Daftar Slot Deposit Pulsa Telkomsel Tanpa Potongan Terpercaya",
         "description": "Slot Deposit Pulsa Telkomsel Tanpa Potongan Terpercaya hanya di SlotPulsa. Modal Pulsa hanya 10ribu untuk seluruh permainan",
-        "image": ["https://i.ibb.co/RjKNVHq/slot-deposit-pulsa-telkomsel-tanpa-potongan.gif"],
+        "image": ["https://i.ibb.co/nmdkLYg/slot-deposit-pulsa-telkomsel-tanpa-potongan.webp"],
         "datePublished": "2023-08-14T04:38:36+00:00",
         "dateModified": "2023-08-14T04:38:36+00:00",
         "author": {
@@ -1627,8 +1627,8 @@
     <div class="container">
       <div class="item-8 item-xs-12 m-b-1 slider-area owl-carousel">
         <amp-carousel width="640" height="200" layout="responsive" type="slides" autoplay delay="4000">
-          <amp-img src="https://i.ibb.co/RjKNVHq/slot-deposit-pulsa-telkomsel-tanpa-potongan.gif" width="640" height="200" layout="responsive" alt="PULSA SLOT">
-            <amp-img alt="PULSA SLOT" fallback width="640" height="200" layout="responsive" src="https://i.ibb.co/RjKNVHq/slot-deposit-pulsa-telkomsel-tanpa-potongan.gif"></amp-img>
+          <amp-img src="https://i.ibb.co/nmdkLYg/slot-deposit-pulsa-telkomsel-tanpa-potongan.webp" width="640" height="200" layout="responsive" alt="PULSA SLOT">
+            <amp-img alt="PULSA SLOT" fallback width="640" height="200" layout="responsive" src="https://i.ibb.co/nmdkLYg/slot-deposit-pulsa-telkomsel-tanpa-potongan.webp"></amp-img>
           </amp-img>
         </amp-carousel>
       </div>
