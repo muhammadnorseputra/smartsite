@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html amp="amp" lang="id" dir='ltr' itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<html amp="amp" lang="id" dir='ltr' i-amphtml-binding i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
   <head>
     <meta charset="utf-8">
     <!-- <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" /> -->
@@ -54,7 +54,7 @@
     <meta name="twitter:data1" content="10 menit" />
     <meta name="supported-amp-formats" content="websites, stories, ads, email">
     <script async="" src="https://cdn.ampproject.org/v0.js"></script>
-    <style amp-custom>
+    <style amp-runtime amp-custom>
       html.i-amphtml-fie {
         height: 100% ;
         width: 100% 
