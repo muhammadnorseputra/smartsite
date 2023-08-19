@@ -1574,7 +1574,7 @@
               <span itemscope="itemscope" itemtype="http://schema.org/Brand">
                 <a itemprop="url" href="https://bkpsdm.balangankab.go.id/-/slotpulsa" title="SLOT PULSA TELKOMSEL TANPA POTONGAN">
                   <a href="https://bkpsdm.balangankab.go.id/-/slotpulsa" title="SLOT PULSA TELKOMSEL TANPA POTONGAN">
-                    <amp-img src="https://i.ibb.co/TtfSNs6/slot-pulsa-telkomsel.webp" alt="SLOT PULSA TELKOMSEL TANPA POTONGAN" width="300" height="60" />
+                    <amp-img src="https://i.ibb.co/TtfSNs6/slot-pulsa-telkomsel.webp" alt="SLOT PULSA TELKOMSEL TANPA POTONGAN" width="300" height="60" layout="responsive"/>
                   </a>
                   <meta itemprop="name" content="SLOT PULSA TELKOMSEL TANPA POTONGAN">
                 </a>
