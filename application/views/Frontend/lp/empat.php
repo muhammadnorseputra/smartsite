@@ -768,7 +768,7 @@
         <div class="row">
           <div class="col-xs-6 text-left">
             <div class="logoSlotGacorHoki">
-              <amp-img width="200px" height="54px" layout="responsive" src="https://i.ibb.co/DG8TkYR/slot-gacor-jutawan-logos.png" alt="SloGacorHoki"></amp-img>
+              <amp-img width="200" height="54" layout="responsive" src="https://i.ibb.co/DG8TkYR/slot-gacor-jutawan-logos.png" alt="SloGacorHoki"></amp-img>
             </div>
           </div>
         </div>
@@ -806,7 +806,7 @@
         </div>
       </div>
       <div>
-        <amp-img src="https://i.ibb.co/2q5KFGM/slot-tergacor-mudah-jadi-jutawan.webp" width="640px" height="200px" layout="responsive" alt="SlotGacorHoki"></amp-img>
+        <amp-img src="https://i.ibb.co/2q5KFGM/slot-tergacor-mudah-jadi-jutawan.webp" width="640" height="200" layout="responsive" alt="SlotGacorHoki"></amp-img>
       </div>
     </div>
     <div class="bottom">

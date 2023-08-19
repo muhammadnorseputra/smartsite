@@ -145,7 +145,7 @@
        <span itemscope="itemscope" itemtype="http://schema.org/Brand">
         <a itemprop="url" href="https://bkpsdm.balangankab.go.id/-/slot-dana" title="slot deposit dana">
          <a href="https://bkpsdm.balangankab.go.id/-/slot-dana" title="slot deposit dana">
-          <amp-img src="https://i.ibb.co/PQy8f1x/slot-dana-terbaik.webp" alt="slot deposit dana" width="200" height="75" layout="responsive" />
+          <amp-img src="https://i.ibb.co/PQy8f1x/slot-dana-terbaik.webp" alt="slot deposit dana" width="200" height="75" layout="responsive"></amp-img>
          </a>
          <meta itemprop="name" content="slot deposit dana">
         </a>
@@ -164,7 +164,7 @@
        <span itemscope="itemscope" itemtype="http://schema.org/Brand">
         <a itemprop="url" href="https://bkpsdm.balangankab.go.id/-/slot-dana" title="slot deposit dana">
          <a href="https://bkpsdm.balangankab.go.id/-/slot-dana" title="slot deposit dana">
-          <amp-img src="https://i.ibb.co/PQy8f1x/slot-dana-terbaik.webp" alt="slot deposit dana" width="200" height="75" layout="responsive" />
+          <amp-img src="https://i.ibb.co/PQy8f1x/slot-dana-terbaik.webp" alt="slot deposit dana" width="200" height="75" layout="responsive"></amp-img>
          </a>
          <meta itemprop="name" content="slot deposit dana">
         </a>
