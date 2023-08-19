@@ -632,7 +632,7 @@
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <link rel="apple-touch-icon" href="https://i.ibb.co/sH1pFzH/rtp-slot-icon.png" />
     <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="https://i.ibb.co/sH1pFzH/rtp-slot-icon.png">
-    <style amp-custom>
+    <style amp-boilerplate>
       body {
         -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
         -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
