@@ -1545,7 +1545,7 @@
         },
         "headline": "5 Info Bocoran RTP Live Slot Gacor  Akurat Dan Terpercaya",
         "description": "RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan kembali oleh mesin slot kepada para pemain dalam jangka panjang.",
-        "image": ["https://i.ibb.co/tKDTV2m/rtp-slot-gacor-terpercaya.webp"],
+        "image": "https://i.ibb.co/tKDTV2m/rtp-slot-gacor-terpercaya.webp",
         "datePublished": "2023-08-14T04:38:36+00:00",
         "dateModified": "2023-08-14T04:38:36+00:00",
         "author": {
