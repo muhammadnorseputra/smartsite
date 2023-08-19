@@ -50,9 +50,9 @@
     <meta name="twitter:label1" content="Estimasi waktu membaca" />
     <meta name="twitter:data1" content="18 menit" />
     
-    <link rel="preload" href="https://i.ibb.co/2q5KFGM/slot-tergacor-mudah-jadi-jutawan.webp" as="image">
+    <!-- <link rel="preload" href="https://i.ibb.co/2q5KFGM/slot-tergacor-mudah-jadi-jutawan.webp" as="image">
     <link rel="preload" href="https://i.ibb.co/DG8TkYR/slot-gacor-jutawan-logos.png" as="image">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js"> -->
     <style amp-boilerplate>
       body {
         -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
