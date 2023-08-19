@@ -656,7 +656,7 @@
         "name": "Slot Gacor Gampang Menang Auto Jadi Jutawan",
         "alternateName": "SlotGacorHoki",
         "url": "https://bkpsdm.balangankab.go.id/-/slot-gacor-maxwin",
-        "logo": "https://i.ibb.co/DG8TkYR/slot-gacor-jutawan-logos.png,
+        "logo": "https://i.ibb.co/DG8TkYR/slot-gacor-jutawan-logos.png",
         "description": "Slot gacor bisa dikatakan sebagai istilah yang digunakan untuk menyebut permainan slot online yang memberikan peluang kemenangan yang tinggi dan mudah.",
         "address": {
           "@type": "PostalAddress",
@@ -687,7 +687,8 @@
             "@type": "Answer",
             "text": "Slot online memiliki berbagai macam tema, desain, dan mekanisme permainan yang berbeda-beda. Ada slot online yang mengambil inspirasi dari film, kartun, mitologi, sejarah, budaya, dan lain-lain"
           }
-        }, {
+        }, 
+        {
           "@type": "Question",
           "name": "Bagaimana Cara Menemukan Slot Gacor?",
           "acceptedAnswer": {
@@ -732,7 +733,7 @@
           "name": "SlotGacorHoki",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://i.ibb.co/DG8TkYR/slot-gacor-jutawan-logos.png
+            "url": "https://i.ibb.co/DG8TkYR/slot-gacor-jutawan-logos.png"
           }
         },
         "datePublished": "2023-08-19T22:38:14+00:00",
