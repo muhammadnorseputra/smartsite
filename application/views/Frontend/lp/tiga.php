@@ -53,7 +53,7 @@
     <meta name="twitter:label1" content="Estimasi waktu membaca" />
     <meta name="twitter:data1" content="10 menit" />
     <meta name="supported-amp-formats" content="websites, stories, ads, email">
-    <style amp-runtime>
+    <style amp-runtime i-amphtml-version="012107240354000">
       html.i-amphtml-fie {
         height: 100% !important;
         width: 100% !important
