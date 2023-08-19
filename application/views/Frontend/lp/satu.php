@@ -9,7 +9,7 @@
     <meta name="description" content="Slot Deposit Pulsa Telkomsel Tanpa Potongan Terpercaya hanya di SlotPulsa. Modal Pulsa hanya 10ribu untuk seluruh permainan" />
     <meta name="keywords" content="slot pulsa, slot deposit pulsa, slot deposit pulsa tanpa potongan, slot pulsa telkomsel, slot88 pulsa, slot99" />
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <link itemprop="mainEntityOfPage" rel="canonical" href="https://bkpsdm.balangankab.go.id/-/slotpulsa" />
+    <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/slotpulsa" />
     <!-- Meta Robots -->
     <meta name="robots" content="max-image-preview:large"/>
     <meta name="googlebot-news" content="all" />
