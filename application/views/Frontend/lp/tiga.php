@@ -56,17 +56,17 @@
     <script async="" src="https://cdn.ampproject.org/v0.js"></script>
     <style amp-custom>
       html.i-amphtml-fie {
-        height: 100% !important;
-        width: 100% !important
+        height: 100% ;
+        width: 100% 
       }
 
       html:not([amp4ads]),
       html:not([amp4ads]) body {
-        height: auto !important
+        height: auto 
       }
 
       html:not([amp4ads]) body {
-        margin: 0 !important
+        margin: 0 
       }
 
       body {
@@ -83,45 +83,45 @@
 
       html.i-amphtml-fie>body,
       html.i-amphtml-singledoc>body {
-        overflow: visible !important
+        overflow: visible 
       }
 
       html.i-amphtml-fie:not(.i-amphtml-inabox)>body,
       html.i-amphtml-singledoc:not(.i-amphtml-inabox)>body {
-        position: relative !important
+        position: relative 
       }
 
       html.i-amphtml-ios-embed-legacy>body {
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-        position: absolute !important
+        overflow-x: hidden ;
+        overflow-y: auto ;
+        position: absolute 
       }
 
       html.i-amphtml-ios-embed {
-        overflow-y: auto !important;
+        overflow-y: auto ;
         position: static
       }
 
       #i-amphtml-wrapper {
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        margin: 0 !important;
-        display: block !important
+        overflow-x: hidden ;
+        overflow-y: auto ;
+        position: absolute ;
+        top: 0 ;
+        left: 0 ;
+        right: 0 ;
+        bottom: 0 ;
+        margin: 0 ;
+        display: block 
       }
 
       html.i-amphtml-ios-embed.i-amphtml-ios-overscroll,
       html.i-amphtml-ios-embed.i-amphtml-ios-overscroll>#i-amphtml-wrapper {
-        -webkit-overflow-scrolling: touch !important
+        -webkit-overflow-scrolling: touch 
       }
 
       #i-amphtml-wrapper>body {
-        position: relative !important;
-        border-top: 1px solid transparent !important
+        position: relative ;
+        border-top: 1px solid transparent 
       }
 
       #i-amphtml-wrapper+body {
@@ -139,17 +139,17 @@
 
       #i-amphtml-wrapper.i-amphtml-scroll-disabled,
       .i-amphtml-scroll-disabled {
-        overflow-x: hidden !important;
-        overflow-y: hidden !important
+        overflow-x: hidden ;
+        overflow-y: hidden 
       }
 
       amp-instagram {
-        padding: 54px 0 0 !important;
+        padding: 54px 0 0 ;
         background-color: #fff
       }
 
       amp-iframe iframe {
-        box-sizing: border-box !important
+        box-sizing: border-box 
       }
 
       [amp-access][amp-access-hide] {
@@ -159,7 +159,7 @@
       [subscriptions-dialog],
       body:not(.i-amphtml-subs-ready) [subscriptions-action],
       body:not(.i-amphtml-subs-ready) [subscriptions-section] {
-        display: none !important
+        display: none 
       }
 
       amp-experiment,
@@ -168,7 +168,7 @@
       }
 
       amp-list[resizable-children]>.i-amphtml-loading-container.amp-hidden {
-        display: none !important
+        display: none 
       }
 
       amp-list [fetch-error],
@@ -185,18 +185,18 @@
 
       amp-story-page,
       amp-story[stkamulone] {
-        min-height: 1px !important;
-        display: block !important;
-        height: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-        width: 100% !important
+        min-height: 1px ;
+        display: block ;
+        height: 100% ;
+        margin: 0 ;
+        padding: 0 ;
+        overflow: hidden ;
+        width: 100% 
       }
 
       amp-story[stkamulone] {
-        background-color: #202125 !important;
-        position: relative !important
+        background-color: #202125 ;
+        position: relative 
       }
 
       amp-story-page {
@@ -205,16 +205,16 @@
 
       amp-story .amp-active>div,
       amp-story .i-amphtml-loader-background {
-        display: none !important
+        display: none 
       }
 
       amp-story-page:not(:first-of-type):not([distance]):not([active]) {
-        transform: translateY(1000vh) !important
+        transform: translateY(1000vh) 
       }
 
       amp-autocomplete {
-        position: relative !important;
-        display: inline-block !important
+        position: relative ;
+        display: inline-block 
       }
 
       amp-autocomplete>input,
@@ -236,16 +236,16 @@
 
       amp-script[nodom],
       amp-script[sandboxed] {
-        position: fixed !important;
-        top: 0 !important;
-        width: 1px !important;
-        height: 1px !important;
-        overflow: hidden !important;
+        position: fixed ;
+        top: 0 ;
+        width: 1px ;
+        height: 1px ;
+        overflow: hidden ;
         visibility: hidden
       }
 
       [hidden] {
-        display: none !important
+        display: none 
       }
 
       .i-amphtml-element {
@@ -253,12 +253,12 @@
       }
 
       .i-amphtml-blurry-placeholder {
-        transition: opacity .3s cubic-bezier(0, 0, .2, 1) !important;
+        transition: opacity .3s cubic-bezier(0, 0, .2, 1) ;
         pointer-events: none
       }
 
       [layout=nodisplay]:not(.i-amphtml-element) {
-        display: none !important
+        display: none 
       }
 
       .i-amphtml-layout-fixed,
@@ -288,7 +288,7 @@
 
       .i-amphtml-intrinsic-sizer {
         max-width: 100%;
-        display: block !important
+        display: block 
       }
 
       .i-amphtml-layout-container,
@@ -304,7 +304,7 @@
       [layout=fill]:not(.i-amphtml-layout-fill),
       body noscript>* {
         display: block;
-        overflow: hidden !important;
+        overflow: hidden ;
         position: absolute;
         top: 0;
         left: 0;
@@ -313,14 +313,14 @@
       }
 
       body noscript>* {
-        position: absolute !important;
+        position: absolute ;
         width: 100%;
         height: 100%;
         z-index: 2
       }
 
       body noscript {
-        display: inline !important
+        display: inline 
       }
 
       .i-amphtml-layout-flex-item,
@@ -336,22 +336,22 @@
       }
 
       .i-amphtml-layout-size-defined {
-        overflow: hidden !important
+        overflow: hidden 
       }
 
       .i-amphtml-layout-awaiting-size {
-        position: absolute !important;
-        top: auto !important;
-        bottom: auto !important
+        position: absolute ;
+        top: auto ;
+        bottom: auto 
       }
 
       i-amphtml-sizer {
-        display: block !important
+        display: block 
       }
 
       @supports (aspect-ratio:1/1) {
         i-amphtml-sizer.i-amphtml-disable-ar {
-          display: none !important
+          display: none 
         }
       }
 
@@ -377,44 +377,44 @@
 
       .i-amphtml-replaced-content,
       .i-amphtml-screen-reader {
-        padding: 0 !important;
-        border: none !important
+        padding: 0 ;
+        border: none 
       }
 
       .i-amphtml-screen-reader {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 4px !important;
-        height: 4px !important;
-        opacity: 0 !important;
-        overflow: hidden !important;
-        margin: 0 !important;
-        display: block !important;
-        visibility: visible !important
+        position: fixed ;
+        top: 0 ;
+        left: 0 ;
+        width: 4px ;
+        height: 4px ;
+        opacity: 0 ;
+        overflow: hidden ;
+        margin: 0 ;
+        display: block ;
+        visibility: visible 
       }
 
       .i-amphtml-screen-reader~.i-amphtml-screen-reader {
-        left: 8px !important
+        left: 8px 
       }
 
       .i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader {
-        left: 12px !important
+        left: 12px 
       }
 
       .i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader {
-        left: 16px !important
+        left: 16px 
       }
 
       .i-amphtml-unresolved {
         position: relative;
-        overflow: hidden !important
+        overflow: hidden 
       }
 
       .i-amphtml-select-disabled {
-        -webkit-user-select: none !important;
-        -ms-user-select: none !important;
-        user-select: none !important
+        -webkit-user-select: none ;
+        -ms-user-select: none ;
+        user-select: none 
       }
 
       .i-amphtml-notbuilt,
@@ -422,8 +422,8 @@
       [width][height][heights]:not([layout]):not(.i-amphtml-element),
       [width][height][sizes]:not(img):not([layout]):not(.i-amphtml-element) {
         position: relative;
-        overflow: hidden !important;
-        color: transparent !important
+        overflow: hidden ;
+        color: transparent 
       }
 
       .i-amphtml-notbuilt:not(.i-amphtml-layout-container)>*,
@@ -441,12 +441,12 @@
       [layout]:not([layout=container]):not(.i-amphtml-element),
       [width][height][heights]:not([layout]):not(.i-amphtml-element),
       [width][height][sizes]:not(img):not([layout]):not(.i-amphtml-element) {
-        color: transparent !important;
-        line-height: 0 !important
+        color: transparent ;
+        line-height: 0 
       }
 
       .i-amphtml-ghost {
-        visibility: hidden !important
+        visibility: hidden 
       }
 
       .i-amphtml-element>[placeholder],
@@ -470,11 +470,11 @@
 
       .i-amphtml-layout-size-defined>[fallback],
       .i-amphtml-layout-size-defined>[placeholder] {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
+        position: absolute ;
+        top: 0 ;
+        left: 0 ;
+        right: 0 ;
+        bottom: 0 ;
         z-index: 1
       }
 
@@ -483,17 +483,17 @@
       }
 
       .i-amphtml-notbuilt>[placeholder] {
-        display: block !important
+        display: block 
       }
 
       .i-amphtml-hidden-by-media-query {
-        display: none !important
+        display: none 
       }
 
       .i-amphtml-element-error {
-        background: red !important;
-        color: #fff !important;
-        position: relative !important
+        background: red ;
+        color: #fff ;
+        position: relative 
       }
 
       .i-amphtml-element-error:before {
@@ -517,13 +517,13 @@
       }
 
       .i-amphtml-loading-container {
-        display: block !important;
+        display: block ;
         pointer-events: none;
         z-index: 1
       }
 
       .i-amphtml-notbuilt>.i-amphtml-loading-container {
-        display: block !important
+        display: block 
       }
 
       .i-amphtml-loading-container.amp-hidden {
@@ -548,7 +548,7 @@
       }
 
       template {
-        display: none !important
+        display: none 
       }
 
       .amp-border-box,
@@ -559,22 +559,22 @@
       }
 
       amp-pixel {
-        display: none !important
+        display: none 
       }
 
       amp-analytics,
       amp-auto-ads,
       amp-story-auto-ads {
-        position: fixed !important;
-        top: 0 !important;
-        width: 1px !important;
-        height: 1px !important;
-        overflow: hidden !important;
+        position: fixed ;
+        top: 0 ;
+        width: 1px ;
+        height: 1px ;
+        overflow: hidden ;
         visibility: hidden
       }
 
       html.i-amphtml-fie>amp-analytics {
-        position: initial !important
+        position: initial 
       }
 
       [visible-when-invalid]:not(.visible),
@@ -585,7 +585,7 @@
       }
 
       amp-accordion {
-        display: block !important
+        display: block 
       }
 
       @media (min-width:1px) {
@@ -602,14 +602,14 @@
       }
 
       amp-accordion>section {
-        float: none !important
+        float: none 
       }
 
       amp-accordion>section>* {
-        float: none !important;
-        display: block !important;
-        overflow: hidden !important;
-        position: relative !important
+        float: none ;
+        display: block ;
+        overflow: hidden ;
+        position: relative 
       }
 
       amp-accordion,
@@ -618,11 +618,11 @@
       }
 
       amp-accordion:not(.i-amphtml-built)>section>:last-child {
-        display: none !important
+        display: none 
       }
 
       amp-accordion:not(.i-amphtml-built)>section[expanded]>:last-child {
-        display: block !important
+        display: block 
       }
     </style>
     <script type='text/javascript' src='https://cdn.ampproject.org/v0.js' async></script>
