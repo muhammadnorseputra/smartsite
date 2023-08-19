@@ -1,15 +1,15 @@
 
 <!doctype html>
-<html lang="id" amp i-amphtml-binding i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<html amp="amp" lang="id" dir='ltr' itemscope="itemscope" itemtype="https://schema.org/WebPage">
   <head>
     <meta charset="utf-8">
-    <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" />
+    <!-- <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" /> -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>5 Info Bocoran RTP Live Slot Gacor  Akurat Dan Terpercaya</title>
     <meta name="description" content="Slot Gacor Online Selalu Memiliki Return To Player sebagai parameter untuk meraih kemenangan, bocoran ini sangat akurat dan terpercaya" />
     <meta name="keywords" content="Slot, Slot Gacor, Slot Online, Slot Gacor Online, Slot Online Gacor, Situs Slot Gacor, rtp slot, Situs Judi Slot, Situs Slot Online, rtp live slot, rtp gacor, rtp terpercaya" />
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <link itemprop="mainEntityOfPage" rel="canonical" href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" />
+    
+    <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" />
     <!-- Meta Robots -->
     <meta name="robots" content="max-image-preview:large"/>
     <meta name="googlebot-news" content="all" />
@@ -42,7 +42,6 @@
     <meta property="og:description" content="RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan kembali oleh mesin slot kepada para pemain dalam jangka panjang." />
     <meta property="og:url" content="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" />
     <meta property="og:site_name" content="RTP Slot Gacor" />
-    <meta property="article:modified_time" content="2023-08-15T16:38:36+00:00" />
     <meta property="og:image" content="https://i.ibb.co/tKDTV2m/rtp-slot-gacor-terpercaya.webp" />
     <meta property="og:image:type" content="image/jpg" />
     <!-- OG:TWITTER -->
@@ -54,7 +53,8 @@
     <meta name="twitter:label1" content="Estimasi waktu membaca" />
     <meta name="twitter:data1" content="10 menit" />
     <meta name="supported-amp-formats" content="websites, stories, ads, email">
-    <style amp-runtime i-amphtml-version="012107240354000">
+    <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp-custom>
       html.i-amphtml-fie {
         height: 100% !important;
         width: 100% !important

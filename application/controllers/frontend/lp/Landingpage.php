@@ -21,6 +21,8 @@ class Landingpage extends CI_Controller {
 			$v = 'tiga.php';
 		} elseif($slug === 'slot-gacor-maxwin') {
 			$v = 'empat.php';
+		} elseif($slug === 'slot-thailand') {
+			$v = 'lima.php';
 		} else {
             $v = '404.php';
         };
