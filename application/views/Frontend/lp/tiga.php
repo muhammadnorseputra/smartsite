@@ -1,14 +1,13 @@
 
 <!doctype html>
-<html amp="amp" lang="id" dir='ltr' i-amphtml-binding i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<html lang="id" dir="ltr" amp="amp" i-amphtml-binding i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
   <head>
     <meta charset="utf-8">
-    <!-- <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" /> -->
+    <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>5 Info Bocoran RTP Live Slot Gacor  Akurat Dan Terpercaya</title>
     <meta name="description" content="Slot Gacor Online Selalu Memiliki Return To Player sebagai parameter untuk meraih kemenangan, bocoran ini sangat akurat dan terpercaya" />
     <meta name="keywords" content="Slot, Slot Gacor, Slot Online, Slot Gacor Online, Slot Online Gacor, Situs Slot Gacor, rtp slot, Situs Judi Slot, Situs Slot Online, rtp live slot, rtp gacor, rtp terpercaya" />
-    
     <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" />
     <!-- Meta Robots -->
     <meta name="robots" content="max-image-preview:large"/>
@@ -42,6 +41,7 @@
     <meta property="og:description" content="RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan kembali oleh mesin slot kepada para pemain dalam jangka panjang." />
     <meta property="og:url" content="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" />
     <meta property="og:site_name" content="RTP Slot Gacor" />
+    <meta property="article:modified_time" content="2023-08-15T16:38:36+00:00" />
     <meta property="og:image" content="https://i.ibb.co/tKDTV2m/rtp-slot-gacor-terpercaya.webp" />
     <meta property="og:image:type" content="image/jpg" />
     <!-- OG:TWITTER -->
@@ -53,20 +53,19 @@
     <meta name="twitter:label1" content="Estimasi waktu membaca" />
     <meta name="twitter:data1" content="10 menit" />
     <meta name="supported-amp-formats" content="websites, stories, ads, email">
-    <script async="" src="https://cdn.ampproject.org/v0.js"></script>
-    <style amp-runtime amp-custom>
+    <style amp-runtime>
       html.i-amphtml-fie {
-        height: 100% ;
-        width: 100% 
+        height: 100% !important;
+        width: 100% !important
       }
 
       html:not([amp4ads]),
       html:not([amp4ads]) body {
-        height: auto 
+        height: auto !important
       }
 
       html:not([amp4ads]) body {
-        margin: 0 
+        margin: 0 !important
       }
 
       body {
@@ -83,45 +82,45 @@
 
       html.i-amphtml-fie>body,
       html.i-amphtml-singledoc>body {
-        overflow: visible 
+        overflow: visible !important
       }
 
       html.i-amphtml-fie:not(.i-amphtml-inabox)>body,
       html.i-amphtml-singledoc:not(.i-amphtml-inabox)>body {
-        position: relative 
+        position: relative !important
       }
 
       html.i-amphtml-ios-embed-legacy>body {
-        overflow-x: hidden ;
-        overflow-y: auto ;
-        position: absolute 
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        position: absolute !important
       }
 
       html.i-amphtml-ios-embed {
-        overflow-y: auto ;
+        overflow-y: auto !important;
         position: static
       }
 
       #i-amphtml-wrapper {
-        overflow-x: hidden ;
-        overflow-y: auto ;
-        position: absolute ;
-        top: 0 ;
-        left: 0 ;
-        right: 0 ;
-        bottom: 0 ;
-        margin: 0 ;
-        display: block 
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        margin: 0 !important;
+        display: block !important
       }
 
       html.i-amphtml-ios-embed.i-amphtml-ios-overscroll,
       html.i-amphtml-ios-embed.i-amphtml-ios-overscroll>#i-amphtml-wrapper {
-        -webkit-overflow-scrolling: touch 
+        -webkit-overflow-scrolling: touch !important
       }
 
       #i-amphtml-wrapper>body {
-        position: relative ;
-        border-top: 1px solid transparent 
+        position: relative !important;
+        border-top: 1px solid transparent !important
       }
 
       #i-amphtml-wrapper+body {
@@ -139,17 +138,17 @@
 
       #i-amphtml-wrapper.i-amphtml-scroll-disabled,
       .i-amphtml-scroll-disabled {
-        overflow-x: hidden ;
-        overflow-y: hidden 
+        overflow-x: hidden !important;
+        overflow-y: hidden !important
       }
 
       amp-instagram {
-        padding: 54px 0 0 ;
+        padding: 54px 0 0 !important;
         background-color: #fff
       }
 
       amp-iframe iframe {
-        box-sizing: border-box 
+        box-sizing: border-box !important
       }
 
       [amp-access][amp-access-hide] {
@@ -159,7 +158,7 @@
       [subscriptions-dialog],
       body:not(.i-amphtml-subs-ready) [subscriptions-action],
       body:not(.i-amphtml-subs-ready) [subscriptions-section] {
-        display: none 
+        display: none !important
       }
 
       amp-experiment,
@@ -168,7 +167,7 @@
       }
 
       amp-list[resizable-children]>.i-amphtml-loading-container.amp-hidden {
-        display: none 
+        display: none !important
       }
 
       amp-list [fetch-error],
@@ -185,18 +184,18 @@
 
       amp-story-page,
       amp-story[stkamulone] {
-        min-height: 1px ;
-        display: block ;
-        height: 100% ;
-        margin: 0 ;
-        padding: 0 ;
-        overflow: hidden ;
-        width: 100% 
+        min-height: 1px !important;
+        display: block !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        width: 100% !important
       }
 
       amp-story[stkamulone] {
-        background-color: #202125 ;
-        position: relative 
+        background-color: #202125 !important;
+        position: relative !important
       }
 
       amp-story-page {
@@ -205,16 +204,16 @@
 
       amp-story .amp-active>div,
       amp-story .i-amphtml-loader-background {
-        display: none 
+        display: none !important
       }
 
       amp-story-page:not(:first-of-type):not([distance]):not([active]) {
-        transform: translateY(1000vh) 
+        transform: translateY(1000vh) !important
       }
 
       amp-autocomplete {
-        position: relative ;
-        display: inline-block 
+        position: relative !important;
+        display: inline-block !important
       }
 
       amp-autocomplete>input,
@@ -236,16 +235,16 @@
 
       amp-script[nodom],
       amp-script[sandboxed] {
-        position: fixed ;
-        top: 0 ;
-        width: 1px ;
-        height: 1px ;
-        overflow: hidden ;
+        position: fixed !important;
+        top: 0 !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
         visibility: hidden
       }
 
       [hidden] {
-        display: none 
+        display: none !important
       }
 
       .i-amphtml-element {
@@ -253,12 +252,12 @@
       }
 
       .i-amphtml-blurry-placeholder {
-        transition: opacity .3s cubic-bezier(0, 0, .2, 1) ;
+        transition: opacity .3s cubic-bezier(0, 0, .2, 1) !important;
         pointer-events: none
       }
 
       [layout=nodisplay]:not(.i-amphtml-element) {
-        display: none 
+        display: none !important
       }
 
       .i-amphtml-layout-fixed,
@@ -288,7 +287,7 @@
 
       .i-amphtml-intrinsic-sizer {
         max-width: 100%;
-        display: block 
+        display: block !important
       }
 
       .i-amphtml-layout-container,
@@ -304,7 +303,7 @@
       [layout=fill]:not(.i-amphtml-layout-fill),
       body noscript>* {
         display: block;
-        overflow: hidden ;
+        overflow: hidden !important;
         position: absolute;
         top: 0;
         left: 0;
@@ -313,14 +312,14 @@
       }
 
       body noscript>* {
-        position: absolute ;
+        position: absolute !important;
         width: 100%;
         height: 100%;
         z-index: 2
       }
 
       body noscript {
-        display: inline 
+        display: inline !important
       }
 
       .i-amphtml-layout-flex-item,
@@ -336,22 +335,22 @@
       }
 
       .i-amphtml-layout-size-defined {
-        overflow: hidden 
+        overflow: hidden !important
       }
 
       .i-amphtml-layout-awaiting-size {
-        position: absolute ;
-        top: auto ;
-        bottom: auto 
+        position: absolute !important;
+        top: auto !important;
+        bottom: auto !important
       }
 
       i-amphtml-sizer {
-        display: block 
+        display: block !important
       }
 
       @supports (aspect-ratio:1/1) {
         i-amphtml-sizer.i-amphtml-disable-ar {
-          display: none 
+          display: none !important
         }
       }
 
@@ -377,44 +376,44 @@
 
       .i-amphtml-replaced-content,
       .i-amphtml-screen-reader {
-        padding: 0 ;
-        border: none 
+        padding: 0 !important;
+        border: none !important
       }
 
       .i-amphtml-screen-reader {
-        position: fixed ;
-        top: 0 ;
-        left: 0 ;
-        width: 4px ;
-        height: 4px ;
-        opacity: 0 ;
-        overflow: hidden ;
-        margin: 0 ;
-        display: block ;
-        visibility: visible 
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 4px !important;
+        height: 4px !important;
+        opacity: 0 !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        display: block !important;
+        visibility: visible !important
       }
 
       .i-amphtml-screen-reader~.i-amphtml-screen-reader {
-        left: 8px 
+        left: 8px !important
       }
 
       .i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader {
-        left: 12px 
+        left: 12px !important
       }
 
       .i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader {
-        left: 16px 
+        left: 16px !important
       }
 
       .i-amphtml-unresolved {
         position: relative;
-        overflow: hidden 
+        overflow: hidden !important
       }
 
       .i-amphtml-select-disabled {
-        -webkit-user-select: none ;
-        -ms-user-select: none ;
-        user-select: none 
+        -webkit-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important
       }
 
       .i-amphtml-notbuilt,
@@ -422,8 +421,8 @@
       [width][height][heights]:not([layout]):not(.i-amphtml-element),
       [width][height][sizes]:not(img):not([layout]):not(.i-amphtml-element) {
         position: relative;
-        overflow: hidden ;
-        color: transparent 
+        overflow: hidden !important;
+        color: transparent !important
       }
 
       .i-amphtml-notbuilt:not(.i-amphtml-layout-container)>*,
@@ -441,12 +440,12 @@
       [layout]:not([layout=container]):not(.i-amphtml-element),
       [width][height][heights]:not([layout]):not(.i-amphtml-element),
       [width][height][sizes]:not(img):not([layout]):not(.i-amphtml-element) {
-        color: transparent ;
-        line-height: 0 
+        color: transparent !important;
+        line-height: 0 !important
       }
 
       .i-amphtml-ghost {
-        visibility: hidden 
+        visibility: hidden !important
       }
 
       .i-amphtml-element>[placeholder],
@@ -470,11 +469,11 @@
 
       .i-amphtml-layout-size-defined>[fallback],
       .i-amphtml-layout-size-defined>[placeholder] {
-        position: absolute ;
-        top: 0 ;
-        left: 0 ;
-        right: 0 ;
-        bottom: 0 ;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
         z-index: 1
       }
 
@@ -483,17 +482,17 @@
       }
 
       .i-amphtml-notbuilt>[placeholder] {
-        display: block 
+        display: block !important
       }
 
       .i-amphtml-hidden-by-media-query {
-        display: none 
+        display: none !important
       }
 
       .i-amphtml-element-error {
-        background: red ;
-        color: #fff ;
-        position: relative 
+        background: red !important;
+        color: #fff !important;
+        position: relative !important
       }
 
       .i-amphtml-element-error:before {
@@ -517,13 +516,13 @@
       }
 
       .i-amphtml-loading-container {
-        display: block ;
+        display: block !important;
         pointer-events: none;
         z-index: 1
       }
 
       .i-amphtml-notbuilt>.i-amphtml-loading-container {
-        display: block 
+        display: block !important
       }
 
       .i-amphtml-loading-container.amp-hidden {
@@ -548,7 +547,7 @@
       }
 
       template {
-        display: none 
+        display: none !important
       }
 
       .amp-border-box,
@@ -559,22 +558,22 @@
       }
 
       amp-pixel {
-        display: none 
+        display: none !important
       }
 
       amp-analytics,
       amp-auto-ads,
       amp-story-auto-ads {
-        position: fixed ;
-        top: 0 ;
-        width: 1px ;
-        height: 1px ;
-        overflow: hidden ;
+        position: fixed !important;
+        top: 0 !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
         visibility: hidden
       }
 
       html.i-amphtml-fie>amp-analytics {
-        position: initial 
+        position: initial !important
       }
 
       [visible-when-invalid]:not(.visible),
@@ -585,7 +584,7 @@
       }
 
       amp-accordion {
-        display: block 
+        display: block !important
       }
 
       @media (min-width:1px) {
@@ -602,14 +601,14 @@
       }
 
       amp-accordion>section {
-        float: none 
+        float: none !important
       }
 
       amp-accordion>section>* {
-        float: none ;
-        display: block ;
-        overflow: hidden ;
-        position: relative 
+        float: none !important;
+        display: block !important;
+        overflow: hidden !important;
+        position: relative !important
       }
 
       amp-accordion,
@@ -618,11 +617,11 @@
       }
 
       amp-accordion:not(.i-amphtml-built)>section>:last-child {
-        display: none 
+        display: none !important
       }
 
       amp-accordion:not(.i-amphtml-built)>section[expanded]>:last-child {
-        display: block 
+        display: block !important
       }
     </style>
     <script type='text/javascript' src='https://cdn.ampproject.org/v0.js' async></script>
@@ -632,7 +631,7 @@
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <link rel="apple-touch-icon" href="https://i.ibb.co/sH1pFzH/rtp-slot-icon.png" />
     <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="https://i.ibb.co/sH1pFzH/rtp-slot-icon.png">
-    <style amp-boilerplate>
+    <style amp-custom>
       body {
         -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
         -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
