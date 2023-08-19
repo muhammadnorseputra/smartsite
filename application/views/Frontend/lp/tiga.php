@@ -1573,7 +1573,7 @@
               <span itemscope="itemscope" itemtype="http://schema.org/Brand">
                 <a itemprop="url" href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" title="RTP SLOT GACOR">
                   <a href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" title="RTP SLOT GACOR">
-                    <amp-img src="https://i.ibb.co/nRfC7DQ/rtp-live-slot-logo.webp" alt="RTP SLOT GACOR" width="300" height="60" layout="responsive"/>
+                    <amp-img src="https://i.ibb.co/nRfC7DQ/rtp-live-slot-logo.webp" alt="RTP SLOT GACOR" width="300px" height="60px" layout="responsive"/>
                   </a>
                   <meta itemprop="name" content="RTP SLOT GACOR">
                 </a>
@@ -1592,7 +1592,7 @@
               <span itemscope="itemscope" itemtype="http://schema.org/Brand">
                 <a itemprop="url" href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" title="RTP SLOT GACOR">
                   <a href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" title="RTP SLOT GACOR">
-                    <amp-img src="https://i.ibb.co/nRfC7DQ/rtp-live-slot-logo.webp" alt="RTP SLOT GACOR" width="300" height="68" layout="responsive" />
+                    <amp-img src="https://i.ibb.co/nRfC7DQ/rtp-live-slot-logo.webp" alt="RTP SLOT GACOR" width="300px" height="68px" layout="responsive" />
                   </a>
                   <meta itemprop="name" content="RTP SLOT GACOR">
                 </a>
@@ -1626,8 +1626,8 @@
     <div class="container">
       <div class="item-8 item-xs-12 m-b-1 slider-area owl-carousel">
         <amp-carousel width="640" height="200" layout="responsive" type="slides" autoplay delay="4000">
-          <amp-img src="https://i.ibb.co/tKDTV2m/rtp-slot-gacor-terpercaya.webp" width="640" height="200" layout="responsive" alt="RTP SLOT GACOR">
-            <amp-img alt="RTP SLOT GACOR" fallback width="640" height="200" layout="responsive" src="https://i.ibb.co/tKDTV2m/rtp-slot-gacor-terpercaya.webp"></amp-img>
+          <amp-img src="https://i.ibb.co/tKDTV2m/rtp-slot-gacor-terpercaya.webp" width="640px" height="200px" layout="responsive" alt="RTP SLOT GACOR">
+            <amp-img alt="RTP SLOT GACOR" fallback width="640px" height="200px" layout="responsive" src="https://i.ibb.co/tKDTV2m/rtp-slot-gacor-terpercaya.webp"></amp-img>
           </amp-img>
         </amp-carousel>
       </div>
