@@ -1573,7 +1573,7 @@
               <span itemscope="itemscope" itemtype="http://schema.org/Brand">
                 <a itemprop="url" href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" title="RTP SLOT GACOR">
                   <a href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" title="RTP SLOT GACOR">
-                    <amp-img src="https://i.ibb.co/nRfC7DQ/rtp-live-slot-logo.webp" alt="RTP SLOT GACOR" width="300px" height="60px" layout="responsive"/>
+                    <amp-img src="https://i.ibb.co/nRfC7DQ/rtp-live-slot-logo.webp" alt="RTP SLOT GACOR" width="300px" height="60px" layout="responsive"></amp-img>
                   </a>
                   <meta itemprop="name" content="RTP SLOT GACOR">
                 </a>
@@ -1592,7 +1592,7 @@
               <span itemscope="itemscope" itemtype="http://schema.org/Brand">
                 <a itemprop="url" href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" title="RTP SLOT GACOR">
                   <a href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" title="RTP SLOT GACOR">
-                    <amp-img src="https://i.ibb.co/nRfC7DQ/rtp-live-slot-logo.webp" alt="RTP SLOT GACOR" width="300px" height="68px" layout="responsive" />
+                    <amp-img src="https://i.ibb.co/nRfC7DQ/rtp-live-slot-logo.webp" alt="RTP SLOT GACOR" width="300px" height="68px" layout="responsive"></amp-img>
                   </a>
                   <meta itemprop="name" content="RTP SLOT GACOR">
                 </a>
