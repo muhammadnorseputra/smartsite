@@ -1869,7 +1869,7 @@
               <span itemscope="itemscope" itemtype="http://schema.org/Brand">
                 <a itemprop="url" href="https://bkpsdm.balangankab.go.id/-/slot-thailand" title="slot Thailand">
                   <a href="https://bkpsdm.balangankab.go.id/-/slot-thailand" title="slot Thailand">
-                    <amp-img src="https://i.ibb.co/YdX6X0t/slot-thailand-logos.png" alt="slot Thailand" width="150" height="44" i-amphtml-layout="responsive"></amp-img>
+                    <amp-img src="https://i.ibb.co/YdX6X0t/slot-thailand-logos.png" alt="slot Thailand" width="150" height="44" layout="responsive"></amp-img>
                   </a>
                   <meta itemprop="name" content="slot Thailand">
                 </a>
