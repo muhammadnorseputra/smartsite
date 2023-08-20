@@ -1,14 +1,14 @@
 
 <!doctype html>
-<html lang="id" dir="ltr" amp="amp" i-amphtml-binding i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<html lang="id" ⚡ i-amphtml-binding i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
   <head>
     <meta charset="utf-8">
     <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" />
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>5 Info Bocoran RTP Live Slot Gacor  Akurat Dan Terpercaya</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" />
     <meta name="description" content="Slot Gacor Online Selalu Memiliki Return To Player sebagai parameter untuk meraih kemenangan, bocoran ini sangat akurat dan terpercaya" />
     <meta name="keywords" content="Slot, Slot Gacor, Slot Online, Slot Gacor Online, Slot Online Gacor, Situs Slot Gacor, rtp slot, Situs Judi Slot, Situs Slot Online, rtp live slot, rtp gacor, rtp terpercaya" />
-    <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" />
     <!-- Meta Robots -->
     <meta name="robots" content="max-image-preview:large"/>
     <meta name="googlebot-news" content="all" />
