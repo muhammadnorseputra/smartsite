@@ -1869,7 +1869,7 @@
               <span itemscope="itemscope" itemtype="http://schema.org/Brand">
                 <a itemprop="url" href="https://bkpsdm.balangankab.go.id/-/slot-thailand" title="slot Thailand">
                   <a href="https://bkpsdm.balangankab.go.id/-/slot-thailand" title="slot Thailand">
-                    <amp-img src="https://i.ibb.co/YdX6X0t/slot-thailand-logos.png" alt="slot Thailand" width="150" height="44" layout="responsive"></amp-img>
+                    <amp-img placeholder src="https://i.ibb.co/YdX6X0t/slot-thailand-logos.png" alt="slot Thailand" width="150" height="44" layout="fixed" placeholder></amp-img>
                   </a>
                   <meta itemprop="name" content="slot Thailand">
                 </a>
@@ -1889,7 +1889,7 @@
               <span itemscope="itemscope" itemtype="http://schema.org/Brand">
                 <a itemprop="url" href="https://bkpsdm.balangankab.go.id/-/slot-thailand" title="slot Thailand">
                   <a href="https://bkpsdm.balangankab.go.id/-/slot-thailand" title="slot Thailand">
-                    <amp-img src="https://i.ibb.co/YdX6X0t/slot-thailand-logos.png" alt="4 LINK SLOT ONLINE SERVER THAILAND TERBAIK" width="300" height="78" layout="responsive" />
+                    <amp-img src="https://i.ibb.co/YdX6X0t/slot-thailand-logos.png" alt="4 LINK SLOT ONLINE SERVER THAILAND TERBAIK" width="300" height="78" layout="responsive" placeholder/>
                   </a>
                   <meta itemprop="name" content="slot Thailand">
                 </a>
@@ -1915,7 +1915,7 @@
       <div class="container">
         <div class="item-8 item-xs-12 m-b-1 slider-area owl-carousel">
           <amp-carousel width="600" height="200" layout="responsive" type="slides" autoplay delay="4000">
-            <amp-img src="https://i.ibb.co/q7wHTb4/slot-thailand-mudah-jackpot.png" width="600" height="200" layout="responsive" alt="slot Thailand">
+            <amp-img src="https://i.ibb.co/q7wHTb4/slot-thailand-mudah-jackpot.png" width="600" height="200" layout="responsive" alt="slot Thailand" placeholder>
               <amp-img alt="4 LINK SLOT ONLINE SERVER THAILAND TERBAIK" fallback width="600" height="200" layout="responsive" src="https://i.ibb.co/q7wHTb4/slot-thailand-mudah-jackpot.png"></amp-img>
             </amp-img>
           </amp-carousel>
@@ -1924,7 +1924,7 @@
       <div class="clear"></div>
       <div class="container">
         <div class="slide mt-2 mtop mb3 paddy">
-          <amp-img src="https://i.ibb.co/J3Z1mgH/daftar-slot-thailand.png" alt="4 LINK SLOT ONLINE SERVER THAILAND TERBAIK" width="300" height="50" layout="responsive" />
+          <amp-img src="https://i.ibb.co/J3Z1mgH/daftar-slot-thailand.png" alt="4 LINK SLOT ONLINE SERVER THAILAND TERBAIK" width="300" height="50" layout="responsive" placeholder/>
         </div>
       </div>
       <div class="bottom bg-dark">
