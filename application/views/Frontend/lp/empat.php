@@ -40,7 +40,7 @@
     <meta property="og:site_name" content="SlotGacorHoki" />
     <meta property="og:image" content="https://i.ibb.co/2q5KFGM/slot-tergacor-mudah-jadi-jutawan.webp" />
     <meta property="og:image:alt" content="SlotGacorHoki" />
-    <meta name="google-site-verification" content="ki9nAitKbCLWHk_h0P1OFnkashqmY2XRYNql8zzAmdQ" />
+    <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" />
     <!-- OG:TWITTER -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Slot Gacor Gampang Menang Auto Jadi Jutawan" />
