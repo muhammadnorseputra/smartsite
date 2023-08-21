@@ -647,7 +647,7 @@
         "name": "5 Info Bocoran RTP Live Slot Gacor Akurat Dan Terpercaya",
         "alternateName": "RTPSLOT88",
         "url": "https://bkpsdm.balangankab.go.id/-/rtp-live-slot",
-        "logo": "https://i.ibb.co/mzSjJ6X/rtp-live-slot-logos.png,
+        "logo": "https://i.ibb.co/mzSjJ6X/rtp-live-slot-logos.png",
         "description": "RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan",
         "address": {
           "@type": "PostalAddress",
@@ -723,7 +723,7 @@
           "name": "RTPSLOT88",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://i.ibb.co/mzSjJ6X/rtp-live-slot-logos.png
+            "url": "https://i.ibb.co/mzSjJ6X/rtp-live-slot-logos.png"
           }
         },
         "datePublished": "2023-08-21T22:38:14+00:00",
