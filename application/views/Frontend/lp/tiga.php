@@ -758,7 +758,7 @@
         <div class="row">
           <div class="col-xs-6 text-left">
             <div class="logoSlotGacorHoki">
-              <amp-img width="200px" height="54px" src="https://i.ibb.co/mzSjJ6X/rtp-live-slot-logos.png" alt="SloGacorHoki"></amp-img>
+              <amp-img width="200" height="54" layout="responsive" src="https://i.ibb.co/mzSjJ6X/rtp-live-slot-logos.png" alt="SloGacorHoki"></amp-img>
             </div>
           </div>
         </div>
@@ -796,7 +796,7 @@
         </div>
       </div>
       <div>
-        <amp-img src="https://i.ibb.co/tKDTV2m/rtp-slot-gacor-terpercaya.webp" width="640px" height="200px" layout="responsive" alt="RTPSLOT88"></amp-img>
+        <amp-img src="https://i.ibb.co/tKDTV2m/rtp-slot-gacor-terpercaya.webp" width="640" height="200" layout="responsive" alt="RTPSLOT88"></amp-img>
       </div>
     </div>
     <div class="bottom">
