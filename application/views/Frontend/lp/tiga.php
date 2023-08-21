@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>5 Info Bocoran RTP Live Slot Gacor Akurat Dan Terpercaya</title>
-    <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot" />
+    <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot/" />
     <link href="https://i.ibb.co/sH1pFzH/rtp-slot-icon.png" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/sH1pFzH/rtp-slot-icon.png" />
     <meta name="description" content="RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan" />
@@ -27,7 +27,7 @@
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:title" content="5 Info Bocoran RTP Live Slot Gacor Akurat Dan Terpercaya" />
     <meta property="og:description" content="RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan" />
-    <meta property="og:url" content="https://bkpsdm.balangankab.go.id/-/rtp-live-slot">
+    <meta property="og:url" content="https://bkpsdm.balangankab.go.id/-/rtp-live-slot/">
     <meta property="og:site_name" content="RTPSLOT88" />
     <meta property="og:image" content="https://i.ibb.co/tKDTV2m/rtp-slot-gacor-terpercaya.webp" />
     <meta property="og:image:alt" content="RTPSLOT88" />
@@ -646,7 +646,7 @@
         "@type": "Organization",
         "name": "5 Info Bocoran RTP Live Slot Gacor Akurat Dan Terpercaya",
         "alternateName": "RTPSLOT88",
-        "url": "https://bkpsdm.balangankab.go.id/-/rtp-live-slot",
+        "url": "https://bkpsdm.balangankab.go.id/-/rtp-live-slot/",
         "logo": "https://i.ibb.co/mzSjJ6X/rtp-live-slot-logos.png",
         "description": "RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan",
         "address": {
@@ -664,7 +664,7 @@
           "contactType": "customer service",
           "areaServed": "ID",
           "availableLanguage": "Indonesia"},
-        "sameAs": ["https://bkpsdm.balangankab.go.id/-/rtp-live-slot"]
+        "sameAs": ["https://bkpsdm.balangankab.go.id/-/rtp-live-slot/"]
       }
     </script>
     <script type="application/ld+json">
@@ -708,7 +708,7 @@
         "@type": "NewsArticle",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://bkpsdm.balangankab.go.id/-/rtp-live-slot"
+          "@id": "https://bkpsdm.balangankab.go.id/-/rtp-live-slot/"
         },
         "headline": "5 Info Bocoran RTP Live Slot Gacor Akurat Dan Terpercaya",
         "description": "RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan",
@@ -716,7 +716,7 @@
         "author": {
           "@type": "Person",
           "name": "RTPSLOT88",
-          "url": "https://bkpsdm.balangankab.go.id/-/rtp-live-slot"
+          "url": "https://bkpsdm.balangankab.go.id/-/rtp-live-slot/"
         },
         "publisher": {
           "@type": "Organization",
@@ -738,12 +738,12 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://bkpsdm.balangankab.go.id/-/rtp-live-slot"
+          "item": "https://bkpsdm.balangankab.go.id/-/rtp-live-slot/"
         }, {
           "@type": "ListItem",
           "position": 2,
           "name": "RTPSLOT88",
-          "item": "https://bkpsdm.balangankab.go.id/-/rtp-live-slot"
+          "item": "https://bkpsdm.balangankab.go.id/-/rtp-live-slot/"
         }, {
           "@type": "ListItem",
           "position": 3,
@@ -926,7 +926,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="footer text-center" style="color: #ffef15;"> &copy; Copyright 2023 <a href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot">RTP LIVE SLOT GACOR</a>
+      <div class="footer text-center" style="color: #ffef15;"> &copy; Copyright 2023 <a href="https://bkpsdm.balangankab.go.id/-/rtp-live-slot/">RTP LIVE SLOT GACOR</a>
       </div>
     </div>
     </div>
