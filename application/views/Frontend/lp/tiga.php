@@ -691,7 +691,7 @@
           "addressRegion": "Jakarta Barat",
           "postalCode": "11470",
           "addressCountry": "Indonesia"
-        }
+        },
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+628224s3321",
