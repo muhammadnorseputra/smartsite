@@ -651,6 +651,22 @@
     <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
     <script type="application/ld+json">
       {
+      "@context": "https://schema.org/",
+      "@type": "WebPage",
+      "name": "Slot RTP",
+      "speakable":
+      {
+        "@type": "SpeakableSpecification",
+        "xPath": [
+          "/html/head/title",
+          "/html/head/meta[@name='description']/@content"
+          ]
+        },
+      "url": "https://bkpsdm.balangankab.go.id/-/slot-rtp/"
+      }
+      </script>
+    <script type="application/ld+json">
+      {
         "@context": "https://schema.org",
         "@type": "Game",
         "name": "Slot RTP",

@@ -1801,6 +1801,22 @@
       </style>
       <script type="application/ld+json">
       {
+      "@context": "https://schema.org/",
+      "@type": "WebPage",
+      "name": "Slot Thailand",
+      "speakable":
+      {
+        "@type": "SpeakableSpecification",
+        "xPath": [
+          "/html/head/title",
+          "/html/head/meta[@name='description']/@content"
+          ]
+        },
+      "url": "https://bkpsdm.balangankab.go.id/-/slot-thailand"
+      }
+      </script>
+      <script type="application/ld+json">
+      {
         "@context": "https://schema.org",
         "@type": "Game",
         "name": "Slot Thailand",
