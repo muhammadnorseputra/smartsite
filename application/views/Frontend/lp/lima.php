@@ -1799,6 +1799,31 @@
           list-style-type: square
         }
       </style>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Slot RTP",
+        "author": {
+          "@type": "Person",
+          "name": "Slot RTP"
+        },
+        "image": "https://i.ibb.co/YdX6X0t/slot-thailand-logos.png",
+        "url": "https://bkpsdm.balangankab.go.id/-/slot-thailand",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Slot RTP"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "99",
+          "bestRating": "100",
+          "worstRating": "2",
+          "ratingCount": "1555653323"
+        },
+        "inLanguage": "id"
+      }
+  </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
