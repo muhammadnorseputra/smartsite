@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>5 Info Bocoran RTP Live Slot Gacor Akurat Dan Terpercaya</title>
     <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/slot-rtp/" />
+    <link rel="alternate" media="only screen and (max-width: 640px)"  href="https://bkpsdm.balangankab.go.id/-/slot-rtp">
     <link href="https://i.ibb.co/sH1pFzH/rtp-slot-icon.png" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/sH1pFzH/rtp-slot-icon.png" />
     <meta name="description" content="RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan" />
