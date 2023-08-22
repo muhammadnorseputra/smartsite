@@ -22,7 +22,6 @@
     <!-- End Meta Robots -->
     <meta name="rating" content="general" />
     <meta name="geo.region" content="id_ID" />
-    <meta name="googlebot" content="index,follow">
     <meta name="geo.country" content="id" />
     <meta name="language" content="Id-ID" />
     <meta name="distribution" content="global" />
