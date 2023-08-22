@@ -10,7 +10,16 @@
     <meta name="description" content="RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan" />
     <meta name="keywords" content="rtp slot, Situs Judi Slot, Situs Slot Online, rtp live slot, rtp gacor, rtp terpercaya" />
     <meta name="google" content="notranslate">
-    <meta name="robots" content="index, follow" />
+    <!-- Meta Robots -->
+    <meta name="robots" content="max-image-preview:large"/>
+    <meta name="googlebot-news" content="all" />
+    <meta name="googlebot" content="all" />
+    <meta content="all" name="Googlebot-Image" />
+    <meta content="all" name="msnbot" />
+    <meta content="all" name="Slurp" />
+    <meta content="all" name="ZyBorg" />
+    <meta content="all" name="Scooter" />
+    <!-- End Meta Robots -->
     <meta name="rating" content="general" />
     <meta name="geo.region" content="id_ID" />
     <meta name="googlebot" content="index,follow">
