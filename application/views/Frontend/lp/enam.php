@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html ⚡ lang="id" dir="ltr">
+<html ⚡ lang="id">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>GELORA188:Link Daftar dan Claim Bonus 100%</title>
-    <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/link-gelora88/" />
-    <link rel="alternate" href="https://bkpsdm.balangankab.go.id/-/link-gelora88/" hreflang="x-default" />
-    <link href="https://i.ibb.co/pQVCQLT/gelora88-logo-web.png" rel="shortcut icon" type="image/x-icon">
-    <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/pQVCQLT/gelora88-logo-web.png" />
+    <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/link-gelora188/" />
+    <link rel="alternate" href="https://bkpsdm.balangankab.go.id/-/link-gelora188/" hreflang="x-default" />
+    <link href="https://i.ibb.co/pQVCQLT/gelora188-logo-web.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/pQVCQLT/gelora188-logo-web.png" />
     <meta name="description" content="Gelora188 adalah situs slot online terlengkap yang diresmikan pada tahun 2021, dan terasuk ke dalam salah satu situs judi online yang baru menjajal pasar Indonesia" />
     <meta name="keywords" content="slot online, agen slot online, slot dana, slot ovo, gelora188" />
     <meta name="google" content="notranslate">
@@ -37,7 +37,7 @@
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:title" content="GELORA188:Link Daftar dan Claim Bonus 100%" />
     <meta property="og:description" content="Gelora188 adalah situs slot online terlengkap yang diresmikan pada tahun 2021, dan terasuk ke dalam salah satu situs judi online yang baru menjajal pasar Indonesia" />
-    <meta property="og:url" content="https://bkpsdm.balangankab.go.id/-/link-gelora88/">
+    <meta property="og:url" content="https://bkpsdm.balangankab.go.id/-/link-gelora188/">
     <meta property="og:site_name" content="Gelora188_slot" />
     <meta property="og:image" content="https://i.ibb.co/86S2JYn/gelora188-bonus100.gif" />
     <meta property="og:image:alt" content="Gelora188_slot" />
@@ -52,7 +52,7 @@
     <meta name="twitter:data1" content="18 menit" />
     
     <link rel="preload" href="https://i.ibb.co/86S2JYn/gelora188-bonus100.gif" as="image">
-    <link rel="preload" href="https://i.ibb.co/pQVCQLT/gelora88-logo-web.png" as="image">
+    <link rel="preload" href="https://i.ibb.co/pQVCQLT/gelora188-logo-web.png" as="image">
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
     <style amp-boilerplate>
       body {
@@ -663,7 +663,7 @@
           "/html/head/meta[@name='description']/@content"
           ]
         },
-      "url": "https://bkpsdm.balangankab.go.id/-/link-gelora88/"
+      "url": "https://bkpsdm.balangankab.go.id/-/link-gelora188/"
       }
       </script>
       <script type="application/ld+json">
@@ -675,8 +675,8 @@
           "@type": "Person",
           "name": "Gelora188_slot"
         },
-        "image": "https://i.ibb.co/pQVCQLT/gelora88-logo-web.png",
-        "url": "https://bkpsdm.balangankab.go.id/-/link-gelora88/",
+        "image": "https://i.ibb.co/pQVCQLT/gelora188-logo-web.png",
+        "url": "https://bkpsdm.balangankab.go.id/-/link-gelora188/",
         "publisher": {
           "@type": "Organization",
           "name": "Gelora188_slot"
@@ -697,8 +697,8 @@
         "@type": "Organization",
         "name": "GELORA188:Link Daftar dan Claim Bonus 100%",
         "alternateName": "Gelora188_slot",
-        "url": "https://bkpsdm.balangankab.go.id/-/link-gelora88/",
-        "logo": "https://i.ibb.co/pQVCQLT/gelora88-logo-web.png",
+        "url": "https://bkpsdm.balangankab.go.id/-/link-gelora188/",
+        "logo": "https://i.ibb.co/pQVCQLT/gelora188-logo-web.png",
         "description": "Gelora188 adalah situs slot online terlengkap yang diresmikan pada tahun 2021, dan terasuk ke dalam salah satu situs judi online yang baru menjajal pasar Indonesia",
         "address": {
           "@type": "PostalAddress",
@@ -715,7 +715,7 @@
           "contactType": "customer service",
           "areaServed": "ID",
           "availableLanguage": "Indonesia"},
-        "sameAs": ["https://bkpsdm.balangankab.go.id/-/link-gelora88/"]
+        "sameAs": ["https://bkpsdm.balangankab.go.id/-/link-gelora188/"]
       }
     </script>
     <script type="application/ld+json">
@@ -759,7 +759,7 @@
         "@type": "NewsArticle",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://bkpsdm.balangankab.go.id/-/link-gelora88/"
+          "@id": "https://bkpsdm.balangankab.go.id/-/link-gelora188/"
         },
         "headline": "GELORA188:Link Daftar dan Claim Bonus 100%",
         "description": "Gelora188 adalah situs slot online terlengkap yang diresmikan pada tahun 2021, dan terasuk ke dalam salah satu situs judi online yang baru menjajal pasar Indonesia",
@@ -767,14 +767,14 @@
         "author": {
           "@type": "Person",
           "name": "Gelora188_slot",
-          "url": "https://bkpsdm.balangankab.go.id/-/link-gelora88/"
+          "url": "https://bkpsdm.balangankab.go.id/-/link-gelora188/"
         },
         "publisher": {
           "@type": "Organization",
           "name": "Gelora188_slot",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://i.ibb.co/pQVCQLT/gelora88-logo-web.png"
+            "url": "https://i.ibb.co/pQVCQLT/gelora188-logo-web.png"
           }
         },
         "datePublished": "2023-08-22T20:38:14+00:00",
@@ -789,12 +789,12 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://bkpsdm.balangankab.go.id/-/link-gelora88/"
+          "item": "https://bkpsdm.balangankab.go.id/-/link-gelora188/"
         }, {
           "@type": "ListItem",
           "position": 2,
           "name": "Gelora188_slot",
-          "item": "https://bkpsdm.balangankab.go.id/-/link-gelora88/"
+          "item": "https://bkpsdm.balangankab.go.id/-/link-gelora188/"
         }, {
           "@type": "ListItem",
           "position": 3,
@@ -809,7 +809,7 @@
         <div class="row">
           <div class="col-xs-6 text-left">
             <div class="gelora188">
-              <amp-img width="200" layout="responsive" height="54" src="https://i.ibb.co/pQVCQLT/gelora88-logo-web.png" alt="SloGacorHoki"></amp-img>
+              <amp-img width="200" height="54" src="https://i.ibb.co/pQVCQLT/gelora188-logo-web.png" alt="SloGacorHoki" layout="responsive"></amp-img>
             </div>
           </div>
         </div>
@@ -824,7 +824,7 @@
         <div class="row mt-5">
           <div class="col-md-12">
             <div class="desc">
-              <h2 style="text-align: center;font-size: 1.3em;font-weight: bold;">DAFTAR <a href="https://bkpsdm.balangankab.go.id/-/link-gelora88/">Gelora188</a> SLOT GACOR</h2>
+              <h2 style="text-align: center;font-size: 1.3em;font-weight: bold;">DAFTAR <a href="https://bkpsdm.balangankab.go.id/-/link-gelora188/">Gelora188</a> SLOT GACOR</h2>
               <h3 style="font-size: 0.88em;">DAFTAR DAPAT BONUS <br>HARI INI</h3>
             </div>
           </div>
@@ -862,7 +862,7 @@
                 <tr>
                   <td style="padding: 10px;">✅ Nama Situs</td>
                   <td style="padding: 10px;">
-                    <a href="https://bkpsdm.balangankab.go.id/-/link-gelora88/" target="_blank">🔥 GELORA188</a>
+                    <a href="https://bkpsdm.balangankab.go.id/-/link-gelora188/" target="_blank">🔥 GELORA188</a>
                   </td>
                 </tr>
                 <tr>
@@ -894,17 +894,17 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="word">
-                  <h1 style="text-align: left;">Situs Slot Online Terlengkap: <a href="https://bkpsdm.balangankab.go.id/-/link-gelora88/">Gelora188</a>! Mainkan Sekarang!</h1>
-                  <p style="text-align: left;"><a href="https://bkpsdm.balangankab.go.id/-/link-gelora88/">Gelora188</a> adalah situs slot online terlengkap yang diresmikan pada tahun 2021, dan terasuk ke dalam salah satu situs judi online yang baru menjajal pasar Indonesia, Gelora188 tidak pernah main-main. Situs ini langsung menyediakan semua kebutuhan dan solusi dalam bermain permainan slot bagi seluruh pemain di nusantara. </p>
+                  <h1 style="text-align: left;">Situs Slot Online Terlengkap: <a href="https://bkpsdm.balangankab.go.id/-/link-gelora188/">Gelora188</a>! Mainkan Sekarang!</h1>
+                  <p style="text-align: left;"><a href="https://bkpsdm.balangankab.go.id/-/link-gelora188/">Gelora188</a> adalah situs slot online terlengkap yang diresmikan pada tahun 2021, dan terasuk ke dalam salah satu situs judi online yang baru menjajal pasar Indonesia, Gelora188 tidak pernah main-main. Situs ini langsung menyediakan semua kebutuhan dan solusi dalam bermain permainan slot bagi seluruh pemain di nusantara. </p>
                   <p style="text-align: left;">Mulai dari pilihan kategori permainan yang paling lengkap, metode pembayaran yang terlengkap, hingga promo unggulan yang menarik. Jika Kamu ingin bermain slot online dengan nyaman, aman, dan menguntungkan, maka Gelora188 adalah pilihan yang tepat untuk Kamu. Berikut adalah beberapa cara, tips, keuntungan, dan daftar game di Gelora188 yang perlu Kamu ketahui.</p>
                   <h2 style="text-align: center;">Cara Daftar dan Deposit di Gelora188</h2>
-                  <p style="text-align: left;">Cara daftar di situs <a href="https://bkpsdm.balangankab.go.id/-/link-gelora88/">Gelora188</a> sangat mudah dan cepat. Kamu hanya perlu mengisi formulir daftar yang telah disediakan di halaman utama situs. Kamu harus mengisi informasi pribadi secara akurat dan lengkap seperti nama lengkap, nomor telepon, email, username, password dan kode referral (jika ada). Kamu kemudian akan menerima konfirmasi melalui email atau SMS untuk mengaktifkan akun Kamu. </p>
+                  <p style="text-align: left;">Cara daftar di situs <a href="https://bkpsdm.balangankab.go.id/-/link-gelora188/">Gelora188</a> sangat mudah dan cepat. Kamu hanya perlu mengisi formulir daftar yang telah disediakan di halaman utama situs. Kamu harus mengisi informasi pribadi secara akurat dan lengkap seperti nama lengkap, nomor telepon, email, username, password dan kode referral (jika ada). Kamu kemudian akan menerima konfirmasi melalui email atau SMS untuk mengaktifkan akun Kamu. </p>
                   <p style="text-align: left;">Setelah akun Kamu aktif, Kamu bisa langsung melakukan deposit untuk bermain slot online di Gelora188. Situs ini menyediakan metode pembayaran e-wallet terlengkap, seperti Dana, OVO, Gopay, Sakuku, dan LinkAja.</p>
                   <p style="text-align: left;">Kamu juga bisa melakukan deposit melalui bank lokal yang bekerja sama dengan Gelora188, seperti BCA, BNI, BRI, Mandiri, dan lain-lain. Minimal deposit di situs ini hanya Rp 10.000 saja. Kamu bisa melakukan deposit kapan saja selama 24 jam nonstop dengan bantuan customer service yang ramah dan profesional. </p>
                   <h2 style="text-align: center;">Tips Bermain Slot Online di Gelora188</h2>
                   <p style="text-align: left;">Bermain slot online di Gelora188 tidak hanya mengandalkan keberuntungan saja. Kamu juga perlu memiliki strategi dan tips agar bisa meningkatkan peluang menang dan mengurangi risiko kekalahan. Berikut adalah beberapa tips bermain slot online di Gelora188 yang bisa Kamu coba:</p>
                   <h3 style="text-align: left;">- Pilih game slot online yang sesuai dengan selera dan kemampuan Kamu</h3>
-                  <p style="text-align: left;">Gelora188 menyediakan berbagai jenis game <a href="https://bkpsdm.balangankab.go.id/-/link-gelora88/">Slot Online</a> dari provider terbaik di Asia, seperti Pragmatic Play, PGSoft, IDN Play, ION Casino, dan lain-lain. Setiap game slot online memiliki tema, fitur, grafis, dan RTP (return to player) yang berbeda-beda. Kamu harus memilih game slot online yang menarik bagi Kamu dan memiliki RTP tinggi agar bisa mendapatkan keuntungan maksimal.</p>
+                  <p style="text-align: left;">Gelora188 menyediakan berbagai jenis game <a href="https://bkpsdm.balangankab.go.id/-/link-gelora188/">Slot Online</a> dari provider terbaik di Asia, seperti Pragmatic Play, PGSoft, IDN Play, ION Casino, dan lain-lain. Setiap game slot online memiliki tema, fitur, grafis, dan RTP (return to player) yang berbeda-beda. Kamu harus memilih game slot online yang menarik bagi Kamu dan memiliki RTP tinggi agar bisa mendapatkan keuntungan maksimal.</p>
                   <h3 style="text-align: left;">- Manajemen modal dengan baik</h3>
                   <p style="text-align: left;">Kamu harus menentukan batas modal yang akan Kamu gunakan untuk bermain slot online di Gelora188. Jangan tergoda untuk bermain melebihi batas modal Kamu karena bisa membuat Kamu rugi besar. Sebaliknya, jika Kamu sudah mendapatkan kemenangan yang cukup besar, segera tarik dana Kamu dan simpan sebagian untuk modal bermain lagi.</p>
                   <h3 style="text-align: left;">- Manfaatkan promo unggulan dari Gelora188</h3>
@@ -917,7 +917,7 @@
                   <p style="text-align: left;">Gelora188 memiliki tim customer service yang siap melayani Kamu selama 24 jam nonstop. Kamu bisa menghubungi customer service melalui live chat, WhatsApp, Telegram, atau email jika Kamu memiliki pertanyaan, keluhan, atau masalah saat bermain slot online di situs ini. Customer service pada situs ini akan selalu siap sedia memberikan solusi yang cepat dan tepat untuk Kamu.</p>
                   <h3 style="text-align: left;">- Keamanan terjamin</h3>
                   <h2 style="text-align: center;">Daftar Game Slot Online di Gelora188</h2>
-                  <p style="text-align: left;">Berikut adalah  daftar game slot online di <a href="https://bkpsdm.balangankab.go.id/-/link-gelora88/">Gelora188</a> yang bisa Kamu coba:</p>
+                  <p style="text-align: left;">Berikut adalah  daftar game slot online di <a href="https://bkpsdm.balangankab.go.id/-/link-gelora188/">Gelora188</a> yang bisa Kamu coba:</p>
                   <ol>
                     <li style="text-align: left;">Gates of Olympus</li>
                     <p style="text-align: left;">Game slot ini bertema mitologi Yunani, dengan simbol-simbol dewa seperti Zeus, Poseidon, Athena, dan lainnya. Game ini memiliki fitur multiplier, free spins, dan bonus buy yang bisa meningkatkan peluang Kamu mendapatkan kemenangan besar. Game ini bisa Kamu mainkan di Pragmatic Play.</p>
@@ -960,7 +960,7 @@
                     <li style="text-align: left;">John Hunter and the Tomb of the Scarab Queen</li>
                     <p style="text-align: left;">Game slot ini bertema petualangan John Hunter di Mesir kuno untuk mencari harta karun raja skarabia. Game ini memiliki fitur money collect, free spins dengan money collect ekstra, dan jackpot tetap yang bisa memberikan kemenangan hingga 10.500x taruhan Kamu. Game ini juga memiliki cerita yang menarik dan suara yang mendebarkan. Game ini bisa Kamu mainkan di Pragmatic Play.</p>
                   </ol>
-                  <h2 style="text-align: center;">Bonus Bermain di Situs <a href="https://bkpsdm.balangankab.go.id/-/link-gelora88/">Gelora188</a></h2>
+                  <h2 style="text-align: center;">Bonus Bermain di Situs <a href="https://bkpsdm.balangankab.go.id/-/link-gelora188/">Gelora188</a></h2>
                   <p style="text-align: left;">Selain keruntungan yang sudah kita jelaskan di atas, nytanya masih ada beberapa keutngan yang akan kamu dapat ketika bergabung. Dan keuntungan tersebut adalah bonus yang akan didapat. Dan di Gelora188 sendiri, ada beberapa bonus yang akan diberikan kepada seluruh member setia, seperti:</p>
                   <h3 style="text-align: left;">- Bonus deposit</h3>
                   <p style="text-align: left;">Bonus ini diberikan untuk member baru yang melakukan deposit pertama kali. Kamu bisa mendapatkan bonus sebesar 50 ribu rupiah jika deposit minimal 100 ribu rupiah. Bonus ini bisa Kamu klaim dengan menghubungi customer service situs Gelora188.</p>
@@ -980,7 +980,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="footer text-center" style="color: #5adeff;"> &copy; Copyright 2023 <a href="https://bkpsdm.balangankab.go.id/-/link-gelora88/">Gelora188</a> &bull; <a href="https://bkpsdm.balangankab.go.id/-/slot-rtp/">RTP Slot</a> &bull; <a href="https://bkpsdm.balangankab.go.id/-/slot-dana/">Slot Dana</a> &bull; <a href="https://bkpsdm.balangankab.go.id/-/slotpulsa/">Slot Pulsa</a>
+      <div class="footer text-center" style="color: #5adeff;"> &copy; Copyright 2023 <a href="https://bkpsdm.balangankab.go.id/-/link-gelora188/">Gelora188</a> &bull; <a href="https://bkpsdm.balangankab.go.id/-/slot-rtp/">RTP Slot</a> &bull; <a href="https://bkpsdm.balangankab.go.id/-/slot-dana/">Slot Dana</a> &bull; <a href="https://bkpsdm.balangankab.go.id/-/slotpulsa/">Slot Pulsa</a>
       </div>
     </div>
     </div>
