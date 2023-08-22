@@ -8,6 +8,7 @@
     <meta name="description" content="Slot Server Thailand merupakan salah satu bentuk permainan judi online yang sangat ramai peminatnya di seluruh kalangan penjudi online" />
     <meta name="keywords" content="Slot Online Server Thailand, slot online, slot gacor,slot gacor luar negeri, slot server luar, slot gacor thailand, slot pulsa thailand, slot dana thailand" />
     <link itemprop="mainEntityOfPage" rel="canonical" href="https://bkpsdm.balangankab.go.id/-/slot-thailand" />
+    <link rel="alternate" href="https://bkpsdm.balangankab.go.id/-/slot-thailand" hreflang="x-default" />
     <meta name="robots" content="index, follow" />
     <meta name="page-locale" content="id,en">
     <meta content="true" name="HandheldFriendly">
