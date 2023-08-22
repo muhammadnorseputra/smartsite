@@ -1803,16 +1803,16 @@
       {
         "@context": "https://schema.org",
         "@type": "Game",
-        "name": "Slot RTP",
+        "name": "Slot Thailand",
         "author": {
           "@type": "Person",
-          "name": "Slot RTP"
+          "name": "Slot Thailand"
         },
         "image": "https://i.ibb.co/YdX6X0t/slot-thailand-logos.png",
         "url": "https://bkpsdm.balangankab.go.id/-/slot-thailand",
         "publisher": {
           "@type": "Organization",
-          "name": "Slot RTP"
+          "name": "Slot Thailand"
         },
         "aggregateRating": {
           "@type": "AggregateRating",
