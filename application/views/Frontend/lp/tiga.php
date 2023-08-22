@@ -666,14 +666,7 @@
           "addressRegion": "Jakarta Barat",
           "postalCode": "11470",
           "addressCountry": "Indonesia"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "99",
-          "bestRating": "100",
-          "worstRating": "2",
-          "ratingCount": "975565419"
-        },
+        }
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+628224s3321",
@@ -733,6 +726,13 @@
           "@type": "Person",
           "name": "RTPSLOT88",
           "url": "https://bkpsdm.balangankab.go.id/-/slot-rtp/"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "99",
+          "bestRating": "100",
+          "worstRating": "2",
+          "ratingCount": "975565419"
         },
         "publisher": {
           "@type": "Organization",

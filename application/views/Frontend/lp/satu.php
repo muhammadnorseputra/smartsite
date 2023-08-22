@@ -1554,6 +1554,13 @@
           "name": "slotpulsa",
           "url": "https://bkpsdm.balangankab.go.id/-/slotpulsa"
         },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "99",
+          "bestRating": "100",
+          "worstRating": "2",
+          "ratingCount": "107565419"
+        },
         "publisher": {
           "@type": "Organization",
           "name": "slotpulsa",
