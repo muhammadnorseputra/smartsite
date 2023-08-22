@@ -667,6 +667,13 @@
           "postalCode": "11470",
           "addressCountry": "Indonesia"
         },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "99",
+          "bestRating": "100",
+          "worstRating": "2",
+          "ratingCount": "975565419"
+        },
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+628224s3321",
