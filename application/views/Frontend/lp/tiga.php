@@ -652,6 +652,31 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Slot RTP",
+        "author": {
+          "@type": "Person",
+          "name": "Slot RTP"
+        },
+        "image": "https://i.ibb.co/mzSjJ6X/rtp-live-slot-logos.png",
+        "url": "https://bkpsdm.balangankab.go.id/-/slot-rtp/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Slot RTP"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "99",
+          "bestRating": "100",
+          "worstRating": "2",
+          "ratingCount": "1055654333"
+        },
+        "inLanguage": "id"
+      }
+  </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
         "@type": "Organization",
         "name": "5 Info Bocoran RTP Live Slot Gacor Akurat Dan Terpercaya",
         "alternateName": "RTPSLOT88",
@@ -726,13 +751,6 @@
           "@type": "Person",
           "name": "RTPSLOT88",
           "url": "https://bkpsdm.balangankab.go.id/-/slot-rtp/"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "99",
-          "bestRating": "100",
-          "worstRating": "2",
-          "ratingCount": "975565419"
         },
         "publisher": {
           "@type": "Organization",

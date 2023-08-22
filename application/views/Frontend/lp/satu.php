@@ -1539,6 +1539,31 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Slot Pulsa",
+        "author": {
+          "@type": "Person",
+          "name": "Slot Pulsa"
+        },
+        "image": "https://i.ibb.co/TtfSNs6/slot-pulsa-telkomsel.webp",
+        "url": "https://bkpsdm.balangankab.go.id/-/slotpulsa",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Slot Pulsa"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "99",
+          "bestRating": "100",
+          "worstRating": "2",
+          "ratingCount": "95565413"
+        },
+        "inLanguage": "id"
+      }
+  </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
         "@type": "Article",
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -1553,13 +1578,6 @@
           "@type": "Person",
           "name": "slotpulsa",
           "url": "https://bkpsdm.balangankab.go.id/-/slotpulsa"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "99",
-          "bestRating": "100",
-          "worstRating": "2",
-          "ratingCount": "107565419"
         },
         "publisher": {
           "@type": "Organization",
