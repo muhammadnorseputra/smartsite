@@ -1539,7 +1539,7 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "HowTo",
+        "@type": "Game",
         "name": "Slot Pulsa",
         "author": {
           "@type": "Person",

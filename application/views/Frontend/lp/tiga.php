@@ -652,7 +652,7 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "HowTo",
+        "@type": "Game",
         "name": "Slot RTP",
         "author": {
           "@type": "Person",
