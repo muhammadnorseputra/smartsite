@@ -13,7 +13,7 @@
     <meta name="keywords" content="slot online, agen slot online, slot dana, slot ovo, gelora188" />
     <meta name="google" content="notranslate">
     <!-- Meta Robots -->
-    <meta name="robots" content="all, max-image-preview:large, notranslate"/>
+    <meta name="robots" content="all"/>
     <meta name="googlebot-news" content="all" />
     <meta name="googlebot" content="all" />
     <meta content="all" name="Googlebot-Image" />
@@ -24,7 +24,6 @@
     <!-- End Meta Robots -->
     <meta name="rating" content="general" />
     <meta name="geo.region" content="id_ID" />
-    <meta name="googlebot" content="index,follow">
     <meta name="geo.country" content="id" />
     <meta name="language" content="Id-ID" />
     <meta name="distribution" content="global" />
