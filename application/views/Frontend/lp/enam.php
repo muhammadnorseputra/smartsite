@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>GELORA188:Link Daftar dan Claim Bonus 100%</title>
     <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/link-gelora188/" />
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/-/link-gelora188" />
     <link rel="alternate" href="https://bkpsdm.balangankab.go.id/-/link-gelora188/" hreflang="x-default" />
     <link href="https://i.ibb.co/pQVCQLT/gelora188-logo-web.png" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/pQVCQLT/gelora188-logo-web.png" />
