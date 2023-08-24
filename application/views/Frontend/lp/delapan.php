@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Raja138: Situs Slot Gacor Mudah Mendapat Kemenangan</title>
     <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/slot-raja138/" />
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/-/slot-raja138" />
+    <link rel="alternate" href="https://bkpsdm.balangankab.go.id/-/slot-raja138/" hreflang="x-default" />
     <link href="https://i.ibb.co/n02cchQ/raja138-icon.png" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/n02cchQ/raja138-icon.png" />
     <meta name="description" content="Raja 138 adalah provider situs slot asal Indonesia, yang memiliki game slot yang berbeda dengan provider slot lainnya." />
@@ -649,6 +651,31 @@
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Raja138: Situs Slot Gacor Mudah Mendapat Kemenangan",
+        "author": {
+          "@type": "Person",
+          "name": "Raja138: Situs Slot Gacor Mudah Mendapat Kemenangan"
+        },
+        "image": "https://i.ibb.co/mRp5chy/RAJA138.png",
+        "url": "https://bkpsdm.balangankab.go.id/-/link-gelora188/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Raja138: Situs Slot Gacor Mudah Mendapat Kemenangan"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "99",
+          "bestRating": "100",
+          "worstRating": "2",
+          "ratingCount": "556863"
+        },
+        "inLanguage": "id"
+      }
+  </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
