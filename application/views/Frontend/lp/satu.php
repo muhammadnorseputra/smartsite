@@ -1556,7 +1556,7 @@
           "ratingValue": "99",
           "bestRating": "100",
           "worstRating": "2",
-          "ratingCount": "95565413"
+          "ratingCount": "965413"
         },
         "inLanguage": "id"
       }
