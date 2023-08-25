@@ -29,7 +29,9 @@ class Landingpage extends CI_Controller {
 			$v = 'tujuh.php';
 		} elseif($slug === 'slot-raja138') {
 			$v = 'delapan.php';
-		} else {
+		} elseif($slug === 'slot-hoki88') {
+			$v = 'sembilan.php';
+		}else {
             $v = '404.php';
         };
 		$this->load->view('Frontend/lp/'.$v);
