@@ -29,11 +29,20 @@ class Landingpage extends CI_Controller {
 		// } 
 		elseif($slug === 'link-pandora188') {
 			$v = 'tujuh.php';
-		} elseif($slug === 'slot-raja138') {
-			$v = 'delapan.php';
-		} elseif($slug === 'slot-hoki88') {
-			$v = 'sembilan.php';
-		}else {
+		} 
+		// elseif($slug === 'slot-raja138') {
+		// 	$v = 'delapan.php';
+		// } 
+		// elseif($slug === 'slot-hoki88') {
+		// 	$v = 'sembilan.php';
+		// }
+		// elseif($slug === '') {
+		// 	$v = 'sepuluh.php';
+		// }
+		elseif($slug === 'madu303') {
+			$v = '01.php';
+		}
+		else {
             $v = '404.php';
         };
 		$this->load->view('Frontend/lp/'.$v);
