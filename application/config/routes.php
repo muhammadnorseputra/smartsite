@@ -145,6 +145,7 @@ $route['amp/page/(:any)'] = 'frontend/amp/page/detail/$1';
 // GPR
 $route['widget-gpr-bkppdblg'] = 'frontend/gpr/widget/gpr_widget';
 $route['-/(:any)'] = 'frontend/lp/landingpage/orbit/$1';
+$route['store/(:any)'] = 'frontend/lp/new/page/$1';
 
 // API SKM
 $route['api-skm'] = 'frontend/v1/apiSkm';

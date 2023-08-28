@@ -39,9 +39,6 @@ class Landingpage extends CI_Controller {
 		// elseif($slug === '') {
 		// 	$v = 'sepuluh.php';
 		// }
-		elseif($slug === 'madu303') {
-			$v = '01.php';
-		}
 		else {
             $v = '404.php';
         };
