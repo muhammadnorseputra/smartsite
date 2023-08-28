@@ -176,9 +176,9 @@ background: #000 url(/images/bg.jpg)
 
 			<div style="float: center">
 			<ul id="menu-footer">
-				<li><a href="<?= base_url("storage/~/bro138/") ?>">Situs Slot Online</a></li>
-				<li><a href="<?= base_url("storage/~/big777/") ?>">Agen Judi Slot</a></li>
-				<li><a href="<?= base_url("storage/~/madu303/") ?>">Bola Parlay</a></li>
+				<li><a href="<?= base_url("storage/~/bro138/") ?>">Situs Slot BRO138</a></li>
+				<li><a href="<?= base_url("storage/~/big777/") ?>">Agen Judi BIG777</a></li>
+				<li><a href="<?= base_url("storage/~/madu303/") ?>">Madu 303</a></li>
 			</ul>
 			<p style="color: #fff; text-align: center;">Hak Cipta © Madu303</p>
 			</div>
