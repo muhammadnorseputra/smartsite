@@ -23,9 +23,11 @@ class Landingpage extends CI_Controller {
 			$v = 'empat.php';
 		} elseif($slug === 'slot-thailand') {
 			$v = 'lima.php';
-		} elseif($slug === 'link-gelora188') {
-			$v = 'enam.php';
-		} elseif($slug === 'link-pandora188') {
+		} 
+		// elseif($slug === 'link-gelora188') {
+		// 	$v = 'enam.php';
+		// } 
+		elseif($slug === 'link-pandora188') {
 			$v = 'tujuh.php';
 		} elseif($slug === 'slot-raja138') {
 			$v = 'delapan.php';
