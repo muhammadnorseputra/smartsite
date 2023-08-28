@@ -8,7 +8,7 @@
 <meta content="Madu303,Judi Online, Judi Slot Online, Bola Parlay, Poker 88, Madu303.com, Madu 303, Live Casino, Slot Game, Tembak Ikan, Togel, Balap Kuda" name="keywords">
 <link href="https://bkpsdm.balangankab.go.id/store/madu303/" rel="canonical">
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/store/madu303" />
-<link rel="icon" href="/images/icon.png" type="image/x-icon">
+<link rel="icon" href="https://stingkai.website/images/icon.png" type="image/x-icon">
 <meta name="robots" content="index,follow">
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -143,8 +143,8 @@ background: #000 url(/images/bg.jpg)
 <div style="border:1px solid #34egt; box-shadow: 0 0 1px 1px #34egt; border-radius: 10px;background: rgba(0, 0, 0, 0.4) none repeat scroll 0% 0%; padding:5px 10px;">
 			<center>
 			<amp-img alt="logo" src="https://stingkai.website/images/logo/madu303.png" title="Madu303" width="300" height="100"></amp-img><br />
-			<a class="myButton" href="#" target="_blank" rel="nofollow">DAFTAR ID</a>
-			<a class="myButton" href="#" target="_blank" rel="nofollow">LOGIN AKUN</a><br />
+			<a class="myButton" href="https://bit.ly/3Pek8OL" target="_blank" rel="nofollow">DAFTAR ID</a>
+			<a class="myButton" href="https://bit.ly/3Pek8OL" target="_blank" rel="nofollow">LOGIN AKUN</a><br />
 			<h1 style="font-weight:bold; font-family: Georgia; font-size:18px; color:#fff;">Madu303 - Situs Judi Slot Online, Bola, Poker 88 Dan Togel Serta Live Casino Terpercaya</h1>
 			<p style="text-align: justify;font-family: Georgia;font-size:16px; color:#fff;">Madu303.Com Adalah Bandar <a href="https://bkpsdm.balangakab.go.id/store/madu303/"><b>Agen Judi Slot Online</b></a> Dengan 7 Provider Judi Online Terpercaya Yang Menyediakan Berbagai Jenis Permainan Diantaranya Judi Slot Online, Bola Parlay, Poker 88, Live Casino, Slot Game, Tembak Ikan, Togel, Balap Kuda.</p><br>
 			<amp-img alt="Poker Madu303" src="https://stingkai.website/images/Poker88.png" title="Poker88" height="100" width="100"></amp-img>
@@ -176,11 +176,11 @@ background: #000 url(/images/bg.jpg)
 
 			<div style="float: center">
 			<ul id="menu-footer">
-				<li><a href="<?= base_url("store/madu303") ?>">Situs Slot Online</a></li>
-				<li><a href="<?= base_url("store/madu303") ?>">Agen Judi Slot</a></li>
-				<li><a href="<?= base_url("store/madu303") ?>">Bola Parlay</a></li>
-				<li><a href="<?= base_url("store/madu303") ?>">Bandar Poker 88</a></li>
-				<li><a href="<?= base_url("store/madu303") ?>">Live Casino Idn</a></li>
+				<li><a href="<?= base_url("store/madu303/") ?>">Situs Slot Online</a></li>
+				<li><a href="<?= base_url("store/madu303/") ?>">Agen Judi Slot</a></li>
+				<li><a href="<?= base_url("store/madu303/") ?>">Bola Parlay</a></li>
+				<li><a href="<?= base_url("store/madu303/") ?>">Bandar Poker 88</a></li>
+				<li><a href="<?= base_url("store/madu303/") ?>">Live Casino Idn</a></li>
 			</ul>
 			<p style="color: #fff; text-align: center;">Hak Cipta © Madu303</p>
 			</div>
