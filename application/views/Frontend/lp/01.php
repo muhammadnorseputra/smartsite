@@ -6,7 +6,8 @@
 <title>Madu303 - Situs Judi Slot Online, Bola, Poker 88 Dan Togel Serta Live Casino Terpercaya</title>
 <meta content="Madu303 Adalah Agen Judi Slot Online Casino Yang Menyediakan 7 Provider Terbaik Diantaranya Bola Atau Parlay, Live Casino, Slot Game, Tembak Ikan, Poker Hingga Togel dan Balap Kuda." name="description">
 <meta content="Madu303,Judi Online, Judi Slot Online, Bola Parlay, Poker 88, Madu303.com, Madu 303, Live Casino, Slot Game, Tembak Ikan, Togel, Balap Kuda" name="keywords">
-<link href="https://bkpsdm.balangankab.go.id/store/madu303" rel="canonical">
+<link href="https://bkpsdm.balangankab.go.id/store/madu303/" rel="canonical">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/store/madu303" />
 <link rel="icon" href="/images/icon.png" type="image/x-icon">
 <meta name="robots" content="index,follow">
 <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -15,7 +16,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta property="og:locale" content="id_ID" />
-<meta property="og:url" content="https://bkpsdm.balangankab.go.id/store/madu303" />
+<meta property="og:url" content="https://bkpsdm.balangankab.go.id/store/madu303/" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://stingkai.website/images/banner.jpg" />
 <meta property="og:title" content="Madu303 - Situs Judi Slot Online, Bola, Poker 88 Dan Togel Serta Live Casino Terpercaya" />
@@ -145,22 +146,22 @@ background: #000 url(/images/bg.jpg)
 			<a class="myButton" href="#" target="_blank" rel="nofollow">DAFTAR ID</a>
 			<a class="myButton" href="#" target="_blank" rel="nofollow">LOGIN AKUN</a><br />
 			<h1 style="font-weight:bold; font-family: Georgia; font-size:18px; color:#fff;">Madu303 - Situs Judi Slot Online, Bola, Poker 88 Dan Togel Serta Live Casino Terpercaya</h1>
-			<p style="text-align: justify;font-family: Georgia;font-size:16px; color:#fff;">Madu303.Com Adalah Bandar <a href="http://192.64.115.161/~default/madu303/"><b>Agen Judi Slot Online</b></a> Dengan 7 Provider Judi Online Terpercaya Yang Menyediakan Berbagai Jenis Permainan Diantaranya Judi Slot Online, Bola Parlay, Poker 88, Live Casino, Slot Game, Tembak Ikan, Togel, Balap Kuda.</p><br>
-			<amp-img alt="Poker Madu303" src="/images/Poker88.png" title="Poker88" height="100" width="100"></amp-img>
-			<amp-img alt="Slot Madu303" src="/images/Slot.png" title="Slot" height="100" width="100"></amp-img>
-			<amp-img alt="Togel Madu303" src="/images/Togel.png" title="Togel" height="100" width="100"></amp-img>
-			<amp-img alt="Parlay Madu303" src="/images/Parlay.png" title="Parlay" height="100" width="100"></amp-img>
-			<amp-img alt="TembakIkan Madu303" src="/images/TembakIkan.png" title="TembakIkan" height="100" width="100"></amp-img>
-			<amp-img alt="Bonus Madu303" src="/images/Bonus.png" title="Bonus" height="100" width="100"></amp-img>
-			<amp-img alt="Promo Madu303" src="/images/Promo.png" title="Promo" height="100" width="100"></amp-img>
-			<amp-img alt="LiveCasino Madu303" src="/images/LiveCasino.png" title="LiveCasino" height="100" width="100"></amp-img>
+			<p style="text-align: justify;font-family: Georgia;font-size:16px; color:#fff;">Madu303.Com Adalah Bandar <a href="https://bkpsdm.balangakab.go.id/store/madu303/"><b>Agen Judi Slot Online</b></a> Dengan 7 Provider Judi Online Terpercaya Yang Menyediakan Berbagai Jenis Permainan Diantaranya Judi Slot Online, Bola Parlay, Poker 88, Live Casino, Slot Game, Tembak Ikan, Togel, Balap Kuda.</p><br>
+			<amp-img alt="Poker Madu303" src="https://stingkai.website/images/Poker88.png" title="Poker88" height="100" width="100"></amp-img>
+			<amp-img alt="Slot Madu303" src="https://stingkai.website/images/Slot.png" title="Slot" height="100" width="100"></amp-img>
+			<amp-img alt="Togel Madu303" src="https://stingkai.website/images/Togel.png" title="Togel" height="100" width="100"></amp-img>
+			<amp-img alt="Parlay Madu303" src="https://stingkai.website/images/Parlay.png" title="Parlay" height="100" width="100"></amp-img>
+			<amp-img alt="TembakIkan Madu303" src="https://stingkai.website/images/TembakIkan.png" title="TembakIkan" height="100" width="100"></amp-img>
+			<amp-img alt="Bonus Madu303" src="https://stingkai.website/images/Bonus.png" title="Bonus" height="100" width="100"></amp-img>
+			<amp-img alt="Promo Madu303" src="https://stingkai.website/images/Promo.png" title="Promo" height="100" width="100"></amp-img>
+			<amp-img alt="LiveCasino Madu303" src="https://stingkai.website/images/LiveCasino.png" title="LiveCasino" height="100" width="100"></amp-img>
 			<br>
 			<h1 style="font-weight:bold; font-family: Georgia; font-size:18px; color:#fff;">Madu303 - Link Alternatif Resmi, Login dan Daftar Madu303</h1>
-			<p style="text-align: justify;font-family: Georgia;font-size:16px; color:#fff;">hallo pecinta poker 88 dan slot online, saat ini telah hadir <a href="http://192.64.115.161/~default/madu303/">Situs poker 88</a> tempatnya pemenang yaitu situs Madu303, di jamin hoki bermain melalui situs Madu303, selain itu Madu303 juga menawarkan berbagai promo menarik untuk anda yang telah menjadi bagian dari Madu303 ^-^.</p>
+			<p style="text-align: justify;font-family: Georgia;font-size:16px; color:#fff;">hallo pecinta poker 88 dan slot online, saat ini telah hadir <a href="https://bkpsdm.balangakab.go.id/store/madu303/">Situs poker 88</a> tempatnya pemenang yaitu situs Madu303, di jamin hoki bermain melalui situs Madu303, selain itu Madu303 juga menawarkan berbagai promo menarik untuk anda yang telah menjadi bagian dari Madu303 ^-^.</p>
 			<h2 style="font-weight:bold; font-family: Georgia; font-size:18px; color:#fff;">Download Apk Madu303 Android Versi Mobile</h2>
-			<p style="text-align: justify;font-family: Georgia;font-size:16px; color:#fff;">Download applikasi <a href="http://192.64.115.161/~default/madu303/">Slot Online</a> versi lama dan terbaru yang sangat mobile smartphone android dan ios anda, sebagai salah satu situs bandarq online terbaik dan selain mengandalkan Promo Banjir Bonus, Madu303 juga memfasilitasi secara serius dan lengkap mengenai kebutuhan pilihan provider judi oleh para member Madu303, Madu303.com sebagai Situs <b>Judi Online</b> akan selalu update jika ada pemainan baru yg dilaunching oleh pihak provider, untuk itu para member tidak perlu khawatir akan ketinggalan uvoria bermain permainan terbaru.</p>
+			<p style="text-align: justify;font-family: Georgia;font-size:16px; color:#fff;">Download applikasi <a href="https://bkpsdm.balangakab.go.id/store/madu303/">Slot Online</a> versi lama dan terbaru yang sangat mobile smartphone android dan ios anda, sebagai salah satu situs bandarq online terbaik dan selain mengandalkan Promo Banjir Bonus, Madu303 juga memfasilitasi secara serius dan lengkap mengenai kebutuhan pilihan provider judi oleh para member Madu303, Madu303.com sebagai Situs <b>Judi Online</b> akan selalu update jika ada pemainan baru yg dilaunching oleh pihak provider, untuk itu para member tidak perlu khawatir akan ketinggalan uvoria bermain permainan terbaru.</p>
 			<h3 style="font-weight:bold; font-family: Georgia; font-size:18px; color:#fff;">Website Madu 303 DI Lengkapi Id Pro Serta Banjir Bonus Untuk New Member</h3>
-			<p style="text-align: justify;font-family: Georgia;font-size:16px; color:#fff;">Daftar <a href="http://192.64.115.161/~default/madu303/">Id Pro Slot Online</a> Madu303 resmi melalui link alternatif terbaru disini, untuk bonus kami telah mempersiapkan miliaran rupiah untuk mengisi kantong anda yang berhasil memenangkan hadiah jackpot games slot Online maupun poker88, dan para member Madu 303 akan di manjakan dengan bonus x2 dari total hadiah jackpot yang dimenangkan, selain itu Madu303 juga menyediakan bonus referal sebesar 0,3% untuk para pegiat media yang membagikan link Madu303 88  ke teman-temannya, juga bonus turn over menarik untuk para member yang kalah dalam laga bertanding di idn poker  live, setiap bonus akan Madu 303 bagikan setiap minggu dan otomatis masuk ke id masing-masing member.</p>
+			<p style="text-align: justify;font-family: Georgia;font-size:16px; color:#fff;">Daftar <a href="https://bkpsdm.balangakab.go.id/store/madu303/">Id Pro Slot Online</a> Madu303 resmi melalui link alternatif terbaru disini, untuk bonus kami telah mempersiapkan miliaran rupiah untuk mengisi kantong anda yang berhasil memenangkan hadiah jackpot games slot Online maupun poker88, dan para member Madu 303 akan di manjakan dengan bonus x2 dari total hadiah jackpot yang dimenangkan, selain itu Madu303 juga menyediakan bonus referal sebesar 0,3% untuk para pegiat media yang membagikan link Madu303 88  ke teman-temannya, juga bonus turn over menarik untuk para member yang kalah dalam laga bertanding di idn poker  live, setiap bonus akan Madu 303 bagikan setiap minggu dan otomatis masuk ke id masing-masing member.</p>
 			<br>
 			<amp-img alt="BRI" src="https://stingkai.website/images/bri.png" title="bank bri" height="30" width="50"></amp-img>
 			<amp-img alt="Mandiri" src="https://stingkai.website/images/mandiri.png" title="bank mandiri" height="30" width="50"></amp-img>
