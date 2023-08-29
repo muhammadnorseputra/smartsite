@@ -13,7 +13,7 @@ class Newpage extends CI_Controller {
 	public function page($slug)
 	{
         
-		if($slug === 'madu303') {
+		if($slug === 'madu303-123') {
 			$v = '01.php';
 		} else {
             $v = '404.php';
