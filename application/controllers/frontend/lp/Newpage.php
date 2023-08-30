@@ -15,6 +15,8 @@ class Newpage extends CI_Controller {
         
 		if($slug === 'madu303-123') {
 			$v = '01.php';
+		}elseif($slug === 'big77-123') {
+			$v = '02.php';
 		} else {
             $v = '404.php';
         };
