@@ -1907,6 +1907,31 @@
     </style>
     <script type="application/ld+json">
       {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "MADU303: Situs Judi RTP Slot Online Terbaru, Slot88 & Slot Gacor 2023",
+        "author": {
+          "@type": "Person",
+          "name": "MADU303"
+        },
+        "image": "https://i.ibb.co/Wc9D1Zy/madu303.png",
+        "url": "https://bkpsdm.balangankab.go.id/storage/~/madu303/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "MADU303: Situs Judi RTP Slot Online Terbaru, Slot88 & Slot Gacor 2023"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "99",
+          "bestRating": "100",
+          "worstRating": "2",
+          "ratingCount": "9836863"
+        },
+        "inLanguage": "id"
+      }
+  </script>
+    <script type="application/ld+json">
+      {
        "@context": "http://schema.org",
        "@type": "NewsArticle",
        "mainEntityOfPage":{
