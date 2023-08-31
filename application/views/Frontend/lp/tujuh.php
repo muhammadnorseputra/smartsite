@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ⚡ lang="id">
+<html ⚡ lang="id" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,7 +13,7 @@
     <meta name="keywords" content="Pandora188, Pandora188 slot, pandora188 slot login, pandora188 login, pandora188 link alternatif, rtp pandora188" />
     <meta name="google" content="notranslate">
     <!-- Meta Robots -->
-    <meta name="robots" content="max-image-preview:large"/>
+    <meta name="robots" content="all"/>
     <meta name="googlebot-news" content="all" />
     <meta name="googlebot" content="all" />
     <meta content="all" name="Googlebot-Image" />
