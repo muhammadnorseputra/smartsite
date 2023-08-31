@@ -1934,11 +1934,11 @@
                 <div class="col-md-8">
                     <div class="row logform">
                         <div class="col-xs-6">
-                            <a href="https://sogo188.blog/?ref=Omegah88" target="_blank" rel="nofollow noreferrer"><span
+                            <a href="https://bit.ly/3Pek8OL" target="_blank" rel="nofollow noreferrer"><span
                                     class="tron-login">LOGIN</span></a>
                         </div>
                         <div class="col-xs-6">
-                            <a href="https://sogo188.blog/?ref=Omegah88" target="_blank" rel="nofollow noreferrer"><span
+                            <a href="https://bit.ly/3Pek8OL" target="_blank" rel="nofollow noreferrer"><span
                                     class="tron-regis">DAFTAR</span></a>
                         </div>
                     </div>
