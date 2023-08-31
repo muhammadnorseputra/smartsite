@@ -25,7 +25,7 @@
     <meta name="og:title" content="Daftar Link Situs Slot Gacor Gampang BRO138 Hari Ini 2023">
     <meta name="og:description"
         content="Slot gacor kami recomendasikan permainan situs slot gacor online gampang BRO138 hari ini 2023 dengan situs terbaik dan terpercaya">
-    <meta name="og:image" content="https://i.postimg.cc/sXsVkZdg/slot-gacor.png">
+    <meta name="og:image" content="https://i.ibb.co/Q9kSLHH/logo.png">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="466">
     <meta name="og:url" content="https://bkpsdm.balangankab.go.id/storage/~/bro138/">
