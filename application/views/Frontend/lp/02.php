@@ -1761,7 +1761,7 @@
             <p class="center-text">
               Copyright © 2023
               <a
-                href="https://www.tigersugarma.com/"
+                href="https://bkpsdm.balangankab.go.id/storage/~/big777/"
                 title="Slot Gacor Gampang Menang"
                 ><span style="color: #1550ff; font-size: 10pt"
                   ><strong
