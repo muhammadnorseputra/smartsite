@@ -654,6 +654,31 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Pandora188: Situs Judi Online Paling Gacor dengan Lisensi Gacor",
+        "author": {
+          "@type": "Person",
+          "name": "Pandora188"
+        },
+        "image": "https://i.ibb.co/w4b1vHt/PANDORA3.png",
+        "url": "https://bkpsdm.balangankab.go.id/-/slot-pandora188/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pandora188"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "99",
+          "bestRating": "100",
+          "worstRating": "2",
+          "ratingCount": "1036863"
+        },
+        "inLanguage": "id"
+      }
+  </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Pandora188: Situs Judi Online Paling Gacor dengan Lisensi Gacor",
         "alternateName": "pandora188",
