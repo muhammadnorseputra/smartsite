@@ -50,9 +50,9 @@
     <meta name="geo.country" content="ID">
     <meta name="geo.region" content="ID" />
     <meta name="tgn.nation" content="Indonesia">
-    <link rel="shortcut icon" type="https://i.ibb.co/vj26r4r/98842157-6a92-4a6a-a1ef-c89efe3a3cc4.jpg" />
+    <link rel="shortcut icon" type="https://i.ibb.co/Q9kSLHH/logo.png" />
     <meta name="google-site-verification" content="GQtb70m9QBVKEwJf4BfPVkh-OQ8MfNpmhU7qdYvgoZM" />
-    <link href='https://i.ibb.co/vj26r4r/98842157-6a92-4a6a-a1ef-c89efe3a3cc4.jpg' rel='icon' sizes='32x32'
+    <link href='https://i.ibb.co/Q9kSLHH/logo.png' rel='icon' sizes='32x32'
         type='image/png' />
     <style amp-runtime i-amphtml-version="012107240354000">
         html.i-amphtml-fie {
@@ -1836,7 +1836,7 @@
             "name": "Slot Gacor",
             "alternateName": "Slot Gacor",
             "url": "https://bkpsdm.balangankab.go.id/storage/~/bro138/",
-            "logo": "https://i.ibb.co/vj26r4r/98842157-6a92-4a6a-a1ef-c89efe3a3cc4.jpg",
+            "logo": "https://i.ibb.co/Q9kSLHH/logo.png",
             "sameAs": "https://bkpsdm.balangankab.go.id/storage/~/bro138/"
         }
     </script>
@@ -1864,7 +1864,7 @@
                 "name": "Daftar Link Situs Slot Gacor Gampang BRO138 Hari Ini 2023 ",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://i.ibb.co/vj26r4r/98842157-6a92-4a6a-a1ef-c89efe3a3cc4.jpg"
+                    "url": "https://i.ibb.co/Q9kSLHH/logo.png"
                 }
             },
             "datePublished": "2023-07-18T15:28:13+00:00",
@@ -1905,7 +1905,7 @@
                                 title="Slot Gacor">
                                 <a href="https://bkpsdm.balangankab.go.id/storage/~/bro138/"
                                     title="Slot Gacor"><amp-img
-                                        src="https://i.ibb.co/vj26r4r/98842157-6a92-4a6a-a1ef-c89efe3a3cc4.jpg"
+                                        src="https://i.ibb.co/Q9kSLHH/logo.png"
                                         alt="Bonus New Member" width="150" height="50" /></a>
                                 <meta itemprop="name" content="Slot Gacor">
                             </a></span>
@@ -1925,7 +1925,7 @@
                                 title="Slot Gacor">
                                 <a href="https://bkpsdm.balangankab.go.id/storage/~/bro138/"
                                     title="Slot Gacor"><amp-img
-                                        src="https://i.ibb.co/vj26r4r/98842157-6a92-4a6a-a1ef-c89efe3a3cc4.jpg"
+                                        src="https://i.ibb.co/Q9kSLHH/logo.png"
                                         alt="Slot Gacor" width="300" height="88" layout="responsive" /></a>
                                 <meta itemprop="name" content="Slot Gacor">
                             </a></span>
