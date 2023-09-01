@@ -15,7 +15,6 @@
     <!-- Meta Robots -->
     <meta name="robots" content="all"/>
     <meta name="googlebot-news" content="all" />
-    <meta name="googlebot" content="all" />
     <meta content="all" name="Googlebot-Image" />
     <meta content="all" name="msnbot" />
     <meta content="all" name="Slurp" />
