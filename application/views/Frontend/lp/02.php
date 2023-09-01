@@ -217,7 +217,7 @@
           "areaServed": "ID",
           "availableLanguage": "Indonesian"
         },
-        "sameAs": ["https://bkpsdm.balangankab.go.id/storage/~/big77/"]
+        "sameAs": ["https://bkpsdm.balangankab.go.id/storage/big777/"]
       }
     </script>
 
@@ -1766,10 +1766,11 @@
                 ><span style="color: #1550ff; font-size: 10pt"
                   ><strong
                     >Situs Slot BIG777 Gampang Menang Hari Ini</strong
-                  ></span
+                  >
+                  </span
                 ></a
               >
-              ⋆ All rights reserved.
+              ⋆ All rights reserved. <a href="https://bkpsdm.balangankab.go.id/storage/madu303/" target="_blank">Madu303</a> | <a href="https://bkpsdm.balangankab.go.id/storage/big777/" target="_blank">BIG777</a> | <a href="https://bkpsdm.balangankab.go.id/storage/bro138/" target="_blank">Bro138</a>
             </p>
           </center>
         </div>

@@ -9,7 +9,7 @@
     <meta name="description"
         content="MADU303 adalah situs judi slot gacor hari ini yang menyediakan daftar rtp slot maxwin terbaru dengan pola konsep slot88 gampang menang terpercaya." />
     <meta name="keywords"
-        content="madu303,slot madu303,slot gacor,slot online,slot online gacor,slot gacor hari ini,slot gacor gampang menang,situs slot gacor,slot gacor maxwin,judi slot gacor, judi online" />
+        content="slot, madu303,slot madu303,slot gacor,slot online,slot online gacor,slot gacor hari ini,slot gacor gampang menang,situs slot gacor,slot gacor maxwin,judi slot gacor, judi online" />
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
     <link itemprop="mainEntityOfPage" rel="canonical" href="https://bkpsdm.balangankab.go.id/storage/madu303/" />
     <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/storage/madu303" />
@@ -2092,7 +2092,7 @@
     </div>
     <div class="container">
         <div class="copyleft acenter pb-2">
-            <span>&copy; 2023 SLOT GACOR HARI INI. All Rights Reserved. 18+ | Madu303 </span>
+            <span>&copy; 2023 SLOT GACOR HARI INI. All Rights Reserved. 18+ | <a href="https://bkpsdm.balangankab.go.id/storage/madu303/" target="_blank">Madu303</a> | <a href="https://bkpsdm.balangankab.go.id/storage/big777/" target="_blank">BIG777</a> | <a href="https://bkpsdm.balangankab.go.id/storage/bro138/" target="_blank">Bro138</a> </span>
         </div>
     </div>
     <div class="fixed-footer">

@@ -2324,10 +2324,9 @@
                     </div>
                     <div class="container">
                         <div class="copyleft acenter pb-2">
-                            <span>&copy; 2023 • <a
-                                    href="https://bkpsdm.balangankab.go.id/storage/bro138/">Slot88</a>
-                                • <a href="https://bkpsdm.balangankab.go.id/storage/bro138/">Situs
-                                    Judi Slot BRO138 Terbaik dan Terpercaya No 1</a></span>
+                            <span>&copy; 2023
+                            &bull; <a href="https://bkpsdm.balangankab.go.id/storage/bro138/">Situs
+                                    Judi Slot BRO138 Terbaik dan Terpercaya No 1</a> &bull; <a href="https://bkpsdm.balangankab.go.id/storage/madu303/" target="_blank">Madu303</a> | <a href="https://bkpsdm.balangankab.go.id/storage/big777/" target="_blank">BIG777</a></span>
                         </div>
                     </div>
 
