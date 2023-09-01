@@ -10,7 +10,7 @@
     <link href="https://i.ibb.co/sH1pFzH/rtp-slot-icon.png" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/sH1pFzH/rtp-slot-icon.png" />
     <meta name="description" content="RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan" />
-    <meta name="keywords" content="slot, slot rtp, rtp slot, situs judi slot, situs slot online, rtp live slot, rtp gacor, rtp terpercaya" />
+    <meta name="keywords" content="slot,slot rtp,rtp slot,situs judi slot,situs slot online,rtp live slot,rtp gacor,rtp terpercaya" />
     <!-- Meta Robots -->
     <meta name="robots" content="max-image-preview:large"/>
     <meta name="googlebot-news" content="all" />
@@ -980,7 +980,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="footer text-center" style="color: #ffef15;"> &copy; Copyright 2023 <a href="https://bkpsdm.balangankab.go.id/-/slot-rtp/">RTP LIVE SLOT GACOR</a> | <a href="https://bkpsdm.balangankab.go.id/-/slotpulsa/">Slot Pulsa</a> | <a href="https://bkpsdm.balangankab.go.id/-/slot-dana/">Slot Dana</a>
+      <div class="footer text-center" style="color: #ffef15;"> &copy; Copyright 2023 <a href="https://bkpsdm.balangankab.go.id/-/slot-rtp/" target="_blank">RTP LIVE SLOT GACOR</a> | <a href="https://bkpsdm.balangankab.go.id/-/slotpulsa/" target="_blank">Slot Pulsa</a> | <a href="https://bkpsdm.balangankab.go.id/-/slot-dana/" target="_blank">Slot Dana</a>
       </div>
     </div>
     </div>

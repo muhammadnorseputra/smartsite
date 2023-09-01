@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Slot Dana : 5 Daftar Slot Deposit Dana Gacor Terbaru</title>
   <meta name="description" content="Slot Deposit Dana Gacor adalah link situs judi slot online hari ini gampang menang yang dimana situs slot gacor maxwin menang jackpot slot maxwin pada situs slot Deposit Dana Gacor sangat mudah diraih pada situs slot gacor" />
-  <meta name="keywords" content="slot, slot dana, slot deposit dana, slot pulsa, slot gacor, slot gacor maxwin, pragmatic play, maxwin, slot maxwin" />
+  <meta name="keywords" content="slot,slot dana,slot deposit dana,slot pulsa,slot gacor,slot gacor maxwin,pragmatic play,maxwin,slot maxwin" />
   <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/slot-dana/" />
   <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/-/slot-dana" />
   <link rel="alternate" href="https://bkpsdm.balangankab.go.id/-/slot-dana/" hreflang="x-default" />
@@ -398,7 +398,7 @@
          </amp-accordion>
         <div class="container">
          <div class="copyleft acenter pb-2">
-          <span style="color: #0030b3;">© 2023 &bull; Slot Dana : 5 Daftar Slot Deposit Dana Gacor Terbaru &bull; <a href="https://bkpsdm.balangankab.go.id/-/slotpulsa/"> Slot Pulsa</a> &bull; <a href="https://bkpsdm.balangankab.go.id/-/slot-rtp/"> Slot RTP</a></span>
+          <span style="color: #0030b3;">© 2023 &bull; Slot Dana : 5 Daftar Slot Deposit Dana Gacor Terbaru &bull; <a href="https://bkpsdm.balangankab.go.id/-/slotpulsa/" target="_blank">Slot Pulsa</a> &bull; <a href="https://bkpsdm.balangankab.go.id/-/slot-rtp/" target="_blank">Slot RTP</a></span>
          </div>
         </div>
         <div class="fixed-footer">
