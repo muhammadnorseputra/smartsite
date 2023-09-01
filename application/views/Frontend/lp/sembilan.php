@@ -985,7 +985,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="footer text-center" style="color: #ffffff;"> &copy; Copyright 2023 <a href="https://bkpsdm.balangankab.go.id/-/slot-hoki88/">HOKI88</a>
+      <div class="footer text-center" style="color: #ffffff;"> &copy; Copyright 2023 <a href="https://bkpsdm.balangankab.go.id/-/slot-hoki88/">HOKI88</a> &bull; <a href="https://bkpsdm.balangankab.go.id/-/slot-pandora188/" target="_blank">Pandora188</a>
       </div>
     </div>
     </div>
