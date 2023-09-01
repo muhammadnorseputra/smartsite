@@ -11,7 +11,6 @@
     <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/sH1pFzH/rtp-slot-icon.png" />
     <meta name="description" content="RTP slot adalah singkatan dari Return to Player, yang merupakan ukuran persentase yang menunjukkan berapa banyak uang yang dibayarkan" />
     <meta name="keywords" content="rtp slot, Situs Judi Slot, Situs Slot Online, rtp live slot, rtp gacor, rtp terpercaya" />
-    <meta name="google" content="notranslate">
     <!-- Meta Robots -->
     <meta name="robots" content="max-image-preview:large"/>
     <meta name="googlebot-news" content="all" />
@@ -21,6 +20,10 @@
     <meta content="all" name="Slurp" />
     <meta content="all" name="ZyBorg" />
     <meta content="all" name="Scooter" />
+    <meta name="audience" content="all" />
+    <meta name="SPIDERS" content="ALL"/>
+    <meta name="WEBCRAWLERS" content="ALL"/>
+    <meta name="google" content="translate" />
     <!-- End Meta Robots -->
     <meta name="rating" content="general" />
     <meta name="geo.region" content="id_ID" />
