@@ -1858,7 +1858,7 @@
         <p style="text-align: left;">Sebelum bermain, perlu diingat bahwa permainan judi apapun selalu berpotensi menyebabkan kerugian.</p>
         <div class="container">
           <div class="copyleft acenter pb-2">
-            <span>&copy; 2023 Slot Deposit Pulsa | All Rights Reserved. 18+ | SlotPulsa | <a href="https://bkpsdm.balangankab.go.id/-/slot-rtp/"> Slot RTP</a> | <a href="https://bkpsdm.balangankab.go.id/-/slot-dana/"> Slot Dana</a></span>
+            <span>&copy; 2023 Slot Deposit Pulsa | All Rights Reserved. 18+ | SlotPulsa | <a href="https://bkpsdm.balangankab.go.id/-/slot-rtp/"> Slot RTP</a> | <a href="https://bkpsdm.balangankab.go.id/-/slot-dana/"> Slot Dana</a> | <a href="https://bkpsdm.balangankab.go.id/-/slot-pandora188/"> Slot Pandora188</a></span>
           </div>
         </div>
         <div class="fixed-footer">
