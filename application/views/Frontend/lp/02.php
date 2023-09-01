@@ -103,10 +103,10 @@
     <link
       itemprop="mainEntityOfPage"
       rel="canonical"
-      href="https://bkpsdm.balangankab.go.id/storage/~/big777/"
+      href="https://bkpsdm.balangankab.go.id/storage/big777/"
     />
-    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/storage/~/big777" />
-    <link rel="alternate" href="https://bkpsdm.balangankab.go.id/storage/~/big777/" hreflang="x-default" />
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/storage/big777" />
+    <link rel="alternate" href="https://bkpsdm.balangankab.go.id/storage/big777/" hreflang="x-default" />
     <link
       href="https://i.ibb.co/540Ts5S/pragmatic-1.png"
       rel="shortcut icon"
@@ -175,7 +175,7 @@
           "slot gacor, slot online, slot gacor hari ini, slot gacor gampang menang, situs slot gacor, situs slot online, situs gacor terbaru ,slot tebaru, slot gacor terbaik, situs slot gacor, slot gacor maxwin, bocoran slot gacor hari ini, slot gacor terbaru, slot gacor terpercaya"
         ],
         "image": "https://i.ibb.co/Pj6tZ3d/slot-gacor.jpg",
-        "url": "https://bkpsdm.balangankab.go.id/storage/~/big777/",
+        "url": "https://bkpsdm.balangankab.go.id/storage/big777/",
         "publisher": {
           "@type": "Organization",
           "name": "Slot BIG777 Gampang Menang"
@@ -228,7 +228,7 @@
         "@context": "https://schema.org/",
         "@type": "WebSite",
         "name": "Link Daftar BIG777 Slot Online Resmi Dan Slot Gacor Terpercaya",
-        "url": "https://bkpsdm.balangankab.go.id/storage/~/big777/",
+        "url": "https://bkpsdm.balangankab.go.id/storage/big777/",
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://bkpsdm.balangankab.go.id/search?q={search_term_string}",
@@ -1761,7 +1761,7 @@
             <p class="center-text">
               Copyright © 2023
               <a
-                href="https://bkpsdm.balangankab.go.id/storage/~/big777/"
+                href="https://bkpsdm.balangankab.go.id/storage/big777/"
                 title="Slot Gacor Gampang Menang"
                 ><span style="color: #1550ff; font-size: 10pt"
                   ><strong
