@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ⚡ lang="id" dir="ltr">
+<html amp lang="id" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -10,8 +10,8 @@
     <link href="https://i.ibb.co/FWQyZy8/PANDORA-2.png" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/FWQyZy8/PANDORA-2.png" />
     <meta name="description" content="Pandora188 memiliki banyak keunggulan yang membuatnya menjadi salah satu situs slot online terbaik di Indonesia." />
-    <meta name="keywords" content="Pandora188, Pandora188 slot, pandora188 slot login, pandora188 login, pandora188 link alternatif, rtp pandora188" />
-    <meta name="google" content="notranslate">
+    <meta name="keywords" content="slot,pandora188,pandora188 slot, pandora188 slot login, pandora188 login, pandora188 link alternatif, rtp pandora188" />
+    <meta name="google" content="translate">
     <!-- Meta Robots -->
     <meta name="robots" content="all"/>
     <meta name="googlebot-news" content="all" />
@@ -23,7 +23,7 @@
     <!-- End Meta Robots -->
     <meta name="rating" content="general" />
     <meta name="geo.region" content="id_ID" />
-    <meta name="googlebot" content="index,follow">
+    <meta name="googlebot" content="all">
     <meta name="geo.country" content="id" />
     <meta name="language" content="Id-ID" />
     <meta name="distribution" content="global" />
