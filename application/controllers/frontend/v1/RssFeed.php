@@ -54,7 +54,7 @@ class RssFeed extends CI_Controller {
           $data['page_description'] = $profile->meta_desc; // some description
           $data['page_language'] = 'id-ID'; // the language
           $data['creator_email'] = 'bkppdbalangan@gmail.com'; // your email
-          $data['creator_name'] = 'BKPPD Balangan'; // your email  
+          $data['creator_name'] = 'BKPSDM Balangan 2023'; // your email  
           $data['categorys'] = $this->categorys->getAll();
           $this->output->set_content_type('application/rss+xml');
           $this->load->view('Frontend/v1/rss_categorys', $data);
@@ -69,7 +69,7 @@ class RssFeed extends CI_Controller {
           $data['page_description'] = $profile->meta_desc; // some description
           $data['page_language'] = 'id-ID'; // the language
           $data['creator_email'] = 'bkppdbalangan@gmail.com'; // your email
-          $data['creator_name'] = 'BKPPD Balangan'; // your email  
+          $data['creator_name'] = 'BKPSDM Balangan 2023'; // your email  
           $data['tags'] = $this->categorys->get_all_tag();
           $this->output->set_content_type('application/rss+xml');
           $this->load->view('Frontend/v1/rss_tags', $data);

@@ -48,6 +48,7 @@
       $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
       $conditional = $post->tgl_posting === date('Y-m-d') ? 'Terbaru' : 'Lama';
       $newDateTime= new DateTime($post->created_at, new DateTimeZone('UTC'));
+      $pubDate=$newDateTime->format(DateTime::RFC822);
     ?>
         <item>
           <title><?php echo xml_convert($post->judul); ?></title>
@@ -63,7 +64,7 @@
           <g:id><?= $id ?></g:id>
           <guid isPermaLink="false"><?= $posturl ?></guid>
           <enclosure length="25000" type="image/jpeg" url="<?= $img ?>"/>
-          <pubDate><?= $newDateTime->format('D, d M Y H:i:sO') ?></pubDate>
+          <pubDate><?= $pubDate ?></pubDate>
         </item>
     <?php endforeach; ?>
     <?php 
