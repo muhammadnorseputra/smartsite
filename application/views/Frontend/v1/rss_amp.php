@@ -81,7 +81,7 @@
           <content:encoded><![CDATA[<?= strip_tags($p->content) ?>]]></content:encoded>
           <g:id><?= $p->token_halaman ?></g:id>
           <guid isPermaLink="false"><?= base_url("amp/page/{$p->slug}") ?></guid>
-          <pubDate><?= $pageCreated->format('D, d M Y H:i:sO') ?></pubDate>
+          <pubDate><?= date(DATE_RSS, strtotime($p->tgl_created)) ?></pubDate>
         </item>
     <?php endforeach; ?>
     </channel>
