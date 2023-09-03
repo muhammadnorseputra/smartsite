@@ -11,7 +11,7 @@
     <link href="https://i.ibb.co/FWQyZy8/PANDORA-2.png" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/FWQyZy8/PANDORA-2.png" />
     <meta name="description" content="Pandora188 memiliki banyak keunggulan yang membuatnya menjadi salah satu situs slot online terbaik di Indonesia." />
-    <meta name="keywords" content="slot,pandora188,pandora188 slot, pandora188 slot login, pandora188 login, pandora188 link alternatif, rtp pandora188" />
+    <meta name="keywords" content="pandora188, pandora188 slot, pandora188 slot login, pandora188 login, pandora188 link alternatif, rtp pandora188" />
     <meta name="google" content="translate">
     <!-- Meta Robots -->
     <meta name="robots" content="max-image-preview:large"/>
