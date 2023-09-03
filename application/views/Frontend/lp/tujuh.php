@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html amp lang="id" dir="ltr">
+<!doctype html>
+<html ⚡ lang="id">
   <head>
+  <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" />  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Pandora188: Situs Judi Online Paling Gacor dengan Lisensi Gacor</title>
@@ -13,8 +14,9 @@
     <meta name="keywords" content="slot,pandora188,pandora188 slot, pandora188 slot login, pandora188 login, pandora188 link alternatif, rtp pandora188" />
     <meta name="google" content="translate">
     <!-- Meta Robots -->
-    <meta name="robots" content="all"/>
+    <meta name="robots" content="max-image-preview:large"/>
     <meta name="googlebot-news" content="all" />
+    <meta name="googlebot" content="all" />
     <meta content="all" name="Googlebot-Image" />
     <meta content="all" name="msnbot" />
     <meta content="all" name="Slurp" />
@@ -41,7 +43,6 @@
     <meta property="og:site_name" content="pandora188" />
     <meta property="og:image" content="https://i.ibb.co/9yLphJM/PANDORA-1.png" />
     <meta property="og:image:alt" content="pandora188" />
-    <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" />
     <!-- OG:TWITTER -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pandora188: Situs Judi Online Paling Gacor dengan Lisensi Gacor" />
