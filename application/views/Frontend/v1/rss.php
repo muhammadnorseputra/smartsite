@@ -48,7 +48,8 @@
       $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
       $conditional = $post->tgl_posting === date('Y-m-d') ? 'Terbaru' : 'Lama';
       $newDateTime= new DateTime($post->created_at, new DateTimeZone('UTC'));
-      $pubDate= date("D, d M Y H:i:s T", strtotime($post->created_at));
+      // $pubDate= date("D, d M Y H:i:s T", strtotime($post->created_at));
+      $pubDate=$newDateTime->format(DateTime::RFC822);
     ?>
         <item>
           <title><?php echo xml_convert($post->judul); ?></title>
