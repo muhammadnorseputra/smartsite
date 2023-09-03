@@ -47,7 +47,7 @@
       $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
       $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
       $conditional = $post->tgl_posting === date('Y-m-d') ? 'Terbaru' : 'Lama';
-      $newDateTime= new DateTime(substr($post->created_at,0,10));
+      $newDateTime= new DateTime($post->created_at, new DateTimeZone('UTC'));
       // $pubDate= date("D, d M Y H:i:s T", strtotime($post->created_at));
       $pubDate=$newDateTime->format(DateTime::RFC822);
     ?>
@@ -64,7 +64,7 @@
           <g:condition><?= $conditional ?></g:condition>
           <guid isPermaLink="false"><?= $posturl ?></guid>
           <enclosure length="25000" type="image/jpeg" url="<?= $img ?>"/>
-          <pubDate><?= $pubDate ?></pubDate>
+          <pubDate><?= date(DATE_RSS, strtotime($post->created_at)) ?></pubDate>
         </item>
     <?php endforeach; ?>
      
