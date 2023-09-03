@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Pandora188: Situs Judi Online Paling Gacor dengan Lisensi Gacor</title>
     <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/slot-pandora188/" />
-    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/-/slot-pandora188" />
+    <link rel="alternate" media="only screen and (max-width: 480px)" href="https://bkpsdm.balangankab.go.id/-/slot-pandora188" />
     <link rel="alternate" href="https://bkpsdm.balangankab.go.id/-/slot-pandora188/" hreflang="x-default" />
     <link href="https://i.ibb.co/FWQyZy8/PANDORA-2.png" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/FWQyZy8/PANDORA-2.png" />
