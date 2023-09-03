@@ -47,7 +47,7 @@
       $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
       $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
       $conditional = $post->tgl_posting === date('Y-m-d') ? 'Terbaru' : 'Lama';
-      $newDateTime= new DateTime(substr($post->created_at,0,10), new DateTimeZone('UTC'));
+      $newDateTime= new DateTime(substr($post->created_at,0,10));
       // $pubDate= date("D, d M Y H:i:s T", strtotime($post->created_at));
       $pubDate=$newDateTime->format(DateTime::RFC822);
     ?>
