@@ -197,7 +197,8 @@
 		<div class="row">
 			<div class="col-md-12 text-center pb-4 pt-3 mb-5 mb-md-0 pb-md-3 d-flex align-items-center justify-content-between flex-lg-row flex-column">
 				<div class="text-left text-white">
-					<div class="align-content-center align-items-center">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</div>
+					<div class="align-content-center align-items-center">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.  <a href="https://id.seedbacklink.com/"><img title="Seedbacklink" src="https://id.seedbacklink.com/wp-content/uploads/2023/08/Badge-Seedbacklink_Artboard-1-copy.png" alt="Seedbacklink" width="25" height="25"></a>
+</div>
 				</div>
 				<!-- <div class="text-right text-white d-none d-md-block d-lg-block">
 					

@@ -142,7 +142,6 @@
                 </div>
                 </a>
  -->            
- <a href="https://id.seedbacklink.com/"><img title="Seedbacklink" src="https://id.seedbacklink.com/wp-content/uploads/2023/08/Badge-Seedbacklink_Artboard-1-copy.png" alt="Seedbacklink" width="100%" height="auto"></a>
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
                 <script src="//servedby.eleavers.com/ads/ads.php?t=Mjg2NjA7MTkwMTc7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=1"></script>
