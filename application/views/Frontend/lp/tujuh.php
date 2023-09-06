@@ -1,5 +1,5 @@
 <!doctype html>
-<html ⚡ lang="id">
+<html amp lang="id">
   <head>
     <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" />  
     <meta charset="utf-8">
