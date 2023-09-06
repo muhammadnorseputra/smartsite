@@ -32,15 +32,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="language" content="ID">
     <meta name="copyright" content="slotpulsa88">
     <meta name="author" content="slotpulsa88">
     <meta name="distribution" content="global">
     <meta name="publisher" content="slotpulsa88">
-    <meta name="geo.placename" content="DKI Jakarta">
-    <meta name="geo.country" content="ID">
-    <meta name="geo.region" content="ID" />
-    <meta name="tgn.nation" content="Indonesia">
     <!-- OG:FACEBOOK -->
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="website" />

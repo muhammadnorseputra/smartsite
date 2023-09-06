@@ -13,7 +13,6 @@
     <meta name="page-locale" content="id,en">
     <meta content="true" name="HandheldFriendly">
     <meta content="width" name="MobileOptimized">
-    <meta content="indonesian" name="language">
     <meta content='#007fa0' name='theme-color' />
     <link rel="preload" as="image" href="https://i.ibb.co/YdX6X0t/slot-thailand-logos.png" />
     <meta name="supported-amp-formats" content="websites,stories,ads,email">
@@ -27,16 +26,10 @@
     <meta name="og:type" content="website">
     <meta name="theme-color" content="#0a0a0a" />
     <meta name="categories" content="slotthailand" />
-    <meta name="language" content="ID">
-    <meta name="rating" content="general">
     <meta name="copyright" content="slotthailand">
     <meta name="author" content="slotthailand">
     <meta name="distribution" content="global">
     <meta name="publisher" content="slotthailand">
-    <meta name="geo.placename" content="DKI Jakarta">
-    <meta name="geo.country" content="ID">
-    <meta name="geo.region" content="ID" />
-    <meta name="tgn.nation" content="Indonesia">
     <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/WtBqSWT/slot-thailand-icon.png" />
     <link href='https://i.ibb.co/WtBqSWT/slot-thailand-icon.png' rel='icon' sizes='32x32' type='image/png' />
     <style amp-runtime i-amphtml-version="011905222334000">

@@ -23,12 +23,6 @@
     <meta content="all" name="ZyBorg" />
     <meta content="all" name="Scooter" />
     <!-- End Meta Robots -->
-    <meta name="geo.region" content="id_ID" />
-    <meta name="googlebot" content="all">
-    <meta name="geo.country" content="id" />
-    <meta name="language" content="Id-ID" />
-    <meta name="distribution" content="global" />
-    <meta name="geo.placename" content="Indonesia" />
     <meta name="author" content="pandora188" />
     <meta name="publisher" content="pandora188" />
     <meta content="true" name="HandheldFriendly">
