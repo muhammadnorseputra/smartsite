@@ -1,7 +1,7 @@
 <!doctype html>
 <html ⚡ lang="id">
   <head>
-  <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" />  
+    <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" />  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Pandora188: Situs Judi Online Paling Gacor dengan Lisensi Gacor</title>
@@ -23,7 +23,6 @@
     <meta content="all" name="ZyBorg" />
     <meta content="all" name="Scooter" />
     <!-- End Meta Robots -->
-    <meta name="rating" content="general" />
     <meta name="geo.region" content="id_ID" />
     <meta name="googlebot" content="all">
     <meta name="geo.country" content="id" />
