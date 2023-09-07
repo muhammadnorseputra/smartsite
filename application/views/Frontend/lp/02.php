@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html amp lang="id-ID">
+<html amp="amp" lang="id-ID">
   <!-- HEAD -->
 
   <head>
@@ -103,10 +103,10 @@
     <link
       itemprop="mainEntityOfPage"
       rel="canonical"
-      href="https://bkpsdm.balangankab.go.id/storage/big777/"
+      href="https://bkpsdm.balangankab.go.id/photo/file/big777/"
     />
     <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/storage/big777" />
-    <link rel="alternate" href="https://bkpsdm.balangankab.go.id/storage/big777/" hreflang="x-default" />
+    <link rel="alternate" href="https://bkpsdm.balangankab.go.id/photo/file/big777/" hreflang="x-default" />
     <link
       href="https://i.ibb.co/540Ts5S/pragmatic-1.png"
       rel="shortcut icon"
@@ -131,7 +131,7 @@
     <meta name="geo.placename" content="Indonesia" />
     <meta name="author" content="Slot Gacor" />
     <meta name="googlebot" content="index,follow" />
-    <meta property="og:url" content="https://www.tigersugarma.com/" />
+    <meta property="og:url" content="https://bkpsdm.balangankab.go.id/photo/file/big777/" />
     <meta
       property="og:image"
       content="https://i.ibb.co/Pj6tZ3d/slot-gacor.jpg"
@@ -175,7 +175,7 @@
           "slot gacor, slot online, slot gacor hari ini, slot gacor gampang menang, situs slot gacor, situs slot online, situs gacor terbaru ,slot tebaru, slot gacor terbaik, situs slot gacor, slot gacor maxwin, bocoran slot gacor hari ini, slot gacor terbaru, slot gacor terpercaya"
         ],
         "image": "https://i.ibb.co/Pj6tZ3d/slot-gacor.jpg",
-        "url": "https://bkpsdm.balangankab.go.id/storage/big777/",
+        "url": "https://bkpsdm.balangankab.go.id/photo/file/big777/",
         "publisher": {
           "@type": "Organization",
           "name": "Slot BIG777 Gampang Menang"
@@ -217,7 +217,7 @@
           "areaServed": "ID",
           "availableLanguage": "Indonesian"
         },
-        "sameAs": ["https://bkpsdm.balangankab.go.id/storage/big777/"]
+        "sameAs": ["https://bkpsdm.balangankab.go.id/photo/file/big777/"]
       }
     </script>
 
@@ -228,7 +228,7 @@
         "@context": "https://schema.org/",
         "@type": "WebSite",
         "name": "Link Daftar BIG777 Slot Online Resmi Dan Slot Gacor Terpercaya",
-        "url": "https://bkpsdm.balangankab.go.id/storage/big777/",
+        "url": "https://bkpsdm.balangankab.go.id/photo/file/big777/",
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://bkpsdm.balangankab.go.id/search?q={search_term_string}",
@@ -1037,7 +1037,7 @@
   <body>
     <!-- LOGO -->
     <div class="logo-container">
-      <a href="https://www.tigersugarma.com/" class="logo">
+      <a href="https://bkpsdm.balangankab.go.id/photo/file/big777/" class="logo">
         <amp-img
           layout="responsive"
           height="150"
@@ -1048,7 +1048,7 @@
         ></amp-img>
       </a>
     </div>
-    <a href="https://www.tigersugarma.com/">
+    <a href="https://bkpsdm.balangankab.go.id/photo/file/big777/">
       <amp-img
         title="Slot Gacor Hari Ini"
         src="https://i.ibb.co/Pj6tZ3d/slot-gacor.jpg"
@@ -1761,7 +1761,7 @@
             <p class="center-text">
               Copyright © 2023
               <a
-                href="https://bkpsdm.balangankab.go.id/storage/big777/"
+                href="https://bkpsdm.balangankab.go.id/photo/file/big777/"
                 title="Slot Gacor Gampang Menang"
                 ><span style="color: #1550ff; font-size: 10pt"
                   ><strong
@@ -1770,7 +1770,7 @@
                   </span
                 ></a
               >
-              ⋆ All rights reserved. <a href="https://bkpsdm.balangankab.go.id/storage/madu303/" target="_blank">Madu303</a> | <a href="https://bkpsdm.balangankab.go.id/storage/big777/" target="_blank">BIG777</a> | <a href="https://bkpsdm.balangankab.go.id/storage/bro138/" target="_blank">Bro138</a>
+              ⋆ All rights reserved. <a href="https://bkpsdm.balangankab.go.id/photo/file/madu303/" target="_blank">Madu303</a> | <a href="https://bkpsdm.balangankab.go.id/photo/file/big777/" target="_blank">BIG777</a> | <a href="https://bkpsdm.balangankab.go.id/photo/file/bro138/" target="_blank">Bro138</a>
             </p>
           </center>
         </div>
