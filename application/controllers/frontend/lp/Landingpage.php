@@ -24,18 +24,18 @@ class Landingpage extends CI_Controller {
 		} elseif($slug === 'slot-thailand') {
 			$v = 'lima.php';
 		} 
-		// elseif($slug === 'link-gelora188') {
-		// 	$v = 'enam.php';
-		// } 
+		elseif($slug === 'link-gelora188') {
+			$v = 'enam.php';
+		} 
 		elseif($slug === 'slot-pandora188') {
 			$v = 'tujuh.php';
 		} 
-		// elseif($slug === 'slot-raja138') {
-		// 	$v = 'delapan.php';
-		// } 
-		// elseif($slug === 'slot-hoki88') {
-		// 	$v = 'sembilan.php';
-		// }
+		elseif($slug === 'slot-raja138') {
+			$v = 'delapan.php';
+		} 
+		elseif($slug === 'slot-hoki88') {
+			$v = 'sembilan.php';
+		}
 		// elseif($slug === '') {
 		// 	$v = 'sepuluh.php';
 		// }

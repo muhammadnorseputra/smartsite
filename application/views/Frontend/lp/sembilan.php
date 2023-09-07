@@ -820,12 +820,12 @@
           <div class="col-md-12">
             <div class="row log88">
               <div class="col-xs-6 mt-3">
-                <a href="https://uangcepat.lol" rel="nofollow noreferrer" target="_blank">
+                <a href="#LINKTO" rel="nofollow noreferrer" target="_blank">
                   <button type="login" class="btn btn-log">LOGIN</button>
                 </a>
               </div>
               <div class="col-xs-6 mt-3">
-                <a href="https://uangcepat.lol" rel="nofollow noreferrer" target="_blank">
+                <a href="#LINKTO" rel="nofollow noreferrer" target="_blank">
                   <button type="login" class="btn btn-daf">DAFTAR</button>
                 </a>
               </div>
@@ -990,18 +990,18 @@
     </div>
     </div>
     <div class="fixed-footer">
-      <a href="https://uangcepat.lol" rel="nofollow noopener" target="_blank">
+      <a href="#LINKTO" rel="nofollow noopener" target="_blank">
         <amp-img layout="intrinsic" height="75" width="75" src="https://www.svgrepo.com/show/116119/telephone.svg" alt="Whatsapp"></amp-img>WHATSAPP
       </a>
-      <a href="https://uangcepat.lol" rel="nofollow noopener">
+      <a href="#LINKTO" rel="nofollow noopener">
         <amp-img layout="intrinsic" height="75" width="75" src="https://www.svgrepo.com/show/75057/play-button.svg" alt="Download Aplikasi"></amp-img>APK
       </a>
-      <a href="https://uangcepat.lol" rel="nofollow noopener" target="_blank" class="round">
+      <a href="#LINKTO" rel="nofollow noopener" target="_blank" class="round">
         <amp-img class="center" layout="intrinsic" height="75" width="75" src="https://www.svgrepo.com/show/25216/login.svg" alt="Daftar"></amp-img>DAFTAR
       </a>
-      <a href="https://uangcepat.lol" rel="nofollow noopener" target="_blank">
+      <a href="#LINKTO" rel="nofollow noopener" target="_blank">
         <amp-img layout="intrinsic" height="75" width="75" src="https://www.svgrepo.com/show/76897/shield.svg" alt="Promo"></amp-img>PROMOSI</a>
-      <a href="https://uangcepat.lol" rel="nofollow noopener" target="_blank">
+      <a href="#LINKTO" rel="nofollow noopener" target="_blank">
         <amp-img layout="intrinsic" height="75" width="75" src="https://www.svgrepo.com/show/33145/user.svg" alt="LiveChat"></amp-img>LIVECHAT
       </a>
     </div>
