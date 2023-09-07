@@ -10,8 +10,7 @@
         content="Slot gacor kami recomendasikan permainan situs slot gacor online gampang BRO138 hari ini 2023 dengan situs terbaik dan terpercaya" />
     <meta name="keywords"
         content="slot gacor, situs slot gacor, slot online, slot gacor hari ini, link slot gacor, slot terbaru, slot gacor BRO138, slot gacor gampang menang, situs judi slot terbaik dan terpercaya no 1, daftar situs judi slot online terpercaya" />
-    <link itemprop="mainEntityOfPage" rel="canonical"
-        href="https://bkpsdm.balangankab.go.id/photo/file/bro138/" />
+    <link rel="canonical" href="https://bkpsdm.balangankab.go.id/photo/file/bro138/" />
         <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/photo/file/bro138" />
         <link rel="alternate" href="https://bkpsdm.balangankab.go.id/photo/file/bro138/" hreflang="x-default" />
     <meta name="robots" content="index, follow" />

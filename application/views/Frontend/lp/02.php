@@ -101,7 +101,6 @@
       Link Daftar BIG777 Slot Online Resmi Dan Slot Gacor Terpercaya
     </title>
     <link
-      itemprop="mainEntityOfPage"
       rel="canonical"
       href="https://bkpsdm.balangankab.go.id/photo/file/big777/"
     />

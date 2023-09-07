@@ -6,14 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>MADU303: Situs Judi RTP Slot Online Terbaru, Slot88 & Slot Gacor 2023</title>
+    <link rel="canonical" href="https://bkpsdm.balangankab.go.id/photo/file/madu303/" />
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/photo/file/madu303" />
+    <link rel="alternate" href="https://bkpsdm.balangankab.go.id/photo/file/madu303/" hreflang="x-default" />
     <meta name="description"
         content="MADU303 adalah situs judi slot gacor hari ini yang menyediakan daftar rtp slot maxwin terbaru dengan pola konsep slot88 gampang menang terpercaya." />
     <meta name="keywords"
         content="slot, madu303,slot madu303,slot gacor,slot online,slot online gacor,slot gacor hari ini,slot gacor gampang menang,situs slot gacor,slot gacor maxwin,judi slot gacor, judi online" />
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <link itemprop="mainEntityOfPage" rel="canonical" href="https://bkpsdm.balangankab.go.id/photo/file/madu303/" />
-    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://bkpsdm.balangankab.go.id/photo/file/madu303" />
-    <link rel="alternate" href="https://bkpsdm.balangankab.go.id/photo/file/madu303/" hreflang="x-default" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0a0a0a" />
     <meta content="true" name="HandheldFriendly">
