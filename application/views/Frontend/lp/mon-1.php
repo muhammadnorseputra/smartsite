@@ -8,7 +8,6 @@
     <meta name="google-site-verification" content="CSNebo0TPa1AmbpiA6zsrBh14QIkqBl7-y6njdlpMTk" />
     <meta name="description" content="Kami menyediakan situs permainan slot hari ini gampang menang dengan berbagai macam transaksi online yang resmi dan aman." />
     <meta name="keywords" content="situs slot dana, link slot dana, slot gacor, slot deposit dana, slot dana, slot terbaik" />
-    <link rel="amphtml" href="https://bkpsdm.balangankab.go.id/slot-dana/">
     <link itemprop="mainEntityOfPage" rel="canonical" href="https://bkpsdm.balangankab.go.id/slot-dana/" />
     <meta name="robots" content="index, follow" />
     <meta name="page-locale" content="id,en">
