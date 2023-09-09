@@ -46,7 +46,7 @@ class Landingpage extends CI_Controller {
 	}
 
 	public function mon($path) {
-		if($slug === 'slotdana') 
+		if($path === 'slotdana') 
         { 
             $v = 'mon-1.php';
         } 
