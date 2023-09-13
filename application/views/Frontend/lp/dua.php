@@ -7,10 +7,11 @@
   <title>Slot Dana : 5 Daftar Slot Deposit Dana Gacor Terbaru</title>
   <meta name="description" content="Slot Deposit Dana Gacor adalah link situs judi slot online hari ini gampang menang yang dimana situs slot gacor maxwin menang jackpot slot maxwin pada situs slot Deposit Dana Gacor sangat mudah diraih pada situs slot gacor" />
   <meta name="keywords" content="slot,slot dana,slot deposit dana,slot gacor dana,slot dana gacor,pragmatic play,maxwin,slot maxwin dana" />
-  <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/slot-dana" />
+  <link rel="canonical" href="https://bkpsdm.balangankab.go.id/-/slot-dana" />
+
   <link rel="alternate" href="https://bkpsdm.balangankab.go.id/-/slot-dana" hreflang="x-default" />
   <!-- Meta Robots -->
-    <meta name="robots" content="max-image-preview:large"/>
+    <meta name="robots" content="index, follow"/>
     <meta name="googlebot-news" content="all" />
     <meta name="googlebot" content="all" />
     <meta content="all" name="Googlebot-Image" />
@@ -23,8 +24,8 @@
     <meta name="WEBCRAWLERS" content="ALL"/>
     <meta name="google" content="translate" />
     <!-- End Meta Robots -->
-  <meta name="page-locale" content="id,en">
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <!-- <meta name="page-locale" content="id,en"> -->
+  <!-- <meta content="text/html; charset=utf-8" http-equiv="Content-Type"> -->
   <meta content="true" name="HandheldFriendly">
   <meta content="width" name="MobileOptimized">
   <meta content='#F6890B' name='theme-color' />

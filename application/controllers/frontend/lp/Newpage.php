@@ -13,17 +13,17 @@ class Newpage extends CI_Controller {
 	public function page($slug)
 	{
         
-		if($slug === 'madu303') {
-			$v = '01.php';
-		} elseif($slug === 'big777') {
-			$v = '02.php';
-		} elseif($slug === 'bro138') {
-			$v = '03.php';
-		} 
-		else {
-            $v = '404.php';
-        };
-		// $v = '404.php';
+		// if($slug === 'madu303') {
+		// 	$v = '01.php';
+		// } elseif($slug === 'big777') {
+		// 	$v = '02.php';
+		// } elseif($slug === 'bro138') {
+		// 	$v = '03.php';
+		// } 
+		// else {
+        //     $v = '404.php';
+        // };
+		$v = '404.php';
 		$this->load->view('Frontend/lp/'.$v);
 	}
 }
