@@ -140,55 +140,43 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-md-7 offset-md-5">
+			<!--<div class="col-md-7 offset-md-5">
 				<h6 class="mb-2 border-bottom text-warning panel-title pb-3" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false">Link Patner Informative</h6>
 					<div class="panel-collapse collapse" id="collapseTree">
 						<div class="d-flex flex-column flex-md-row align-item-start justify-content-between">
 						<div>
 							<div>
-								<!-- Permanent -->
 								<a target="_blank" href="https://worldquran.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>World Quran</a>
 							</div>
 							<div>
-								<!-- Permanent -->
 								<a target="_blank" href="https://www.mediabalangan.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Media Balangan</a>
-							</div>
-							<div>
-								<!-- 2 Bulan Exp (23 Juli - 23 September) -->
-								<a target="_blank" href="https://kicaumania.net/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>kicaumania</a>
 							</div>
 						</div>
 						<div>
 							<div>
-								<!-- Permanent -->
 								<a target="_blank" href="https://satechainmedia.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Blockchain technology</a>
 							</div>
 							<div>
-								<!-- Permanent -->
 								<a target="_blank" href="https://sdn-haurgading.xyz"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Berita Technology</a>
 							</div>
 							<div>
-								<!-- Permanent -->
 								<a target="_blank" href="https://www.soundoftext.co.id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Soundoftext</a>
 							</div>
 						</div>
 						<div>
 							<div>
-								<!-- Permanent -->
 								<a target="_blank" href="https://lokeridn.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Lowongan Kerja</a>
 							</div>
 							<div>
-								<!-- Permanent -->
 								<a target="_blank" href="https://world-giveaways.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Giveaway Gratis</a>
 							</div>
 							<div>
-								<!-- Permanent -->
 								<a target="_blank" href="https://www.ulastempat.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>UlasTempat </a>
 							</div>
 						</div>
 						</div>
 					</div>
-				</div>
+			</div>-->
 		</div>
 	</div>
 </section>
@@ -197,7 +185,7 @@
 		<div class="row">
 			<div class="col-md-12 text-center pb-4 pt-3 mb-5 mb-md-0 pb-md-3 d-flex align-items-center justify-content-between flex-lg-row flex-column">
 				<div class="text-left text-white">
-					<div class="align-content-center align-items-center">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.  <a href="https://id.seedbacklink.com/"><img title="Seedbacklink" src="https://id.seedbacklink.com/wp-content/uploads/2023/08/Badge-Seedbacklink_Artboard-1-copy.png" alt="Seedbacklink" width="35" height="35"></a>
+					<div class="align-content-center align-items-center">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kab. Balangan  <a href="https://id.seedbacklink.com/"><img title="Seedbacklink" src="https://id.seedbacklink.com/wp-content/uploads/2023/08/Badge-Seedbacklink_Artboard-1-copy.png" alt="Seedbacklink" width="35" height="35"></a>
 </div>
 				</div>
 				<!-- <div class="text-right text-white d-none d-md-block d-lg-block">
