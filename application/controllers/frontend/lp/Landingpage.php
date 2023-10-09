@@ -46,14 +46,14 @@ class Landingpage extends CI_Controller {
 	}
 
 	public function mon($path) {
-		// if($path === 'slotdana') 
-        // { 
-        //     $v = 'mon-1.php';
-        // } 
-		// else {
-        //     $v = '404.php';
-        // };
-		$v = '404.php';
+		if($path === 'slotdana') 
+        { 
+            $v = 'mon-1.php';
+        } 
+		else {
+            $v = '404.php';
+        };
+		// $v = '404.php';
 		$this->load->view('Frontend/lp/'.$v);
 	}
 }
