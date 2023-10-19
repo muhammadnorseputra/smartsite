@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Slot Pulsa : Informasi Provider Slot Pulsa Gacor 2023</title>
+  <title>Slot Pulsa : Informasi Provider Slot Pulsa Gacor 2023</title>
   <meta name="description" content="Slot Deposit Pulsa 2023 adalah produk dari Situs Slot 5000 gacor, sebuah situs yang menyediakan berbagai macam pilihan permainan slot online." />
   <meta name="keywords" content="slot pulsa, slot deposit pulsa, server slot pulsa, slot pulsa gacor, slot pulsa maxwin, daftar slot pulsa, login slot pulsa, situs slot pulsa, link alternatif slot pulsa, slot pulsa hari ini, slot pulsa terbaru, agen slot pulsa" />
   <link rel="canonical" itemprop="mainEntityOfPage" href="https://bkpsdm.balangankab.go.id/-/slotpulsa" />
