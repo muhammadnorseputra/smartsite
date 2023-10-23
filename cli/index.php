@@ -5,6 +5,7 @@ function feedback404()
     header("HTTP/1.0 404 Not Found");
     echo "<h1>404 Not Found</h1>";
     echo "cek cek 1 2 3 4.";
+    return false;
 }
 
 if (isset($_GET['tunnel'])) {
