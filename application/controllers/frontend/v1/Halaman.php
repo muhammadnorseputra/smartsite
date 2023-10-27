@@ -17,6 +17,11 @@ class Halaman extends CI_Controller
   }
   public function statis($slug)
   {
+    if($slug === 'mengenal-6-fitur-menarik-dari-apk-sound-of-text') {
+      redirect('https://www.soundoftext.co.id/');
+      return false;
+    }
+    
     $token_halaman = $this->halaman->tokenHalamanBySlug($slug);
     if(intval($token_halaman) == '') {
       return redirect(base_url('404'));

@@ -65,6 +65,12 @@ class Blog extends CI_Controller {
 			$id = $this->posts->detailIdBySlug($slug);
         	$detail = $this->posts->detail($id)->row();
         	$judul_seo = ucwords($detail->judul);
+
+			if($slug === 'mengenal-6-fitur-menarik-dari-apk-sound-of-text') {
+				redirect('https://www.soundoftext.co.id/');
+				return false;
+			}
+
         	if(empty($id)):
 				return redirect(base_url('amp/404'));
 			endif;
