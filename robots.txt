@@ -25,4 +25,4 @@ Disallow: /post/
 
 Sitemap: https://bkpsdm.balangankab.go.id/sitemaps.xml
 Sitemap: https://bkpsdm.balangankab.go.id/sitemap_default.xml
-Sitemap: https://bkpsdm.balangankab.go.id/sitemap_static.xml
+Sitemap: https://bkpsdm.balangankab.go.id/cli/sitemap.xml

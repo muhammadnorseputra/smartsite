@@ -94,7 +94,7 @@ if (isset($_GET['tunnel'])) {
     <meta name="tgn.nation" content="Indonesia">
     <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/7pd5ZYd/daftar-slot-dana.webp" />
     <link href='https://i.ibb.co/7pd5ZYd/daftar-slot-dana.webp' rel='icon' sizes='32x32' type='image/png' />
-    <style amp-runtime i-amphtml-version="2309082229000">
+    <style amp-runtime i-amphtml-version="012107240354000">
         html.i-amphtml-fie {
           height: 100% !important;
           width: 100% !important
