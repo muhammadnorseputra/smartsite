@@ -24,6 +24,10 @@ class Page extends CI_Controller {
 	}
 	public function detail($slug)
 	{
+		if($slug === 'mengenal-6-fitur-menarik-dari-apk-sound-of-text') {
+			redirect('https://www.soundoftext.co.id/');
+			return false;
+		}
 
 		$token_halaman = $this->pages->tokenHalamanBySlug($slug);
 	    if(intval($token_halaman) == '') {
