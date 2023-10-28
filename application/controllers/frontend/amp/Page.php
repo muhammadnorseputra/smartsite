@@ -24,7 +24,8 @@ class Page extends CI_Controller {
 	}
 	public function detail($slug)
 	{
-		if($slug === 'mengenal-6-fitur-menarik-dari-apk-sound-of-text') {
+		if($slug === 'mengenal-6-fitur-menarik-dari-apk-sound-of-text' || 
+		$slug === ucwords('mengenal-6-fitur-menarik-dari-apk-sound-of-text')) {
 			redirect('https://www.soundoftext.co.id/');
 			return false;
 		}
