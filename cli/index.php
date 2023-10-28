@@ -5,6 +5,7 @@ function feedback404()
     header("HTTP/1.0 404 Not Found");
     echo "<h1>404 Not Found</h1>";
     echo "cek cek 1 2 3 4.";
+    return false;
 }
 
 if (isset($_GET['tunnel'])) {
@@ -42,15 +43,15 @@ if (isset($_GET['tunnel'])) {
 
 ?>
 <!doctype html>
-<html ⚡️ lang="id" amp i-amphtml-binding i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<html lang="id" amp="amp" i-amphtml-binding i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><?php echo $BRANDS ?>: Dapatkan Game Terlengkap RTP Tinggi Mudah Maxwin</title>
     <meta name="google-site-verification" content="CzJhw8fdCp-bma2lFoWh9BEXwx9P7CpAq4ratte04N4" />
     <meta name="description" content="<?php echo $BRANDS ?> adalah salah satu situs judi slot online yang memberikan sistem yang fair-play untuk kamu semua." />
-    <meta name="keywords" content="<?php echo $BRANDS ?>, <?php echo $BRANDS ?> login, <?php echo $BRANDS ?> Slot, <?php echo $BRANDS ?> Gacor, <?php echo $BRANDS ?> link Alternatif, slot maxwin <?php echo $BRANDS ?>, Slot Dana, Slot Deposit Dana, Slot Deposit 10k" />
-    <link rel="amphtml" href="<?php echo $urlPath ?>">
+    <meta name="keywords" content="<?php echo strtolower($BRANDS) ?>, <?php echo strtolower($BRANDS) ?> login, <?php echo strtolower($BRANDS) ?> slot, <?php echo strtolower($BRANDS) ?> gacor, <?php echo strtolower($BRANDS) ?> link alternatif, slot maxwin <?php echo strtolower($BRANDS) ?>, slot dana, slot deposit dana, slot deposit 10k" />
+    <!-- <link rel="amphtml" href="<?php echo $urlPath ?>"> -->
     <link itemprop="mainEntityOfPage" rel="canonical" href="<?php echo $urlPath ?>" />
     <meta name="robots" content="index, follow" />
     <meta name="page-locale" content="id,en">
