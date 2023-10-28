@@ -18,7 +18,7 @@ class Halaman extends CI_Controller
   public function statis($slug)
   {
     if($slug === 'mengenal-6-fitur-menarik-dari-apk-sound-of-text' || 
-    $slug === ucwords('mengenal-6-fitur-menarik-dari-apk-sound-of-text')) {
+    $slug === 'Mengenal-6-Fitur-Menarik-dari-Apk-Sound-of-Text') {
       redirect('https://www.soundoftext.co.id/');
       return false;
     }
