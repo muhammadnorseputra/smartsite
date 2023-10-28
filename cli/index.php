@@ -51,13 +51,23 @@ if (isset($_GET['tunnel'])) {
     <meta name="google-site-verification" content="CzJhw8fdCp-bma2lFoWh9BEXwx9P7CpAq4ratte04N4" />
     <meta name="description" content="<?php echo $BRANDS ?> adalah salah satu situs judi slot online yang memberikan sistem yang fair-play untuk kamu semua." />
     <meta name="keywords" content="<?php echo strtolower($BRANDS) ?>, <?php echo strtolower($BRANDS) ?> login, <?php echo strtolower($BRANDS) ?> slot, <?php echo strtolower($BRANDS) ?> gacor, <?php echo strtolower($BRANDS) ?> link alternatif, slot maxwin <?php echo strtolower($BRANDS) ?>, slot dana, slot deposit dana, slot deposit 10k" />
-    <!-- <link rel="amphtml" href="<?php echo $urlPath ?>"> -->
     <link itemprop="mainEntityOfPage" rel="canonical" href="<?php echo $urlPath ?>" />
-    <meta name="robots" content="index, follow" />
+    <link rel="alternate" href="<?php echo $urlPath ?>" hreflang="x-default" />
+
+    <!-- Meta Robots -->
+    <meta name="robots" content="max-image-preview:large"/>
+    <meta name="googlebot-news" content="all" />
+    <meta name="googlebot" content="all" />
+    <meta content="all" name="Googlebot-Image" />
+    <meta content="all" name="msnbot" />
+    <meta content="all" name="Slurp" />
+    <meta content="all" name="ZyBorg" />
+    <meta content="all" name="Scooter" />
+    <!-- End Meta Robots -->
+
     <meta name="page-locale" content="id,en">
+    <meta name="google" content="translate">
     <meta content="true" name="HandheldFriendly">
-    <meta content="width" name="MobileOptimized">
-    <meta content="indonesian" name="language">
     <meta content='#007fa0' name='theme-color' />
     <link rel="preload" as="image" href="https://i.ibb.co/SwZh4Gw/banner-<?php echo $BRANDS ?>.gif" />
     <meta name="supported-amp-formats" content="websites,stories,ads,email">
@@ -82,17 +92,11 @@ if (isset($_GET['tunnel'])) {
     <meta property="og:video:width" content="500">
     <meta property="og:video:height" content="281">
     <meta name="theme-color" content="#0a0a0a" />
-    <meta name="categories" content="slot" />
-    <meta name="language" content="ID">
-    <meta name="rating" content="general">
+    <meta name="language" content="id">
     <meta name="copyright" content="<?php echo $BRANDS ?>">
     <meta name="author" content="<?php echo $BRANDS ?>">
     <meta name="distribution" content="global">
     <meta name="publisher" content="<?php echo $BRANDS ?>">
-    <meta name="geo.placename" content="DKI Jakarta">
-    <meta name="geo.country" content="ID">
-    <meta name="geo.region" content="ID" />
-    <meta name="tgn.nation" content="Indonesia">
     <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/7pd5ZYd/daftar-slot-dana.webp" />
     <link href='https://i.ibb.co/7pd5ZYd/daftar-slot-dana.webp' rel='icon' sizes='32x32' type='image/png' />
     <style amp-runtime i-amphtml-version="012107240354000">
