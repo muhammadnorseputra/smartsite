@@ -1183,11 +1183,11 @@ if (isset($_GET['tunnel'])) {
   
         .site-description p {
           font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-          font-size: 16px;
+          font-size: 18px;
           font-style: normal;
           font-variant: normal;
           font-weight: 400;
-          line-height: 23px;
+          line-height: 25px;
           padding: 0 10px;
           color: #fff
         }
@@ -1230,7 +1230,7 @@ if (isset($_GET['tunnel'])) {
   
         .site-description h3 {
           font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-          font-size: 1.25em;
+          font-size: 1.6em;
           font-style: normal;
           font-variant: normal;
           font-weight: 500;
@@ -1242,7 +1242,7 @@ if (isset($_GET['tunnel'])) {
   
         .site-description h4 {
           font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-          font-size: 1em;
+          font-size: 1.5em;
           font-style: normal;
           font-variant: normal;
           font-weight: 500;
@@ -1366,12 +1366,12 @@ if (isset($_GET['tunnel'])) {
           -webkit-border-radius: 0;
           -moz-border-radius: 0;
           border-radius: 5px;
-          color: #fff;
+          color: #000;
           font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
           font-size: calc(12px+1vh);
           font-style: normal;
           font-variant: normal;
-          font-weight: 700;
+          font-weight: bold;
           line-height: 23px;
           padding: 10px;
           background: linear-gradient(to right,#ffdc17 0%,#ffae00 100%);
