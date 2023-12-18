@@ -27,10 +27,10 @@
 									<i class="fas fa-home"></i> <br> Beranda
 								</a>
 							</div>
-							<div class="mx-2">
+							<!-- <div class="mx-2">
 								<a href="<?= base_url('daftar'); ?>" class="btn text-secondary btn-link">
 									<i class="fas fa-user"></i> <br> Register</a>
-							</div>
+							</div> -->
 							<div class="text-center">
 								<a href="<?= base_url('userguide') ?>" class="btn btn-link text-secondary">
 									<i class="fas fa-book"></i> <br> User Guide
