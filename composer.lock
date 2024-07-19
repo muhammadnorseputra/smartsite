@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "chriskacerguis/codeigniter-restserver",
-            "version": "3.1.4",
+            "version": "3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chriskacerguis/codeigniter-restserver.git",
-                "reference": "f386f4e0013daadaa213681a0a41af69aa81d9de"
+                "reference": "63c5ccad5581c3e0035c400aa929ba1ef0822418"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chriskacerguis/codeigniter-restserver/zipball/f386f4e0013daadaa213681a0a41af69aa81d9de",
-                "reference": "f386f4e0013daadaa213681a0a41af69aa81d9de",
+                "url": "https://api.github.com/repos/chriskacerguis/codeigniter-restserver/zipball/63c5ccad5581c3e0035c400aa929ba1ef0822418",
+                "reference": "63c5ccad5581c3e0035c400aa929ba1ef0822418",
                 "shasum": ""
             },
             "type": "library",
@@ -39,9 +39,9 @@
             "description": "CI Rest Server",
             "support": {
                 "issues": "https://github.com/chriskacerguis/codeigniter-restserver/issues",
-                "source": "https://github.com/chriskacerguis/codeigniter-restserver/tree/3.1.4"
+                "source": "https://github.com/chriskacerguis/codeigniter-restserver/tree/3.1.5"
             },
-            "time": "2022-02-24T18:02:52+00:00"
+            "time": "2023-07-29T18:18:15+00:00"
         },
         {
             "name": "league/event",
@@ -161,5 +161,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
