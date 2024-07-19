@@ -6,8 +6,8 @@
   </button>
 </div>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
-<div class="bg-primary text-white rounded-xl border p-2 d-none d-md-block">
-    <div class="container">
+<div class="container">
+    <div class="bg-primary text-white rounded-xl mt-2 p-2 d-none d-md-block" style="border-radius: 8px !important;">
         <div class="d-flex justify-content-between align-items-center pl-2">
             <div><b>Helo Pengunjung</b>, Selamat Datang Di Website Resmi Badan Kepegawaian dan Pengembangan Sumber Daya Manusia.</div>
         </div>
@@ -97,8 +97,8 @@
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
         <div class="row d-flex justify-content-between flex-column flex-lg-row">
-            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 order-last order-md-last mt-3 mt-md-0">
-                <div id="sidebar">
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 order-last order-md-first mt-3 mt-md-0">
+                <div id="sidebar" style="position: -webkit-sticky; position: sticky; top: 80px;">
                 
                 <!-- <a href="https://www.buymeacoffee.com/putrabungsu6"><img src="https://img.buymeacoffee.com/button-api/?text=Donasi coffee untuk dev&emoji=&slug=putrabungsu6&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" class="w-100"></a>
  -->
