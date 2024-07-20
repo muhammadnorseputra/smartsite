@@ -121,7 +121,7 @@ $(document).ready(function() {
                     cache: false,
                     dataType: 'json',
                     beforeSend: function() {
-                        $('button#save').html(`<img width="30" height="30" class="d-block mx-auto" src="${_uri}/bower_components/SVG-Loaders/svg-loaders/oval-datatable.svg">`).prop("disabled", true);
+                        $('button#save').html(`<img width="30" height="30" class="d-block mx-auto" src="${_uri}/template/v1/images/loading.gif">`).prop("disabled", true);
                     },
                     success: function(response) {
                         if (response.valid == true) {

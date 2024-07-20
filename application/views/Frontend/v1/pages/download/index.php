@@ -87,7 +87,7 @@ var table = $("#table-download").DataTable({
       "infoEmpty": "File tidak ada",
       "infoFiltered": "(filtered from _MAX_ total records)",
       "search": "Pencarian",
-      "processing": `<img src='${_uri}/bower_components/SVG-Loaders/svg-loaders/oval-datatable.svg'>`
+      "processing": `<img src='${_uri}/template/v1/images/loading.gif'>`
     }
   });
 </script>

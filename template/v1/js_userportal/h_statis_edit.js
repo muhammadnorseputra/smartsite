@@ -2,7 +2,7 @@
 
 		var tiny = tinymce.init({
 			selector: "#content",
-			height: 400,
+			height: 800,
 			themes: "modern",
 			//apiKey: "E5EXDFLT",
 			mobile: {
@@ -16,9 +16,9 @@
 				//"n1ed"
 			],
 			content_css: [
-				`${_uri}/bower_components/bootstrap/dist/css/bootstrap.min.css`,
+				`${_uri}/bower_components/bootstrap/dist/css/bootstrap.min.css?${new Date().getTime()}`
 			],
-			content_style: "body{padding: 10px}",
+			content_style: "body{padding: 20px}",
 			relative_urls : false,
 			remove_script_host : false,
 			convert_urls : true,

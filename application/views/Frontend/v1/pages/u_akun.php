@@ -53,7 +53,7 @@ endif;
   <div class="row">
     <div class="col-md-3 no-gutters mt-5 mt-md-0">
       
-      <div class="list-group border-0">
+      <div class="list-group border-0" style="position: -webkit-sticky; position: sticky; top: 80px;">
         <div class="panel-group" id="accordion">
           <!-- UTAMA -->
           <div class="panel panel-default mb-2">

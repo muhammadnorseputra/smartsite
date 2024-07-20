@@ -259,6 +259,7 @@ class M_f_users extends CI_Model
     {
         $this->db->select('kategori');
         $this->db->from('public_saran');
+        $this->db->group_by('kategori');
         $q = $this->db->get();
         return $q;
     }
