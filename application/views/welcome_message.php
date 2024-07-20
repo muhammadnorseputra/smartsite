@@ -87,7 +87,7 @@
 				$("a.btn").unbind().bind("click", function(e) {
 					e.preventDefault();
 					$.blockUI({
-                        message: '<center><img src="<?= base_url('template/images/loading.gif'); ?>"></center>',
+                        message: '<center><img src="<?= base_url('template/v1/images/loading.gif'); ?>"></center>',
                         css: {
                             border: '',
                             width: '100%',
