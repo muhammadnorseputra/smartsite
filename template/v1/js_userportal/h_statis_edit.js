@@ -4,6 +4,9 @@
 			selector: "#content",
 			height: 800,
 			themes: "modern",
+			toolbar_sticky: true,
+			toolbar_sticky_offset: 180,
+			fixed_toolbar_container: '#content',
 			//apiKey: "E5EXDFLT",
 			mobile: {
 			    theme: 'mobile',
@@ -16,9 +19,10 @@
 				//"n1ed"
 			],
 			content_css: [
-				`${_uri}/bower_components/bootstrap/dist/css/bootstrap.min.css?${new Date().getTime()}`
+				`${_uri}/bower_components/bootstrap/dist/css/bootstrap.min.css?${new Date().getTime()}`,
+				'document'
 			],
-			content_style: "body{padding: 20px}",
+			// content_style: "body{padding: 20px}",
 			relative_urls : false,
 			remove_script_host : false,
 			convert_urls : true,
