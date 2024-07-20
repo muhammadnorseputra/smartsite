@@ -560,8 +560,9 @@ class Post extends CI_Controller
         public function upload_single_photo($id)
         {
             $idb = decrypt_url($id);
+            $date = date('dmY');
             $real_filename = underscore($_FILES['file']['name']);
-            $filename = "blob_".strtolower($real_filename);
+            $filename = "fileberita-".$date."-".strtolower($real_filename);
             $path = 'files/file_berita/';
 
             $file_old = $this->post->getFileNameById($idb);
@@ -582,8 +583,8 @@ class Post extends CI_Controller
             {
                 $msg = true;
                 $this->watermark($filename);
+                $this->resizeImage($path.$filename);
                 @file_put_contents($path.$filename,$blob);
-                // $this->resizeImage($path.$filename);
             } else {
                 $msg = false;
             }

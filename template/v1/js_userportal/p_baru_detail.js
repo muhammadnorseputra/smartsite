@@ -116,7 +116,7 @@
 				dataType: 'json',
 				processData: false,
 				beforeSend: function() {
-					button.html("<img class='mx-auto d-block py-1' src='" + _uri + "/bower_components/SVG-Loaders/svg-loaders/oval-datatable.svg'>");
+					button.html("<img class='mx-auto d-block py-1' src='" + _uri + "/template/v1/images/loading.gif'>");
 					$('img#single-photo').css({
 						opacity: 0.3
 					})

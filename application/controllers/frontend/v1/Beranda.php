@@ -229,8 +229,8 @@ class Beranda extends CI_Controller
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
                         $img = '<img style="max-height:360px; object-fit: cover; object-position: top; border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
-                    // elseif(!empty($row->img_blob)):
-                    //     $img = '<img style="max-height:360px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
+                    elseif(!empty($row->img_blob)):
+                        $img = '<img style="max-height:360px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
                         $img = '<img style="max-height:360px; object-fit: cover; object-position: top;" class="w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                     endif;
