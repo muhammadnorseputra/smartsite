@@ -36,7 +36,7 @@ $(document).ready(function() {
                             <div class="main-body align-self-end">
                                 <a href="${d.path}" id="xbanner-${d.uuid}" data-title="${d.title}" data-lightbox="BannerAside" style="text-shadow: 0.3px 1px white;">
                                     <span class="badge p-2 badge-pill badge-warning">
-                                        <i class="fas fa-search mr-2"></i> Perbesar
+                                        <i class="fas fa-search mr-2"></i> Original
                                     </span>
                                 </a>
                             </div>
@@ -60,19 +60,19 @@ $(document).ready(function() {
         infinite: true,
         dots: false,
         autoplaySpeed: 4000,
-        slidesToShow: 4,
+        slidesToShow: 1,
         slidesToScroll: 1,
         zIndex: 10,
         speed: 500,
-        centerMode: false,
-        centerPadding: '80px',
+        centerMode: true,
+        centerPadding: '110px',
         focusOnSelect: false,
         lazyLoad: 'ondemand',
         // fade: false,
         // cssEase: 'linear',
         arrows: true,
-        prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 mr-4 shadow"><i class="fas fa-chevron-left"></button>',
-        nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 ml-4 shadow"><i class="fas fa-chevron-right"></button>',
+        prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-left"></button>',
+        nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-right"></button>',
         pauseOnHover: true,
         adaptiveHeight: false,
         responsive: [

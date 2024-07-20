@@ -372,6 +372,13 @@ h5.title-sidebar {
 	font-family: 'Poppins', sans-serif;
 	font-weight: 700;
 }
+.navbar-blur {
+
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+	backdrop-filter: blur(10px); /* CSS backdrop filter for blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For older WebKit browsers */
+    transition: background-color 0.3s ease;
+}
 .navbar-gradient {
 	background: rgb(255,255,255);
 	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(62,62,62,0.4920168751094187) 100%);

@@ -12,7 +12,8 @@ const javascriptObfuscator = require('gulp-javascript-obfuscator');
 gulp.task('sass', function() {
     return gulp.src('template/v1/scss/app.scss')
         .pipe(sass({
-            outputStyle: 'compressed'
+            outputStyle: 'compressed',
+            quietDeps: true
         }).on('error', sass.logError))
         .pipe(minify())
         .pipe(gulp.dest('template/v1/prod/'));

@@ -10,13 +10,14 @@
     <div class="bg-primary text-white rounded-xl mt-2 p-2 d-none d-md-block" style="border-radius: 8px !important;">
         <div class="d-flex justify-content-between align-items-center pl-2">
             <div><b>Helo Pengunjung</b>, Selamat Datang Di Website Resmi Badan Kepegawaian dan Pengembangan Sumber Daya Manusia.</div>
+            <a href="//bkpsdm-skm.balangankab.go.id" target="_blank" class="btn btn-sm btn-warning"><i class="fas fa-edit mr-2"></i>Isi Survei</a>
         </div>
     </div>
 </div>
 <!-- Slider -->
 <section>
     <div class="container AppGrafisContainer">
-        <div class="row no-gutters AppGrafis mt-3">
+        <div class="row no-gutters AppGrafis my-3">
 
         </div>
     </div>
@@ -24,7 +25,7 @@
 <!-- Counter jumlah pegawai -->
 <section>
     <div class="container">
-        <div class="row no-gutters border rounded" id="countpeg_container">
+        <div class="row no-gutters border rounded bg-white" id="countpeg_container">
 
         </div>
     </div>

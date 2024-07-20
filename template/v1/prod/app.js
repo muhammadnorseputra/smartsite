@@ -402,12 +402,12 @@ $('.collapsible-link').click(function () {
 
 $(document).ready(function () {
   var $el = $("#exampleFormControlTextarea1").emojioneArea({
-    pickerPosition: "top",
-    tonesStyle: "bullet",
-    placeholder: "Masukan komentar kamu disini.",
-    search: true,
-    filtersPosition: "top",
-    recentEmojis: true
+    // pickerPosition: "top",
+    // tonesStyle: "bullet",
+    placeholder: "Masukan komentar kamu disini."
+    // search: true,
+    // filtersPosition: "top",
+    // recentEmojis: true,
   });
   var $id = $("#tracking").attr('data-postid');
   var $online = _uriSegment[1] == 'blog';
@@ -478,8 +478,7 @@ $(document).ready(function () {
         }
       }, 'json');
     } else {
-      $(".emojionearea-editor").addClass('is-invalid').focus();
-      // alert('Kolom Komentar Kosong');
+      $(".emojionearea-editor").addClass('is-invalid');
     }
   });
 });
@@ -893,12 +892,12 @@ $(function () {
 $(document).ready(function () {
   $(document).scroll(function () {
     if ($(document).scrollTop() > 120) {
-      $("nav#navbar").css("transition", ".3s ease-in-out").addClass("fixed-top");
+      $("nav#navbar").addClass("navbar-blur fixed-top");
       // $(".filterhome").removeClass('rounded');
     } else {
       // $(".filterhome").addClass('rounded');
       /*$("button#caripost").toggleClass('');*/
-      $("nav#navbar").removeClass("fixed-top");
+      $("nav#navbar").removeClass("navbar-blur fixed-top");
     }
   });
 
@@ -1052,7 +1051,7 @@ $(document).ready(function () {
     LoadingImage(false);
     $('.AppGrafis').slick('removeSlide', 0, 4, true);
     res.forEach(function (d) {
-      $('.AppGrafis').slick('slickAdd', "\n            <div class=\"px-3\">\n                    <div class=\"card bg-light text-white rounded-lg mb-2\">\n                        <img class=\"card-img\" height=\"340\" style=\"object-fit:cover;\" alt=\"".concat(d.title, "\" src=\"").concat(d.path, "\">\n                        <div class=\"card-img-overlay d-flex flex-column justify-content-end\">\n                            <div class=\"main-body align-self-end\">\n                                <a href=\"").concat(d.path, "\" id=\"xbanner-").concat(d.uuid, "\" data-title=\"").concat(d.title, "\" data-lightbox=\"BannerAside\" style=\"text-shadow: 0.3px 1px white;\">\n                                    <span class=\"badge p-2 badge-pill badge-warning\">\n                                        <i class=\"fas fa-search mr-2\"></i> Perbesar\n                                    </span>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"d-flex justify-content-start align-items-center\">\n                        <span class=\"mr-2\">\n                            <img style=\"object-fit:cover; object-position:top;\" src=\"").concat(d.user, "\" alt=\"Photo Userportal\" width=\"23\" height=\"23\" class=\"rounded-circle border-primary bg-white\">\n                        </span>\n                        <span class=\"small text-secondary mt-1\">\n                            ").concat(d.user_nama, "\n                        </span>\n                    </div>            \n                    ").concat(d.title, "\n            </div>\n            "));
+      $('.AppGrafis').slick('slickAdd', "\n            <div class=\"px-3\">\n                    <div class=\"card bg-light text-white rounded-lg mb-2\">\n                        <img class=\"card-img\" height=\"340\" style=\"object-fit:cover;\" alt=\"".concat(d.title, "\" src=\"").concat(d.path, "\">\n                        <div class=\"card-img-overlay d-flex flex-column justify-content-end\">\n                            <div class=\"main-body align-self-end\">\n                                <a href=\"").concat(d.path, "\" id=\"xbanner-").concat(d.uuid, "\" data-title=\"").concat(d.title, "\" data-lightbox=\"BannerAside\" style=\"text-shadow: 0.3px 1px white;\">\n                                    <span class=\"badge p-2 badge-pill badge-warning\">\n                                        <i class=\"fas fa-search mr-2\"></i> Original\n                                    </span>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"d-flex justify-content-start align-items-center\">\n                        <span class=\"mr-2\">\n                            <img style=\"object-fit:cover; object-position:top;\" src=\"").concat(d.user, "\" alt=\"Photo Userportal\" width=\"23\" height=\"23\" class=\"rounded-circle border-primary bg-white\">\n                        </span>\n                        <span class=\"small text-secondary mt-1\">\n                            ").concat(d.user_nama, "\n                        </span>\n                    </div>            \n                    ").concat(d.title, "\n            </div>\n            "));
     });
   });
   $('.AppGrafis').slick({
@@ -1060,19 +1059,19 @@ $(document).ready(function () {
     infinite: true,
     dots: false,
     autoplaySpeed: 4000,
-    slidesToShow: 4,
+    slidesToShow: 1,
     slidesToScroll: 1,
     zIndex: 10,
     speed: 500,
-    centerMode: false,
-    centerPadding: '80px',
+    centerMode: true,
+    centerPadding: '110px',
     focusOnSelect: false,
     lazyLoad: 'ondemand',
     // fade: false,
     // cssEase: 'linear',
     arrows: true,
-    prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 mr-4 shadow"><i class="fas fa-chevron-left"></button>',
-    nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 ml-4 shadow"><i class="fas fa-chevron-right"></button>',
+    prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-left"></button>',
+    nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-right"></button>',
     pauseOnHover: true,
     adaptiveHeight: false,
     responsive: [{

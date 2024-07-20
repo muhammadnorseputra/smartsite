@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
     var $el = $("#exampleFormControlTextarea1").emojioneArea({
-        pickerPosition: "top",
-        tonesStyle: "bullet",
+        // pickerPosition: "top",
+        // tonesStyle: "bullet",
         placeholder: "Masukan komentar kamu disini.",
-        search: true,
-        filtersPosition: "top",
-        recentEmojis: true,
+        // search: true,
+        // filtersPosition: "top",
+        // recentEmojis: true,
     });
     let $id = $("#tracking").attr('data-postid');
     let $online = _uriSegment[1] == 'blog';
@@ -28,8 +28,6 @@ $(document).ready(function() {
             $(".tracking-list").html(response);
         });
     }
-
-
 
     // Reply komentar
     $(document).on('click', '#btn-reply-comment', function() {
@@ -86,8 +84,7 @@ $(document).ready(function() {
                 }
             }, 'json');
         } else {
-            $(".emojionearea-editor").addClass('is-invalid').focus();
-            // alert('Kolom Komentar Kosong');
+            $(".emojionearea-editor").addClass('is-invalid');
         }
     });
 

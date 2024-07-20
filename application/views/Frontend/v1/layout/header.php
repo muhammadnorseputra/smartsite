@@ -1,5 +1,5 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar navbar-expand-sm d-none d-md-block py-1 bg-white border-bottom">
+<nav id="navbar" class="navbar navbar-expand-sm d-none d-md-block py-1">
 	<div class="container">
 		<a class="navbar-brand d-flex justify-content-start align-items-center text-nowrap" href="<?= base_url('beranda') ?>">
 			<?= '<img style="object-fit:contain;" src="' .base_url('assets/images/logo.png') . '" alt="BKPPD Kab. Balangan 2021" width="50" height="45"/>'; ?>
@@ -222,9 +222,12 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
+			<!-- 
+			# Menu Register
 			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-primary py-2 border-0 rounded mr-2" href="<?= base_url('daftar'); ?>">
 				<i class="fas fa-user"></i>
-			</a>
+			</a> 
+			-->
 			<a rel="noindex, nofollow" class="btn shadow-sm btn-primary rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.curPageURL()); ?>">
 				<i class="fas fa-lock ml-2"></i> Masuk 
 			</a>
@@ -234,12 +237,6 @@
 			<button class="btn rounded py-2 ml-2 post-search" data-toggle="tooltip" title="Klik untuk mencari artikel atau berita">
 				<i class="fas fa-search"></i>
 			</button>
-			<!-- <label class="switch mt-2">
-							<input type="checkbox" id="darkSwitch">
-							<div>
-											<span></span>
-							</div>
-			</label> -->
 		</div>
 	</div>
 </nav>
