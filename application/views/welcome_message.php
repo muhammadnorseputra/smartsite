@@ -87,7 +87,7 @@
 				$("a.btn").unbind().bind("click", function(e) {
 					e.preventDefault();
 					$.blockUI({
-                        message: '<center><img src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/three-dots.svg'); ?>"></center>',
+                        message: '<center><img src="<?= base_url('template/images/loading.gif'); ?>"></center>',
                         css: {
                             border: '',
                             width: '100%',
