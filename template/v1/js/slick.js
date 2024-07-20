@@ -71,8 +71,8 @@ $(document).ready(function() {
         // fade: false,
         // cssEase: 'linear',
         arrows: true,
-        prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-left"></button>',
-        nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-right"></button>',
+        prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 mr-4 shadow"><i class="fas fa-chevron-left"></button>',
+        nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 ml-4 shadow"><i class="fas fa-chevron-right"></button>',
         pauseOnHover: true,
         adaptiveHeight: false,
         responsive: [
@@ -83,7 +83,7 @@ $(document).ready(function() {
                     slidesToShow: 1,
                     arrows: true,
                     fade: true,
-                    centerPadding: '40px',
+                    centerPadding: '10px',
                   }
               }
         ]

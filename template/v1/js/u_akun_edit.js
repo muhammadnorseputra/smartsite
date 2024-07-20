@@ -26,7 +26,7 @@ $(document).ready(function() {
             var name = this.files[0].name;
             var form_data = new FormData();
             var ext = name.split('.').pop().toLowerCase();
-            if (jQuery.inArray(ext, ['jpg', 'jpeg', 'png']) == -1) {
+            if (jQuery.inArray(ext, ['jpg', 'jpeg', 'png', 'webp']) == -1) {
                 alert("Invalid Image File");
             }
             var oFReader = new FileReader();
@@ -46,7 +46,7 @@ $(document).ready(function() {
                     dataType: 'json',
                     processData: false,
                     beforeSend: function() {
-                        $('small.msg-pic').html(`Sedang Memperbaharui Gambar <img src="${_uri}/bower_components/SVG-Loaders/svg-loaders/vtree.svg">`);
+                        $('small.msg-pic').html(`Sedang Memperbaharui Gambar <img src="${_uri}/template/v1/images/loading.gif">`);
                     },
                     success: function(data) {
                         $('small.msg-pic').html(data);
@@ -60,7 +60,7 @@ $(document).ready(function() {
             var name = this.files[0].name;
             var form_data = new FormData();
             var ext = name.split('.').pop().toLowerCase();
-            if (jQuery.inArray(ext, ['jpg', 'jpeg', 'png']) == -1) {
+            if (jQuery.inArray(ext, ['jpg', 'jpeg', 'png', 'webp']) == -1) {
                 notif({
                     msg: "Invalid Image File",
                     type: "error",
@@ -88,7 +88,7 @@ $(document).ready(function() {
                     dataType: 'json',
                     processData: false,
                     beforeSend: function() {
-                        $('small.msg-ktp').html(`Sedang Memperbaharui Gambar <img src="${_uri}/bower_components/SVG-Loaders/svg-loaders/vtree.svg">`);
+                        $('small.msg-ktp').html(`Sedang Memperbaharui Gambar <img src="${_uri}/template/v1/images/loading.gif">`);
                     },
                     success: function(data) {
                         $('small.msg-ktp').html(data);

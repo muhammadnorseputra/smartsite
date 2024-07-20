@@ -1071,8 +1071,8 @@ $(document).ready(function () {
     // fade: false,
     // cssEase: 'linear',
     arrows: true,
-    prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-left"></button>',
-    nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-right"></button>',
+    prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 mr-4 shadow"><i class="fas fa-chevron-left"></button>',
+    nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 ml-4 shadow"><i class="fas fa-chevron-right"></button>',
     pauseOnHover: true,
     adaptiveHeight: false,
     responsive: [{
@@ -1082,7 +1082,7 @@ $(document).ready(function () {
         slidesToShow: 1,
         arrows: true,
         fade: true,
-        centerPadding: '40px'
+        centerPadding: '10px'
       }
     }]
   });
@@ -1291,7 +1291,7 @@ $(document).ready(function () {
       var name = this.files[0].name;
       var form_data = new FormData();
       var ext = name.split('.').pop().toLowerCase();
-      if (jQuery.inArray(ext, ['jpg', 'jpeg', 'png']) == -1) {
+      if (jQuery.inArray(ext, ['jpg', 'jpeg', 'png', 'webp']) == -1) {
         alert("Invalid Image File");
       }
       var oFReader = new FileReader();
@@ -1311,7 +1311,7 @@ $(document).ready(function () {
           dataType: 'json',
           processData: false,
           beforeSend: function beforeSend() {
-            $('small.msg-pic').html("Sedang Memperbaharui Gambar <img src=\"".concat(_uri, "/bower_components/SVG-Loaders/svg-loaders/vtree.svg\">"));
+            $('small.msg-pic').html("Sedang Memperbaharui Gambar <img src=\"".concat(_uri, "/template/v1/images/loading.gif\">"));
           },
           success: function success(data) {
             $('small.msg-pic').html(data);
@@ -1325,7 +1325,7 @@ $(document).ready(function () {
       var name = this.files[0].name;
       var form_data = new FormData();
       var ext = name.split('.').pop().toLowerCase();
-      if (jQuery.inArray(ext, ['jpg', 'jpeg', 'png']) == -1) {
+      if (jQuery.inArray(ext, ['jpg', 'jpeg', 'png', 'webp']) == -1) {
         notif({
           msg: "Invalid Image File",
           type: "error",
@@ -1353,7 +1353,7 @@ $(document).ready(function () {
           dataType: 'json',
           processData: false,
           beforeSend: function beforeSend() {
-            $('small.msg-ktp').html("Sedang Memperbaharui Gambar <img src=\"".concat(_uri, "/bower_components/SVG-Loaders/svg-loaders/vtree.svg\">"));
+            $('small.msg-ktp').html("Sedang Memperbaharui Gambar <img src=\"".concat(_uri, "/template/v1/images/loading.gif\">"));
           },
           success: function success(data) {
             $('small.msg-ktp').html(data);
