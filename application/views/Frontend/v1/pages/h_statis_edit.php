@@ -47,7 +47,7 @@
 							<span class="label">
 								<?= $h->filename ?>
 							</span>
-							<button id="btn-hapus-lampiran" type="button" class="btn btn-default rounded-circle btn-sm float-right text-danger" data-toggle="tooltip" title="Hapus lampiran"><i class="fas fa-trash"></i></button>
+							<button id="btn-hapus-lampiran" type="button" class="btn btn-default rounded-circle btn-sm text-danger" data-toggle="tooltip" title="Hapus lampiran"><i class="fas fa-trash"></i></button>
 							<button id="btn-upload-lampiran" type="button" class="btn btn-block btn-primary-old rounded-pill mt-2"><i class="fas fa-upload mr-2"></i> ganti-lampiran</button>
 						<?php else : ?>
 							<p class="text-info font-italic">Silahkan masukan lampiran berupa gambar atau pdf.</p>
