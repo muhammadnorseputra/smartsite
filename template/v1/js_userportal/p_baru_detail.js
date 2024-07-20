@@ -140,7 +140,7 @@
 		});
 
 		$(document).on("click", "button#batal", function() {
-			window.history.back(-1);
+			window.close();
 		});
 
 		/* draf */
