@@ -8,7 +8,6 @@ index-old2.php
 Api_test.http
 files/thumbs/
 files/file_*/
-files/file_*/
 vendor/
 bower_components/
 *.DS_Store

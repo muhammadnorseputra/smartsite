@@ -1,4 +1,30 @@
 "use strict";
+
+// Image Preview
+function readURL(input, $element) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $($element).attr('src', e.target.result);
+    };
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
+}
+renderHtmlFromUrl();
+function renderHtmlFromUrl() {
+  var $url = $("#snippet-link").attr('data-url');
+  if ($url != '') {
+    var $template_container = $("#snippet-link");
+    var $template = "<div id=\"snippet-link\" data-url=\"".concat($url, "\"></div>");
+    $.getJSON("".concat(_uri, "/frontend/v1/post_list/render_html"), {
+      url: $url
+    }, function (response) {
+      var $template_inner = " \n        <div class=\"p-2 border my-2 mx-0 rounded shadow-sm\">\n          <b class=\"text-danger\">Baca juga :</b> <a href=\"".concat($url, "\">").concat(response.title, "</a>\n        </div>\n       ");
+      $template_container.html($template_inner);
+    });
+  }
+}
+"use strict";
 // $(document).ready(function() {
 //     AOS.init();
 // });
@@ -28,7 +54,7 @@ $(function () {
                 <span class="content-placeholder rounded-circle float-left mr-3" style="width:40px; height: 40px;">&nbsp;</span>
                 <span class="content-placeholder rounded-lg float-left"
                 style ="width:40%; height: 40px; border-radius: 15px;"> &nbsp; </span>
-                  <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
+                 <span class ="content-placeholder rounded-circle float-right mt-1 mr-3"
                 style ="width:40px; height: 40px;"> &nbsp; </span>
                 </p> 
                 </div> 
@@ -457,7 +483,6 @@ $(document).ready(function () {
     }
   });
 });
-
 function batal() {
   $(".emojionearea-editor").html('');
   $(".emojionearea-editor").removeClass('is-invalid').addClass('is-valid');
@@ -1046,8 +1071,8 @@ $(document).ready(function () {
     // fade: false,
     // cssEase: 'linear',
     arrows: true,
-    prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 shadow ml-3"><i class="fas fa-chevron-left"></button>',
-    nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 shadow mr-3"><i class="fas fa-chevron-right"></button>',
+    prevArrow: '<button class="slide-arrow prev-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-left"></button>',
+    nextArrow: '<button class="slide-arrow next-arrow btn bg-white btn-outline-none p-3 shadow"><i class="fas fa-chevron-right"></button>',
     pauseOnHover: true,
     adaptiveHeight: false,
     responsive: [{
@@ -1252,7 +1277,6 @@ $(document).ready(function () {
       reader.readAsDataURL(input.files[0]); // convert to base64 string
     }
   }
-
   $("input[name='photo_pic']").change(function () {
     readURL(this, $('img.photo_pic'));
   });
@@ -1390,7 +1414,6 @@ $(document).ready(function () {
         });
         return false; // Will stop the submission of the form
       },
-
       onModulesLoaded: function onModulesLoaded() {
         $('#alamat').restrictLength($('#maxlength'));
       }
@@ -1419,30 +1442,3 @@ $(document).ready(function () {
     });
   });
 });
-"use strict";
-
-// Image Preview
-function readURL(input, $element) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-      $($element).attr('src', e.target.result);
-    };
-    reader.readAsDataURL(input.files[0]); // convert to base64 string
-  }
-}
-
-renderHtmlFromUrl();
-function renderHtmlFromUrl() {
-  var $url = $("#snippet-link").attr('data-url');
-  if ($url != '') {
-    var $template_container = $("#snippet-link");
-    var $template = "<div id=\"snippet-link\" data-url=\"".concat($url, "\"></div>");
-    $.getJSON("".concat(_uri, "/frontend/v1/post_list/render_html"), {
-      url: $url
-    }, function (response) {
-      var $template_inner = " \n        <div class=\"p-2 border my-2 mx-0 rounded shadow-sm\">\n          <b class=\"text-danger\">Baca juga :</b> <a href=\"".concat($url, "\">").concat(response.title, "</a>\n        </div>\n       ");
-      $template_container.html($template_inner);
-    });
-  }
-}

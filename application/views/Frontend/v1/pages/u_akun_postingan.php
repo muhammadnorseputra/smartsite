@@ -1,4 +1,4 @@
-<h4 class="px-3 py-4 border-bottom border-light animated fadeIn">Manajemen Postingan <a href="<?php echo base_url('frontend/v1/post/judul') ?>" title="Buat Postingan Baru" data-toggle="tooltip" class="btn btn-sm btn-primary border-0 shadow rounded-circle float-right"><i class="fas fa-plus"></i></a></h4>
+<h4 class="px-3 py-4 border-bottom border-light animated fadeIn">Manajemen Postingan <a href="<?php echo base_url('frontend/v1/post/judul') ?>" target="_blank" title="Buat Postingan Baru" data-toggle="tooltip" class="btn btn-sm btn-primary border-0 shadow rounded-circle float-right"><i class="fas fa-plus"></i></a></h4>
 <div class="table-responsive p-3 my-2 animated fadeIn">
 	<table data-id="<?= $id_user ?>" class="table table-condensed table-borderless table-striped display" id="table-postingan">
 		<thead>
