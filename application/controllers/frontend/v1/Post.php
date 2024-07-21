@@ -444,7 +444,7 @@ class Post extends CI_Controller
     }
     public function preview_url_link()
     {
-        $url = $this->input->get('url');
+        $url = $this->input->post('url');
         $data = getSiteOG($url);
         echo json_encode($data);
     }

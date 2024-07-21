@@ -44,7 +44,7 @@
 					<div class="col-xs-12 col-md-4 offset-md-1 mt-3" id="sidebar">
 						<div class="px-3 px-md-5 py-2">
 							<div class="logo text-center text-md-left">
-								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="110"/>'; ?>
+								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="50"/>'; ?>
 							</div>
 							<?php  
 								if(isset($_GET['msg']) == 'sukses'):

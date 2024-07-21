@@ -138,10 +138,10 @@ section.bg-hero-home {
   cursor: progress;
   top: 0;
   z-index: 9999;
-  // -webkit-backdrop-filter: blur(5px);
-  // -moz-backdrop-filter: blur(5px);
-  // -o-backdrop-filter: blur(5px);
-  // backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
+  -o-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 // .page-slider::before {
 //   content: "";
@@ -173,14 +173,14 @@ section.bg-hero-home {
 .line{
   position:absolute;
   opacity: 0.9;
-  background:#fff;
+  background:#4cbb87;
   width:210%;
   height:3.5px;
 }
 
 .subline{
   position:absolute;
-  background:green;
+  background:teal;
   height:3.5px; 
 }
 .inc{
@@ -189,16 +189,16 @@ section.bg-hero-home {
 .dec{
   animation: decrease 1.8s 0.8s infinite;
 }
-// .logo-loading {
-// 	position: fixed;
-//   left: 50%;
-//   top: 50%;
-//   transform: translate(-50%, -50%);
-// 	text-align: center;
-// 	vertical-align: middle;
-// 	z-index: 9999;
-// 	// opacity: 0.5;
-// }
+.logo-loading {
+	position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+	text-align: center;
+	vertical-align: middle;
+	z-index: 9999;
+	// opacity: 0.5;
+}
 // .page-slider p {
 // position: fixed;
 //   left: 50%;
@@ -373,11 +373,14 @@ h5.title-sidebar {
 	font-weight: 700;
 }
 .navbar-blur {
-
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-	backdrop-filter: blur(10px); /* CSS backdrop filter for blur effect */
-    -webkit-backdrop-filter: blur(10px); /* For older WebKit browsers */
-    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    /*Semi-transparentbackground*/backdrop-filter: blur(10px);
+    /*CSSbackdropfilterforblureffect*/-webkit-backdrop-filter: blur(10px);
+    /*ForolderWebKitbrowsers*/transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
 }
 .navbar-gradient {
 	background: rgb(255,255,255);
