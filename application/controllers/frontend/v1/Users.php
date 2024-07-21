@@ -428,7 +428,7 @@ class Users extends CI_Controller {
 								  </button>
 								  <div class="dropdown-menu" aria-labelledby="dLabel">
 								  	<a class="dropdown-item rounded-pill text-success" target="_blank" href="'.base_url('page/'.url_title($h->title,"-",TRUE)).'"><i class="fas fa-eye mr-2"></i> Lihat Post</a>
-								    <a class="dropdown-item rounded-pill text-primary" href="'.base_url('frontend/v1/halaman/halamanstatis/edit?token='.$h->token_halaman).'"><i class="fas fa-edit mr-2"></i> Edit</a>
+								    <a class="dropdown-item rounded-pill text-primary" target="_blank" href="'.base_url('frontend/v1/halaman/halamanstatis/edit?token='.$h->token_halaman).'"><i class="fas fa-edit mr-2"></i> Edit</a>
 									<a id="btn-hapus-halaman" data-id="' . $h->token_halaman . '" class="dropdown-item  rounded-pill text-danger" href="#"><i class="fas fa-trash mr-2 text-danger"></i> Hapus</a>
 								  </div>
 								</div>';

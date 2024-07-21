@@ -31,7 +31,7 @@
 						<hr>
 						<div class="btn-group">
 							<button type="submit" id="save" class="btn btn-primary"><i class="fas fa-save mr-2"></i> Publish</button>
-							<button type="button" onclick="window.history.back(-1)" class="btn btn-danger"><i class="fas fa-close mr-2"></i> Batal</button>
+							<button type="button" onclick="window.close()" class="btn btn-danger"><i class="fas fa-close mr-2"></i> Batal</button>
 						</div>
 					</div>
 				</div>

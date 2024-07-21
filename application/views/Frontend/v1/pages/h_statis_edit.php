@@ -39,9 +39,9 @@
 							$ext = pathinfo($path, PATHINFO_EXTENSION);
 						?>
 							<?php if ($ext === 'pdf') : ?>
-								<object data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:250px; width: 100%;"></object>
+								<object data="data:application/pdf;base64,<?= base64_encode($h->file) ?>" type="application/pdf" style="height:250px; width: 25%;"></object>
 							<?php else : ?>
-								<img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto d-block w-100 mb-2">
+								<img src="data:image/jpeg;base64,<?= base64_encode($h->file) ?>" alt="<?= $h->filename ?>" class="mx-auto d-block w-25 mb-2">
 							<?php endif; ?>
 							<span class="badge badge-light">filename:</span>
 							<span class="label">
@@ -63,7 +63,7 @@
 						<hr>
 						<div class="btn-group">
 							<button type="submit" id="saveHalaman" class="btn btn-primary"><i class="fas fa-save mr-2"></i> Perbaharui</button>
-							<button type="button" onclick="window.history.back(-1)" class="btn btn-outline-danger"><i class="fas fa-close mr-2"></i> Batal</button>
+							<button type="button" onclick="window.close()" class="btn btn-outline-danger"><i class="fas fa-close mr-2"></i> Batal</button>
 						</div>
 					</div>
 				</div>

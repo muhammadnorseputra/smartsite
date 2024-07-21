@@ -1,5 +1,5 @@
 <h4 class="px-3 py-4 border-bottom border-light animated fadeIn">
-	<a href="<?= base_url('frontend/v1/halaman/halamanstatis/add') ?>" title="Buat Halaman Statis" data-toggle="tooltip" class="btn btn-sm btn-primary border-0 shadow rounded-circle float-right"><i class="fas fa-plus"></i></a>
+	<a href="<?= base_url('frontend/v1/halaman/halamanstatis/add') ?>" target="_blank" title="Buat Halaman Statis" data-toggle="tooltip" class="btn btn-sm btn-primary border-0 shadow rounded-circle float-right"><i class="fas fa-plus"></i></a>
 Tabel Halaman 
 </h4>
 
