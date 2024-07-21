@@ -61,8 +61,10 @@
 							<label class="custom-control-label" for="updateToken">update token</label>
 						</div>
 						<hr>
-						<button type="button" onclick="window.history.back(-1)" class="btn btn-outline-danger"><i class="fas fa-close mr-2"></i> Batal</button>
-						<button type="submit" id="saveHalaman" class="btn btn-primary ml-1"><i class="fas fa-save mr-2"></i> Perbaharui</button>
+						<div class="btn-group">
+							<button type="submit" id="saveHalaman" class="btn btn-primary"><i class="fas fa-save mr-2"></i> Perbaharui</button>
+							<button type="button" onclick="window.history.back(-1)" class="btn btn-outline-danger"><i class="fas fa-close mr-2"></i> Batal</button>
+						</div>
 					</div>
 				</div>
 			</div>
