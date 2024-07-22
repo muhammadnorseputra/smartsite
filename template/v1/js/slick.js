@@ -34,9 +34,9 @@ $(document).ready(function() {
                         <img class="card-img" height="340" style="object-fit:cover;" alt="${d.title}" src="${_uri}/files/file_banner/${d.image}">
                         <div class="card-img-overlay d-flex flex-column justify-content-end">
                             <div class="main-body align-self-end">
-                                <a href="${d.path}" id="xbanner-${d.uuid}" data-title="${d.title}" data-lightbox="BannerAside" style="text-shadow: 0.3px 1px white;">
+                                <a href="${d.url}" target="_blank" style="text-shadow: 0.3px 1px white;">
                                     <span class="badge p-2 badge-pill badge-warning">
-                                        <i class="fas fa-search mr-2"></i> Original
+                                        <i class="fas fa-link mr-2"></i> Original
                                     </span>
                                 </a>
                             </div>

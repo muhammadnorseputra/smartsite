@@ -37,6 +37,7 @@ class Api extends CI_Controller {
 			$row['title'] = $banner->judul;
 			$row['image'] = $banner->gambar;
 			$row['path'] = $banner->path;
+			$row['url'] = $banner->url;
 			// $row['user'] = $banner->upload_by;
 			$row['user'] = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($banner->upload_by)->photo_pic).'';
 			$row['user_nama'] = ucwords($namapanggilan);

@@ -854,8 +854,8 @@ lightbox.option({
   'resizeDuration': 150,
   'wrapAround': false,
   'fadeDuration': 500,
-  'imageFadeDuration': 800,
-  'disableScrolling': false,
+  'imageFadeDuration': 500,
+  'disableScrolling': true,
   'albumLabel': "Story Web %1 dari %2"
 });
 "use strict";
@@ -937,14 +937,12 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $(".rippler").rippler({
-    effectClass: 'rippler-effect',
-    effectSize: 16 // Default size (width & height)
-    ,
-
-    addElement: 'div' // e.g. 'svg'(feature)
-    ,
-
-    duration: 400
+    effectClass: "rippler-effect",
+    effectSize: 14,
+    // Default size (width & height)
+    addElement: "div",
+    // e.g. 'svg'(feature)
+    duration: 200
   });
 });
 "use strict";
@@ -1051,7 +1049,7 @@ $(document).ready(function () {
     LoadingImage(false);
     $('.AppGrafis').slick('removeSlide', 0, 4, true);
     res.forEach(function (d) {
-      $('.AppGrafis').slick('slickAdd', "\n            <div class=\"px-3\">\n                    <div class=\"card bg-light text-white rounded-lg mb-2\">\n                        <img class=\"card-img\" height=\"340\" style=\"object-fit:cover;\" alt=\"".concat(d.title, "\" src=\"").concat(_uri, "/files/file_banner/").concat(d.image, "\">\n                        <div class=\"card-img-overlay d-flex flex-column justify-content-end\">\n                            <div class=\"main-body align-self-end\">\n                                <a href=\"").concat(d.path, "\" id=\"xbanner-").concat(d.uuid, "\" data-title=\"").concat(d.title, "\" data-lightbox=\"BannerAside\" style=\"text-shadow: 0.3px 1px white;\">\n                                    <span class=\"badge p-2 badge-pill badge-warning\">\n                                        <i class=\"fas fa-search mr-2\"></i> Original\n                                    </span>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"d-flex justify-content-start align-items-center\">\n                        <span class=\"mr-2\">\n                            <img style=\"object-fit:cover; object-position:top;\" src=\"").concat(d.user, "\" alt=\"Photo Userportal\" width=\"23\" height=\"23\" class=\"rounded-circle border-primary bg-white\">\n                        </span>\n                        <span class=\"small text-secondary mt-1\">\n                            ").concat(d.user_nama, "\n                        </span>\n                    </div>            \n                    ").concat(d.title, "\n            </div>\n            "));
+      $('.AppGrafis').slick('slickAdd', "\n            <div class=\"px-3\">\n                    <div class=\"card bg-light text-white rounded-lg mb-2\">\n                        <img class=\"card-img\" height=\"340\" style=\"object-fit:cover;\" alt=\"".concat(d.title, "\" src=\"").concat(_uri, "/files/file_banner/").concat(d.image, "\">\n                        <div class=\"card-img-overlay d-flex flex-column justify-content-end\">\n                            <div class=\"main-body align-self-end\">\n                                <a href=\"").concat(d.url, "\" target=\"_blank\" style=\"text-shadow: 0.3px 1px white;\">\n                                    <span class=\"badge p-2 badge-pill badge-warning\">\n                                        <i class=\"fas fa-link mr-2\"></i> Original\n                                    </span>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"d-flex justify-content-start align-items-center\">\n                        <span class=\"mr-2\">\n                            <img style=\"object-fit:cover; object-position:top;\" src=\"").concat(d.user, "\" alt=\"Photo Userportal\" width=\"23\" height=\"23\" class=\"rounded-circle border-primary bg-white\">\n                        </span>\n                        <span class=\"small text-secondary mt-1\">\n                            ").concat(d.user_nama, "\n                        </span>\n                    </div>            \n                    ").concat(d.title, "\n            </div>\n            "));
     });
   });
   $('.AppGrafis').slick({
