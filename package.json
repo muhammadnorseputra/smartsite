@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/muhammadnorseputra/smartsite#readme",
   "dependencies": {
-    "gulp-javascript-obfuscator": "^1.1.6",
-    "instagram-public-api": "^2.0.6"
+    "gulp-javascript-obfuscator": "^1.1.6"
   }
 }
