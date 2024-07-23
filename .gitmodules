@@ -1,3 +1,12 @@
 [submodule "awesome-notifications"]
 	path = awesome-notifications
-	url = https://github.com/f3oall/awesome-notifications
+	url = https://github.com/f3oall/awesome-notifications.git
+[submodule "modules-smartsite-template"]
+	path = modules-smartsite-template
+	url = https://github.com/muhammadnorseputra/modules-smartsite-template.git
+[submodule "modules-smartsite-files"]
+	path = modules-smartsite-files
+	url = https://github.com/muhammadnorseputra/modules-smartsite-files.git
+[submodule "modules-smartsite-assets"]
+	path = modules-smartsite-assets
+	url = https://github.com/muhammadnorseputra/modules-smartsite-assets.git
