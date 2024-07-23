@@ -1043,16 +1043,18 @@ function LoadingImage(isLoading) {
     return "<div class=\"col-6 col-md-3 p-2\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2 d-none d-md-block\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2 d-none d-md-block\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>\n            <div class=\"col-6 col-md-3 p-2 d-none d-md-block\">\n                <span class=\"content-placeholder rounded mx-auto d-block\" style=\"width:100%; height: 300px;\">&nbsp;</span>\n                <span class=\"content-placeholder my-2\" style=\"width: 100%; height: 20px;\"></span>\n                <span class=\"content-placeholder\" style=\"width: 100%; height: 30px;\"></span>\n            </div>";
   }
 }
-$('.AppGrafis').html(LoadingImage(true));
+$(".AppGrafis").html(LoadingImage(true));
 $(document).ready(function () {
-  $.getJSON('frontend/v1/api/slider', function (res) {
+  $.getJSON("frontend/v1/api/slider", function (res) {
     LoadingImage(false);
-    $('.AppGrafis').slick('removeSlide', 0, 4, true);
+    $(".AppGrafis").slick("removeSlide", 0, 4, true);
     res.forEach(function (d) {
-      $('.AppGrafis').slick('slickAdd', "\n            <div class=\"px-3\">\n                    <div class=\"card bg-light text-white rounded-lg mb-2\">\n                        <img class=\"card-img\" height=\"340\" style=\"object-fit:cover;\" alt=\"".concat(d.title, "\" src=\"").concat(_uri, "/files/file_banner/").concat(d.image, "\">\n                        <div class=\"card-img-overlay d-flex flex-column justify-content-end\">\n                            <div class=\"main-body align-self-end\">\n                                <a href=\"").concat(d.url, "\" target=\"_blank\" style=\"text-shadow: 0.3px 1px white;\">\n                                    <span class=\"badge p-2 badge-pill badge-warning\">\n                                        <i class=\"fas fa-link mr-2\"></i> Original\n                                    </span>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"d-flex justify-content-start align-items-center\">\n                        <span class=\"mr-2\">\n                            <img style=\"object-fit:cover; object-position:top;\" src=\"").concat(d.user, "\" alt=\"Photo Userportal\" width=\"23\" height=\"23\" class=\"rounded-circle border-primary bg-white\">\n                        </span>\n                        <span class=\"small text-secondary mt-1\">\n                            ").concat(d.user_nama, "\n                        </span>\n                    </div>            \n                    ").concat(d.title, "\n            </div>\n            "));
+      var permalink = "<div class=\"card-img-overlay d-flex flex-column justify-content-end\">\n                            <div class=\"main-body align-self-end\">\n                                <a href=\"".concat(d.url, "\" target=\"_blank\" style=\"text-shadow: 0.3px 1px white;\">\n                                    <span class=\"badge p-2 badge-pill badge-warning\">\n                                        <i class=\"fas fa-link mr-2\"></i> Original\n                                    </span>\n                                </a>\n                            </div>\n                        </div>");
+      var isPermalink = d.url !== null ? permalink : '';
+      $(".AppGrafis").slick("slickAdd", "\n            <div class=\"px-3\">\n                    <div class=\"card bg-light text-white rounded-lg mb-2\">\n                        <img class=\"card-img\" height=\"340\" style=\"object-fit:cover;\" alt=\"".concat(d.title, "\" src=\"").concat(_uri, "/files/file_banner/").concat(d.image, "\">\n                        ").concat(isPermalink, "\n                    </div>\n                    <div class=\"d-flex justify-content-start align-items-center\">\n                        <span class=\"mr-2\">\n                            <img style=\"object-fit:cover; object-position:top;\" src=\"").concat(d.user, "\" alt=\"Photo Userportal\" width=\"23\" height=\"23\" class=\"rounded-circle border-primary bg-white\">\n                        </span>\n                        <span class=\"small text-secondary mt-1\">\n                            ").concat(d.user_nama, "\n                        </span>\n                    </div>            \n                    ").concat(d.title, "\n            </div>\n            "));
     });
   });
-  $('.AppGrafis').slick({
+  $(".AppGrafis").slick({
     autoplay: true,
     infinite: true,
     dots: false,
@@ -1062,9 +1064,9 @@ $(document).ready(function () {
     zIndex: 10,
     speed: 500,
     centerMode: true,
-    centerPadding: '110px',
+    centerPadding: "110px",
     focusOnSelect: false,
-    lazyLoad: 'ondemand',
+    lazyLoad: "ondemand",
     // fade: false,
     // cssEase: 'linear',
     arrows: true,
@@ -1079,7 +1081,7 @@ $(document).ready(function () {
         slidesToShow: 1,
         arrows: true,
         fade: true,
-        centerPadding: '10px'
+        centerPadding: "10px"
       }
     }]
   });
@@ -1097,12 +1099,12 @@ $(document).ready(function () {
   // });
 
   // Custom carousel nav
-  $('.app-prev').click(function () {
-    $(this).parent().find('.app-slick').slick('slickPrev');
+  $(".app-prev").click(function () {
+    $(this).parent().find(".app-slick").slick("slickPrev");
   });
-  $('.app-next').click(function (e) {
+  $(".app-next").click(function (e) {
     e.preventDefault();
-    $(this).parent().find('.app-slick').slick('slickNext');
+    $(this).parent().find(".app-slick").slick("slickNext");
   });
 });
 "use strict";
