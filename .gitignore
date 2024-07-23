@@ -9,4 +9,5 @@ Api_test.http
 files/
 vendor/
 bower_components/
+template/
 *.DS_Store
