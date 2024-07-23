@@ -47,6 +47,10 @@ class M_f_visitor extends CI_Model
     }
 
     public function visitor_count() {
+        
+        $string = exec('getmac');
+        $mac = substr($string, 0, 17);
+        $mc = $mac; // Mendapatkan MAC Address User
         $ip    = $this->input->ip_address(); // Mendapatkan IP user
         $date  = date("Y-m-d"); // Mendapatkan tanggal sekarang
         $waktu = time(); //
@@ -62,12 +66,24 @@ class M_f_visitor extends CI_Model
         $ss = isset($s)?($s):0;
         // Kalau belum ada, simpan data user tersebut ke database
         if($ss == 0){
-        $this->db->query("INSERT INTO public_visitor(ip,browser, browser_version, os, date, hits, online, time) VALUES('".$ip."','".$browser."','".$browser_version."','".$os."','".$date."','".$hits."','".$waktu."','".$timeinsert."')");
+        $this->db->query("INSERT INTO public_visitor(ip,mac_address,browser, browser_version, os, date, hits, online, time) VALUES('".$ip."','".$mc."','".$browser."','".$browser_version."','".$os."','".$date."','".$hits."','".$waktu."','".$timeinsert."')");
         } 
         // Jika sudah ada, update
         else{
         $hits_count = $s_query->row()->hits;
         $this->db->query("UPDATE public_visitor SET hits='".($hits_count+1)."', online='".$waktu."' WHERE ip='".$ip."' AND date='".$date."'");
         }
+    }
+
+    public function getMacBlackList($mac) {
+        $DB = $this->db->select('is_block, mac')->from('public_blacklist')->where('mac', $mac)->get();
+        $ROW = $DB->num_rows();
+        if($ROW != NULL) {
+            $r = $DB->row();
+            $data = $r->is_block;
+        } else {
+            $data = NULL;
+        }
+        return $data;
     }
 }

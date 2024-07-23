@@ -84,3 +84,19 @@ function decrypt_url($string) {
     $output = openssl_decrypt(base64_decode($string), $encrypt_method, $key, 0, $iv);
     return $output;
 }
+
+if ( ! function_exists('is_blacklist'))
+  {
+      function is_blacklist()
+      {
+        $CI =& get_instance();
+        $string = exec('getmac');
+        $mac_address = substr($string, 0, 17);
+        $mac = $mac_address;
+        $is_block = $CI->mf_visitor->getMacBlackList($mac);
+        if($is_block === 'YA') {
+            redirect('https://www.google.com');
+        }
+        return false;
+      }
+ }

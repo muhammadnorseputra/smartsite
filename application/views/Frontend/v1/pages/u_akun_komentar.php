@@ -100,7 +100,7 @@
 			"infoEmpty": "Belum ada halaman",
 			"infoFiltered": "(filtered from _MAX_ total records)",
 			"search": "Pencarian",
-			"processing": "<img src='" + _uri + "/bower_components/SVG-Loaders/svg-loaders/oval-datatable.svg' />"
+			"processing": "<img src='" + _uri + "/template/v1/images/loading.gif' />"
 		}
 	});
 	$(document).on("click", "button#hapus-komentar", function(event) {

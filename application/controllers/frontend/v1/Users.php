@@ -267,11 +267,8 @@ class Users extends CI_Controller {
 
     		$email = $this->input->post('email');
     		$pass  = $this->input->post('password');
-    		$where = array(
-				'email' => encrypt_url($email),
-				'password' => "$".sha1('bkppd_balangan')."$".encrypt_url($pass)
-			);
-			$cek = $this->users->cek_login("t_users_portal", $where);
+
+			$cek = $this->users->cek_login("t_users_portal", $email, $pass);
 			if($cek->num_rows() > 0){
 				// if($this->users->getuserportalbyemail($where['email'])->row()->online === 'OFF' && empty($this->session->userdata('user_portal_log')['email'])) {
 				$q = $cek->row();
@@ -430,7 +427,8 @@ class Users extends CI_Controller {
 								    <i class="fas fa-ellipsis-h p-2"></i>
 								  </button>
 								  <div class="dropdown-menu" aria-labelledby="dLabel">
-								    <a class="dropdown-item rounded-pill text-primary" href="'.base_url('frontend/v1/halaman/halamanstatis/edit?token='.$h->token_halaman).'"><i class="fas fa-edit mr-2"></i> Edit</a>
+								  	<a class="dropdown-item rounded-pill text-success" target="_blank" href="'.base_url('page/'.url_title($h->title,"-",TRUE)).'"><i class="fas fa-eye mr-2"></i> Lihat Post</a>
+								    <a class="dropdown-item rounded-pill text-primary" target="_blank" href="'.base_url('frontend/v1/halaman/halamanstatis/edit?token='.$h->token_halaman).'"><i class="fas fa-edit mr-2"></i> Edit</a>
 									<a id="btn-hapus-halaman" data-id="' . $h->token_halaman . '" class="dropdown-item  rounded-pill text-danger" href="#"><i class="fas fa-trash mr-2 text-danger"></i> Hapus</a>
 								  </div>
 								</div>';
@@ -490,7 +488,8 @@ class Users extends CI_Controller {
 								    <i class="fas fa-ellipsis-h p-2"></i>
 								  </button>
 								  <div class="dropdown-menu" aria-labelledby="dLabel">
-								    <a class="dropdown-item text-muted rounded-pill" href="'.base_url('frontend/v1/post/'.$type.'/'.encrypt_url($p->id_berita)).'"><i class="fas fa-edit mr-2"></i> Edit</a>
+								  	<a class="dropdown-item rounded-pill text-success" target="_blank" href="'.base_url('blog/'.url_title($p->judul,"-",TRUE)).'"><i class="fas fa-eye mr-2"></i> Lihat Post</a>
+								    <a class="dropdown-item text-muted rounded-pill" target="_blank" href="'.base_url('frontend/v1/post/'.$type.'/'.encrypt_url($p->id_berita)).'"><i class="fas fa-edit mr-2"></i> Edit</a>
 									<a id="btn-hapus" data-id="' . $p->id_berita . '" class="dropdown-item text-muted rounded-pill" href="#"><i class="fas fa-trash mr-2 text-danger"></i> Hapus</a>
 								  </div>
 								</div>' : '<button title="Draf" class="btn btn-dark p-1 text-warning" disabled>D</button>';

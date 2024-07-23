@@ -13,7 +13,7 @@ if (! function_exists('getSiteOG'))
 {
 	function getSiteOG( $url, $specificTags=0 )
 	{
-	    $doc = new DOMDocument();
+	    @$doc = new DOMDocument();
 	    @$doc->loadHTML(file_get_contents($url));
 	    $res['title'] = $doc->getElementsByTagName('title')->item(0);
 

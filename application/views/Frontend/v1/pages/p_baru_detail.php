@@ -13,33 +13,24 @@
 				  <div class="input-group-prepend border-right">
 				    <label  class="input-group-text rounded-right" for="judul">Title</label>
 				  </div>
-				  <input type="text" id="judul" name="judul" value="<?= $post->judul ?>" class="form-control border-0 shadow-none text-muted" aria-label="judul">
+				  <input type="text" id="judul" name="judul" value="<?= $post->judul ?>" class="form-control border-0 shadow-none text-muted font-weight-bold" aria-label="judul">
 				</div>
 			</div>
 			<div class="col-md-3 mt-md-0 mt-2 border-left">
-				<div class="d-flex justify-content-between align-items-center">
-					<span>
-						<button type="submit" class="btn btn-outline-primary"><i class="far fa-share-square mr-2"></i>Submit</button>
-					</span>
-					<span>
-						<div class="dropdown">
-						  <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    <i class="fas fa-cogs"></i>
-						  </button>
-						  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-								<button type="button" id="draf" data-id="<?php echo $post->id_berita ?>" class="dropdown-item">
-									<span class="fas fa-hourglass-end mr-2"></span>Save as draf
-								</button>
-						  </div>
-						</div>
-					</span>	
+				<div class="d-flex justify-content-start align-items-center">
+					<div class="btn-group">
+						<button type="submit" class="btn btn-outline-primary"><i class="far fa-share-square mr-2"></i>Publish</button>
+						<button type="button" class="btn btn-outline-secondary" id="draf" data-id="<?php echo $post->id_berita ?>" class="dropdown-item">
+							<span class="fas fa-hourglass-end mr-2"></span>Draf
+						</button>
+					</div>
+					<!-- <span class="badge badge-pill badge-light p-2">#<?= $this->postlist->get_namakategori($post->fid_kategori) ?></span> -->
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12 col-md-9 py-0 px-0" id="main-content">
 				<div class="form-group mb-0">
-				<!-- 	<label for="content">Content <span class="badge badge-pill badge-light p-2">#<?= $this->postlist->get_namakategori($post->fid_kategori) ?></span></label> -->
 					<div class="col-12 py-0 px-0">
 						<textarea class="form-control" name="content" id="content" rows="3"><?= $post->content ?></textarea>
 					</div>
@@ -63,7 +54,7 @@
 										<button id="upload-img" type="button" class="btn btn-block btn-outline-danger my-2 d-block"><i class="fas fa-upload mr-2"></i>Ganti gambar</button>
 										<input type="file" id="FileUpload" class="d-none" />
 									<?php else : ?>
-										<img id="single-photo" src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/undraw_folder_x4ft.svg') ?>" class="img-fluid mx-auto d-block" alt="noimage">
+										<img id="single-photo" src="<?= base_url('template/v1/img/undraw_Images_re_0kll.png') ?>" class="img-fluid mx-auto d-block" alt="noimage">
 										<p class="text-center text-nowrap my-2" id="FilePath">Gambar tidak ditemukan ?</p>
 										<button id="upload-img" type="button" class="btn btn-outline-danger my-2 d-block mx-auto"><i class="fas fa-upload mr-2"></i>Upload</button>
 										<input type="file" id="FileUpload" class="d-none" />
@@ -74,13 +65,13 @@
 							<?php if($post->type === 'SLIDE'): ?>
 							<!-- Accordion item 3 -->
 							<div class="panel-heading">
-								<div data-toggle="collapse" data-target="#collapseTree" class="panel-title p-2 text-muted border-bottom" aria-expanded="true">
-									<div class=" d-flex justify-content-start align-items-center">
+								<div class="panel-title p-2 text-muted border-bottom">
+									<div class="d-flex justify-content-start align-items-center">
 										<span>
 											<b class="d-block">Photo terkait</b>
 										</span>
 										<span class="ml-2">
-											<button type="button" data-toggle="modal" data-target="#uploadPhoto" id="upload" class="btn btn-sm btn-outline-light rounded-circle"><i class="fas fa-plus"></i></button>
+											<button type="button" data-toggle="modal" data-target="#uploadPhoto" id="upload" class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fas fa-plus"></i></button>
 										</span>
 									</div>
 								</div>

@@ -22,7 +22,8 @@
      <?php 
       foreach($categorys->result() as $category):
       $datenow = date('Y-m-d H:i:s');
-      $posturl = base_url("k/{$category->nama_kategori}");
+      $catname = url_title($category->nama_kategori,'-',true);
+      $posturl = base_url("k/{$catname}");
       $newDateTime= new DateTime($datenow, new DateTimeZone('Asia/Jakarta'));
     ?>
         <item>

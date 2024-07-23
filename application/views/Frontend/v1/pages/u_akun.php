@@ -1,4 +1,4 @@
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
 <?php
 $d = $this->users->detail_user(encrypt_url($this->session->userdata('user_portal_log')['email']));
 $cek_verify = $d->email_verifikasi == 'Y' ? '<i class="fas text-success fa-check-circle"></i>' : '<br><span class="badge badge-warning">Belum verify</span>';
@@ -24,10 +24,10 @@ endif;
 <section class="hero">
   <div class="container pb-5 py-md-5">
     <div class="row">
-    <div class="col-12 col-md-8 my-3 my-md-0 pt-md-5">
+    <div class="col-12 col-md-8 my-3 my-md-0">
       <div class="d-flex justify-content-start align-items-md-center align-items-start">
         <img width="85" height="85" src="<?= $photo ?>" class="rounded-circle shadow-sm" style="object-fit:cover; object-position: top;">
-        <div class="ml-3 font-weight-bold text-dark">
+        <div class="ml-3 font-weight-bold text-white">
           <h4>Halo, <?= $this->session->userdata('user_portal_log')['nama_panggilan']; ?> welcome back.</h4>
           <div class="text-white font-weight-light">
             <?= $this->session->userdata('user_portal_log')['email']." ".$cek_verify ?>
@@ -53,7 +53,7 @@ endif;
   <div class="row">
     <div class="col-md-3 no-gutters mt-5 mt-md-0">
       
-      <div class="list-group border-0">
+      <div class="list-group border-0" style="position: -webkit-sticky; position: sticky; top: 80px;">
         <div class="panel-group" id="accordion">
           <!-- UTAMA -->
           <div class="panel panel-default mb-2">
@@ -143,12 +143,12 @@ endif;
       </div>
     </div>
     <div class="col-md-9 px-md-0 order-first order-md-last mt--7 bg-white rounded shadow-sm">
-      <div class="alert alert-warning alert-dismissible fade show mb-0 rounded-top mt-3 mt-md-0" role="alert">
+      <!-- <div class="alert alert-warning alert-dismissible fade show mb-0 rounded-top mt-3 mt-md-0" role="alert">
         <strong>For Userportal</strong>, mulai tanggal 10 juli 2021 kami akan terus mengupdate UI & UX Website
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
+      </div> -->
       <div id="containerModule">
         <?php $this->load->view('Frontend/v1/pages/u_akun_user'); ?>
       </div>

@@ -21,16 +21,16 @@
 		  <div class="content_inner"></div>
 		</div>
 		<nav class="mb-5">
-			<div class="d-flex justify-content-center border-bottom bg-white fixed-top">
+			<div class="d-flex justify-content-center border-bottom bg-light fixed-top">
 							<div>
 								<a href="<?= base_url('beranda') ?>" class="btn text-secondary btn-link">
 									<i class="fas fa-home"></i> <br> Beranda
 								</a>
 							</div>
-							<div class="mx-2">
+							<!-- <div class="mx-2">
 								<a href="<?= base_url('daftar'); ?>" class="btn text-secondary btn-link">
 									<i class="fas fa-user"></i> <br> Register</a>
-							</div>
+							</div> -->
 							<div class="text-center">
 								<a href="<?= base_url('userguide') ?>" class="btn btn-link text-secondary">
 									<i class="fas fa-book"></i> <br> User Guide
@@ -44,7 +44,7 @@
 					<div class="col-xs-12 col-md-4 offset-md-1 mt-3" id="sidebar">
 						<div class="px-3 px-md-5 py-2">
 							<div class="logo text-center text-md-left">
-								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="210"/>'; ?>
+								<?php echo '<img src="data:image/jpeg;base64,' . base64_encode($mf_beranda->site_logo) . '" width="50"/>'; ?>
 							</div>
 							<?php  
 								if(isset($_GET['msg']) == 'sukses'):
@@ -55,7 +55,7 @@
 							<?php
 								endif;
 							?>
-							<h3 class="font-weight-bold mb-3 mt-3 text-center text-md-left">Log In</h3> 
+							<h3 class="font-weight-bold mb-3 mt-3 text-center text-md-left">Masuk</h3> 
 							<?php if($this->session->flashdata('notif') <> ''): ?>
 								<div class="alert border alert-light" role="alert">
 								 <?= $this->session->flashdata('notif') ?>
@@ -69,15 +69,15 @@
 							?>
 							<?= form_open(base_url('frontend/v1/users/cek_akun'), ['autocomplete' => 'off', 'id' => 'f_login', 'class' => 'toggle-disabled'], ['session_login' => encrypt_url('bkppd_balangan'.date('d')), 'urlRef' => $urlRef, 'xtoken' => $this->session->csrf_token]); ?>
 							<div class="form-group">
-								<label class="mb-2" for="email">Email</label>
-								<input type="email" data-sanitize="trim,lower" class="form-control form-control-lg mb-2" name="email" id="email" placeholder="mail@website.com" required="required">
+								<label class="mb-2" for="email">Email atau No. HP</label>
+								<input type="text" data-sanitize="trim,lower" data-validation="required" class="form-control form-control-lg mb-2" name="email" id="email" placeholder="Email or No. HP" required="required">
 							</div>
 							<div class="form-group my-4">
 								<label class="mb-2 d-block" for="password">
 									Password
 								</label>
 								<input type="password" autocomplete="off" class="form-control form-control-lg" name="password" id="password-field" placeholder="Password"  required="required">
-								<span toggle="#password-field" class="fas fa-fw fa-eye field-icon toggle-password"></span>
+								<a href="#" tabindex="-1" toggle="#password-field" class="fas fa-fw fa-eye field-icon toggle-password text-secondary"></a>
 							</div>
 							
 								<?php
@@ -88,11 +88,11 @@
 								$val_2 = $this->session->userdata('captcha')[1];
 								?>
 								<p class="mb-2">
-									Berapa hasil penjumlahan dari <strong><?= $val_1 ?> + <?= $val_2 ?></strong> ?
+									Hasil dari : <strong><?= $val_1 ?> + <?= $val_2 ?></strong> ?
 								</p>
 								<span id="check-capcha"></span>
 								<div class="row">
-									<div class="form-group col-4">
+									<div class="form-group col-5">
 										<div class="input-group mb-2">
 											<div class="input-group-prepend">
 												<div class="input-group-text rounded-0"><i class="fas fa-key"></i></div>
@@ -115,9 +115,9 @@
 								<div>
 									<img class="img-fluid w-75" src="<?= base_url('assets/images/bg/example-1.svg') ?>" alt="Registered Userportal - BKPPD BALANGAN">
 									<div class="my-3">
-										<h3 class="text-success mb-3">Masukan Kredensial Akun Yang Terdaftar</h3>
+										<h3 class="text-success mb-3">Bergabung Lebih Mudah</h3>
 										<p class="text-muted">
-											Silahkan masukan Email & Password yang telah kamu daftarkan sebelumnya.
+											Dapatkan semua fitur layanan kami dengan mudah, cukup login dengan akun Anda.
 										</p>
 									</div>
 								</div>

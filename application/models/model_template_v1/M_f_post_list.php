@@ -28,7 +28,15 @@ class M_f_post_list extends CI_Model
     {
         return $this->db->get_where('t_kategori', ['aktif' => 'Y']);
     }
-
+    public function get_all_kategori_with_count_berita()
+    {
+        $this->db->select('k.*,count(b.id_berita) as jumlah_berita', false);
+        $this->db->from('t_berita AS b');
+        $this->db->join('t_kategori as k', 'b.fid_kategori=k.id_kategori');
+        $this->db->group_by('k.nama_kategori');
+        $q = $this->db->get();
+        return $q;
+    }
     public function get_all_tag()
     {
         return $this->db->get('t_tags');

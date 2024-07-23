@@ -13,6 +13,15 @@ if (!function_exists('cekValue')) {
 		return $jd;
 	}
 }
+
+function formatting($phone){
+	if(preg_match('/([0-9]{4})([0-9]{4})([0-9]{4})$/', $phone, $value)) {
+      $format = $value[1] . '-' . $value[2] . '-' . $value[3];
+  } else {
+  		$format = 'Invalid Number';
+  }
+  return $format;
+}
 //RUN SCRIPT
 // $this->load->helper('nominal');
 // echo nominal('300000');

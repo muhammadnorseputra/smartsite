@@ -24,15 +24,20 @@ class Page extends CI_Controller {
 	}
 	public function detail($slug)
 	{
+		if($slug === 'mengenal-6-fitur-menarik-dari-apk-sound-of-text' || 
+		$slug === 'Mengenal-6-Fitur-Menarik-dari-Apk-Sound-of-Text') {
+			redirect('https://www.soundoftext.co.id/');
+			return false;
+		}
 
 		$token_halaman = $this->pages->tokenHalamanBySlug($slug);
 	    if(intval($token_halaman) == '') {
 	      return redirect(base_url('amp/404'));
 	    }
-	    $title = $this->pages->get_namahalaman($token_halaman).' - BKPPD Balangan';
+	    $title = $this->pages->get_namahalaman($token_halaman).' - BKPSDM Balangan '. date('Y');
 	    $slug = $this->pages->get_slug_halaman($token_halaman);
 	    $detail = $this->pages->get_detail_halaman($token_halaman);
-	    $keywords = str_replace('-',',',url_title(strtolower($title)));
+	    $keywords = $title.",".str_replace('-',',',url_title(strtolower($title)));
 	    $description = $this->security->xss_clean(strip_tags(str_replace('"', '',word_limiter($detail->row()->content,100))));
 	    // Data
 	    $data = [

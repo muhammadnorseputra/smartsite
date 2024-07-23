@@ -1,5 +1,5 @@
-<section class="hero pt-md-5 py-5">
-	<div class="container pt-md-5">
+<section class="hero py-5">
+	<div class="container">
 		<div class="d-flex justify-content-between align-items-start flex-lg-row flex-column">
 			<div>
 				<h3 class="font-weight-bold text-responsive text-white">Grafik Pegawai </h3>

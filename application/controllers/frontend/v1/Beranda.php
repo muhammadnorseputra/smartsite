@@ -20,6 +20,8 @@ class Beranda extends CI_Controller
         // if(!$this->session->userdata('email')) {
         //     redirect(base_url('frontend/v1/users/login'),'refresh');
         // }
+        // Cek Mac Blacklist
+        is_blacklist();
     }
     public function testing() {
         $url = base_url('beranda?id=123&media=id');
@@ -84,7 +86,7 @@ class Beranda extends CI_Controller
 
     function template_photo_terkait_sisa($total) {
         if($total>0):
-        $html = '<div class="btn-group btn-group-sm mb-2 ml-3 ml-md-0" role="group" aria-label="button">
+        $html = '<div class="btn-group btn-group-sm" role="group" aria-label="button">
                             <button type="button" class="btn btn-sm btn-light" disabled><i class="fas fa-images"></i></button>
                             <button type="button" class="btn btn-sm btn-light"  disabled>+ '.$total.'</button>
                         </div>';
@@ -126,11 +128,11 @@ class Beranda extends CI_Controller
                     $namapanggilan = $by;
                     $gravatar = base_url('assets/images/users/'.$this->mf_users->get_gravatar($by));
                 } else {
-                    $link_profile_public = 
-                    base_url("user/".decrypt_url( $this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan)."/".encrypt_url($by));
+                    $link_profile_public = base_url("user/".decrypt_url( $this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan)."/".encrypt_url($by));
                     $namalengkap = decrypt_url($this->mf_users->get_userportal_namalengkap($by));
                     $namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($by)->nama_panggilan);
                     $gravatar = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($by)->photo_pic).'';
+                    // $gravatar = base_url('assets/images/gravatar/user.png');
                 }
 
                 // Post Link Detail
@@ -171,7 +173,7 @@ class Beranda extends CI_Controller
                 // Headline
                 if ($row->headline == '1') {
                     $isi_berita = strip_tags($row->content); // membuat paragraf pada isi berita dan mengabaikan tag html
-                    $isi = substr($isi_berita, 0, 250); // ambil sebanyak 80 karakter
+                    $isi = substr($isi_berita, 0, 80); // ambil sebanyak 80 karakter
                     $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
                 } else {
                     $isi = $row->content;
@@ -203,7 +205,7 @@ class Beranda extends CI_Controller
                     $status_posted = 'Posted';
                     $text = $domain;
                     $icon = '<i class="fas fa-globe-asia"></i>';
-                    $sumber = $this->template_sumber($text, $icon);
+                    $sumber = '';
                 endif;
 
                 // gambar terkait
@@ -214,10 +216,10 @@ class Beranda extends CI_Controller
                 $photo_terkait_sisa = $this->template_photo_terkait_sisa($total_sisa);
                 $photo_t = '';
                 if($photo_terkait->num_rows() > 0):
-                    $photo_t .= '<ul class="d-flex flex-nowrap list-unstyled rounded-top overflow-auto m-0 p-0">';
+                    $photo_t .= '<ul style="gap: 4px; border-radius:10px" class="d-flex justify-content-around align-items-center flex-wrap list-unstyled m-0 p-1">';
                     foreach($photo_terkait->result() as $p):
-                        $photo_t .= '<li class="flex-grow-1 flex-shrink-1" style="height:260px;">
-                                        <img class="lazy w-100 h-100" data-src="'.img_blob($p->photo).'" alt="'.$p->judul.'" style="object-fit: cover;"/>
+                        $photo_t .= '<li style="flex: 1 1 auto; flex-basis: 40%; overflow-hidden">
+                                        <img class="lazy w-100 h-100" data-src="'.img_blob($p->photo).'" alt="'.$p->judul.'" style="object-fit: cover; border-radius: 10px;"/>
                                     </li>';
                     endforeach;
                     $photo_t .= ' </ul>';
@@ -226,15 +228,15 @@ class Beranda extends CI_Controller
                 // Gambar
                 if($row->type === 'BERITA'):
                     if(!empty($row->img)):
-                        $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
-                    // elseif(!empty($row->img_blob)):
-                    //     $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
+                        $img = '<img style="max-height:360px; object-fit: cover; object-position: top; border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.files('file_berita/'.$row->img).'" alt="'.$row->judul.'">';
+                    elseif(!empty($row->img_blob)):
+                        $img = '<img style="max-height:360px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="data:image/jpeg;base64,'.base64_encode( $row->img_blob ).'" alt="'.$row->judul.'"/>';
                     else:
-                        $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                        $img = '<img style="max-height:360px; object-fit: cover; object-position: top;" class="w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                     endif;
                 elseif($row->type === 'YOUTUBE'):
                     $img = ' <div class="position-relative">
-                        <img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
+                        <img style="filter: contrast(10%); max-height:360px; object-fit: cover; object-position: top;border-radius: 10px;" class="w-100 lazy border border-light" data-src="'.$yt_thumb.'" alt="'.$row->judul.'"> 
                         <div class="text-center position-absolute text-white w-100 h-100" style="left: 0;top: 40%;">
                             <i class="far fa-play-circle fa-3x bg-dark rounded-circle"></i>
                         </div>
@@ -242,9 +244,9 @@ class Beranda extends CI_Controller
                 elseif($row->type === 'SLIDE'):
                     $img = $photo_t;
                 elseif($row->type === 'LINK'):
-                    $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
+                    $img = '<img style="max-height:360px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.$linker['image'].'" alt="'.$row->judul.'">';
                 else:
-                    $img = '<img style="height:245px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
+                    $img = '<img style="max-height:360px; object-fit: cover; object-position: top;" class="card-img-top w-100 lazy" data-src="'.base_url('assets/images/noimage.gif').'" alt="'.$row->judul.'">';
                 endif;
 
                 // Kategori
@@ -261,9 +263,15 @@ class Beranda extends CI_Controller
                 $content_body = '<div class="row">
                                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
                                         <div class="mx-4 mx-md-0 pr-md-4">
-                                            <h4 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h4>
-                                            '.$sumber.' <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent '.$rand.'">'.ucwords($namakategori).'</a>
+                                            '.$sumber.'
+                                            <a href="'.$post_list_url.'" class="btn btn-sm btn-default bg-transparent btn-outline-light '.$rand.'">'.ucwords($namakategori).'</a>
+                                            <h4 class="font-weight-bold mt-2"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h4>
                                             <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
+                                            <div class="canvas overflow-hidden my-3">
+                                                <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
+                                                  '.$img.'
+                                                </a>
+                                            </div>
                                             <p class="text-secondary">'.$tag. '</p>
                                         </div>
                                     </div>
@@ -273,14 +281,19 @@ class Beranda extends CI_Controller
                 <div class="row">
                     <div class="col-12 col-md-10 offset-md-2 pl-md-0">
                         '.$sumber.'
-                        <div class="btn-group btn-group-sm mb-2 ml-3 ml-md-0" role="group" aria-label="button">
+                        <div class="btn-group btn-group-sm ml-3 ml-md-0" role="group" aria-label="button">
                             <button type="button"  aria-hidden="true" class="btn btn-sm btn-light" disabled><i class="fas fa-tag"></i></button>
                             <a href="'.$post_list_url.'" class="btn btn-sm btn-light '.$rand.'">'.$namakategori.'</a>
                         </div>
                         '.$photo_terkait_sisa.'
-                        <div class="mx-3 mx-md-0 pr-md-4 mt-md-3">
+                        <div class="mx-3 mx-md-0 pr-md-4 mt-2">
                             <h3 class="font-weight-bold"><a href="'.$posturl.'">'.word_limiter($row->judul, 25).'&nbsp;'.$pilihan.'</a></h3>
                             <p class="card-text font-weight-lighter text-muted my-2">'.$content.'</p>
+                            <div class="border border-light block canvas overflow-hidden mb-3" style="border-radius: 10px;">
+                                <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
+                                  '.$img.'
+                                </a>
+                            </div>
                             <p class="text-secondary">'.$tag. '</p>
                         </div>
                     </div>
@@ -290,19 +303,14 @@ class Beranda extends CI_Controller
 
                 $output .= '
                 
-				<div class="card shadow-sm border-white rounded-bottom bg-white mb-4">
-                    <div class="canvas overflow-hidden">
-                    <a href="'.$posturl.'" class="rippler rippler-img rippler-bs-info" title="'.$row->judul.'">
-                      '.$img.'
-                    </a>
-                    </div>
-					<div class="card-body bg-white px-2 py-1 d-flex justify-content-start align-items-center sticky-top" style="z-index:99;">
+				<div class="card border-top border-right border-left mb-3" style="border-radius: 10px;">
+					<div class="card-body bg-white px-2 py-1 d-flex justify-content-start align-items-center"  style="border-top-left-radius: 10px;border-top-right-radius: 10px">
                         <div>
                         <img style="object-fit:cover; object-position:top;" data-src="'.$gravatar.'" alt="Photo Userportal" width="60" height="60" class="rounded ml-1 ml-md-3 lazy p-2 bg-white">
                         </div>
-                        <div class="w-100 ml-md-2 ml-2">
+                        <div class="w-100 ml-md-3 ml-2">
 						<h6 class="mb-0 py-1">
-                            <span class="text-light">&bull;</span> <a href="'.$link_profile_public.'" class="small"> '.$namalengkap.'</a> <span class="text-light">&dash;</span>  
+                            <a href="'.$link_profile_public.'" class="small"> '.$namalengkap.'</a> <br>  
                             <span class="px-0 font-weight-normal text-muted small">'.$status_posted.' by <b>'.ucwords($namapanggilan).'</b> &#8226; '.longdate_indo($row->tgl_posting).'</span>
                         </h6> 
                         </div>
@@ -310,7 +318,7 @@ class Beranda extends CI_Controller
                     
                     '.$content_body.'
 
-					<div class="card-footer border-light bg-transparent p-2 d-flex justify-content-start">
+					<div class="card-footer border-light border-top-0 bg-transparent p-2 d-flex justify-content-end">
                     <div class="w-100">
 					<button aria-hidden="true" type="button" data-toggle="tooltip" title="Dilihat" class="btn btn-transparent border-0 rounded-pill p-2 w-100 text-secondary"><i class="far fa-eye mr-2"></i> '.nominal($row->views). '</button>
                     </div>

@@ -6,7 +6,7 @@
         <a class="text-decoration-none ampstart-label" href="<?= base_url('beranda') ?>">Home</a>
       </li>
       <li class="px1">
-        <a rel="noreferrer" class="text-decoration-none ampstart-label" target="_blank" href="https://www.buymeacoffee.com/putrabungsu6">Developer</a>
+        <a class="text-decoration-none ampstart-label" target="_blank" href="https://www.mediabalangan.com">Media Balangan</a>
       </li>
       <li class="px1">
         <a rel="noreferrer" class="text-decoration-none ampstart-label" href="https://wa.me/+6282151811532">Contact</a>

@@ -12,7 +12,8 @@ const javascriptObfuscator = require('gulp-javascript-obfuscator');
 gulp.task('sass', function() {
     return gulp.src('template/v1/scss/app.scss')
         .pipe(sass({
-            outputStyle: 'compressed'
+            outputStyle: 'compressed',
+            quietDeps: true
         }).on('error', sass.logError))
         .pipe(minify())
         .pipe(gulp.dest('template/v1/prod/'));
@@ -53,7 +54,7 @@ gulp.task("vendor", function() {
             "bower_components/lightbox2/dist/js/lightbox.min.js",
             "bower_components/masonry-layout/dist/masonry.pkgd.min.js",
             "bower_components/imagesloaded/imagesloaded.pkgd.min.js",
-            "bower_components/emojionearea/dist/emojionearea.min.js",
+            "bower_components/emojionearea/js/emojionearea.min.js",
             // "bower_components/jquery-typeahead/dist/jquery.typeahead.min.js",
             "template/v1/plugin/slick/slick/slick.min.js",
             // "template/v1/plugin/popmodal/popModal.min.js",
@@ -81,7 +82,7 @@ gulp.task("vendor", function() {
             // "assets/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js",
             // "assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js",
             // "bower_components/jquery.scrollTo/jquery.scrollTo.min.js",
-            "bower_components/hc-sticky/dist/hc-sticky.js"
+            // "bower_components/hc-sticky/dist/hc-sticky.js"
         ])
         // .pipe(javascriptObfuscator({
         //     compact: true

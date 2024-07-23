@@ -12,11 +12,11 @@
 		function get_client_ip()
 		{
 		if (!empty($_SERVER['HTTP_CLIENT_IP'])) {   //check ip from share internet
-		$ip = $_SERVER['HTTP_CLIENT_IP'];
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
 		} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {   //to check ip is pass from proxy
-		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 		} else {
-		$ip = $_SERVER['REMOTE_ADDR'];
+			$ip = $_SERVER['REMOTE_ADDR'];
 		}
 		return $ip;
 		}
@@ -87,7 +87,7 @@
 				$("a.btn").unbind().bind("click", function(e) {
 					e.preventDefault();
 					$.blockUI({
-                        message: '<center><img src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/three-dots.svg'); ?>"></center>',
+                        message: '<center><img src="<?= base_url('template/v1/images/loading.gif'); ?>"></center>',
                         css: {
                             border: '',
                             width: '100%',

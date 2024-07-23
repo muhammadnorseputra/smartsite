@@ -54,7 +54,7 @@ class Album extends CI_Controller {
 		endif;
 
 		$data = [
-			'title' => $this->album->judul_album_by_id($id)." - BKPPD Balangan",
+			'title' => $this->album->judul_album_by_id($id)." - BKPSDM Balangan",
 			'photos' => $this->album->photos($id),
 			'mf_beranda' => $this->mf_beranda->get_identitas(),
             'mf_menu' => $this->mf_beranda->get_menu(),

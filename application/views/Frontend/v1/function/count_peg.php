@@ -13,7 +13,7 @@ $arr = [
 ]
 ?>
 <div class="col-6 col-sm-6 col-md-3 rounded-left">
-    <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent border-0 rounded">
+    <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-white border-0 rounded">
         <div class="card-body text-center">
             <i class="fas fa-users pb-md-4 rounded fa-3x text-info"></i>
             <h1 id="count_jml"  class="font-weight-bold" data-from="0" data-to="<?= $arr['jml_asn'] ?>"
@@ -23,7 +23,7 @@ $arr = [
     </div>
 </div>
 <div class="col-6 col-sm-6 col-md-3">
-    <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent border-0 rounded">
+    <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-white border-0 rounded">
         <div class="card-body text-center">
             <i class="fas fa-user-tie pb-md-4 fa-3x mx-auto text-success rounded"></i>
             <h1 id="count_jml" data-from="0" data-to="<?= $arr['jml_pns'] ?>"
@@ -33,7 +33,7 @@ $arr = [
     </div>
 </div>
 <div class="col-6 col-sm-6 col-md-3 rounded-right">
-    <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent rounded border-0">
+    <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-white rounded border-0">
         <div class="card-body text-center">
             <i class="far pb-md-4 fa-user-circle fa-3x mx-auto text-warning rounded"></i>
             <h1 id="count_jml" data-from="0" data-to="<?= $arr['jml_ptt'] ?>"
@@ -43,9 +43,9 @@ $arr = [
     </div>
 </div>
 <div class="col-6 col-sm-6 col-md-3 rounded-right">
-    <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-transparent rounded border-0">
+    <div data-aos="zoom-out-down" data-aos-once="true" class="card bg-white rounded border-0">
         <div class="card-body text-center">
-            <i class="fas pb-md-4 fa-house-user fa-3x mx-auto text-secondary rounded"></i>
+            <i class="fas pb-md-4 fa-home fa-3x mx-auto text-secondary rounded"></i>
             <h1 id="count_jml" data-from="0" data-to="<?= $arr['jml_pensiun'] ?>"
             data-speed="3000" class="font-weight-bold"><?= nominal($arr['jml_pensiun']) ?></h1>
             <b class="text-secondary small">Jumlah PNS Pensiun pada tahun <?= date('Y') ?></b>

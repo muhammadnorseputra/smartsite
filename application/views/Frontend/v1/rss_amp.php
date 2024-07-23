@@ -47,7 +47,8 @@
       $isi = substr($isi_berita, 0, 180); // ambil sebanyak 80 karakter
       $isi = substr($isi_berita, 0, strrpos($isi, ' ')); // potong per spasi kalimat
       $conditional = $post->tgl_posting === date('Y-m-d') ? 'Terbaru' : 'Lama';
-      $newDateTime= new DateTime($post->created_at, new DateTimeZone('UTC'));
+      // $newDateTime= new DateTime(substr($post->created_at,0,10), new DateTimeZone('UTC'));
+      // $pubDate=$newDateTime->format(DateTime::RFC822);
     ?>
         <item>
           <title><?php echo xml_convert($post->judul); ?></title>
@@ -63,7 +64,7 @@
           <g:id><?= $id ?></g:id>
           <guid isPermaLink="false"><?= $posturl ?></guid>
           <enclosure length="25000" type="image/jpeg" url="<?= $img ?>"/>
-          <pubDate><?= $newDateTime->format('D, d M Y H:i:sO') ?></pubDate>
+          <pubDate><?= date(DATE_RSS, strtotime($post->created_at)) ?></pubDate>
         </item>
     <?php endforeach; ?>
     <?php 
@@ -80,7 +81,7 @@
           <content:encoded><![CDATA[<?= strip_tags($p->content) ?>]]></content:encoded>
           <g:id><?= $p->token_halaman ?></g:id>
           <guid isPermaLink="false"><?= base_url("amp/page/{$p->slug}") ?></guid>
-          <pubDate><?= $pageCreated->format('D, d M Y H:i:sO') ?></pubDate>
+          <pubDate><?= date(DATE_RSS, strtotime($p->tgl_created)) ?></pubDate>
         </item>
     <?php endforeach; ?>
     </channel>

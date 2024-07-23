@@ -6,9 +6,9 @@
 				<span class="text-muted">Photo in album:</span>
 				<h5><span class="text-primary font-weight-bold"><?= $this->album->judul_album_by_id(decrypt_url($id)) ?></span></h5>
 			</div>
-			<div>
+			<div class="d-flex">
 				<a href="<?= base_url('frontend/v1/album/tambah_photo/'. $id) ?>" class="btn btn-primary"><i class="fas fa-image"></i> Upload Photo</a>
-				<!-- <button onclick="window.history.back(-1)" class="btn btn-danger">Kembali <i class="fas fa-arrow-right"></i></button> -->
+				<button onclick="window.history.back(-1)" class="btn btn-danger"><i class="fas fa-arrow-right"></i></button>
 			</div>
 		</div>
 	</div>

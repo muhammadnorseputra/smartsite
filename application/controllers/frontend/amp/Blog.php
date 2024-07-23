@@ -65,6 +65,7 @@ class Blog extends CI_Controller {
 			$id = $this->posts->detailIdBySlug($slug);
         	$detail = $this->posts->detail($id)->row();
         	$judul_seo = ucwords($detail->judul);
+
         	if(empty($id)):
 				return redirect(base_url('amp/404'));
 			endif;

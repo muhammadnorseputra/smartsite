@@ -98,9 +98,13 @@ class M_f_users extends CI_Model
         return $profile;
     }
 
-    public function cek_login($tbl, $whr)
+    public function cek_login($tbl, $user, $pass)
     {
-        return $this->db->get_where($tbl, $whr);
+        $password = "$".sha1('bkppd_balangan')."$".encrypt_url($pass);
+        $this->db->where('email', encrypt_url($user))->where('password', $password);
+        $this->db->or_where('nohp', encrypt_url(formatting($user)))->where('password', $password);
+        return $this->db->get($tbl);
+
     }
 
     public function status_online($tbl, $whr, $data)
@@ -255,6 +259,7 @@ class M_f_users extends CI_Model
     {
         $this->db->select('kategori');
         $this->db->from('public_saran');
+        $this->db->group_by('kategori');
         $q = $this->db->get();
         return $q;
     }

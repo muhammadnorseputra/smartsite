@@ -1,8 +1,5 @@
-<div id="stickMe">
-<div class="separator">
-    <span class="separator-text text-uppercase font-weight-bold"><i class="fas fa-check-circle mr-2"></i> Data Poling</span>
-</div>
-<div class="border-0 shadow-none p-3 bg-light rounded">
+<!-- <div id="stickMe"> -->
+<div class="shadow-none p-3 bg-light rounded">
 	<?php $poling_q = $mf_poling_pertanyaan; ?>
 	<h4 class="text-uppercase font-weight-bold small"><?= $poling_q->label ?> ?</h4>
 	<?php  
@@ -42,4 +39,4 @@
 	<button type="button" data-toggle="modal" data-target="#modalVote" class="btn btn-primary btn-block text-uppercase"><i class="far fa-check-circle mr-2"></i> ISI POLING</button>
 	<?php endif; ?>
 </div>
-</div>
+<!-- </div> -->

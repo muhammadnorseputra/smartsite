@@ -1,15 +1,34 @@
 <?php $this->load->view('Frontend/v1/function/poling_vote') ?>
 <div class="alert alert-warning alert-dismissible fade show rounded-0 border-0 mb-0 d-md-none d-lg-none" role="alert">
-  <strong>Hai, </strong> Mari bantu kami untuk meningkatkan pelayanan <a href="//www.bkpsdm-skm.balangankab.go.id/survei?card=bkpsdm_balangan" class="btn btn-sm btn-warning">Isi Survei Sekarang</a>
+  <strong>Halo Pengunjung, </strong> Mari bantu kami untuk meningkatkan pelayanan <a href="//www.bkpsdm-skm.balangankab.go.id/survei?card=bkpsdm_balangan" class="btn btn-sm btn-warning">Isi Survei Sekarang</a>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <?php if($this->session->userdata('user_portal_log')['id'] == ''): ?>
-<?php $this->load->view('Frontend/v1/function/slider4') ?>
-<?php $this->load->view('Frontend/v1/function/count_peg_home') ?>
-<section class="mt-5">
-<?php $this->load->view('Frontend/v1/function/slider_banner') ?>
+<div class="container">
+    <div class="bg-primary text-white rounded-xl mt-2 p-2 d-none d-md-block" style="border-radius: 8px !important;">
+        <div class="d-flex justify-content-between align-items-center pl-2">
+            <div><b>Helo Pengunjung</b>, Selamat Datang Di Website Resmi Badan Kepegawaian dan Pengembangan Sumber Daya Manusia.</div>
+            <a href="//bkpsdm-skm.balangankab.go.id" target="_blank" class="btn btn-sm btn-warning"><i class="fas fa-edit mr-2"></i>Isi Survei</a>
+        </div>
+    </div>
+</div>
+<!-- Slider -->
+<section>
+    <div class="container AppGrafisContainer">
+        <div class="row no-gutters AppGrafis my-3">
+
+        </div>
+    </div>
+</section>
+<!-- Counter jumlah pegawai -->
+<section>
+    <div class="container">
+        <div class="row no-gutters border rounded bg-white" id="countpeg_container">
+
+        </div>
+    </div>
 </section>
 <!-- <section class="bg-white py-md-5"> -->
     <!-- <img class="trinket trinket-13 d-none d-sm-block d-lg-block d-xl-block" src="<?= base_url('assets/images/bg/trinket_5.png') ?>" alt="Portal BKPSDM Kabupaten Balangan">
@@ -74,13 +93,13 @@
 
 <?php endif; ?>
 
-<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-3 mt-md-4 pt-md-5' : 'my-4' ?>
+<?php $my = $this->session->userdata('user_portal_log')['id'] != '' ? 'mt-3' : 'my-4' ?>
 <section class="<?= $my ?>" id="content-page">
     <div class="container">
         <!-- <div class="bg-light my-3 py-1"></div> -->
         <div class="row d-flex justify-content-between flex-column flex-lg-row">
-            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 order-last order-md-last mt-3 mt-md-0">
-                <div id="sidebar">
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 order-last order-md-first mt-3 mt-md-0">
+                <div id="sidebar" style="position: -webkit-sticky; position: sticky; top: 80px;">
                 
                 <!-- <a href="https://www.buymeacoffee.com/putrabungsu6"><img src="https://img.buymeacoffee.com/button-api/?text=Donasi coffee untuk dev&emoji=&slug=putrabungsu6&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" class="w-100"></a>
  -->
@@ -123,10 +142,10 @@
                     </span>
                 </div>
                 </a>
- -->
+ -->            
                 <?php $this->load->view('Frontend/v1/function/poling'); ?>
                 <?php $this->load->view('Frontend/v1/function/populer_post'); ?>
-                <?php $this->load->view('Frontend/v1/function/album_sidebar'); ?>
+                <script src="//servedby.eleavers.com/ads/ads.php?t=Mjg2NjA7MTkwMTc7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=1"></script>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="main-content">
@@ -142,7 +161,7 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap">
+                <div class="mb-3 d-flex justify-content-between align-items-center flex-row flex-nowrap bg-white p-2 border rounded">
                     <?php
                     $sort = $this->input->get('sort');
                     $type = $this->input->get('type');
@@ -159,7 +178,7 @@
                                 <?php
                                 for($x=0; $x<count($dataSort); $x++):
                                 $active = $dataSort[$x] === $sort ? 'active disabled' : '';
-                                $url = empty($type) ? '?sort='.$dataSort[$x] : '?sort='.$dataSort[$x].'&type='.$type;
+                                $url = empty($type) ? '?sort='.$dataSort[$x] : '?sort='.$dataSort[$x].'&type='.$type.'#load_data';
                                 $sortTitle = ucwords($dataSort[$x]);
                                 ?>
                                 <a rel="noindex, nofollow" class="dropdown-item <?= $active ?>" href="<?= $url ?>"><?= $sortTitle; ?></a>
@@ -176,7 +195,7 @@
                             $url = empty($sort) ? '?type='.$dataType[$x] : '?sort='.$sort.'&type='.$dataType[$x];
                             $typeTitle = ucwords($dataType[$x]);
                             ?>
-                            <a rel="noindex, nofollow" href="<?= $url ?>" class="btn btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
+                            <a rel="noindex, nofollow" href="<?= $url.'#load_data' ?>" class="btn btn-outline-light text-muted <?= $active ?>"><?= $typeTitle ?></a>
                             <?php endfor; ?>
                         </div>
                     </div>

@@ -14,8 +14,8 @@
         </svg>
       <?php endif; ?>
       <amp-img
-        src="<?= img_blob($site->site_logo) ?>"
-        width="160"
+        src="<?= base_url("assets/images/logo.png") ?>"
+        width="60"
         height="50"
         layout="fixed"
         class="my0 mx-auto"

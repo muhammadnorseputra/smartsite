@@ -26,6 +26,26 @@ class Api extends CI_Controller {
 
 		$this->load->view('Frontend/v1/layout/wrapper', $data, FALSE);
 	}
+	public function slider()
+	{
+		$banners = $this->mf_beranda->list_banner('BANNER', 'Aside', 0, 8)->result();
+		$data = [];
+		$no=1;
+		foreach($banners as $banner):
+			$namapanggilan = decrypt_url($this->mf_users->get_userportal_namapanggilan($banner->upload_by)->nama_panggilan);
+			$row['uuid'] = $no;
+			$row['title'] = $banner->judul;
+			$row['image'] = $banner->gambar;
+			$row['path'] = $banner->path;
+			$row['url'] = $banner->url;
+			// $row['user'] = $banner->upload_by;
+			$row['user'] = 'data:image/jpeg;base64,'.base64_encode($this->mf_users->get_userportal_byid($banner->upload_by)->photo_pic).'';
+			$row['user_nama'] = ucwords($namapanggilan);
+			$data[] = $row;
+			$no++;
+		endforeach;
+		$this->output->set_content_type('application/json')->set_output(json_encode($data));
+	}
 	public function leave()
 	{
 		$go = $_GET['go']; //encrypt_url

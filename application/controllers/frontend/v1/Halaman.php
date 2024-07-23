@@ -17,6 +17,12 @@ class Halaman extends CI_Controller
   }
   public function statis($slug)
   {
+    if($slug === 'mengenal-6-fitur-menarik-dari-apk-sound-of-text' || 
+    $slug === 'Mengenal-6-Fitur-Menarik-dari-Apk-Sound-of-Text') {
+      redirect('https://www.soundoftext.co.id/');
+      return false;
+    }
+    
     $token_halaman = $this->halaman->tokenHalamanBySlug($slug);
     if(intval($token_halaman) == '') {
       return redirect(base_url('404'));
@@ -28,10 +34,10 @@ class Halaman extends CI_Controller
       'robot'=> true
     );
     // Meta SEO
-    $title = $this->halaman->get_namahalaman($token_halaman).' - BKPPD Balangan';
+    $title = $this->halaman->get_namahalaman($token_halaman).' - BKPSDM Balangan '.date('Y');
     $slug = $this->halaman->get_slug_halaman($token_halaman);
     $detail = $this->halaman->get_detail_halaman($token_halaman);
-    $keywords = str_replace('-',',',url_title(strtolower($title)));
+    $keywords = $title.",".str_replace('-',',',url_title(strtolower($title)));
     // jika ada gambar
     
     if($detail->num_rows() > 0):
@@ -43,11 +49,11 @@ class Halaman extends CI_Controller
                           $title = character_limiter($title, 60), 
                           $desc = strip_tags(str_replace('"', '', character_limiter($detail->row()->content, 110))), 
                           $imgUrl = $imgurl, 
-                          $url = base_url('page/'.$slug), 
+                          $url = strip(base_url('page/'.$slug)), 
                           $keyWords = $keywords,
                           $type = 'article',
-                          $canonical = curPageURL(),
-                          $urlamp = $url_amp
+                          $canonical = strip(curPageURL()),
+                          $urlamp = strip($url_amp)
                         );
     else:
       $meta_tag = '';

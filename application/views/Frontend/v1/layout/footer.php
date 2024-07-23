@@ -1,5 +1,5 @@
 <footer>
-<section class="py-4 bg-white">
+<section class="py-4 bg-white border-top">
 	<div class="container">
 		<div class="d-flex justify-content-lg-start align-content-center text-dark flex-column flex-lg-row">
 			<div class="mr-3 d-none d-md-block d-lg-block">
@@ -52,7 +52,10 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="1.8em" height="1.8em" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
 						  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
 						</svg>
-						<?php $this->mf_visitor->visitor_source(); $this->mf_visitor->visitor_count(); ?>
+						<?php
+							$this->mf_visitor->visitor_source(); 
+							$this->mf_visitor->visitor_count(); 
+						?>
 						<div class="small">Pengunjung Online</div>
 						<h3><span class="text-danger"><?= $this->mf_visitor->visitor_view()['jml_online']  ?></span> 
 						</h3>
@@ -98,7 +101,11 @@
 					<li>
 						<a href="<?= base_url('userlist') ?>"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Userportal</a>
 					</li>
+					<li>
+						<a href="https://heylink.me/BKPSDMBalangan/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Heylink.me</a>
+					</li>
 				</ul>
+				
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<h6 class="text-warning pb-3 border-bottom">Link Terkait</h6>
@@ -131,12 +138,45 @@
 						<span><i class="fas fa-link text-light mr-2"></i></span>
 						<a target="_blank" href="https://balangankab.go.id/">Pemerintah Kabupaten Balangan</a>
 					</li>
-					<li class="d-flex">
-						<span><i class="fas fa-link text-light mr-2"></i></span>
-						<a target="_blank" href="https://www.mediadigitalcenter.my.id/">MDCenter</a>
-					</li>
 				</ul>
 			</div>
+			<!--<div class="col-md-7 offset-md-5">
+				<h6 class="mb-2 border-bottom text-warning panel-title pb-3" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false">Link Patner Informative</h6>
+					<div class="panel-collapse collapse" id="collapseTree">
+						<div class="d-flex flex-column flex-md-row align-item-start justify-content-between">
+						<div>
+							<div>
+								<a target="_blank" href="https://worldquran.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>World Quran</a>
+							</div>
+							<div>
+								<a target="_blank" href="https://www.mediabalangan.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Media Balangan</a>
+							</div>
+						</div>
+						<div>
+							<div>
+								<a target="_blank" href="https://satechainmedia.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Blockchain technology</a>
+							</div>
+							<div>
+								<a target="_blank" href="https://sdn-haurgading.xyz"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Berita Technology</a>
+							</div>
+							<div>
+								<a target="_blank" href="https://www.soundoftext.co.id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Soundoftext</a>
+							</div>
+						</div>
+						<div>
+							<div>
+								<a target="_blank" href="https://lokeridn.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Lowongan Kerja</a>
+							</div>
+							<div>
+								<a target="_blank" href="https://world-giveaways.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Giveaway Gratis</a>
+							</div>
+							<div>
+								<a target="_blank" href="https://www.ulastempat.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>UlasTempat </a>
+							</div>
+						</div>
+						</div>
+					</div>
+			</div>-->
 		</div>
 	</div>
 </section>
@@ -145,7 +185,8 @@
 		<div class="row">
 			<div class="col-md-12 text-center pb-4 pt-3 mb-5 mb-md-0 pb-md-3 d-flex align-items-center justify-content-between flex-lg-row flex-column">
 				<div class="text-left text-white">
-					<div class="align-content-center align-items-center">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian Pendidikan dan Pelatihan Daerah Kabupaten Balangan.</div>
+					<div class="align-content-center align-items-center">Hak Cipta &copy; <?php echo date('Y') ?> Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kab. Balangan  <a href="https://id.seedbacklink.com/"><img title="Seedbacklink" src="https://id.seedbacklink.com/wp-content/uploads/2023/08/Badge-Seedbacklink_Artboard-1-copy.png" alt="Seedbacklink" width="35" height="35"></a>
+</div>
 				</div>
 				<!-- <div class="text-right text-white d-none d-md-block d-lg-block">
 					

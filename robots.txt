@@ -1,7 +1,18 @@
 User-agent: Mediapartners-Google
-Disallow: 
+Allow:/
 
-User-agent: *
+User-agent: Adsbot-Google
+Allow:/
+
+User-agent: Googlebot-Mobile
+Allow:/
+
+User-agent: Yandex
+Allow:/
+
+User-agent:*
+Allow:/
+
 Disallow: /adminpanel/
 Disallow: /assets/
 Disallow: /api/
@@ -11,7 +22,7 @@ Disallow: /fb/
 Disallow: /p/
 Disallow: /b/
 Disallow: /post/
-Allow: /
 
-Sitemap: https://web.bkppd-balangankab.info/sitemaps.xml
-Sitemap: https://web.bkppd-balangankab.info/sitemap_default.xml
+Sitemap: https://bkpsdm.balangankab.go.id/sitemaps.xml
+Sitemap: https://bkpsdm.balangankab.go.id/sitemap_default.xml
+Sitemap: https://bkpsdm.balangankab.go.id/cli/sitemap.xml

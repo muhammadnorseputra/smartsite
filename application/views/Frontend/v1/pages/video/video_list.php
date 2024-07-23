@@ -3,11 +3,11 @@ $playlistId = 'UUFDRHqqNeuYql8O7y5sHgmw'; // ID playlist
 $chanelId = $this->config->item('YOUTUBE_CHANNELID'); //ID chanel youtube
 $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 ?>
-<section class="hero py-5">
+<section>
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-md-center align-items-start flex-lg-row  flex-md-row flex-column">
 			<div class="d-none d-md-block d-lg-block">	
-				<h3 class="font-weight-bold text-responsive text-white">Videos</h3>
+				<h3 class="font-weight-bold text-responsive text-dark">Videos</h3>
 				<p class="text-muted small">Resources <a href="www.youtube.com"> www.youtube.com</a></p>
 			</div>
 			<div>
@@ -17,7 +17,7 @@ $key      = $this->config->item('YOUTUBE_KEY'); // TOKEN goole developer
 	</div>
 </div>
 </section>
-<section class="mb-3 mt--6">
+<section class="mb-3">
 	<div class="container">
 		<div class="row">
 			<?php  

@@ -16,13 +16,13 @@ class RssFeed extends CI_Controller {
       {
           $kategori= isset($_GET['category']) ? $_GET['category'] : 0;
           $profile = $this->mf_beranda->get_identitas();
-          $data['feed_name'] = 'bkppd-balangankab.info'; // your website
+          $data['feed_name'] = 'bkpsdm.balangankab.go.id'; // your website
           $data['encoding'] = 'utf-8'; // the encoding
           $data['feed_url'] = base_url('rss'); // the url to your feed
           $data['page_description'] = $profile->meta_desc; // some description
           $data['page_language'] = 'id-ID'; // the language
-          $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
-          $data['creator_name'] = 'BKPPD Balangan'; // your email
+          $data['creator_email'] = 'bkppdbalangan@gmail.com'; // your email
+          $data['creator_name'] = 'BKPSDM Balangan 2023'; // your email
           $data['posts'] = $this->posts->getPosts(null,$kategori);  
           $this->output->set_content_type('application/rss+xml');
           $this->load->view('Frontend/v1/rss', $data);
@@ -32,13 +32,13 @@ class RssFeed extends CI_Controller {
       {
           $kategori= isset($_GET['category']) ? $_GET['category'] : 0;
           $profile = $this->mf_beranda->get_identitas();
-          $data['feed_name'] = 'bkppd-balangankab.info'; // your website
+          $data['feed_name'] = 'bkpsdm.balangankab.go.id'; // your website
           $data['encoding'] = 'utf-8'; // the encoding
           $data['feed_url'] = base_url('rss_amp'); // the url to your feed
           $data['page_description'] = $profile->meta_desc; // some description
           $data['page_language'] = 'id-ID'; // the language
-          $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
-          $data['creator_name'] = 'BKPPD Balangan'; // your email
+          $data['creator_email'] = 'bkppdbalangan@gmail.com'; // your email
+          $data['creator_name'] = 'BKPSDM Balangan 2023'; // your email
           $data['posts'] = $this->posts->getPosts(null,$kategori);  
           $data['pages'] = $this->pages->pageAll();
           $this->output->set_content_type('application/rss+xml');
@@ -53,8 +53,8 @@ class RssFeed extends CI_Controller {
           $data['feed_url'] = base_url('rss_categorys'); // the url to your feed
           $data['page_description'] = $profile->meta_desc; // some description
           $data['page_language'] = 'id-ID'; // the language
-          $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
-          $data['creator_name'] = 'BKPPD Balangan'; // your email  
+          $data['creator_email'] = 'bkppdbalangan@gmail.com'; // your email
+          $data['creator_name'] = 'BKPSDM Balangan 2023'; // your email  
           $data['categorys'] = $this->categorys->getAll();
           $this->output->set_content_type('application/rss+xml');
           $this->load->view('Frontend/v1/rss_categorys', $data);
@@ -68,8 +68,8 @@ class RssFeed extends CI_Controller {
           $data['feed_url'] = base_url('rss_tags'); // the url to your feed
           $data['page_description'] = $profile->meta_desc; // some description
           $data['page_language'] = 'id-ID'; // the language
-          $data['creator_email'] = 'muhammadnorseputra@gmail.com'; // your email
-          $data['creator_name'] = 'BKPPD Balangan'; // your email  
+          $data['creator_email'] = 'bkppdbalangan@gmail.com'; // your email
+          $data['creator_name'] = 'BKPSDM Balangan 2023'; // your email  
           $data['tags'] = $this->categorys->get_all_tag();
           $this->output->set_content_type('application/rss+xml');
           $this->load->view('Frontend/v1/rss_tags', $data);

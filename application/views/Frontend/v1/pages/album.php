@@ -1,4 +1,4 @@
-<section class="hero py-5">
+<section>
 	<div class="container pt-md-5">
 		<div class="d-flex justify-content-between align-items-start">
 			<div>
@@ -9,7 +9,7 @@
 	</div>
 </div>
 </section>
-<section class="mb-3 mt--7">
+<section class="mb-3">
 <div class="container">
 	<div class="card-columns">
 		<?php if($album->num_rows() > 0): ?>

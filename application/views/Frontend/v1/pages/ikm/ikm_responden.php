@@ -139,7 +139,7 @@ IKM - Responden
 			"infoEmpty": "Belum Ada Responden",
 			"infoFiltered": "(filtered from _MAX_ total records)",
 			"search": "Pencarian",
-			"processing": "<img src='" + _uri + "/bower_components/SVG-Loaders/svg-loaders/oval-datatable.svg' />"
+			"processing": "<img src='" + _uri + "/template/v1/images/loading.gif' />"
 		}
 	});
 	$("select[name='f_year'],select[name='f_periode'],select[name='f_form']").on('change', function(e) {

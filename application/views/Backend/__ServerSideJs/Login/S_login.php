@@ -134,7 +134,7 @@
                     $('.loginBoxes,.login-footer').fadeOut('slow');
                     $("[type='button']#login").html('<img src="<?php echo site_url('assets/images/loader-ajax.gif'); ?>">');
                     $.blockUI({
-                        message: '<center><img src="<?= base_url('bower_components/SVG-Loaders/svg-loaders/three-dots.svg'); ?>"></center>',
+                        message: '<center><img src="<?= base_url('template/v1/images/loading.gif'); ?>"></center>',
                         css: {
                             border: '',
                             width: '400px',

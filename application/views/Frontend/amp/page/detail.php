@@ -6,7 +6,7 @@
     <a href="<?= base_url("amp/page") ?>" class="text-decoration-none">
       <span class="ampstart-subtitle block px3 pt2 mb2 caps">Pages</span>
     </a>
-    <h1 class="h3 mb1 px3 bold ampstart-title-sm"><?= $title ?></h1>
+    <h1 class="h3 mb1 px3 bold ampstart-title-sm"><?= $pagedetail->title ?></h1>
   </header>
   <section>
     <?php
@@ -32,7 +32,7 @@
       <?php endif; ?>
     <?php endif; ?>
   </section>
-  <section class="px3 py3">
+  <section class="px3 py3 line-height-4">
     <?= $pagedetail->content ?>
     <div class="flex justify-between items-center mt3">
       <div class="flex justify-start">

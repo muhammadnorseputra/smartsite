@@ -5,15 +5,15 @@
 	$site_name = !empty($d['site_name']) ? $d['site_name'] : $type;
 	$img = !empty($d['image']) ? $d['image'] : base_url('assets/images/noimage.gif');
 ?>
-<section class="py-md-5 py-3">
-	<div class="container pt-md-5">
+<section class="py-3">
+	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-6 offset-md-3">
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title">Mengalihkan</h5>
 						<hr>
-						<p class="card-text border-left border-warning pl-4 text-muted"><b>Perhatian</b> <br>Halaman di bawah ini tidak berafiliasi dengan kami, dan mungkin mengandung konten yang berbahaya.</p>
+						<p class="card-text bg-warning border-left border-warning p-4"><b>Perhatian</b> <br>Halaman web di bawah ini tidak berafiliasi dengan kami, dan mungkin mengandung konten yang berbahaya.</p>
 						<div class="d-flex justify-content-start align-content-center rounded bg-light border-light border my-3 flex-column">
 							<div>
 								<img src="<?= $img ?>" class="rounded-top mw-100" alt="<?= $title ?>">

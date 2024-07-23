@@ -139,8 +139,8 @@ class Banner extends CI_Controller {
 		$this->form_validation->set_rules($config_validation);
 		//TAHAP EMPAT: CONFIG DATA UPLOAD DAN SIMPAN FILE 
 		$acak27 = generateRandomString(27);
-		$date   = date('Y-m-d');
-		$files  = "bkppdbalangan_".strtolower($acak27);
+		$date   = date('dmY');
+		$files  = "filebanner-".$date."-".strtolower($acak27);
 		//INIT LIBRARY UPLOAD
 		$config['upload_path']      = './files/file_banner/';
 		$path_now 					= site_url('/files/file_banner/'.str_replace("/","",$files).'.'.pathinfo($fileBanner, PATHINFO_EXTENSION));
@@ -201,9 +201,8 @@ class Banner extends CI_Controller {
 		// var_dump($dbanner);
 		// die;
 		$acak27 	 = generateRandomString(27);
-		$date   = date('Y-m-d');
-
-		$files = "bkppdbalangan_".strtolower($acak27);
+		$date   = date('dmY');
+		$files = "filebanner-".$date."-".strtolower($acak27);
 
 		//init library upload
 		$config['upload_path']      = './files/file_banner/';

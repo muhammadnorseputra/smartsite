@@ -94,7 +94,7 @@ var table = $("#table-dikukasi").DataTable({
       "infoEmpty": "Belum ada postingan yang disukai",
       "infoFiltered": "(filtered from _MAX_ total records)",
       "search": "Pencarian",
-      "processing": `<img src='${_uri}/bower_components/SVG-Loaders/svg-loaders/oval-datatable.svg'>`
+      "processing": `<img src='${_uri}/template/v1/images/loading.gif'>`
     }
   });
 

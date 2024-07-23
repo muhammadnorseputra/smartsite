@@ -1,8 +1,12 @@
 <!-- Navbar For Desktop -->
-<nav id="navbar" class="navbar fixed-top navbar-expand-sm d-none d-md-block py-1 navbar-light bg-blur shadow">
+<nav id="navbar" class="navbar navbar-expand-sm d-none d-md-block py-1">
 	<div class="container">
-		<a class="navbar-brand" href="<?= base_url('beranda') ?>">
-			<?= '<img style="object-fit:contain;" src="' .base_url('assets/images/logo.png') . '" alt="BKPPD Kab. Balangan 2021" width="150" height="45"/>'; ?>
+		<a class="navbar-brand d-flex justify-content-start align-items-center text-nowrap" href="<?= base_url('beranda') ?>">
+			<?= '<img style="object-fit:contain;" src="' .base_url('assets/images/logo.png') . '" alt="BKPPD Kab. Balangan 2021" width="50" height="45"/>'; ?>
+			<div class="d-flex flex-column align-items-start justify-content-center gap-0 space-0">
+				<p style="font-size: 14px;margin:0; padding:0; line-height:0;">BKPSDM</p>
+				<p style="font-size: 12px;margin:0; padding:0">Kab. Balangan</p>
+			</div>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -161,6 +165,38 @@
 											GPR (Government Public Relation) BKPPD Balangan merupakan alat bantu sosialisasi berita berupa widget yang dapat dipasang pada website/blog. Sumber berita didapatkan dari website resmi <kbd>https://bkpsdm.balangankab.go.id/</kbd>
 										</p>
 							</a>
+							<div class="d-flex flex-column flex-md-row align-item-start justify-content-between">
+								<div>
+									<div>
+										<a target="_blank" href="https://worldquran.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>World Quran</a>
+									</div>
+									<div>
+										<a target="_blank" href="https://www.mediabalangan.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Media Balangan</a>
+									</div>
+								</div>
+								<div>
+									<div>
+										<a target="_blank" href="https://satechainmedia.com/"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Blockchain technology</a>
+									</div>
+									<div>
+										<a target="_blank" href="https://sdn-haurgading.xyz"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Berita Technology</a>
+									</div>
+									<div>
+										<a target="_blank" href="https://www.soundoftext.co.id"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Soundoftext</a>
+									</div>
+								</div>
+								<div>
+									<div>
+										<a target="_blank" href="https://lokeridn.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Lowongan Kerja</a>
+									</div>
+									<div>
+										<a target="_blank" href="https://world-giveaways.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>Giveaway Gratis</a>
+									</div>
+									<div>
+										<a target="_blank" href="https://www.ulastempat.com"><span><i class="fas fa-external-link-alt text-light mr-2"></i></span>UlasTempat </a>
+									</div>
+								</div>
+							</div>
 						</div>
 					</ul>
 				</li>
@@ -186,24 +222,21 @@
 				<?php $this->load->view('Frontend/v1/function/f_menus.php'); ?>
 			</div>
 			<?php } else { ?>
-			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-primary-old py-2 border-0 rounded mr-2" href="<?= base_url('daftar'); ?>">
+			<!-- 
+			# Menu Register
+			<a data-toggle="tooltip" title="Klik untuk mendaftar atau berkontribusi sebagai editor content website" class="btn btn-primary py-2 border-0 rounded mr-2" href="<?= base_url('daftar'); ?>">
 				<i class="fas fa-user"></i>
-			</a>
-			<a rel="noindex, nofollow" class="btn shadow-sm btn-primary-old rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.curPageURL()); ?>">
+			</a> 
+			-->
+			<a rel="noindex, nofollow" class="btn shadow-sm btn-primary rounded border-0 py-2 px-4" href="<?= base_url('login_web?urlRef='.curPageURL()); ?>">
 				<i class="fas fa-lock ml-2"></i> Masuk 
 			</a>
 			
 			<?php } ?>
 			<span class="text-dark ml-2">|</span>
-			<button class="btn btn-primary-old rounded py-2 ml-2 post-search">
+			<button class="btn rounded py-2 ml-2 post-search" data-toggle="tooltip" title="Klik untuk mencari artikel atau berita">
 				<i class="fas fa-search"></i>
 			</button>
-			<!-- <label class="switch mt-2">
-							<input type="checkbox" id="darkSwitch">
-							<div>
-											<span></span>
-							</div>
-			</label> -->
 		</div>
 	</div>
 </nav>

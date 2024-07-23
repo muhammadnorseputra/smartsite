@@ -49,6 +49,12 @@ if(! function_exists('strip_only_tags')){
     }
 
 }
+if(! function_exists('strip')){
+    function strip($domain) {
+        $domain = str_replace("www.","",$domain);
+        return $domain;
+    }
+}
 if(! function_exists('meta_tags')){
 
     function meta_tags($enable = ['general' => false, 'og'=> false, 'twitter'=> false, 'robot'=> false], 
@@ -107,8 +113,8 @@ if(! function_exists('meta_tags')){
 
         if($enable['robot']){
             $output .= '<meta name="robots" content="max-image-preview:large"/>'
-                    .'<meta name="googlebot-news" content="index, follow" />'
-                    .'<meta  name="googlebot" content="index, follow" />'
+                    .'<meta name="googlebot-news" content="all" />'
+                    .'<meta  name="googlebot" content="all" />'
                     .'<meta content="all" name="Googlebot-Image" />'
                     .'<meta content="all" name="msnbot" />'
                     .'<meta content="all" name="Slurp" />'

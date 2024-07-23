@@ -89,7 +89,8 @@ document.head.append(jqueryScript);<br>&lt;/script&gt;</code></pre>
 				<div id="sidebar">
 					<h4>Tampilan Widget</h4>
 					<hr>
-					<script defer="defer" type="text/javascript" src="//bkpsdm.balangankab.go.id/assets/gpr/gpr_bkppdblg_production.js"></script>
+					<!-- <script defer="defer" type="text/javascript" src="//bkpsdm.balangankab.go.id/assets/gpr/gpr_bkppdblg_production.js"></script> -->
+					<script defer="defer" type="text/javascript" src="<?= base_url("assets/gpr/gpr_bkppdblg_production.js") ?>"></script>
 					<div id="widget-gpr-bkppdblg" gpr-theme="#000d6b" gpr-thumb="image"></div>
 				</div>	
 			</div>	
