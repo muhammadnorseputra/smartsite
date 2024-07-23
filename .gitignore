@@ -6,8 +6,7 @@ old-index.php
 .editorconfig
 index-old2.php
 Api_test.http
-files/thumbs/
-files/file_*/
+files/
 vendor/
 bower_components/
 *.DS_Store
