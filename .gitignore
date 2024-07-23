@@ -10,4 +10,5 @@ files/
 vendor/
 bower_components/
 template/
+assets/
 *.DS_Store
