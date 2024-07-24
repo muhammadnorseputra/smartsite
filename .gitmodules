@@ -1,5 +1,5 @@
 [submodule "modules-smartsite-template"]
-	path = modules-smartsite-template
+	path = /Application/XAMPP/htdocs/modules-smartsite-template
 	url = https://github.com/muhammadnorseputra/modules-smartsite-template.git
 [submodule "modules-smartsite-files"]
 	path = modules-smartsite-files
