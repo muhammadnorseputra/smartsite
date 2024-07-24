@@ -1,11 +1,12 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Errors extends CI_Controller {
+class Errors extends CI_Controller
+{
 	function __construct()
 	{
-		parent::__construct();	
-        $this->load->model('model_template_v1/M_f_post', 'posts');
- 		$this->site = $this->mf_beranda->get_identitas();
+		parent::__construct();
+		$this->load->model('model_template_v1/M_f_post', 'posts');
+		$this->site = $this->mf_beranda->get_identitas();
 	}
 
 	public function error_404()
